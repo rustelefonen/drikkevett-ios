@@ -1,0 +1,546 @@
+
+/* Class = "UILabel"; text = "Høyeste promille"; ObjectID = "10X-dx-GGX"; */
+"10X-dx-GGX.text" = "Høyeste promille";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "1GE-nn-wBP"; */
+"1GE-nn-wBP.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UITabBarItem"; title = "Dagen Derpå"; ObjectID = "1d8-mb-qbO"; */
+"1d8-mb-qbO.title" = "Dagen Derpå";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "1sI-FO-gFN"; */
+"1sI-FO-gFN.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Kostnader"; ObjectID = "2DW-12-84f"; */
+"2DW-12-84f.text" = "Kostnader";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "2RQ-wm-0WH"; */
+"2RQ-wm-0WH.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "2U1-vl-B5V"; */
+"2U1-vl-B5V.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Velkommen"; ObjectID = "2mD-Up-wZM"; */
+"2mD-Up-wZM.text" = "Velkommen";
+
+/* Class = "UILabel"; text = "-.--"; ObjectID = "2rN-dz-diO"; */
+"2rN-dz-diO.text" = "-.--";
+
+/* Class = "UITextField"; placeholder = "ca. pris på din shot"; ObjectID = "2wE-0h-e5D"; */
+"2wE-0h-e5D.placeholder" = "ca. pris på din shot";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "3OR-a1-sXL"; */
+"3OR-a1-sXL.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UIButton"; normalTitle = "Lagre"; ObjectID = "3ec-xJ-ljL"; */
+"3ec-xJ-ljL.normalTitle" = "Lagre";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "3jn-dR-dVt"; */
+"3jn-dR-dVt.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "3pX-mZ-HjT"; */
+"3pX-mZ-HjT.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Vis Veiledning på nytt"; ObjectID = "46S-i3-EgX"; */
+"46S-i3-EgX.normalTitle" = "Vis Veiledning på nytt";
+
+/* Class = "UILabel"; text = "Kjønn"; ObjectID = "4Gh-jE-R8V"; */
+"4Gh-jE-R8V.text" = "Kjønn";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "4Hc-Mg-bln"; */
+"4Hc-Mg-bln.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Drink"; ObjectID = "4jY-No-2fw"; */
+"4jY-No-2fw.text" = "Drink";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "4rk-Yn-Rg9"; */
+"4rk-Yn-Rg9.text" = "-";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "4to-5g-oXK"; */
+"4to-5g-oXK.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "4wc-hh-OBG"; */
+"4wc-hh-OBG.normalTitle" = "-";
+
+/* Class = "UIButton"; normalTitle = "Avslutt Dagen Derpå"; ObjectID = "55F-yD-hIb"; */
+"55F-yD-hIb.normalTitle" = "Avslutt Dagen Derpå";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "5Va-dJ-15y"; */
+"5Va-dJ-15y.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UIButton"; normalTitle = "Endre bruker innstillinger"; ObjectID = "5eo-rT-Yot"; */
+"5eo-rT-Yot.normalTitle" = "Endre bruker innstillinger";
+
+/* Class = "UIButton"; normalTitle = "Lagre"; ObjectID = "5yG-rP-mhV"; */
+"5yG-rP-mhV.normalTitle" = "Lagre";
+
+/* Class = "UILabel"; text = "-.--"; ObjectID = "6IQ-nF-j4I"; */
+"6IQ-nF-j4I.text" = "-.--";
+
+/* Class = "UILabel"; text = "Gårsdagens høyeste promille"; ObjectID = "6S0-kR-0Q8"; */
+"6S0-kR-0Q8.text" = "Gårsdagens høyeste promille";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "6Wq-ug-8RB"; */
+"6Wq-ug-8RB.title" = "Home";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "78u-88-Fqq"; */
+"78u-88-Fqq.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Tidspunkt/Dato:"; ObjectID = "7SX-pk-l6V"; */
+"7SX-pk-l6V.text" = "Tidspunkt/Dato:";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "7TP-Ki-6n8"; */
+"7TP-Ki-6n8.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "7zg-IC-bBb"; */
+"7zg-IC-bBb.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "ØL"; ObjectID = "8EP-CQ-U6K"; */
+"8EP-CQ-U6K.text" = "ØL";
+
+/* Class = "UITextField"; placeholder = "ca. pris på din drink"; ObjectID = "8Km-0e-Gvk"; */
+"8Km-0e-Gvk.placeholder" = "ca. pris på din drink";
+
+/* Class = "UILabel"; text = "0,00,-"; ObjectID = "8Of-3K-zgE"; */
+"8Of-3K-zgE.text" = "0,00,-";
+
+/* Class = "UILabel"; text = "Alder"; ObjectID = "8i6-sb-b5X"; */
+"8i6-sb-b5X.text" = "Alder";
+
+/* Class = "UIButton"; normalTitle = "Hopp over veiledning"; ObjectID = "96n-9Z-K2V"; */
+"96n-9Z-K2V.normalTitle" = "Hopp over veiledning";
+
+/* Class = "UIButton"; normalTitle = "Start Kvelden"; ObjectID = "9Ow-5A-Cck"; */
+"9Ow-5A-Cck.normalTitle" = "Start Kvelden";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "9Wh-2T-6vW"; */
+"9Wh-2T-6vW.text" = "-";
+
+/* Class = "UILabel"; text = "Kostnader"; ObjectID = "9cQ-AT-7Vc"; */
+"9cQ-AT-7Vc.text" = "Kostnader";
+
+/* Class = "UILabel"; text = "–––––"; ObjectID = "9tc-ce-zgg"; */
+"9tc-ce-zgg.text" = "–––––";
+
+/* Class = "UINavigationItem"; title = "Planlegg Kvelden"; ObjectID = "ALe-dw-DSY"; */
+"ALe-dw-DSY.title" = "Planlegg Kvelden";
+
+/* Class = "UILabel"; text = "DRINK"; ObjectID = "Bdc-Q3-Pgv"; */
+"Bdc-Q3-Pgv.text" = "DRINK";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "CEQ-Jg-X9K"; */
+"CEQ-Jg-X9K.text" = "0";
+
+/* Class = "UILabel"; text = "Kallenavn"; ObjectID = "CHp-ta-9cJ"; */
+"CHp-ta-9cJ.text" = "Kallenavn";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "CkB-GM-cir"; */
+"CkB-GM-cir.text" = "-";
+
+/* Class = "UILabel"; text = "Mål Promille"; ObjectID = "D6Z-w8-agr"; */
+"D6Z-w8-agr.text" = "Mål Promille";
+
+/* Class = "UILabel"; text = "Øl"; ObjectID = "DrT-uJ-MtL"; */
+"DrT-uJ-MtL.text" = "Øl";
+
+/* Class = "UILabel"; text = "Øl"; ObjectID = "Eh2-rl-dm7"; */
+"Eh2-rl-dm7.text" = "Øl";
+
+/* Class = "UILabel"; text = "Kostnader"; ObjectID = "Eoz-R9-Mc6"; */
+"Eoz-R9-Mc6.text" = "Kostnader";
+
+/* Class = "UILabel"; text = "Gårsdagens forbruk"; ObjectID = "F2z-7s-xmh"; */
+"F2z-7s-xmh.text" = "Gårsdagens forbruk";
+
+/* Class = "UILabel"; text = "DRINK"; ObjectID = "GCj-nd-ay4"; */
+"GCj-nd-ay4.text" = "DRINK";
+
+/* Class = "UILabel"; text = "Høyeste Promille"; ObjectID = "Gcl-af-swL"; */
+"Gcl-af-swL.text" = "Høyeste Promille";
+
+/* Class = "UILabel"; text = "Kallenavn"; ObjectID = "Glk-SV-py8"; */
+"Glk-SV-py8.text" = "Kallenavn";
+
+/* Class = "UILabel"; text = "Endre dine kostnader"; ObjectID = "GsR-Pk-fBx"; */
+"GsR-Pk-fBx.text" = "Endre dine kostnader";
+
+/* Class = "UIButton"; normalTitle = "Veiledning"; ObjectID = "H4i-8u-ZtC"; */
+"H4i-8u-ZtC.normalTitle" = "Veiledning";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "HXW-hI-FkL"; */
+"HXW-hI-FkL.text" = "-";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "IHi-Ih-VZU"; */
+"IHi-Ih-VZU.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "JTR-he-N3g"; */
+"JTR-he-N3g.text" = "0.00";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "JWi-NB-ey3"; */
+"JWi-NB-ey3.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Nåværende promille"; ObjectID = "Jpx-pf-JNk"; */
+"Jpx-pf-JNk.text" = "Nåværende promille";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "JsK-mj-MTs"; */
+"JsK-mj-MTs.text" = "-";
+
+/* Class = "UITextField"; placeholder = "skriv inn shot pris"; ObjectID = "Jse-Pi-eKg"; */
+"Jse-Pi-eKg.placeholder" = "skriv inn shot pris";
+
+/* Class = "UILabel"; text = "Velkommen"; ObjectID = "Juf-k8-YXr"; */
+"Juf-k8-YXr.text" = "Velkommen";
+
+/* Class = "UILabel"; text = "Endre din brukerinformasjon"; ObjectID = "Jzj-6s-kRd"; */
+"Jzj-6s-kRd.text" = "Endre din brukerinformasjon";
+
+/* Class = "UIButton"; normalTitle = "Sett i gang"; ObjectID = "K1N-cg-a3w"; */
+"K1N-cg-a3w.normalTitle" = "Sett i gang";
+
+/* Class = "UIButton"; normalTitle = "Nullstill"; ObjectID = "K6H-NV-5uZ"; */
+"K6H-NV-5uZ.normalTitle" = "Nullstill";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "Kce-6s-Vf0"; */
+"Kce-6s-Vf0.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Kq1-Jd-uzp"; */
+"Kq1-Jd-uzp.text" = "Label";
+
+/* Class = "UILabel"; text = "Brukerinformasjon"; ObjectID = "L20-Xj-QOy"; */
+"L20-Xj-QOy.text" = "Brukerinformasjon";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "MzR-Ay-GNe"; */
+"MzR-Ay-GNe.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "NBG-rM-BqC"; */
+"NBG-rM-BqC.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "1 Time"; ObjectID = "NGi-if-fC0"; */
+"NGi-if-fC0.text" = "1 Time";
+
+/* Class = "UILabel"; text = "Motivasjonsfraser om at du må slutte å drikke da for f.** Forsøker å skrive litt lenger, her men, vi får . \"\" se dea. "; ObjectID = "NRO-kn-YeQ"; */
+"NRO-kn-YeQ.text" = "Motivasjonsfraser om at du må slutte å drikke da for f.** Forsøker å skrive litt lenger, her men, vi får . \"\" se dea. ";
+
+/* Class = "UIButton"; normalTitle = "Neste"; ObjectID = "NkN-qH-hLU"; */
+"NkN-qH-hLU.normalTitle" = "Neste";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "OAg-Z3-OH7"; */
+"OAg-Z3-OH7.text" = "0.00";
+
+/* Class = "UILabel"; text = "0,00,-"; ObjectID = "Peu-zi-Ib9"; */
+"Peu-zi-Ib9.text" = "0,00,-";
+
+/* Class = "UIButton"; normalTitle = "Kom i gang!"; ObjectID = "Q6c-Kp-bEc"; */
+"Q6c-Kp-bEc.normalTitle" = "Kom i gang!";
+
+/* Class = "UILabel"; text = "Drink"; ObjectID = "R3B-lS-pLc"; */
+"R3B-lS-pLc.text" = "Drink";
+
+/* Class = "UITextField"; placeholder = "Skriv inn din alder"; ObjectID = "RDy-hp-giT"; */
+"RDy-hp-giT.placeholder" = "Skriv inn din alder";
+
+/* Class = "UIButton"; normalTitle = "Bruk default verdier"; ObjectID = "RHB-Cw-t5F"; */
+"RHB-Cw-t5F.normalTitle" = "Bruk default verdier";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "RSj-N2-nPL"; */
+"RSj-N2-nPL.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "RXQ-Mc-NaE"; */
+"RXQ-Mc-NaE.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Legg inn dine mål"; ObjectID = "SMr-tx-xh3"; */
+"SMr-tx-xh3.text" = "Legg inn dine mål";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "SZU-Db-w3B"; */
+"SZU-Db-w3B.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "ØL"; ObjectID = "Sup-LT-jRp"; */
+"Sup-LT-jRp.text" = "ØL";
+
+/* Class = "UIButton"; normalTitle = "Tips"; ObjectID = "Tas-eC-s8b"; */
+"Tas-eC-s8b.normalTitle" = "Tips";
+
+/* Class = "UILabel"; text = "Copyright © 2016 Rustelefonen. All rights reserved."; ObjectID = "TxG-7b-g2u"; */
+"TxG-7b-g2u.text" = "Copyright © 2016 Rustelefonen. All rights reserved.";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "U7t-ny-ig0"; */
+"U7t-ny-ig0.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Bruker Informasjon"; ObjectID = "Ut7-6v-2yb"; */
+"Ut7-6v-2yb.text" = "Bruker Informasjon";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "UwN-l8-Rpj"; */
+"UwN-l8-Rpj.text" = "0.00";
+
+/* Class = "UILabel"; text = "SHOT"; ObjectID = "V4W-5o-vfV"; */
+"V4W-5o-vfV.text" = "SHOT";
+
+/* Class = "UITextField"; placeholder = "skriv inn vekt"; ObjectID = "VFu-RN-kLK"; */
+"VFu-RN-kLK.placeholder" = "skriv inn vekt";
+
+/* Class = "UILabel"; text = "Vekt"; ObjectID = "VMe-dA-bmp"; */
+"VMe-dA-bmp.text" = "Vekt";
+
+/* Class = "UILabel"; text = "Endre Dine Data"; ObjectID = "VXF-fS-M0W"; */
+"VXF-fS-M0W.text" = "Endre Dine Data";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "Wbv-MB-XW7"; */
+"Wbv-MB-XW7.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UINavigationItem"; title = "Din Informasjon"; ObjectID = "WjE-eU-EBg"; */
+"WjE-eU-EBg.title" = "Din Informasjon";
+
+/* Class = "UILabel"; text = "Drikkevett"; ObjectID = "Wsa-xO-nJL"; */
+"Wsa-xO-nJL.text" = "Drikkevett";
+
+/* Class = "UILabel"; text = "Kostnader"; ObjectID = "XIx-mQ-pop"; */
+"XIx-mQ-pop.text" = "Kostnader";
+
+/* Class = "UILabel"; text = "Høyeste promille"; ObjectID = "XLo-G6-Gyl"; */
+"XLo-G6-Gyl.text" = "Høyeste promille";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "XPR-Mi-Y2b"; */
+"XPR-Mi-Y2b.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "XUe-Bs-w7r"; */
+"XUe-Bs-w7r.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Alder"; ObjectID = "XZh-Jh-YPT"; */
+"XZh-Jh-YPT.text" = "Alder";
+
+/* Class = "UITextField"; placeholder = "skriv inn kallenavn"; ObjectID = "XtW-D8-cvS"; */
+"XtW-D8-cvS.placeholder" = "skriv inn kallenavn";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "Y0i-9p-vNR"; */
+"Y0i-9p-vNR.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Shot"; ObjectID = "YDl-02-lYS"; */
+"YDl-02-lYS.text" = "Shot";
+
+/* Class = "UILabel"; text = "Forrige Måned"; ObjectID = "YbY-JQ-c1N"; */
+"YbY-JQ-c1N.text" = "Forrige Måned";
+
+/* Class = "UINavigationItem"; title = "Promillekalkulator"; ObjectID = "YoM-eY-Hi0"; */
+"YoM-eY-Hi0.title" = "Promillekalkulator";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "Z25-ye-1jX"; */
+"Z25-ye-1jX.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Mål Dato"; ObjectID = "ZIw-qB-XlD"; */
+"ZIw-qB-XlD.text" = "Mål Dato";
+
+/* Class = "UITextField"; placeholder = "Skriv inn din vekt"; ObjectID = "ZkS-67-ry3"; */
+"ZkS-67-ry3.placeholder" = "Skriv inn din vekt";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "a3w-At-Xvc"; */
+"a3w-At-Xvc.text" = "-";
+
+/* Class = "UITabBarItem"; title = "Planlegg Kvelden"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Planlegg Kvelden";
+
+/* Class = "UIButton"; normalTitle = "Nullstill"; ObjectID = "brZ-Q3-hWF"; */
+"brZ-Q3-hWF.normalTitle" = "Nullstill";
+
+/* Class = "UITextField"; placeholder = "skriv inn øl pris"; ObjectID = "bva-Ig-Jdk"; */
+"bva-Ig-Jdk.placeholder" = "skriv inn øl pris";
+
+/* Class = "UILabel"; text = "Kostnader"; ObjectID = "cDa-UD-gyc"; */
+"cDa-UD-gyc.text" = "Kostnader";
+
+/* Class = "UITabBarItem"; title = "Promillekalkulator"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Promillekalkulator";
+
+/* Class = "UILabel"; text = "--,-"; ObjectID = "crD-J2-sTW"; */
+"crD-J2-sTW.text" = "--,-";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "d7e-QG-3TV"; */
+"d7e-QG-3TV.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dM9-7a-juI"; */
+"dM9-7a-juI.text" = "Label";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "dii-l3-bln"; */
+"dii-l3-bln.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Gjennomsnitt høyeste promille"; ObjectID = "dum-cC-w4x"; */
+"dum-cC-w4x.text" = "Gjennomsnitt høyeste promille";
+
+/* Class = "UILabel"; text = "Vin"; ObjectID = "dyC-Ij-rHQ"; */
+"dyC-Ij-rHQ.text" = "Vin";
+
+/* Class = "UITextField"; placeholder = "skriv inn alder"; ObjectID = "eBZ-u1-cpq"; */
+"eBZ-u1-cpq.placeholder" = "skriv inn alder";
+
+/* Class = "UIButton"; normalTitle = "Endre Kostnader"; ObjectID = "eEs-kg-Rfn"; */
+"eEs-kg-Rfn.normalTitle" = "Endre Kostnader";
+
+/* Class = "UILabel"; text = "Kalkuler Promille"; ObjectID = "eIo-IG-o3V"; */
+"eIo-IG-o3V.text" = "Kalkuler Promille";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "fIF-V2-6CH"; */
+"fIF-V2-6CH.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "fgN-m9-Cp0"; */
+"fgN-m9-Cp0.text" = "-";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "g2w-96-PbG"; */
+"g2w-96-PbG.text" = "–––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "gNq-bf-92t"; */
+"gNq-bf-92t.text" = "0.00";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "goB-wQ-RPA"; */
+"goB-wQ-RPA.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UITextField"; placeholder = "ca. pris på din øl"; ObjectID = "gok-Vs-5tS"; */
+"gok-Vs-5tS.placeholder" = "ca. pris på din øl";
+
+/* Class = "UITextField"; placeholder = "Skriv inn din kallenavn"; ObjectID = "hMU-Cn-rCp"; */
+"hMU-Cn-rCp.placeholder" = "Skriv inn din kallenavn";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "heq-m2-hqk"; */
+"heq-m2-hqk.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UITextField"; placeholder = "ca. pris på din vin"; ObjectID = "iOF-M9-aOH"; */
+"iOF-M9-aOH.placeholder" = "ca. pris på din vin";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "iTj-7m-apu"; */
+"iTj-7m-apu.text" = "0";
+
+/* Class = "UILabel"; text = "Mål Promille"; ObjectID = "idF-j3-vVq"; */
+"idF-j3-vVq.text" = "Mål Promille";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "j38-aN-3uL"; */
+"j38-aN-3uL.text" = "0.00";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "j3R-G6-cXx"; */
+"j3R-G6-cXx.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "j9y-Yc-3ra"; */
+"j9y-Yc-3ra.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "jNN-zf-KoM"; */
+"jNN-zf-KoM.text" = "Total";
+
+/* Class = "UILabel"; text = "Vin"; ObjectID = "jwa-bv-YK3"; */
+"jwa-bv-YK3.text" = "Vin";
+
+/* Class = "UIButton"; normalTitle = "Lagre"; ObjectID = "k9q-m9-CGE"; */
+"k9q-m9-CGE.normalTitle" = "Lagre";
+
+/* Class = "UITextView"; text = "Ønsker du å se veiledning klikk på knappen merket \"Veiledning\", hvis ikke gå videre ved å klikke på sett i gang! Husk at du allltid kan se veiledning på nytt ved å gå inn på innstillinger og klikke på knappen se veiledning på nytt. "; ObjectID = "kAf-3d-CaZ"; */
+"kAf-3d-CaZ.text" = "Ønsker du å se veiledning klikk på knappen merket \"Veiledning\", hvis ikke gå videre ved å klikke på sett i gang! Husk at du allltid kan se veiledning på nytt ved å gå inn på innstillinger og klikke på knappen se veiledning på nytt. ";
+
+/* Class = "UINavigationItem"; title = "Historikk"; ObjectID = "kI1-YW-Zxn"; */
+"kI1-YW-Zxn.title" = "Historikk";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "kjv-Aj-KN5"; */
+"kjv-Aj-KN5.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "Legg inn brukerinformasjon"; ObjectID = "knT-XA-wgd"; */
+"knT-XA-wgd.text" = "Legg inn brukerinformasjon";
+
+/* Class = "UILabel"; text = "Mål"; ObjectID = "lJG-3p-JrC"; */
+"lJG-3p-JrC.text" = "Mål";
+
+/* Class = "UILabel"; text = "Gjenomsnitt høyeste promille"; ObjectID = "lpC-Yp-kIi"; */
+"lpC-Yp-kIi.text" = "Gjenomsnitt høyeste promille";
+
+/* Class = "UILabel"; text = "VIN"; ObjectID = "mW7-vz-wwS"; */
+"mW7-vz-wwS.text" = "VIN";
+
+/* Class = "UILabel"; text = "Dette diagrammet fremstiller hvordan du ligger ann med målsetningen din."; ObjectID = "mhb-m4-cwQ"; */
+"mhb-m4-cwQ.text" = "Dette diagrammet fremstiller hvordan du ligger ann med målsetningen din.";
+
+/* Class = "UILabel"; text = "Shot"; ObjectID = "ml8-aD-Ynl"; */
+"ml8-aD-Ynl.text" = "Shot";
+
+/* Class = "UITextField"; placeholder = "skriv inn vin pris"; ObjectID = "mv2-sD-tE7"; */
+"mv2-sD-tE7.placeholder" = "skriv inn vin pris";
+
+/* Class = "UITextField"; placeholder = "skriv inn drink pris"; ObjectID = "mvr-o8-1Lv"; */
+"mvr-o8-1Lv.placeholder" = "skriv inn drink pris";
+
+/* Class = "UIButton"; normalTitle = "Endre dine Mål"; ObjectID = "n59-tb-6pg"; */
+"n59-tb-6pg.normalTitle" = "Endre dine Mål";
+
+/* Class = "UILabel"; text = "Dato"; ObjectID = "nE4-jM-Px2"; */
+"nE4-jM-Px2.text" = "Dato";
+
+/* Class = "UIButton"; normalTitle = "Slett Historikk"; ObjectID = "nEx-qA-kSa"; */
+"nEx-qA-kSa.normalTitle" = "Slett Historikk";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "nTp-Pp-jNL"; */
+"nTp-Pp-jNL.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UIButton"; normalTitle = "Oversikt"; ObjectID = "nuH-AV-TZU"; */
+"nuH-AV-TZU.normalTitle" = "Oversikt";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "nwi-jW-JvI"; */
+"nwi-jW-JvI.title" = "Home";
+
+/* Class = "UILabel"; text = "Mål Dato"; ObjectID = "oKb-ES-iIy"; */
+"oKb-ES-iIy.text" = "Mål Dato";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oM6-Cr-Dkh"; */
+"oM6-Cr-Dkh.text" = "Label";
+
+/* Class = "UILabel"; text = "Lars Petter"; ObjectID = "rRz-O3-IOV"; */
+"rRz-O3-IOV.text" = "Lars Petter";
+
+/* Class = "UILabel"; text = "Endre dine mål"; ObjectID = "rYZ-Em-W9X"; */
+"rYZ-Em-W9X.text" = "Endre dine mål";
+
+/* Class = "UIButton"; normalTitle = "Neste"; ObjectID = "ru5-Oc-8dK"; */
+"ru5-Oc-8dK.normalTitle" = "Neste";
+
+/* Class = "UILabel"; text = "Vekt"; ObjectID = "sw5-bO-KzZ"; */
+"sw5-bO-KzZ.text" = "Vekt";
+
+/* Class = "UILabel"; text = "Legg inn kostnader"; ObjectID = "tPC-ja-TuU"; */
+"tPC-ja-TuU.text" = "Legg inn kostnader";
+
+/* Class = "UINavigationItem"; title = "Dagen derpå"; ObjectID = "tg2-UM-l6u"; */
+"tg2-UM-l6u.title" = "Dagen derpå";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "thV-6k-QcP"; */
+"thV-6k-QcP.text" = "Title";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "twH-ic-mVV"; */
+"twH-ic-mVV.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "v1O-NG-IEp"; */
+"v1O-NG-IEp.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "TITTEL"; ObjectID = "vMS-xS-Q3b"; */
+"vMS-xS-Q3b.text" = "TITTEL";
+
+/* Class = "UILabel"; text = "––––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "wcQ-Kq-Sqz"; */
+"wcQ-Kq-Sqz.text" = "––––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "0,00,-"; ObjectID = "xCU-ss-ny2"; */
+"xCU-ss-ny2.text" = "0,00,-";
+
+/* Class = "UILabel"; text = "–––––––––––––––––––––––––––––––––––––––––––––"; ObjectID = "xcc-e2-gvs"; */
+"xcc-e2-gvs.text" = "–––––––––––––––––––––––––––––––––––––––––––––";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "yCe-5a-Zg6"; */
+"yCe-5a-Zg6.text" = "0";
+
+/* Class = "UILabel"; text = "Mål"; ObjectID = "yQi-VQ-mN2"; */
+"yQi-VQ-mN2.text" = "Mål";
+
+/* Class = "UILabel"; text = "VIN"; ObjectID = "ybY-Zo-1dn"; */
+"ybY-Zo-1dn.text" = "VIN";
+
+/* Class = "UILabel"; text = "Kjønn"; ObjectID = "ycb-y7-DW8"; */
+"ycb-y7-DW8.text" = "Kjønn";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "zXY-N5-EQU"; */
+"zXY-N5-EQU.text" = "0.00";
+
+/* Class = "UILabel"; text = "SHOT"; ObjectID = "zia-EE-Dlx"; */
+"zia-EE-Dlx.text" = "SHOT";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "zqV-Xu-jBR"; */
+"zqV-Xu-jBR.text" = "0.00";

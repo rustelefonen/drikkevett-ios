@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="DagenDerpaPromille" representedClassName=".DagenDerpaPromille" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unitAlkohol" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GraphHistorikk" representedClassName=".GraphHistorikk" syncable="YES">
+        <attribute name="currentPromille" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="sessionNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeStampAdded" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Historikk" representedClassName=".Historikk" syncable="YES">
+        <attribute name="antallDrink" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="antallOl" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="antallShot" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="antallVin" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dato" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="datoTwo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endOfSesDato" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="firstUnitTimeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="forbruk" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hoyestePromille" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="plannedNrUnits" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sessionNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="StartEndTimeStamps" representedClassName=".StartEndTimeStamps" syncable="YES">
+        <attribute name="endStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="TerminatedTimeStamp" representedClassName=".TerminatedTimeStamp" syncable="YES">
+        <attribute name="terminatedTimeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="TimeStamp" representedClassName=".TimeStamp" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="TimeStamp2" representedClassName=".TimeStamp2" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="unitAlkohol" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserData" representedClassName=".UserData" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="costsBeer" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="costsDrink" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="costsShot" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="costsWine" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="goalDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="goalPromille" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DagenDerpaPromille" positionX="-45" positionY="81" width="128" height="75"/>
+        <element name="GraphHistorikk" positionX="-45" positionY="90" width="128" height="90"/>
+        <element name="Historikk" positionX="-54" positionY="0" width="128" height="225"/>
+        <element name="StartEndTimeStamps" positionX="-45" positionY="81" width="128" height="75"/>
+        <element name="TerminatedTimeStamp" positionX="-36" positionY="99" width="128" height="60"/>
+        <element name="TimeStamp" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="TimeStamp2" positionX="-54" positionY="0" width="128" height="75"/>
+        <element name="UserData" positionX="-54" positionY="54" width="128" height="195"/>
+    </elements>
+</model>
