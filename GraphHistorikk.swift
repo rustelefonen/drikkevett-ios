@@ -13,5 +13,9 @@ import CoreData
 class GraphHistorikk: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    @NSManaged var timeStampAdded: NSDate?
+    @NSManaged var currentPromille: NSNumber?
+    @NSManaged var sessionNumber: NSNumber?
 
 }

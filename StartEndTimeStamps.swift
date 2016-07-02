@@ -13,5 +13,7 @@ import CoreData
 class StartEndTimeStamps: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    @NSManaged var startStamp: NSDate?
+    @NSManaged var endStamp: NSDate?
 
 }

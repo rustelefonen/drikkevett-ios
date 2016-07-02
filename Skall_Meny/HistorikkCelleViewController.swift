@@ -161,7 +161,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     func setChartData(months: [String]) {
         // Creating an array of data entries
         var yValues1 : [ChartDataEntry] = [ChartDataEntry]()
-        for var i = 0; i < months.count; i++ {
+        for i in 0 ..< months.count {
             yValues1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
         }
         

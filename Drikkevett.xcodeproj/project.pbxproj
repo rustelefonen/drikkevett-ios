@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F206C801CB7F5420060002C /* WelcomeUserSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */; };
-		7F3085161C6FD5A500A3B041 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3085141C6FD5A500A3B041 /* UserData+CoreDataProperties.swift */; };
 		7F3085171C6FD5A500A3B041 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3085151C6FD5A500A3B041 /* UserData.swift */; };
 		7F3085191C7000B600A3B041 /* OppdaterInnstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */; };
 		7F39FDBC1C60D2D50008BBB6 /* DagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */; };
 		7F39FDBE1C60D3970008BBB6 /* InnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */; };
-		7F3BD2171C7CFAD500357F2A /* TerminatedTimeStamp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3BD2151C7CFAD500357F2A /* TerminatedTimeStamp+CoreDataProperties.swift */; };
 		7F3BD2181C7CFAD500357F2A /* TerminatedTimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */; };
 		7F4C17641C90268500E93E29 /* VeiledningMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */; };
 		7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */; };
@@ -25,7 +23,6 @@
 		7F4D49FF1C8DB760005290C0 /* StartVeiledningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */; };
 		7F4D4A011C8DB955005290C0 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */; };
 		7F4EFF571C8DFEAA00446FAC /* LastMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */; };
-		7F5577AE1C82578D005F4080 /* StartEndTimeStamps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577AC1C82578D005F4080 /* StartEndTimeStamps+CoreDataProperties.swift */; };
 		7F5577AF1C82578E005F4080 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */; };
 		7F5577B31C83263E005F4080 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577B21C83263E005F4080 /* HomeViewController.swift */; };
 		7F5577B51C858B86005F4080 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577B41C858B86005F4080 /* KostnaderViewController.swift */; };
@@ -35,10 +32,8 @@
 		7F6F358C1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */; };
 		7F72DAC21CB6948A005A2CC0 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */; };
 		7F77CCC91C6B339500680C07 /* myCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */; };
-		7F77CCCC1C6B342E00680C07 /* TimeStamp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCCA1C6B342E00680C07 /* TimeStamp+CoreDataProperties.swift */; };
 		7F77CCCD1C6B342E00680C07 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */; };
 		7F77CCCF1C6B347E00680C07 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCCE1C6B347E00680C07 /* DataController.swift */; };
-		7F77CCD21C6B828D00680C07 /* TimeStamp2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCD01C6B828D00680C07 /* TimeStamp2+CoreDataProperties.swift */; };
 		7F77CCD31C6B828D00680C07 /* TimeStamp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */; };
 		7F8F721A1C9CCF1A006BD8C2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */; };
 		7F8F721F1C9CD0FC006BD8C2 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */; };
@@ -52,7 +47,6 @@
 		7FB91C121C86DD5A008A6C1A /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */; };
 		7FC316B81C7DA1E4001B7E18 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */; };
 		7FD198F91C5A5FB7001B829B /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD198F81C5A5FB7001B829B /* InformationViewController.swift */; };
-		7FE298B31C872616006D56D2 /* GraphHistorikk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE298B11C872616006D56D2 /* GraphHistorikk+CoreDataProperties.swift */; };
 		7FE298B41C872616006D56D2 /* GraphHistorikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE298B21C872616006D56D2 /* GraphHistorikk.swift */; };
 		7FE4E4871C58BD12004465B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E4861C58BD12004465B7 /* AppDelegate.swift */; };
 		7FE4E4891C58BD12004465B7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E4881C58BD12004465B7 /* FirstViewController.swift */; };
@@ -64,7 +58,6 @@
 		7FEFADCD1CA019B4004545F7 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */; };
 		7FFBC0DE1C8F01C00015AF32 /* CalcMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */; };
 		7FFBC0E31C8F02490015AF32 /* CalcSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */; };
-		7FFD77F01C6C9A5C00494118 /* Historikk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77EE1C6C9A5C00494118 /* Historikk+CoreDataProperties.swift */; };
 		7FFD77F11C6C9A5C00494118 /* Historikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77EF1C6C9A5C00494118 /* Historikk.swift */; };
 		7FFD77F71C6CBB4B00494118 /* HistorikkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */; };
 		D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; };
@@ -127,13 +120,11 @@
 		7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeUserSectionViewController.swift; sourceTree = "<group>"; };
 		7F206CA41CB80BA90060002C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		7F206CA51CB80BA90060002C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		7F3085141C6FD5A500A3B041 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7F3085151C6FD5A500A3B041 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		7F3085151C6FD5A500A3B041 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = ../UserData.swift; sourceTree = "<group>"; };
 		7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterInnstillingerViewController.swift; sourceTree = "<group>"; };
 		7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DagenDerpaViewController.swift; sourceTree = "<group>"; };
 		7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnholdViewController.swift; sourceTree = "<group>"; };
-		7F3BD2151C7CFAD500357F2A /* TerminatedTimeStamp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TerminatedTimeStamp+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminatedTimeStamp.swift; sourceTree = "<group>"; };
+		7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminatedTimeStamp.swift; path = ../TerminatedTimeStamp.swift; sourceTree = "<group>"; };
 		7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningMiddleViewController.swift; sourceTree = "<group>"; };
 		7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningInnholdViewController.swift; sourceTree = "<group>"; };
 		7F4C178A1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttractionTableViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
@@ -144,8 +135,7 @@
 		7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartVeiledningViewController.swift; sourceTree = "<group>"; };
 		7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnstillingerMenyViewController.swift; sourceTree = "<group>"; };
 		7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMonthViewController.swift; sourceTree = "<group>"; };
-		7F5577AC1C82578D005F4080 /* StartEndTimeStamps+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StartEndTimeStamps+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartEndTimeStamps.swift; sourceTree = "<group>"; };
+		7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = ../StartEndTimeStamps.swift; sourceTree = "<group>"; };
 		7F5577B21C83263E005F4080 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7F5577B41C858B86005F4080 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KostnaderViewController.swift; sourceTree = "<group>"; };
 		7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratulasjonsViewController.swift; sourceTree = "<group>"; };
@@ -154,11 +144,9 @@
 		7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHistorikkCellTableViewCell.swift; sourceTree = "<group>"; };
 		7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		7F77CCCA1C6B342E00680C07 /* TimeStamp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeStamp+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
+		7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp.swift; path = ../TimeStamp.swift; sourceTree = "<group>"; };
 		7F77CCCE1C6B347E00680C07 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		7F77CCD01C6B828D00680C07 /* TimeStamp2+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeStamp2+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStamp2.swift; sourceTree = "<group>"; };
+		7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp2.swift; path = ../TimeStamp2.swift; sourceTree = "<group>"; };
 		7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		7F8F72201C9CD547006BD8C2 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -171,8 +159,7 @@
 		7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkallMenyBrain.swift; sourceTree = "<group>"; };
 		7FD198F81C5A5FB7001B829B /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
-		7FE298B11C872616006D56D2 /* GraphHistorikk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GraphHistorikk+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7FE298B21C872616006D56D2 /* GraphHistorikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHistorikk.swift; sourceTree = "<group>"; };
+		7FE298B21C872616006D56D2 /* GraphHistorikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistorikk.swift; path = ../GraphHistorikk.swift; sourceTree = "<group>"; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE4E4861C58BD12004465B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE4E4881C58BD12004465B7 /* FirstViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -185,8 +172,7 @@
 		7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelkommenViewController.swift; sourceTree = "<group>"; };
 		7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcMiddleViewController.swift; sourceTree = "<group>"; };
 		7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcSwipeViewController.swift; sourceTree = "<group>"; };
-		7FFD77EE1C6C9A5C00494118 /* Historikk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Historikk+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7FFD77EF1C6C9A5C00494118 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Historikk.swift; sourceTree = "<group>"; };
+		7FFD77EF1C6C9A5C00494118 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historikk.swift; path = ../Historikk.swift; sourceTree = "<group>"; };
 		7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorikkViewController.swift; sourceTree = "<group>"; };
 		D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -206,20 +192,7 @@
 		7FE4E47A1C58BD12004465B7 = {
 			isa = PBXGroup;
 			children = (
-				7FE298B11C872616006D56D2 /* GraphHistorikk+CoreDataProperties.swift */,
-				7FE298B21C872616006D56D2 /* GraphHistorikk.swift */,
-				7F5577AC1C82578D005F4080 /* StartEndTimeStamps+CoreDataProperties.swift */,
-				7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */,
-				7F3BD2151C7CFAD500357F2A /* TerminatedTimeStamp+CoreDataProperties.swift */,
-				7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */,
-				7F3085141C6FD5A500A3B041 /* UserData+CoreDataProperties.swift */,
-				7F3085151C6FD5A500A3B041 /* UserData.swift */,
-				7FFD77EE1C6C9A5C00494118 /* Historikk+CoreDataProperties.swift */,
-				7FFD77EF1C6C9A5C00494118 /* Historikk.swift */,
-				7F77CCD01C6B828D00680C07 /* TimeStamp2+CoreDataProperties.swift */,
-				7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */,
-				7F77CCCA1C6B342E00680C07 /* TimeStamp+CoreDataProperties.swift */,
-				7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */,
+				D5412BB41D2810D900445D6C /* entity */,
 				7FE4E4851C58BD12004465B7 /* Skall_Meny */,
 				7FE4E4841C58BD12004465B7 /* Products */,
 			);
@@ -285,6 +258,21 @@
 				7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */,
 				7F4C178A1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift */,
 			);
+			path = Skall_Meny;
+			sourceTree = "<group>";
+		};
+		D5412BB41D2810D900445D6C /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				7FE298B21C872616006D56D2 /* GraphHistorikk.swift */,
+				7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */,
+				7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */,
+				7F3085151C6FD5A500A3B041 /* UserData.swift */,
+				7FFD77EF1C6C9A5C00494118 /* Historikk.swift */,
+				7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */,
+				7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */,
+			);
+			name = entity;
 			path = Skall_Meny;
 			sourceTree = "<group>";
 		};
@@ -417,11 +405,8 @@
 				7FAC1FDF1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift in Sources */,
 				7F63CF8B1C9B04A900F36954 /* GlemteEnheterViewController.swift in Sources */,
 				7FE4E48B1C58BD12004465B7 /* SecondViewController.swift in Sources */,
-				7F3BD2171C7CFAD500357F2A /* TerminatedTimeStamp+CoreDataProperties.swift in Sources */,
 				7FFD77F71C6CBB4B00494118 /* HistorikkViewController.swift in Sources */,
 				7F5577B31C83263E005F4080 /* HomeViewController.swift in Sources */,
-				7F77CCCC1C6B342E00680C07 /* TimeStamp+CoreDataProperties.swift in Sources */,
-				7FFD77F01C6C9A5C00494118 /* Historikk+CoreDataProperties.swift in Sources */,
 				7F39FDBC1C60D2D50008BBB6 /* DagenDerpaViewController.swift in Sources */,
 				7F6289F81CE1FF1900984A11 /* webViewController.swift in Sources */,
 				7F3BD2181C7CFAD500357F2A /* TerminatedTimeStamp.swift in Sources */,
@@ -431,14 +416,12 @@
 				7FE4E4871C58BD12004465B7 /* AppDelegate.swift in Sources */,
 				7F4D49F21C885217005290C0 /* CoreDataMethods.swift in Sources */,
 				7FA387E31C60E0A800593CCA /* InfoViewController.swift in Sources */,
-				7F5577AE1C82578D005F4080 /* StartEndTimeStamps+CoreDataProperties.swift in Sources */,
 				7FB91BF41C859B4E008A6C1A /* SettMalViewController.swift in Sources */,
 				7FB91C121C86DD5A008A6C1A /* GraphViewController.swift in Sources */,
 				7F3085171C6FD5A500A3B041 /* UserData.swift in Sources */,
 				7F77CCCF1C6B347E00680C07 /* DataController.swift in Sources */,
 				7F5577B51C858B86005F4080 /* KostnaderViewController.swift in Sources */,
 				7F39FDBE1C60D3970008BBB6 /* InnholdViewController.swift in Sources */,
-				7F77CCD21C6B828D00680C07 /* TimeStamp2+CoreDataProperties.swift in Sources */,
 				7F8F721A1C9CCF1A006BD8C2 /* CollectionViewCell.swift in Sources */,
 				7F6289D31CE074A700984A11 /* GratulasjonsViewController.swift in Sources */,
 				7F77CCD31C6B828D00680C07 /* TimeStamp2.swift in Sources */,
@@ -455,7 +438,6 @@
 				7FE4E4891C58BD12004465B7 /* FirstViewController.swift in Sources */,
 				7F4EFF571C8DFEAA00446FAC /* LastMonthViewController.swift in Sources */,
 				7F4D49FD1C89E33D005290C0 /* AppColors.swift in Sources */,
-				7F3085161C6FD5A500A3B041 /* UserData+CoreDataProperties.swift in Sources */,
 				7F77CCC91C6B339500680C07 /* myCoreDataModel.xcdatamodeld in Sources */,
 				7FFD77F11C6C9A5C00494118 /* Historikk.swift in Sources */,
 				7F3085191C7000B600A3B041 /* OppdaterInnstillingerViewController.swift in Sources */,
@@ -463,7 +445,6 @@
 				7FD198F91C5A5FB7001B829B /* InformationViewController.swift in Sources */,
 				7F4D49FF1C8DB760005290C0 /* StartVeiledningViewController.swift in Sources */,
 				7FB91BF61C85BA12008A6C1A /* OppdaterKostnaderViewController.swift in Sources */,
-				7FE298B31C872616006D56D2 /* GraphHistorikk+CoreDataProperties.swift in Sources */,
 				7F4C17641C90268500E93E29 /* VeiledningMiddleViewController.swift in Sources */,
 				7F4D49FB1C89ABD7005290C0 /* MiddleUnitViewController.swift in Sources */,
 			);
