@@ -26,7 +26,6 @@ class CoreDataMethods
         let fetchRequest = NSFetchRequest()
         
         fetchRequest.entity = NSEntityDescription.entityForName(entity, inManagedObjectContext: moc)
-        fetchRequest.entity = NSEntityDescription.entityForName(entity, inManagedObjectContext: moc)
         fetchRequest.includesPropertyValues = false
         do {
             if let results = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
@@ -42,39 +41,25 @@ class CoreDataMethods
         }
     }
     
-    func entityIsEmpty(entity: String) -> Bool
-    {
-        
-        let context = moc
+    func entityIsEmpty(entity: String) -> Bool {
         let request = NSFetchRequest(entityName: entity)
         var results : NSArray?
         
         do {
-            results = try context.executeFetchRequest(request)
-            // success ...
-            if let res = results
-            {
-                if res.count == 0
-                {
-                    return true
-                }
-                else
-                {
-                    return false
-                }
-            }
-            else
-            {
+            results = try moc.executeFetchRequest(request)
+            if let res = results {
+                return res.count == 0
+            } else {
                 print("Error: fetch request returned nil")
                 return true
             }
         } catch let error as NSError {
-            // failure
             print("Error: \(error.debugDescription)")
             return true
         }
     }
     
+    //Trenger ikke denne, er bare print?
     func fetchHistorikk() {
         var historikk = [Historikk]()
         let timeStampFetch = NSFetchRequest(entityName: "Historikk")
@@ -97,6 +82,7 @@ class CoreDataMethods
         }
     }
     
+    //Trenger ikke denne, er bare print?
     func printLastValueAddedHistorikk() {
         var historikk = [Historikk]()
         let timeStampFetch = NSFetchRequest(entityName: "Historikk")
@@ -121,6 +107,7 @@ class CoreDataMethods
         }
     }
     
+    //Trenger ikke denn, er bare print?
     func printGraphValues() {
         var graph = [GraphHistorikk]()
         let timeStampFetch = NSFetchRequest(entityName: "GraphHistorikk")

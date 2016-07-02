@@ -59,9 +59,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //return objectsArray.count
-        //return titleItems.count
-        
         if(sectionsInTable.isEmpty){
             return 1
         } else {
@@ -69,21 +66,8 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        //var myView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        //myView.backgroundColor = UIColor.yellowColor()
-        /*
-        var border = CALayer()
-        border.backgroundColor = UIColor.lightGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 0.5)
-        
-        view.layer.addSublayer(border)*/
-
-        // This changes the header background
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {       //Rar kode
         view.tintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.3)
-        /*view.layer.borderColor = UIColor.whiteColor().CGColor
-        view.layer.borderWidth = 1.0*/
-        // Gets the header view as a UITableViewHeaderFooterView and changes the text colour
         let headerView: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         headerView.textLabel!.textColor = UIColor.whiteColor()
     }
@@ -247,13 +231,8 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("LogCell")! as UITableViewCell
-        
-        //let logItem = testArray[indexPath.row]
         let sectionItems = self.getSectionItems(indexPath.section)
-        
         let logItem = sectionItems[indexPath.row]
-        
         print(logItem.dato)
         self.performSegueWithIdentifier("showCellSegue", sender: self)
     }
@@ -263,7 +242,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
         if(editingStyle == .Delete ) {
             
             var sectionItems = self.getSectionItems(indexPath.section)
@@ -271,10 +249,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             
             let object = sectionItems.removeAtIndex(indexPath.row)
             managedObjectContext.deleteObject(object)
-            
-            
-            //managedObjectContext.deleteObject()
-            
             self.historikkTableView.beginUpdates()
             let indexSet = NSMutableIndexSet()
             indexSet.addIndex(indexPath.section)
@@ -285,19 +259,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             self.historikkTableView.deleteSections(indexSet, withRowAnimation: .Automatic)
             
             self.historikkTableView.endUpdates()
-            /*
-            // Find the LogItem object the user is trying to delete
-            let logItemToDelete = logItems[indexPath.row]
-            print("log item to delete")
-            
-            // Delete it from the managedObjectContext
-            managedObjectContext.deleteObject(logItemToDelete)
-            print("deleteObjecet - logitemtodelete")
-            
-            // Tell the table view to animate out that row
-            historikkTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            print("animate, delterowsatindexpaths....")
-            */
             
             // Refresh the table view to indicate that it's deleted
             self.fetchLog()
@@ -313,8 +274,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
-        let titleForButtonDelete = "Slett"
-        return titleForButtonDelete
+        return "Slett"
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -376,10 +336,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
                 self.historikkTableView.reloadData()
             }
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -498,18 +454,9 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //return objectsArray[section].sectionName
-        //return titleItems[section]
-        
-        print("did it get here? ")
-        //print("\(sectionsInTable[section])")
-        
         if(sectionsInTable.isEmpty){
-            print("HERE? ")
             return "Ingen kvelder"
         } else {
-            print("elsen? ")
-            
             return sectionsInTable[section]
         }
     }

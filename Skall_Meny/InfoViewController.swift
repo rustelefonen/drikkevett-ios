@@ -11,36 +11,18 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // Kommunikasjon med database/Core Data
-    let moc = DataController().managedObjectContext
-    
-    // set Colors
-    let setAppColors = AppColors()
-    
-    var titles = [String]()
-    
-    var imageArray = [UIImage]()
+    var titles = ["Trening", "Drikkevettreglene", "Psyken" , "Utseende", "Sex", "RUStelefonen"]
+    var imageArray = [UIImage(named: "Dumbbell-100")!, UIImage(named: "Rules")!, UIImage(named: "Brain-100")!, UIImage(named: "Lips4")!, UIImage(named: "Sex")!, UIImage(named: "rustelefonenLOGO")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titles = ["Trening", "Drikkevettreglene", "Psyken" , "Utseende", "Sex", "RUStelefonen"]
-        imageArray = [UIImage(named: "Dumbbell-100")!, UIImage(named: "Rules")!, UIImage(named: "Brain-100")!, UIImage(named: "Lips4")!, UIImage(named: "Sex")!, UIImage(named: "rustelefonenLOGO")!]
-        
-        // LOAD ARRAYS
-        //titles = ["Trening", "Drikkevettreglene", "Psyken" , "Utseende", "Sex", "RUStelefonen"]
-        //imageArray = [UIImage(named: "Dumbbell-100")!, UIImage(named: "Rules")!, UIImage(named: "Brain-100")!, UIImage(named: "Wink")!, UIImage(named: "Sex")!, UIImage(named: "rustelefonenLOGO")!]
-        
         // Rename back button
-        let backButton = UIBarButtonItem(
-            title: "",
-            style: UIBarButtonItemStyle.Plain, // Note: .Bordered is deprecated
-            target: nil,
-            action: nil
-        )
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         self.navigationItem.title = "Informasjon"
         
+        let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         self.collectionView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
@@ -52,20 +34,14 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false // var false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false // var false
         self.collectionView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        // LOAD ARRAYS
         self.collectionView.reloadData()
     }
     
@@ -75,13 +51,11 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! CollectionViewCell
-        
         cell.imageView?.image = self.imageArray[indexPath.row]
         cell.titleLabel?.text = self.titles[indexPath.row]
         cell.titleLabel?.textColor = UIColor.whiteColor()
         cell.titleLabel?.highlightedTextColor = UIColor.lightGrayColor()
         cell.sizeToFit()
-        
         return cell
     }
     

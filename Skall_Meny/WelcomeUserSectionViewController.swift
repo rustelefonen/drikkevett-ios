@@ -193,7 +193,7 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     
     // TESTING SAVING PIC IN USER DATA
     func documentsPathForFileName(name: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
+        //let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
         //let path = paths[0] as String;
         
         //let fullPath = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent(name)
@@ -232,8 +232,6 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
             } else {
                 //postAlert("Rear Camera does not exist", message: "Application cannot access the camera.")
             }
-            
-            
         } else {
             //postAlert("Camera inaccesible", message: "Application cannot access the camera.")
         }
@@ -282,19 +280,5 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
             //self.motivationPhrases.transform = CGAffineTransformTranslate(self.view.transform, -20.0, 0.0)
             self.greetingLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 25.0)
         }
-    }
-}
-
-extension String {
-    
-    var length: Int {
-        return characters.count
-    }
-    
-    func stringByAppendingPathComponent(path: String) -> String {
-        
-        let nsSt = self as NSString
-        
-        return nsSt.stringByAppendingPathComponent(path)
     }
 }

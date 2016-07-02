@@ -18,12 +18,7 @@ class webViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Rename back button
-        let backButton = UIBarButtonItem(
-            title: "",
-            style: UIBarButtonItemStyle.Plain, // Note: .Bordered is deprecated
-            target: nil,
-            action: nil
-        )
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         self.navigationItem.title = "RUStelefonen.no"
         

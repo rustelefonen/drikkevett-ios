@@ -292,7 +292,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QD8-qj-uBr">
@@ -1834,7 +1834,7 @@
                         <viewControllerLayoutGuide type="bottom" id="z3V-y3-z1a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KY5-BV-g5G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VXE-qM-i7z">
@@ -1971,7 +1971,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qad-sd-W3D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pHn-8m-io1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGT-Ft-naU">
@@ -2086,7 +2086,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Y3f-Pz-0kD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bX6-Pp-9bs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
@@ -2299,7 +2299,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wgk-tY-Tqz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X8B-eT-GJY">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UR-Me-yKu">
@@ -3036,7 +3036,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNq-bf-92t">
@@ -9655,7 +9655,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="dbi-Jl-6nu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hM7-ea-AX6">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0w6-Cd-7u5">
@@ -10992,13 +10992,13 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="euy-sR-EY5"/>
+        <segue reference="vLU-Q5-j6T"/>
+        <segue reference="f4i-bJ-1Z1"/>
+        <segue reference="xdm-17-Bmk"/>
         <segue reference="xx1-SW-dKo"/>
         <segue reference="Tcy-bm-g9P"/>
-        <segue reference="1KO-qk-Z0D"/>
-        <segue reference="xdm-17-Bmk"/>
-        <segue reference="Nxq-Y0-QPi"/>
+        <segue reference="kc0-Y5-8LJ"/>
+        <segue reference="eaF-C5-W73"/>
         <segue reference="hjV-uz-dCY"/>
-        <segue reference="hZa-H8-f1E"/>
     </inferredMetricsTieBreakers>
 </document>

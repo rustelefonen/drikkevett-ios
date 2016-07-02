@@ -59,6 +59,7 @@
 		7FFBC0E31C8F02490015AF32 /* CalcSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */; };
 		7FFD77F11C6C9A5C00494118 /* Historikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77EF1C6C9A5C00494118 /* Historikk.swift */; };
 		7FFD77F71C6CBB4B00494118 /* HistorikkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */; };
+		D5412BBA1D284C4600445D6C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5412BB91D284C4600445D6C /* StringExtension.swift */; };
 		D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; };
 		D5A045DA1D1DF230006D3887 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -122,14 +123,14 @@
 		7F3085151C6FD5A500A3B041 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = ../UserData.swift; sourceTree = "<group>"; };
 		7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterInnstillingerViewController.swift; sourceTree = "<group>"; };
 		7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DagenDerpaViewController.swift; sourceTree = "<group>"; };
-		7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnholdViewController.swift; sourceTree = "<group>"; };
+		7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnholdViewController.swift; path = Skall_Meny/InnholdViewController.swift; sourceTree = "<group>"; };
 		7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminatedTimeStamp.swift; path = ../TerminatedTimeStamp.swift; sourceTree = "<group>"; };
 		7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningMiddleViewController.swift; sourceTree = "<group>"; };
 		7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningInnholdViewController.swift; sourceTree = "<group>"; };
-		7F4D49F11C885217005290C0 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMethods.swift; sourceTree = "<group>"; };
+		7F4D49F11C885217005290C0 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Skall_Meny/CoreDataMethods.swift; sourceTree = "<group>"; };
 		7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitViewController.swift; sourceTree = "<group>"; };
 		7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleUnitViewController.swift; sourceTree = "<group>"; };
-		7F4D49FC1C89E33C005290C0 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		7F4D49FC1C89E33C005290C0 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Skall_Meny/AppColors.swift; sourceTree = "<group>"; };
 		7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartVeiledningViewController.swift; sourceTree = "<group>"; };
 		7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnstillingerMenyViewController.swift; sourceTree = "<group>"; };
 		7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMonthViewController.swift; sourceTree = "<group>"; };
@@ -138,12 +139,12 @@
 		7F5577B41C858B86005F4080 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KostnaderViewController.swift; sourceTree = "<group>"; };
 		7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratulasjonsViewController.swift; sourceTree = "<group>"; };
 		7F6289F71CE1FF1900984A11 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
-		7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlemteEnheterViewController.swift; sourceTree = "<group>"; };
+		7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Skall_Meny/GlemteEnheterViewController.swift; sourceTree = "<group>"; };
 		7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHistorikkCellTableViewCell.swift; sourceTree = "<group>"; };
 		7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp.swift; path = ../TimeStamp.swift; sourceTree = "<group>"; };
-		7F77CCCE1C6B347E00680C07 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		7F77CCCE1C6B347E00680C07 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = Skall_Meny/DataController.swift; sourceTree = "<group>"; };
 		7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp2.swift; path = ../TimeStamp2.swift; sourceTree = "<group>"; };
 		7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
@@ -155,23 +156,24 @@
 		7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterKostnaderViewController.swift; sourceTree = "<group>"; };
 		7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterMalViewController.swift; sourceTree = "<group>"; };
 		7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkallMenyBrain.swift; sourceTree = "<group>"; };
+		7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Skall_Meny/SkallMenyBrain.swift; sourceTree = "<group>"; };
 		7FD198F81C5A5FB7001B829B /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		7FE298B21C872616006D56D2 /* GraphHistorikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistorikk.swift; path = ../GraphHistorikk.swift; sourceTree = "<group>"; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FE4E4861C58BD12004465B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FE4E4861C58BD12004465B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Skall_Meny/AppDelegate.swift; sourceTree = "<group>"; };
 		7FE4E4881C58BD12004465B7 /* FirstViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7FE4E48D1C58BD12004465B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7FE4E48F1C58BD12004465B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FE4E48F1C58BD12004465B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Skall_Meny/Assets.xcassets; sourceTree = "<group>"; };
 		7FE4E4921C58BD12004465B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7FE4E4941C58BD12004465B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE4E4941C58BD12004465B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Skall_Meny/Info.plist; sourceTree = "<group>"; };
 		7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorikkCelleViewController.swift; sourceTree = "<group>"; };
 		7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelkommenViewController.swift; sourceTree = "<group>"; };
 		7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcMiddleViewController.swift; sourceTree = "<group>"; };
 		7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcSwipeViewController.swift; sourceTree = "<group>"; };
 		7FFD77EF1C6C9A5C00494118 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historikk.swift; path = ../Historikk.swift; sourceTree = "<group>"; };
 		7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorikkViewController.swift; sourceTree = "<group>"; };
+		D5412BB91D284C4600445D6C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -190,8 +192,7 @@
 		7FE4E47A1C58BD12004465B7 = {
 			isa = PBXGroup;
 			children = (
-				D5412BB41D2810D900445D6C /* entity */,
-				7FE4E4851C58BD12004465B7 /* Skall_Meny */,
+				D5412BCA1D286E9200445D6C /* Drikkevett */,
 				7FE4E4841C58BD12004465B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -204,61 +205,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7FE4E4851C58BD12004465B7 /* Skall_Meny */ = {
-			isa = PBXGroup;
-			children = (
-				D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */,
-				7FE4E4861C58BD12004465B7 /* AppDelegate.swift */,
-				7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */,
-				7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */,
-				7FD198F81C5A5FB7001B829B /* InformationViewController.swift */,
-				7F5577B41C858B86005F4080 /* KostnaderViewController.swift */,
-				7FB91BF31C859B4E008A6C1A /* SettMalViewController.swift */,
-				7F5577B21C83263E005F4080 /* HomeViewController.swift */,
-				7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */,
-				7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */,
-				7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */,
-				7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */,
-				7FE4E4881C58BD12004465B7 /* FirstViewController.swift */,
-				7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */,
-				7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */,
-				7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */,
-				7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */,
-				7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */,
-				7FAC1FDE1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift */,
-				7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */,
-				7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */,
-				7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */,
-				7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */,
-				7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */,
-				7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */,
-				7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */,
-				7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */,
-				7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */,
-				7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */,
-				7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */,
-				7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */,
-				7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */,
-				7FA387E21C60E0A800593CCA /* InfoViewController.swift */,
-				7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */,
-				7F8F72221C9CD71B006BD8C2 /* InfoDetailViewController.swift */,
-				7F6289F71CE1FF1900984A11 /* webViewController.swift */,
-				7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */,
-				7F8F72201C9CD547006BD8C2 /* CustomCell.swift */,
-				7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */,
-				7F4D49F11C885217005290C0 /* CoreDataMethods.swift */,
-				7F4D49FC1C89E33C005290C0 /* AppColors.swift */,
-				7FE4E48C1C58BD12004465B7 /* Main.storyboard */,
-				7FE4E48F1C58BD12004465B7 /* Assets.xcassets */,
-				7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */,
-				7FE4E4941C58BD12004465B7 /* Info.plist */,
-				7F77CCCE1C6B347E00680C07 /* DataController.swift */,
-				7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */,
-			);
-			path = Skall_Meny;
-			sourceTree = "<group>";
-		};
-		D5412BB41D2810D900445D6C /* entity */ = {
+		D5412BB41D2810D900445D6C /* entities */ = {
 			isa = PBXGroup;
 			children = (
 				7FE298B21C872616006D56D2 /* GraphHistorikk.swift */,
@@ -269,8 +216,178 @@
 				7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */,
 				7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */,
 			);
-			name = entity;
+			name = entities;
 			path = Skall_Meny;
+			sourceTree = "<group>";
+		};
+		D5412BB81D284C2000445D6C /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5412BB91D284C4600445D6C /* StringExtension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		D5412BBC1D28553000445D6C /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				D5412BC41D285E4E00445D6C /* history */,
+				D5412BC31D285E3800445D6C /* dayAfter */,
+				D5412BC21D285E2400445D6C /* planEvening */,
+				D5412BC11D285E0E00445D6C /* calculator */,
+				D5412BC01D285DFD00445D6C /* home */,
+			);
+			name = tabs;
+			sourceTree = "<group>";
+		};
+		D5412BBD1D285D7E00445D6C /* information */ = {
+			isa = PBXGroup;
+			children = (
+				7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */,
+				7F8F72221C9CD71B006BD8C2 /* InfoDetailViewController.swift */,
+				7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */,
+				7FA387E21C60E0A800593CCA /* InfoViewController.swift */,
+				7F6289F71CE1FF1900984A11 /* webViewController.swift */,
+				7F8F72201C9CD547006BD8C2 /* CustomCell.swift */,
+			);
+			name = information;
+			sourceTree = "<group>";
+		};
+		D5412BBF1D285DAF00445D6C /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D5412BC51D285EAF00445D6C /* settings */,
+				D5412BBD1D285D7E00445D6C /* information */,
+				D5412BBC1D28553000445D6C /* tabs */,
+			);
+			name = main;
+			path = Skall_Meny;
+			sourceTree = "<group>";
+		};
+		D5412BC01D285DFD00445D6C /* home */ = {
+			isa = PBXGroup;
+			children = (
+				7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */,
+				7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */,
+				7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */,
+				7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */,
+				7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */,
+				7F5577B21C83263E005F4080 /* HomeViewController.swift */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		D5412BC11D285E0E00445D6C /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */,
+				7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */,
+				7FE4E4881C58BD12004465B7 /* FirstViewController.swift */,
+			);
+			name = calculator;
+			sourceTree = "<group>";
+		};
+		D5412BC21D285E2400445D6C /* planEvening */ = {
+			isa = PBXGroup;
+			children = (
+				7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */,
+				7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */,
+				7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */,
+			);
+			name = planEvening;
+			sourceTree = "<group>";
+		};
+		D5412BC31D285E3800445D6C /* dayAfter */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */,
+				7FAC1FDE1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift */,
+			);
+			name = dayAfter;
+			sourceTree = "<group>";
+		};
+		D5412BC41D285E4E00445D6C /* history */ = {
+			isa = PBXGroup;
+			children = (
+				7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */,
+				7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */,
+				7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */,
+			);
+			name = history;
+			sourceTree = "<group>";
+		};
+		D5412BC51D285EAF00445D6C /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				D5412BC71D2860D100445D6C /* update */,
+				7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		D5412BC61D28607F00445D6C /* intro */ = {
+			isa = PBXGroup;
+			children = (
+				7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */,
+				7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */,
+				7FD198F81C5A5FB7001B829B /* InformationViewController.swift */,
+				7F5577B41C858B86005F4080 /* KostnaderViewController.swift */,
+				7FB91BF31C859B4E008A6C1A /* SettMalViewController.swift */,
+			);
+			name = intro;
+			path = Skall_Meny;
+			sourceTree = "<group>";
+		};
+		D5412BC71D2860D100445D6C /* update */ = {
+			isa = PBXGroup;
+			children = (
+				7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */,
+				7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */,
+				7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */,
+				7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */,
+				7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */,
+			);
+			name = update;
+			sourceTree = "<group>";
+		};
+		D5412BC81D28640200445D6C /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7F77CCCE1C6B347E00680C07 /* DataController.swift */,
+				7F4D49F11C885217005290C0 /* CoreDataMethods.swift */,
+			);
+			name = persistence;
+			sourceTree = "<group>";
+		};
+		D5412BC91D286A0000445D6C /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */,
+				7F4D49FC1C89E33C005290C0 /* AppColors.swift */,
+			);
+			name = utilities;
+			sourceTree = "<group>";
+		};
+		D5412BCA1D286E9200445D6C /* Drikkevett */ = {
+			isa = PBXGroup;
+			children = (
+				D5412BC91D286A0000445D6C /* utilities */,
+				D5412BC81D28640200445D6C /* persistence */,
+				D5412BB81D284C2000445D6C /* extensions */,
+				D5412BB41D2810D900445D6C /* entities */,
+				D5412BC61D28607F00445D6C /* intro */,
+				D5412BBF1D285DAF00445D6C /* main */,
+				7FE4E4861C58BD12004465B7 /* AppDelegate.swift */,
+				7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */,
+				7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */,
+				7FE4E48C1C58BD12004465B7 /* Main.storyboard */,
+				7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */,
+				7FE4E48F1C58BD12004465B7 /* Assets.xcassets */,
+				7FE4E4941C58BD12004465B7 /* Info.plist */,
+				7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */,
+				D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */,
+			);
+			name = Drikkevett;
 			sourceTree = "<group>";
 		};
 		D5A045CB1D1DF221006D3887 /* Products */ = {
@@ -426,6 +543,7 @@
 				7FB91BFA1C85CC04008A6C1A /* OppdaterMalViewController.swift in Sources */,
 				7F77CCCD1C6B342E00680C07 /* TimeStamp.swift in Sources */,
 				7F72DAC21CB6948A005A2CC0 /* PieChartViewController.swift in Sources */,
+				D5412BBA1D284C4600445D6C /* StringExtension.swift in Sources */,
 				7F8F72211C9CD547006BD8C2 /* CustomCell.swift in Sources */,
 				7FE298B41C872616006D56D2 /* GraphHistorikk.swift in Sources */,
 				7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */,
@@ -464,6 +582,7 @@
 				7F206CA41CB80BA90060002C /* nb */,
 			);
 			name = Main.storyboard;
+			path = Skall_Meny;
 			sourceTree = "<group>";
 		};
 		7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */ = {
@@ -473,6 +592,7 @@
 				7F206CA51CB80BA90060002C /* nb */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Skall_Meny;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -634,7 +754,8 @@
 				7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */,
 			);
 			currentVersion = 7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */;
-			path = myCoreDataModel.xcdatamodeld;
+			name = myCoreDataModel.xcdatamodeld;
+			path = Skall_Meny/myCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

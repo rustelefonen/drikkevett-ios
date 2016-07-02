@@ -218,7 +218,7 @@ class InnstillingerMenyViewController: UIViewController {
     
     func storedBoolNotificValue(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        let _ = defaults.setBool(notificIsOn, forKey: defaultKeysInst.boolKey)
+        defaults.setBool(notificIsOn, forKey: defaultKeysInst.boolKey)
         defaults.synchronize()
     }
     
