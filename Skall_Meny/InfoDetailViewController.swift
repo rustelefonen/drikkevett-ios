@@ -35,8 +35,8 @@ class InfoDetailViewController: UIViewController {
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         self.textView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)

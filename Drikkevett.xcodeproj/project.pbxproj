@@ -333,7 +333,7 @@
 				TargetAttributes = {
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = BD4PJR3XJ9;
+						DevelopmentTeam = L9938G85M7;
 					};
 				};
 			};
@@ -595,9 +595,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Skall_Meny/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -616,9 +616,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Skall_Meny/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

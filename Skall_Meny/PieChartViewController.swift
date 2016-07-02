@@ -122,17 +122,17 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         
         var historikk = [Historikk]()
         let timeStampFetch = NSFetchRequest(entityName: "Historikk")
-        var goalProm = fetchGoal()
+        let goalProm = fetchGoal()
         do {
             historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
             for hoyesteProm in historikk {
                 print("Høyeste Prom siste verdi: \(hoyesteProm.hoyestePromille!)")
                 let tempHighProm = hoyesteProm.hoyestePromille! as Double
                 if(goalProm >= tempHighProm){
-                    overGoal++
+                    overGoal += 1
                 }
                 if(goalProm < tempHighProm){
-                    goalReached++
+                    goalReached += 1
                 }
             }
         } catch {
@@ -171,6 +171,4 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
             self.pieChartTextVuew.transform = CGAffineTransformTranslate(self.view.transform, -50.0, 0.0)
         }
     }
-    
-
 }

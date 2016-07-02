@@ -83,7 +83,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
         
-        var vc = viewController as! ChooseUnitViewController
+        let vc = viewController as! ChooseUnitViewController
         var index = vc.pageIndex as Int
         
         
@@ -93,13 +93,13 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
             
         }
         
-        index--
+        index -= 1
         return self.viewControllerAtIndex(index)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var vc = viewController as! ChooseUnitViewController
+        let vc = viewController as! ChooseUnitViewController
         var index = vc.pageIndex as Int
         
         if (index == NSNotFound)
@@ -107,7 +107,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
             return nil
         }
         
-        index++
+        index += 1
         
         if (index == self.pageButtons.count)
         {

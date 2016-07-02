@@ -78,7 +78,7 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
             return nil
         }
         
-        index--
+        index -= 1
         return self.viewControllerAtIndex(index)
     }
     
@@ -92,7 +92,7 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
             return nil
         }
         
-        index++
+        index += 1
         
         if (index == self.pageTitles.count)
         {

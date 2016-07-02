@@ -283,8 +283,8 @@ class FirstViewController: UIViewController {
         // COLORS OG FONTS
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -384,7 +384,7 @@ class FirstViewController: UIViewController {
     }
     
     func testingCheckPromilleActive() -> Double{
-        countCounter++
+        countCounter += 1
         print("---------> UPDATE NR. \(countCounter) (FirstViewController) <---------")
         fetchUserData()
         getDefaultCheckSessionBool()
@@ -453,7 +453,7 @@ class FirstViewController: UIViewController {
             let printDay = brain.getDayOfWeekAsString(startOfSessionStamp)
             let printDate = brain.getDateOfMonth(startOfSessionStamp)
             let printMonth = brain.getMonthOfYear(startOfSessionStamp)
-            var fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
+            let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             
             let totalBeerCost = getBeerCost * historyCountBeer
             let totalWineCost = getWineCost * historyCountWine
@@ -737,21 +737,21 @@ class FirstViewController: UIViewController {
         
         // ØL
         // 1
-        var beer1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer1Stamp, typeOfUnit: "Beer")
-        var beer7Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer7Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer7Stamp, typeOfUnit: "Beer")
         
         // 2
-        var beer2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer2Stamp, typeOfUnit: "Beer")
-        var beer8Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer8Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer8Stamp, typeOfUnit: "Beer")
         
         // 3
-        var beer3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer3Stamp, typeOfUnit: "Beer")
-        var beer9Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer9Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer9Stamp, typeOfUnit: "Beer")
         
         // 4
@@ -761,15 +761,15 @@ class FirstViewController: UIViewController {
         seedUnitTimeStamp(beer10Stamp, typeOfUnit: "Beer")*/
         
         // 5
-        var beer5Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer5Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer5Stamp, typeOfUnit: "Beer")
-        var beer11Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer11Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer11Stamp, typeOfUnit: "Beer")
         
         // 6
-        var beer6Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer6Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer6Stamp, typeOfUnit: "Beer")
-        var beer12Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let beer12Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(beer12Stamp, typeOfUnit: "Beer")
         /*
         // VIN
@@ -781,18 +781,18 @@ class FirstViewController: UIViewController {
         
         // DRINKER
         
-        var drink1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 210, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let drink1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 210, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(drink1Stamp, typeOfUnit: "Drink")
-        var drink2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 240, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let drink2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 240, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(drink2Stamp, typeOfUnit: "Drink")
-        var drink3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 300, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let drink3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 300, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(drink3Stamp, typeOfUnit: "Drink")
  
         
         // SHOTS
-        var shot1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 220, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let shot1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 220, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(shot1Stamp, typeOfUnit: "Shot")
-        var shot2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 310, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+        let shot2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 310, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(shot2Stamp, typeOfUnit: "Shot")
         /*var shot3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 360, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
         seedUnitTimeStamp(shot3Stamp, typeOfUnit: "Shot")
@@ -834,8 +834,8 @@ class FirstViewController: UIViewController {
         if(fetchUnitTypeFromSwipe == "Beer"){
             if(isPlanPartyNotGoing == true) {
                 if(counter > 0 && numberOfBeerCount > 0){
-                    counter--
-                    numberOfBeerCount--
+                    counter -= 1
+                    numberOfBeerCount -= 1
                 } else {
                     counter = 0
                     numberOfBeerCount = 0
@@ -848,8 +848,8 @@ class FirstViewController: UIViewController {
         if(fetchUnitTypeFromSwipe == "Wine"){
             if(isPlanPartyNotGoing == true) {
                 if(counter > 0 && numberOfWineCount > 0){
-                    counter--
-                    numberOfWineCount--
+                    counter -= 1
+                    numberOfWineCount -= 1
                 } else {
                     counter = 0
                     numberOfWineCount = 0
@@ -862,8 +862,8 @@ class FirstViewController: UIViewController {
         if(fetchUnitTypeFromSwipe == "Drink"){
             if(isPlanPartyNotGoing == true) {
                 if(counter > 0  && numberOfDrinkCount > 0){
-                    counter--
-                    numberOfDrinkCount--
+                    counter -= 1
+                    numberOfDrinkCount -= 1
                 } else {
                     counter = 0
                     numberOfDrinkCount = 0
@@ -876,8 +876,8 @@ class FirstViewController: UIViewController {
         if(fetchUnitTypeFromSwipe == "Shot"){
             if(isPlanPartyNotGoing == true) {
                 if(counter > 0  && numberOfShotCount > 0){
-                    counter--
-                    numberOfShotCount--
+                    counter -= 1
+                    numberOfShotCount -= 1
                 } else {
                     counter = 0
                     numberOfShotCount = 0
@@ -1008,8 +1008,8 @@ class FirstViewController: UIViewController {
     func addActionShot(){
         getDefaultCheckSessionBool()
         if(isPlanPartyNotGoing == true) {
-            counter++
-            numberOfShotCount++
+            counter += 1
+            numberOfShotCount += 1
             storeBoolValue()
         } else {
             if(numberOfShotCount <= 0){
@@ -1017,10 +1017,10 @@ class FirstViewController: UIViewController {
                 storeBoolValue()
             } else {
                 unitAlcohol = "Shot"
-                var todaysTimeStamp = NSDate()
+                let todaysTimeStamp = NSDate()
                 seedTimeStamp(todaysTimeStamp)
-                numberOfShotCount--
-                historyCountShot++
+                numberOfShotCount -= 1
+                historyCountShot += 1
                 storeBoolValue()
             }
         }

@@ -82,8 +82,8 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func setColorsAndFontsEnterGoals(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -287,11 +287,11 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func datePickerChanged(sender:UIDatePicker) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
         getDate = sender.date
-        var strDate = dateFormatter.stringFromDate(sender.date)
+        let strDate = dateFormatter.stringFromDate(sender.date)
         dateMessage = "Måldato: \(strDate)"
         datePickerTextField.text = strDate
     }

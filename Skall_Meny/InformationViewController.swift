@@ -277,8 +277,8 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     func setColorsAndFontsEnterPersonaliaView(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -318,7 +318,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func pickViewGenderTextField(){
-        var pickerView = UIPickerView()
+        let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.backgroundColor = UIColor.darkGrayColor()
         chooseGenderTextField.inputView = pickerView

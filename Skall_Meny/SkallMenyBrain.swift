@@ -101,7 +101,7 @@ class SkallMenyBrain
         
         var intervalTerminatedToResumed : NSTimeInterval = NSTimeInterval()
         
-        var checkIfSessionOver = endOfSesStamp.timeIntervalSinceDate(currentTimeStamp)
+        let checkIfSessionOver = endOfSesStamp.timeIntervalSinceDate(currentTimeStamp)
         
         if (checkIfSessionOver < 0.0){
             intervalTerminatedToResumed = endOfSesStamp.timeIntervalSinceDate(terminatedStamp)
@@ -311,7 +311,7 @@ class SkallMenyBrain
             genderScore = 0.60
         }
         
-        var minute : Double = 1 / 60
+        let minute : Double = 1 / 60
         let twoMinute : Double = minute * 2
         let threeMinute : Double = minute * 3
         let fourMinute : Double = minute * 4
@@ -774,7 +774,7 @@ class SkallMenyBrain
                     print("DATE HOME: \(items.timeStampAdded! as NSDate)")
                     let checkTimeStamp = items.timeStampAdded! as NSDate
                     if(checkTimeStamp.isEqualToDate(isDateForekommet)){
-                        var currNr = items.currentPromille! as Double
+                        let currNr = items.currentPromille! as Double
                         print("Current value prom: \(currNr)")
                         let sumPromille = currNr + summelum
                         print("Sum promillen da: \(sumPromille)")

@@ -29,8 +29,8 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Historikk view loaded...")
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -84,7 +84,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         /*view.layer.borderColor = UIColor.whiteColor().CGColor
         view.layer.borderWidth = 1.0*/
         // Gets the header view as a UITableViewHeaderFooterView and changes the text colour
-        var headerView: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        let headerView: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         headerView.textLabel!.textColor = UIColor.whiteColor()
     }
     
@@ -178,7 +178,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             cell.selectedBackgroundView = backgroundView
             
             // DATO TITLE CELL:
-            var dateTextItem = sectionItems[indexPath.row].dato
+            let dateTextItem = sectionItems[indexPath.row].dato
             print("Date Text Item: \(dateTextItem)")
             
             let getDate = brain.getDateOfMonth(dateTextItem)

@@ -480,7 +480,7 @@ class AppColors {
     }
     
     func pageController(){
-        var pageControl = UIPageControl.appearance()
+        let pageControl = UIPageControl.appearance()
         // FARGE DER MAN IKKE ER
         let colorNonPage = UIColor(red: 50/255.0, green: 50/255.0, blue: 50/255.0, alpha: 1.0)
         // FARGE DER MAN ER (179 - 35 - 34)

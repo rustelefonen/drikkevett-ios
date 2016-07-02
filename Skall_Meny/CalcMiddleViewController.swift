@@ -89,7 +89,7 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
         
-        index--
+        index -= 1
         print(index)
         return self.viewControllerAtIndex(index)
     }
@@ -104,7 +104,7 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
         
-        index++
+        index += 1
         
         if (index == self.pageUnits.count)
         {

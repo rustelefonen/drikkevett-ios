@@ -43,12 +43,12 @@ class MainDagenDerpaViewController: UIViewController {
         //UIColor(red: 40/255.0, green: 40/255.0, blue: 40/255.0, alpha: 1.0)
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
-        var behindUnderlineLabel2 = UILabel()
+        let behindUnderlineLabel2 = UILabel()
         behindUnderlineLabel2.text = "____________________________________________"
         behindUnderlineLabel2.textColor = UIColor.lightGrayColor()
         behindUnderlineLabel2.font = UIFont.systemFontOfSize(36)

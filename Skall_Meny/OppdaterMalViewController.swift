@@ -107,8 +107,8 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
     func setColorsAndFontsUpdateGoals(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -198,10 +198,10 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
                 tempDateGoalPromille = item.goalDate! as NSDate
                 getGoalDate = tempDateGoalPromille
                 
-                var dateFormatter = NSDateFormatter()
+                let dateFormatter = NSDateFormatter()
                 dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
                 
-                var strDate = dateFormatter.stringFromDate(tempDateGoalPromille)
+                let strDate = dateFormatter.stringFromDate(tempDateGoalPromille)
                 self.datePickerView.setDate(tempDateGoalPromille, animated: true)
                 self.datePickerTextField.attributedPlaceholder = NSAttributedString(string:"\(strDate)",
                                                                                     attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
@@ -353,7 +353,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
         getGoalDate = sender.date
-        var strDate = dateFormatter.stringFromDate(sender.date)
+        let strDate = dateFormatter.stringFromDate(sender.date)
         datePickerTextField.text = strDate
     }
     

@@ -339,25 +339,25 @@ class SecondViewController: UIViewController {
     @IBAction func minusUnitButton(sender: AnyObject) {
         getUnitValues()
         if(fetchUnitType == "Beer"){
-            beerCount--
+            beerCount -= 1
             if(beerCount <= 0) {
                 beerCount = 0
             }
         }
         if(fetchUnitType == "Wine"){
-            wineCount--
+            wineCount -= 1
             if(wineCount <= 0) {
                 wineCount = 0
             }
         }
         if(fetchUnitType == "Drink"){
-            drinkCount--
+            drinkCount -= 1
             if(drinkCount <= 0) {
                 drinkCount = 0
             }
         }
         if(fetchUnitType == "Shot"){
-            shotCount--
+            shotCount -= 1
             if(shotCount <= 0) {
                 shotCount = 0
             }
@@ -368,25 +368,25 @@ class SecondViewController: UIViewController {
     @IBAction func addUnitButton(sender: AnyObject) {
         getUnitValues()
         if(fetchUnitType == "Beer"){
-            beerCount++
+            beerCount += 1
             if(beerCount >= 20) {
                 beerCount = 20
             }
         }
         if(fetchUnitType == "Wine"){
-            wineCount++
+            wineCount += 1
             if(wineCount >= 20) {
                 wineCount = 20
             }
         }
         if(fetchUnitType == "Drink"){
-            drinkCount++
+            drinkCount += 1
             if(drinkCount >= 20) {
                 drinkCount = 20
             }
         }
         if(fetchUnitType == "Shot"){
-            shotCount++
+            shotCount += 1
             if(shotCount >= 20) {
                 shotCount = 20
             }

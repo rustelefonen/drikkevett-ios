@@ -394,7 +394,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     }
     
     func setVisualsAtViewOpening(){
-        countVisuals++
+        countVisuals += 1
         print("-----> VISUALS NR: \(countVisuals) <----")
         getDefaultValues()
         fetchUserData()
@@ -450,7 +450,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     }
     
     func updatePromilleAppDelegate() -> Double{
-        countCounter++
+        countCounter += 1
         print("\n-> \(countCounter) MINUTE (MainDagenDerpå-APPDELEGATE) <-")
         
         fetchUserData()
@@ -943,7 +943,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
                 
                 // Henter ut verdier hvert (valg av sekunder) for å se hva promillen var på det tidspunkt
                 valueBetweenTerminated += 60
-                countIterasjons++
+                countIterasjons += 1
                 
                 print("\n\nIterasjoner: \(countIterasjons)(\(valueBetweenTerminated))\n")
                 
@@ -951,7 +951,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
                     let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
                     let unit : String = unitOfAlcohol.unitAlkohol! as String
                     
-                    count++
+                    count += 1
                     print("Timestamp nr: \(count)")
                     
                     let datePerMin = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startOfPlanPartyStamp, options: NSCalendarOptions(rawValue: 0))!

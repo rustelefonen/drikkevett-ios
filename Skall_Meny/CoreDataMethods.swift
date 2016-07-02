@@ -151,7 +151,7 @@ class CoreDataMethods
             
             for forbrukLoop in historikk {
                 print("Forbruk: \(forbrukLoop.forbruk!)")
-                var forbruk = forbrukLoop.forbruk! as Double
+                let forbruk = forbrukLoop.forbruk! as Double
                 totalForbruk += forbruk
                 print("Total forbruk: \(totalForbruk)")
             }
@@ -169,7 +169,7 @@ class CoreDataMethods
             historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
             
             for hoyProLoop in historikk {
-                var highestPromille = hoyProLoop.hoyestePromille! as Double
+                let highestPromille = hoyProLoop.hoyestePromille! as Double
                 print("HoyPro enhet: \(highestPromille)")
                 if(totalHighPromille < highestPromille){
                     totalHighPromille = highestPromille
@@ -194,7 +194,7 @@ class CoreDataMethods
             for hoyProLoop in historikk {
                 let highestPromille = hoyProLoop.hoyestePromille! as Double
                 sumHighPromille += highestPromille
-                countNumberOfHighPromilles++
+                countNumberOfHighPromilles += 1
             }
             totalAverageHighPromille = sumHighPromille / countNumberOfHighPromilles
         } catch {
@@ -214,7 +214,7 @@ class CoreDataMethods
             
             for forbrukLoop in historikk {
                 print("Forbruk: \(forbrukLoop.forbruk!)")
-                var forbruk = forbrukLoop.forbruk! as Double
+                let forbruk = forbrukLoop.forbruk! as Double
                 let dates = forbrukLoop.dato! as NSDate
                 
                 let checkMonth = checkDatesOneMonth(dates)
@@ -238,7 +238,7 @@ class CoreDataMethods
         do {
             historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
             for hoyProLoop in historikk {
-                var highestPromille = hoyProLoop.hoyestePromille! as Double
+                let highestPromille = hoyProLoop.hoyestePromille! as Double
                 let dates = hoyProLoop.dato! as NSDate
                 
                 let checkMonth = checkDatesOneMonth(dates)
@@ -278,7 +278,7 @@ class CoreDataMethods
             }
             for promilles in lastMonthArr {
                 sumHighPromille += promilles
-                countNumberOfHighPromilles++
+                countNumberOfHighPromilles += 1
             }
             totalAverageHighPromille = sumHighPromille / countNumberOfHighPromilles
             print("Last Month Avg: \(totalAverageHighPromille)")

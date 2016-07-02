@@ -303,11 +303,11 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             print("items in values Home: \(items)")
             
             if(items > getGoalPromille){
-                overGoal++
+                overGoal += 1
                 
                 colors.append(UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)) // RED
             } else {
-                underGoal++
+                underGoal += 1
                 
                 colors.append(UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)) // GREEN
             }
@@ -367,7 +367,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             for hoyesteProm in historikk {
                 print("Høyeste Prom siste verdi: \(hoyesteProm.hoyestePromille!)")
                 var tempHighProm = hoyesteProm.hoyestePromille! as Double
-                var infinity = Double.infinity
+                let infinity = Double.infinity
                 print("Infinity: \(infinity)")
                 if(tempHighProm >= infinity){
                     tempHighProm = infinity

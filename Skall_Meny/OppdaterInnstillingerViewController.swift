@@ -98,7 +98,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     }
     
     func pickViewGenderTextField(){
-        var pickerView = UIPickerView()
+        let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.backgroundColor = UIColor.darkGrayColor()
         chooseGenderTextField.inputView = pickerView
@@ -108,8 +108,8 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         //ageTextField.textColor = setAppColors.textUnderHeadlinesColors()
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         

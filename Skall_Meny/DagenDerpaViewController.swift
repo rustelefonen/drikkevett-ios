@@ -95,7 +95,7 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
         
-        index--
+        index -= 1
         return self.viewControllerAtIndex(index)
         
     }
@@ -110,7 +110,7 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
         
-        index++
+        index += 1
         
         if (index == self.pageImages.count)
         {
