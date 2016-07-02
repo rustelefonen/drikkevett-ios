@@ -45,7 +45,7 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
         let startVC = self.viewControllerAtIndex(0) as InnholdViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         
         self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 26)
         

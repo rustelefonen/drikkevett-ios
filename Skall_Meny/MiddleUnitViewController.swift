@@ -31,7 +31,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
         let startVC = self.viewControllerAtIndex(0)! as ChooseUnitViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         
         // CONSTRAINTS
         if UIScreen.mainScreen().bounds.size.height == 480 {

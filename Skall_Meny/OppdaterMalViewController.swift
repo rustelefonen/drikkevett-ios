@@ -166,7 +166,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
             errorMessage(errorMsg: "Du kan ikke legge inn høyere mål enn \(maxGoal)!")
         } else if let goalPromilleString:String! = String(goalPromille!){
             
-            let message = "Dine Mål:\nMål Promille: \(goalPromille)\nMål Dato: \(getGoalDate)"
+            //let message = "Dine Mål:\nMål Promille: \(goalPromille)\nMål Dato: \(getGoalDate)"
             
             brainCoreData.updateUserDataGoals(goalPromille, updateGoalDate: getGoalDate)
             fetchUserData()
@@ -339,7 +339,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
         datePickerView.datePickerMode = .Date
         datePickerView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
         datePickerView.backgroundColor = UIColor.darkGrayColor()
-        let dateString = dateFormatter.stringFromDate(datePickerView.date)
+        //let dateString = dateFormatter.stringFromDate(datePickerView.date)
         todayDate = NSDate()
         datePickerView.minimumDate = todayDate
         datePickerView.setDate(tempDateGoalPromille, animated: true)
@@ -349,7 +349,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func datePickerChanged(sender:UIDatePicker) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
         getGoalDate = sender.date

@@ -370,6 +370,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     //                     SJEKK PROMILLE (0003)                          //
     ////////////////////////////////////////////////////////////////////////
     
+    //GJØR DENNE NOE SOM HELST?
+    
     func currentPromilleTimer(){
         var timeTimer = NSTimer()
         timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("visualsCurrentPromille"), userInfo: nil, repeats: true)
@@ -387,6 +389,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             self.currentPromille.text = "\(promille)"
         }
     }
+    
+    //GJØR DENNE NOE SOM HELST?
     
     func startVisualsTimer(){
         var timeTimer = NSTimer()
@@ -443,6 +447,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         self.currentPromille.text = "Nåværende Promille: \(formatCurrentPromille)"
         print("-----> VISUALS NR: \(countVisuals) !SLUTT! <----")
     }
+    
+    //GJØR startDagenDerpa noe som helst?
     
     func startDagenDerpaTimerAppDelegate(){
         var timeTimer = NSTimer()
@@ -563,7 +569,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             }
         }
         return currentPromilleNow
-        print(">-< UPDATE PROMILLE APP DELEGATE OVER >--<\n")
+        //print(">-< UPDATE PROMILLE APP DELEGATE OVER >--<\n")
     }
     
     ////////////////////////////////////////////////////////////////////////
@@ -1011,14 +1017,14 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func setDefaultValues(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storedUnitsBeer = defaults.setInteger(unitsOfBeers, forKey: defaultKeys.keyOne)
-        let storedUnitsWine = defaults.setInteger(unitsOfWines, forKey: defaultKeys.keyTwo)
-        let storedUnitsDrink = defaults.setInteger(unitsOfDrink, forKey: defaultKeys.keyThree)
-        let storedUnitsShot = defaults.setInteger(unitsOfShots, forKey: defaultKeys.keyFour)
-        let storedYestCosts = defaults.setInteger(yestCost, forKey: defaultKeys.keyFive)
-        let storedYestHighProm = defaults.setDouble(yestHighProm, forKey: defaultKeys.keySix)
-        let storedCurrPromNow = defaults.setDouble(currentPromilleNow, forKey: defaultKeys.keySeven)
-        let storedBoolDayAfter = defaults.setBool(isDayAfterRunning, forKey: SkallMenyBrain.defKeyBool.isDayAfterRun)
+        defaults.setInteger(unitsOfBeers, forKey: defaultKeys.keyOne)
+        defaults.setInteger(unitsOfWines, forKey: defaultKeys.keyTwo)
+        defaults.setInteger(unitsOfDrink, forKey: defaultKeys.keyThree)
+        defaults.setInteger(unitsOfShots, forKey: defaultKeys.keyFour)
+        defaults.setInteger(yestCost, forKey: defaultKeys.keyFive)
+        defaults.setDouble(yestHighProm, forKey: defaultKeys.keySix)
+        defaults.setDouble(currentPromilleNow, forKey: defaultKeys.keySeven)
+        defaults.setBool(isDayAfterRunning, forKey: SkallMenyBrain.defKeyBool.isDayAfterRun)
         defaults.synchronize()
     }
     

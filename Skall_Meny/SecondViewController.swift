@@ -75,8 +75,8 @@ class SecondViewController: UIViewController {
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
@@ -122,7 +122,7 @@ class SecondViewController: UIViewController {
         self.addButtonOutlet.setTitle("Legg til", forState: UIControlState.Normal)
         
         setButtonsRounded(setAppColors.roundedCorners())
-        var font = UIFont()
+        //var font = UIFont()
         // CONSTRAINTS
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4
@@ -439,11 +439,11 @@ class SecondViewController: UIViewController {
     
     func storeUnitValues(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storeBeer = defaults.setObject(fetchBeerFromSwipe, forKey: defaultKeys.secondBeerKey)
-        let storeWine = defaults.setObject(fetchWineFromSwipe, forKey: defaultKeys.secondWineKey)
-        let storeDrink = defaults.setObject(fetchDrinkFromSwipe, forKey: defaultKeys.secondDrinkKey)
-        let storeShot = defaults.setObject(fetchShotFromSwipe, forKey: defaultKeys.secondShotKey)
-        let storeUnitType = defaults.setObject(fetchUnitType, forKey: defaultKeys.unitTypeKeys)
+        defaults.setObject(fetchBeerFromSwipe, forKey: defaultKeys.secondBeerKey)
+        defaults.setObject(fetchWineFromSwipe, forKey: defaultKeys.secondWineKey)
+        defaults.setObject(fetchDrinkFromSwipe, forKey: defaultKeys.secondDrinkKey)
+        defaults.setObject(fetchShotFromSwipe, forKey: defaultKeys.secondShotKey)
+        defaults.setObject(fetchUnitType, forKey: defaultKeys.unitTypeKeys)
         defaults.synchronize()
     }
     

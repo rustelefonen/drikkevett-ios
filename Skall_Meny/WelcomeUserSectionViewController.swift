@@ -194,7 +194,8 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     // TESTING SAVING PIC IN USER DATA
     func documentsPathForFileName(name: String) -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
-        let path = paths[0] as String;
+        //let path = paths[0] as String;
+        
         //let fullPath = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent(name)
         
         let writePath = NSTemporaryDirectory().stringByAppendingPathComponent(name)

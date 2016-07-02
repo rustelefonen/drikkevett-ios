@@ -209,7 +209,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             //cell.textLabel!.text = dateTextItem.text
             let getCosts = sectionItems[indexPath.row].forbruk as! Int
             let getDay = brain.getDayOfWeekAsString(dateTextItem)
-            let getMonth = brain.getMonthOfYear(dateTextItem)
+            //let getMonth = brain.getMonthOfYear(dateTextItem)
             let headTitleString = "\(getDay!) brukte du \(getCosts),-"
             print("HeadTitleString: \(headTitleString)")
             
@@ -247,7 +247,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LogCell")! as UITableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier("LogCell")! as UITableViewCell
         
         //let logItem = testArray[indexPath.row]
         let sectionItems = self.getSectionItems(indexPath.section)
@@ -339,7 +339,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             let antallVinInt = sectionItems[indexPath.row].antallVin as! Int
             let antallDrinkInt = sectionItems[indexPath.row].antallDrink as! Int
             let antallShotInt = sectionItems[indexPath.row].antallShot as! Int
-            let dateStamp = sectionItems[indexPath.row].dato! as NSDate
+            //let dateStamp = sectionItems[indexPath.row].dato! as NSDate
             let sessionNumber = sectionItems[indexPath.row].sessionNumber! as Int
             
             
@@ -478,7 +478,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             let dateTextItem = item as Historikk
             let df = NSDateFormatter()
             df.dateFormat = "MM/dd/yyyy"
-            let dateString = df.stringFromDate(dateTextItem.dato!)
+            //let dateString = df.stringFromDate(dateTextItem.dato!)
             
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components([.Day , .Month , .Year], fromDate: dateTextItem.dato!)

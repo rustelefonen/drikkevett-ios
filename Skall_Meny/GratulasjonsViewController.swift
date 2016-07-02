@@ -116,7 +116,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         UIImageWriteToSavedPhotosAlbum(captureScreen(), nil, nil, nil)
         
         if let wnd = self.view{
-            var v = UIView(frame: wnd.bounds)
+            let v = UIView(frame: wnd.bounds)
             v.backgroundColor = UIColor.whiteColor()
             v.alpha = 1
             

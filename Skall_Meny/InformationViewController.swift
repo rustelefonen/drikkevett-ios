@@ -84,7 +84,6 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func setConstraints(){
-        var font = UIFont()
         // CONSTRAINTS
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4

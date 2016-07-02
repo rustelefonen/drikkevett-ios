@@ -28,6 +28,9 @@ class CalcSwipeViewController: UIViewController {
         //self.unitImageView.image = UIImage(named: self.imageFile)
         
         
+        //DETTE GJØR INGEN TING? (font-greiene)
+        
+        
         var font = UIFont()
         // CONSTRAINTS
         if UIScreen.mainScreen().bounds.size.height == 480 {

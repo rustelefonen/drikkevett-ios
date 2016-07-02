@@ -15,7 +15,6 @@
 		7F3BD2181C7CFAD500357F2A /* TerminatedTimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */; };
 		7F4C17641C90268500E93E29 /* VeiledningMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */; };
 		7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */; };
-		7F4C178B1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C178A1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift */; };
 		7F4D49F21C885217005290C0 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49F11C885217005290C0 /* CoreDataMethods.swift */; };
 		7F4D49F71C89A4F9005290C0 /* ChooseUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */; };
 		7F4D49FB1C89ABD7005290C0 /* MiddleUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */; };
@@ -127,7 +126,6 @@
 		7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminatedTimeStamp.swift; path = ../TerminatedTimeStamp.swift; sourceTree = "<group>"; };
 		7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningMiddleViewController.swift; sourceTree = "<group>"; };
 		7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningInnholdViewController.swift; sourceTree = "<group>"; };
-		7F4C178A1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttractionTableViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
 		7F4D49F11C885217005290C0 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMethods.swift; sourceTree = "<group>"; };
 		7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitViewController.swift; sourceTree = "<group>"; };
 		7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleUnitViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				7FE4E4941C58BD12004465B7 /* Info.plist */,
 				7F77CCCE1C6B347E00680C07 /* DataController.swift */,
 				7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */,
-				7F4C178A1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift */,
 			);
 			path = Skall_Meny;
 			sourceTree = "<group>";
@@ -430,7 +427,6 @@
 				7F77CCCD1C6B342E00680C07 /* TimeStamp.swift in Sources */,
 				7F72DAC21CB6948A005A2CC0 /* PieChartViewController.swift in Sources */,
 				7F8F72211C9CD547006BD8C2 /* CustomCell.swift in Sources */,
-				7F4C178B1C9066E100E93E29 /* AttractionTableViewController+UIViewControllerPreviewing.swift in Sources */,
 				7FE298B41C872616006D56D2 /* GraphHistorikk.swift in Sources */,
 				7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */,
 				7F206C801CB7F5420060002C /* WelcomeUserSectionViewController.swift in Sources */,

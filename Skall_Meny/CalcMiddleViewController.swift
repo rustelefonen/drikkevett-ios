@@ -32,9 +32,9 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
         let startVC = self.viewControllerAtIndex(0) as CalcSwipeViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         
-        var font = UIFont()
+        //var font = UIFont()
         // CONSTRAINTS
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4

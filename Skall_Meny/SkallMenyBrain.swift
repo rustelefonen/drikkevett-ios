@@ -199,7 +199,7 @@ class SkallMenyBrain
         do {
             timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
             for unitOfAlcohol in timeStamps {
-                let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
+                //let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
                 let unit : String = unitOfAlcohol.unitAlkohol! as String
                 
                 if(unit == "Beer"){
@@ -655,7 +655,7 @@ class SkallMenyBrain
                
                 let mathematicalDateFromStart = datePerMin.timeIntervalSinceDate(startPlanStamp)
                 let convertMin = mathematicalDateFromStart / 60
-                var checkPromille : Double = 0.0
+                //var checkPromille : Double = 0.0
                 let convertHours = convertMin / 60 as Double
                 
                 

@@ -477,7 +477,7 @@ class CoreDataMethods
     func updateCoreDataHighPromille(updateHighestPromille: Double, addBeer: Int, addWine: Int, addDrink: Int, addShot: Int){
         var getCostsArray : [Int] = [Int]()
         getCostsArray = fetchUnitCosts()
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Historikk")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [Historikk]
@@ -536,7 +536,7 @@ class CoreDataMethods
     
     func tempStoreUnits(typeOfUnit: String) -> Int{
         var unit = 0
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Historikk")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [Historikk]
@@ -578,7 +578,7 @@ class CoreDataMethods
         var tempStoredCosts = 0
         var getCostsArray : [Int] = [Int]()
         getCostsArray = fetchUnitCosts()
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Historikk")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [Historikk]
@@ -613,7 +613,7 @@ class CoreDataMethods
     
     
     func updateGraphHighestProm(updateHighestPromille: Double){
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Historikk")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [Historikk]
@@ -796,7 +796,7 @@ class CoreDataMethods
     
     // UPDATE PERSONALIA
     func updateUserDataPersonalia(updateGender: Bool, updateAge: Int, updateWeight: Double, updateHeight: String) -> String{
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "UserData")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [UserData]
@@ -827,7 +827,7 @@ class CoreDataMethods
     
     // UPDATE COSTS
     func updateUserDataCosts(updateBeerCost: Int, updateWineCost: Int, updateDrinkCost: Int, updateShotCost: Int) -> String{
-        var error: NSError?
+        //var error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "UserData")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [UserData]
@@ -858,7 +858,7 @@ class CoreDataMethods
     
     // UPDATE GOALS
     func updateUserDataGoals(updateGoalPromille: Double, updateGoalDate: NSDate) -> String{
-        let error: NSError?
+        //let error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "UserData")
         do {
             let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [UserData]

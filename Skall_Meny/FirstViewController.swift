@@ -673,8 +673,8 @@ class FirstViewController: UIViewController {
         let fullDate = "\(dummyPrintDay!) \(dummyPrintDate!). \(dummyPrintMonth!)"
         print("FullDate: \(fullDate)")
         
-        var minuteArray = [Int]()
-        var indexSomething = 0
+        //var minuteArray = [Int]()
+        //var indexSomething = 0
         
         // DUMMY COUNT
         let dummyCountBeer = 8
@@ -1277,7 +1277,7 @@ class FirstViewController: UIViewController {
      
      func storedPlannedCounter(){
           let defaults = NSUserDefaults.standardUserDefaults()
-          let storePlanCounter = defaults.setDouble(plannedCounter, forKey: defaultKeys.keyForPlannedCounter)
+          defaults.setDouble(plannedCounter, forKey: defaultKeys.keyForPlannedCounter)
           defaults.synchronize()
      }
      
@@ -1293,15 +1293,15 @@ class FirstViewController: UIViewController {
     
     func storeIfSesStartedBool(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storedBoolSession = defaults.setBool(isPlanPartyNotGoing, forKey: defaultKeys.keyBool)
+        defaults.setBool(isPlanPartyNotGoing, forKey: defaultKeys.keyBool)
         defaults.synchronize()
     }
     
     // HAR FØRSTE ENHET BLITT LAGT TIL:
     func storeIsFirstUnitAdded(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storedBoolSession = defaults.setBool(hasFirstUnitBeenAdded, forKey: defaultKeys.firstUnitAdded)
-        let storeDateFirstUnit = defaults.setObject(setDateOnFirstUnitAdded, forKey: defaultKeys.storeFirstUnitAddedDate)
+        defaults.setBool(hasFirstUnitBeenAdded, forKey: defaultKeys.firstUnitAdded)
+        defaults.setObject(setDateOnFirstUnitAdded, forKey: defaultKeys.storeFirstUnitAddedDate)
         defaults.synchronize()
     }
     
@@ -1319,19 +1319,19 @@ class FirstViewController: UIViewController {
     
     func storeBoolValue(){ // SETTING
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storeCountBeer = defaults.setInteger(numberOfBeerCount, forKey: defaultKeys.beerKey)
-        let storeCountWine = defaults.setInteger(numberOfWineCount, forKey: defaultKeys.wineKey)
-        let storeCountDrink = defaults.setInteger(numberOfDrinkCount, forKey: defaultKeys.drinkKey)
-        let storeCountShot = defaults.setInteger(numberOfShotCount, forKey: defaultKeys.shotKey)
-        let storeHistCountBeer = defaults.setInteger(historyCountBeer, forKey: defaultKeys.histBeerKey)
-        let storeHistCountWine = defaults.setInteger(historyCountWine, forKey: defaultKeys.histWineKey)
-        let storeHistCountDrink = defaults.setInteger(historyCountDrink, forKey: defaultKeys.histDrinkKey)
-        let storeHistCountShot = defaults.setInteger(historyCountShot, forKey: defaultKeys.histShotKey)
-        let highPromilleStored = defaults.setObject(highestPromille, forKey: defaultKeys.tempHighPromilleKey)
-        let numberOfSession = defaults.setInteger(numberOfSessionPlanParty, forKey: defaultKeys.numberOfSessions)
-        let unitAlcoSave = defaults.setObject(unitAlcohol, forKey: defaultKeys.saveUnitAlco)
-        let totUnits = defaults.setDouble(counter, forKey: defaultKeys.totalNrOfUnits)
-        let overGoalPReached = defaults.setBool(overGoalPromille, forKey: defaultKeys.overGoalProm)
+        defaults.setInteger(numberOfBeerCount, forKey: defaultKeys.beerKey)
+        defaults.setInteger(numberOfWineCount, forKey: defaultKeys.wineKey)
+        defaults.setInteger(numberOfDrinkCount, forKey: defaultKeys.drinkKey)
+        defaults.setInteger(numberOfShotCount, forKey: defaultKeys.shotKey)
+        defaults.setInteger(historyCountBeer, forKey: defaultKeys.histBeerKey)
+        defaults.setInteger(historyCountWine, forKey: defaultKeys.histWineKey)
+        defaults.setInteger(historyCountDrink, forKey: defaultKeys.histDrinkKey)
+        defaults.setInteger(historyCountShot, forKey: defaultKeys.histShotKey)
+        defaults.setObject(highestPromille, forKey: defaultKeys.tempHighPromilleKey)
+        defaults.setInteger(numberOfSessionPlanParty, forKey: defaultKeys.numberOfSessions)
+        defaults.setObject(unitAlcohol, forKey: defaultKeys.saveUnitAlco)
+        defaults.setDouble(counter, forKey: defaultKeys.totalNrOfUnits)
+        defaults.setBool(overGoalPromille, forKey: defaultKeys.overGoalProm)
         defaults.synchronize()
         print("storeBoolValue() runned...")
     }
@@ -1356,7 +1356,7 @@ class FirstViewController: UIViewController {
     // LAGRE VALUE TYPES
     func storeFetchValueType(){ // SETTING
         let defaults = NSUserDefaults.standardUserDefaults()
-        let unitTypeFetched = defaults.setObject(fetchUnitTypeFromSwipe, forKey: defaultKeys.fetchUnitType)
+        defaults.setObject(fetchUnitTypeFromSwipe, forKey: defaultKeys.fetchUnitType)
         defaults.synchronize()
     }
     

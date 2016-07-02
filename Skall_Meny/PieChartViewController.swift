@@ -38,7 +38,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         //Values:
         let months = ["", ""]
         populatePieChart()
-        var unitsSold = [Double(goalReached), Double(overGoal)]
+        let unitsSold = [Double(goalReached), Double(overGoal)]
         
         //DUMMY DATA:
         //unitsSold = [10.0, 15.0]

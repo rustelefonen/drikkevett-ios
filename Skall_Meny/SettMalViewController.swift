@@ -277,7 +277,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView.datePickerMode = .Date
         datePickerView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
         datePickerView.backgroundColor = UIColor.darkGrayColor()
-        let dateString = dateFormatter.stringFromDate(datePickerView.date)
+        //let dateString = dateFormatter.stringFromDate(datePickerView.date)
         todayDate = NSDate()
         datePickerView.minimumDate = todayDate
         datePickerView.setDate(todayDate, animated: true)

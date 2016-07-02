@@ -190,7 +190,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
                 }
                 
                 let tempStringHighProm = String(format: "%.2f", tempHighProm)
-                String(format:"%.2f", tempStringHighProm)
+                //String(format:"%.2f", tempStringHighProm)
                 let formatHighProm = Double(tempStringHighProm)
                 
                 YAxis.append(formatHighProm!)
