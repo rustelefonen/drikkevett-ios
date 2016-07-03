@@ -7,59 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F206C801CB7F5420060002C /* WelcomeUserSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */; };
-		7F3085171C6FD5A500A3B041 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3085151C6FD5A500A3B041 /* UserData.swift */; };
-		7F3085191C7000B600A3B041 /* OppdaterInnstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */; };
-		7F39FDBC1C60D2D50008BBB6 /* DagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */; };
-		7F39FDBE1C60D3970008BBB6 /* InnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */; };
-		7F3BD2181C7CFAD500357F2A /* TerminatedTimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */; };
-		7F4C17641C90268500E93E29 /* VeiledningMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */; };
-		7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */; };
-		7F4D49F21C885217005290C0 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49F11C885217005290C0 /* CoreDataMethods.swift */; };
-		7F4D49F71C89A4F9005290C0 /* ChooseUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */; };
-		7F4D49FB1C89ABD7005290C0 /* MiddleUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */; };
-		7F4D49FD1C89E33D005290C0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49FC1C89E33C005290C0 /* AppColors.swift */; };
-		7F4D49FF1C8DB760005290C0 /* StartVeiledningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */; };
-		7F4D4A011C8DB955005290C0 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */; };
-		7F4EFF571C8DFEAA00446FAC /* LastMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */; };
-		7F5577AF1C82578E005F4080 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */; };
-		7F5577B31C83263E005F4080 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577B21C83263E005F4080 /* HomeViewController.swift */; };
-		7F5577B51C858B86005F4080 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5577B41C858B86005F4080 /* KostnaderViewController.swift */; };
-		7F6289D31CE074A700984A11 /* GratulasjonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */; };
-		7F6289F81CE1FF1900984A11 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6289F71CE1FF1900984A11 /* webViewController.swift */; };
-		7F63CF8B1C9B04A900F36954 /* GlemteEnheterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */; };
-		7F6F358C1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */; };
-		7F72DAC21CB6948A005A2CC0 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */; };
-		7F77CCC91C6B339500680C07 /* myCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */; };
-		7F77CCCD1C6B342E00680C07 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */; };
-		7F77CCCF1C6B347E00680C07 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCCE1C6B347E00680C07 /* DataController.swift */; };
-		7F77CCD31C6B828D00680C07 /* TimeStamp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */; };
-		7F8F721A1C9CCF1A006BD8C2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */; };
-		7F8F721F1C9CD0FC006BD8C2 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */; };
-		7F8F72211C9CD547006BD8C2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F72201C9CD547006BD8C2 /* CustomCell.swift */; };
-		7F8F72231C9CD71B006BD8C2 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F72221C9CD71B006BD8C2 /* InfoDetailViewController.swift */; };
-		7FA387E31C60E0A800593CCA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA387E21C60E0A800593CCA /* InfoViewController.swift */; };
-		7FAC1FDF1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC1FDE1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift */; };
-		7FB91BF41C859B4E008A6C1A /* SettMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB91BF31C859B4E008A6C1A /* SettMalViewController.swift */; };
-		7FB91BF61C85BA12008A6C1A /* OppdaterKostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */; };
-		7FB91BFA1C85CC04008A6C1A /* OppdaterMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */; };
-		7FB91C121C86DD5A008A6C1A /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */; };
-		7FC316B81C7DA1E4001B7E18 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */; };
-		7FD198F91C5A5FB7001B829B /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD198F81C5A5FB7001B829B /* InformationViewController.swift */; };
-		7FE298B41C872616006D56D2 /* GraphHistorikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE298B21C872616006D56D2 /* GraphHistorikk.swift */; };
-		7FE4E4871C58BD12004465B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E4861C58BD12004465B7 /* AppDelegate.swift */; };
-		7FE4E4891C58BD12004465B7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E4881C58BD12004465B7 /* FirstViewController.swift */; };
-		7FE4E48B1C58BD12004465B7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */; };
-		7FE4E48E1C58BD12004465B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4E48C1C58BD12004465B7 /* Main.storyboard */; };
-		7FE4E4901C58BD12004465B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4E48F1C58BD12004465B7 /* Assets.xcassets */; };
-		7FE4E4931C58BD12004465B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */; };
-		7FE94FBB1C6D567A00E33AE0 /* HistorikkCelleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */; };
-		7FEFADCD1CA019B4004545F7 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */; };
-		7FFBC0DE1C8F01C00015AF32 /* CalcMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */; };
-		7FFBC0E31C8F02490015AF32 /* CalcSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */; };
-		7FFD77F11C6C9A5C00494118 /* Historikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77EF1C6C9A5C00494118 /* Historikk.swift */; };
-		7FFD77F71C6CBB4B00494118 /* HistorikkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */; };
-		D5412BBA1D284C4600445D6C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5412BB91D284C4600445D6C /* StringExtension.swift */; };
+		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
+		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
+		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
+		D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E241D29A239004FC6A3 /* TerminatedTimeStamp.swift */; };
+		D5958E271D29A243004FC6A3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E261D29A243004FC6A3 /* UserData.swift */; };
+		D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E281D29A24E004FC6A3 /* TimeStamp2.swift */; };
+		D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E2A1D29A25A004FC6A3 /* TimeStamp.swift */; };
+		D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E2C1D29A29A004FC6A3 /* GraphHistorikk.swift */; };
+		D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E2E1D29A2A9004FC6A3 /* Historikk.swift */; };
+		D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */; };
+		D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E351D29A430004FC6A3 /* AppDelegate.swift */; };
+		D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */; };
+		D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */; };
+		D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */; };
+		D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */; };
+		D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3F1D29A4D1004FC6A3 /* DataController.swift */; };
+		D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */; };
+		D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */; };
+		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
+		D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */; };
+		D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */; };
+		D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */; };
+		D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */; };
+		D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */; };
+		D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E511D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift */; };
+		D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */; };
+		D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */; };
+		D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */; };
+		D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E591D29A682004FC6A3 /* CustomCell.swift */; };
+		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
+		D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */; };
+		D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */; };
+		D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */; };
+		D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */; };
+		D5958E661D29A70B004FC6A3 /* HistorikkCelleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */; };
+		D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */; };
+		D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */; };
+		D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */; };
+		D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */; };
+		D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */; };
+		D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E711D29A78F004FC6A3 /* SecondViewController.swift */; };
+		D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */; };
+		D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */; };
+		D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */; };
+		D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E791D29A7F4004FC6A3 /* GraphViewController.swift */; };
+		D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E7B1D29A7FE004FC6A3 /* LastMonthViewController.swift */; };
+		D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */; };
+		D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */; };
+		D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E811D29A817004FC6A3 /* PieChartViewController.swift */; };
+		D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E831D29A81F004FC6A3 /* HomeViewController.swift */; };
+		D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E851D29A932004FC6A3 /* Main.storyboard */; };
+		D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E881D29A93D004FC6A3 /* Main.strings */; };
+		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
+		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
+		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
+		D5958E941D29AA0A004FC6A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5958E931D29AA0A004FC6A3 /* Info.plist */; };
 		D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; };
 		D5A045DA1D1DF230006D3887 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -117,63 +120,63 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeUserSectionViewController.swift; sourceTree = "<group>"; };
-		7F206CA41CB80BA90060002C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
-		7F206CA51CB80BA90060002C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		7F3085151C6FD5A500A3B041 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = ../UserData.swift; sourceTree = "<group>"; };
-		7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterInnstillingerViewController.swift; sourceTree = "<group>"; };
-		7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DagenDerpaViewController.swift; sourceTree = "<group>"; };
-		7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnholdViewController.swift; path = Skall_Meny/InnholdViewController.swift; sourceTree = "<group>"; };
-		7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminatedTimeStamp.swift; path = ../TerminatedTimeStamp.swift; sourceTree = "<group>"; };
-		7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningMiddleViewController.swift; sourceTree = "<group>"; };
-		7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiledningInnholdViewController.swift; sourceTree = "<group>"; };
-		7F4D49F11C885217005290C0 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Skall_Meny/CoreDataMethods.swift; sourceTree = "<group>"; };
-		7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitViewController.swift; sourceTree = "<group>"; };
-		7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleUnitViewController.swift; sourceTree = "<group>"; };
-		7F4D49FC1C89E33C005290C0 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Skall_Meny/AppColors.swift; sourceTree = "<group>"; };
-		7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartVeiledningViewController.swift; sourceTree = "<group>"; };
-		7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnstillingerMenyViewController.swift; sourceTree = "<group>"; };
-		7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMonthViewController.swift; sourceTree = "<group>"; };
-		7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = ../StartEndTimeStamps.swift; sourceTree = "<group>"; };
-		7F5577B21C83263E005F4080 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7F5577B41C858B86005F4080 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KostnaderViewController.swift; sourceTree = "<group>"; };
-		7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratulasjonsViewController.swift; sourceTree = "<group>"; };
-		7F6289F71CE1FF1900984A11 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
-		7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Skall_Meny/GlemteEnheterViewController.swift; sourceTree = "<group>"; };
-		7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHistorikkCellTableViewCell.swift; sourceTree = "<group>"; };
-		7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
-		7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp.swift; path = ../TimeStamp.swift; sourceTree = "<group>"; };
-		7F77CCCE1C6B347E00680C07 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = Skall_Meny/DataController.swift; sourceTree = "<group>"; };
-		7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp2.swift; path = ../TimeStamp2.swift; sourceTree = "<group>"; };
-		7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
-		7F8F72201C9CD547006BD8C2 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		7F8F72221C9CD71B006BD8C2 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDetailViewController.swift; sourceTree = "<group>"; };
-		7FA387E21C60E0A800593CCA /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		7FAC1FDE1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDagenDerpaViewController.swift; sourceTree = "<group>"; };
-		7FB91BF31C859B4E008A6C1A /* SettMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettMalViewController.swift; sourceTree = "<group>"; };
-		7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterKostnaderViewController.swift; sourceTree = "<group>"; };
-		7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppdaterMalViewController.swift; sourceTree = "<group>"; };
-		7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Skall_Meny/SkallMenyBrain.swift; sourceTree = "<group>"; };
-		7FD198F81C5A5FB7001B829B /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
-		7FE298B21C872616006D56D2 /* GraphHistorikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistorikk.swift; path = ../GraphHistorikk.swift; sourceTree = "<group>"; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FE4E4861C58BD12004465B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Skall_Meny/AppDelegate.swift; sourceTree = "<group>"; };
-		7FE4E4881C58BD12004465B7 /* FirstViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		7FE4E48D1C58BD12004465B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7FE4E48F1C58BD12004465B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Skall_Meny/Assets.xcassets; sourceTree = "<group>"; };
-		7FE4E4921C58BD12004465B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7FE4E4941C58BD12004465B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Skall_Meny/Info.plist; sourceTree = "<group>"; };
-		7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorikkCelleViewController.swift; sourceTree = "<group>"; };
-		7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelkommenViewController.swift; sourceTree = "<group>"; };
-		7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcMiddleViewController.swift; sourceTree = "<group>"; };
-		7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcSwipeViewController.swift; sourceTree = "<group>"; };
-		7FFD77EF1C6C9A5C00494118 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historikk.swift; path = ../Historikk.swift; sourceTree = "<group>"; };
-		7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorikkViewController.swift; sourceTree = "<group>"; };
-		D5412BB91D284C4600445D6C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
+		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
+		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
+		D5958E241D29A239004FC6A3 /* TerminatedTimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminatedTimeStamp.swift; path = Drikkevett/TerminatedTimeStamp.swift; sourceTree = SOURCE_ROOT; };
+		D5958E261D29A243004FC6A3 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Drikkevett/UserData.swift; sourceTree = SOURCE_ROOT; };
+		D5958E281D29A24E004FC6A3 /* TimeStamp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp2.swift; path = Drikkevett/TimeStamp2.swift; sourceTree = SOURCE_ROOT; };
+		D5958E2A1D29A25A004FC6A3 /* TimeStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeStamp.swift; path = Drikkevett/TimeStamp.swift; sourceTree = SOURCE_ROOT; };
+		D5958E2C1D29A29A004FC6A3 /* GraphHistorikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistorikk.swift; path = Drikkevett/GraphHistorikk.swift; sourceTree = SOURCE_ROOT; };
+		D5958E2E1D29A2A9004FC6A3 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historikk.swift; path = Drikkevett/Historikk.swift; sourceTree = SOURCE_ROOT; };
+		D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D5958E351D29A430004FC6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Drikkevett/AppDelegate.swift; sourceTree = "<group>"; };
+		D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnholdViewController.swift; path = Drikkevett/InnholdViewController.swift; sourceTree = "<group>"; };
+		D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Drikkevett/GlemteEnheterViewController.swift; sourceTree = "<group>"; };
+		D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Drikkevett/SkallMenyBrain.swift; sourceTree = "<group>"; };
+		D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Drikkevett/CoreDataMethods.swift; sourceTree = "<group>"; };
+		D5958E3F1D29A4D1004FC6A3 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = Drikkevett/DataController.swift; sourceTree = "<group>"; };
+		D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartVeiledningViewController.swift; path = Drikkevett/StartVeiledningViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VelkommenViewController.swift; path = Drikkevett/VelkommenViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KostnaderViewController.swift; path = Drikkevett/KostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettMalViewController.swift; path = Drikkevett/SettMalViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeiledningInnholdViewController.swift; path = Drikkevett/VeiledningInnholdViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeiledningMiddleViewController.swift; path = Drikkevett/VeiledningMiddleViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterMalViewController.swift; path = Drikkevett/OppdaterMalViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E511D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterInnstillingerViewController.swift; path = Drikkevett/OppdaterInnstillingerViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterKostnaderViewController.swift; path = Drikkevett/OppdaterKostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnstillingerMenyViewController.swift; path = Drikkevett/InnstillingerMenyViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = Drikkevett/CollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D5958E591D29A682004FC6A3 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = Drikkevett/CustomCell.swift; sourceTree = SOURCE_ROOT; };
+		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = Drikkevett/InfoTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Drikkevett/InfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = Drikkevett/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHistorikkCellTableViewCell.swift; path = Drikkevett/CustomHistorikkCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorikkCelleViewController.swift; path = Drikkevett/HistorikkCelleViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorikkViewController.swift; path = Drikkevett/HistorikkViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DagenDerpaViewController.swift; path = Drikkevett/DagenDerpaViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainDagenDerpaViewController.swift; path = Drikkevett/MainDagenDerpaViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiddleUnitViewController.swift; path = Drikkevett/MiddleUnitViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUnitViewController.swift; path = Drikkevett/ChooseUnitViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E711D29A78F004FC6A3 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Drikkevett/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalcMiddleViewController.swift; path = Drikkevett/CalcMiddleViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalcSwipeViewController.swift; path = Drikkevett/CalcSwipeViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Drikkevett/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E791D29A7F4004FC6A3 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = Drikkevett/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E7B1D29A7FE004FC6A3 /* LastMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LastMonthViewController.swift; path = Drikkevett/LastMonthViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GratulasjonsViewController.swift; path = Drikkevett/GratulasjonsViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeUserSectionViewController.swift; path = Drikkevett/WelcomeUserSectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E811D29A817004FC6A3 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartViewController.swift; path = Drikkevett/PieChartViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E831D29A81F004FC6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Drikkevett/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5958E861D29A932004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5958E891D29A93D004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/Main.strings; sourceTree = "<group>"; };
+		D5958E8C1D29A98C004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D5958E8F1D29A99A004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
+		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
 		D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -193,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				D5412BCA1D286E9200445D6C /* Drikkevett */,
+				D5412BCB1D286F6500445D6C /* Frameworks */,
 				7FE4E4841C58BD12004465B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,13 +212,13 @@
 		D5412BB41D2810D900445D6C /* entities */ = {
 			isa = PBXGroup;
 			children = (
-				7FE298B21C872616006D56D2 /* GraphHistorikk.swift */,
-				7F5577AD1C82578D005F4080 /* StartEndTimeStamps.swift */,
-				7F3BD2161C7CFAD500357F2A /* TerminatedTimeStamp.swift */,
-				7F3085151C6FD5A500A3B041 /* UserData.swift */,
-				7FFD77EF1C6C9A5C00494118 /* Historikk.swift */,
-				7F77CCD11C6B828D00680C07 /* TimeStamp2.swift */,
-				7F77CCCB1C6B342E00680C07 /* TimeStamp.swift */,
+				D5958E2C1D29A29A004FC6A3 /* GraphHistorikk.swift */,
+				D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */,
+				D5958E241D29A239004FC6A3 /* TerminatedTimeStamp.swift */,
+				D5958E261D29A243004FC6A3 /* UserData.swift */,
+				D5958E2E1D29A2A9004FC6A3 /* Historikk.swift */,
+				D5958E281D29A24E004FC6A3 /* TimeStamp2.swift */,
+				D5958E2A1D29A25A004FC6A3 /* TimeStamp.swift */,
 			);
 			name = entities;
 			path = Skall_Meny;
@@ -223,7 +227,7 @@
 		D5412BB81D284C2000445D6C /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D5412BB91D284C4600445D6C /* StringExtension.swift */,
+				D5958E201D29A21C004FC6A3 /* StringExtension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -243,12 +247,12 @@
 		D5412BBD1D285D7E00445D6C /* information */ = {
 			isa = PBXGroup;
 			children = (
-				7F8F72191C9CCF1A006BD8C2 /* CollectionViewCell.swift */,
-				7F8F72221C9CD71B006BD8C2 /* InfoDetailViewController.swift */,
-				7F8F721E1C9CD0FC006BD8C2 /* InfoTableViewController.swift */,
-				7FA387E21C60E0A800593CCA /* InfoViewController.swift */,
-				7F6289F71CE1FF1900984A11 /* webViewController.swift */,
-				7F8F72201C9CD547006BD8C2 /* CustomCell.swift */,
+				D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */,
+				D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */,
+				D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */,
+				D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */,
+				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
+				D5958E591D29A682004FC6A3 /* CustomCell.swift */,
 			);
 			name = information;
 			sourceTree = "<group>";
@@ -267,12 +271,12 @@
 		D5412BC01D285DFD00445D6C /* home */ = {
 			isa = PBXGroup;
 			children = (
-				7FB91C111C86DD5A008A6C1A /* GraphViewController.swift */,
-				7F4EFF561C8DFEAA00446FAC /* LastMonthViewController.swift */,
-				7F6289D21CE074A700984A11 /* GratulasjonsViewController.swift */,
-				7F206C7F1CB7F5420060002C /* WelcomeUserSectionViewController.swift */,
-				7F72DAC11CB6948A005A2CC0 /* PieChartViewController.swift */,
-				7F5577B21C83263E005F4080 /* HomeViewController.swift */,
+				D5958E791D29A7F4004FC6A3 /* GraphViewController.swift */,
+				D5958E7B1D29A7FE004FC6A3 /* LastMonthViewController.swift */,
+				D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */,
+				D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */,
+				D5958E811D29A817004FC6A3 /* PieChartViewController.swift */,
+				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -280,9 +284,9 @@
 		D5412BC11D285E0E00445D6C /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				7FFBC0E21C8F02490015AF32 /* CalcSwipeViewController.swift */,
-				7FFBC0DD1C8F01C00015AF32 /* CalcMiddleViewController.swift */,
-				7FE4E4881C58BD12004465B7 /* FirstViewController.swift */,
+				D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */,
+				D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */,
+				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
 			);
 			name = calculator;
 			sourceTree = "<group>";
@@ -290,9 +294,9 @@
 		D5412BC21D285E2400445D6C /* planEvening */ = {
 			isa = PBXGroup;
 			children = (
-				7F4D49FA1C89ABD7005290C0 /* MiddleUnitViewController.swift */,
-				7F4D49F61C89A4F9005290C0 /* ChooseUnitViewController.swift */,
-				7FE4E48A1C58BD12004465B7 /* SecondViewController.swift */,
+				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
+				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
+				D5958E711D29A78F004FC6A3 /* SecondViewController.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -300,8 +304,8 @@
 		D5412BC31D285E3800445D6C /* dayAfter */ = {
 			isa = PBXGroup;
 			children = (
-				7F39FDBB1C60D2D50008BBB6 /* DagenDerpaViewController.swift */,
-				7FAC1FDE1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift */,
+				D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */,
+				D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */,
 			);
 			name = dayAfter;
 			sourceTree = "<group>";
@@ -309,9 +313,9 @@
 		D5412BC41D285E4E00445D6C /* history */ = {
 			isa = PBXGroup;
 			children = (
-				7F6F358B1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift */,
-				7FE94FBA1C6D567A00E33AE0 /* HistorikkCelleViewController.swift */,
-				7FFD77F61C6CBB4B00494118 /* HistorikkViewController.swift */,
+				D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */,
+				D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */,
+				D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -320,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				D5412BC71D2860D100445D6C /* update */,
-				7F4D4A001C8DB955005290C0 /* InnstillingerMenyViewController.swift */,
+				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -328,11 +332,11 @@
 		D5412BC61D28607F00445D6C /* intro */ = {
 			isa = PBXGroup;
 			children = (
-				7F4D49FE1C8DB760005290C0 /* StartVeiledningViewController.swift */,
-				7FEFADCC1CA019B4004545F7 /* VelkommenViewController.swift */,
-				7FD198F81C5A5FB7001B829B /* InformationViewController.swift */,
-				7F5577B41C858B86005F4080 /* KostnaderViewController.swift */,
-				7FB91BF31C859B4E008A6C1A /* SettMalViewController.swift */,
+				D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */,
+				D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */,
+				D5958E451D29A524004FC6A3 /* InformationViewController.swift */,
+				D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */,
+				D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */,
 			);
 			name = intro;
 			path = Skall_Meny;
@@ -341,11 +345,11 @@
 		D5412BC71D2860D100445D6C /* update */ = {
 			isa = PBXGroup;
 			children = (
-				7F4C17681C90269E00E93E29 /* VeiledningInnholdViewController.swift */,
-				7F4C17631C90268500E93E29 /* VeiledningMiddleViewController.swift */,
-				7FB91BF91C85CC04008A6C1A /* OppdaterMalViewController.swift */,
-				7F3085181C7000B600A3B041 /* OppdaterInnstillingerViewController.swift */,
-				7FB91BF51C85BA12008A6C1A /* OppdaterKostnaderViewController.swift */,
+				D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */,
+				D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */,
+				D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */,
+				D5958E511D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift */,
+				D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */,
 			);
 			name = update;
 			sourceTree = "<group>";
@@ -353,8 +357,8 @@
 		D5412BC81D28640200445D6C /* persistence */ = {
 			isa = PBXGroup;
 			children = (
-				7F77CCCE1C6B347E00680C07 /* DataController.swift */,
-				7F4D49F11C885217005290C0 /* CoreDataMethods.swift */,
+				D5958E3F1D29A4D1004FC6A3 /* DataController.swift */,
+				D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -362,8 +366,8 @@
 		D5412BC91D286A0000445D6C /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7FC316B71C7DA1E4001B7E18 /* SkallMenyBrain.swift */,
-				7F4D49FC1C89E33C005290C0 /* AppColors.swift */,
+				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
+				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -377,17 +381,26 @@
 				D5412BB41D2810D900445D6C /* entities */,
 				D5412BC61D28607F00445D6C /* intro */,
 				D5412BBF1D285DAF00445D6C /* main */,
-				7FE4E4861C58BD12004465B7 /* AppDelegate.swift */,
-				7F63CF8A1C9B04A900F36954 /* GlemteEnheterViewController.swift */,
-				7F39FDBD1C60D3970008BBB6 /* InnholdViewController.swift */,
-				7FE4E48C1C58BD12004465B7 /* Main.storyboard */,
-				7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */,
-				7FE4E48F1C58BD12004465B7 /* Assets.xcassets */,
-				7FE4E4941C58BD12004465B7 /* Info.plist */,
-				7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */,
-				D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */,
+				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
+				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
+				D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */,
+				D5958E851D29A932004FC6A3 /* Main.storyboard */,
+				D5958E881D29A93D004FC6A3 /* Main.strings */,
+				D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */,
+				D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */,
+				D5958E911D29A9DF004FC6A3 /* Assets.xcassets */,
+				D5958E931D29AA0A004FC6A3 /* Info.plist */,
+				D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */,
 			);
 			name = Drikkevett;
+			sourceTree = "<group>";
+		};
+		D5412BCB1D286F6500445D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D5A045CB1D1DF221006D3887 /* Products */ = {
@@ -445,6 +458,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				nb,
 			);
 			mainGroup = 7FE4E47A1C58BD12004465B7;
 			productRefGroup = 7FE4E4841C58BD12004465B7 /* Products */;
@@ -498,9 +512,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE4E4931C58BD12004465B7 /* LaunchScreen.storyboard in Resources */,
-				7FE4E4901C58BD12004465B7 /* Assets.xcassets in Resources */,
-				7FE4E48E1C58BD12004465B7 /* Main.storyboard in Resources */,
+				D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */,
+				D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */,
+				D5958E941D29AA0A004FC6A3 /* Info.plist in Resources */,
+				D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */,
+				D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */,
+				D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,56 +528,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8F72231C9CD71B006BD8C2 /* InfoDetailViewController.swift in Sources */,
-				7F8F721F1C9CD0FC006BD8C2 /* InfoTableViewController.swift in Sources */,
-				7F4D4A011C8DB955005290C0 /* InnstillingerMenyViewController.swift in Sources */,
-				7FFBC0DE1C8F01C00015AF32 /* CalcMiddleViewController.swift in Sources */,
-				7FC316B81C7DA1E4001B7E18 /* SkallMenyBrain.swift in Sources */,
-				7FAC1FDF1C6E3389003D1DF2 /* MainDagenDerpaViewController.swift in Sources */,
-				7F63CF8B1C9B04A900F36954 /* GlemteEnheterViewController.swift in Sources */,
-				7FE4E48B1C58BD12004465B7 /* SecondViewController.swift in Sources */,
-				7FFD77F71C6CBB4B00494118 /* HistorikkViewController.swift in Sources */,
-				7F5577B31C83263E005F4080 /* HomeViewController.swift in Sources */,
-				7F39FDBC1C60D2D50008BBB6 /* DagenDerpaViewController.swift in Sources */,
-				7F6289F81CE1FF1900984A11 /* webViewController.swift in Sources */,
-				7F3BD2181C7CFAD500357F2A /* TerminatedTimeStamp.swift in Sources */,
-				7F6F358C1CC830E40081FD12 /* CustomHistorikkCellTableViewCell.swift in Sources */,
-				7F4D49F71C89A4F9005290C0 /* ChooseUnitViewController.swift in Sources */,
-				7FE94FBB1C6D567A00E33AE0 /* HistorikkCelleViewController.swift in Sources */,
-				7FE4E4871C58BD12004465B7 /* AppDelegate.swift in Sources */,
-				7F4D49F21C885217005290C0 /* CoreDataMethods.swift in Sources */,
-				7FA387E31C60E0A800593CCA /* InfoViewController.swift in Sources */,
-				7FB91BF41C859B4E008A6C1A /* SettMalViewController.swift in Sources */,
-				7FB91C121C86DD5A008A6C1A /* GraphViewController.swift in Sources */,
-				7F3085171C6FD5A500A3B041 /* UserData.swift in Sources */,
-				7F77CCCF1C6B347E00680C07 /* DataController.swift in Sources */,
-				7F5577B51C858B86005F4080 /* KostnaderViewController.swift in Sources */,
-				7F39FDBE1C60D3970008BBB6 /* InnholdViewController.swift in Sources */,
-				7F8F721A1C9CCF1A006BD8C2 /* CollectionViewCell.swift in Sources */,
-				7F6289D31CE074A700984A11 /* GratulasjonsViewController.swift in Sources */,
-				7F77CCD31C6B828D00680C07 /* TimeStamp2.swift in Sources */,
-				7F5577AF1C82578E005F4080 /* StartEndTimeStamps.swift in Sources */,
-				7FB91BFA1C85CC04008A6C1A /* OppdaterMalViewController.swift in Sources */,
-				7F77CCCD1C6B342E00680C07 /* TimeStamp.swift in Sources */,
-				7F72DAC21CB6948A005A2CC0 /* PieChartViewController.swift in Sources */,
-				D5412BBA1D284C4600445D6C /* StringExtension.swift in Sources */,
-				7F8F72211C9CD547006BD8C2 /* CustomCell.swift in Sources */,
-				7FE298B41C872616006D56D2 /* GraphHistorikk.swift in Sources */,
-				7F4C17691C90269E00E93E29 /* VeiledningInnholdViewController.swift in Sources */,
-				7F206C801CB7F5420060002C /* WelcomeUserSectionViewController.swift in Sources */,
-				7FFBC0E31C8F02490015AF32 /* CalcSwipeViewController.swift in Sources */,
-				7FE4E4891C58BD12004465B7 /* FirstViewController.swift in Sources */,
-				7F4EFF571C8DFEAA00446FAC /* LastMonthViewController.swift in Sources */,
-				7F4D49FD1C89E33D005290C0 /* AppColors.swift in Sources */,
-				7F77CCC91C6B339500680C07 /* myCoreDataModel.xcdatamodeld in Sources */,
-				7FFD77F11C6C9A5C00494118 /* Historikk.swift in Sources */,
-				7F3085191C7000B600A3B041 /* OppdaterInnstillingerViewController.swift in Sources */,
-				7FEFADCD1CA019B4004545F7 /* VelkommenViewController.swift in Sources */,
-				7FD198F91C5A5FB7001B829B /* InformationViewController.swift in Sources */,
-				7F4D49FF1C8DB760005290C0 /* StartVeiledningViewController.swift in Sources */,
-				7FB91BF61C85BA12008A6C1A /* OppdaterKostnaderViewController.swift in Sources */,
-				7F4C17641C90268500E93E29 /* VeiledningMiddleViewController.swift in Sources */,
-				7F4D49FB1C89ABD7005290C0 /* MiddleUnitViewController.swift in Sources */,
+				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
+				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
+				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
+				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
+				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
+				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
+				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
+				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
+				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
+				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
+				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
+				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
+				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
+				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
+				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
+				D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */,
+				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
+				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
+				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
+				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
+				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
+				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
+				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
+				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
+				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
+				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,
+				D5958E271D29A243004FC6A3 /* UserData.swift in Sources */,
+				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
+				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
+				D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */,
+				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
+				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
+				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
+				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
+				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
+				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
+				D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */,
+				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
+				D5958E661D29A70B004FC6A3 /* HistorikkCelleViewController.swift in Sources */,
+				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
+				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
+				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
+				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
+				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
+				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,
+				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
+				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
+				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
+				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
+				D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,24 +592,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7FE4E48C1C58BD12004465B7 /* Main.storyboard */ = {
+		D5958E851D29A932004FC6A3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7FE4E48D1C58BD12004465B7 /* Base */,
-				7F206CA41CB80BA90060002C /* nb */,
+				D5958E861D29A932004FC6A3 /* Base */,
 			);
 			name = Main.storyboard;
-			path = Skall_Meny;
 			sourceTree = "<group>";
 		};
-		7FE4E4911C58BD12004465B7 /* LaunchScreen.storyboard */ = {
+		D5958E881D29A93D004FC6A3 /* Main.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7FE4E4921C58BD12004465B7 /* Base */,
-				7F206CA51CB80BA90060002C /* nb */,
+				D5958E891D29A93D004FC6A3 /* nb */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5958E8C1D29A98C004FC6A3 /* nb */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5958E8F1D29A99A004FC6A3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = Skall_Meny;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -691,7 +720,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Skall_Meny/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Drikkevett/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
@@ -712,7 +741,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Skall_Meny/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Drikkevett/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
@@ -748,14 +777,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7F77CCC71C6B339500680C07 /* myCoreDataModel.xcdatamodeld */ = {
+		D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */,
+				D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 7F77CCC81C6B339500680C07 /* myCoreDataModel.xcdatamodel */;
-			name = myCoreDataModel.xcdatamodeld;
-			path = Skall_Meny/myCoreDataModel.xcdatamodeld;
+			currentVersion = D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */;
+			path = myCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
