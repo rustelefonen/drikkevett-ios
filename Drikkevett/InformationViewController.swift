@@ -229,10 +229,10 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             self.weightField.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0) // VEKT
             
             // TEXT FIELD IMAGES
-            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0) // NICKNAME
-            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0) // ALDER
-            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0) // KJØNN
-            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0) // VEKT
+            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // NICKNAME
+            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // ALDER
+            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // KJØNN
+            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // VEKT
         } else if UIScreen.mainScreen().bounds.size.width == 414 {
             // iPhone 6+
             print("iPhone 6+")

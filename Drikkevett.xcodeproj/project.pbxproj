@@ -448,7 +448,7 @@
 				TargetAttributes = {
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = L9938G85M7;
+						DevelopmentTeam = BD4PJR3XJ9;
 					};
 				};
 			};
@@ -725,7 +725,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b17566e8-a2d9-428e-82bb-e77d193385d7";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -746,7 +746,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b17566e8-a2d9-428e-82bb-e77d193385d7";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 1;
