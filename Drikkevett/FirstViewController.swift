@@ -589,23 +589,6 @@ class FirstViewController: UIViewController {
                
                 unitAddedAlertController("Kvelden er startet", message: "Have fun og drikk med måte", delayTime: 3.0)
                 
-                // sett i gang notifications ( første: 1 time, andre: 3 timer, tredje: 4,5 timer, fjerde: 6 timer )
-                // notifications
-                let getBoolNotIfic = instMenu.getNotificationValue()
-                print("Is Notifications On: \(getBoolNotIfic)")
-                if(getBoolNotIfic == true){
-                    // etter 1 time
-                    let oneHourNotification = [""]
-                    
-                    
-                    
-                    let intervalSession = setEndOfSessionStamp.timeIntervalSinceDate(startOfSessionStamp)
-                    notificationFunction(3600, alertActionText: "tilbake", alertBodyText: brain.randomNotification("First"))
-                    notificationFunction(10800, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Second"))
-                    notificationFunction(16200, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Third"))
-                    notificationFunction(21600, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Fourth"))
-                    notificationFunction(intervalSession, alertActionText: "til applikasjonen", alertBodyText: "Kvelden er over!")
-                }
                 startEndPartyBtn.setTitle("Slutt Kvelden", forState: UIControlState.Normal)
                 clearButtonOutlet.enabled = false
             }
@@ -1608,19 +1591,6 @@ class FirstViewController: UIViewController {
             // iPhone 6+
             self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -32.0)
         }
-    }
-    
-    // NOTIFICATIONS
-    func notificationFunction(seconds: Double, alertActionText: String, alertBodyText: String){
-        print("notification Function runned...")
-        
-        let notification = UILocalNotification()
-        notification.alertAction = alertActionText
-        notification.alertBody = alertBodyText
-        notification.fireDate = NSDate(timeIntervalSinceNow: seconds)
-        //notification.alertLaunchImage = ""
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     func setTextQuote(totalPromille: Double) -> String{

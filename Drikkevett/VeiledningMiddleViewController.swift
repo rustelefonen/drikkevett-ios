@@ -115,6 +115,8 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
     @IBAction func skipBackButton(sender: AnyObject) {
         let getButtonTitle = self.underGuidanceTitleBtn.currentTitle!
         if(getButtonTitle == "Tilbake"){
+            self.navigationController?.navigationBarHidden = false
+            self.tabBarController?.tabBar.hidden = false
             navigationController?.popViewControllerAnimated(true)
         }
         if(getButtonTitle == "Sett i gang"){
