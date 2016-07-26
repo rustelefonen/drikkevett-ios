@@ -226,17 +226,10 @@ class SkallMenyBrain
                 let firstFifMinutesFromFirstUnitAdded = currentTimeStamp.timeIntervalSinceDate(firstUnitAddedTimeS)
                 let convertToMin = firstFifMinutesFromFirstUnitAdded / 60
                 let convertToHour = convertToMin / 60 as Double
-                print("Tid fra første enhet lagt til og fremover: \(convertToHour)")
-                // deretter skip inn på den "vanlige" metoden
-                // FRA 0-4 MIN
-                if(convertToHour <= 0.085){
-                    sum = 0
-                    print("Mindre enn 4 minutter...")
-                }
-                // FRA 4-15 MIN
-                if(convertToHour > 0.085 && convertToHour <= 0.25){
-                    print("Fra 4 minutter til 15 minutter...")
-                    sum = firstFifteen(convertToHour, weightFif: weight, genderFif: genderScore, unitAlco: unit)
+                
+                // FRA 0-15 MIN
+                if(convertToHour <= 0.25){
+                    sum = simulateFirstFifteen(convertToHour, totalUnits: (beerCount + wineCount + drinkCount + shotCount))
                 }
                 if(convertToHour > 0.25){
                     print("Større enn et kvarter...")
@@ -248,6 +241,59 @@ class SkallMenyBrain
             fatalError("bad things happened \(error)")
         }
         return sum
+    }
+    
+    func simulateFirstFifteen(timeDifference: Double, totalUnits: Double) -> Double{
+        var BAC : Double = 0.0
+        let minute : Double = (1.0 / 60.0 )
+        
+        if(timeDifference >= 0.0 && timeDifference <= minute){ // 1 min
+            BAC = totalUnits * 0.01 // 50
+        }
+        if(timeDifference > minute && timeDifference <= (minute * 2)){ // 2 min
+            BAC = Double(totalUnits) * 0.02 // 23.5
+        }
+        if(timeDifference > (minute * 2) && timeDifference <= (minute * 3)){ // 3 min
+            BAC = Double(totalUnits) * 0.03 // 11.5
+        }
+        if(timeDifference > (minute * 3) && timeDifference <= (minute * 4)){ // 4 min
+            BAC = Double(totalUnits) * 0.04 // 6.8
+        }
+        if(timeDifference > (minute * 4) && timeDifference <= (minute * 5)){ // 5 min
+            BAC = Double(totalUnits) * 0.05 // 4.8
+        }
+        if(timeDifference > (minute * 5) && timeDifference <= (minute * 6)){ // 6 min
+            BAC = Double(totalUnits) * 0.06 // 3.5
+        }
+        if(timeDifference > (minute * 6) && timeDifference <= (minute * 7)){ // 7 min
+            BAC = Double(totalUnits) * 0.07 // 2.55
+        }
+        if(timeDifference > (minute * 7) && timeDifference <= (minute * 8)){ // 8 min
+            BAC = Double(totalUnits) * 0.08 // 2.0
+        }
+        if(timeDifference > (minute * 8) && timeDifference <= (minute * 9)){ // 9 min
+            BAC = Double(totalUnits) * 0.09 // 1.5
+        }
+        if(timeDifference > (minute * 9) && timeDifference <= (minute * 10)){ // 10 min
+            BAC = Double(totalUnits) * 0.10 // 1.15
+        }
+        if(timeDifference > (minute * 10) && timeDifference <= (minute * 11)){ // 11 min
+            BAC = Double(totalUnits) * 0.11 // 0.85
+        }
+        if(timeDifference > (minute * 11) && timeDifference <= (minute * 12)){ // 12 min
+            BAC = Double(totalUnits) * 0.12 // 0.53
+        }
+        if(timeDifference > (minute * 12) && timeDifference <= (minute * 13)){ // 13 min
+            BAC = Double(totalUnits) * 0.13 // 0.33
+        }
+        if(timeDifference > (minute * 13) && timeDifference <= (minute * 14)){ // 14 min
+            BAC = Double(totalUnits) * 0.14 // 0.28
+        }
+        if(timeDifference > (minute * 14) && timeDifference <= (minute * 15)){ // 15 min
+            BAC = Double(totalUnits) * 0.15 // 0.15
+        }
+        
+        return BAC
     }
     
     // NOTIFICATIONS
