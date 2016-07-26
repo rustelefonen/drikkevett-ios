@@ -42,8 +42,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var clearButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var minusBeerBtnOutlet: UIButton!
     @IBOutlet weak var addUnitsBtnOutlet: UIButton!
-    // COSTS LABEL
-    @IBOutlet weak var costsLabel: UILabel!
     
     // START KVELD / END KVELD BILDE KNAPP
     @IBOutlet weak var startEndImage: UIImageView!
@@ -53,9 +51,6 @@ class FirstViewController: UIViewController {
     
     // TEXT VIEW QUOTES
     @IBOutlet weak var textViewQuotes: UILabel!
-
-    // TOTAL UNITS LABEL
-    @IBOutlet weak var totalUnitsLabel: UILabel!
     
     //----------------------   MODEL/DATABASE/COLORS    ---------------------//
     var brain = SkallMenyBrain()
@@ -318,10 +313,6 @@ class FirstViewController: UIViewController {
         titleDrink.font = setAppColors.textHeadlinesFonts(14)
         titleShot.textColor = setAppColors.textHeadlinesColors()
         titleShot.font = setAppColors.textHeadlinesFonts(14)
-        costsLabel.textColor = setAppColors.textHeadlinesColors()
-        costsLabel.font = setAppColors.textHeadlinesFonts(18)
-        self.totalUnitsLabel.textColor = setAppColors.textHeadlinesColors()
-        self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(18)
      
         // BUTTON FONT
         startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
@@ -1032,9 +1023,7 @@ class FirstViewController: UIViewController {
         self.antallDrinkLabel.text = "\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(numberOfShotCount)"
         let setTotalCost = calcualteTotalCosts(numberOfBeerCount, wine: numberOfWineCount, drink: numberOfDrinkCount, shot: numberOfShotCount)
-        self.costsLabel.text = "\(setTotalCost),-"
         let setPlannedUnits = numberOfBeerCount + numberOfWineCount + numberOfDrinkCount + numberOfShotCount
-        self.totalUnitsLabel.text = "\(setPlannedUnits)"
         self.oppdaterPromilleLabel.text = "0.00"
         self.clearButtonOutlet.enabled = true
         self.minusBeerBtnOutlet.enabled = true
@@ -1078,12 +1067,6 @@ class FirstViewController: UIViewController {
         self.antallVinLabel.text = "\(historyCountWine)/\(numberOfWineCount)"
         self.antallDrinkLabel.text = "\(historyCountDrink)/\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(historyCountShot)/\(numberOfShotCount)"
-        let setPlannedCost = calcualteTotalCosts(numberOfBeerCount, wine: numberOfWineCount, drink: numberOfDrinkCount, shot: numberOfShotCount)
-        let setActuallCost = calcualteTotalCosts(historyCountBeer, wine: historyCountWine, drink: historyCountDrink, shot: historyCountShot)
-        self.costsLabel.text = "\(setActuallCost),- \nav \(setPlannedCost),-"
-        let setPlannedUnits = numberOfBeerCount + numberOfWineCount + numberOfDrinkCount + numberOfShotCount
-        let setActualUnits  = historyCountBeer + historyCountWine + historyCountDrink + historyCountShot
-        self.totalUnitsLabel.text = "\(setActualUnits)/\(setPlannedUnits)"
         self.clearButtonOutlet.enabled = false
         self.minusBeerBtnOutlet.enabled = false
         self.minusBeerBtnOutlet.setTitle("", forState: UIControlState.Normal)
@@ -1179,8 +1162,6 @@ class FirstViewController: UIViewController {
         self.antallVinLabel.text = "-"
         self.antallDrinkLabel.text = "-"
         self.antallShotLabel.text = "-"
-        self.costsLabel.text = "-"
-        self.totalUnitsLabel.text = "-"
         self.oppdaterPromilleLabel.text = "0.00"
         self.clearButtonOutlet.enabled = false
         self.minusBeerBtnOutlet.enabled = false
@@ -1571,10 +1552,6 @@ class FirstViewController: UIViewController {
             self.textViewQuotes.font = setAppColors.setTextQuoteFont(12)
             self.oppdaterPromilleLabel.font = setAppColors.textHeadlinesFonts(60)
             
-            // FORBRUK
-            self.costsLabel.font = setAppColors.textHeadlinesFonts(10)
-            self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(10)
-            
             // STATS:
             self.antallOlLabel.font = setAppColors.textUnderHeadlinesFonts(20)
             self.antallVinLabel.font = setAppColors.textUnderHeadlinesFonts(20)
@@ -1589,9 +1566,6 @@ class FirstViewController: UIViewController {
         } else if UIScreen.mainScreen().bounds.size.height == 568 {
             // IPhone 5
           self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -90.0)
-          
-          // FORBRUK
-          self.costsLabel.transform = CGAffineTransformTranslate(self.view.transform, 17.0, 0.0)
           
           // BUTTONS
           self.minusBeerBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
@@ -1616,10 +1590,7 @@ class FirstViewController: UIViewController {
           self.startEndImage.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
           
           // FONTS
-          // FORBRUK
-          self.costsLabel.font = setAppColors.textHeadlinesFonts(10)
-          self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(10)
-          
+            
           // STATS:
           self.antallOlLabel.font = setAppColors.textUnderHeadlinesFonts(25)
           self.antallVinLabel.font = setAppColors.textUnderHeadlinesFonts(25)
