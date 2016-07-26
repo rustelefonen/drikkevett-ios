@@ -2419,7 +2419,8 @@
                                         <exclude reference="olv-X3-1pv"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="154" y="107" width="90" height="90"/>
                                     <mask key="constraints">
                                         <include reference="AA7-mq-uar"/>
                                         <include reference="olv-X3-1pv"/>
@@ -2621,7 +2622,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mSw-le-mUz">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="177" y="266" width="20" height="20"/>
+                                    <rect key="frame" x="189" y="266" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
                         </subviews>
@@ -2753,20 +2754,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JkE-wa-7aj" firstAttribute="top" secondItem="j7N-hp-xMj" secondAttribute="bottom" id="Aet-LG-H53"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="j7N-hp-xMj" secondAttribute="trailing" id="Jnh-RX-C96"/>
-                            <constraint firstItem="j7N-hp-xMj" firstAttribute="leading" secondItem="f3I-fm-ebH" secondAttribute="leadingMargin" id="ab7-L0-Uf2"/>
-                            <constraint firstItem="j7N-hp-xMj" firstAttribute="top" secondItem="5BY-Jc-GvG" secondAttribute="bottom" id="erb-Sn-sKb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j7N-hp-xMj" secondAttribute="trailing" constant="-20" id="8dS-eA-s9B"/>
+                            <constraint firstItem="JkE-wa-7aj" firstAttribute="top" secondItem="j7N-hp-xMj" secondAttribute="bottom" id="LKv-he-IPR"/>
+                            <constraint firstItem="j7N-hp-xMj" firstAttribute="top" secondItem="5BY-Jc-GvG" secondAttribute="bottom" id="XHK-3A-1GQ"/>
+                            <constraint firstItem="j7N-hp-xMj" firstAttribute="leading" secondItem="f3I-fm-ebH" secondAttribute="leadingMargin" constant="-20" id="uMk-aq-tEd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Aet-LG-H53"/>
-                                <exclude reference="Jnh-RX-C96"/>
-                                <exclude reference="ab7-L0-Uf2"/>
-                                <exclude reference="erb-Sn-sKb"/>
+                                <exclude reference="8dS-eA-s9B"/>
+                                <exclude reference="XHK-3A-1GQ"/>
+                                <exclude reference="uMk-aq-tEd"/>
+                                <exclude reference="LKv-he-IPR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2774,10 +2775,10 @@
                                 <include reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Aet-LG-H53"/>
-                                <include reference="Jnh-RX-C96"/>
-                                <include reference="ab7-L0-Uf2"/>
-                                <include reference="erb-Sn-sKb"/>
+                                <include reference="8dS-eA-s9B"/>
+                                <include reference="XHK-3A-1GQ"/>
+                                <include reference="uMk-aq-tEd"/>
+                                <include reference="LKv-he-IPR"/>
                             </mask>
                         </variation>
                     </view>
@@ -10273,7 +10274,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1KO-qk-Z0D"/>
+        <segue reference="kc0-Y5-8LJ"/>
         <segue reference="xx1-SW-dKo"/>
         <segue reference="Tcy-bm-g9P"/>
         <segue reference="euy-sR-EY5"/>

@@ -42,9 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().barStyle = .Black
         
-        // NOTIFICATION
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil))
-        
         return true
     }
 

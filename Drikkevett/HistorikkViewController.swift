@@ -465,7 +465,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             historikkTableView.contentSize.height = 50
             historikkTableView.bounds.size.height = 50
             self.historikkTableView.sizeToFit()
-            print("iphone 4 - Historikk")
         } else if UIScreen.mainScreen().bounds.size.height == 568 {
             // IPhone 5
             

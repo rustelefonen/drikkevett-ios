@@ -4,28 +4,10 @@
 //  Created by Lars Petter Kristiansen on 12.02.2016.
 //  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
 
-/*
-OVERSIKT:
-CMD - F = (Over-Overskriften du vil finne)
-
-0001 - ATTRIBUTTER
-0002 - FONTS AND COLORS
-0003 - SJEKK PROMILLE
-0004 - ADD UNITS DAY AFTER
-0005 - INITATE METHODS
-0006 - DEFAULT VERDIER
-0007 - CORE DATA - SAMHANDLING MED DATABASEN
-*/
-
 import UIKit
 import CoreData
 
 class MainDagenDerpaViewController: UIViewController {
-    ////////////////////////////////////////////////////////////////////////
-    //                        ATTRIBUTTER (0001)                          //
-    ////////////////////////////////////////////////////////////////////////
-    
-    ///////// TIL NY MENY MÅTE
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var viewOneBtnOutlet: UIButton!
     @IBOutlet weak var viewTwoBtnOutlet: UIButton!
@@ -146,24 +128,6 @@ class MainDagenDerpaViewController: UIViewController {
                 newViewController.didMoveToParentViewController(self)
             })
     }
-    
-    // WITH ANIMATION
-    /*func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
-        oldViewController.willMoveToParentViewController(nil)
-        self.addChildViewController(newViewController)
-        self.addSubview(newViewController.view, toView:self.containerView!)
-        newViewController.view.alpha = 0
-        newViewController.view.layoutIfNeeded()
-        UIView.animateWithDuration(0.5, animations: {
-            newViewController.view.alpha = 1
-            oldViewController.view.alpha = 0
-            },
-            completion: { finished in
-                oldViewController.view.removeFromSuperview()
-                oldViewController.removeFromParentViewController()
-                newViewController.didMoveToParentViewController(self)
-        })
-    }*/
     
     func addSubview(subView:UIView, toView parentView: UIView){
         parentView.addSubview(subView)

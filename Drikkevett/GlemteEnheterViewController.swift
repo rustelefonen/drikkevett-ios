@@ -374,7 +374,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func currentPromilleTimer(){
         var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("visualsCurrentPromille"), userInfo: nil, repeats: true)
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(GlemteEnheterViewController.visualsCurrentPromille), userInfo: nil, repeats: true)
     }
     
     func visualsCurrentPromille(){
@@ -394,7 +394,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func startVisualsTimer(){
         var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("setVisualsAtViewOpening"), userInfo: nil, repeats: true)
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(GlemteEnheterViewController.setVisualsAtViewOpening), userInfo: nil, repeats: true)
     }
     
     func setVisualsAtViewOpening(){
