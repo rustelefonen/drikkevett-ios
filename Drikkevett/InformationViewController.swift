@@ -95,8 +95,8 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -25.0)
             
             // HEADER TITLE AND SUBTITLE
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -40.0)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -55.0)
+            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, -35.0, -40.0)
+            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -35.0, -55.0)
             self.titleLabel.font = setAppColors.textHeadlinesFonts(25)
             self.subTitleLabel.font = setAppColors.textHeadlinesFonts(14)
             
@@ -111,26 +111,26 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             self.ageUnderLinedLabel.font = setAppColors.textHeadlinesFonts(lineSize)
             
             // TITLES TEXT FIELDS
-            self.heightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // NICKNAME
-            self.ageTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // ALDER
-            self.genderTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // KJØNN
-            self.weightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // VEKT
+            self.heightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // NICKNAME
+            self.ageTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // ALDER
+            self.genderTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // KJØNN
+            self.weightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // VEKT
             self.heightTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.ageTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.genderTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.weightTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             
             // TEXT FIELDS
-            self.heightField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // NICKNAME
-            self.ageField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // ALDER
-            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // KJØNN
-            self.weightField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // VEKT
+            self.heightField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // NICKNAME
+            self.ageField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // ALDER
+            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // KJØNN
+            self.weightField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // VEKT
             
             // TEXT FIELD IMAGES
-            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // NICKNAME
-            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // ALDER
-            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // KJØNN
-            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // VEKT
+            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // NICKNAME
+            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // ALDER
+            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // KJØNN
+            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // VEKT
             
             // NEXT IMAGE AND BUTTON
             self.nextImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -90.0)
@@ -146,8 +146,8 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -25.0)
             
             // HEADER TITLE AND SUBTITLE
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -40.0)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -55.0)
+            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, -35.0, -40.0)
+            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -35.0, -55.0)
             self.titleLabel.font = setAppColors.textHeadlinesFonts(25)
             self.subTitleLabel.font = setAppColors.textHeadlinesFonts(14)
             
@@ -162,26 +162,26 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             self.ageUnderLinedLabel.font = setAppColors.textHeadlinesFonts(lineSize)
             
             // TITLES TEXT FIELDS
-            self.heightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // NICKNAME
-            self.ageTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // ALDER
-            self.genderTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // KJØNN
-            self.weightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // VEKT
+            self.heightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // NICKNAME
+            self.ageTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // ALDER
+            self.genderTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // KJØNN
+            self.weightTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // VEKT
             self.heightTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.ageTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.genderTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             self.weightTitleLabel.font = setAppColors.textHeadlinesFonts(titleTextFieldSize)
             
             // TEXT FIELDS
-            self.heightField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // NICKNAME
-            self.ageField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // ALDER
-            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // KJØNN
-            self.weightField.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0) // VEKT
+            self.heightField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // NICKNAME
+            self.ageField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // ALDER
+            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // KJØNN
+            self.weightField.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0) // VEKT
             
             // TEXT FIELD IMAGES
-            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // NICKNAME
-            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // ALDER
-            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // KJØNN
-            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0) // VEKT
+            self.nickNameImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // NICKNAME
+            self.ageImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // ALDER
+            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // KJØNN
+            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -65.0, -60.0) // VEKT
             
             // NEXT IMAGE AND BUTTON
             self.nextImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -40.0)
