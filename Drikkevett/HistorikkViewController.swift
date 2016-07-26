@@ -6,9 +6,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     // TABLEVIEW OUTLET
     @IBOutlet weak var historikkTableView: UITableView!
     
-    // OUTLET BUTTON SLETT HISTORIKK
-    @IBOutlet weak var deleteHistoryOutlet: UIButton!
-    
     // Hente managedObjectContext fra AppDelegate (DATABASE)
     let managedObjectContext = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
@@ -35,7 +32,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         view.addSubview(blurEffectView)
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        self.deleteHistoryOutlet.titleLabel?.font = setAppColors.buttonFonts(13)
         print("setting color on logTableView")
         //logTableView.backgroundColor = setAppColors.mainBackgroundColor()
         self.historikkTableView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.0)
@@ -387,13 +383,14 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    @IBAction func clearHistoryButton(sender: AnyObject) {
+    @IBAction func clearHistoryBtn(sender: AnyObject) {
         let title = "Slett Historikk"
         let msg = "Er du sikker på at du vil slette historikk?"
         let cnclTitle = "Avbryt"
         let confTitle = "Slett"
         endPartyAlert(title, msg: msg, cancelTitle: cnclTitle, confirmTitle: confTitle)
     }
+    
     
     func endPartyAlert(titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
         

@@ -2297,51 +2297,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="IS7-ks-SLX">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="IW9-lI-ufS"/>
-                                    <constraint firstAttribute="height" constant="50" id="LAM-zv-liB"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IW9-lI-ufS"/>
-                                        <exclude reference="LAM-zv-liB"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="IW9-lI-ufS"/>
-                                        <include reference="LAM-zv-liB"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEx-qA-kSa">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="2sk-IU-Oe2"/>
-                                    <constraint firstAttribute="height" constant="74" id="fMH-0a-UbR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Slett Historikk">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2sk-IU-Oe2"/>
-                                        <exclude reference="fMH-0a-UbR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="2sk-IU-Oe2"/>
-                                        <include reference="fMH-0a-UbR"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="clearHistoryButton:" destination="Def-BC-IeZ" eventType="touchUpInside" id="z7Q-Kw-PXL"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-hp-xMj">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2410,47 +2365,31 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nEx-qA-kSa" firstAttribute="top" secondItem="j7N-hp-xMj" secondAttribute="bottom" constant="8" id="3Ef-qb-yfJ"/>
-                            <constraint firstItem="IS7-ks-SLX" firstAttribute="centerX" secondItem="f3I-fm-ebH" secondAttribute="centerX" id="4gE-iq-s8m"/>
-                            <constraint firstItem="JkE-wa-7aj" firstAttribute="top" secondItem="IS7-ks-SLX" secondAttribute="bottom" constant="32" id="5GG-JU-12C"/>
-                            <constraint firstItem="nEx-qA-kSa" firstAttribute="centerX" secondItem="f3I-fm-ebH" secondAttribute="centerX" id="8DN-U2-9yg"/>
-                            <constraint firstItem="j7N-hp-xMj" firstAttribute="centerX" secondItem="f3I-fm-ebH" secondAttribute="centerX" id="OfC-pE-Jr2"/>
-                            <constraint firstItem="JkE-wa-7aj" firstAttribute="top" secondItem="nEx-qA-kSa" secondAttribute="bottom" constant="8" id="XY6-id-8kQ"/>
-                            <constraint firstItem="j7N-hp-xMj" firstAttribute="width" secondItem="f3I-fm-ebH" secondAttribute="width" id="iyY-lc-NQ9"/>
-                            <constraint firstItem="j7N-hp-xMj" firstAttribute="top" secondItem="5BY-Jc-GvG" secondAttribute="bottom" id="wdA-oK-ZJ0"/>
+                            <constraint firstItem="JkE-wa-7aj" firstAttribute="top" secondItem="j7N-hp-xMj" secondAttribute="bottom" id="Aet-LG-H53"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j7N-hp-xMj" secondAttribute="trailing" id="Jnh-RX-C96"/>
+                            <constraint firstItem="j7N-hp-xMj" firstAttribute="leading" secondItem="f3I-fm-ebH" secondAttribute="leadingMargin" id="ab7-L0-Uf2"/>
+                            <constraint firstItem="j7N-hp-xMj" firstAttribute="top" secondItem="5BY-Jc-GvG" secondAttribute="bottom" id="erb-Sn-sKb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="IS7-ks-SLX"/>
-                                <exclude reference="nEx-qA-kSa"/>
                                 <exclude reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5GG-JU-12C"/>
-                                <exclude reference="XY6-id-8kQ"/>
-                                <exclude reference="3Ef-qb-yfJ"/>
-                                <exclude reference="8DN-U2-9yg"/>
-                                <exclude reference="4gE-iq-s8m"/>
-                                <exclude reference="OfC-pE-Jr2"/>
-                                <exclude reference="iyY-lc-NQ9"/>
-                                <exclude reference="wdA-oK-ZJ0"/>
+                                <exclude reference="Jnh-RX-C96"/>
+                                <exclude reference="ab7-L0-Uf2"/>
+                                <exclude reference="erb-Sn-sKb"/>
+                                <exclude reference="Aet-LG-H53"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="IS7-ks-SLX"/>
-                                <include reference="nEx-qA-kSa"/>
                                 <include reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5GG-JU-12C"/>
-                                <include reference="XY6-id-8kQ"/>
-                                <include reference="3Ef-qb-yfJ"/>
-                                <include reference="8DN-U2-9yg"/>
-                                <include reference="4gE-iq-s8m"/>
-                                <include reference="OfC-pE-Jr2"/>
-                                <include reference="iyY-lc-NQ9"/>
-                                <include reference="wdA-oK-ZJ0"/>
+                                <include reference="Jnh-RX-C96"/>
+                                <include reference="ab7-L0-Uf2"/>
+                                <include reference="erb-Sn-sKb"/>
+                                <include reference="Aet-LG-H53"/>
                             </mask>
                         </variation>
                     </view>
@@ -2465,9 +2404,13 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="vec-Dm-eDf">
+                            <connections>
+                                <action selector="clearHistoryBtn:" destination="Def-BC-IeZ" id="Hwy-FP-ZOb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="deleteHistoryOutlet" destination="nEx-qA-kSa" id="NCu-kZ-af5"/>
                         <outlet property="historikkTableView" destination="j7N-hp-xMj" id="1H3-aa-F0L"/>
                         <segue destination="wNB-35-Fkf" kind="show" identifier="showCellSegue" id="2gf-K2-LA7"/>
                     </connections>
