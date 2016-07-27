@@ -416,32 +416,10 @@ class FirstViewController: UIViewController {
                 }
                 brainCoreData.clearCoreData(termCoreData)
             }
-            /* --- UNMARK DETTE FOR Å LEGGE TIL TEST DATA --- */
-            //dummyDataTesting()
-            /* DUMMY DATE ENDING ----- ----- ----- ----- ----- */
-            
-            // UNCHECK DETTE FOR Å FÅ DET "EKTE" IGJEN
-            
-            print("\n\n\n VERDIENE SOM SEEDES TIL HISTORIKK: ")
-            print("Start Dato/Tidspunkt: \(startOfSessionStamp)")
-            print("DatoTwo: \(fullDate)")
-            print("Antall Øl: \(historyCountBeer)")
-            print("Antall Vin: \(historyCountWine)")
-            print("Antall Drink: \(historyCountDrink)")
-            print("Antall Shot: \(historyCountShot)")
-            print("Forbruk: \(totalCosts)")
-            print("Høyeste Promille: \(highestPromille)")
             highestPromille = 0.0
-            print("Sesjons Nummer: \(numberOfSessionPlanParty)")
-            print("End of Sesjon date: \(endedPartyStamp)")
-            print("Date on first unit added: \(setDateOnFirstUnitAdded)")
-            print("Planlagte enheter: \(getPlannedCounter())")
-            print("\n\n")
             
             brainCoreData.seedHistoryValuesPlanParty(startOfSessionStamp, forbruk: totalCosts, hoyestePromille: highestPromille, antallOl: historyCountBeer, antallVin: historyCountWine, antallDrink: historyCountDrink, antallShot: historyCountShot, stringDato: fullDate, endOfSesDate: endedPartyStamp, sessionNumber: numberOfSessionPlanParty, firstUnitStamp: setDateOnFirstUnitAdded, plannedNrOfUnits: getPlannedCounter())
             // KJØR POPULATE GRAPH
-            print("brain.pop: w-e-ight: \(getWeight)")
-            print("brain.pop: gender: \(getGender)")
             brain.populateGraphValues(getGender, weight: getWeight, startPlanStamp: startOfSessionStamp, endPlanStamp: endedPartyStamp)
  
             // STOPPE ALLE NOTIFICATIONS
@@ -472,7 +450,6 @@ class FirstViewController: UIViewController {
             storeBoolValue()
             storedPlannedCounter()
             
-            // IMPLEMENTER I NY VERSJON
             forgotViewCont.updatePromilleAppDelegate()
         }
     }
@@ -764,6 +741,8 @@ class FirstViewController: UIViewController {
         antallDrinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallShotLabel.textColor = setAppColors.textUnderHeadlinesColors()
         
+        hideOutlets(false)
+        
         self.textViewQuotes.text = "Planlegg kvelden din!"
         self.oppdaterPromilleLabel.textColor = UIColor.whiteColor()
         self.textViewQuotes.textColor = UIColor.whiteColor()
@@ -801,7 +780,9 @@ class FirstViewController: UIViewController {
         self.startEndPartyBtn.setTitle("Slutt Kvelden", forState: UIControlState.Normal)
         self.startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
         self.startEndImage.image = UIImage(named: "Cancel Filled-100")!
-          
+        
+        hideOutlets(false)
+        
         // CHANGE COLORS ON TO MUCH NUMBERS
         if(historyCountBeer > numberOfBeerCount){
             antallOlLabel.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
@@ -842,25 +823,18 @@ class FirstViewController: UIViewController {
     }
     
     func updateVisualUnitsWhenDayAfterIsRunning(){
-        self.antallOlLabel.text = "-"
-        self.antallVinLabel.text = "-"
-        self.antallDrinkLabel.text = "-"
-        self.antallShotLabel.text = "-"
-        self.oppdaterPromilleLabel.text = "0.00"
+        hideOutlets(true)
+        
         self.clearButtonOutlet.enabled = false
-        self.minusBeerBtnOutlet.enabled = false
-        self.minusBeerBtnOutlet.setTitle("-", forState: UIControlState.Normal)
-        self.addUnitsBtnOutlet.enabled = false
-        self.addUnitsBtnOutlet.setTitle("-", forState: UIControlState.Normal)
-        self.startEndPartyBtn.enabled = false
+        
         self.startEndPartyBtn.setTitle("Dagen Derpå Pågår", forState: UIControlState.Normal)
         self.startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(10)
         self.startEndImage.image = UIImage(named: "Ok Filled-100")!
+        
         antallOlLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallVinLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallDrinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallShotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.textViewQuotes.text = "Dagen Derpå Pågår"
         self.oppdaterPromilleLabel.textColor = UIColor.whiteColor()
         self.textViewQuotes.textColor = UIColor.whiteColor()
         
@@ -882,16 +856,31 @@ class FirstViewController: UIViewController {
         }
     }
     
+    func hideOutlets(isOutletHidden: Bool){
+        self.antallOlLabel.hidden = isOutletHidden
+        self.antallVinLabel.hidden = isOutletHidden
+        self.antallDrinkLabel.hidden = isOutletHidden
+        self.antallShotLabel.hidden = isOutletHidden
+        self.oppdaterPromilleLabel.hidden = isOutletHidden
+        self.minusBeerBtnOutlet.hidden = isOutletHidden
+        self.addUnitsBtnOutlet.hidden = isOutletHidden
+        self.startEndPartyBtn.hidden = isOutletHidden
+        self.startEndImage.hidden = isOutletHidden
+        self.containerView.hidden = isOutletHidden
+        self.titleBeer.hidden = isOutletHidden
+        self.titleWine.hidden = isOutletHidden
+        self.titleDrink.hidden = isOutletHidden
+        self.titleShot.hidden = isOutletHidden
+        self.textViewQuotes.hidden = isOutletHidden
+    }
+    
     // FØRSTE GANGEN SKAL TEXTVIEWET VISE : (swipe for å velge enhet )
     func isPlanPartyViewLunchedBefore()->Bool{
         let defaults = NSUserDefaults.standardUserDefaults()
         if let isViewLunchedBefore = defaults.stringForKey("isPlanPartyViewLunchedBefore"){
-            print("View already launched")
-            // HVIS REGISTRATION ER FULLFØRT:
             return true
         }else{
             defaults.setBool(true, forKey: "isPlanPartyViewLunchedBefore")
-            print("View first time")
             self.textViewQuotes.text = "Swipe for å velge enhet"
             return false
         }
@@ -998,7 +987,6 @@ class FirstViewController: UIViewController {
         defaults.setDouble(counter, forKey: defaultKeys.totalNrOfUnits)
         defaults.setBool(overGoalPromille, forKey: defaultKeys.overGoalProm)
         defaults.synchronize()
-        print("storeBoolValue() runned...")
     }
     
     func getPrevSessionNumber(){
@@ -1006,7 +994,6 @@ class FirstViewController: UIViewController {
         // ANTALL SESJONER ( NR PÅ SESJON )
         if let sessions : Int = defaults.integerForKey(defaultKeys.numberOfSessions) {
             numberOfSessionPlanParty = sessions
-            print("Get prevSes: \(numberOfSessionPlanParty)")
         }
     }
     
@@ -1014,7 +1001,6 @@ class FirstViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let isRunning : Bool = defaults.boolForKey(SkallMenyBrain.defKeyBool.isDayAfterRun) {
             isDayAfterOnGoing = isRunning
-            print("Is day after running: \(isDayAfterOnGoing)")
         }
     }
     
@@ -1030,7 +1016,6 @@ class FirstViewController: UIViewController {
         if let fetchedValue : AnyObject = defaults.objectForKey(defaultKeys.fetchUnitType) {
             fetchUnitTypeFromSwipe = fetchedValue as! String
         }
-        print("Type hentet: \(fetchUnitTypeFromSwipe)")
     }
     
     func getDefaultCheckSessionBool(){
@@ -1039,7 +1024,6 @@ class FirstViewController: UIViewController {
         if let bool : Bool = defaults.boolForKey(defaultKeys.keyBool) {
             isPlanPartyNotGoing = bool
         }
-        print("Is Plan Party NOT on going (false = going): \(isPlanPartyNotGoing)")
     }
     
     func getDefaultOverGoal(){
@@ -1048,7 +1032,6 @@ class FirstViewController: UIViewController {
         if let bool : Bool = defaults.boolForKey(defaultKeys.overGoalProm) {
             overGoalPromille = bool
         }
-        print("Over Goal gotten! ")
     }
     
     func getDefaultBool(){ // GETTING
@@ -1082,7 +1065,6 @@ class FirstViewController: UIViewController {
         // HØYESTE PROMILLE
         if let theHighestPromille : Double = defaults.doubleForKey(defaultKeys.tempHighPromilleKey) {
             highestPromille = theHighestPromille
-            print("GetDefaultBool highProm: \(highestPromille)")
         }
         // ANTALL SESJONER ( NR PÅ SESJON )
         if let sessions : Int = defaults.integerForKey(defaultKeys.numberOfSessions) {
@@ -1095,7 +1077,6 @@ class FirstViewController: UIViewController {
         if let totUnitsCount : Double = defaults.doubleForKey(defaultKeys.totalNrOfUnits) {
             counter = totUnitsCount
         }
-        print("DefaultBool FIRST gotten...")
     }
     
     ////////////////////////////////////////////////////////////////////////
@@ -1117,10 +1098,6 @@ class FirstViewController: UIViewController {
     
     func seedUnitTimeStamp(currentTimeStamp: NSDate, typeOfUnit: String) {
         let entity = NSEntityDescription.insertNewObjectForEntityForName("TimeStamp2", inManagedObjectContext: moc) as! TimeStamp2
-        print("INSIDE SEED UNIT TIME STAMP: ")
-        print("Time stamp added: \(currentTimeStamp)")
-        print("Type of unit added: \(typeOfUnit)")
-        
         entity.setValue(currentTimeStamp, forKey: "timeStamp")
         entity.setValue(typeOfUnit, forKey: "unitAlkohol")
         
@@ -1132,7 +1109,6 @@ class FirstViewController: UIViewController {
     }
     
     func populateArrays() {
-        print("POPULATE ARRAYS()")
         var timeStamps = [TimeStamp2]()
         
         universalWineArray.removeAll()
@@ -1179,17 +1155,13 @@ class FirstViewController: UIViewController {
         let timeStampFetch = NSFetchRequest(entityName: "UserData")
         do {
             userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
-            
             for item in userData {
                 getGender = item.gender! as Bool
-                print("get gender from user data: \(getGender)")
                 getWeight = item.weight! as Double
-                print("get weight from user data: \(getWeight)")
                 getBeerCost = item.costsBeer! as Int
                 getWineCost = item.costsWine! as Int
                 getDrinkCost = item.costsDrink! as Int
                 getShotCost = item.costsShot! as Int
-                print("Fetched UserData...")
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -1274,7 +1246,6 @@ class FirstViewController: UIViewController {
           self.startEndImage.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
           
           // FONTS
-            
           // STATS:
           self.antallOlLabel.font = setAppColors.textUnderHeadlinesFonts(25)
           self.antallVinLabel.font = setAppColors.textUnderHeadlinesFonts(25)
