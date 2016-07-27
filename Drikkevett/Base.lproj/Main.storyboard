@@ -1040,8 +1040,10 @@
                             <tableViewSection headerTitle="Innstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
+                                        <rect key="frame" x="0.0" y="49.5" width="0.0" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CuckJoafuck2" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yg-Zob">
@@ -1104,10 +1106,10 @@
                                                     <exclude reference="LTd-xs-Ipq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="7Y1-t9-OsP"/>
-                                                    <exclude reference="h7l-aE-nWp"/>
                                                     <exclude reference="6xm-6F-gIo"/>
                                                     <exclude reference="guB-SJ-CNC"/>
+                                                    <exclude reference="7Y1-t9-OsP"/>
+                                                    <exclude reference="h7l-aE-nWp"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1116,10 +1118,10 @@
                                                     <include reference="LTd-xs-Ipq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="7Y1-t9-OsP"/>
-                                                    <include reference="h7l-aE-nWp"/>
                                                     <include reference="6xm-6F-gIo"/>
                                                     <include reference="guB-SJ-CNC"/>
+                                                    <include reference="7Y1-t9-OsP"/>
+                                                    <include reference="h7l-aE-nWp"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1129,8 +1131,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
+                                        <rect key="frame" x="0.0" y="93.5" width="0.0" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NJR-rZ-8wN">
@@ -1193,10 +1197,10 @@
                                                     <exclude reference="ecG-Zu-rTa"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="IGN-iI-KJj"/>
-                                                    <exclude reference="jHY-Wf-hgg"/>
                                                     <exclude reference="814-7k-POX"/>
                                                     <exclude reference="Nuf-ek-dsd"/>
+                                                    <exclude reference="IGN-iI-KJj"/>
+                                                    <exclude reference="jHY-Wf-hgg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1205,10 +1209,10 @@
                                                     <include reference="ecG-Zu-rTa"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="IGN-iI-KJj"/>
-                                                    <include reference="jHY-Wf-hgg"/>
                                                     <include reference="814-7k-POX"/>
                                                     <include reference="Nuf-ek-dsd"/>
+                                                    <include reference="IGN-iI-KJj"/>
+                                                    <include reference="jHY-Wf-hgg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1218,8 +1222,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euR-sU-CHU">
+                                        <rect key="frame" x="0.0" y="137.5" width="0.0" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euR-sU-CHU" id="ksU-32-R3r">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goal-100" translatesAutoresizingMaskIntoConstraints="NO" id="f5n-0E-fyH">
@@ -1282,10 +1288,10 @@
                                                     <exclude reference="pWv-1H-2QE"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="K1Q-3e-W5P"/>
-                                                    <exclude reference="gkK-1D-Pe4"/>
                                                     <exclude reference="Jc6-Mt-LnR"/>
                                                     <exclude reference="hXq-4Y-C4m"/>
+                                                    <exclude reference="K1Q-3e-W5P"/>
+                                                    <exclude reference="gkK-1D-Pe4"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1294,10 +1300,10 @@
                                                     <include reference="pWv-1H-2QE"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="K1Q-3e-W5P"/>
-                                                    <include reference="gkK-1D-Pe4"/>
                                                     <include reference="Jc6-Mt-LnR"/>
                                                     <include reference="hXq-4Y-C4m"/>
+                                                    <include reference="K1Q-3e-W5P"/>
+                                                    <include reference="gkK-1D-Pe4"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1311,8 +1317,10 @@
                             <tableViewSection headerTitle="Ekstra" id="b8I-Rp-qd6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="19h-p1-aaZ">
+                                        <rect key="frame" x="0.0" y="231.5" width="0.0" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19h-p1-aaZ" id="bYG-fe-DHC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Help-100" translatesAutoresizingMaskIntoConstraints="NO" id="S2P-24-m6M">
@@ -1375,10 +1383,10 @@
                                                     <exclude reference="Q2Z-jg-iAf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="I70-kF-k7E"/>
-                                                    <exclude reference="ip0-8t-X2v"/>
                                                     <exclude reference="V9B-0w-Ve7"/>
                                                     <exclude reference="zGZ-zh-HjK"/>
+                                                    <exclude reference="I70-kF-k7E"/>
+                                                    <exclude reference="ip0-8t-X2v"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1387,10 +1395,10 @@
                                                     <include reference="Q2Z-jg-iAf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="I70-kF-k7E"/>
-                                                    <include reference="ip0-8t-X2v"/>
                                                     <include reference="V9B-0w-Ve7"/>
                                                     <include reference="zGZ-zh-HjK"/>
+                                                    <include reference="I70-kF-k7E"/>
+                                                    <include reference="ip0-8t-X2v"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1998,7 +2006,7 @@
                                         <exclude reference="PWn-OG-QxM"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
                                     <mask key="subviews">
                                         <include reference="Jzj-6s-kRd"/>
@@ -2419,8 +2427,7 @@
                                         <exclude reference="olv-X3-1pv"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="154" y="107" width="90" height="90"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="AA7-mq-uar"/>
                                         <include reference="olv-X3-1pv"/>
@@ -2621,9 +2628,6 @@
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mSw-le-mUz">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="189" y="266" width="20" height="20"/>
-                                </variation>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2764,10 +2768,10 @@
                                 <exclude reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="LKv-he-IPR"/>
                                 <exclude reference="8dS-eA-s9B"/>
                                 <exclude reference="XHK-3A-1GQ"/>
                                 <exclude reference="uMk-aq-tEd"/>
-                                <exclude reference="LKv-he-IPR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2775,10 +2779,10 @@
                                 <include reference="j7N-hp-xMj"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LKv-he-IPR"/>
                                 <include reference="8dS-eA-s9B"/>
                                 <include reference="XHK-3A-1GQ"/>
                                 <include reference="uMk-aq-tEd"/>
-                                <include reference="LKv-he-IPR"/>
                             </mask>
                         </variation>
                     </view>
@@ -7227,7 +7231,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Klikk på enhetene for å legge til" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D84-by-Pxe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Klikk på enhetene for å legge til" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D84-by-Pxe">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4R7-D8-lL3"/>
@@ -7667,7 +7671,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="xcZ-IO-buz"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="74.5" width="240" height="20"/>
                                     <mask key="constraints">
                                         <include reference="xcZ-IO-buz"/>
                                     </mask>
@@ -7688,7 +7693,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="h2l-6W-KPo"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="66" y="102.5" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="Oko-IO-pQe"/>
                                         <include reference="h2l-6W-KPo"/>
@@ -7710,7 +7716,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="qjZ-U5-7hN"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="182" y="102.5" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="Wzb-hG-mCi"/>
                                         <include reference="qjZ-U5-7hN"/>
@@ -7732,7 +7739,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="XZP-3Z-UMY"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="66" y="150.5" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="H4c-q3-PuX"/>
                                         <include reference="XZP-3Z-UMY"/>
@@ -7754,7 +7762,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="zoW-eJ-38p"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="182" y="150.5" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="lTw-nJ-Fqf"/>
                                         <include reference="zoW-eJ-38p"/>
@@ -7776,7 +7785,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="yYA-AE-S3L"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-50" y="150.5" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="mQA-Xc-nHc"/>
                                         <include reference="yYA-AE-S3L"/>
@@ -7797,7 +7807,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="8" width="400" height="21"/>
+                                    <rect key="frame" x="0.0" y="28" width="240" height="21"/>
                                     <mask key="constraints">
                                         <include reference="A8B-L4-dRc"/>
                                     </mask>
@@ -7819,7 +7829,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="85" width="108" height="40"/>
+                                    <rect key="frame" x="-50" y="105" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="LXQ-NS-99D"/>
                                         <include reference="S0l-Uq-8oz"/>
@@ -7842,7 +7852,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="146" y="85" width="108" height="40"/>
+                                    <rect key="frame" x="66" y="105" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="Mxz-Qz-hiG"/>
                                         <include reference="eYw-rn-aYm"/>
@@ -7865,7 +7875,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="262" y="85" width="108" height="40"/>
+                                    <rect key="frame" x="182" y="105" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="aBa-qX-eVq"/>
                                         <include reference="kCV-9p-Wak"/>
@@ -7888,7 +7898,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="146" y="37" width="108" height="40"/>
+                                    <rect key="frame" x="66" y="57" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="16H-Cg-8RH"/>
                                         <include reference="LRr-Iz-sIS"/>
@@ -7911,7 +7921,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="262" y="37" width="108" height="40"/>
+                                    <rect key="frame" x="182" y="57" width="108" height="40"/>
                                     <mask key="constraints">
                                         <include reference="Qh1-o8-Goa"/>
                                         <include reference="mgf-zH-kfp"/>
@@ -7923,6 +7933,9 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="53.5" width="240" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-zi-Ib9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -7940,7 +7953,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="28" y="37" width="110" height="40"/>
+                                    <rect key="frame" x="-52" y="57" width="110" height="40"/>
                                     <mask key="constraints">
                                         <include reference="6Hv-cz-Nhg"/>
                                         <include reference="qhW-FH-9Zs"/>
@@ -7962,7 +7975,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="uHv-cj-gWX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-52" y="102.5" width="110" height="40"/>
                                     <mask key="constraints">
                                         <include reference="Krl-Uo-A7I"/>
                                         <include reference="uHv-cj-gWX"/>
@@ -8768,7 +8782,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="iKa-2c-o3M"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
                                     <mask key="subviews">
                                         <include reference="5yG-rP-mhV"/>
@@ -9346,7 +9360,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="xBv-KD-GkE"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="687"/>
                                     <mask key="subviews">
                                         <include reference="lJG-3p-JrC"/>
@@ -9476,7 +9490,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-CX-Tl6">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="987"/>
+                                    <rect key="frame" x="0.0" y="20" width="400" height="1080"/>
                                 </variation>
                                 <connections>
                                     <segue destination="2mt-WO-mZX" kind="embed" identifier="" id="dxF-6v-Jdz"/>
@@ -9749,7 +9763,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="rB0-sy-Nzx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iSI-La-UbB">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96n-9Z-K2V">
@@ -9967,7 +9981,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="bew-ks-QtL"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="100" y="28" width="124" height="92"/>
                                     <mask key="constraints">
                                         <include reference="HaL-1Q-9u6"/>
                                         <include reference="bew-ks-QtL"/>
@@ -9989,7 +10004,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="Uvm-HM-te4"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-58" y="47" width="150" height="54"/>
                                     <mask key="constraints">
                                         <include reference="LQ6-Ls-JGR"/>
                                         <include reference="Uvm-HM-te4"/>
@@ -10061,12 +10077,18 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="22" y="121" width="104" height="10"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uten navn" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-O3-IOV">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="144" y="9" width="63" height="30"/>
+                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavnUtenLinje" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-QK-qs8">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -10080,7 +10102,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="Swi-1G-Y9M"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="30" width="120" height="120"/>
                                     <mask key="constraints">
                                         <include reference="AbI-JS-Eu3"/>
                                         <include reference="Swi-1G-Y9M"/>
@@ -10099,7 +10122,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="Cbo-gF-vec"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="30" width="120" height="120"/>
                                     <mask key="constraints">
                                         <include reference="71c-XT-TNV"/>
                                         <include reference="Cbo-gF-vec"/>
@@ -10116,7 +10140,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="148" y="59" width="215" height="252"/>
+                                    <rect key="frame" x="144" y="47" width="63" height="252.5"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mD-Up-wZM">
@@ -10124,6 +10148,9 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="140" y="-16" width="67" height="17"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>

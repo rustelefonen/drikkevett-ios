@@ -287,8 +287,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         
         // ADD TO LATES BUILD
         fetchUserData()
-        self.overallTitle.text = "Ingen statistikk å vise til!"
-        self.overallSubtitle.text = "Planlegg en kveld og se din statistikk"
+        self.overallTitle.text = "Planlegg Kvelden pågår"
+        self.overallSubtitle.text = "Her vil du se statistikk over den siste kvelden du har registrert"
         self.xImageBtn.hidden = true // SKAL VÆRE TRUE
         self.endDayAfterButtonOutlet.hidden = true // SKAL VÆRE TRUE
         
