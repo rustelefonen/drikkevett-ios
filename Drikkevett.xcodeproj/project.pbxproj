@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
+		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -120,6 +122,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
@@ -284,9 +288,9 @@
 		D5412BC11D285E0E00445D6C /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				D5958E711D29A78F004FC6A3 /* SecondViewController.swift */,
 				D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */,
 				D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */,
-				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
 			);
 			name = calculator;
 			sourceTree = "<group>";
@@ -294,9 +298,10 @@
 		D5412BC21D285E2400445D6C /* planEvening */ = {
 			isa = PBXGroup;
 			children = (
+				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
 				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
 				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
-				D5958E711D29A78F004FC6A3 /* SecondViewController.swift */,
+				7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			children = (
 				D5412BC71D2860D100445D6C /* update */,
 				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
+				7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -332,7 +338,6 @@
 		D5412BC61D28607F00445D6C /* intro */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */,
 				D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */,
 				D5958E451D29A524004FC6A3 /* InformationViewController.swift */,
 				D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */,
@@ -345,6 +350,7 @@
 		D5412BC71D2860D100445D6C /* update */ = {
 			isa = PBXGroup;
 			children = (
+				D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */,
 				D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */,
 				D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */,
 				D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */,
@@ -381,8 +387,8 @@
 				D5412BB41D2810D900445D6C /* entities */,
 				D5412BC61D28607F00445D6C /* intro */,
 				D5412BBF1D285DAF00445D6C /* main */,
-				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
 				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
+				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
 				D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */,
 				D5958E851D29A932004FC6A3 /* Main.storyboard */,
 				D5958E881D29A93D004FC6A3 /* Main.strings */,
@@ -448,7 +454,7 @@
 				TargetAttributes = {
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = L9938G85M7;
+						DevelopmentTeam = BD4PJR3XJ9;
 					};
 				};
 			};
@@ -551,6 +557,7 @@
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
+				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
 				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,
@@ -566,6 +573,7 @@
 				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
 				D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */,
 				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
+				7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */,
 				D5958E661D29A70B004FC6A3 /* HistorikkCelleViewController.swift in Sources */,
 				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
@@ -725,7 +733,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b17566e8-a2d9-428e-82bb-e77d193385d7";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -746,7 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.woact.no.lpk.Skall-Meny2";
 				PRODUCT_NAME = Drikkevett;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b17566e8-a2d9-428e-82bb-e77d193385d7";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 1;

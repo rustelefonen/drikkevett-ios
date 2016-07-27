@@ -287,8 +287,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         
         // ADD TO LATES BUILD
         fetchUserData()
-        self.overallTitle.text = "Ingen statistikk å vise til!"
-        self.overallSubtitle.text = "Planlegg en kveld og se din statistikk"
+        self.overallTitle.text = "Planlegg Kvelden pågår"
+        self.overallSubtitle.text = "Her vil du se statistikk over den siste kvelden du har registrert"
         self.xImageBtn.hidden = true // SKAL VÆRE TRUE
         self.endDayAfterButtonOutlet.hidden = true // SKAL VÆRE TRUE
         
@@ -374,7 +374,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func currentPromilleTimer(){
         var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("visualsCurrentPromille"), userInfo: nil, repeats: true)
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(GlemteEnheterViewController.visualsCurrentPromille), userInfo: nil, repeats: true)
     }
     
     func visualsCurrentPromille(){
@@ -394,7 +394,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func startVisualsTimer(){
         var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("setVisualsAtViewOpening"), userInfo: nil, repeats: true)
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(GlemteEnheterViewController.setVisualsAtViewOpening), userInfo: nil, repeats: true)
     }
     
     func setVisualsAtViewOpening(){

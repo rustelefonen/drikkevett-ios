@@ -226,20 +226,12 @@ class SkallMenyBrain
                 let firstFifMinutesFromFirstUnitAdded = currentTimeStamp.timeIntervalSinceDate(firstUnitAddedTimeS)
                 let convertToMin = firstFifMinutesFromFirstUnitAdded / 60
                 let convertToHour = convertToMin / 60 as Double
-                print("Tid fra første enhet lagt til og fremover: \(convertToHour)")
-                // deretter skip inn på den "vanlige" metoden
-                // FRA 0-4 MIN
-                if(convertToHour <= 0.085){
-                    sum = 0
-                    print("Mindre enn 4 minutter...")
-                }
-                // FRA 4-15 MIN
-                if(convertToHour > 0.085 && convertToHour <= 0.25){
-                    print("Fra 4 minutter til 15 minutter...")
-                    sum = firstFifteen(convertToHour, weightFif: weight, genderFif: genderScore, unitAlco: unit)
+                
+                // FRA 0-15 MIN
+                if(convertToHour <= 0.25){
+                    sum = simulateFirstFifteen(convertToHour, totalUnits: (beerCount + wineCount + drinkCount + shotCount))
                 }
                 if(convertToHour > 0.25){
-                    print("Større enn et kvarter...")
                     // 15 MIN OG OPPOVER
                     sum = calculatePromille(gender, weight: weight, grams: totalGrams, timer: convertToHour)
                 }
@@ -248,6 +240,59 @@ class SkallMenyBrain
             fatalError("bad things happened \(error)")
         }
         return sum
+    }
+    
+    func simulateFirstFifteen(timeDifference: Double, totalUnits: Double) -> Double{
+        var BAC : Double = 0.0
+        let minute : Double = (1.0 / 60.0 )
+        
+        if(timeDifference >= 0.0 && timeDifference <= minute){ // 1 min
+            BAC = totalUnits * 0.01 // 50
+        }
+        if(timeDifference > minute && timeDifference <= (minute * 2)){ // 2 min
+            BAC = Double(totalUnits) * 0.02 // 23.5
+        }
+        if(timeDifference > (minute * 2) && timeDifference <= (minute * 3)){ // 3 min
+            BAC = Double(totalUnits) * 0.03 // 11.5
+        }
+        if(timeDifference > (minute * 3) && timeDifference <= (minute * 4)){ // 4 min
+            BAC = Double(totalUnits) * 0.04 // 6.8
+        }
+        if(timeDifference > (minute * 4) && timeDifference <= (minute * 5)){ // 5 min
+            BAC = Double(totalUnits) * 0.05 // 4.8
+        }
+        if(timeDifference > (minute * 5) && timeDifference <= (minute * 6)){ // 6 min
+            BAC = Double(totalUnits) * 0.06 // 3.5
+        }
+        if(timeDifference > (minute * 6) && timeDifference <= (minute * 7)){ // 7 min
+            BAC = Double(totalUnits) * 0.07 // 2.55
+        }
+        if(timeDifference > (minute * 7) && timeDifference <= (minute * 8)){ // 8 min
+            BAC = Double(totalUnits) * 0.08 // 2.0
+        }
+        if(timeDifference > (minute * 8) && timeDifference <= (minute * 9)){ // 9 min
+            BAC = Double(totalUnits) * 0.09 // 1.5
+        }
+        if(timeDifference > (minute * 9) && timeDifference <= (minute * 10)){ // 10 min
+            BAC = Double(totalUnits) * 0.10 // 1.15
+        }
+        if(timeDifference > (minute * 10) && timeDifference <= (minute * 11)){ // 11 min
+            BAC = Double(totalUnits) * 0.11 // 0.85
+        }
+        if(timeDifference > (minute * 11) && timeDifference <= (minute * 12)){ // 12 min
+            BAC = Double(totalUnits) * 0.12 // 0.53
+        }
+        if(timeDifference > (minute * 12) && timeDifference <= (minute * 13)){ // 13 min
+            BAC = Double(totalUnits) * 0.13 // 0.33
+        }
+        if(timeDifference > (minute * 13) && timeDifference <= (minute * 14)){ // 14 min
+            BAC = Double(totalUnits) * 0.14 // 0.28
+        }
+        if(timeDifference > (minute * 14) && timeDifference <= (minute * 15)){ // 15 min
+            BAC = Double(totalUnits) * 0.15 // 0.15
+        }
+        
+        return BAC
     }
     
     // NOTIFICATIONS
@@ -298,92 +343,6 @@ class SkallMenyBrain
         let randomIndex = Int(arc4random_uniform(UInt32(quoteArray.count)))
         let finalString = quoteArray[randomIndex]
         return finalString
-    }
-    
-    func getPromille2(unitInGram: Double, arrayUnits: [NSDate], weight: Double, gender: Bool) -> Double{
-        
-        var sum : Double = 0.0
-        var genderScore : Double = 0.0
-        
-        if(gender == true) { // TRUE ER MANN
-            genderScore = 0.70
-        } else if (gender == false) { // FALSE ER KVINNE
-            genderScore = 0.60
-        }
-        
-        let minute : Double = 1 / 60
-        let twoMinute : Double = minute * 2
-        let threeMinute : Double = minute * 3
-        let fourMinute : Double = minute * 4
-        let fiveMinute : Double = minute * 5
-        let sixMinute : Double = minute * 6
-        let sevenMinute : Double = minute * 7
-        let eightMinute : Double = minute * 8
-        let nineMinute : Double = minute * 9
-        let tenMinute : Double = minute * 10
-        let ellevenMinute : Double = minute * 11
-        let twelveMinute : Double = minute * 12
-        let thirteenMinute : Double = minute * 13
-        let fourteenMinute : Double = minute * 14
-        let fifteenMinute : Double = minute * 15
-        
-        for timeStamp in arrayUnits {
-            
-            let currentTimeStamp = NSDate()
-            
-            // FLYTTES OPP TIL PARAMETERET.
-            let firstUnitAddedTimeStamp = NSDate()
-            
-            let distanceBetweenStartNow = currentTimeStamp.timeIntervalSinceDate(timeStamp)
-            let fromSecondsToMinutes = distanceBetweenStartNow / 60
-            let fromMinutesToHours = fromSecondsToMinutes / 60 as Double
-            
-            // fra første enhet lagt til og opp til et kvarter kjør en fiktiv metode for promille
-            let firstFifMinutesFromFirstUnitAdded = currentTimeStamp.timeIntervalSinceDate(firstUnitAddedTimeStamp)
-            let convertToMin = firstFifMinutesFromFirstUnitAdded / 60
-            let convertToHour = convertToMin / 60 as Double
-            
-            // deretter skip inn på den "vanlige" metoden
-            
-            if(convertToHour < 0.25){
-                print("Less than a quarter...")
-                // 1 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: minute, minMin: 0.00, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 50.00)
-                // 2 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: twoMinute, minMin: minute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 23.5)
-                // 3 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: threeMinute, minMin: twoMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 11.5)
-                // 4 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: fourMinute, minMin: threeMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 6.8)
-                // 5 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: fiveMinute, minMin: fourMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 4.8)
-                // 6 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: sixMinute, minMin: fiveMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 3.5)
-                // 7 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: sevenMinute, minMin: sixMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 2.55)
-                // 8 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: eightMinute, minMin: sevenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 2.0)
-                // 9 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: nineMinute, minMin: eightMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 1.5)
-                // 10 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: tenMinute, minMin: nineMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 1.15)
-                // 11 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: ellevenMinute, minMin: tenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.85)
-                // 12 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: twelveMinute, minMin: ellevenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.53)
-                // 13 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: thirteenMinute, minMin: twelveMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.33)
-                // 14 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: fourteenMinute, minMin: thirteenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.28)
-                // 15 MIN
-                sum += checkPromilleFifteen(fromMinutesToHours, maxMin: fifteenMinute, minMin: fourteenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.20)
-            } else {
-                print("Larger than a quarter...")
-                // 15 MIN OG OPPOVER
-                sum += checkPromilleLargerFifteen(fromMinutesToHours, minMin: fifteenMinute, weight: weight, gender: genderScore, grams: unitInGram, promilleDown: 0.15)
-            }
-        }
-        return sum
     }
     
     func checkPromilleFifteen(fromMinHour: Double, maxMin: Double, minMin: Double, weight: Double, gender: Double, grams: Double, promilleDown: Double) -> Double {

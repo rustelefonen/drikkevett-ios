@@ -259,17 +259,9 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     // BARCHART
     func initaiteBarChart(){
         fetchUserData()
-        
         barChartView.noDataTextDescription = "Ingen data på graf"
-        
-        /* DETTE SKAL BRUKES I "EKTE" VERSJON*/
-        //populateAxises()
-        
-        // ADDING DUMMY DATA IF EDITING DESIGN:
-        XAxis = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "G", "H", "I", "J", "I", "J", "G", "H", "I", "J", "G", "H", "I", "J", "I", "J", "G", "H", "I", "J"]
-        YAxis = [0.6, 1.3, 1.1, 0.4, 0.9, 1.2, 2.2, 0.83, 0.98, 1.0, 1.9, 1.6, 1.1, 0.9, 1.0, 1.1, 1.3, 0.66, 0.9, 0.3, 2.1, 0.6, 0.2, 0.4, 1.1, 0.2, 1.8, 0.6, 0.33, 2.0]
+        populateAxises()
         designChart()
-        
         setChart(XAxis, values: YAxis)
     }
     
@@ -434,7 +426,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     
     func didUserReachGoal() -> Bool {
         var didUserAvergeAboveGoal = false
-        print("OverGoal: \(overGoal) <= UnderGoal: \(underGoal)")
         if(overGoal <= underGoal){
             didUserAvergeAboveGoal = true
         } else {

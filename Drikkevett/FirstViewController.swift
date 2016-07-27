@@ -4,30 +4,12 @@
 //  Created by Lars Petter Kristiansen on 27.01.2016.
 //  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
 
-/*
-OVERSIKT: 
-CMD - F = (Over-Overskriften du vil finne)
-
-0001 - ATTRIBUTTER
-0002 - FONTS AND COLORS
-0003 - SJEKK PROMILLE
-0004 - START/END KVELDEN
-0005 - ACTION BUTTONS
-0006 - NULLSTILL ENHETER
-0007 - DEFAULT VERDIER
-0008 - CORE DATA - SAMHANDLING MED DATABASEN
-*/
-
 import UIKit
 import CoreData
 import Foundation
 
 class FirstViewController: UIViewController {
-    ////////////////////////////////////////////////////////////////////////
-    //                        ATTRIBUTTER (0001)                          //
-    ////////////////////////////////////////////////////////////////////////
     
-    //-----------------------------   OUTLETS    -------------------------\\
     @IBOutlet weak var oppdaterPromilleLabel: UILabel!
     @IBOutlet weak var antallOlLabel: UILabel!
     @IBOutlet weak var antallVinLabel: UILabel!
@@ -42,8 +24,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var clearButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var minusBeerBtnOutlet: UIButton!
     @IBOutlet weak var addUnitsBtnOutlet: UIButton!
-    // COSTS LABEL
-    @IBOutlet weak var costsLabel: UILabel!
     
     // START KVELD / END KVELD BILDE KNAPP
     @IBOutlet weak var startEndImage: UIImageView!
@@ -53,9 +33,6 @@ class FirstViewController: UIViewController {
     
     // TEXT VIEW QUOTES
     @IBOutlet weak var textViewQuotes: UILabel!
-
-    // TOTAL UNITS LABEL
-    @IBOutlet weak var totalUnitsLabel: UILabel!
     
     //----------------------   MODEL/DATABASE/COLORS    ---------------------//
     var brain = SkallMenyBrain()
@@ -63,6 +40,7 @@ class FirstViewController: UIViewController {
     let moc = DataController().managedObjectContext
     var setAppColors = AppColors()
     var forgotViewCont = GlemteEnheterViewController()
+    let planPartyUtils = PlanPartyUtil()
     
     //---------------------------   VARIABLER    -----------------------------//
     var isPlanPartyNotGoing : Bool = true
@@ -152,40 +130,15 @@ class FirstViewController: UIViewController {
         
         isAppAlreadyLaunchedOnce()
         isPlanPartyViewLunchedBefore()
-        print("\nFirstViewController Loaded...")
-        print("\n\n\n HISTORIKK: ")
         brainCoreData.fetchHistorikk()
-        print("\n\n\n")
-        //brainCoreData.clearCoreData("TimeStamp2")
-        //brainCoreData.clearCoreData("StartEndTimeStamps")
-        
-        // FUNKSJON
         visualsMethod()
         updatePromilleLabel()
         timerShowPromille()
         startTimerUpdateVisuals()
-        
-        print("Høyeste Prom ViewDidLoad First: \(highestPromille)")
-        
-        // START AND STOP VISUALS TIMER
-        /*
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        //UIApplicationDidEnterBackgroundNotification & UIApplicationWillEnterForegroundNotification shouldn't be quoted
-        notificationCenter.addObserver(self, selector: #selector(FirstViewController.didEnterBackground), name: UIApplicationDidEnterBackgroundNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(FirstViewController.didBecomeActive), name: UIApplicationWillEnterForegroundNotification, object: nil)
-        */
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(FirstViewController.visualsMethod), name:
-            UIApplicationWillEnterForegroundNotification, object: nil)
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        print("\nFirstViewController Appeared...")
-        print("Some Text: \(someText)")
         didBecomeActive()
     }
     
@@ -209,7 +162,6 @@ class FirstViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        print("View did dissaper")
         didEnterBackground()
     }
     
@@ -318,21 +270,11 @@ class FirstViewController: UIViewController {
         titleDrink.font = setAppColors.textHeadlinesFonts(14)
         titleShot.textColor = setAppColors.textHeadlinesColors()
         titleShot.font = setAppColors.textHeadlinesFonts(14)
-        costsLabel.textColor = setAppColors.textHeadlinesColors()
-        costsLabel.font = setAppColors.textHeadlinesFonts(18)
-        self.totalUnitsLabel.textColor = setAppColors.textHeadlinesColors()
-        self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(18)
      
         // BUTTON FONT
         startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
         startEndPartyBtn.titleLabel?.textAlignment = NSTextAlignment.Center
-        //startEndPartyBtn.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.4)
-        //startEndPartyBtn.titleLabel?.textColor = UIColor.blackColor()
-        //startEndPartyBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
-        //clearButtonOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
-        //addUnitsBtnOutlet.setTitle("Legg til", forState: UIControlState.Normal)
         addUnitsBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(20)
-        //minusBeerBtnOutlet.setTitle("Fjern", forState: UIControlState.Normal)
         minusBeerBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(20)
         setButtonsRounded(setAppColors.roundedCorners())
     }
@@ -564,12 +506,10 @@ class FirstViewController: UIViewController {
                 // Clear database slik at den skal ta inn nye timeStamp
                 brainCoreData.clearCoreData("TimeStamp2")
                 brainCoreData.clearCoreData("StartEndTimeStamps")
-            
-                print("\n\n FØR LAGRE FALSE: ")
+                
                 getDefaultCheckSessionBool()
                 isPlanPartyNotGoing = false
                 storeIfSesStartedBool()
-                print("\n\n ETTER LAGRE FALSE: ")
                 getDefaultCheckSessionBool()
                 
                 minusBeerBtnOutlet.enabled = false
@@ -584,37 +524,16 @@ class FirstViewController: UIViewController {
                 
                 getPrevSessionNumber()
                 numberOfSessionPlanParty += 1
-                print("Sesjons nummer START KVELDEN: \(numberOfSessionPlanParty)")
                 
                 storeBoolValue()
-                print("Button StartOf: \(startOfSessionStamp)")
-                print("Button EndOf: \(setEndOfSessionStamp)")
                 
                 brainCoreData.seedStartEndTimeStamp(startOfSessionStamp, endStamp: setEndOfSessionStamp)
                
                 plannedCounter = counter
-                print("PlannedCounter: \(plannedCounter)")
                 storedPlannedCounter()
                
                 unitAddedAlertController("Kvelden er startet", message: "Have fun og drikk med måte", delayTime: 3.0)
                 
-                // sett i gang notifications ( første: 1 time, andre: 3 timer, tredje: 4,5 timer, fjerde: 6 timer )
-                // notifications
-                let getBoolNotIfic = instMenu.getNotificationValue()
-                print("Is Notifications On: \(getBoolNotIfic)")
-                if(getBoolNotIfic == true){
-                    // etter 1 time
-                    let oneHourNotification = [""]
-                    
-                    
-                    
-                    let intervalSession = setEndOfSessionStamp.timeIntervalSinceDate(startOfSessionStamp)
-                    notificationFunction(3600, alertActionText: "tilbake", alertBodyText: brain.randomNotification("First"))
-                    notificationFunction(10800, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Second"))
-                    notificationFunction(16200, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Third"))
-                    notificationFunction(21600, alertActionText: "tilbake", alertBodyText: brain.randomNotification("Fourth"))
-                    notificationFunction(intervalSession, alertActionText: "til applikasjonen", alertBodyText: "Kvelden er over!")
-                }
                 startEndPartyBtn.setTitle("Slutt Kvelden", forState: UIControlState.Normal)
                 clearButtonOutlet.enabled = false
             }
@@ -633,12 +552,9 @@ class FirstViewController: UIViewController {
         let alertController = UIAlertController(title: titleMsg, message:
             msg, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
-            print("Handle cancel logic here")
         }))
         
         alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
-            //self.endParty(NSDate())
-            print("End Kvelden! ")
             self.setEndOfSessionStamp = NSDate()
             self.brainCoreData.clearCoreData("StartEndTimeStamps")
             self.endParty(self.setEndOfSessionStamp)
@@ -646,176 +562,6 @@ class FirstViewController: UIViewController {
             self.updateVisualUnitsWhenDayAfterIsRunning()
             }))
         self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                     DUMMY DATA TESTING (000000123)                 //
-    ////////////////////////////////////////////////////////////////////////
-    
-    func setDummyDates(){
-
-    }
-    
-    func dummyDataTesting(){
-        // SETT START FOR DUMMY SESJON
-        startOfSessionStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: 15, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
-        print("Dummy StartOfSessionStamp: \(startOfSessionStamp)")
-        
-        // SET END FOR DUMMY SESJON
-        setEndOfSessionStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: 12, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        print("Dummy setEndOfSessionStamp: \(setEndOfSessionStamp)")
-        setDateOnFirstUnitAdded = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        print("Dummy setDateOnFirstUnitAddedStamp: \(setDateOnFirstUnitAdded)")
-        
-        let dummyPrintDay = brain.getDayOfWeekAsString(startOfSessionStamp)
-        let dummyPrintDate = brain.getDateOfMonth(startOfSessionStamp)
-        let dummyPrintMonth = brain.getMonthOfYear(startOfSessionStamp)
-        let fullDate = "\(dummyPrintDay!) \(dummyPrintDate!). \(dummyPrintMonth!)"
-        print("FullDate: \(fullDate)")
-        
-        //var minuteArray = [Int]()
-        //var indexSomething = 0
-        
-        // DUMMY COUNT
-        let dummyCountBeer = 8
-        let dummyCountWine = 0
-        let dummyCountDrink = 4
-        let dummyCountShot = 2
-        
-        var totalCosts = 0
-        let totalBeerCost = getBeerCost * dummyCountBeer
-        let totalWineCost = getWineCost * dummyCountWine
-        let totalDrinkCost = getDrinkCost * dummyCountDrink
-        let totalShotCost = getShotCost * dummyCountShot
-        totalCosts = totalBeerCost + totalWineCost + totalDrinkCost + totalShotCost
-        
-        /*
-        // ØL
-        var beerStamp = NSDate()
-        var beerArrayTest = [NSDate]()
-        for index in 1...dummyCountBeer {
-            var random = arc4random_uniform(600) + 1
-            print(random)
-            let randomNr = Int(random)
-            print(index)
-            beerStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: randomNr, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-            seedUnitTimeStamp(beerStamp, typeOfUnit: "Beer")
-        }
-        
-        // VIN
-        var wineStamp = NSDate()
-        for index in 1...dummyCountWine {
-            var random = arc4random_uniform(600) + 1
-            print(random)
-            let randomNr = Int(random)
-            print(index)
-            wineStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: randomNr, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-            seedUnitTimeStamp(wineStamp, typeOfUnit: "Wine")
-        }
-        
-        // DRINK
-        var drinkStamp = NSDate()
-        for index in 1...dummyCountDrink {
-            var random = arc4random_uniform(600) + 1
-            print(random)
-            let randomNr = Int(random)
-            print(index)
-            drinkStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: randomNr, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-            seedUnitTimeStamp(wineStamp, typeOfUnit: "Drink")
-        }
-        
-        // SHOT
-        var shotStamp = NSDate()
-        for index in 1...dummyCountShot {
-            var random = arc4random_uniform(600) + 1
-            print(random)
-            let randomNr = Int(random)
-            print(index)
-            shotStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: randomNr, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-            seedUnitTimeStamp(wineStamp, typeOfUnit: "Shot")
-        }*/
-        
-        // ØL
-        // 1
-        let beer1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer1Stamp, typeOfUnit: "Beer")
-        let beer7Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 1, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer7Stamp, typeOfUnit: "Beer")
-        
-        // 2
-        let beer2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer2Stamp, typeOfUnit: "Beer")
-        let beer8Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 49, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer8Stamp, typeOfUnit: "Beer")
-        
-        // 3
-        let beer3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer3Stamp, typeOfUnit: "Beer")
-        let beer9Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 90, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer9Stamp, typeOfUnit: "Beer")
-        
-        // 4
-        /*var beer4Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 120, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer4Stamp, typeOfUnit: "Beer")
-        var beer10Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 120, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer10Stamp, typeOfUnit: "Beer")*/
-        
-        // 5
-        let beer5Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer5Stamp, typeOfUnit: "Beer")
-        let beer11Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 150, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer11Stamp, typeOfUnit: "Beer")
-        
-        // 6
-        let beer6Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer6Stamp, typeOfUnit: "Beer")
-        let beer12Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 171, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(beer12Stamp, typeOfUnit: "Beer")
-        /*
-        // VIN
-        var wine1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 210, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(wine1Stamp, typeOfUnit: "Wine")
-        var wine2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 240, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(wine2Stamp, typeOfUnit: "Wine")
-        */
-        
-        // DRINKER
-        
-        let drink1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 210, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(drink1Stamp, typeOfUnit: "Drink")
-        let drink2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 240, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(drink2Stamp, typeOfUnit: "Drink")
-        let drink3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 300, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(drink3Stamp, typeOfUnit: "Drink")
- 
-        
-        // SHOTS
-        let shot1Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 220, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(shot1Stamp, typeOfUnit: "Shot")
-        let shot2Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 310, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(shot2Stamp, typeOfUnit: "Shot")
-        /*var shot3Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 360, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(shot3Stamp, typeOfUnit: "Shot")
-        var shot4Stamp = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: 420, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
-        seedUnitTimeStamp(shot4Stamp, typeOfUnit: "Shot")*/
-        
-        print("\n\n\nDUMMY DATAENE SOM SEEDES TIL HISTORIKK: ")
-        print("Start Dato/Tidspunkt: \(startOfSessionStamp)")
-        print("DatoTwo: \(fullDate)")
-        print("Antall Øl: \(dummyCountBeer)")
-        print("Antall Vin: \(dummyCountWine)")
-        print("Antall Drink: \(dummyCountDrink)")
-        print("Antall Shot: \(dummyCountShot)")
-        print("Forbruk: \(totalCosts)")
-        print("Høyeste Promille: \(highestPromille)")
-        print("Sesjons Nummer: \(numberOfSessionPlanParty)")
-        print("End of Sesjon date: \(setEndOfSessionStamp)")
-        print("Date on first unit added: \(setDateOnFirstUnitAdded)")
-        print("\n\n")
-        
-        brainCoreData.seedHistoryValues(startOfSessionStamp, forbruk: totalCosts, hoyestePromille: highestPromille, antallOl: dummyCountBeer, antallVin: dummyCountWine, antallDrink: dummyCountDrink, antallShot: dummyCountShot, stringDato: fullDate, endOfSesDate: setEndOfSessionStamp, sessionNumber: numberOfSessionPlanParty, firstUnitStamp: setDateOnFirstUnitAdded)
-        // KJØR POPULATE GRAPH
-        brain.populateGraphValues(getGender, weight: getWeight, startPlanStamp: startOfSessionStamp, endPlanStamp: setEndOfSessionStamp)
     }
     
     func randomUnit() -> String{
@@ -841,8 +587,6 @@ class FirstViewController: UIViewController {
                     numberOfBeerCount = 0
                 }
                 storeBoolValue()
-            } else {
-                print("Nothing skal skje, sesjonen er i gang.")
             }
         }
         if(fetchUnitTypeFromSwipe == "Wine"){
@@ -855,8 +599,6 @@ class FirstViewController: UIViewController {
                     numberOfWineCount = 0
                 }
                 storeBoolValue()
-            } else {
-                print("Nothing skal skje, sesjonen er i gang.")
             }
         }
         if(fetchUnitTypeFromSwipe == "Drink"){
@@ -869,8 +611,6 @@ class FirstViewController: UIViewController {
                     numberOfDrinkCount = 0
                 }
                 storeBoolValue()
-            } else {
-                print("Nothing skal skje, sesjonen er i gang.")
             }
         }
         if(fetchUnitTypeFromSwipe == "Shot"){
@@ -883,22 +623,10 @@ class FirstViewController: UIViewController {
                     numberOfShotCount = 0
                 }
                 storeBoolValue()
-            } else {
-                print("Nothing skal skje, sesjonen er i gang.")
             }
         }
-        print("counter = \(counter)")
         updateVisualUnits()
     }
-    
-    /*
-     
-     
-     SETT INN I NYTT PROSJEKT :
-     
-     
-     */
-    
     
     func addNumUnit(unit: String) -> Int{
         let maxPlanUnitValue = 30.0
@@ -926,10 +654,8 @@ class FirstViewController: UIViewController {
             histUnitCount += 1
             getIfFirstUnitHasBeenAdded()
             if(hasFirstUnitBeenAdded == false){
-                print("Ingen enhet har blitt lagt til før")
                 setDateOnFirstUnitAdded = NSDate()
                 hasFirstUnitBeenAdded = true
-                print("hasFirstUnitBeenAdded++: \(hasFirstUnitBeenAdded)")
                 storeIsFirstUnitAdded()
             }
             // ENDRE FRA BEER OG WINE TIL ( ØL OG VIN ) ---- >>
@@ -960,8 +686,6 @@ class FirstViewController: UIViewController {
     @IBAction func addUnitButton(sender: AnyObject) {
         getFetchedValue()
         getDefaultCheckSessionBool()
-        
-        print("\naddUnitButton: \n")
         if(isPlanPartyNotGoing == true) {
             numberOfBeerCount += checkWhichSession("Beer", numValue: numberOfBeerCount, histValue: historyCountBeer)
             numberOfWineCount += checkWhichSession("Wine", numValue: numberOfWineCount, histValue: historyCountWine)
@@ -978,12 +702,6 @@ class FirstViewController: UIViewController {
             updateVisualUnitsOnGoingSes()
         }
     }
-    
-    /*
-     
-     SETT INN I NYTT PROSJEKT !SLUTT!
-     
-     */
     
     func popUpPlanParty(){
         // ADVAR BRUKER OM AT PROMILLEN BLIR HØY MED DETTE ANTALLET
@@ -1031,10 +749,6 @@ class FirstViewController: UIViewController {
         self.antallVinLabel.text = "\(numberOfWineCount)"
         self.antallDrinkLabel.text = "\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(numberOfShotCount)"
-        let setTotalCost = calcualteTotalCosts(numberOfBeerCount, wine: numberOfWineCount, drink: numberOfDrinkCount, shot: numberOfShotCount)
-        self.costsLabel.text = "\(setTotalCost),-"
-        let setPlannedUnits = numberOfBeerCount + numberOfWineCount + numberOfDrinkCount + numberOfShotCount
-        self.totalUnitsLabel.text = "\(setPlannedUnits)"
         self.oppdaterPromilleLabel.text = "0.00"
         self.clearButtonOutlet.enabled = true
         self.minusBeerBtnOutlet.enabled = true
@@ -1078,12 +792,6 @@ class FirstViewController: UIViewController {
         self.antallVinLabel.text = "\(historyCountWine)/\(numberOfWineCount)"
         self.antallDrinkLabel.text = "\(historyCountDrink)/\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(historyCountShot)/\(numberOfShotCount)"
-        let setPlannedCost = calcualteTotalCosts(numberOfBeerCount, wine: numberOfWineCount, drink: numberOfDrinkCount, shot: numberOfShotCount)
-        let setActuallCost = calcualteTotalCosts(historyCountBeer, wine: historyCountWine, drink: historyCountDrink, shot: historyCountShot)
-        self.costsLabel.text = "\(setActuallCost),- \nav \(setPlannedCost),-"
-        let setPlannedUnits = numberOfBeerCount + numberOfWineCount + numberOfDrinkCount + numberOfShotCount
-        let setActualUnits  = historyCountBeer + historyCountWine + historyCountDrink + historyCountShot
-        self.totalUnitsLabel.text = "\(setActualUnits)/\(setPlannedUnits)"
         self.clearButtonOutlet.enabled = false
         self.minusBeerBtnOutlet.enabled = false
         self.minusBeerBtnOutlet.setTitle("", forState: UIControlState.Normal)
@@ -1115,50 +823,9 @@ class FirstViewController: UIViewController {
         } else {
             antallShotLabel.textColor = setAppColors.textUnderHeadlinesColors()
         }
-        
-        // 
-        // HVA SKAL DET STÅ I TEKST FELTENE:
-        if(sumOnArray >= 0.0 && sumOnArray < 0.4){
-            self.textViewQuotes.text = "Kos deg!"
-            self.oppdaterPromilleLabel.textColor = UIColor.whiteColor()
-            self.textViewQuotes.textColor = UIColor.whiteColor()
-        }
-        // LYKKE PROMILLE
-        if(sumOnArray >= 0.4 && sumOnArray < 0.8){
-            self.textViewQuotes.text = "Lykkepromille"
-            self.oppdaterPromilleLabel.textColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-            self.textViewQuotes.textColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-        }
-        if(sumOnArray >= 0.8 && sumOnArray < 1.0){
-            self.textViewQuotes.text = "Du blir mer kritikkløs og risikovillig"
-            self.oppdaterPromilleLabel.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-            self.textViewQuotes.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(sumOnArray >= 1.0 && sumOnArray < 1.2){
-            self.textViewQuotes.text = "Balansen blir dårligere"
-            self.oppdaterPromilleLabel.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-            self.textViewQuotes.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(sumOnArray >= 1.2 && sumOnArray < 1.4){
-            self.textViewQuotes.text = "Talen snøvlete og \nkontroll på bevegelser forverres"
-            self.oppdaterPromilleLabel.textColor = UIColor.orangeColor()
-            self.textViewQuotes.textColor = UIColor.orangeColor()
-        }
-        if(sumOnArray >= 1.4 && sumOnArray < 1.8){
-            self.textViewQuotes.text = "Man blir trøtt, sløv og \nkan bli kvalm"
-            self.oppdaterPromilleLabel.textColor = UIColor.orangeColor()
-            self.textViewQuotes.textColor = UIColor.orangeColor()
-        }
-        if(sumOnArray >= 1.8 && sumOnArray < 3.0){
-            self.textViewQuotes.text = "Hukommelsen sliter! "
-            self.oppdaterPromilleLabel.textColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
-            self.textViewQuotes.textColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
-        }
-        if(sumOnArray >= 3.0){
-            self.textViewQuotes.text = "Svært høy promille! \nMan kan bli bevistløs!"
-            self.oppdaterPromilleLabel.textColor = UIColor.redColor()
-            self.textViewQuotes.textColor = UIColor.redColor()
-        }
+        planPartyUtils.setTextQuote(sumOnArray)
+        planPartyUtils.setTextQuoteColor(sumOnArray)
+    
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4
             self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -70.0, -45.0)
@@ -1179,8 +846,6 @@ class FirstViewController: UIViewController {
         self.antallVinLabel.text = "-"
         self.antallDrinkLabel.text = "-"
         self.antallShotLabel.text = "-"
-        self.costsLabel.text = "-"
-        self.totalUnitsLabel.text = "-"
         self.oppdaterPromilleLabel.text = "0.00"
         self.clearButtonOutlet.enabled = false
         self.minusBeerBtnOutlet.enabled = false
@@ -1571,10 +1236,6 @@ class FirstViewController: UIViewController {
             self.textViewQuotes.font = setAppColors.setTextQuoteFont(12)
             self.oppdaterPromilleLabel.font = setAppColors.textHeadlinesFonts(60)
             
-            // FORBRUK
-            self.costsLabel.font = setAppColors.textHeadlinesFonts(10)
-            self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(10)
-            
             // STATS:
             self.antallOlLabel.font = setAppColors.textUnderHeadlinesFonts(20)
             self.antallVinLabel.font = setAppColors.textUnderHeadlinesFonts(20)
@@ -1589,9 +1250,6 @@ class FirstViewController: UIViewController {
         } else if UIScreen.mainScreen().bounds.size.height == 568 {
             // IPhone 5
           self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -90.0)
-          
-          // FORBRUK
-          self.costsLabel.transform = CGAffineTransformTranslate(self.view.transform, 17.0, 0.0)
           
           // BUTTONS
           self.minusBeerBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
@@ -1616,10 +1274,7 @@ class FirstViewController: UIViewController {
           self.startEndImage.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
           
           // FONTS
-          // FORBRUK
-          self.costsLabel.font = setAppColors.textHeadlinesFonts(10)
-          self.totalUnitsLabel.font = setAppColors.textHeadlinesFonts(10)
-          
+            
           // STATS:
           self.antallOlLabel.font = setAppColors.textUnderHeadlinesFonts(25)
           self.antallVinLabel.font = setAppColors.textUnderHeadlinesFonts(25)
@@ -1637,83 +1292,5 @@ class FirstViewController: UIViewController {
             // iPhone 6+
             self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -32.0)
         }
-    }
-    
-    // NOTIFICATIONS
-    func notificationFunction(seconds: Double, alertActionText: String, alertBodyText: String){
-        print("notification Function runned...")
-        
-        let notification = UILocalNotification()
-        notification.alertAction = alertActionText
-        notification.alertBody = alertBodyText
-        notification.fireDate = NSDate(timeIntervalSinceNow: seconds)
-        //notification.alertLaunchImage = ""
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
-    func setTextQuote(totalPromille: Double) -> String{
-        var tempTextQuote = ""
-        
-        // HVA SKAL DET STÅ I TEKST FELTENE:
-        if(totalPromille >= 0.0 && totalPromille < 0.4){
-            tempTextQuote = "Kos deg!"
-        }
-        // LYKKE PROMILLE
-        if(totalPromille >= 0.4 && totalPromille < 0.8){
-            tempTextQuote = "Lykkepromille"
-        }
-        if(totalPromille >= 0.8 && totalPromille < 1.0){
-            tempTextQuote = "Du blir mer kritikkløs og risikovillig"
-        }
-        if(totalPromille >= 1.0 && totalPromille < 1.2){
-            tempTextQuote = "Balansen blir dårligere"
-        }
-        if(totalPromille >= 1.2 && totalPromille < 1.4){
-            tempTextQuote = "Talen snøvlete og \nkontroll på bevegelser forverres"
-        }
-        if(totalPromille >= 1.4 && totalPromille < 1.8){
-            tempTextQuote = "Man blir trøtt, sløv og \nkan bli kvalm"
-        }
-        if(totalPromille >= 1.8 && totalPromille < 3.0){
-            tempTextQuote = "Hukommelsen sliter! "
-        }
-        if(totalPromille >= 3.0){
-            tempTextQuote = "Svært høy promille! \nMan kan bli bevistløs!"
-        }
-        return tempTextQuote
-    }
-    
-    func setTextQuoteColor(totalPromille: Double) -> UIColor{
-        var tempQuoteColor = UIColor()
-        
-        // HVA SKAL DET STÅ I TEKST FELTENE:
-        if(sumOnArray >= 0.0 && sumOnArray < 0.4){
-            tempQuoteColor = UIColor.whiteColor()
-        }
-        // LYKKE PROMILLE
-        if(totalPromille >= 0.4 && totalPromille < 0.8){
-            tempQuoteColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-        }
-        if(totalPromille >= 0.8 && totalPromille < 1.0){
-            tempQuoteColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(totalPromille >= 1.0 && totalPromille < 1.2){
-            tempQuoteColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(totalPromille >= 1.2 && totalPromille < 1.4){
-            tempQuoteColor = UIColor.orangeColor()
-        }
-        if(totalPromille >= 1.4 && totalPromille < 1.8){
-            tempQuoteColor = UIColor.orangeColor()
-        }
-        if(totalPromille >= 1.8 && totalPromille < 3.0){
-            tempQuoteColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
-        }
-        if(totalPromille >= 3.0){
-            tempQuoteColor = UIColor.redColor()
-        }
-        
-        return tempQuoteColor
     }
 }
