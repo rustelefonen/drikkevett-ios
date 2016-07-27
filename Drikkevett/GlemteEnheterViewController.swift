@@ -232,9 +232,25 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         let formatYestHighPromille = String(format: "%.2f", yestHighProm)
         self.yesterdaysHighestProm.text = "\(formatYestHighPromille)"
         
-        // ADD TO LATES BUILD
         self.overallTitle.text = "Drakk du mer enn planlagt?"
         self.overallSubtitle.text = "Klikk på enhetene for å legge til"
+        
+        // HIDE
+        self.pieChartView.hidden = false
+        self.beerOutletButton.hidden = false
+        self.wineOutletButton.hidden = false
+        self.drinkOutletButton.hidden = false
+        self.shotOutletButton.hidden = false
+        self.beerLabel.hidden = false
+        self.wineLabel.hidden = false
+        self.drinkLabel.hidden = false
+        self.shotLabel.hidden = false
+        self.yesterdaysCosts.hidden = false
+        self.currentPromille.hidden = false
+        self.yesterdaysHighestProm.hidden = false
+        self.yestCostTitleLabel.hidden = false
+        self.currPromTitleLabel.hidden = false
+        self.yestHighestPromTitleLabel.hidden = false
         
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4
@@ -271,21 +287,23 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     }
 
     func visualsOnDayAfterNotRunning(){
-        // BEER BTN SKAL VÆRE FALSE ::::
-        self.beerOutletButton.enabled = false
-        self.wineOutletButton.enabled = false
-        self.drinkOutletButton.enabled = false
-        self.shotOutletButton.enabled = false
         self.endDayAfterButtonOutlet.enabled = false
-        self.beerLabel.text = "-" // -
-        self.wineLabel.text = "-" // -
-        self.drinkLabel.text = "-" // -
-        self.shotLabel.text = "-" // -
-        self.yesterdaysCosts.text = "-" // --,-
-        self.yesterdaysHighestProm.text = "-" // --.-
-        self.currentPromille.text = "-" // --.-
+        self.pieChartView.hidden = true
+        self.beerOutletButton.hidden = true
+        self.wineOutletButton.hidden = true
+        self.drinkOutletButton.hidden = true
+        self.shotOutletButton.hidden = true
+        self.beerLabel.hidden = true
+        self.wineLabel.hidden = true
+        self.drinkLabel.hidden = true
+        self.shotLabel.hidden = true
+        self.yesterdaysCosts.hidden = true
+        self.currentPromille.hidden = true
+        self.yesterdaysHighestProm.hidden = true
+        self.yestCostTitleLabel.hidden = true
+        self.currPromTitleLabel.hidden = true
+        self.yestHighestPromTitleLabel.hidden = true
         
-        // ADD TO LATES BUILD
         fetchUserData()
         self.overallTitle.text = "Planlegg Kvelden pågår"
         self.overallSubtitle.text = "Her vil du se statistikk over den siste kvelden du har registrert"
