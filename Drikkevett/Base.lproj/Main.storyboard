@@ -2006,7 +2006,7 @@
                                         <exclude reference="PWn-OG-QxM"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
                                     <mask key="subviews">
                                         <include reference="Jzj-6s-kRd"/>
@@ -8782,7 +8782,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="iKa-2c-o3M"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
                                     <mask key="subviews">
                                         <include reference="5yG-rP-mhV"/>
@@ -10072,25 +10072,13 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sett inn profilbilde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU7-Mi-s7r">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="22" y="121" width="104" height="10"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uten navn" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-O3-IOV">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="144" y="9" width="63" height="30"/>
-                                </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavnUtenLinje" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-QK-qs8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultBilde" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-QK-qs8">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="AbI-JS-Eu3"/>
@@ -10102,8 +10090,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="Swi-1G-Y9M"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="30" width="120" height="120"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="AbI-JS-Eu3"/>
                                         <include reference="Swi-1G-Y9M"/>
@@ -10122,8 +10109,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="Cbo-gF-vec"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="30" width="120" height="120"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="71c-XT-TNV"/>
                                         <include reference="Cbo-gF-vec"/>
@@ -10139,9 +10125,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="144" y="47" width="63" height="252.5"/>
-                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mD-Up-wZM">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -10161,8 +10144,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             </constraint>
                             <constraint firstItem="1SX-QK-qs8" firstAttribute="leading" secondItem="Duh-Iq-6WL" secondAttribute="leadingMargin" id="729-QA-dEg"/>
                             <constraint firstItem="1SX-QK-qs8" firstAttribute="top" secondItem="RyH-oY-SiR" secondAttribute="bottom" constant="10" id="OcO-CU-8fu"/>
-                            <constraint firstItem="QYS-UV-wEG" firstAttribute="leading" secondItem="GU7-Mi-s7r" secondAttribute="trailing" constant="18" id="PEw-G4-WsZ"/>
-                            <constraint firstItem="GU7-Mi-s7r" firstAttribute="leading" secondItem="Duh-Iq-6WL" secondAttribute="leadingMargin" constant="6" id="Pc8-Nk-FzR"/>
                             <constraint firstItem="rRz-O3-IOV" firstAttribute="leading" secondItem="GU2-nQ-SUp" secondAttribute="trailing" constant="41" id="TUa-tg-FVi">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
@@ -10170,11 +10151,9 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <variation key="heightClass=regular-widthClass=compact" constant="17"/>
                             </constraint>
                             <constraint firstItem="rRz-O3-IOV" firstAttribute="top" secondItem="2mD-Up-wZM" secondAttribute="bottom" constant="8" id="WyS-zC-KK2"/>
-                            <constraint firstItem="rgO-XG-vPN" firstAttribute="top" secondItem="GU7-Mi-s7r" secondAttribute="bottom" constant="18" id="Xz1-Dv-loH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2mD-Up-wZM" secondAttribute="trailing" constant="-12" id="YU0-Qt-2c0">
                                 <variation key="heightClass=regular-widthClass=compact" constant="17"/>
                             </constraint>
-                            <constraint firstItem="GU7-Mi-s7r" firstAttribute="top" secondItem="RyH-oY-SiR" secondAttribute="bottom" constant="101" id="bGU-iy-Tvq"/>
                             <constraint firstItem="QYS-UV-wEG" firstAttribute="top" secondItem="rRz-O3-IOV" secondAttribute="bottom" constant="8" id="cBU-Zv-5VQ"/>
                             <constraint firstItem="2mD-Up-wZM" firstAttribute="leading" secondItem="Duh-Iq-6WL" secondAttribute="leadingMargin" constant="157" id="h5i-MB-Zmp">
                                 <variation key="heightClass=regular-widthClass=compact" constant="124"/>
@@ -10187,7 +10166,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="GU7-Mi-s7r"/>
                                 <exclude reference="rRz-O3-IOV"/>
                                 <exclude reference="1SX-QK-qs8"/>
                                 <exclude reference="GU2-nQ-SUp"/>
@@ -10195,28 +10173,23 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <exclude reference="2mD-Up-wZM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Xz1-Dv-loH"/>
                                 <exclude reference="j4b-qR-C0p"/>
                                 <exclude reference="1M8-xU-bFz"/>
                                 <exclude reference="zJN-CG-wsc"/>
                                 <exclude reference="YU0-Qt-2c0"/>
                                 <exclude reference="h5i-MB-Zmp"/>
-                                <exclude reference="Pc8-Nk-FzR"/>
-                                <exclude reference="bGU-iy-Tvq"/>
                                 <exclude reference="TUa-tg-FVi"/>
                                 <exclude reference="WIU-jV-VmU"/>
                                 <exclude reference="WyS-zC-KK2"/>
                                 <exclude reference="729-QA-dEg"/>
                                 <exclude reference="OcO-CU-8fu"/>
                                 <exclude reference="1Z8-uV-xwl"/>
-                                <exclude reference="PEw-G4-WsZ"/>
                                 <exclude reference="cBU-Zv-5VQ"/>
                                 <exclude reference="iP1-nq-NUM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="GU7-Mi-s7r"/>
                                 <include reference="rRz-O3-IOV"/>
                                 <include reference="1SX-QK-qs8"/>
                                 <include reference="GU2-nQ-SUp"/>
@@ -10224,21 +10197,17 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <include reference="2mD-Up-wZM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Xz1-Dv-loH"/>
                                 <include reference="j4b-qR-C0p"/>
                                 <include reference="1M8-xU-bFz"/>
                                 <include reference="zJN-CG-wsc"/>
                                 <include reference="YU0-Qt-2c0"/>
                                 <include reference="h5i-MB-Zmp"/>
-                                <include reference="Pc8-Nk-FzR"/>
-                                <include reference="bGU-iy-Tvq"/>
                                 <include reference="TUa-tg-FVi"/>
                                 <include reference="WIU-jV-VmU"/>
                                 <include reference="WyS-zC-KK2"/>
                                 <include reference="729-QA-dEg"/>
                                 <include reference="OcO-CU-8fu"/>
                                 <include reference="1Z8-uV-xwl"/>
-                                <include reference="PEw-G4-WsZ"/>
                                 <include reference="cBU-Zv-5VQ"/>
                                 <include reference="iP1-nq-NUM"/>
                             </mask>
@@ -10253,7 +10222,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEY-aQ-Jx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4353" y="-2190.75"/>
+            <point key="canvasLocation" x="4353" y="-2201.25"/>
         </scene>
     </scenes>
     <resources>
@@ -10268,6 +10237,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="CuckJoafuck2" width="150" height="150"/>
         <image name="DagenDerpåUtenStrekAyylmao" width="25" height="25"/>
         <image name="Date_From-100" width="100" height="100"/>
+        <image name="DefaultBilde" width="800" height="800"/>
         <image name="Define Location-100" width="100" height="100"/>
         <image name="Drink" width="335" height="351"/>
         <image name="Goal-100" width="100" height="100"/>
@@ -10279,7 +10249,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="LønningsPils" width="335" height="351"/>
         <image name="More Than-100" width="100" height="100"/>
         <image name="Navn" width="100" height="105"/>
-        <image name="NavnUtenLinje" width="100" height="105"/>
         <image name="Ok Filled-100" width="100" height="100"/>
         <image name="Open in Browser-100" width="100" height="100"/>
         <image name="Phone-101" width="100" height="100"/>
@@ -10301,12 +10270,12 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kc0-Y5-8LJ"/>
         <segue reference="xx1-SW-dKo"/>
         <segue reference="Tcy-bm-g9P"/>
-        <segue reference="euy-sR-EY5"/>
         <segue reference="hZa-H8-f1E"/>
-        <segue reference="6CW-PT-Kpn"/>
+        <segue reference="euy-sR-EY5"/>
+        <segue reference="xdm-17-Bmk"/>
+        <segue reference="g3V-wV-1SJ"/>
         <segue reference="eAD-WL-Oyo"/>
         <segue reference="YpC-CP-nFB"/>
     </inferredMetricsTieBreakers>
