@@ -268,7 +268,6 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
             textViewGoal.text = "Denne promillen tilsvarer ca. 10-12 enheter per kveld"
             self.imageViewStateOfGoal.image = UIImage(named: "Sad-50")
         }
-        print("Goal Promille: \(goalPromille)")
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -315,7 +314,6 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
             if(self.isGratulationViewRunned == true){
                 self.navigationController?.navigationBarHidden = false
                 self.tabBarController?.tabBar.hidden = false
-                print("segue to homeView")
                 self.isGratulationViewRunned = false
                 self.performSegueWithIdentifier("newGoalRegSegue", sender: self)
                 // newGoalRegSegue

@@ -153,7 +153,6 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     
     // TESTING PROFILE PIC
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        print("Got an image")
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
             let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:context:")
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
@@ -164,14 +163,12 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        print("User cancelled image")
         dismissViewControllerAnimated(true, completion: {
             // anything you want to happen when the user selects cancel
         })
     }
     
     func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
-        print("image saved")
         if let theError = error {
             print("An error happond while saving the image = \(theError)")
         } else {

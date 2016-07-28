@@ -26,10 +26,10 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var lineGraph: LineChartView!
     
     //Necessary attributes: (Arrayene med verdiene) 
-    var months : [String] = [String]()
-    var dollars1 : [Double] = [Double]()
+    var xAxis : [String] = [String]()
+    var yAxis : [Double] = [Double]()
     
-    //let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
+    //let xAxis = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
     //let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
     
     // LABELS
@@ -103,16 +103,6 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         self.antallVinLabel.text =      "\(antallVin)"
         self.antallDrinkLabel.text =      "\(antallDrink)"
         self.antallShotLabel.text =      "\(antallShot)"
-        print(dato)
-        print(forbruk)
-        print(hoyestePromille)
-        print(antallOl)
-        print(antallVin)
-        print(antallDrink)
-        print(antallShot)
-        print(tidspunktDato)
-        print("Session Number: \(sessionNumber)")
-        print("Helvete: \(helvete)")
         
         testSessionNumber()
         
@@ -123,6 +113,8 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         //Removing background grid
         self.lineGraph.leftAxis.drawGridLinesEnabled = true
         self.lineGraph.rightAxis.drawGridLinesEnabled = false
+        self.lineGraph.leftAxis.forceLabelsEnabled = true
+        
         self.lineGraph.xAxis.drawGridLinesEnabled = false
         //Removing frame:
         self.lineGraph.rightAxis.drawLabelsEnabled = false
@@ -142,7 +134,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         self.lineGraph.backgroundColor = setAppColors.lineChartBackgroundColor()
         
         // add data to Chart
-        setChartData(months)
+        setChartData(xAxis)
         
         // set constraints
         setConstraints()
@@ -157,7 +149,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         // Creating an array of data entries
         var yValues1 : [ChartDataEntry] = [ChartDataEntry]()
         for i in 0 ..< months.count {
-            yValues1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
+            yValues1.append(ChartDataEntry(value: yAxis[i], xIndex: i))
         }
         
         // 2 - create a data set with our array
@@ -177,13 +169,18 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         set1.drawCircleHoleEnabled = false
         set1.drawValuesEnabled = false
         
-        
         //3 - create an array to store our LineChartDataSets
         var dataSets : [LineChartDataSet] = [LineChartDataSet]()
         dataSets.append(set1)
         //4 - pass our months in for our x-axis label value along with our dataSets
         let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
         data.setValueTextColor(setAppColors.setTitleColorTextOnCircles())
+        
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .DecimalStyle
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 3
+        data.setValueFormatter(formatter)
         
         //5 - finally set our data
         self.lineGraph.data = data
@@ -208,8 +205,8 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     func testSessionNumber(){
         var graphHistorikk = [GraphHistorikk]()
         
-        months.removeAll()
-        dollars1.removeAll()
+        xAxis.removeAll()
+        yAxis.removeAll()
         
         let timeStampFetch = NSFetchRequest(entityName: "GraphHistorikk")
         
@@ -217,10 +214,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
             graphHistorikk = try moc.executeFetchRequest(timeStampFetch) as! [GraphHistorikk]
             for timeStampItem in graphHistorikk {
                 let graphHistorikkSession = timeStampItem.sessionNumber!
-                print("Alle sesjonsNummer: \(graphHistorikkSession)")
-                print("if graphHistorikkSession(\(graphHistorikkSession)) == sessionNumber(\(sessionNumber))")
                 if(sessionNumber == graphHistorikkSession){
-                    print("sessionNumber iffen slo til!")
                     // populate x and y values with these values
                     let something = timeStampItem.timeStampAdded! as NSDate
                     var formatHour = ""
@@ -241,17 +235,21 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
                     }
                     let formatOfDate = "\(formatHour).\(formatMinute)"
                     
-                    months.append(formatOfDate)
-                    for items in months{
-                        print("Array X: \(items)")
-                    }
+                    print("Array X: \(formatOfDate)")
+                    xAxis.append(formatOfDate)
+                    
                     
                     let promilleCurrent = timeStampItem.currentPromille! as Double
                     
-                    dollars1.append(promilleCurrent)
-                    for items in dollars1 {
-                        print("Array Y: (dollars1) \(items)")
-                    }
+                    let nf2 = NSNumberFormatter()
+                    nf2.numberStyle = .DecimalStyle
+                    nf2.minimumFractionDigits = 0
+                    nf2.maximumFractionDigits = 2
+                    
+                    let formatted = Double(nf2.stringFromNumber(promilleCurrent)!)! as Double
+                    print("Formatted Promille:   \(formatted)")
+                    
+                    yAxis.append(formatted)
                 }
             }
         } catch {

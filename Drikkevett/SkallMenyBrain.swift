@@ -4,79 +4,19 @@
 //  Created by Lars Petter Kristiansen on 24.02.2016.
 //  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
 
-/*
- OVERSIKT:
- CMD - F = (Over-Overskriften du vil finne)
- 
- 0001 - ATTRIBUTTER
- 0002 - HOME VIEW
- 0003 - FIRST VIEW / PLANLEGG KVELDEN
- 0004 - PROMILLE KALKULATOR
- 0005 - DAGEN DERPÅ
- 0006 - HISTORIKK
- 0007 - INFORMASJON
- 0008 - INSTILLINGER 
- 
- */
-
-
 import Foundation
 import CoreData
 import UIKit
 
 class SkallMenyBrain
 {
-    ////////////////////////////////////////////////////////////////////////
-    //                        ATTRIBUTTER (0001)                          //
-    ////////////////////////////////////////////////////////////////////////
-    
     let moc = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
     
-    // GRAMS
     let universalBeerGrams = 17.0
     let universalWineGrams = 13.5
     let universalDrinkGrams = 14.0
     let universalShotGrams = 17.0
-    
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                          HOME VIEW (0002)                          //
-    ////////////////////////////////////////////////////////////////////////
-    
-    //------------------------   LAST MONTH   ----------------------------//
-    /*
-    func checkDatesOneMonth(checkDate: NSDate) -> Bool{
-        
-        var isDateWithinMonth = false
-        
-        let calendar = NSCalendar.currentCalendar()
-        // SJEKK DATOER INNEFOR 1 MÅNED
-        let comps = NSDateComponents()
-        // ANTALL DAGER BAK I TID DU SJEKKER ( SISTE 30 DAGER )
-        comps.day = -6
-        
-        let date2 = calendar.dateByAddingComponents(comps, toDate: NSDate(), options: NSCalendarOptions())
-        //print("DATOE FOR 30 DAGER SIDEN: \(date2!)")
-        if checkDate.compare(date2!) == NSComparisonResult.OrderedDescending
-        {
-            isDateWithinMonth = true
-            //print("DATOEN ER INNENFOR 1 MÅNED")
-        } else if checkDate.compare(date2!) == NSComparisonResult.OrderedAscending
-        {
-            isDateWithinMonth = false
-            //print("DATOEN ER LENGER UNNA ENN 1 MÅNED")
-        } else
-        {
-            isDateWithinMonth = false
-            //print("due in exactly a week (to the second, this will rarely happen in practice)")
-        }
-        return isDateWithinMonth
-    }*/
-    
-    ////////////////////////////////////////////////////////////////////////
-    //              FIRST VIEW / PLANLEGG KVELDEN (0003)                  //
-    ////////////////////////////////////////////////////////////////////////
     
     func checkHighestPromille(gender: Bool, weight: Double, endOfSesStamp: NSDate, terminatedStamp: NSDate, startOfSesStamp: NSDate) -> Double {
         var highestPromille : Double = 0.0
@@ -84,11 +24,7 @@ class SkallMenyBrain
         var valueBetweenTerminated : Double = 0.0
         var genderScore : Double = 0.0
         
-        if(gender == true) { // TRUE ER MANN
-            genderScore = 0.70
-        } else if (gender == false) { // FALSE ER KVINNE
-            genderScore = 0.60
-        }
+        genderScore = setGenderScore(gender)
         
         var countIterasjons = 0
         var count = 0
@@ -98,11 +34,8 @@ class SkallMenyBrain
         
         // Check if an higher promille has accured between app termination and app start.
         let currentTimeStamp = NSDate()
-        
         var intervalTerminatedToResumed : NSTimeInterval = NSTimeInterval()
-        
         let checkIfSessionOver = endOfSesStamp.timeIntervalSinceDate(currentTimeStamp)
-        
         if (checkIfSessionOver < 0.0){
             intervalTerminatedToResumed = endOfSesStamp.timeIntervalSinceDate(terminatedStamp)
         } else {
@@ -112,13 +45,9 @@ class SkallMenyBrain
         while(valueBetweenTerminated < intervalTerminatedToResumed){
             do {
                 timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
-                
-                // Henter ut verdier hvert (valg av sekunder) for å se hva promillen var på det tidspunkt
                 valueBetweenTerminated += 60
                 
                 countIterasjons += 1
-                
-                print("\n\nIterasjoner: \(countIterasjons)(\(valueBetweenTerminated))\n")
                 count = 0
                 
                 for unitOfAlcohol in timeStamps {
@@ -126,17 +55,12 @@ class SkallMenyBrain
                     let unit : String = unitOfAlcohol.unitAlkohol! as String
                     
                     count += 1
-                    print("Timestamp nr: \(count)")
                     
                     let setOneMinFromUnitDate = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startOfSesStamp, options: NSCalendarOptions(rawValue: 0))!
                     
-                    print("Timestamp: \(timeStampTesting) ---")
                     let intervallShiz = setOneMinFromUnitDate.timeIntervalSinceDate(timeStampTesting)
-                    print("Tid fra unit til \(countIterasjons) min: \(intervallShiz)")
                     
-                    // Hvis intervallshiz er negativ vil det si at enheten ikke enda er lagt til
                     if(intervallShiz <= 0){
-                        // enhet ikke lagt til
                     } else {
                         // enhet lagt til
                         let convertMin = intervallShiz / 60
@@ -163,7 +87,6 @@ class SkallMenyBrain
                     }
                 }
                 sum = 0
-                print("\n")
             } catch {
                 fatalError("bad things happened \(error)")
             }
@@ -383,10 +306,6 @@ class SkallMenyBrain
         return regneUtPromille
     }
     
-    ////////////////////////////////////////////////////////////////////////
-    //                PROMILLE KALKULATOR (0003)                          //
-    ////////////////////////////////////////////////////////////////////////
-    
     func calculatePromille(gender: Bool, weight: Double, grams: Double, timer: Double) -> Double{
         var genderScore : Double = 0.0
         var oppdatertPromille : Double = 0.0
@@ -481,10 +400,6 @@ class SkallMenyBrain
         
         return tempQuoteColor
     }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                        DAGEN DERPÅ (0004)                          //
-    ////////////////////////////////////////////////////////////////////////
     
     func firstFifteen(timeFif: Double, weightFif: Double, genderFif: Double, unitAlco: String) -> Double{
         var checkPromille = 0.0
@@ -716,7 +631,6 @@ class SkallMenyBrain
         }
     }
     
-    // TESTING UPDATING SPECIFIC VALUE
     func updateSpecificValue(isDateForekommet: NSDate, summelum: Double, datePerMin: NSDate, promPerMin: Double, sesNr: Int){
         var datesGraph = [GraphHistorikk]()
         
@@ -750,16 +664,10 @@ class SkallMenyBrain
             } catch {
                 fatalError("failure to save timestamp: \(error)")
             }
-            
-            
         } catch {
             fatalError("HAHA; ITS CRASHED")
         }
     }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                    GENERELLE METODER (0001)                        //
-    ////////////////////////////////////////////////////////////////////////
     
     func randomWord(wordArray: [String]) -> String{
         let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
@@ -767,168 +675,6 @@ class SkallMenyBrain
         return finalString
     }
     
-    ////////////////////////////////////////////////////////////////////////
-    //                  FORMATERING AV DATOER (0001)                      //
-    ////////////////////////////////////////////////////////////////////////
-    
-    func getDayOfWeekAsString(today: NSDate?) -> String? {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        if let todayDate = today {
-            let myCalender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalender.components(.Weekday, fromDate: todayDate)
-            let weekDay = myComponents.weekday
-            switch weekDay {
-            case 1:
-                return "Søndag"
-            case 2:
-                return "Mandag"
-            case 3:
-                return "Tirsdag"
-            case 4:
-                return "Onsdag"
-            case 5:
-                return "Torsdag"
-            case 6:
-                return "Fredag"
-            case 7:
-                return "Lørdag"
-            default:
-                print("error fetching days")
-                return "Day"
-            }
-        } else {
-            return nil
-        }
-    }
-    
-    func getDateOfMonth(today: NSDate?)->String? {
-        let formatter  = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        if let todayDate = today {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Day, fromDate: todayDate)
-            let weekDay = myComponents.day
-            switch weekDay {
-            case 1:
-                return "1"
-            case 2:
-                return "2"
-            case 3:
-                return "3"
-            case 4:
-                return "4"
-            case 5:
-                return "5"
-            case 6:
-                return "6"
-            case 7:
-                return "7"
-            case 8:
-                return "8"
-            case 9:
-                return "9"
-            case 10:
-                return "10"
-            case 11:
-                return "11"
-            case 12:
-                return "12"
-            case 13:
-                return "13"
-            case 14:
-                return "14"
-            case 15:
-                return "15"
-            case 16:
-                return "16"
-            case 17:
-                return "17"
-            case 18:
-                return "18"
-            case 19:
-                return "19"
-            case 20:
-                return "20"
-            case 21:
-                return "21"
-            case 22:
-                return "22"
-            case 23:
-                return "23"
-            case 24:
-                return "24"
-            case 25:
-                return "25"
-            case 26:
-                return "26"
-            case 27:
-                return "27"
-            case 28:
-                return "28"
-            case 29:
-                return "29"
-            case 30:
-                return "30"
-            case 31:
-                return "31"
-            default:
-                print("Error fetching Date Of Month")
-                return "Dag"
-            }
-        } else {
-            return nil
-        }
-    }
-    
-    func getMonthOfYear(today:NSDate?)->String? {
-        let formatter  = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        if let todayDate = today {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Month, fromDate: todayDate)
-            let month = myComponents.month
-            switch month {
-            case 1:
-                return "Januar"
-            case 2:
-                return "Februar"
-            case 3:
-                return "Mars"
-            case 4:
-                return "April"
-            case 5:
-                return "Mai"
-            case 6:
-                return "Juni"
-            case 7:
-                return "Juli"
-            case 8:
-                return "August"
-            case 9:
-                return "September"
-            case 10:
-                return "Oktober"
-            case 11:
-                return "November"
-            case 12:
-                return "Desember"
-            default:
-                print("Error fetching months")
-                return "Month"
-            }
-        } else {
-            return nil
-        }
-    }
-    
-    func getTimeStamp() -> NSDate {
-        let date = NSDate()
-        return date
-    }
-    
-    
-    // ENUMERATIONS
     enum defaultKeysInst {
         static let boolKey = "notificationKey"
     }

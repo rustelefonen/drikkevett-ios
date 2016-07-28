@@ -36,6 +36,7 @@ class FirstViewController: UIViewController {
     
     //----------------------   MODEL/DATABASE/COLORS    ---------------------//
     var brain = SkallMenyBrain()
+    let dateUtil = DateUtil()
     var brainCoreData = CoreDataMethods()
     let moc = DataController().managedObjectContext
     var setAppColors = AppColors()
@@ -216,11 +217,9 @@ class FirstViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isFirstControllerRunned"){
-            print("First already launched")
             return true
         }else{
             defaults.setBool(true, forKey: "isFirstControllerRunned")
-            print("First launched first time - FIRST VIEW CONT")
             isPlanPartyNotGoing = true
             storeIfSesStartedBool()
             return false
@@ -249,7 +248,6 @@ class FirstViewController: UIViewController {
      
         self.textViewQuotes.font = setAppColors.setTextQuoteFont(15)
         self.textViewQuotes.textColor = setAppColors.textQuoteColors()
-     
      
         // LABELS - NR OF UNITS
         antallOlLabel.textColor = setAppColors.textUnderHeadlinesColors()
@@ -309,10 +307,7 @@ class FirstViewController: UIViewController {
     }
     
     func updatePromilleLabel(){
-        print("timerShowPromille running (updatePromilleLabel && testingCheckPromilleActive)")
         let currPromille = testingCheckPromilleActive()
-        print("Sum On Array updatePromilleLabel(): \(sumOnArray)")
-        print("CurrPromille updatePro(): \(currPromille)")
         var promille = ""
         promille = String(format: "%.2f", currPromille)
         self.oppdaterPromilleLabel.text = "\(promille)"
@@ -322,7 +317,6 @@ class FirstViewController: UIViewController {
     func startTimerTesting(){
         var timeTimer = NSTimer()
         timeTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: Selector("testingCheckPromilleActive"), userInfo: nil, repeats: true)
-        print("Timer (First ViewController) started...")
     }
     
     func testingCheckPromilleActive() -> Double{
@@ -390,11 +384,9 @@ class FirstViewController: UIViewController {
         
         if(isPlanPartyNotGoing == false) {
             // SESSIONEN ER OVER
-            print("Sesjonen har vært startet og er nå over! ")
-            
-            let printDay = brain.getDayOfWeekAsString(startOfSessionStamp)
-            let printDate = brain.getDateOfMonth(startOfSessionStamp)
-            let printMonth = brain.getMonthOfYear(startOfSessionStamp)
+            let printDay = dateUtil.getDayOfWeekAsString(startOfSessionStamp)
+            let printDate = dateUtil.getDateOfMonth(startOfSessionStamp)
+            let printMonth = dateUtil.getMonthOfYear(startOfSessionStamp)
             let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             
             let totalBeerCost = getBeerCost * historyCountBeer
@@ -463,10 +455,6 @@ class FirstViewController: UIViewController {
             alertController.dismissViewControllerAnimated(true, completion: nil)
         })
     }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                 START/END KVELDEN KNAPP (0004)                     //
-    ////////////////////////////////////////////////////////////////////////
     
     @IBAction func startKveld(sender: AnyObject) {
         let titleValueString = startEndPartyBtn.currentTitle!
@@ -540,17 +528,6 @@ class FirstViewController: UIViewController {
             }))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-    func randomUnit() -> String{
-        let quoteArray = ["Beer", "Wine", "Drink", "Shot"]
-        let randomIndex = Int(arc4random_uniform(UInt32(quoteArray.count)))
-        let finalString = quoteArray[randomIndex]
-        return finalString
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                      ACTION BUTTONS (0005)                         //
-    ////////////////////////////////////////////////////////////////////////
     
     @IBAction func minusUnitButton(sender: AnyObject) {
         getFetchedValue()
@@ -700,27 +677,6 @@ class FirstViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func addActionShot(){
-        getDefaultCheckSessionBool()
-        if(isPlanPartyNotGoing == true) {
-            counter += 1
-            numberOfShotCount += 1
-            storeBoolValue()
-        } else {
-            if(numberOfShotCount <= 0){
-                numberOfShotCount = 0
-                storeBoolValue()
-            } else {
-                unitAlcohol = "Shot"
-                let todaysTimeStamp = NSDate()
-                seedTimeStamp(todaysTimeStamp)
-                numberOfShotCount -= 1
-                historyCountShot += 1
-                storeBoolValue()
-            }
-        }
-    }
-    
     func updateVisualUnits(){
         self.antallOlLabel.text = "\(numberOfBeerCount)"
         self.antallVinLabel.text = "\(numberOfWineCount)"
@@ -767,7 +723,7 @@ class FirstViewController: UIViewController {
     }
     
      func updateVisualUnitsOnGoingSes(){
-     self.antallOlLabel.text = "\(historyCountBeer)/\(numberOfBeerCount)"
+        self.antallOlLabel.text = "\(historyCountBeer)/\(numberOfBeerCount)"
         self.antallVinLabel.text = "\(historyCountWine)/\(numberOfWineCount)"
         self.antallDrinkLabel.text = "\(historyCountDrink)/\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(historyCountShot)/\(numberOfShotCount)"
@@ -900,34 +856,9 @@ class FirstViewController: UIViewController {
         storeBoolValue()
     }
     
-    
     ////////////////////////////////////////////////////////////////////////
     //                        DEFAULT VERDIER (0007)                      //
     ////////////////////////////////////////////////////////////////////////
-    
-    enum defaultKeys {
-        static let keyOne = "wineArrayKey"
-        static let keyBool = "boolKey"
-        static let beerKey = "beerKey"
-        static let wineKey = "wineKey"
-        static let drinkKey = "drinkKey"
-        static let shotKey = "shotKey"
-        static let histBeerKey = "histBeerKey"
-        static let histWineKey = "histWineKey"
-        static let histDrinkKey = "histDrinkKey"
-        static let histShotKey = "histShotKey"
-        static let endOfSessionKey = "endOfSessionKey"
-        static let startOfSessionKey = "startOfSessionKey"
-        static let tempHighPromilleKey = "highPromilleKey"
-        static let numberOfSessions = "numOfSes"
-        static let saveUnitAlco = "unitAlcokey"
-        static let totalNrOfUnits = "totalUnits"
-        static let overGoalProm = "overGoalPromilleReached"
-        static let fetchUnitType = "fetchUnitTypeKey"
-        static let firstUnitAdded = "fetchFirstUnitAddedKey"
-        static let storeFirstUnitAddedDate = "dateFirstUnitKey"
-        static let keyForPlannedCounter = "plannedCounterKey"
-    }
      
      func storedPlannedCounter(){
           let defaults = NSUserDefaults.standardUserDefaults()

@@ -4,35 +4,6 @@
 //  Created by Lars Petter Kristiansen on 04.03.2016.
 //  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
 
-/*
-––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-////////////////////////////////////////////////////////////////////////
-
-----------------------    OVER-OVERSKRIFTER    -------------------------
-
-////////////////////////////////////////////////////////////////////////
-––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-*/
-
-/*
-
------------------------   UNDER-OVERSKRIFTER    ------------------------
-
-*/
-
-/*
-OVERSIKT:
-CMD - F = (Over-Overskriften du vil finne)
-
-0001 -
-0002 -
-0003 -
-0004 -
-0005 -
-0006 -
-0007 -
-*/
-
 import Foundation
 import UIKit
 
@@ -40,16 +11,6 @@ class AppColors {
     
     func roundedCorners() -> Bool{ return false }
     
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    ----------------------    BAKGRUNNSFARGER    ---------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
-    // Forsøker meg på et bilde ( UIColor(patternImage: UIImage(named: "cool-background-purple")!) )
     func mainBackgroundColor() -> UIColor {
         // BAKGRUNNSFARGEN PÅ ALLE VIEWS (255 - 255 -255)
         let backgroundColor = UIColor(patternImage: UIImage(named: "black_back_1")!)
@@ -72,31 +33,9 @@ class AppColors {
         return lineChartBackgroundColor
     }
     
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    -----------------------    CHARTS/GRAFER    ----------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
-    
-    /*
-    
-    -------------------------   BAR CHART/GRAF   ---------------------------
-    
-    */
-    
     func setBarsColor() -> UIColor { // (179 - 35 - 32)
         return UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.6)
     }
-    
-    /*
-    
-    ------------------------   LINE CHART/GRAf    ---------------------------
-    
-    */
     
     func descriptTextColor() -> UIColor {
         return UIColor.darkGrayColor()
@@ -114,16 +53,6 @@ class AppColors {
     func setTitleColorTextOnCircles() -> UIColor {
         return UIColor(red: 179/255.0, green: 35/255.0, blue: 34/255.0, alpha: 0.6)
     }
-    
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    ---------------------    HOME VIEW - BAR    ----------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
     
     func updateFeedBack(distance: Double) -> UIColor{
         var color = UIColor()
@@ -175,28 +104,11 @@ class AppColors {
         return color
     }
     
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    ---------------------    BUTTONS/KNAPPER    ----------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
-    /* 
-    COLORS 
-    */
     func buttonColors(){ // (179 - 35 - 34)
         let buttonsColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
         UIButton.appearance().tintColor = buttonsColor
-        //minusBeerBtnOutlet.layer.cornerRadius = 3;
-        //minusBeerBtnOutlet.layer.borderWidth = 0.5;
-        // minusBeerBtnOutlet.layer.borderColor = UIColor.whiteColor().CGColor
     }
-    /*
-    FONTS
-    */
+    
     func buttonFonts(fontSize: CGFloat) -> UIFont{
          return UIFont(name: "HelveticaNeue-Light", size: fontSize)!
     }
@@ -206,16 +118,6 @@ class AppColors {
         button.layer.borderWidth = 0.5;
         button.layer.borderColor = UIColor.whiteColor().CGColor
     }
-    
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    --------------    SWITCH OVERSIKT/INFO DAGEN DERPÅ    ------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
     
     func swipeInfoStatsFontsChosen(fontSize: CGFloat) -> UIFont{
         return UIFont(name: "HelveticaNeue-Medium", size: fontSize)!
@@ -231,18 +133,7 @@ class AppColors {
     func behindLineColor() -> UIColor{
         return UIColor(red: 200/255.0, green: 135/255.0, blue: 235/255.0, alpha: 1.0)
     }
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
     
-    ----------------------------    TEKST    -------------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
-    /*
-    TEKST HEADLINES
-    */
     func textHeadlinesColors() -> UIColor{ // (179 - 35 - 34)
         // FARGE PÅ TEKST HEADLINES
         let headlines = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
@@ -272,10 +163,6 @@ class AppColors {
         return font
     }
     
-    /*
-    TEKST UNDERHEADLINES
-    */
-    // (179 - 35 - 34)
     func testConstraintFont() -> UIFont{
         var font = UIFont()
         
@@ -306,11 +193,7 @@ class AppColors {
         let underHeadlineFont = UIFont(name: "HelveticaNeue-Light", size: fontSize)
         return underHeadlineFont!
     }
-    
-    /*
-    LENGER TEKST ( TEXT VIEWS )
-    */
-    // (179 - 35 - 34)
+
     func textViewsColors() -> UIColor{
         // FARGE PÅ TEKST HEADLINES
         let textViewColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
@@ -329,9 +212,6 @@ class AppColors {
         return textViewFont!
     }
     
-    /*
-    PROMILLE HEADERS
-    */
     func promilleLabelColors() -> UIColor{
         // FARGE PÅ TEKST HEADLINES (179 - 35 - 34)
         let textViewColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
@@ -344,19 +224,12 @@ class AppColors {
         return textViewFont!
     }
     
-    /*
-    DATE PICKER TEXT COLOR
-    */
-    // (179 - 35 - 34)
     func datePickerTextColor() -> UIColor {
         // FARGE PÅ TEKST HEADLINES
         let textDatePicker = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
         return textDatePicker
     }
     
-    /*
-    text quotes
-    */
     func setTextQuoteFont(fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST UNDERHEADLINES
         let textViewFont = UIFont(name: "HelveticaNeue-MediumItalic", size: fontSize)
@@ -367,16 +240,6 @@ class AppColors {
         let textViewColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
         return textViewColor
     }
-    
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    -------------------------    BARS/MENYER    ----------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
     
     func tabBarColors(){
         // SETT HIGHLIGHTED TAB-BAR
@@ -420,25 +283,10 @@ class AppColors {
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         //UINavigationBar.appearance().translucent = true
         
-        
-        
         //UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         //UIStatus
     }
     
-    /*
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    ////////////////////////////////////////////////////////////////////////
-    
-    --------------------------    HISTORIKK    -----------------------------
-    
-    ////////////////////////////////////////////////////////////////////////
-    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    */
-    
-    /*
-        HVIS MAN VIL ENDRE CELL BAKGRUNNSFARGER BRUK DISSE METODENE:
-    */
     func cellSidesColors() -> UIColor{
         // FARGE CELL SIDER
         let sidesColors = UIColor(red: 205/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
@@ -450,9 +298,6 @@ class AppColors {
         return cellBackColor
     }
     
-    /*
-    CELL BACKGROUNDCOLOR AND TEXT
-    */
     func cellTextColors() -> UIColor{
         // FARGE PÅ TEKST HEADLINES
         let textColor = UIColor(red: 179/255.0, green: 35/255.0, blue: 34/255.0, alpha: 1.0)
@@ -465,9 +310,6 @@ class AppColors {
         return cellFont!
     }
     
-    /*
-    CELL TEXTCOLOR AND BACKGROUNDCOLOR AT CELL PRESSED
-    */
     func cellTextColorsPressed() -> UIColor{
         // FARGE TEKST CELL PRESSED
         let cellPressedTextColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)

@@ -48,6 +48,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     //--------------------   MODEL/DATABASE/COLORS    ---------------------\\
     let moc = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
+    let dateUtil = DateUtil()
     let brain = SkallMenyBrain()
     var setAppColors = AppColors()
     
@@ -646,9 +647,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             let tempNumDrink = self.unitsOfDrink //self.brainCoreData.tempStoreUnits("Drink")
             let tempNumShot = self.unitsOfShots //self.brainCoreData.tempStoreUnits("Shot")
             let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.brain.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.brain.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.brain.getMonthOfYear(self.startOfPlanPartyStamp)
+            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
+            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
+            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
             let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
             
@@ -728,9 +729,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
             
             // FORMAT NEW DATE FOR HISTORY
-            let printDay = self.brain.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.brain.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.brain.getMonthOfYear(self.startOfPlanPartyStamp)
+            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
+            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
+            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
             let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
             
@@ -806,9 +807,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             let tempNumShot = self.unitsOfShots
             
             let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.brain.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.brain.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.brain.getMonthOfYear(self.startOfPlanPartyStamp)
+            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
+            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
+            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
             let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
             
@@ -883,9 +884,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             let tempNumDrink = self.unitsOfDrink
             
             let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.brain.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.brain.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.brain.getMonthOfYear(self.startOfPlanPartyStamp)
+            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
+            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
+            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
             let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
             let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
             

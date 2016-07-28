@@ -10,6 +10,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     let managedObjectContext = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
     let brain = SkallMenyBrain()
+    let dateUtil = DateUtil()
     
     var testArray = [Historikk]()
     var sectionsInTable = [String]()
@@ -161,7 +162,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             let dateTextItem = sectionItems[indexPath.row].dato
             print("Date Text Item: \(dateTextItem)")
             
-            let getDate = brain.getDateOfMonth(dateTextItem)
+            let getDate = dateUtil.getDateOfMonth(dateTextItem)
             let stringDate = "\(getDate!)"
             print("StringDate: \(stringDate)")
             cell.dateLabel?.text = "\(stringDate)"
@@ -188,7 +189,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             
             //cell.textLabel!.text = dateTextItem.text
             let getCosts = sectionItems[indexPath.row].forbruk as! Int
-            let getDay = brain.getDayOfWeekAsString(dateTextItem)
+            let getDay = dateUtil.getDayOfWeekAsString(dateTextItem)
             //let getMonth = brain.getMonthOfYear(dateTextItem)
             let headTitleString = "\(getDay!) brukte du \(getCosts),-"
             print("HeadTitleString: \(headTitleString)")
@@ -369,7 +370,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             // + " - " + String(year)
             
             // CHECK FOR WHICH MONTH
-            let checkForMonth = brain.getMonthOfYear(items.dato!)! + " - " + String(year)
+            let checkForMonth = dateUtil.getMonthOfYear(items.dato!)! + " - " + String(year)
             print("checkFormonth: \(checkForMonth)")
             
             // create sections NSSet so we can use 'containsObject'
@@ -440,7 +441,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             // + " - " + String(year)
             
             // CHECK OM MÅNEDEN ALLEREDE EKSISTERER
-            let checkMonthExists = brain.getMonthOfYear(dateTextItem.dato)! + " - " + String(year)
+            let checkMonthExists = dateUtil.getMonthOfYear(dateTextItem.dato)! + " - " + String(year)
             
             // if the item's date equals the section's date then add it
             if checkMonthExists == sectionsInTable[section] as NSString {

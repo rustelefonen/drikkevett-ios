@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F751D9A1D4A44E800B6896F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F751D991D4A44E800B6896F /* DateUtil.swift */; };
 		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
 		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
+		7FF16A1E1D49313F0063532B /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF16A1D1D49313F0063532B /* defaultKeys.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -122,9 +124,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F751D991D4A44E800B6896F /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF16A1D1D49313F0063532B /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultKeys.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -302,6 +306,7 @@
 				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
 				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
 				7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */,
+				7FF16A1D1D49313F0063532B /* defaultKeys.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			children = (
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
+				7F751D991D4A44E800B6896F /* DateUtil.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
 				D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */,
+				7FF16A1E1D49313F0063532B /* defaultKeys.swift in Sources */,
 				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
@@ -584,6 +591,7 @@
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
+				7F751D9A1D4A44E800B6896F /* DateUtil.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
 				D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */,
 			);

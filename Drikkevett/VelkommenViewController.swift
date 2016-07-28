@@ -51,11 +51,7 @@ class VelkommenViewController: UIViewController {
         self.getStartedBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
         
         // PIC
-        self.headPicImageView.layer.cornerRadius = 55 //self.headPicImageView.frame.size.height / 2
-        //self.headPicImageView.clipsToBounds = true
-        //self.headPicImageView.layer.masksToBounds = true
-        //self.headPicImageView.layer.borderWidth = 1.0
-        //self.headPicImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.headPicImageView.layer.cornerRadius = 55
         self.headPicImageView.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 0.2)
     }
 

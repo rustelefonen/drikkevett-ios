@@ -126,7 +126,6 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         do {
             historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
             for hoyesteProm in historikk {
-                print("Høyeste Prom siste verdi: \(hoyesteProm.hoyestePromille!)")
                 let tempHighProm = hoyesteProm.hoyestePromille! as Double
                 if(goalProm >= tempHighProm){
                     overGoal += 1
@@ -149,7 +148,6 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
             userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
-                print("Goal Prom piechart: \(getGoalPromille)")
             }
         } catch {
             fatalError("bad things happened \(error)")

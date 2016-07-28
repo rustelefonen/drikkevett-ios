@@ -17,6 +17,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     
     // funksjonelle metoder
     let brain = SkallMenyBrain()
+    let dateUtil = DateUtil()
     
     // BAR CHART
     @IBOutlet weak var barChartView: BarChartView!
@@ -124,7 +125,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             UIView.animateWithDuration(1, animations: {
                 v.alpha = 0.0
                 }, completion: {(finished:Bool) in
-                    print("inside")
                     v.removeFromSuperview()
             })
         }
@@ -282,7 +282,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         chartDataSet.valueFormatter = numberFormatter
         
         if(XAxis.isEmpty && YAxis.isEmpty){
-            print("Arrayet er tomtda!")
         } else {
             barChartView.data = chartData
         }
@@ -292,8 +291,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         var colors: [UIColor] = []
         
         for items in values {
-            print("items in values Home: \(items)")
-            
             if(items > getGoalPromille){
                 overGoal += 1
                 
@@ -304,8 +301,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
                 colors.append(UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)) // GREEN
             }
         }
-        print("Over mål: \(overGoal)")
-        print("Under mål: \(underGoal)")
         
         chartDataSet.colors = colors
         barChartView.rightAxis.removeAllLimitLines()
@@ -347,8 +342,8 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
                 print("Start Time PlanKveld: \(timeStampItem.dato!)")
                 let tempStartDate = timeStampItem.dato! as NSDate
                 
-                let date = brain.getDateOfMonth(tempStartDate)!
-                let month = brain.getMonthOfYear(tempStartDate)!
+                let date = dateUtil.getDateOfMonth(tempStartDate)!
+                let month = dateUtil.getMonthOfYear(tempStartDate)!
                 let formatOfDate = "\(date).\(month)"
                 
                 XAxis.append(formatOfDate)
@@ -371,9 +366,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
                 let formatHighProm = Double(tempStringHighProm)
                 
                 YAxis.append(formatHighProm!)
-                for items in YAxis{
-                    print("Array Y: \(items)")
-                }
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -390,7 +382,6 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
                 getGoalDate = item.goalDate! as NSDate
-                print("UserData Home Fetched...")
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -419,9 +410,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             let whatIsTotalAverageHighPromille = brainCoreData.updateTotalAverageHighestPromille(checkTotalAverageHighestPromille)
             formatTotalAverageHighestPromille = String(format: "%.2f", whatIsTotalAverageHighPromille)
             self.averageHighestPromilleStatsLabel.text = "\(formatTotalAverageHighestPromille)"
-        } else {
-            print("Historikk tabellen var tom.")
-        }
+        } else {}
     }
     
     func didUserReachGoal() -> Bool {

@@ -136,9 +136,7 @@ class LastMonthViewController: UIViewController {
             let whatIsTotalAverageHighPromille = brainCoreData.lastMonthTotAvgHighProm(checkTotalAverageHighestPromille)
             formatTotalAverageHighestPromille = String(format: "%.2f", whatIsTotalAverageHighPromille)
             self.averageHighPromLastMonth.text = "\(formatTotalAverageHighestPromille)"
-        } else {
-            print("Historikk tabellen var tom.")
-        }
+        } else {}
     }
     
     func updateHomeViewDidLoad(){
@@ -162,9 +160,7 @@ class LastMonthViewController: UIViewController {
             let whatIsTotalAverageHighPromille = brainCoreData.updateTotalAverageHighestPromille(checkTotalAverageHighestPromille)
             formatTotalAverageHighestPromille = String(format: "%.2f", whatIsTotalAverageHighPromille)
             self.averageHighestPromille.text = "\(formatTotalAverageHighestPromille)"
-        } else {
-            print("Historikk tabellen var tom.")
-        }
+        } else {}
     }
     
     func fetchUserData() {
@@ -175,7 +171,6 @@ class LastMonthViewController: UIViewController {
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
                 getGoalDate = item.goalDate! as NSDate
-                print("UserData Home Fetched...")
             }
         } catch {
             fatalError("bad things happened \(error)")

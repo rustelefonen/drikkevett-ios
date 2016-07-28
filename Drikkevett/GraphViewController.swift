@@ -15,6 +15,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     
     // Get Brain
     var brain = SkallMenyBrain()
+    var dateUtil = DateUtil()
     
     // Get Colors
     var setAppColors = AppColors()
@@ -76,42 +77,34 @@ class GraphViewController: UIViewController, ChartViewDelegate {
             dataEntries.append(dataEntry)
         }
         
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .DecimalStyle
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Høyeste Promille Kvelder")
         let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet)
-        
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.generatesDecimalNumbers = false
-        chartDataSet.valueFormatter = numberFormatter
+    
+        //chartDataSet.valueFormatter?.maximumFractionDigits = 3
+        //chartDataSet.valueFormatter?.minimumFractionDigits = 0
+        //chartData.setValueFormatter(formatter)
         
         if(XAxis.isEmpty && YAxis.isEmpty){
-            print("Arrayet er tomtda!")
         } else {
             lineGraph.data = chartData
         }
         chartDataSet.drawValuesEnabled = false
         lineGraph.descriptionText = ""
-        //chartDataSet.colors = ChartColorTemplates.liberty()
         
         var colors: [UIColor] = []
         
         for items in values {
-            print("items in values Home: \(items)")
-            
             if(items > getGoalPromille){
                 colors.append(UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)) // RED
             } else {
                 colors.append(UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)) // GREEN
             }
         }
-        
-        /*for i in 0..<values.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }*/
         
         chartDataSet.colors = colors
         lineGraph.rightAxis.removeAllLimitLines()
@@ -170,8 +163,8 @@ class GraphViewController: UIViewController, ChartViewDelegate {
                 print("Start Time PlanKveld: \(timeStampItem.dato!)")
                 let tempStartDate = timeStampItem.dato! as NSDate
                 
-                let date = brain.getDateOfMonth(tempStartDate)!
-                let month = brain.getMonthOfYear(tempStartDate)!
+                let date = dateUtil.getDateOfMonth(tempStartDate)!
+                let month = dateUtil.getMonthOfYear(tempStartDate)!
                 let formatOfDate = "\(date).\(month)"
                 
                 XAxis.append(formatOfDate)
@@ -193,7 +186,18 @@ class GraphViewController: UIViewController, ChartViewDelegate {
                 //String(format:"%.2f", tempStringHighProm)
                 let formatHighProm = Double(tempStringHighProm)
                 
-                YAxis.append(formatHighProm!)
+                let nf2 = NSNumberFormatter()
+                nf2.numberStyle = .DecimalStyle
+                nf2.minimumFractionDigits = 0
+                nf2.maximumFractionDigits = 2
+                print("Formatted From nf2: \(nf2.stringFromNumber(tempHighProm))")
+                let formattedValue : Double = Double(nf2.stringFromNumber(tempHighProm)!)!
+                print("Double Value = \(formattedValue)")
+                
+                print("FormattedHighProm: \(formatHighProm)")
+                
+                YAxis.append(formattedValue)
+                
                 for items in YAxis{
                     print("Array Y: \(items)")
                 }
