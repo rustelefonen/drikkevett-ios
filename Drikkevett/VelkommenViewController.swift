@@ -73,7 +73,7 @@ class VelkommenViewController: UIViewController {
             if(checkIfRegistrationWasCompleted() == true){
                 welcomeImageView.hidden = false
                 //imageShit.hidden = false
-                let timer = NSTimer.scheduledTimerWithTimeInterval(1.01, target: self, selector: "timeToMoveOn", userInfo: nil, repeats: false)
+                let timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timeToMoveOn", userInfo: nil, repeats: false)
             }
             return true
         }else{

@@ -178,10 +178,10 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     @IBAction func useDefaultCosts(sender: AnyObject) {
-        self.costsBeerLabel.text = "31"
-        self.costsWineTextField.text = "59"
-        self.costsDrinkTextField.text = "110"
-        self.costsShotTextField.text = "97"
+        self.costsBeerLabel.text = "60"
+        self.costsWineTextField.text = "70"
+        self.costsDrinkTextField.text = "100"
+        self.costsShotTextField.text = "110"
     }
     
     // SCROLL VIEW

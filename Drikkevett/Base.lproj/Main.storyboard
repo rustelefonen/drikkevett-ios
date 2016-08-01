@@ -4017,7 +4017,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchScreen_1" translatesAutoresizingMaskIntoConstraints="NO" id="j7H-9g-HdA">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchscreen_1234" translatesAutoresizingMaskIntoConstraints="NO" id="j7H-9g-HdA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -7105,28 +7105,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forbruk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-7s-xmh">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="GPi-ID-0Sm"/>
-                                    <constraint firstAttribute="width" constant="115" id="n4D-Dw-Vn2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GPi-ID-0Sm"/>
-                                        <exclude reference="n4D-Dw-Vn2"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="GPi-ID-0Sm"/>
-                                        <include reference="n4D-Dw-Vn2"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S0-kR-0Q8">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -7278,6 +7256,28 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     <action selector="endDayAfterBtn:" destination="ntB-7B-vKb" eventType="touchUpInside" id="8Wk-vZ-tQk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forbruk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-7s-xmh">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GPi-ID-0Sm"/>
+                                    <constraint firstAttribute="width" constant="115" id="n4D-Dw-Vn2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GPi-ID-0Sm"/>
+                                        <exclude reference="n4D-Dw-Vn2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="GPi-ID-0Sm"/>
+                                        <include reference="n4D-Dw-Vn2"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -7335,7 +7335,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <exclude reference="w6P-NP-xfz"/>
                                 <exclude reference="crD-J2-sTW"/>
                                 <exclude reference="2rN-dz-diO"/>
-                                <exclude reference="F2z-7s-xmh"/>
                                 <exclude reference="6S0-kR-0Q8"/>
                                 <exclude reference="6IQ-nF-j4I"/>
                                 <exclude reference="Jpx-pf-JNk"/>
@@ -7343,6 +7342,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <exclude reference="R67-76-5ki"/>
                                 <exclude reference="D84-by-Pxe"/>
                                 <exclude reference="55F-yD-hIb"/>
+                                <exclude reference="F2z-7s-xmh"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="aRU-CQ-rY4"/>
@@ -7400,7 +7400,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <include reference="w6P-NP-xfz"/>
                                 <include reference="crD-J2-sTW"/>
                                 <include reference="2rN-dz-diO"/>
-                                <include reference="F2z-7s-xmh"/>
                                 <include reference="6S0-kR-0Q8"/>
                                 <include reference="6IQ-nF-j4I"/>
                                 <include reference="Jpx-pf-JNk"/>
@@ -7408,6 +7407,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <include reference="R67-76-5ki"/>
                                 <include reference="D84-by-Pxe"/>
                                 <include reference="55F-yD-hIb"/>
+                                <include reference="F2z-7s-xmh"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="aRU-CQ-rY4"/>
@@ -7458,6 +7458,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                     <connections>
                         <outlet property="beerLabel" destination="fIF-V2-6CH" id="Asq-Lt-AKk"/>
                         <outlet property="beerOutletButton" destination="OJi-I4-d0p" id="1nM-GI-Ivw"/>
+                        <outlet property="costsTitleLabel" destination="F2z-7s-xmh" id="S41-x0-6rR"/>
                         <outlet property="currPromTitleLabel" destination="Jpx-pf-JNk" id="IDi-io-f6g"/>
                         <outlet property="currentPromille" destination="6IQ-nF-j4I" id="tD3-Fi-IMX"/>
                         <outlet property="drinkLabel" destination="CkB-GM-cir" id="fy5-Sw-C7m"/>
@@ -7471,7 +7472,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <outlet property="wineLabel" destination="4rk-Yn-Rg9" id="6CU-Sk-UAO"/>
                         <outlet property="wineOutletButton" destination="UmC-0e-pgK" id="OqK-uC-Dbz"/>
                         <outlet property="xImageBtn" destination="w6P-NP-xfz" id="rml-2C-XC1"/>
-                        <outlet property="yestCostTitleLabel" destination="F2z-7s-xmh" id="9IR-zW-cbh"/>
                         <outlet property="yestHighestPromTitleLabel" destination="6S0-kR-0Q8" id="XF6-n1-LX5"/>
                         <outlet property="yesterdaysCosts" destination="crD-J2-sTW" id="mw6-jP-rvJ"/>
                         <outlet property="yesterdaysHighestProm" destination="2rN-dz-diO" id="dJ1-Ud-jAj"/>
@@ -7659,7 +7659,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forrige Måned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-JQ-c1N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siste 30 dager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-JQ-c1N">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="xcZ-IO-buz"/>
@@ -9473,6 +9473,9 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-CX-Tl6">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="987"/>
+                                </variation>
                                 <connections>
                                     <segue destination="2mt-WO-mZX" kind="embed" identifier="" id="dxF-6v-Jdz"/>
                                 </connections>
@@ -10242,20 +10245,20 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Vin" width="335" height="351"/>
         <image name="WasaRugSprø" width="100" height="100"/>
         <image name="arrowLeft" width="100" height="100"/>
-        <image name="lunchScreen_1" width="798" height="1368"/>
+        <image name="lunchscreen_1234" width="752" height="1334"/>
         <image name="money-icon" width="200" height="200"/>
         <image name="promilleKalk" width="25" height="25"/>
         <image name="rustelefonenLOGO" width="553" height="482"/>
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xx1-SW-dKo"/>
-        <segue reference="Tcy-bm-g9P"/>
-        <segue reference="hZa-H8-f1E"/>
-        <segue reference="euy-sR-EY5"/>
         <segue reference="xdm-17-Bmk"/>
+        <segue reference="8qG-gV-Nma"/>
+        <segue reference="adh-vd-Tpt"/>
+        <segue reference="Tcy-bm-g9P"/>
+        <segue reference="euy-sR-EY5"/>
+        <segue reference="hZa-H8-f1E"/>
         <segue reference="g3V-wV-1SJ"/>
         <segue reference="eAD-WL-Oyo"/>
-        <segue reference="YpC-CP-nFB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7F751D9A1D4A44E800B6896F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F751D991D4A44E800B6896F /* DateUtil.swift */; };
+		7F751D9F1D4A611E00B6896F /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F751D9E1D4A611E00B6896F /* Status.swift */; };
 		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
 		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
+		7F9DBE201D4B6FF70018DC0A /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */; };
+		7F9DBE261D4BDC290018DC0A /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */; };
+		7F9DBE281D4BDC970018DC0A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE271D4BDC970018DC0A /* User.swift */; };
+		7F9DBE2A1D4BDEDD0018DC0A /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */; };
+		7F9DBE341D4D036D0018DC0A /* ImageViewExtstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */; };
 		7FF16A1E1D49313F0063532B /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF16A1D1D49313F0063532B /* defaultKeys.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
@@ -125,8 +131,14 @@
 
 /* Begin PBXFileReference section */
 		7F751D991D4A44E800B6896F /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		7F751D9E1D4A611E00B6896F /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUtils.swift; sourceTree = "<group>"; };
+		7F9DBE271D4BDC970018DC0A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtstension.swift; sourceTree = "<group>"; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF16A1D1D49313F0063532B /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultKeys.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
@@ -200,6 +212,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F9DBE241D4BDBF10018DC0A /* status */ = {
+			isa = PBXGroup;
+			children = (
+				7F751D9E1D4A611E00B6896F /* Status.swift */,
+				7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */,
+			);
+			name = status;
+			sourceTree = "<group>";
+		};
 		7FE4E47A1C58BD12004465B7 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				D5958E201D29A21C004FC6A3 /* StringExtension.swift */,
+				7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -307,6 +329,8 @@
 				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
 				7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */,
 				7FF16A1D1D49313F0063532B /* defaultKeys.swift */,
+				7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */,
+				7F9DBE271D4BDC970018DC0A /* User.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -316,6 +340,7 @@
 			children = (
 				D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */,
 				D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */,
+				7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */,
 			);
 			name = dayAfter;
 			sourceTree = "<group>";
@@ -387,6 +412,7 @@
 		D5412BCA1D286E9200445D6C /* Drikkevett */ = {
 			isa = PBXGroup;
 			children = (
+				7F9DBE241D4BDBF10018DC0A /* status */,
 				D5412BC91D286A0000445D6C /* utilities */,
 				D5412BC81D28640200445D6C /* persistence */,
 				D5412BB81D284C2000445D6C /* extensions */,
@@ -548,6 +574,7 @@
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
 				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
+				7F9DBE281D4BDC970018DC0A /* User.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
@@ -560,17 +587,21 @@
 				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
+				7F9DBE341D4D036D0018DC0A /* ImageViewExtstension.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
 				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
+				7F751D9F1D4A611E00B6896F /* Status.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
 				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,
 				D5958E271D29A243004FC6A3 /* UserData.swift in Sources */,
+				7F9DBE261D4BDC290018DC0A /* StatusUtils.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
 				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
+				7F9DBE2A1D4BDEDD0018DC0A /* DayAfterUtils.swift in Sources */,
 				D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */,
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
@@ -585,6 +616,7 @@
 				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
+				7F9DBE201D4B6FF70018DC0A /* UserDefaultUtils.swift in Sources */,
 				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,

@@ -84,10 +84,6 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Høyeste Promille Kvelder")
         let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet)
-    
-        //chartDataSet.valueFormatter?.maximumFractionDigits = 3
-        //chartDataSet.valueFormatter?.minimumFractionDigits = 0
-        //chartData.setValueFormatter(formatter)
         
         if(XAxis.isEmpty && YAxis.isEmpty){
         } else {
@@ -181,26 +177,8 @@ class GraphViewController: UIViewController, ChartViewDelegate {
                     tempHighProm = infinity
                     print(tempHighProm)
                 }
-                
-                let tempStringHighProm = String(format: "%.2f", tempHighProm)
-                //String(format:"%.2f", tempStringHighProm)
-                let formatHighProm = Double(tempStringHighProm)
-                
-                let nf2 = NSNumberFormatter()
-                nf2.numberStyle = .DecimalStyle
-                nf2.minimumFractionDigits = 0
-                nf2.maximumFractionDigits = 2
-                print("Formatted From nf2: \(nf2.stringFromNumber(tempHighProm))")
-                let formattedValue : Double = Double(nf2.stringFromNumber(tempHighProm)!)!
-                print("Double Value = \(formattedValue)")
-                
-                print("FormattedHighProm: \(formatHighProm)")
-                
-                YAxis.append(formattedValue)
-                
-                for items in YAxis{
-                    print("Array Y: \(items)")
-                }
+                let formatHighProm = Double(tempHighProm)
+                YAxis.append(formatHighProm)
             }
         } catch {
             fatalError("bad things happened \(error)")

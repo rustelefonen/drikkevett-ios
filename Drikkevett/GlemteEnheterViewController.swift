@@ -11,18 +11,10 @@ import CoreData
 import Charts
 
 class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate {
-    ////////////////////////////////////////////////////////////////////////
-    //                        ATTRIBUTTER (0001)                          //
-    ////////////////////////////////////////////////////////////////////////
-    //@IBOutlet weak var backgroundYesterdaysStats: UIView!
-    //@IBOutlet weak var backgorundYestExper: UIView!
-    
-    // STATS
     @IBOutlet weak var beerLabel: UILabel!
     @IBOutlet weak var wineLabel: UILabel!
     @IBOutlet weak var drinkLabel: UILabel!
     @IBOutlet weak var shotLabel: UILabel!
-    
     @IBOutlet weak var yesterdaysCosts: UILabel!
     @IBOutlet weak var yesterdaysHighestProm: UILabel!
     @IBOutlet weak var currentPromille: UILabel!
@@ -30,81 +22,51 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     @IBOutlet weak var wineOutletButton: UIButton!
     @IBOutlet weak var drinkOutletButton: UIButton!
     @IBOutlet weak var shotOutletButton: UIButton!
-    @IBOutlet weak var yestCostTitleLabel: UILabel!
+    @IBOutlet weak var costsTitleLabel: UILabel!
     @IBOutlet weak var yestHighestPromTitleLabel: UILabel!
     @IBOutlet weak var currPromTitleLabel: UILabel!
     @IBOutlet weak var endDayAfterButtonOutlet: UIButton!
-    
-    /* ADD TO NEW BUILD */
     @IBOutlet weak var overallTitle: UILabel!
     @IBOutlet weak var overallSubtitle: UILabel!
-    
-    // X - IMG - BTN
     @IBOutlet weak var xImageBtn: UIImageView!
-    
-    // PIE CHART VIEW
     @IBOutlet weak var pieChartView: PieChartView!
     
-    //--------------------   MODEL/DATABASE/COLORS    ---------------------\\
     let moc = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
     let dateUtil = DateUtil()
     let brain = SkallMenyBrain()
     var setAppColors = AppColors()
-    
-    //--------------------------   VARIABLER   -----------------------------\\
-    
-    // ARRAYS SOM OPPDATERER HØYSTE PROMILLE OG CURRENT PROMILLE DAGENDERPÅ
-    var beerArray : [NSDate] = [NSDate]()
-    var wineArray : [NSDate] = [NSDate]()
-    var drinkArray : [NSDate] = [NSDate]()
-    var shotArray : [NSDate] = [NSDate]()
-    
-    // Check if session is started
-    var updateStamp : NSDate = NSDate()
-    
-    // GET GENDER, WEIGHT OG KOSTNADER FROM CORE DATA
-    var getGender : Bool = true
-    var getWeight : Double! = 0.0
-    var getNickName : String!
-    
-    // Start tidspunkt dagenderpå sesjon
-    var endDagenDerpaStamp : NSDate = NSDate()
+    let statusUtils = StatusUtils()
+    let dayAfterUtils = DayAfterUtils()
     
     // endOf og startOf Planlegg kvelden sesjon
     var startOfPlanPartyStamp : NSDate = NSDate()
     var endOfPlanPartyStamp : NSDate = NSDate()
     
-    var checkIfLatestHistorikkIsFetched : NSDate = NSDate()
-    
     // hente sessionsnummer
     var fetchSessionNumber : Int = 0
     
-    // Antall ganger appdelegate timeren har kjørt
-    var countCounter : Int = 0
-    
     // STORE DEFAULT VALUES
-    var unitsOfBeers = 0
-    var unitsOfWines = 0
-    var unitsOfDrink = 0
-    var unitsOfShots = 0
-    var yestCost = 0
+    var consumedBeers = 0
+    var consumedWines = 0
+    var consumedDrinks = 0
+    var consumedShots = 0
+    var plannedBeers = 0
+    var plannedWines = 0
+    var plannedDrink = 0
+    var plannedShots = 0
+    
+    var costs = 0
     var yestHighProm = 0.0
-    var currentPromilleNow = 0.0
+    var currentBAC = 0.0
     var totalUnits = 0
+    var totalPlannedUnits = 0
     
-    
-    // Antall ganger updateVisuals har kjørt
-    var countVisuals = 0
-    
-    // Er dagenderpå i gang eller ei
-    var isDayAfterRunning = false
-
     // pluss / minus
     var goalReached = 6
     var overGoal = 3
     
-    let months = [String]()
+    let pieChartValue = [String]()
     
     // SLICE COLORS
     var beerSliceColor = UIColor()
@@ -112,146 +74,404 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     var drinkSliceColor = UIColor()
     var shotSliceColor = UIColor()
     
-    // VISUALS TIMER
-    var visualsNSTimer = NSTimer()
-    
-    var textFieldTest = UITextField()
-    
     // planlagte enheter
     var plannedNumberOfUnits = 0
     
-    // makspromille
-    var getMaxPromille : Double = 0.0
+    var status : AnyObject = Status.DEFAULT
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColorsAndFontsDagenDerpa()
-
-        print("Is blarhar: \(isDayAfterRunning)")
         
-        getDefaultValues()
-        getIsDayAfterRunning()
+        status = statusUtils.getState()
+        stateHandler(status)
+        fillPieChart()
         
-        // SETT INN DENNE METODEN I VIEW DID LOAD:
-        visualsDayAfterStudio()
-        // SLUTT
-        
-        visualsCurrentPromille()
-        visualsTimer()
-        currentPromilleTimer()
-        
-        // DELEGATE
-        pieChartView.delegate = self
-        
-        // PIE CHART:
-        let months = ["", "", "", ""]
-        let unitsSold = [Double(unitsOfBeers), Double(unitsOfWines), Double(unitsOfDrink), Double(unitsOfShots)]
-        
-        // DUMMY PIECHART DATA
-        // unitsSold = [12.6, 4.6, 2.9, 10.0]
-        
-        setChart(months, values: unitsSold)
-        
-        
-        // ALT DETTE MED NOTIFICATION CENTER MÅ INN
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(GlemteEnheterViewController.visualsDayAfterStudio), name:
-            UIApplicationWillEnterForegroundNotification, object: nil)
-        
-        
-        // CONSTRAINTS
+        checkSessionTimer()
         setConstraints()
     }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    /* METODEN UNDER MÅ IMPLEMENTERES*/
-    
-    func visualsTimer(){
-        visualsNSTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(GlemteEnheterViewController.visualsDayAfterStudio), userInfo: nil, repeats: true)
-    }
-    
-    func visualsDayAfterStudio(){
-        if(isDayAfterRunning == true){
-            visualsOnDayAfterRunning()
-            visualsCurrentPromille()
-        }
-        if(isDayAfterRunning == false){
-            visualsOnDayAfterNotRunning()
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(unitsOfBeers), Double(unitsOfWines), Double(unitsOfDrink), Double(unitsOfShots)]
-            setChart(months, values: unitsSold)
-        }
-    }
-    
-    /* METODEN OVER MÅ IMPLEMENTERES*/
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
         pageControll.hidden = false
         
-        updatePromilleAppDelegate()
-        setColorsAndFontsDagenDerpa()
-        getDefaultValues()
-        getIsDayAfterRunning()
-        
-        if(isDayAfterRunning == true){
-            visualsOnDayAfterRunning()
-            visualsCurrentPromille()
-        }
-        if(isDayAfterRunning == false){
-            visualsOnDayAfterNotRunning()
-        }
-        
-        // PIE CHART:
-        let months = ["", "", "", ""]
-        let unitsSold = [Double(unitsOfBeers), Double(unitsOfWines), Double(unitsOfDrink), Double(unitsOfShots)]
-        setChart(months, values: unitsSold)
+        status = statusUtils.getState()
+        stateHandler(status)
+        fillPieChart()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    /*
+     STATUS
+     */
+    
+    func checkSessionTimer(){
+        var timeTimer = NSTimer()
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(GlemteEnheterViewController.updateStatus), userInfo: nil, repeats: true)
     }
     
-    func visualsOnDayAfterRunning(){
-        self.beerOutletButton.enabled = true
-        self.wineOutletButton.enabled = true
-        self.drinkOutletButton.enabled = true
-        self.shotOutletButton.enabled = true
-        self.endDayAfterButtonOutlet.enabled = true
-        self.beerLabel.text = "\(unitsOfBeers)"
-        self.wineLabel.text = "\(unitsOfWines)"
-        self.drinkLabel.text = "\(unitsOfDrink)"
-        self.shotLabel.text = "\(unitsOfShots)"
-        self.yesterdaysCosts.text = "\(yestCost),-"
-        print("visualsOnDayafterrunning: yestHighProm: \(yestHighProm)")
+    func updateStatus(){
+        status = statusUtils.getState()
+        stateHandler(status)
+    }
+    
+    func stateHandler(status : AnyObject){
+        brainCoreData.fetchUserData()
+        getUnits()
+        getPlannedUnits()
+        
+        if(status as! String == Status.DA_RUNNING){
+            dayAfterRunning()
+        }
+        if(status as! String == Status.DEFAULT || status as! String == Status.RUNNING || status as! String == Status.NOT_RUNNING){
+            notRunning()
+        }
+    }
+    
+    func dayAfterRunning(){
+        setStats()
+        visuals_DA_running()
+    }
+    
+    func notRunning(){
+        visuals_not_running()
+    }
+    
+    func setStats(){
+        totalUnits = consumedBeers + consumedWines + consumedDrinks + consumedShots
+        totalPlannedUnits = plannedBeers + plannedWines + plannedDrink + plannedShots
+        currentBAC = calculateCurrentBAC()
+        yestHighProm = dayAfterUtils.getHighestBAC()
+        costs = calculateCosts(consumedBeers, w: consumedWines, d: consumedDrinks, s: consumedShots)
+    }
+    
+    func calculateCurrentBAC() -> Double{
+        return brain.liveUpdatePromille(brainCoreData.fetchUserData().weight, gender: brainCoreData.fetchUserData().gender, firstUnitAddedTimeS: brainCoreData.getFirstUnitAddedTimeStamp())
+    }
+    
+    func getUnits(){
+        var historikk = [Historikk]()
+        
+        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        timeStampFetch.sortDescriptors = [NSSortDescriptor(key: "dato", ascending: false)]
+        timeStampFetch.fetchLimit = 1
+        
+        do {
+            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            for antOlLoop in historikk {
+                consumedBeers = antOlLoop.antallOl! as Int
+            }
+            for antWineLoop in historikk {
+                consumedWines = antWineLoop.antallVin! as Int
+            }
+            for antDriLoop in historikk {
+                consumedDrinks = antDriLoop.antallDrink! as Int
+            }
+            for antShoLoop in historikk {
+                consumedShots = antShoLoop.antallShot! as Int
+            }
+        } catch {
+            fatalError("bad things happened \(error)")
+        }
+    }
+    
+    func calculateCosts(b:Int, w:Int, d:Int, s:Int) -> Int{
+        return ((b * brainCoreData.fetchUserData().beerCost) + (w * brainCoreData.fetchUserData().wineCost) + (d * brainCoreData.fetchUserData().drinkCost) + (s * brainCoreData.fetchUserData().shotCost))
+    }
+    
+    /*
+     ADD UNITS DAY AFTER
+    */
+    
+    @IBAction func addBeerDayAfter(sender: AnyObject) {
+        addUnitPopUp("Legg til Øl", messageAlCon: "Glemt av øl? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Beer")
+    }
+    
+    @IBAction func addWineDayAfter(sender: AnyObject) {
+        addUnitPopUp("Legg til Vin", messageAlCon: "Glemt av vin? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Wine")
+    }
+    
+    @IBAction func addDrinkDayAfter(sender: AnyObject) {
+        addUnitPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Drink")
+    }
+    
+    @IBAction func addShotDayAfter(sender: AnyObject) {
+        addUnitPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Shot")
+    }
+    
+    func addUnitPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String, unit: String){
+        let datepicker = UIDatePicker()
+        datepicker.datePickerMode = .DateAndTime
+        var getPlanPartyStamps : [NSDate] = [NSDate]()
+        getPlanPartyStamps = brainCoreData.getPlanPartySession()
+        startOfPlanPartyStamp = getPlanPartyStamps[0]
+        endOfPlanPartyStamp = getPlanPartyStamps[1]
+        
+        datepicker.minimumDate = startOfPlanPartyStamp
+        datepicker.maximumDate = endOfPlanPartyStamp
+        datepicker.setDate(endOfPlanPartyStamp, animated: true)
+        datepicker.backgroundColor = UIColor.darkGrayColor()
+        datepicker.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
+        
+        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
+        vc.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.delegate = self
+            textField.inputView = datepicker
+            textField.placeholder = "Dato"
+        })
+        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
+            self.datePickValueChangedUnit(datepicker, unit: unit)
+            self.resetHistoryValues(unit)
+            self.status = self.statusUtils.getState()
+            self.stateHandler(self.status)
+            self.fillPieChart()
+        }))
+        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func datePickValueChangedUnit(sender:UIDatePicker, unit: String){
+        let pickerTime = sender.date
+        
+        brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: unit)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+    }
+    
+    func resetHistoryValues(unit: String){
+        self.brainCoreData.fetchUserData()
+        self.getUnits()
+        
+        let tempPlanPartSesNr = self.brainCoreData.fetchPlanPartySessionNr()
+        
+        if(unit == "Beer"){
+            consumedBeers += 1
+        }
+        if(unit == "Wine"){
+            consumedWines += 1
+        }
+        if(unit == "Drink"){
+            consumedDrinks += 1
+        }
+        if(unit == "Shot"){
+            consumedShots += 1
+        }
+        
+        let calculateCosts = self.brain.calcualteTotalCosts(consumedBeers, wine: consumedWines, drink: consumedDrinks, shot: consumedShots, bPrice: brainCoreData.fetchUserData().beerCost, wPrice: brainCoreData.fetchUserData().wineCost, dPrice: brainCoreData.fetchUserData().drinkCost, sPrice: brainCoreData.fetchUserData().shotCost)
+        let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
+        let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
+        let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
+        let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
+        let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
+        
+        self.brainCoreData.deleteLastItemAdded(tempPlanPartSesNr)
+        self.brainCoreData.deleteLastGraphValue(tempPlanPartSesNr)
+        
+        self.brainCoreData.seedHistoryValues(self.startOfPlanPartyStamp, forbruk: calculateCosts, hoyestePromille: 0.0, antallOl: consumedBeers, antallVin: consumedWines, antallDrink: consumedDrinks, antallShot: consumedShots, stringDato: fullDate, endOfSesDate: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr, firstUnitStamp: tempFirstUnitAdded)
+        
+        self.brain.populateGraphValues(self.brainCoreData.fetchUserData().gender, weight: self.brainCoreData.fetchUserData().weight, startPlanStamp: self.startOfPlanPartyStamp, endPlanStamp: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr)
+    }
+    
+    /*
+     END DAY-AFTER BTN
+     */
+    
+    @IBAction func endDayAfterBtn(sender: UIButton) {
+        endDayAfterAlert("Avslutt Dagen Derpå?", msg: "Du vil ikke kunne gå tilbake", cancelTitle: "Avbryt", confirmTitle: "Bekreft")
+    }
+    
+    func endDayAfterAlert(titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
+        let alertController = UIAlertController(title: titleMsg, message:
+            msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+        }))
+        
+        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
+            self.consumedBeers = 0
+            self.consumedWines = 0
+            self.consumedDrinks = 0
+            self.consumedShots = 0
+            self.totalUnits = 0
+            self.costs = 0
+            self.yestHighProm = 0.0
+            self.currentBAC = 0.0
+            self.brainCoreData.clearCoreData("TimeStamp2")
+            self.brainCoreData.clearCoreData("StartEndTimeStamps")
+            self.brainCoreData.clearCoreData("TerminatedTimeStamp")
+            self.clearPlannedUserDefaults()
+            let pieChartValue = ["", "", "", ""]
+            let unitsSold = [Double(self.consumedBeers), Double(self.consumedWines), Double(self.consumedDrinks), Double(self.consumedShots)]
+            self.setChart(pieChartValue, values: unitsSold)
+            self.visuals_not_running()
+            self.statusUtils.setState(Status.NOT_RUNNING)
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    /*
+     PIE CHART
+     */
+    
+    func fillPieChart(){
+        pieChartView.delegate = self
+        let pieChartValue = ["", "", "", ""]
+        let unitsSold = [Double(consumedBeers), Double(consumedWines), Double(consumedDrinks), Double(consumedShots)]
+        
+        // DUMMY PIECHART DATA
+        // unitsSold = [12.6, 4.6, 2.9, 10.0]
+        
+        setChart(pieChartValue, values: unitsSold)
+    }
+    
+    func setSliceColors(){
+        // SLICE COLORS
+        beerSliceColor = UIColor(red: 255/255, green: 198/255, blue: 0/255, alpha: 1.0)
+        wineSliceColor = UIColor(red: 157/255, green: 9/255, blue: 9/255, alpha: 1.0)
+        drinkSliceColor = UIColor(red: 38/255, green: 207/255, blue: 86/255, alpha: 1.0)
+        shotSliceColor = UIColor(red: 139/255, green: 65/255, blue: 232/255, alpha: 1.0) // BLÅ: 0, 170, 255
+    }
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        setSliceColors()
+        
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "???")
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        
+        pieChartView.data = pieChartData
+        pieChartData.setDrawValues(false)
+        
+        var colors: [UIColor] = []
+        
+        colors.append(beerSliceColor)
+        colors.append(wineSliceColor)
+        colors.append(drinkSliceColor)
+        colors.append(shotSliceColor)
+        
+        pieChartDataSet.colors = colors
+        
+        pieChartView.drawHoleEnabled = true
+        pieChartView.holeRadiusPercent = CGFloat(0.55)
+        pieChartView.holeColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        pieChartView.centerTextRadiusPercent = CGFloat(1.0)
+        pieChartView.transparentCircleRadiusPercent = 0.67
+        pieChartView.animate(yAxisDuration: 1.0)
+        pieChartView.descriptionText = ""
+        pieChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
+        //pieChartView.transparentCircleColor?.CGColor
+        pieChartView.drawSliceTextEnabled = false
+        pieChartView.legend.enabled = false
+        
+        var centerText = ""
+        centerText = "\(totalUnits)"
+        
+        var fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
+        
+        if(totalUnits > totalPlannedUnits){
+            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
+            yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+        } else {
+            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor.whiteColor()]
+            yesterdaysCosts.textColor = UIColor.whiteColor()
+        }
+        
+        let attriButedString = NSAttributedString(string: centerText, attributes: fontAttributes)
+        pieChartView.centerAttributedText = attriButedString
+        pieChartView.userInteractionEnabled = true
+    }
+    
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
+        setSliceColors()
+        if(entry.xIndex == 0){
+            beerLabel.textColor = beerSliceColor
+            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        }
+        if(entry.xIndex == 1){
+            wineLabel.textColor = wineSliceColor
+            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        }
+        if(entry.xIndex == 2){
+            drinkLabel.textColor = drinkSliceColor
+            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        }
+        if(entry.xIndex == 3){
+            shotLabel.textColor = shotSliceColor
+            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
+            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        }
+    }
+    
+    func chartValueNothingSelected(chartView: ChartViewBase) {
+        self.beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
+    }
+    
+    /*
+     USER DEFAULTS
+     */
+    
+    func getPlannedUnits(){ // GETTING
+        let defaults = NSUserDefaults.standardUserDefaults()
+        // VISUELLE ENHET VERDIER
+        if let beer : Int = defaults.integerForKey(defaultKeys.beerKey) {
+            plannedBeers = beer
+        }
+        if let wine : Int = defaults.integerForKey(defaultKeys.wineKey) {
+            plannedWines = wine
+        }
+        if let drink : Int = defaults.integerForKey(defaultKeys.drinkKey) {
+            plannedDrink = drink
+        }
+        if let shot : Int = defaults.integerForKey(defaultKeys.shotKey) {
+            plannedShots = shot
+        }
+    }
+    
+    func clearPlannedUserDefaults(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(0, forKey: defaultKeys.beerKey)
+        defaults.setInteger(0, forKey: defaultKeys.wineKey)
+        defaults.setInteger(0, forKey: defaultKeys.drinkKey)
+        defaults.setInteger(0, forKey: defaultKeys.shotKey)
+        defaults.setDouble(0, forKey: defaultKeys.totalNrOfUnits)
+        defaults.synchronize()
+    }
+    
+    
+    /*
+     VISUALS
+     */
+    
+    func visuals_DA_running(){
+        let formatCurrentBAC = String(format: "%.2f", currentBAC)
         let formatYestHighPromille = String(format: "%.2f", yestHighProm)
-        self.yesterdaysHighestProm.text = "\(formatYestHighPromille)"
         
+        self.currentPromille.text = "\(formatCurrentBAC)"
+        self.beerLabel.text = "\(consumedBeers)"
+        self.wineLabel.text = "\(consumedWines)"
+        self.drinkLabel.text = "\(consumedDrinks)"
+        self.shotLabel.text = "\(consumedShots)"
+        self.yesterdaysCosts.text = "\(costs),-"
+        self.yesterdaysHighestProm.text = "\(formatYestHighPromille)"
         self.overallTitle.text = "Drakk du mer enn planlagt?"
         self.overallSubtitle.text = "Klikk på enhetene for å legge til"
-        
-        // HIDE
-        self.pieChartView.hidden = false
-        self.beerOutletButton.hidden = false
-        self.wineOutletButton.hidden = false
-        self.drinkOutletButton.hidden = false
-        self.shotOutletButton.hidden = false
-        self.beerLabel.hidden = false
-        self.wineLabel.hidden = false
-        self.drinkLabel.hidden = false
-        self.shotLabel.hidden = false
-        self.yesterdaysCosts.hidden = false
-        self.currentPromille.hidden = false
-        self.yesterdaysHighestProm.hidden = false
-        self.yestCostTitleLabel.hidden = false
-        self.currPromTitleLabel.hidden = false
-        self.yestHighestPromTitleLabel.hidden = false
+        hideVisuals(false)
         
         if UIScreen.mainScreen().bounds.size.height == 480 {
             // iPhone 4
@@ -271,55 +491,70 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             self.endDayAfterButtonOutlet.hidden = false
         }
         
-        // HVIS DU OVERSTIGER MÅLET DITT BLIR STATISTIKKEN RØD
-        plannedNumberOfUnits = Int(brainCoreData.fetchLastPlannedNumberOfUnits())
-        if(plannedNumberOfUnits < totalUnits){
-            yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
-            print("du drakk mer enn planlagt")
+        checkIfUserWentOverPlanned()
+    }
+    
+    func checkIfUserWentOverPlanned(){
+        // UNITS
+        if(consumedBeers > plannedBeers){
+            self.beerLabel.textColor = UIColor.redColor()
         } else {
-            yesterdaysCosts.textColor = setAppColors.textUnderHeadlinesColors()
+            self.beerLabel.textColor = UIColor.whiteColor()
+        }
+        if(consumedWines > plannedWines){
+            self.wineLabel.textColor = UIColor.redColor()
+        } else {
+            self.beerLabel.textColor = UIColor.whiteColor()
+        }
+        if(consumedDrinks > plannedDrink){
+            self.drinkLabel.textColor = UIColor.redColor()
+        } else {
+            self.drinkLabel.textColor = UIColor.whiteColor()
+        }
+        if(consumedShots > plannedShots){
+            self.shotLabel.textColor = UIColor.redColor()
+        } else {
+            self.shotLabel.textColor = UIColor.whiteColor()
         }
         
+        // COSTS
+        if(totalUnits > totalPlannedUnits){
+            self.yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+        } else {
+            self.yesterdaysCosts.textColor = UIColor.whiteColor()
+        }
         if(brainCoreData.fetchGoal() < yestHighProm){
             yesterdaysHighestProm.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
         } else {
             yesterdaysHighestProm.textColor = setAppColors.textUnderHeadlinesColors()
         }
     }
-
-    func visualsOnDayAfterNotRunning(){
-        self.endDayAfterButtonOutlet.enabled = false
-        self.pieChartView.hidden = true
-        self.beerOutletButton.hidden = true
-        self.wineOutletButton.hidden = true
-        self.drinkOutletButton.hidden = true
-        self.shotOutletButton.hidden = true
-        self.beerLabel.hidden = true
-        self.wineLabel.hidden = true
-        self.drinkLabel.hidden = true
-        self.shotLabel.hidden = true
-        self.yesterdaysCosts.hidden = true
-        self.currentPromille.hidden = true
-        self.yesterdaysHighestProm.hidden = true
-        self.yestCostTitleLabel.hidden = true
-        self.currPromTitleLabel.hidden = true
-        self.yestHighestPromTitleLabel.hidden = true
-        
-        fetchUserData()
+    
+    func visuals_not_running(){
+        hideVisuals(true)
         self.overallTitle.text = "Planlegg Kvelden pågår"
         self.overallSubtitle.text = "Her vil du se statistikk over den siste kvelden du har registrert"
-        self.xImageBtn.hidden = true // SKAL VÆRE TRUE
-        self.endDayAfterButtonOutlet.hidden = true // SKAL VÆRE TRUE
-        
-        if(brainCoreData.fetchGoal() < yestHighProm){
-            yesterdaysHighestProm.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
-        } else {
-            yesterdaysHighestProm.textColor = setAppColors.textUnderHeadlinesColors()
-        }
     }
-    ////////////////////////////////////////////////////////////////////////
-    //                   COLORS AND FONTS (0002)                          //
-    ////////////////////////////////////////////////////////////////////////
+    
+    func hideVisuals(isHidden:Bool){
+        self.pieChartView.hidden = isHidden
+        self.beerOutletButton.hidden = isHidden
+        self.wineOutletButton.hidden = isHidden
+        self.drinkOutletButton.hidden = isHidden
+        self.shotOutletButton.hidden = isHidden
+        self.beerLabel.hidden = isHidden
+        self.wineLabel.hidden = isHidden
+        self.drinkLabel.hidden = isHidden
+        self.shotLabel.hidden = isHidden
+        self.yesterdaysCosts.hidden = isHidden
+        self.currentPromille.hidden = isHidden
+        self.yesterdaysHighestProm.hidden = isHidden
+        self.costsTitleLabel.hidden = isHidden
+        self.currPromTitleLabel.hidden = isHidden
+        self.yestHighestPromTitleLabel.hidden = isHidden
+        self.endDayAfterButtonOutlet.hidden = isHidden
+        self.xImageBtn.hidden = isHidden
+    }
     
     func setColorsAndFontsDagenDerpa(){
         //self.view.backgroundColor = setAppColors.mainBackgroundColor()
@@ -357,9 +592,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         currentPromille.font = setAppColors.textUnderHeadlinesFonts(32)
         
         // TITLES GÅRSDAGENS ERFARINGER
-        yestCostTitleLabel.text = "Forbruk"
-        yestCostTitleLabel.textColor = setAppColors.textHeadlinesColors()
-        yestCostTitleLabel.font = setAppColors.textHeadlinesFonts(14)
+        costsTitleLabel.text = "Forbruk"
+        costsTitleLabel.textColor = setAppColors.textHeadlinesColors()
+        costsTitleLabel.font = setAppColors.textHeadlinesFonts(14)
         yestHighestPromTitleLabel.text = "Høyeste Promille"
         yestHighestPromTitleLabel.textColor = setAppColors.textHeadlinesColors()
         yestHighestPromTitleLabel.font = setAppColors.textHeadlinesFonts(14)
@@ -367,968 +602,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         currPromTitleLabel.textColor = setAppColors.textHeadlinesColors()
         currPromTitleLabel.font = setAppColors.textHeadlinesFonts(14)
         
-        // BACKGROUND ON SECTIONS
-        /*
-        backgroundAfterRegPie.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)
-        backgroundStats.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)
-        backgroundBtn.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)
-        */
         // BUTTONS
         endDayAfterButtonOutlet.titleLabel?.font = setAppColors.buttonFonts(14)
         endDayAfterButtonOutlet.setTitle("Avslutt", forState: UIControlState.Normal)
-        //endDayAfterButtonOutlet.backgroundColor = UIColor(red: 30/255.0, green: 30/255.0, blue: 30/255.0, alpha: 0.6)
-        //endDayAfterButtonOutlet.layer.cornerRadius = 3;
-        //endDayAfterButtonOutlet.titleLabel?.font = setAppColors.buttonFonts(20)
-        
-        //self.beerOutletButton.layer.cornerRadius = 0.5 * beerOutletButton.bounds.size.width;
-        //self.beerOutletButton.layer.borderWidth = 0.5;
-        //self.beerOutletButton.layer.borderColor = UIColor.whiteColor().CGColor
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                     SJEKK PROMILLE (0003)                          //
-    ////////////////////////////////////////////////////////////////////////
-    
-    //GJØR DENNE NOE SOM HELST?
-    
-    func currentPromilleTimer(){
-        var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(GlemteEnheterViewController.visualsCurrentPromille), userInfo: nil, repeats: true)
-    }
-    
-    func visualsCurrentPromille(){
-        getIsDayAfterRunning()
-        //visualsDayAfterStudio()
-        if(isDayAfterRunning == true){
-            let currPromille = updatePromilleAppDelegate()
-            print("Curr promille DAGEN DERP: \(currPromille)")
-            print("currentPromilleNow Dagen derP: \(currentPromilleNow)")
-            var promille = ""
-            promille = String(format: "%.2f", currPromille)
-            self.currentPromille.text = "\(promille)"
-        }
-    }
-    
-    //GJØR DENNE NOE SOM HELST?
-    
-    func startVisualsTimer(){
-        var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(GlemteEnheterViewController.setVisualsAtViewOpening), userInfo: nil, repeats: true)
-    }
-    
-    func setVisualsAtViewOpening(){
-        countVisuals += 1
-        print("-----> VISUALS NR: \(countVisuals) <----")
-        getDefaultValues()
-        fetchUserData()
-        
-        let checkEntityTS2 = brainCoreData.entityIsEmpty("TimeStamp2")
-        let checkEntityStartEndTS = brainCoreData.entityIsEmpty("StartEndTimeStamps")
-        
-        if(checkEntityTS2 == true && checkEntityStartEndTS == true){
-            self.beerOutletButton.enabled = false
-            self.wineOutletButton.enabled = false
-            self.drinkOutletButton.enabled = false
-            self.shotOutletButton.enabled = false
-        }
-        
-        if(checkEntityTS2 == false && checkEntityStartEndTS == false){
-            let currentStamp = NSDate()
-            
-            var getPlanPartyStamps : [NSDate] = [NSDate]()
-            getPlanPartyStamps = brainCoreData.getPlanPartySession()
-            startOfPlanPartyStamp = getPlanPartyStamps[0]
-            endOfPlanPartyStamp = getPlanPartyStamps[1]
-            
-            let isPlanPartyover = endOfPlanPartyStamp.timeIntervalSinceDate(currentStamp)
-            
-            if(isPlanPartyover < 0.0){
-                self.beerOutletButton.enabled = true
-                self.wineOutletButton.enabled = true
-                self.drinkOutletButton.enabled = true
-                self.shotOutletButton.enabled = true
-            } else {
-                self.beerOutletButton.enabled = false
-                self.wineOutletButton.enabled = false
-                self.drinkOutletButton.enabled = false
-                self.shotOutletButton.enabled = false
-            }
-        }
-        
-        self.beerLabel.text = "\(unitsOfBeers)"
-        self.wineLabel.text = "\(unitsOfWines)"
-        self.drinkLabel.text = "\(unitsOfDrink)"
-        self.shotLabel.text = "\(unitsOfShots)"
-        self.yesterdaysCosts.text = "Forbruk: \(yestCost),-"
-        let formatYestHighPromille = String(format: "%.2f", yestHighProm)
-        self.yesterdaysHighestProm.text = "Gårdsdagens høyeste promille: \(formatYestHighPromille)"
-        let formatCurrentPromille = String(format: "%.2f", currentPromilleNow)
-        self.currentPromille.text = "Nåværende Promille: \(formatCurrentPromille)"
-        print("-----> VISUALS NR: \(countVisuals) !SLUTT! <----")
-    }
-    
-    //GJØR startDagenDerpa noe som helst?
-    
-    func startDagenDerpaTimerAppDelegate(){
-        var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(61, target: self, selector: Selector("updatePromilleAppDelegate"), userInfo: nil, repeats: true)
-    }
-    
-    func updatePromilleAppDelegate() -> Double{
-        countCounter += 1
-        print("\n-> \(countCounter) MINUTE (MainDagenDerpå-APPDELEGATE) <-")
-        
-        fetchUserData()
-        getDefaultValues()
-        
-        currentPromilleNow = 0.0
-        
-        // ATTRIBUTTER
-        let entityStartEndTimeStamp = "StartEndTimeStamps"
-        let checkEntity = brainCoreData.entityIsEmpty(entityStartEndTimeStamp)
-        print("\(entityStartEndTimeStamp) is: \(checkEntity)")
-        
-        if(checkEntity == true){
-            // Sesjon er ikke startet ( startendTimestamp er tom )
-            print("Entity is empty. Dont do shit. Sesjonen DagenDerpå er ikke i gang! ")
-            unitsOfBeers = 0
-            unitsOfWines = 0
-            unitsOfDrink = 0
-            unitsOfShots = 0
-            totalUnits = 0
-            yestCost = 0
-            yestHighProm = 0.0
-            currentPromilleNow = 0.0
-            isDayAfterRunning = false
-            setDefaultValues()
-        } else {
-            // Sesjon planleggKvelden er startet siden entiten inneholder verdier
-            print("Entity is NOT empty. Sesjon planlegg kvelden er i gang. ")
-            
-            updateStamp = NSDate()
-            
-            // CREATE DAY AFTER SESSION:
-            var getPlanPartyStamps : [NSDate] = [NSDate]()
-            getPlanPartyStamps = brainCoreData.getPlanPartySession()
-            startOfPlanPartyStamp = getPlanPartyStamps[0]
-            print("Start OF plan part stamp: \(startOfPlanPartyStamp)")
-            print("End of plan party stamp: \(endOfPlanPartyStamp)")
-            endOfPlanPartyStamp = getPlanPartyStamps[1]
-            // sett enden av Dagen Derpa tidspunkt, tallet i (antall minutter fra enden av planlegg kvelden)
-            endDagenDerpaStamp = brainCoreData.setDagenDerpaSession()
-            
-            let isPlanPartyover = endOfPlanPartyStamp.timeIntervalSinceDate(updateStamp)
-            
-            if(isPlanPartyover < 0.0){
-                // Sesjon planlegg kvelden er ferdig.
-                print("Sesjon planlegg Kvelden er ferdig. Sesjon DagenDerpå er i gang! ")
-                isDayAfterRunning = true
-                setDefaultValues()
-                let distance = endDagenDerpaStamp.timeIntervalSinceDate(updateStamp)
-                let secToMin = distance / 60
-                let minToHour = secToMin / 60
-                
-                // Hvis avstanden fra nå tidspunkt og slutten av sesjonen er negativ, vil det si at sesjonen er over.
-                
-                if(minToHour < 0.0){
-                    // sesjonen er avsluttet
-                    print("Sesjon DagenDerpå er avsluttet!")
-                    
-                    unitsOfBeers = 0
-                    unitsOfWines = 0
-                    unitsOfDrink = 0
-                    unitsOfShots = 0
-                    totalUnits = 0
-                    yestCost = 0
-                    yestHighProm = 0.0
-                    currentPromilleNow = 0.0
-                    isDayAfterRunning = false
-                    setDefaultValues()
-                    getDefaultValues()
-                    print("\n\n\nBEFORE POP GRAPH VALUES: ")
-                    print("Start Planlegg kvelden: \(startOfPlanPartyStamp)")
-                    print("Slutt planlegg kvelden: \(endOfPlanPartyStamp)")
-                    print("\n\n")
-                    // FJERNE DENNE METODEN HERFAR OG HELLER OPPDATERE GRAFEN "HVIS" NOEN LEGGER TIL TING I ETTERKANT AV KVELDEN
-                    // \
-                    //  \
-                    //brain.populateGraphValues(getGender, weight: getWeight, startPlanStamp: startOfPlanPartyStamp, endPlanStamp: endOfPlanPartyStamp)
-                    // Clear database slik at den skal ta inn nye timeStamp
-                    brainCoreData.clearCoreData("TimeStamp2")
-                    brainCoreData.clearCoreData(entityStartEndTimeStamp)
-                    brainCoreData.clearCoreData("TerminatedTimeStamp")
-                } else {
-                    print("Sesjon DagenDerpå pågår, men Historikk er ikke oppdatert")
-                    
-                    // sesjonen pågår.
-                    populateArrays()
-                    checkIfLatestHistorikkIsFetched = brainCoreData.checkHistorikk()
-                    print("checkIfLatestHistorikkIsFetched: \(checkIfLatestHistorikkIsFetched)")
-                    
-                    if(checkIfLatestHistorikkIsFetched == startOfPlanPartyStamp){
-                        print("Sesjon DagenDerpå pågår... (Historikk ER oppdatert)")
-                        setHistorikkValues()
-                        
-                        let tempStoreFirstUnitAddedValue = brainCoreData.getFirstUnitAddedTimeStamp()
-                        print("WHAT THA CTU: \(tempStoreFirstUnitAddedValue)")
-                        
-                        currentPromilleNow += brain.liveUpdatePromille(getWeight, gender: getGender, firstUnitAddedTimeS: tempStoreFirstUnitAddedValue)
-                        
-                        print("Sum On Array DDPÅ: \(currentPromilleNow)")
-                        
-                        if(currentPromilleNow <= 0.0){
-                            currentPromilleNow = 0.0
-                        }
-                        setDefaultValues()
-                    } else {
-                        print("Historikk er ikke oppdatert! Ingenting skal skje, alt fortsetter!")
-                        currentPromilleNow = 0.0
-                    }
-                }
-            }
-        }
-        return currentPromilleNow
-        //print(">-< UPDATE PROMILLE APP DELEGATE OVER >--<\n")
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                    ADD UNITS DAY AFTER (0004)                      //
-    ////////////////////////////////////////////////////////////////////////
-    
-    @IBAction func addBeerDayAfter(sender: AnyObject) {
-        addBeerPopUp("Legg til Øl", messageAlCon: "Glemt av øl? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt")
-    }
-    
-    @IBAction func addWineDayAfter(sender: AnyObject) {
-        addWinePopUp("Legg til Vin", messageAlCon: "Glemt av vin? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt")
-    }
-    
-    @IBAction func addDrinkDayAfter(sender: AnyObject) {
-        addDrinkPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt")
-    }
-    
-    @IBAction func addShotDayAfter(sender: AnyObject) {
-        addShotPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt")
-    }
-    
-    // ØL
-    func addBeerPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String){
-        let datepicker = UIDatePicker()
-        datepicker.datePickerMode = .DateAndTime
-        var getPlanPartyStamps : [NSDate] = [NSDate]()
-        getPlanPartyStamps = brainCoreData.getPlanPartySession()
-        startOfPlanPartyStamp = getPlanPartyStamps[0]
-        endOfPlanPartyStamp = getPlanPartyStamps[1]
-        
-        datepicker.minimumDate = startOfPlanPartyStamp
-        datepicker.maximumDate = endOfPlanPartyStamp
-        datepicker.setDate(endOfPlanPartyStamp, animated: true)
-        datepicker.backgroundColor = UIColor.darkGrayColor()
-        datepicker.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
-        
-        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
-        vc.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-            //textfield.delegate = self
-            // add delegate ... here
-            textField.delegate = self
-            textField.inputView = datepicker
-            textField.placeholder = "Dato"
-            //textfield.hidden = true
-        })
-        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
-            self.datePickValueChangedBeer(datepicker)
-            self.fetchUserData()
-            self.getDefaultValues()
-            
-            // TEMPORARY STORE SESSION VALUES
-            let tempPlanPartSesNr = self.brainCoreData.fetchPlanPartySessionNr()
-            let tempNumBeer = self.brainCoreData.tempStoreUnits("Beer")
-            let tempNumWine = self.unitsOfWines //self.brainCoreData.tempStoreUnits("Wine")
-            let tempNumDrink = self.unitsOfDrink //self.brainCoreData.tempStoreUnits("Drink")
-            let tempNumShot = self.unitsOfShots //self.brainCoreData.tempStoreUnits("Shot")
-            let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
-            let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
-            let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
-            
-            // METODE FOR Å OPPDATERE ENHET
-            
-            self.brainCoreData.deleteLastItemAdded(tempPlanPartSesNr)
-            self.brainCoreData.deleteLastGraphValue(tempPlanPartSesNr)
-            
-            self.brainCoreData.seedHistoryValues(self.startOfPlanPartyStamp, forbruk: tempCosts, hoyestePromille: 0.0, antallOl: tempNumBeer, antallVin: tempNumWine, antallDrink: tempNumDrink, antallShot: tempNumShot, stringDato: fullDate, endOfSesDate: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr, firstUnitStamp: tempFirstUnitAdded)
-            
-            self.brain.populateGraphValues(self.getGender, weight: self.getWeight, startPlanStamp: self.startOfPlanPartyStamp, endPlanStamp: self.endOfPlanPartyStamp)
-            
-            self.setHistorikkValues()
-            self.visualsOnDayAfterRunning()
-            
-            self.populateArrays()
-            self.currentPromilleNow = 0.0
-            self.currentPromilleNow += self.brain.liveUpdatePromille(self.getWeight, gender: self.getGender, firstUnitAddedTimeS: tempFirstUnitAdded)
-            
-            print("Sum On Array DDPÅ: \(self.currentPromilleNow)")
-            
-            if(self.currentPromilleNow <= 0.0){
-                self.currentPromilleNow = 0.0
-            }
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(self.unitsOfBeers), Double(self.unitsOfWines), Double(self.unitsOfDrink), Double(self.unitsOfShots)]
-            self.setChart(months, values: unitsSold)
-            
-            self.setDefaultValues()
-        }))
-        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
-        presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func datePickValueChangedBeer(sender:UIDatePicker){
-        let pickerTime = sender.date
-        
-        brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: "Beer")
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        //textField.text =
-    }
-    
-    // VIN
-    func addWinePopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String){
-        let datepicker = UIDatePicker()
-        datepicker.datePickerMode = .DateAndTime
-        datepicker.minimumDate = startOfPlanPartyStamp
-        datepicker.maximumDate = endOfPlanPartyStamp
-        datepicker.setDate(endOfPlanPartyStamp, animated: true)
-        
-        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
-        vc.addTextFieldWithConfigurationHandler({ (textfield) -> Void in
-            textfield.inputView = datepicker
-        })
-        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
-            self.datePickerValueChangedWine(datepicker)
-            self.fetchUserData()
-            self.getDefaultValues()
-            
-            // TEMPORARY STORE SESSION VALUES
-            let tempPlanPartSesNr = self.brainCoreData.fetchPlanPartySessionNr()
-            
-            // VALUE ADDED:
-            let tempNumWine = self.brainCoreData.tempStoreUnits("Wine")
-            
-            // GET OLD VALUES:
-            let tempNumBeer = self.unitsOfBeers
-            let tempNumDrink = self.unitsOfDrink
-            let tempNumShot = self.unitsOfShots
-            
-            // COSTS
-            let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            
-            // FORMAT NEW DATE FOR HISTORY
-            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
-            let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
-            let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
-            
-            // METODE FOR Å OPPDATERE ENHET
-            self.brainCoreData.deleteLastItemAdded(tempPlanPartSesNr)
-            self.brainCoreData.deleteLastGraphValue(tempPlanPartSesNr)
-            
-            // SETTE NYE VERDIER
-            self.brainCoreData.seedHistoryValues(self.startOfPlanPartyStamp, forbruk: tempCosts, hoyestePromille: 0.0, antallOl: tempNumBeer, antallVin: tempNumWine, antallDrink: tempNumDrink, antallShot: tempNumShot, stringDato: fullDate, endOfSesDate: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr, firstUnitStamp: tempFirstUnitAdded)
-            
-            self.brain.populateGraphValues(self.getGender, weight: self.getWeight, startPlanStamp: self.startOfPlanPartyStamp, endPlanStamp: self.endOfPlanPartyStamp)
-            
-            self.setHistorikkValues()
-            self.visualsOnDayAfterRunning()
-            
-            self.populateArrays()
-            self.currentPromilleNow = 0.0
-            self.currentPromilleNow += self.brain.liveUpdatePromille(self.getWeight, gender: self.getGender, firstUnitAddedTimeS: tempFirstUnitAdded)
-            
-            print("Sum On Array DDPÅ: \(self.currentPromilleNow)")
-            
-            if(self.currentPromilleNow <= 0.0){
-                self.currentPromilleNow = 0.0
-            }
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(self.unitsOfBeers), Double(self.unitsOfWines), Double(self.unitsOfDrink), Double(self.unitsOfShots)]
-            self.setChart(months, values: unitsSold)
-            
-            self.setDefaultValues()
-        }))
-        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
-        presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func datePickerValueChangedWine(sender:UIDatePicker) {
-        let pickerTime = sender.date
-        
-        brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: "Wine")
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-    }
-    
-    // DRINK
-    func addDrinkPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String){
-        let datepicker = UIDatePicker()
-        datepicker.datePickerMode = .DateAndTime
-        datepicker.minimumDate = startOfPlanPartyStamp
-        datepicker.maximumDate = endOfPlanPartyStamp
-        datepicker.setDate(endOfPlanPartyStamp, animated: true)
-        
-        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
-        vc.addTextFieldWithConfigurationHandler({ (textfield) -> Void in
-            
-            // add delegate ... here
-            textfield.inputView = datepicker
-            
-        })
-        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
-            self.datePickValueChangedDrink(datepicker)
-            self.fetchUserData()
-            self.getDefaultValues()
-            
-            // TEMPORARY STORE SESSION VALUES
-            let tempPlanPartSesNr = self.brainCoreData.fetchPlanPartySessionNr()
-            let tempNumDrink = self.brainCoreData.tempStoreUnits("Drink")
-            
-            let tempNumBeer = self.unitsOfBeers
-            let tempNumWine = self.unitsOfWines
-            let tempNumShot = self.unitsOfShots
-            
-            let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
-            let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
-            let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
-            
-            // METODE FOR Å OPPDATERE ENHET
-            self.brainCoreData.deleteLastItemAdded(tempPlanPartSesNr)
-            self.brainCoreData.deleteLastGraphValue(tempPlanPartSesNr)
-            
-            self.brainCoreData.seedHistoryValues(self.startOfPlanPartyStamp, forbruk: tempCosts, hoyestePromille: 0.0, antallOl: tempNumBeer, antallVin: tempNumWine, antallDrink: tempNumDrink, antallShot: tempNumShot, stringDato: fullDate, endOfSesDate: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr, firstUnitStamp: tempFirstUnitAdded)
-            
-            self.brain.populateGraphValues(self.getGender, weight: self.getWeight, startPlanStamp: self.startOfPlanPartyStamp, endPlanStamp: self.endOfPlanPartyStamp)
-            
-            self.setHistorikkValues()
-            self.visualsOnDayAfterRunning()
-            
-            self.populateArrays()
-            self.currentPromilleNow = 0.0
-            self.currentPromilleNow += self.brain.liveUpdatePromille(self.getWeight, gender: self.getGender, firstUnitAddedTimeS: tempFirstUnitAdded)
-            
-            print("Sum On Array DDPÅ: \(self.currentPromilleNow)")
-            
-            if(self.currentPromilleNow <= 0.0){
-                self.currentPromilleNow = 0.0
-            }
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(self.unitsOfBeers), Double(self.unitsOfWines), Double(self.unitsOfDrink), Double(self.unitsOfShots)]
-            self.setChart(months, values: unitsSold)
-            
-            self.setDefaultValues()
-        }))
-        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
-        presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func datePickValueChangedDrink(sender:UIDatePicker){
-        let pickerTime = sender.date
-        
-        brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: "Drink")
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-    }
-    
-    // SHOT
-    func addShotPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String){
-        let datepicker = UIDatePicker()
-        datepicker.datePickerMode = .DateAndTime
-        datepicker.minimumDate = startOfPlanPartyStamp
-        datepicker.maximumDate = endOfPlanPartyStamp
-        datepicker.setDate(endOfPlanPartyStamp, animated: true)
-        
-        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
-        vc.addTextFieldWithConfigurationHandler({ (textfield) -> Void in
-            
-            // add delegate ... here
-            textfield.inputView = datepicker
-            
-        })
-        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
-            self.datePickValueChangedShot(datepicker)
-            self.fetchUserData()
-            self.getDefaultValues()
-            
-            // TEMPORARY STORE SESSION VALUES
-            let tempPlanPartSesNr = self.brainCoreData.fetchPlanPartySessionNr()
-            let tempNumShot = self.brainCoreData.tempStoreUnits("Shot")
-            
-            let tempNumBeer = self.unitsOfBeers
-            let tempNumWine = self.unitsOfWines
-            let tempNumDrink = self.unitsOfDrink
-            
-            let tempCosts = self.brainCoreData.tempStoreCosts(tempNumBeer, numWine: tempNumWine, numDrink: tempNumDrink, numShot: tempNumShot)
-            let printDay = self.dateUtil.getDayOfWeekAsString(self.startOfPlanPartyStamp)
-            let printDate = self.dateUtil.getDateOfMonth(self.startOfPlanPartyStamp)
-            let printMonth = self.dateUtil.getMonthOfYear(self.startOfPlanPartyStamp)
-            let fullDate = "\(printDay!) \(printDate!). \(printMonth!)"
-            let tempFirstUnitAdded = self.brainCoreData.getFirstUnitAddedTimeStamp()
-            
-            // METODE FOR Å OPPDATERE ENHET
-            self.brainCoreData.deleteLastItemAdded(tempPlanPartSesNr)
-            self.brainCoreData.deleteLastGraphValue(tempPlanPartSesNr)
-            
-            self.brainCoreData.seedHistoryValues(self.startOfPlanPartyStamp, forbruk: tempCosts, hoyestePromille: 0.0, antallOl: tempNumBeer, antallVin: tempNumWine, antallDrink: tempNumDrink, antallShot: tempNumShot, stringDato: fullDate, endOfSesDate: self.endOfPlanPartyStamp, sessionNumber: tempPlanPartSesNr, firstUnitStamp: tempFirstUnitAdded)
-            
-            self.brain.populateGraphValues(self.getGender, weight: self.getWeight, startPlanStamp: self.startOfPlanPartyStamp, endPlanStamp: self.endOfPlanPartyStamp)
-            
-            self.setHistorikkValues()
-            self.visualsOnDayAfterRunning()
-            
-            self.populateArrays()
-            self.currentPromilleNow = 0.0
-            self.currentPromilleNow += self.brain.liveUpdatePromille(self.getWeight, gender: self.getGender, firstUnitAddedTimeS: tempFirstUnitAdded)
-            
-            print("Sum On Array DDPÅ: \(self.currentPromilleNow)")
-            
-            if(self.currentPromilleNow <= 0.0){
-                self.currentPromilleNow = 0.0
-            }
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(self.unitsOfBeers), Double(self.unitsOfWines), Double(self.unitsOfDrink), Double(self.unitsOfShots)]
-            self.setChart(months, values: unitsSold)
-            
-            self.setDefaultValues()
-        }))
-        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
-        presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func datePickValueChangedShot(sender:UIDatePicker){
-        let pickerTime = sender.date
-        
-        brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: "Shot")
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                      INITIATE METHODS (0005)                       //
-    ////////////////////////////////////////////////////////////////////////
-    
-    func checkHighestPromille(gender: Bool, weight: Double) -> Double {
-        var getPlanPartyStamps : [NSDate] = [NSDate]()
-        getPlanPartyStamps = brainCoreData.getPlanPartySession()
-        startOfPlanPartyStamp = getPlanPartyStamps[0]
-        endOfPlanPartyStamp = getPlanPartyStamps[1]
-        
-        var highestPromille : Double = 0.0
-        var sum : Double = 0.0
-        var valueBetweenTerminated : Double = 0.0
-        var genderScore : Double = 0.0
-        
-        if(gender == true) { // TRUE ER MANN
-            genderScore = 0.70
-        } else if (gender == false) { // FALSE ER KVINNE
-            genderScore = 0.60
-        }
-        
-        var countIterasjons = 0
-        var count = 0
-        var timeStamps = [TimeStamp2]()
-        let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
-        
-        // SESJON PLANLEGG KVELDEN TIME INTEVALL
-        let sesPlanKveldIntervall = endOfPlanPartyStamp.timeIntervalSinceDate(startOfPlanPartyStamp)
-        print("Tolv timer skal det være: 120 sek ish: \(sesPlanKveldIntervall)")
-        
-        while(valueBetweenTerminated < sesPlanKveldIntervall){
-            do {
-                timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
-                
-                // Henter ut verdier hvert (valg av sekunder) for å se hva promillen var på det tidspunkt
-                valueBetweenTerminated += 60
-                countIterasjons += 1
-                
-                print("\n\nIterasjoner: \(countIterasjons)(\(valueBetweenTerminated))\n")
-                
-                for unitOfAlcohol in timeStamps {
-                    let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
-                    let unit : String = unitOfAlcohol.unitAlkohol! as String
-                    
-                    count += 1
-                    print("Timestamp nr: \(count)")
-                    
-                    let datePerMin = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startOfPlanPartyStamp, options: NSCalendarOptions(rawValue: 0))!
-                    let intervallShiz = datePerMin.timeIntervalSinceDate(timeStampTesting)
-                    
-                    // Hvis intervallshiz er negativ vil det si at enheten ikke enda er lagt til
-                    if(intervallShiz <= 0){
-                        // enhet ikke lagt til
-                    } else {
-                        // enhet lagt til
-                        let convertMin = intervallShiz / 60
-                        var checkPromille : Double = 0.0
-                        let convertHours = convertMin / 60 as Double
-                        if(unit == "Beer"){
-                            checkPromille += brain.firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                        }
-                        if (unit == "Wine"){
-                            checkPromille += brain.firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                        }
-                        if (unit == "Drink"){
-                            checkPromille += brain.firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                        }
-                        if (unit == "Shot"){
-                            checkPromille += brain.firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                        }
-                        sum += checkPromille
-                        print("Sum units: \(sum)")
-                        
-                        if(sum > highestPromille){
-                            highestPromille = sum
-                            print("Høyeste Promille chechHigestPromille() -- MAINDAGEN: \(sum)")
-                        }
-                    }
-                }
-                sum = 0
-                print("\n")
-            } catch {
-                fatalError("bad things happened \(error)")
-            }
-        }
-        return highestPromille
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //                     DEFAULT VERDIER (0006)                         //
-    ////////////////////////////////////////////////////////////////////////
-    
-    enum defaultKeys {
-        static let keyOne = "firstKey"
-        static let keyTwo = "secondKey"
-        static let keyThree = "thirdKey"
-        static let keyFour = "fourthKey"
-        static let keyFive = "fifthKey"
-        static let keySix = "sixthKey"
-        static let keySeven = "seventhKey"
-    }
-    
-    func setDefaultValues(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(unitsOfBeers, forKey: defaultKeys.keyOne)
-        defaults.setInteger(unitsOfWines, forKey: defaultKeys.keyTwo)
-        defaults.setInteger(unitsOfDrink, forKey: defaultKeys.keyThree)
-        defaults.setInteger(unitsOfShots, forKey: defaultKeys.keyFour)
-        defaults.setInteger(yestCost, forKey: defaultKeys.keyFive)
-        defaults.setDouble(yestHighProm, forKey: defaultKeys.keySix)
-        defaults.setDouble(currentPromilleNow, forKey: defaultKeys.keySeven)
-        defaults.setBool(isDayAfterRunning, forKey: SkallMenyBrain.defKeyBool.isDayAfterRun)
-        defaults.synchronize()
-    }
-    
-    func getDefaultValues(){ // GETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let beer : Int = defaults.integerForKey(defaultKeys.keyOne) {
-            unitsOfBeers = beer
-            print("Def Values Units of Beer: \(unitsOfBeers)")
-        }
-        if let wine : Int = defaults.integerForKey(defaultKeys.keyTwo) {
-            unitsOfWines = wine
-        }
-        if let drink : Int = defaults.integerForKey(defaultKeys.keyThree) {
-            unitsOfDrink = drink
-        }
-        if let shot : Int = defaults.integerForKey(defaultKeys.keyFour) {
-            unitsOfShots = shot
-        }
-        if let yestCostings : Int = defaults.integerForKey(defaultKeys.keyFive) {
-            yestCost = yestCostings
-        }
-        if let yHighestPromille : Double = defaults.doubleForKey(defaultKeys.keySix) {
-            print("getDefaultValues: yestHighProm: \(yestHighProm)")
-            yestHighProm = yHighestPromille
-        }
-        if let currPromNow : Double = defaults.doubleForKey(defaultKeys.keySeven) {
-            currentPromilleNow = currPromNow
-        }
-        if let isRunning : Bool = defaults.boolForKey(SkallMenyBrain.defKeyBool.isDayAfterRun) {
-            isDayAfterRunning = isRunning
-            print("Is day after running: \(isDayAfterRunning)")
-        }
-        print("DefaultValues DAGENDERPÅ gotten...\n")
-    }
-    
-    func getIsDayAfterRunning(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let isRunning : Bool = defaults.boolForKey(SkallMenyBrain.defKeyBool.isDayAfterRun) {
-            isDayAfterRunning = isRunning
-            print("Dagen Derpå kjører: \(isDayAfterRunning)")
-        }
-    }
-    
-    ////////////////////////////////////////////////////////////////////////
-    //           CORE DATA - SAMHANDLING MED DATABASEN (0007)             //
-    ////////////////////////////////////////////////////////////////////////
-    
-    func setHistorikkValues() {
-        var historikk = [Historikk]()
-        
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
-        timeStampFetch.sortDescriptors = [NSSortDescriptor(key: "dato", ascending: false)]
-        timeStampFetch.fetchLimit = 1
-        
-        do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
-            print("-----------------> DAGEN DERPÅ - SET VALUES <---------------------")
-            for antOlLoop in historikk {
-                unitsOfBeers = antOlLoop.antallOl! as Int
-            }
-            for antWineLoop in historikk {
-                unitsOfWines = antWineLoop.antallVin! as Int
-            }
-            for antDriLoop in historikk {
-                unitsOfDrink = antDriLoop.antallDrink! as Int
-            }
-            for antShoLoop in historikk {
-                unitsOfShots = antShoLoop.antallShot! as Int
-            }
-            for forbruksPromille in historikk {
-                yestCost = forbruksPromille.forbruk! as Int
-            }
-            for hoyesteProm in historikk {
-                yestHighProm = hoyesteProm.hoyestePromille! as Double
-                print("setHistorikkValues: yestHighProm: \(yestHighProm)")
-            }
-            totalUnits = unitsOfWines + unitsOfBeers + unitsOfDrink + unitsOfShots
-        } catch {
-            fatalError("bad things happened \(error)")
-        }
-    }
-    
-    func fetchUserData() {
-        var userData = [UserData]()
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
-        do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
-            for item in userData {
-                getGender = item.gender! as Bool
-                getWeight = item.weight! as Double
-                getNickName = item.height! as String
-            }
-        } catch {
-            fatalError("bad things happened \(error)")
-        }
-    }
-    
-    func populateArrays() {
-        var timeStamps = [TimeStamp2]()
-        beerArray.removeAll()
-        wineArray.removeAll()
-        drinkArray.removeAll()
-        shotArray.removeAll()
-        let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
-        do {
-            timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
-            for unitOfAlcohol in timeStamps {
-                if (unitOfAlcohol.unitAlkohol! == "Beer"){
-                    let beerItem : NSDate = unitOfAlcohol.timeStamp! as NSDate
-                    beerArray.append(beerItem)
-                }
-                if (unitOfAlcohol.unitAlkohol! == "Wine"){
-                    let wineItem : NSDate = unitOfAlcohol.timeStamp! as NSDate
-                    wineArray.append(wineItem)
-                }
-                if (unitOfAlcohol.unitAlkohol! == "Drink"){
-                    let drinkItem : NSDate = unitOfAlcohol.timeStamp! as NSDate
-                    drinkArray.append(drinkItem)
-                }
-                if (unitOfAlcohol.unitAlkohol! == "Shot"){
-                    let shotItem : NSDate = unitOfAlcohol.timeStamp! as NSDate
-                    shotArray.append(shotItem)
-                }
-            }
-        } catch {
-            fatalError("bad things happened \(error)")
-        }
-    }
-    
-    @IBAction func endDayAfterBtn(sender: UIButton) {
-        print("Button pressed! ")
-        endDayAfterAlert("Avslutt Dagen Derpå?", msg: "Du vil ikke kunne gå tilbake", cancelTitle: "Avbryt", confirmTitle: "Bekreft")
-    }
-    
-    func endDayAfterAlert(titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
-        let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
-            print("Handle cancel logic here")
-        }))
-        
-        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
-            //self.endParty(NSDate())
-            print("End Dagen Derpå knapp trykket! ")
-            print("Sesjon DagenDerpå er avsluttet!")
-            self.unitsOfBeers = 0
-            self.unitsOfWines = 0
-            self.unitsOfDrink = 0
-            self.unitsOfShots = 0
-            self.totalUnits = 0
-            self.yestCost = 0
-            self.yestHighProm = 0.0
-            self.currentPromilleNow = 0.0
-            self.isDayAfterRunning = false
-            self.setDefaultValues()
-            self.getDefaultValues()
-            self.brainCoreData.clearCoreData("TimeStamp2")
-            self.brainCoreData.clearCoreData("StartEndTimeStamps")
-            self.brainCoreData.clearCoreData("TerminatedTimeStamp")
-            
-            // PIE CHART:
-            let months = ["", "", "", ""]
-            let unitsSold = [Double(self.unitsOfBeers), Double(self.unitsOfWines), Double(self.unitsOfDrink), Double(self.unitsOfShots)]
-            self.setChart(months, values: unitsSold)
-            self.visualsOnDayAfterNotRunning()
-        }))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    func setSliceColors(){
-        // SLICE COLORS
-        beerSliceColor = UIColor(red: 255/255, green: 198/255, blue: 0/255, alpha: 1.0)
-        wineSliceColor = UIColor(red: 157/255, green: 9/255, blue: 9/255, alpha: 1.0)
-        drinkSliceColor = UIColor(red: 38/255, green: 207/255, blue: 86/255, alpha: 1.0)
-        shotSliceColor = UIColor(red: 139/255, green: 65/255, blue: 232/255, alpha: 1.0) // BLÅ: 0, 170, 255
-    }
-    
-    func setChart(dataPoints: [String], values: [Double]) {
-        setSliceColors()
-        
-        //Creating Chart
-        var dataEntries: [ChartDataEntry] = []
-        for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
-        }
-        
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "???")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        
-        pieChartView.data = pieChartData
-        pieChartData.setDrawValues(false)
-        
-        var colors: [UIColor] = []
-        
-        colors.append(beerSliceColor)
-        colors.append(wineSliceColor)
-        colors.append(drinkSliceColor)
-        colors.append(shotSliceColor)
-        
-        pieChartDataSet.colors = colors
-        
-        //Styling chart:
-        //pieChartDataSet.colors = [UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0), UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0), ]
-        pieChartView.drawHoleEnabled = true
-        pieChartView.holeRadiusPercent = CGFloat(0.55)
-        pieChartView.holeColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
-        pieChartView.centerTextRadiusPercent = CGFloat(1.0)
-        pieChartView.transparentCircleRadiusPercent = 0.67
-        pieChartView.animate(yAxisDuration: 1.0)
-        pieChartView.descriptionText = ""
-        pieChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
-        //pieChartView.transparentCircleColor?.CGColor
-        pieChartView.drawSliceTextEnabled = false
-        pieChartView.legend.enabled = false
-        
-        var centerText = ""
-        
-        if(isDayAfterRunning == false){
-            centerText = "-"
-        } else {
-            centerText = "\(totalUnits)"
-        }
-        var fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
-        
-        // HVIS DU OVERSTIGER MÅLET DITT BLIR STATISTIKKEN RØD
-        plannedNumberOfUnits = Int(brainCoreData.fetchLastPlannedNumberOfUnits())
-        if(plannedNumberOfUnits < totalUnits){
-            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
-            yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
-        } else {
-            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor.whiteColor()]
-            yesterdaysCosts.textColor = UIColor.whiteColor()
-        }
-        
-        let attriButedString = NSAttributedString(string: centerText, attributes: fontAttributes)
-        pieChartView.centerAttributedText = attriButedString
-        pieChartView.userInteractionEnabled = true
-    }
-    
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        setSliceColors()
-        print("\n\nChartView: \n\(chartView), \n\nEntry: \n\(entry), \n\ndataSetIndex: \n\(dataSetIndex), \n\nHighlight: \n\(highlight)")
-        //print("\(entry.value) in \(months[entry.xIndex])")
-        print("\n\n INDEX NR: \(entry.xIndex)")
-        if(entry.xIndex == 0){
-            print("GJØR ØL")
-            beerLabel.textColor = beerSliceColor
-            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        }
-        if(entry.xIndex == 1){
-            print("GJØR VIN")
-            wineLabel.textColor = wineSliceColor
-            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        }
-        if(entry.xIndex == 2){
-            print("GJØR DRINK")
-            drinkLabel.textColor = drinkSliceColor
-            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        }
-        if(entry.xIndex == 3){
-            print("GJØR SHOT")
-            shotLabel.textColor = shotSliceColor
-            beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
-            drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        }
-    }
-    
-    func chartValueNothingSelected(chartView: ChartViewBase) {
-        self.beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setConstraints(){
@@ -1380,10 +656,10 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             self.currentPromille.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
             
             // TITLES GÅRSDAGENS ERFARINGER
-            yestCostTitleLabel.font = setAppColors.textHeadlinesFonts(11)
+            costsTitleLabel.font = setAppColors.textHeadlinesFonts(11)
             yestHighestPromTitleLabel.font = setAppColors.textHeadlinesFonts(11)
             currPromTitleLabel.font = setAppColors.textHeadlinesFonts(11)
-            self.yestCostTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
+            self.costsTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
             self.yestHighestPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
             self.currPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
             
@@ -1421,15 +697,18 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             self.currentPromille.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
             
             // TITLES GÅRSDAGENS ERFARINGER
-            self.yestCostTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
+            self.costsTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
             self.yestHighestPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
             self.currPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
         } else if UIScreen.mainScreen().bounds.size.width == 375 {
             // iPhone 6
-            
         } else if UIScreen.mainScreen().bounds.size.width == 414 {
             // iPhone 6+
-            
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }

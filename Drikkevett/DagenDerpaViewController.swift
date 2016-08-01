@@ -22,9 +22,6 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        // COLORS AND FONTS
-        //self.view.backgroundColor = setAppColors.mainBackgroundColor()
         self.view.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.0)
         
         self.pageImages = NSArray(objects: "Bed", "Idea-100", "Wink")

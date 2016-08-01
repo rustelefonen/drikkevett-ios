@@ -13,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let moc = DataController().managedObjectContext
     
-    var first = FirstViewController()
-    var dayAfter = GlemteEnheterViewController()
     var setAppColors = AppColors()
     var pageControll = UIPageControl()
 
@@ -31,12 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setAppColors.steppColor()
         
         setAppColors.segmentContColor()
-        
-        first.testingCheckPromilleActive()
-        dayAfter.updatePromilleAppDelegate()
-    
-        //first.startTimerTesting()
-        //dayAfter.startDagenDerpaTimerAppDelegate()
         
         // Change the status bar's appearance
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -61,9 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("appdidbecomeactive")
-        first.testingCheckPromilleActive()
-        dayAfter.updatePromilleAppDelegate()
     }
 
     func applicationWillTerminate(application: UIApplication) {

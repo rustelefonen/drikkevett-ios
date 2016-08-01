@@ -193,10 +193,10 @@ class OppdaterKostnaderViewController: UIViewController, UITextFieldDelegate, UI
     
     // SETT STANDARD VALUES:
     @IBAction func setStandardPrizesBtn(sender: AnyObject) {
-        self.beerTextField.text = "31"
-        self.wineTextField.text = "59"
-        self.drinkTextField.text = "110"
-        self.shotTextField.text = "97"
+        self.beerTextField.text = "60"
+        self.wineTextField.text = "70"
+        self.drinkTextField.text = "100"
+        self.shotTextField.text = "110"
     }
     
     //Method for pop-up messages when handling wrong inputs:

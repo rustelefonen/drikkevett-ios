@@ -242,10 +242,12 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         if(editingStyle == .Delete ) {
             
             var sectionItems = self.getSectionItems(indexPath.section)
-            print("Section Items: \(sectionItems)")
             
             let object = sectionItems.removeAtIndex(indexPath.row)
+            
+
             managedObjectContext.deleteObject(object)
+            brainCoreData.deleteCellGraphHistory(object.sessionNumber as! Int)
             self.historikkTableView.beginUpdates()
             let indexSet = NSMutableIndexSet()
             indexSet.addIndex(indexPath.section)
@@ -260,7 +262,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             // Refresh the table view to indicate that it's deleted
             self.fetchLog()
             self.historikkTableView.reloadData()
-            print("reloaddata/fetchlog")
             
             do{
                 try managedObjectContext.save()
@@ -402,6 +403,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         }))
         alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
             self.brainCoreData.clearCoreData("Historikk")
+            self.brainCoreData.clearCoreData("GraphHistorikk")
             self.fetchLog()
             self.historikkTableView.reloadData()
         }))

@@ -36,6 +36,5 @@ class DataController: NSObject {
         } catch {
             fatalError("Error migrating store: \(error)")
         }
-        
     }
 }

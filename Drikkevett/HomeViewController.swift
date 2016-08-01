@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     }
     
     func isGoalDateReached() -> Bool {
-        let brainCoreData = CoreDataMethods()
-        return NSDate().compare(brainCoreData.fetchGoalDate()) == NSComparisonResult.OrderedDescending
+        let coreData = CoreDataMethods()
+        return NSDate().compare(coreData.fetchGoalDate()) == NSComparisonResult.OrderedDescending
     }
 }

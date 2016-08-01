@@ -162,6 +162,9 @@ class SkallMenyBrain
         } catch {
             fatalError("bad things happened \(error)")
         }
+        if(sum < 0.0){
+            sum = 0
+        }
         return sum
     }
     
@@ -487,18 +490,14 @@ class SkallMenyBrain
         return checkPromille
     }
     
-    func populateGraphValues(gender: Bool, weight: Double, startPlanStamp: NSDate, endPlanStamp: NSDate){
+    func populateGraphValues(gender: Bool, weight: Double, startPlanStamp: NSDate, endPlanStamp: NSDate, sessionNumber: Int){
         var sum : Double = 0.0
         var valueBetweenTerminated : Double = 0.0
         var genderScore : Double = 0.0
         var datePerMin : NSDate = NSDate()
         var updateHighestPromhist = 0.0
         
-        if(gender == true) { // TRUE ER MANN
-            genderScore = 0.70
-        } else if (gender == false) { // FALSE ER KVINNE
-            genderScore = 0.60
-        }
+        genderScore = setGenderScore(gender)
         
         var countIterasjons = 0
         var count = 0
@@ -506,12 +505,7 @@ class SkallMenyBrain
         var timeStamps = [TimeStamp2]()
         let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
         
-        // SET FIRST VALUE TO BE 0
-        // brainCoreData.seedGraphValues(startPlanStamp, promPerMin: 0, sessionNumber: brainCoreData.fetchPlanPartySessionNr())
-        
-        // SESJON PLANLEGG KVELDEN TIME INTEVALL
         let sesPlanKveldIntervall = endPlanStamp.timeIntervalSinceDate(startPlanStamp)
-        print("Tolv timer skal det være: 120 sek ish: \(sesPlanKveldIntervall)")
         
         while(valueBetweenTerminated < sesPlanKveldIntervall){
             do {
@@ -523,38 +517,20 @@ class SkallMenyBrain
                 var drink = 0.0
                 var shot = 0.0
                 
-                print("\n\nIterasjoner: \(countIterasjons)(\(valueBetweenTerminated))\n---------------\n")
-                
                 datePerMin = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startPlanStamp, options: NSCalendarOptions(rawValue: 0))!
                
                 let mathematicalDateFromStart = datePerMin.timeIntervalSinceDate(startPlanStamp)
                 let convertMin = mathematicalDateFromStart / 60
-                //var checkPromille : Double = 0.0
                 let convertHours = convertMin / 60 as Double
-                
-                
-                
-                print("SjekkDato + \(countIterasjons) min =  \(datePerMin)")
-                
                 for unitOfAlcohol in timeStamps {
                     let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
                     let unit : String = unitOfAlcohol.unitAlkohol! as String
                     
                     count += 1
-                    print("\nTimestamp nr: \(count)")
                     
-                    /*datePerMin = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startPlanStamp, options: NSCalendarOptions(rawValue: 0))!
-                    
-                    print("Set one min from unit date: \(datePerMin)")*/
-                    
-                    print("Timestamp: \(timeStampTesting)")
                     let intervallShiz = datePerMin.timeIntervalSinceDate(timeStampTesting)
                     let mathematicalDateFromStart = datePerMin.timeIntervalSinceDate(startPlanStamp)
-                    print("FROM START OF SES: \(mathematicalDateFromStart)")
                     
-                    print("Tid fra unit til \(countIterasjons) min: \(intervallShiz)")
-                    
-                    // Hvis intervallshiz er negativ vil det si at enheten ikke enda er lagt til
                     if(intervallShiz <= 0){
                         // enhet ikke lagt til
                     } else {
@@ -562,69 +538,48 @@ class SkallMenyBrain
                         let convertMin = intervallShiz / 60
                         var checkPromille : Double = 0.0
                         let convertHours = convertMin / 60 as Double
-                        print("ConvertHours: \(convertHours)")
+                        
                         if(unit == "Beer"){
                             checkPromille += firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                            print("beer checkprom: \(checkPromille)")
                             beer += 1
                         }
                         if (unit == "Wine"){
                             checkPromille += firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                            print("wine checkprom: \(checkPromille)")
                             wine += 1
                         }
                         if (unit == "Drink"){
                             checkPromille += firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                            print("drink checkprom: \(checkPromille)")
                             drink += 1
                         }
                         if (unit == "Shot"){
                             checkPromille += firstFifteen(convertHours, weightFif: weight, genderFif: genderScore, unitAlco: unit)
-                            print("bshot checkprom: \(checkPromille)")
                             shot += 1
                         }
                         sum += checkPromille
-                        print("sum+= checkProm inside popGraph: \(sum)")
                     }
                 }
-                print("\n\n\(datePerMin) - \(countIterasjons) UNITS:")
-                print("Beers: \(beer)")
-                print("Wines: \(wine)")
-                print("Drinks: \(drink)")
-                print("Shots: \(shot)\n\n")
-                
                 sum = 0
                 
                 let totalGrams = countingGrams(beer, wineUnits: wine, drinkUnits: drink, shotUnits: shot)
                 sum += calculatePromille(gender, weight: weight, grams: totalGrams, timer: convertHours)
                 
-                let getSesNr = brainCoreData.fetchPlanPartySessionNr()
-                print("Populate Graph dates: \(datePerMin)")
-                print("Sesjon Number: \(getSesNr)")
-                print("Sum: \(sum)")
-                //sum += 1
-                //print("sum + 1: \(sum)")
                 if(sum > updateHighestPromhist){
                     updateHighestPromhist = sum
-                    print("popGraph highProm: \(updateHighestPromhist)")
+                    print("Lengde på sesjon: \(sesPlanKveldIntervall)")
                     brainCoreData.updateGraphHighestProm(updateHighestPromhist)
                 }
-                
+                let tempSum = Double(sum).roundToPlaces(2)
+                print("Double sum with 2 integers: \(tempSum)")
                 if(sum <= 0){
                     sum = 0
-                    print("if sum = 0: \(datePerMin), \(sum), \(brainCoreData.fetchPlanPartySessionNr())")
-                    brainCoreData.seedGraphValues(datePerMin, promPerMin: sum, sessionNumber: brainCoreData.fetchPlanPartySessionNr())
+                    brainCoreData.seedGraphValues(datePerMin, promPerMin: tempSum, sessionNumber: sessionNumber)
                 } else {
-                    print("else: \(datePerMin), \(sum), \(brainCoreData.fetchPlanPartySessionNr())")
-                    brainCoreData.seedGraphValues(datePerMin, promPerMin: sum, sessionNumber: brainCoreData.fetchPlanPartySessionNr())
+                    brainCoreData.seedGraphValues(datePerMin, promPerMin: tempSum, sessionNumber: sessionNumber)
                 }
-                // Henter ut verdier hvert (valg av sekunder) for å se hva promillen var på det tidspunkt
                 valueBetweenTerminated += 900
                 
                 countIterasjons += 15
                 sum = 0
-                print("\n\nIterasjon STOPP: \(countIterasjons)(\(valueBetweenTerminated))\n------------------------\n")
-                print("\n")
             } catch {
                 fatalError("bad things happened \(error)")
             }
@@ -677,5 +632,19 @@ class SkallMenyBrain
     
     enum defaultKeysInst {
         static let boolKey = "notificationKey"
+    }
+    
+    func calcualteTotalCosts(beer: Int, wine: Int, drink: Int, shot: Int, bPrice: Int, wPrice: Int, dPrice:Int, sPrice:Int) -> Int{
+        var totalCost = 0
+        totalCost = (beer * bPrice) + (wine * wPrice) + (drink * dPrice) + (shot * sPrice)
+        return totalCost
+    }
+}
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundToPlaces(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(self * divisor) / divisor
     }
 }

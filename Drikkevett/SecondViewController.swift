@@ -64,129 +64,8 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\nPromillekalkulator Loaded...")
         secondViewFontsAndColors()
         isViewLunchedBefore()
-    }
-    
-    func secondViewFontsAndColors(){
-        // SETT COLORS OG FONTS
-        //self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        
-        self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        view.addSubview(blurEffectView)
-        
-        // PROMILLE LABEL
-        self.promilleLabel.textColor = setAppColors.promilleLabelColors()
-        self.promilleLabel.font = setAppColors.promilleLabelFonts()
-        
-        // BUTTON FONT
-        self.addButtonOutlet.titleLabel!.font = setAppColors.buttonFonts(20)
-        self.addButtonOutlet.titleLabel!.text = "Legg til"
-        self.minusButtonOutlet.titleLabel!.font = setAppColors.buttonFonts(20)
-        self.minusButtonOutlet.titleLabel!.text = "Fjern"
-        
-        // LABEL COLORS AND FONT
-        self.numberOfHours.textColor = setAppColors.textUnderHeadlinesColors()
-        self.numberOfHours.font = setAppColors.textUnderHeadlinesFonts(15)
-        self.numberOfHours.text = "Promillen om 1 time"
-        self.numberOfBeersLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.numberOfBeersLabel.font = setAppColors.textUnderHeadlinesFonts(30)
-        self.numberOfWinesLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.numberOfWinesLabel.font = setAppColors.textUnderHeadlinesFonts(30)
-        self.numberOfDrinksLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.numberOfDrinksLabel.font = setAppColors.textUnderHeadlinesFonts(30)
-        self.numberOfShots.textColor = setAppColors.textUnderHeadlinesColors()
-        self.numberOfShots.font = setAppColors.textUnderHeadlinesFonts(30)
-        
-        // TITLE LABEL
-        self.titleBeerLabel.textColor = setAppColors.textHeadlinesColors()
-        self.titleBeerLabel.font = setAppColors.textHeadlinesFonts(14)
-        self.titleWineLabel.textColor = setAppColors.textHeadlinesColors()
-        self.titleWineLabel.font = setAppColors.textHeadlinesFonts(14)
-        self.titleDrinkLabel.textColor = setAppColors.textHeadlinesColors()
-        self.titleDrinkLabel.font = setAppColors.textHeadlinesFonts(14)
-        self.titleShotLabel.textColor = setAppColors.textHeadlinesColors()
-        self.titleShotLabel.font = setAppColors.textHeadlinesFonts(14)
-        
-        // TEXT QUOTES
-        self.textQuotes.font = setAppColors.setTextQuoteFont(15)
-        self.textQuotes.textColor = setAppColors.textQuoteColors()
-        
-        // BUTTONS
-        self.minusButtonOutlet.setTitle("Fjern", forState: UIControlState.Normal)
-        self.addButtonOutlet.setTitle("Legg til", forState: UIControlState.Normal)
-        
-        setButtonsRounded(setAppColors.roundedCorners())
-        //var font = UIFont()
-        // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
-            // iPhone 4
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 35.0)
-            
-            // BUTTONS
-            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -45.0)
-            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -45.0)
-            
-            // STATS-NUMBERS
-            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0)
-            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -60.0)
-            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0)
-            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0)
-            
-            // STATS-TITLES
-            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -70.0)
-            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -70.0)
-            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -70.0)
-            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -70.0)
-            
-            // TEXT QUOTES
-            self.textQuotes.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -24.0)
-            self.promilleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -12.0)
-            self.textQuotes.font = setAppColors.setTextQuoteFont(12)
-            self.promilleLabel.font = setAppColors.textHeadlinesFonts(60)
-            
-            // SLIDER OG SLIDER TEXT
-            self.sliderOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
-            self.numberOfHours.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
-            
-            // FONTS
-            setFontsOnConstStats(20, titleStatsFont: 12)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
-            // IPhone 5
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 25.0)
-            
-            // BUTTONS
-            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
-            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
-            
-            // STATS-NUMBERS
-            let statsNumbersYVal : CGFloat = -33.0
-            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsNumbersYVal)
-            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsNumbersYVal)
-            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsNumbersYVal)
-            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsNumbersYVal)
-            
-            // STATS-TITLES
-            let statsTitlesYval : CGFloat = -40.0
-            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsTitlesYval)
-            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsTitlesYval)
-            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsTitlesYval)
-            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsTitlesYval)
-            
-            // FONTS
-            setFontsOnConstStats(25, titleStatsFont: 15)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
-            // iPhone 6
-            
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
-            // iPhone 6+
-            
-        }
     }
     
     func setFontsOnConstStats(statsFont: CGFloat, titleStatsFont: CGFloat){
@@ -202,20 +81,6 @@ class SecondViewController: UIViewController {
         self.titleShotLabel.font = setAppColors.textHeadlinesFonts(titleStatsFont)
     }
     
-    func setButtonsRounded(turnOffOn: Bool){
-        if(turnOffOn == true){
-            // PLUSS BTN
-            addButtonOutlet.layer.cornerRadius = 25;
-            addButtonOutlet.layer.borderWidth = 0.5;
-            addButtonOutlet.layer.borderColor = UIColor.whiteColor().CGColor
-            
-            // MINUS BTN
-            minusButtonOutlet.layer.cornerRadius = 25;
-            minusButtonOutlet.layer.borderWidth = 0.5;
-            minusButtonOutlet.layer.borderColor = UIColor.whiteColor().CGColor
-        }
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
@@ -225,7 +90,6 @@ class SecondViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     @IBAction func resetProps(sender: AnyObject) {
         beerCount = 0
@@ -273,51 +137,6 @@ class SecondViewController: UIViewController {
         self.textQuotes.text = brain.setTextQuote(totalSum)
         self.promilleLabel.textColor = brain.setTextQuoteColor(totalSum)
         self.textQuotes.textColor = brain.setTextQuoteColor(totalSum)
-        
-        /*
-        // HVA SKAL DET STÅ I TEKST FELTENE:
-        if(totalSum >= 0.0 && totalSum < 0.4){
-            self.textQuotes.text = "Kos deg!"
-            self.promilleLabel.textColor = UIColor.whiteColor()
-            self.textQuotes.textColor = UIColor.whiteColor()
-        }
-        // LYKKE PROMILLE
-        if(totalSum >= 0.4 && totalSum < 0.8){
-            self.textQuotes.text = "Lykkepromille"
-            self.promilleLabel.textColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-            self.textQuotes.textColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-        }
-        if(totalSum >= 0.8 && totalSum < 1.0){
-            self.textQuotes.text = "Du blir mer kritikkløs og risikovillig"
-            self.promilleLabel.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-            self.textQuotes.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(totalSum >= 1.0 && totalSum < 1.2){
-            self.textQuotes.text = "Balansen blir dårligere"
-            self.promilleLabel.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-            self.textQuotes.textColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
-        }
-        if(totalSum >= 1.2 && totalSum < 1.4){
-            self.textQuotes.text = "Talen blir snøvlete og \nkontroll på bevegelser forverres"
-            self.promilleLabel.textColor = UIColor.orangeColor()
-            self.textQuotes.textColor = UIColor.orangeColor()
-        }
-        if(totalSum >= 1.4 && totalSum < 1.8){
-            self.textQuotes.text = "Man blir trøtt, sløv og \nkan bli kvalm"
-            self.promilleLabel.textColor = UIColor.orangeColor()
-            self.textQuotes.textColor = UIColor.orangeColor()
-        }
-        if(totalSum >= 1.8 && totalSum < 3.0){
-            self.textQuotes.text = "Hukommelsen sliter!"
-            self.promilleLabel.textColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
-            self.textQuotes.textColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
-        }
-        if(totalSum >= 3.0){
-            self.textQuotes.text = "Svært høy promille! \nMan kan bli bevistløs!"
-            self.promilleLabel.textColor = UIColor.redColor()
-            self.textQuotes.textColor = UIColor.redColor()
-        }
-        */
         return totalSum
     }
     
@@ -329,7 +148,6 @@ class SecondViewController: UIViewController {
             for item in userData {
                 getGender = item.gender! as Bool
                 getWeight = item.weight! as Double
-                print("UserData PromilleKalkulator Fetched...")
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -417,13 +235,9 @@ class SecondViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isViewLunchedBefore"){
-            print("View already launched")
-            // HVIS REGISTRATION ER FULLFØRT:
-
             return true
         }else{
             defaults.setBool(true, forKey: "isViewLunchedBefore")
-            print("View first time")
             self.textQuotes.text = "Swipe for å velge enhet"
             return false
         }
@@ -465,20 +279,118 @@ class SecondViewController: UIViewController {
         if let unitType : AnyObject = defaults.objectForKey(defaultKeys.unitTypeKeys) {
             fetchUnitType = unitType as! String
         }
-        print("getUnitValues gotten...")
     }
-}
-
-extension UIImageView{
     
-    func makeBlurImage(targetImageView:UIImageView?)
-    {
+    func secondViewFontsAndColors(){
+        self.view.backgroundColor = setAppColors.mainBackgroundColor()
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = targetImageView!.bounds
+        blurEffectView.frame = view.bounds
+        view.addSubview(blurEffectView)
         
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        targetImageView?.addSubview(blurEffectView)
+        // PROMILLE LABEL
+        self.promilleLabel.textColor = setAppColors.promilleLabelColors()
+        self.promilleLabel.font = setAppColors.promilleLabelFonts()
+        
+        // BUTTON FONT
+        self.addButtonOutlet.titleLabel!.font = setAppColors.buttonFonts(20)
+        self.addButtonOutlet.titleLabel!.text = "Legg til"
+        self.minusButtonOutlet.titleLabel!.font = setAppColors.buttonFonts(20)
+        self.minusButtonOutlet.titleLabel!.text = "Fjern"
+        
+        // LABEL COLORS AND FONT
+        self.numberOfHours.textColor = setAppColors.textUnderHeadlinesColors()
+        self.numberOfHours.font = setAppColors.textUnderHeadlinesFonts(15)
+        self.numberOfHours.text = "Promillen om 1 time"
+        self.numberOfBeersLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.numberOfBeersLabel.font = setAppColors.textUnderHeadlinesFonts(30)
+        self.numberOfWinesLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.numberOfWinesLabel.font = setAppColors.textUnderHeadlinesFonts(30)
+        self.numberOfDrinksLabel.textColor = setAppColors.textUnderHeadlinesColors()
+        self.numberOfDrinksLabel.font = setAppColors.textUnderHeadlinesFonts(30)
+        self.numberOfShots.textColor = setAppColors.textUnderHeadlinesColors()
+        self.numberOfShots.font = setAppColors.textUnderHeadlinesFonts(30)
+        
+        // TITLE LABEL
+        self.titleBeerLabel.textColor = setAppColors.textHeadlinesColors()
+        self.titleBeerLabel.font = setAppColors.textHeadlinesFonts(14)
+        self.titleWineLabel.textColor = setAppColors.textHeadlinesColors()
+        self.titleWineLabel.font = setAppColors.textHeadlinesFonts(14)
+        self.titleDrinkLabel.textColor = setAppColors.textHeadlinesColors()
+        self.titleDrinkLabel.font = setAppColors.textHeadlinesFonts(14)
+        self.titleShotLabel.textColor = setAppColors.textHeadlinesColors()
+        self.titleShotLabel.font = setAppColors.textHeadlinesFonts(14)
+        
+        // TEXT QUOTES
+        self.textQuotes.font = setAppColors.setTextQuoteFont(15)
+        self.textQuotes.textColor = setAppColors.textQuoteColors()
+        
+        // BUTTONS
+        self.minusButtonOutlet.setTitle("Fjern", forState: UIControlState.Normal)
+        self.addButtonOutlet.setTitle("Legg til", forState: UIControlState.Normal)
+        
+        // CONSTRAINTS
+        if UIScreen.mainScreen().bounds.size.height == 480 {
+            // iPhone 4
+            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 35.0)
+            
+            // BUTTONS
+            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -45.0)
+            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -45.0)
+            
+            // STATS-NUMBERS
+            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0)
+            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -60.0)
+            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0)
+            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0)
+            
+            // STATS-TITLES
+            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -70.0)
+            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -70.0)
+            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -70.0)
+            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -70.0)
+            
+            // TEXT QUOTES
+            self.textQuotes.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -24.0)
+            self.promilleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -12.0)
+            self.textQuotes.font = setAppColors.setTextQuoteFont(12)
+            self.promilleLabel.font = setAppColors.textHeadlinesFonts(60)
+            
+            // SLIDER OG SLIDER TEXT
+            self.sliderOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.numberOfHours.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            
+            // FONTS
+            setFontsOnConstStats(20, titleStatsFont: 12)
+        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            // IPhone 5
+            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 25.0)
+            
+            // BUTTONS
+            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+            
+            // STATS-NUMBERS
+            let statsNumbersYVal : CGFloat = -33.0
+            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsNumbersYVal)
+            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsNumbersYVal)
+            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsNumbersYVal)
+            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsNumbersYVal)
+            
+            // STATS-TITLES
+            let statsTitlesYval : CGFloat = -40.0
+            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsTitlesYval)
+            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsTitlesYval)
+            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsTitlesYval)
+            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsTitlesYval)
+            
+            // FONTS
+            setFontsOnConstStats(25, titleStatsFont: 15)
+        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            // iPhone 6
+        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            // iPhone 6+
+        }
     }
-    
 }

@@ -214,6 +214,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
             graphHistorikk = try moc.executeFetchRequest(timeStampFetch) as! [GraphHistorikk]
             for timeStampItem in graphHistorikk {
                 let graphHistorikkSession = timeStampItem.sessionNumber!
+                
                 if(sessionNumber == graphHistorikkSession){
                     // populate x and y values with these values
                     let something = timeStampItem.timeStampAdded! as NSDate
@@ -238,18 +239,8 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
                     print("Array X: \(formatOfDate)")
                     xAxis.append(formatOfDate)
                     
-                    
                     let promilleCurrent = timeStampItem.currentPromille! as Double
-                    
-                    let nf2 = NSNumberFormatter()
-                    nf2.numberStyle = .DecimalStyle
-                    nf2.minimumFractionDigits = 0
-                    nf2.maximumFractionDigits = 2
-                    
-                    let formatted = Double(nf2.stringFromNumber(promilleCurrent)!)! as Double
-                    print("Formatted Promille:   \(formatted)")
-                    
-                    yAxis.append(formatted)
+                    yAxis.append(promilleCurrent)
                 }
             }
         } catch {
