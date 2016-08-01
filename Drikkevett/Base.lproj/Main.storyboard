@@ -1026,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvJ-z0-y3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612.75" y="575.625"/>
+            <point key="canvasLocation" x="4424.5" y="575.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="l4S-xT-S0y">
@@ -2811,7 +2811,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ios-iH-yJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="1283.25"/>
+            <point key="canvasLocation" x="4424" y="1283"/>
         </scene>
         <!--Historikk Celle View Controller-->
         <scene sceneID="jqF-un-8Bq">
@@ -4244,7 +4244,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste  promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-Ph-ofW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste  promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-Ph-ofW">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="go9-Eo-Ie3"/>
@@ -4448,7 +4448,9 @@
                                     <constraint firstAttribute="height" constant="118" id="GqZ-lt-Wrs"/>
                                     <constraint firstAttribute="width" constant="329" id="dEY-5n-dVP"/>
                                 </constraints>
-                                <string key="text">Hvis du ønsker å fortsette med de samme statistikkene som før klikk på "Fortsett".   Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på nytt". </string>
+                                <string key="text">Hvis du ønsker å fortsette med de samme statistikkene som før klikk på "Fortsett". 
+
+Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på nytt". </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -6783,7 +6785,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmF-yU-pne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.75" y="575.625"/>
+            <point key="canvasLocation" x="3404" y="575"/>
         </scene>
         <!--Historikk-->
         <scene sceneID="gaj-lH-V2f">
@@ -6802,7 +6804,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-Hl-xDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593.5" y="1276.5"/>
+            <point key="canvasLocation" x="3405" y="1276"/>
         </scene>
         <!--Kalkulator-->
         <scene sceneID="vwa-x2-UNB">
@@ -7499,7 +7501,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zi-yE-4od" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4371.75" y="966.375"/>
+            <point key="canvasLocation" x="5183.5" y="965.5"/>
         </scene>
         <!--Innhold View Controller-->
         <scene sceneID="I85-eS-6mb">
@@ -7615,7 +7617,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUp-AG-Asa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5141.25" y="966.375"/>
+            <point key="canvasLocation" x="5952.5" y="965.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Uzm-s4-b2D">
@@ -7626,7 +7628,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9r9-uU-ndq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5910.75" y="966.375"/>
+            <point key="canvasLocation" x="6722.5" y="965.5"/>
         </scene>
         <!--Hjem-->
         <scene sceneID="PkT-nO-pT1">
@@ -10202,6 +10204,368 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEY-aQ-Jx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4353" y="-2201.25"/>
+        </scene>
+        <!--Kontaktskjema-->
+        <scene sceneID="48m-kX-Fz4">
+            <objects>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="NhG-a4-cEf" customClass="FormController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="qPb-Ps-SOm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="x3V-fS-enN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="1Qb-hS-oVd">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Qb-hS-oVd" id="b9L-zt-gDm">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ky-be-2O7">
+                                                    <rect key="frame" x="8" y="8" width="584" height="63"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Har du spørsmål om rus? Still dem her! Alle som henvender seg er anonyme. RUStelefonen vil svare på ditt spørsmål så fort som mulig. I perioder med mye pågang kan det ta opptil 7 dager før svaret publiseres. Svar på spørsmål som stilles via denne tjenesten vil legges ut på internett.</string>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-8N-xYR">
+                                                    <rect key="frame" x="12" y="71" width="147" height="30"/>
+                                                    <state key="normal" title="Svarene finner du her">
+                                                        <color key="titleColor" red="0.43531507253646851" green="0.86691170930862427" blue="0.49850630760192871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="navigateToQuestionForm:" destination="NhG-a4-cEf" eventType="touchUpInside" id="uq5-eq-2Vd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FkS-8N-xYR" firstAttribute="top" secondItem="0Ky-be-2O7" secondAttribute="bottom" id="K97-SD-7Nm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0Ky-be-2O7" secondAttribute="trailing" constant="8" id="6jw-jo-sQK"/>
+                                            <constraint firstItem="0Ky-be-2O7" firstAttribute="leading" secondItem="1Qb-hS-oVd" secondAttribute="leading" constant="8" id="Hbz-I5-6BU"/>
+                                            <constraint firstItem="0Ky-be-2O7" firstAttribute="top" secondItem="1Qb-hS-oVd" secondAttribute="top" constant="8" id="RwM-kw-a60"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FkS-8N-xYR" secondAttribute="bottom" constant="12" id="WRc-1R-FkZ"/>
+                                            <constraint firstItem="FkS-8N-xYR" firstAttribute="leading" secondItem="1Qb-hS-oVd" secondAttribute="leading" constant="12" id="YOG-cC-uSB"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Opplysninger" id="3AA-57-UGL">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="15m-PG-6zi">
+                                        <rect key="frame" x="0.0" y="235" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15m-PG-6zi" id="F8h-TC-y21">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alder:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-5R-pUc">
+                                                    <rect key="frame" x="16" y="0.0" width="46" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Velg din alder..." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-el-eKp">
+                                                    <rect key="frame" x="70" y="0.0" width="498" height="50"/>
+                                                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NhG-a4-cEf" id="QG8-dD-XFV"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JK0-el-eKp" firstAttribute="leading" secondItem="qpY-5R-pUc" secondAttribute="trailing" constant="8" id="RWT-nV-zqY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="JK0-el-eKp" firstAttribute="height" secondItem="15m-PG-6zi" secondAttribute="height" id="1DZ-CK-WTJ"/>
+                                            <constraint firstItem="qpY-5R-pUc" firstAttribute="centerY" secondItem="15m-PG-6zi" secondAttribute="centerY" id="5Gu-cP-xwQ"/>
+                                            <constraint firstItem="JK0-el-eKp" firstAttribute="centerY" secondItem="15m-PG-6zi" secondAttribute="centerY" id="Ba1-uS-7E0"/>
+                                            <constraint firstItem="qpY-5R-pUc" firstAttribute="height" secondItem="15m-PG-6zi" secondAttribute="height" id="JjX-cD-oZm"/>
+                                            <constraint firstItem="qpY-5R-pUc" firstAttribute="leading" secondItem="15m-PG-6zi" secondAttribute="leading" constant="16" id="WuG-zo-bgr"/>
+                                            <constraint firstAttribute="trailing" secondItem="JK0-el-eKp" secondAttribute="trailing" constant="32" id="yob-tS-vWf"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="yZG-DY-FRI">
+                                        <rect key="frame" x="0.0" y="285" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZG-DY-FRI" id="s3z-Ko-GN8">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kjønn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-QF-tpz">
+                                                    <rect key="frame" x="16" y="0.0" width="48" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Velg ditt kjønn..." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Wk-X6-gVP">
+                                                    <rect key="frame" x="72" y="0.0" width="496" height="50"/>
+                                                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NhG-a4-cEf" id="Iep-kX-GQj"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Wk-X6-gVP" firstAttribute="leading" secondItem="A4C-QF-tpz" secondAttribute="trailing" constant="8" id="oHh-eL-e5b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="A4C-QF-tpz" firstAttribute="leading" secondItem="yZG-DY-FRI" secondAttribute="leading" constant="16" id="9Cg-32-Jq7"/>
+                                            <constraint firstItem="8Wk-X6-gVP" firstAttribute="centerY" secondItem="yZG-DY-FRI" secondAttribute="centerY" id="GTL-1y-PAi"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Wk-X6-gVP" secondAttribute="trailing" constant="32" id="Nz5-vq-GMk"/>
+                                            <constraint firstItem="A4C-QF-tpz" firstAttribute="centerY" secondItem="yZG-DY-FRI" secondAttribute="centerY" id="Vei-MD-Uby"/>
+                                            <constraint firstItem="A4C-QF-tpz" firstAttribute="height" secondItem="yZG-DY-FRI" secondAttribute="height" id="bwX-4b-45C"/>
+                                            <constraint firstItem="8Wk-X6-gVP" firstAttribute="height" secondItem="yZG-DY-FRI" secondAttribute="height" id="oAe-0t-Uzo"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Z3C-8O-eWF">
+                                        <rect key="frame" x="0.0" y="335" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3C-8O-eWF" id="1WB-GZ-6aq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fylke:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-Gv-gAr">
+                                                    <rect key="frame" x="16" y="0.0" width="45" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Velg ditt fylke..." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3U-Tx-yEy">
+                                                    <rect key="frame" x="69" y="0.0" width="499" height="50"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NhG-a4-cEf" id="Glq-fv-CzO"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N3U-Tx-yEy" firstAttribute="leading" secondItem="8IU-Gv-gAr" secondAttribute="trailing" constant="8" id="jI8-Fb-3ox"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="N3U-Tx-yEy" firstAttribute="centerY" secondItem="Z3C-8O-eWF" secondAttribute="centerY" id="Act-yl-Anu"/>
+                                            <constraint firstItem="N3U-Tx-yEy" firstAttribute="height" secondItem="Z3C-8O-eWF" secondAttribute="height" id="GcZ-vs-QGd"/>
+                                            <constraint firstItem="8IU-Gv-gAr" firstAttribute="leading" secondItem="Z3C-8O-eWF" secondAttribute="leading" constant="16" id="PMZ-i5-0a4"/>
+                                            <constraint firstAttribute="trailing" secondItem="N3U-Tx-yEy" secondAttribute="trailing" constant="32" id="RSs-H0-VSK"/>
+                                            <constraint firstItem="8IU-Gv-gAr" firstAttribute="height" secondItem="Z3C-8O-eWF" secondAttribute="height" id="grg-df-bv5"/>
+                                            <constraint firstItem="8IU-Gv-gAr" firstAttribute="centerY" secondItem="Z3C-8O-eWF" secondAttribute="centerY" id="rae-GP-aVm"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Spørsmål" id="KL9-uD-ecV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="GBL-24-e6Y">
+                                        <rect key="frame" x="0.0" y="435" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GBL-24-e6Y" id="LBZ-yn-mfP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdB-Id-qyB">
+                                                    <rect key="frame" x="16" y="0.0" width="44" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skriv tittel..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-A1-A59">
+                                                    <rect key="frame" x="110" y="0.0" width="458" height="50"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NhG-a4-cEf" id="2vc-F7-LAa"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dqB-A1-A59" firstAttribute="leading" secondItem="HdB-Id-qyB" secondAttribute="trailing" constant="50" id="Chu-Jm-DLu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="dqB-A1-A59" firstAttribute="height" secondItem="GBL-24-e6Y" secondAttribute="height" id="A1U-UL-8SY"/>
+                                            <constraint firstAttribute="trailing" secondItem="dqB-A1-A59" secondAttribute="trailing" constant="32" id="IJk-Uk-CBC"/>
+                                            <constraint firstItem="HdB-Id-qyB" firstAttribute="height" secondItem="GBL-24-e6Y" secondAttribute="height" id="Xbb-cx-Isb"/>
+                                            <constraint firstItem="HdB-Id-qyB" firstAttribute="leading" secondItem="GBL-24-e6Y" secondAttribute="leading" constant="16" id="dSq-x2-GSB"/>
+                                            <constraint firstItem="HdB-Id-qyB" firstAttribute="centerY" secondItem="GBL-24-e6Y" secondAttribute="centerY" id="h8C-Ld-K2e"/>
+                                            <constraint firstItem="dqB-A1-A59" firstAttribute="centerY" secondItem="GBL-24-e6Y" secondAttribute="centerY" id="hUI-HT-Jxm"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="5yw-uc-EVB">
+                                        <rect key="frame" x="0.0" y="485" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5yw-uc-EVB" id="8lI-Nd-kvY">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spørsmål:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-uG-vjh">
+                                                    <rect key="frame" x="16" y="0.0" width="77" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3P-kI-mQD">
+                                                    <rect key="frame" x="109" y="0.0" width="483" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c3P-kI-mQD" firstAttribute="leading" secondItem="Vfu-uG-vjh" secondAttribute="trailing" constant="16" id="fPw-6G-tfZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Vfu-uG-vjh" firstAttribute="centerY" secondItem="5yw-uc-EVB" secondAttribute="centerY" id="Oag-ZQ-4le"/>
+                                            <constraint firstItem="Vfu-uG-vjh" firstAttribute="leading" secondItem="5yw-uc-EVB" secondAttribute="leading" constant="16" id="QU1-hO-7VW"/>
+                                            <constraint firstItem="c3P-kI-mQD" firstAttribute="centerY" secondItem="5yw-uc-EVB" secondAttribute="centerY" id="Yqw-Vo-T4r"/>
+                                            <constraint firstItem="c3P-kI-mQD" firstAttribute="height" secondItem="5yw-uc-EVB" secondAttribute="height" id="ow0-45-nyr"/>
+                                            <constraint firstItem="Vfu-uG-vjh" firstAttribute="height" secondItem="5yw-uc-EVB" secondAttribute="height" id="sdq-ao-CTA"/>
+                                            <constraint firstAttribute="trailing" secondItem="c3P-kI-mQD" secondAttribute="trailing" constant="8" id="ubJ-4e-eAu"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="xUg-dk-4nf" kind="show" id="b4k-Hy-EYg">
+                                                <nil key="action"/>
+                                            </segue>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection footerTitle="Spørsmålet er helt anonymt" id="RbI-2e-GdF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="noZ-yo-jzF">
+                                        <rect key="frame" x="0.0" y="571" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="noZ-yo-jzF" id="cRM-ZD-RNm">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-DU-94F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                    <state key="normal" title="Send spørsmål">
+                                                        <color key="titleColor" red="0.43531507253646851" green="0.86691170930862427" blue="0.49850630760192871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="eYt-DU-94F" firstAttribute="width" secondItem="noZ-yo-jzF" secondAttribute="width" id="4ib-ZZ-hPv"/>
+                                            <constraint firstItem="eYt-DU-94F" firstAttribute="height" secondItem="noZ-yo-jzF" secondAttribute="height" id="CGK-Pv-Sp8"/>
+                                            <constraint firstItem="eYt-DU-94F" firstAttribute="centerX" secondItem="noZ-yo-jzF" secondAttribute="centerX" id="Nlv-8r-bYd"/>
+                                            <constraint firstItem="eYt-DU-94F" firstAttribute="centerY" secondItem="noZ-yo-jzF" secondAttribute="centerY" id="Vv4-Gp-HOd"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="NhG-a4-cEf" id="zR4-Gi-obe"/>
+                            <outlet property="delegate" destination="NhG-a4-cEf" id="SEd-ZA-2xR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Kontaktskjema" id="P0x-Bf-ign"/>
+                    <connections>
+                        <outlet property="ageInputField" destination="JK0-el-eKp" id="API-YY-PXg"/>
+                        <outlet property="countyInputField" destination="N3U-Tx-yEy" id="6qq-Q3-H0t"/>
+                        <outlet property="genderInputField" destination="8Wk-X6-gVP" id="gNj-i3-Yy7"/>
+                        <outlet property="infoHeaderCell" destination="1Qb-hS-oVd" id="Cj1-1K-LJQ"/>
+                        <outlet property="questionLabel" destination="c3P-kI-mQD" id="x5n-Av-YNe"/>
+                        <outlet property="titleInputField" destination="dqB-A1-A59" id="3IS-Kf-7IE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkL-vR-bQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="1191"/>
+        </scene>
+        <!--Skriv ditt spørsmål-->
+        <scene sceneID="tRE-QZ-425">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xUg-dk-4nf" customClass="QuestionController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikH-WM-0BH"/>
+                        <viewControllerLayoutGuide type="bottom" id="lKg-Ew-H46"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eez-fw-MDn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwV-4d-qTL">
+                                <rect key="frame" x="20" y="72" width="560" height="459"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cwV-4d-qTL" secondAttribute="trailing" id="2At-nX-iOQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cwV-4d-qTL" secondAttribute="leading" id="83q-0h-G2M"/>
+                            <constraint firstItem="lKg-Ew-H46" firstAttribute="top" secondItem="cwV-4d-qTL" secondAttribute="bottom" constant="20" id="nmZ-dU-Z8c"/>
+                            <constraint firstItem="cwV-4d-qTL" firstAttribute="top" secondItem="ikH-WM-0BH" secondAttribute="bottom" constant="8" id="oOS-Gk-DKF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Skriv ditt spørsmål" id="94H-Nu-jUF">
+                        <barButtonItem key="leftBarButtonItem" title="Avbryt" id="b3o-bJ-mn7">
+                            <connections>
+                                <action selector="cancel:" destination="xUg-dk-4nf" id="xI5-Jg-EfD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ferdig" id="LsU-CP-Lef">
+                            <connections>
+                                <action selector="finishedAction:" destination="xUg-dk-4nf" id="1EA-J4-Li0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolderText" value="Skriv ditt spørsmål her.."/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="textView" destination="cwV-4d-qTL" id="VX2-xL-dN5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJI-PQ-uEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="1953"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pJk-bK-4cS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TUk-gL-rUl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L0s-BW-S8A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NhG-a4-cEf" kind="relationship" relationship="rootViewController" id="QkR-yM-TRU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xw-vn-oyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1483" y="1191"/>
         </scene>
     </scenes>
     <resources>

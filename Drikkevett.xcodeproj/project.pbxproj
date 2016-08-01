@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F751D9A1D4A44E800B6896F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F751D991D4A44E800B6896F /* DateUtil.swift */; };
-		7F751D9F1D4A611E00B6896F /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F751D9E1D4A611E00B6896F /* Status.swift */; };
 		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
 		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
-		7F9DBE201D4B6FF70018DC0A /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */; };
-		7F9DBE261D4BDC290018DC0A /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */; };
-		7F9DBE281D4BDC970018DC0A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE271D4BDC970018DC0A /* User.swift */; };
-		7F9DBE2A1D4BDEDD0018DC0A /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */; };
-		7F9DBE341D4D036D0018DC0A /* ImageViewExtstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */; };
-		7FF16A1E1D49313F0063532B /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF16A1D1D49313F0063532B /* defaultKeys.swift */; };
+		7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C8A1D4F56A9007B62DB /* Status.swift */; };
+		7F850C901D4F56B5007B62DB /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */; };
+		7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C911D4F56D7007B62DB /* defaultKeys.swift */; };
+		7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C931D4F614A007B62DB /* DateUtil.swift */; };
+		7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C951D4F619E007B62DB /* DayAfterUtils.swift */; };
+		7F850C981D4F61BC007B62DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C971D4F61BC007B62DB /* User.swift */; };
+		7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -75,6 +74,12 @@
 		D5958E941D29AA0A004FC6A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5958E931D29AA0A004FC6A3 /* Info.plist */; };
 		D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; };
 		D5A045DA1D1DF230006D3887 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661C1D492A4A00093F62 /* CountyController.swift */; };
+		D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661E1D492A9A00093F62 /* QuestionController.swift */; };
+		D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66201D492ACB00093F62 /* FormCell.swift */; };
+		D5FC66231D492AFB00093F62 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66221D492AFB00093F62 /* FormController.swift */; };
+		D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66241D492B5D00093F62 /* ResourceList.swift */; };
+		D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66261D492C3700093F62 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,17 +135,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F751D991D4A44E800B6896F /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		7F751D9E1D4A611E00B6896F /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUtils.swift; sourceTree = "<group>"; };
-		7F9DBE271D4BDC970018DC0A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
-		7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtstension.swift; sourceTree = "<group>"; };
+		7F850C8A1D4F56A9007B62DB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUtils.swift; sourceTree = "<group>"; };
+		7F850C911D4F56D7007B62DB /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultKeys.swift; sourceTree = SOURCE_ROOT; };
+		7F850C931D4F614A007B62DB /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		7F850C951D4F619E007B62DB /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F850C971D4F61BC007B62DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FF16A1D1D49313F0063532B /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultKeys.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -198,6 +202,12 @@
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
 		D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D5FC661C1D492A4A00093F62 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyController.swift; sourceTree = "<group>"; };
+		D5FC661E1D492A9A00093F62 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		D5FC66201D492ACB00093F62 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		D5FC66221D492AFB00093F62 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
+		D5FC66241D492B5D00093F62 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
+		D5FC66261D492C3700093F62 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,11 +222,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F9DBE241D4BDBF10018DC0A /* status */ = {
+		7F850C851D4F562F007B62DB /* status */ = {
 			isa = PBXGroup;
 			children = (
-				7F751D9E1D4A611E00B6896F /* Status.swift */,
-				7F9DBE251D4BDC290018DC0A /* StatusUtils.swift */,
+				7F850C8A1D4F56A9007B62DB /* Status.swift */,
+				7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */,
 			);
 			name = status;
 			sourceTree = "<group>";
@@ -257,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				D5958E201D29A21C004FC6A3 /* StringExtension.swift */,
-				7F9DBE331D4D036D0018DC0A /* ImageViewExtstension.swift */,
+				D5FC66261D492C3700093F62 /* UIViewExtension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -325,12 +335,12 @@
 			isa = PBXGroup;
 			children = (
 				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
+				7F850C911D4F56D7007B62DB /* defaultKeys.swift */,
 				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
 				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
 				7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */,
-				7FF16A1D1D49313F0063532B /* defaultKeys.swift */,
-				7F9DBE1F1D4B6FF70018DC0A /* UserDefaultUtils.swift */,
-				7F9DBE271D4BDC970018DC0A /* User.swift */,
+				7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */,
+				7F850C971D4F61BC007B62DB /* User.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -338,9 +348,9 @@
 		D5412BC31D285E3800445D6C /* dayAfter */ = {
 			isa = PBXGroup;
 			children = (
+				7F850C951D4F619E007B62DB /* DayAfterUtils.swift */,
 				D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */,
 				D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */,
-				7F9DBE291D4BDEDD0018DC0A /* DayAfterUtils.swift */,
 			);
 			name = dayAfter;
 			sourceTree = "<group>";
@@ -402,9 +412,9 @@
 		D5412BC91D286A0000445D6C /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7F850C931D4F614A007B62DB /* DateUtil.swift */,
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
-				7F751D991D4A44E800B6896F /* DateUtil.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -412,7 +422,8 @@
 		D5412BCA1D286E9200445D6C /* Drikkevett */ = {
 			isa = PBXGroup;
 			children = (
-				7F9DBE241D4BDBF10018DC0A /* status */,
+				7F850C851D4F562F007B62DB /* status */,
+				D5FC66181D492A1E00093F62 /* questionForm */,
 				D5412BC91D286A0000445D6C /* utilities */,
 				D5412BC81D28640200445D6C /* persistence */,
 				D5412BB81D284C2000445D6C /* extensions */,
@@ -452,6 +463,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D5FC66181D492A1E00093F62 /* questionForm */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC661C1D492A4A00093F62 /* CountyController.swift */,
+				D5FC661E1D492A9A00093F62 /* QuestionController.swift */,
+				D5FC66201D492ACB00093F62 /* FormCell.swift */,
+				D5FC66221D492AFB00093F62 /* FormController.swift */,
+				D5FC66241D492B5D00093F62 /* ResourceList.swift */,
+			);
+			name = questionForm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,7 +509,7 @@
 				TargetAttributes = {
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = BD4PJR3XJ9;
+						DevelopmentTeam = L9938G85M7;
 					};
 				};
 			};
@@ -567,41 +590,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
+				D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
+				7F850C981D4F61BC007B62DB /* User.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
 				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
-				7F9DBE281D4BDC970018DC0A /* User.swift in Sources */,
+				D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
+				D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */,
+				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
+				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
+				D5FC66231D492AFB00093F62 /* FormController.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
 				D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */,
-				7FF16A1E1D49313F0063532B /* defaultKeys.swift in Sources */,
 				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
+				7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
-				7F9DBE341D4D036D0018DC0A /* ImageViewExtstension.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
+				D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
 				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
-				7F751D9F1D4A611E00B6896F /* Status.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
 				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,
 				D5958E271D29A243004FC6A3 /* UserData.swift in Sources */,
-				7F9DBE261D4BDC290018DC0A /* StatusUtils.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
 				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
-				7F9DBE2A1D4BDEDD0018DC0A /* DayAfterUtils.swift in Sources */,
 				D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */,
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
@@ -611,19 +637,21 @@
 				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
 				D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */,
 				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
+				7F850C901D4F56B5007B62DB /* StatusUtils.swift in Sources */,
 				7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */,
 				D5958E661D29A70B004FC6A3 /* HistorikkCelleViewController.swift in Sources */,
+				D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */,
 				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
-				7F9DBE201D4B6FF70018DC0A /* UserDefaultUtils.swift in Sources */,
+				7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */,
 				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
+				7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */,
 				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
-				7F751D9A1D4A44E800B6896F /* DateUtil.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
 				D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */,
 			);
