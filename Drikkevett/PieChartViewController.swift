@@ -103,16 +103,16 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         if(entry.xIndex == 0){
-            self.pieChartTextVuew.text = "Målet ditt er her rødt fordi du har gjort det dårlig!!"
+            self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget over makspromillen din"
             
         }
         if(entry.xIndex == 1){
-            self.pieChartTextVuew.text = "Målet ditt er her grønt fordi du har gjort det bra!"
+            self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget under makspromillen din"
         }
     }
     
     func chartValueNothingSelected(chartView: ChartViewBase) {
-        self.pieChartTextVuew.text = "Denne grafikken viser hvordan det står til med målet ditt. Ønsker du å vite mer klikk på fargene"
+        self.pieChartTextVuew.text = "Målet ditt vises i diagrammet til høyre. Fargene illustrerer hvordan det står til med makspromillen din."
     }
     
     func populatePieChart() {

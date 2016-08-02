@@ -241,32 +241,36 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
         if(goalPromille == 0.0){
             self.textViewGoal.textColor = UIColor.whiteColor()
             self.textViewGoal.text = "Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. \n\nMakspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av EN kveld. "
-            self.imageViewStateOfGoal.image = UIImage(named: "Happy-50")
+            self.imageViewStateOfGoal.image = UIImage(named: "Happy-100")
         }
         if(goalPromille > 0.0 && goalPromille <= 0.3){
             self.textViewGoal.textColor = UIColor.whiteColor()
-            self.textViewGoal.text = "Denne promillen tilsvarer ca. 1-2 enheter per kveld.\nDette er en godkjent promille. ( og eventuelt legg til et smiley bilde et sted ) "
-            self.imageViewStateOfGoal.image = UIImage(named: "Happy-50")
+            self.textViewGoal.text = "En promille der de fleste vil fremstå som normale."
+            self.imageViewStateOfGoal.image = UIImage(named: "Happy-100")
         }
         if(goalPromille > 0.3 && goalPromille <= 0.6){
-            textViewGoal.text = "Denne promillen tilsvarer ca. 2-3 enheter per kveld.\nDette er en OGSÅ godkjent promille. ( og eventuelt legg til et smiley bilde et sted ) "
-            self.imageViewStateOfGoal.image = UIImage(named: "Happy-50")
+            textViewGoal.text = "En promille der de fleste vil fremstå som normale.\n\nDu kan føle velbehag, bli pratsom og bli mer avslappet."
+            self.imageViewStateOfGoal.image = UIImage(named: "Happy-100")
         }
         if(goalPromille > 0.6 && goalPromille <= 0.9){
-            textViewGoal.text = "Denne promillen tilsvarer ca. 3-4 enheter per kveld.\nNå nærmer du deg noe farlig høyt her!. ( og eventuelt legg til et smiley bilde et sted ) "
-            self.imageViewStateOfGoal.image = UIImage(named: "Happy-50")
+            textViewGoal.text = "Denne promillen tilsvarer det man kaller lykkepromille!"
+            self.imageViewStateOfGoal.image = UIImage(named: "Happy-100")
         }
         if(goalPromille > 0.9 && goalPromille <= 1.2){
-            textViewGoal.text = "Denne promillen tilsvarer ca. 5-6 enheter per kveld.\nHer er det farlig høyt. Vær forsiktig. ( og eventuelt legg til et smiley bilde et sted ) "
-            self.imageViewStateOfGoal.image = UIImage(named: "Sad-50") 
+            textViewGoal.text = "Balansen vil bli svekket. "
+            self.imageViewStateOfGoal.image = UIImage(named: "Sad-100")
         }
         if(goalPromille > 1.2 && goalPromille <= 1.5){
-            textViewGoal.text = "Denne promillen tilsvarer ca. 7-8 enheter per kveld"
-            self.imageViewStateOfGoal.image = UIImage(named: "Sad-50")
+            textViewGoal.text = "Talen blir snøvlete og kontrollen på bevegelser forverres"
+            self.imageViewStateOfGoal.image = UIImage(named: "Sad-100")
         }
-        if(goalPromille > 1.5){
-            textViewGoal.text = "Denne promillen tilsvarer ca. 10-12 enheter per kveld"
-            self.imageViewStateOfGoal.image = UIImage(named: "Sad-50")
+        if(goalPromille > 1.5 && goalPromille <= 1.7){
+            textViewGoal.text = "Man blir trøtt sløv og kan bli kvalm"
+            self.imageViewStateOfGoal.image = UIImage(named: "Sad-100")
+        }
+        if(goalPromille > 1.7){
+            textViewGoal.text = "Hukommelsen sliter og man kan bli bevisstløs."
+            self.imageViewStateOfGoal.image = UIImage(named: "Vomited-100")
         }
     }
     
