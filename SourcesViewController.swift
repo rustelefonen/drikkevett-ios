@@ -1,0 +1,42 @@
+//
+//  SourcesViewController.swift
+//  Drikkevett
+//
+//  Created by Lars Petter Kristiansen on 02.08.2016.
+//  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
+//
+
+import UIKit
+
+class SourcesViewController: UIViewController {
+
+    @IBOutlet weak var iconsTitle: UILabel!
+    @IBOutlet weak var iconsTextView: UITextView!
+    @IBOutlet weak var librariesTitle: UILabel!
+    @IBOutlet weak var librariesTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setColors()
+    }
+    
+    func setColors(){
+        let setAppColors = AppColors()
+        self.view.backgroundColor = setAppColors.mainBackgroundColor()
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        view.addSubview(blurEffectView)
+        
+        self.iconsTitle.font = setAppColors.titleFont(22)
+        self.librariesTitle.font = setAppColors.titleFont(22)
+        self.iconsTitle.textColor = setAppColors.textHeadlinesColors()
+        self.librariesTitle.textColor = setAppColors.textHeadlinesColors()
+        
+        self.iconsTextView.font = setAppColors.textViewFont(16)
+        self.librariesTextView.font = setAppColors.textViewFont(16)
+        self.iconsTextView.textColor = setAppColors.textViewsColors()
+        self.librariesTextView.textColor = setAppColors.textViewsColors()
+    }
+}
