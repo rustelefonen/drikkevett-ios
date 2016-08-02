@@ -139,17 +139,14 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
             self.navigationItem.title = "RUStelefonen"
             names = [
                 "Om oss",
-                "Kontakt oss",
                 "Utviklere"
             ]
             imageArray = [
-                UIImage(named: "rustelefonenLOGO")!,
                 UIImage(named: "rustelefonenLOGO")!,
                 UIImage(named: "iPhone-100")!
             ]
             texts = [
                 "RUStelefonen er en råd-, veiledning- og informasjonstjeneste om rusmiddelproblematikk. Profesjonelle veiledere gir råd og kvalitetssikret informasjon om rusmidler, rusbruk og rett hjelpetiltak i din landsdel.\n\nRUStelefonen er åpen mandag til søndag fra klokken 11.00 til 19.00. (Tirsdag og onsdag 10.00 til 19.00.) Alle som tar kontakt med tjenesten er anonyme! \n\nRUStelefonen er en offentlig, nasjonal opplysningstjeneste om rusmiddelproblematikk, og er ment å være et supplement til det øvrige hjelpeapparatet. \n\nMålsetting\n– Gi fakta om rus og rusmidler.\n– Ha oversikt over behandlingsapparatet i Norge.\n– Gi råd og veiledning gjennom den profesjonelle samtalen.\n\nMålgruppe\n– Ungdom som er i en eksperimenterende fase med utprøving av rusmidler.\n– Pårørende og andre som er bekymret vedrørende rusbruk.\n– Profesjonelle.\n\nRUStelefonen har dessuten som mål å være i forkant av utviklingen av nye trender innenfor rus og rusmidler, og sitter inne med en unik spisskompetanse om rusfeltet.\n\nRUStelefonen finansieres av Helsedirektoratet og driftes av Velferdsetaten i Oslo kommune.",
-                "Ønsker du å ta kontakt med oss. Gå inn på vår nettside eller ring oss! Tjenesten er åpen alle dager mellom kl. 11.00 og 19.00. (Tirsdag og onsdag 10.00 til 19.00).\n\nFra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: sjekk med din operatør ved å spørre hva det koster å ringe 5-sifret nummer fra ditt abonnement. Chat. Tjenesten er gratis og åpen hverdager mellom kl. 11.00 og 17.00 ( Tirsdag og onsdag 10.00 til 17.00.)",
                 "Utviklingsteamet arbeidet med dette prosjektet som sin bacheloroppgave våren 2016. Alle medlemmene var studenter på Westerdals Oslo ACT. \n\nTeamet bestod av: \nKristoffer Klippenvåg\nJoakim Korsnes \nLars Petter Kristiansen"
             ]
         }

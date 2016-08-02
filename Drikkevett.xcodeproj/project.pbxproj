@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F114FA11D50D841000302DA /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F114FA01D50D841000302DA /* ContactUsViewController.swift */; };
 		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
 		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
 		7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C8A1D4F56A9007B62DB /* Status.swift */; };
@@ -136,6 +137,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F114FA01D50D841000302DA /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
 		7F850C8A1D4F56A9007B62DB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
 				7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */,
 				7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */,
+				7F114FA01D50D841000302DA /* ContactUsViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
 				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
+				7F114FA11D50D841000302DA /* ContactUsViewController.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
 				D5FC66231D492AFB00093F62 /* FormController.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
