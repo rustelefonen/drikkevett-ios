@@ -107,7 +107,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     
     func checkSessionTimer(){
         var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(GlemteEnheterViewController.updateStatus), userInfo: nil, repeats: true)
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(GlemteEnheterViewController.updateStatus), userInfo: nil, repeats: true)
     }
     
     func updateStatus(){
@@ -196,7 +196,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     }
     
     @IBAction func addShotDayAfter(sender: AnyObject) {
-        addUnitPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Shot")
+        addUnitPopUp("Legg til Shot", messageAlCon: "Glemt av shot? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Shot")
     }
     
     func addUnitPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String, unit: String){
