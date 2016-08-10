@@ -183,8 +183,8 @@ class FirstViewController: UIViewController {
         numberOfDrinkCount = 0
         numberOfShotCount = 0
         counter = 0.0
-        statusHandler(status)
         storePlannedUnits()
+        statusHandler(status)
     }
     
     /*
