@@ -147,7 +147,7 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
             ]
             texts = [
                 "RUStelefonen er en råd-, veiledning- og informasjonstjeneste om rusmiddelproblematikk. Profesjonelle veiledere gir råd og kvalitetssikret informasjon om rusmidler, rusbruk og rett hjelpetiltak i din landsdel.\n\nRUStelefonen er åpen mandag til søndag fra klokken 11.00 til 19.00. (Tirsdag og onsdag 10.00 til 19.00.) Alle som tar kontakt med tjenesten er anonyme! \n\nRUStelefonen er en offentlig, nasjonal opplysningstjeneste om rusmiddelproblematikk, og er ment å være et supplement til det øvrige hjelpeapparatet. \n\nMålsetting\n– Gi fakta om rus og rusmidler.\n– Ha oversikt over behandlingsapparatet i Norge.\n– Gi råd og veiledning gjennom den profesjonelle samtalen.\n\nMålgruppe\n– Ungdom som er i en eksperimenterende fase med utprøving av rusmidler.\n– Pårørende og andre som er bekymret vedrørende rusbruk.\n– Profesjonelle.\n\nRUStelefonen har dessuten som mål å være i forkant av utviklingen av nye trender innenfor rus og rusmidler, og sitter inne med en unik spisskompetanse om rusfeltet.\n\nRUStelefonen finansieres av Helsedirektoratet og driftes av Velferdsetaten i Oslo kommune.",
-                "Utviklingsteamet arbeidet med dette prosjektet som sin bacheloroppgave våren 2016. Alle medlemmene var studenter på Westerdals Oslo ACT. \n\nTeamet bestod av: \nKristoffer Klippenvåg\nJoakim Korsnes \nLars Petter Kristiansen"
+                "Utviklingsteamet arbeidet med dette prosjektet som sin bacheloroppgave våren 2016. Alle medlemmene var studenter på Westerdals Oslo ACT. \n\nTeamet bestod av: \nKristoffer Klippenvåg\nJoakim Korsnes\nSimen Fonnes\nLars Petter Kristiansen"
             ]
         }
     }

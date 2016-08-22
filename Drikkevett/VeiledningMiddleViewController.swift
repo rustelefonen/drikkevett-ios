@@ -17,13 +17,13 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
     override func viewDidLoad() {
         super.viewDidLoad()
         isAppAlreadyLaunchedOnce()
-        self.pageTitles = NSArray(objects: "Hjem", "Promille Kalkulator", "Planlegg Kvelden", "Dagen Derpå", "Historikk", "Utregning", "Enheter")
+        self.pageTitles = NSArray(objects: "Hjem", "Promillekalkulator", "Planlegg Kvelden", "Dagen Derpå", "Historikk", "Utregning", "Enheter")
         self.pageImages = NSArray(objects: "hjemSkjermOmrisse", "promilleKalkOmrisse", "iphone omrisse", "dagenderpOmrisse", "historikkOmrisse", "Math-100", "Unis")
         self.pageTextView = NSArray(objects:
-            "På hjemskjermen din vil du ha muligheten til å se hvordan du ligger ann med målene dine, sjekke statistikk over dine kvelder og sette et eventuelt profilbilde",
-            "Promille Kalkulatoren gjør at du kan regne ut promillen din her og nå ved å stille inn antall timer fra start tidspunkt drikking til hvor du tror du er etter så så mange timer",
+            "På hjemskjermen din vil du ha muligheten til å se hvordan du ligger an med målene dine, sjekke statistikk over dine kvelder og sette et eventuelt profilbilde",
+            "Promillekalkulatoren gjør at du kan regne ut hvilken promille du har. Du kan også justere antall timer som har gått siden alkoholen ble konsumert, og finne ut hva promillen vil være etter en viss tid. Promillekalkulatoren gir en indikasjon på din promille, og skal ikke brukes som en utregning for når du kan kjøre!",
             "Denne funksjonen skal hjelpe deg å planlegge kvelden din. Du skal kunne legge inn antall enheter du planlegger å drikke for så å \"drikk\" dem underveis",
-            "Med funkjsonen dagen derpå kan du se oversikt over forrige kvelds aktiviteter. Du kan også etterregistrere enheter. Tips-knappen fører deg til tips til dagen derpå.",
+            "Med funksjonen dagen derpå kan du se oversikt over forrige kvelds aktiviteter. Du kan også etterregistrere enheter. Tips-knappen fører deg til tips til dagen derpå.",
             "Historikken viser en oversikt over alle kveldene du har registrert med applikasjonen. Klikk på en enkelt kveld for mer detaljert data om kvelden din.",
             "For kvinner:\nAlkohol i gram / (kroppsvekten i kg x 0,60) – (0,15 x timer fra drikkestart) = promille. \nFor menn: \nAlkohol i gram / (kroppsvekten i kg x 0,70) – (0,15 x timer fra drikkestart) = promille.",
             "Øl: 0.5 dl\nVin: 12 cl\nDrink: 4 cl\nShot: 4 cl"

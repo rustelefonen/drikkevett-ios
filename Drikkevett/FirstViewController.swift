@@ -222,7 +222,7 @@ class FirstViewController: UIViewController {
             plannedCounter = counter
             userDefaultUtils.storedPlannedCounter(plannedCounter)
             
-            unitAddedAlertController("Kvelden er startet", message: "Have fun og drikk med måte", delayTime: 3.0)
+            unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
             
             startEndPartyBtn.setTitle("Avslutt Kvelden", forState: UIControlState.Normal)
             clearButtonOutlet.enabled = false
@@ -412,7 +412,21 @@ class FirstViewController: UIViewController {
                 storeIsFirstUnitAdded()
             }
             // ENDRE FRA BEER OG WINE TIL ( ØL OG VIN ) ---- >>
-            unitAddedAlertController("\(unit) drukket!", message: "", delayTime: 0.8)
+            var tempUnit = ""
+            if unit == "Beer" {
+                tempUnit = "Øl"
+            }
+            if unit == "Wine" {
+                tempUnit = "Vin"
+            }
+            if unit == "Drink" {
+                tempUnit = "Drink"
+            }
+            if unit == "Shot" {
+                tempUnit = "Shot"
+            }
+            
+            unitAddedAlertController("\(tempUnit) drukket!", message: "", delayTime: 0.8)
         }
         return histUnitCount
     }
