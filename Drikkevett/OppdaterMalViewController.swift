@@ -343,8 +343,13 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
         datePickerView.backgroundColor = UIColor.darkGrayColor()
         //let dateString = dateFormatter.stringFromDate(datePickerView.date)
         todayDate = NSDate()
-        datePickerView.minimumDate = todayDate
-        datePickerView.setDate(tempDateGoalPromille, animated: true)
+        
+        let calendar = NSCalendar.currentCalendar()
+        let tomorrow = calendar.dateByAddingUnit(.Day, value: +1, toDate: NSDate(), options: [])
+        
+        
+        datePickerView.minimumDate = tomorrow
+        datePickerView.setDate(tomorrow!, animated: true)
         datePickerView.addTarget(self, action: "datePickerChanged:", forControlEvents: UIControlEvents.ValueChanged)
         //datePickerChanged(datePickerView)
         addDoneButton()

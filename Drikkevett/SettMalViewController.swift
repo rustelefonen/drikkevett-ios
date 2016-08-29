@@ -283,8 +283,12 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView.backgroundColor = UIColor.darkGrayColor()
         //let dateString = dateFormatter.stringFromDate(datePickerView.date)
         todayDate = NSDate()
-        datePickerView.minimumDate = todayDate
-        datePickerView.setDate(todayDate, animated: true)
+        
+        let calendar = NSCalendar.currentCalendar()
+        let tomorrow = calendar.dateByAddingUnit(.Day, value: +1, toDate: NSDate(), options: [])
+        
+        datePickerView.minimumDate = tomorrow
+        datePickerView.setDate(tomorrow!, animated: true)
         datePickerView.addTarget(self, action: "datePickerChanged:", forControlEvents: UIControlEvents.ValueChanged)
         //datePickerChanged(datePickerView)
         addDoneButton()
