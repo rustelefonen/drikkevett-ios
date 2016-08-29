@@ -13,10 +13,10 @@ class SkallMenyBrain
     let moc = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
     
-    let universalBeerGrams = 17.0
-    let universalWineGrams = 13.5
-    let universalDrinkGrams = 14.0
-    let universalShotGrams = 17.0
+    let universalBeerGrams = 23.0
+    let universalWineGrams = 16.0
+    let universalDrinkGrams = 16.0
+    let universalShotGrams = 16.0
     
     func checkHighestPromille(gender: Bool, weight: Double, endOfSesStamp: NSDate, terminatedStamp: NSDate, startOfSesStamp: NSDate) -> Double {
         var highestPromille : Double = 0.0

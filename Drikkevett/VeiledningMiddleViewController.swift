@@ -26,7 +26,7 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
             "Med funksjonen dagen derpå kan du se oversikt over forrige kvelds aktiviteter. Du kan også etterregistrere enheter. Tips-knappen fører deg til tips til dagen derpå.",
             "Historikken viser en oversikt over alle kveldene du har registrert med applikasjonen. Klikk på en enkelt kveld for mer detaljert data om kvelden din.",
             "For kvinner:\nAlkohol i gram / (kroppsvekten i kg x 0,60) – (0,15 x timer fra drikkestart) = promille. \nFor menn: \nAlkohol i gram / (kroppsvekten i kg x 0,70) – (0,15 x timer fra drikkestart) = promille.",
-            "Øl: 0.5 dl\nVin: 12 cl\nDrink: 4 cl\nShot: 4 cl"
+            "Øl: 0,5 l (4,5 % alkohol)\nVin: 1,2 dl (13 % alkohol)\nDrink: 4 cl (40 % alkohol)\nShot: 4 cl (40 % alkohol)"
         )
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("VeiledningPageViewController") as! UIPageViewController

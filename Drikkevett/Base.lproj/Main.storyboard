@@ -5740,7 +5740,7 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         <exclude reference="U37-Nh-koI"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="-1" y="0.0" width="401" height="800"/>
                                     <mask key="subviews">
                                         <include reference="Glk-SV-py8"/>
@@ -8162,7 +8162,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="mW4-ni-tno"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Str-Ry-hBY">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siste 30 dager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-JQ-c1N">
@@ -9974,7 +9974,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="eOP-g9-Pwz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ws1-Jv-IK6">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-CX-Tl6">
@@ -10610,9 +10610,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="148" y="59" width="215" height="252"/>
-                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mD-Up-wZM">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -11119,13 +11116,13 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xdm-17-Bmk"/>
         <segue reference="8qG-gV-Nma"/>
+        <segue reference="adh-vd-Tpt"/>
         <segue reference="Tcy-bm-g9P"/>
         <segue reference="hZa-H8-f1E"/>
         <segue reference="euy-sR-EY5"/>
-        <segue reference="g3V-wV-1SJ"/>
+        <segue reference="6CW-PT-Kpn"/>
         <segue reference="eAD-WL-Oyo"/>
-        <segue reference="YpC-CP-nFB"/>
+        <segue reference="g3V-wV-1SJ"/>
     </inferredMetricsTieBreakers>
 </document>
