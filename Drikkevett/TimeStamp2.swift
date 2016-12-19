@@ -13,7 +13,7 @@ import CoreData
 class TimeStamp2: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    @NSManaged var timeStamp: NSDate?
+    @NSManaged var timeStamp: Date?
     @NSManaged var unitAlkohol: String?
 
 }

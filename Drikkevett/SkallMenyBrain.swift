@@ -18,7 +18,7 @@ class SkallMenyBrain
     let universalDrinkGrams = 16.0
     let universalShotGrams = 16.0
     
-    func checkHighestPromille(gender: Bool, weight: Double, endOfSesStamp: NSDate, terminatedStamp: NSDate, startOfSesStamp: NSDate) -> Double {
+    func checkHighestPromille(_ gender: Bool, weight: Double, endOfSesStamp: Date, terminatedStamp: Date, startOfSesStamp: Date) -> Double {
         var highestPromille : Double = 0.0
         var sum : Double = 0.0
         var valueBetweenTerminated : Double = 0.0
@@ -30,35 +30,35 @@ class SkallMenyBrain
         var count = 0
         
         var timeStamps = [TimeStamp2]()
-        let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "TimeStamp2")
         
         // Check if an higher promille has accured between app termination and app start.
-        let currentTimeStamp = NSDate()
-        var intervalTerminatedToResumed : NSTimeInterval = NSTimeInterval()
-        let checkIfSessionOver = endOfSesStamp.timeIntervalSinceDate(currentTimeStamp)
+        let currentTimeStamp = Date()
+        var intervalTerminatedToResumed : TimeInterval = TimeInterval()
+        let checkIfSessionOver = endOfSesStamp.timeIntervalSince(currentTimeStamp)
         if (checkIfSessionOver < 0.0){
-            intervalTerminatedToResumed = endOfSesStamp.timeIntervalSinceDate(terminatedStamp)
+            intervalTerminatedToResumed = endOfSesStamp.timeIntervalSince(terminatedStamp)
         } else {
-            intervalTerminatedToResumed = currentTimeStamp.timeIntervalSinceDate(terminatedStamp)
+            intervalTerminatedToResumed = currentTimeStamp.timeIntervalSince(terminatedStamp)
         }
         
         while(valueBetweenTerminated < intervalTerminatedToResumed){
             do {
-                timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
+                timeStamps = try moc.fetch(timeStampFetch) as! [TimeStamp2]
                 valueBetweenTerminated += 60
                 
                 countIterasjons += 1
                 count = 0
                 
                 for unitOfAlcohol in timeStamps {
-                    let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
+                    let timeStampTesting : Date = unitOfAlcohol.timeStamp! as Date
                     let unit : String = unitOfAlcohol.unitAlkohol! as String
                     
                     count += 1
                     
-                    let setOneMinFromUnitDate = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startOfSesStamp, options: NSCalendarOptions(rawValue: 0))!
+                    let setOneMinFromUnitDate = (Calendar.current as NSCalendar).date(byAdding: .minute, value: countIterasjons, to: startOfSesStamp, options: NSCalendar.Options(rawValue: 0))!
                     
-                    let intervallShiz = setOneMinFromUnitDate.timeIntervalSinceDate(timeStampTesting)
+                    let intervallShiz = setOneMinFromUnitDate.timeIntervalSince(timeStampTesting)
                     
                     if(intervallShiz <= 0){
                     } else {
@@ -94,7 +94,7 @@ class SkallMenyBrain
         return highestPromille
     }
     
-    func setGenderScore(gender: Bool) -> Double {
+    func setGenderScore(_ gender: Bool) -> Double {
         var genderScore = 0.0
         if(gender == true) { // TRUE ER MANN
             genderScore = 0.70
@@ -104,7 +104,7 @@ class SkallMenyBrain
         return genderScore
     }
     
-    func liveUpdatePromille(weight: Double, gender: Bool, firstUnitAddedTimeS: NSDate) -> Double{
+    func liveUpdatePromille(_ weight: Double, gender: Bool, firstUnitAddedTimeS: Date) -> Double{
         print("Første enhet lagt til timestamp: \(firstUnitAddedTimeS)")
         
         var sum : Double = 0.0
@@ -117,10 +117,10 @@ class SkallMenyBrain
         var shotCount = 0.0
         
         var timeStamps = [TimeStamp2]()
-        let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "TimeStamp2")
         
         do {
-            timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
+            timeStamps = try moc.fetch(timeStampFetch) as! [TimeStamp2]
             for unitOfAlcohol in timeStamps {
                 //let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
                 let unit : String = unitOfAlcohol.unitAlkohol! as String
@@ -140,13 +140,13 @@ class SkallMenyBrain
                 
                 let totalGrams = countingGrams(beerCount, wineUnits: wineCount, drinkUnits: drinkCount, shotUnits: shotCount)
                 
-                let currentTimeStamp = NSDate()
+                let currentTimeStamp = Date()
                 
                 // FLYTTES OPP TIL PARAMETERET.
                 //let firstUnitAddedTimeStamp = NSDate()
                 
                 // fra første enhet lagt til og opp til et kvarter kjør en fiktiv metode for promille
-                let firstFifMinutesFromFirstUnitAdded = currentTimeStamp.timeIntervalSinceDate(firstUnitAddedTimeS)
+                let firstFifMinutesFromFirstUnitAdded = currentTimeStamp.timeIntervalSince(firstUnitAddedTimeS)
                 let convertToMin = firstFifMinutesFromFirstUnitAdded / 60
                 let convertToHour = convertToMin / 60 as Double
                 
@@ -168,7 +168,7 @@ class SkallMenyBrain
         return sum
     }
     
-    func simulateFirstFifteen(timeDifference: Double, totalUnits: Double) -> Double{
+    func simulateFirstFifteen(_ timeDifference: Double, totalUnits: Double) -> Double{
         var BAC : Double = 0.0
         let minute : Double = (1.0 / 60.0 )
         
@@ -222,7 +222,7 @@ class SkallMenyBrain
     }
     
     // NOTIFICATIONS
-    func randomNotification(keyWord: String) -> String{
+    func randomNotification(_ keyWord: String) -> String{
         var quoteArray = [String]()
         
         if(keyWord == "First"){
@@ -271,7 +271,7 @@ class SkallMenyBrain
         return finalString
     }
     
-    func checkPromilleFifteen(fromMinHour: Double, maxMin: Double, minMin: Double, weight: Double, gender: Double, grams: Double, promilleDown: Double) -> Double {
+    func checkPromilleFifteen(_ fromMinHour: Double, maxMin: Double, minMin: Double, weight: Double, gender: Double, grams: Double, promilleDown: Double) -> Double {
         var regneUtPromille = 0.0
         
         print("\nCheck Promille Fifteen: \(regneUtPromille)")
@@ -294,7 +294,7 @@ class SkallMenyBrain
         return regneUtPromille
     }
     
-    func checkPromilleLargerFifteen(fromMinHour: Double, minMin: Double, weight: Double, gender: Double, grams: Double, promilleDown: Double) -> Double {
+    func checkPromilleLargerFifteen(_ fromMinHour: Double, minMin: Double, weight: Double, gender: Double, grams: Double, promilleDown: Double) -> Double {
         
         var regneUtPromille = 0.0
         
@@ -309,7 +309,7 @@ class SkallMenyBrain
         return regneUtPromille
     }
     
-    func calculatePromille(gender: Bool, weight: Double, grams: Double, timer: Double) -> Double{
+    func calculatePromille(_ gender: Bool, weight: Double, grams: Double, timer: Double) -> Double{
         var genderScore : Double = 0.0
         var oppdatertPromille : Double = 0.0
         
@@ -330,7 +330,7 @@ class SkallMenyBrain
         return oppdatertPromille
     }
     
-    func countingGrams(beerUnits: Double, wineUnits: Double, drinkUnits: Double, shotUnits: Double) -> Double{
+    func countingGrams(_ beerUnits: Double, wineUnits: Double, drinkUnits: Double, shotUnits: Double) -> Double{
         let totalGrams = (beerUnits * universalBeerGrams) + (wineUnits * universalWineGrams) + (drinkUnits * universalDrinkGrams) + (shotUnits * universalShotGrams)
         return totalGrams
     }
@@ -339,7 +339,7 @@ class SkallMenyBrain
         static let isDayAfterRun = "dayAfterKey"
     }
     
-    func setTextQuote(totalPromille: Double) -> String{
+    func setTextQuote(_ totalPromille: Double) -> String{
         var tempTextQuote = ""
         
         // HVA SKAL DET STÅ I TEKST FELTENE:
@@ -371,12 +371,12 @@ class SkallMenyBrain
         return tempTextQuote
     }
     
-    func setTextQuoteColor(totalPromille: Double) -> UIColor{
+    func setTextQuoteColor(_ totalPromille: Double) -> UIColor{
         var tempQuoteColor = UIColor()
         
         // HVA SKAL DET STÅ I TEKST FELTENE:
         if(totalPromille >= 0.0 && totalPromille < 0.4){
-            tempQuoteColor = UIColor.whiteColor()
+            tempQuoteColor = UIColor.white
         }
         // LYKKE PROMILLE
         if(totalPromille >= 0.4 && totalPromille < 0.8){
@@ -389,22 +389,22 @@ class SkallMenyBrain
             tempQuoteColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
         }
         if(totalPromille >= 1.2 && totalPromille < 1.4){
-            tempQuoteColor = UIColor.orangeColor()
+            tempQuoteColor = UIColor.orange
         }
         if(totalPromille >= 1.4 && totalPromille < 1.8){
-            tempQuoteColor = UIColor.orangeColor()
+            tempQuoteColor = UIColor.orange
         }
         if(totalPromille >= 1.8 && totalPromille < 3.0){
             tempQuoteColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
         }
         if(totalPromille >= 3.0){
-            tempQuoteColor = UIColor.redColor()
+            tempQuoteColor = UIColor.red
         }
         
         return tempQuoteColor
     }
     
-    func firstFifteen(timeFif: Double, weightFif: Double, genderFif: Double, unitAlco: String) -> Double{
+    func firstFifteen(_ timeFif: Double, weightFif: Double, genderFif: Double, unitAlco: String) -> Double{
         var checkPromille = 0.0
         var grams = 0.0
         
@@ -490,11 +490,11 @@ class SkallMenyBrain
         return checkPromille
     }
     
-    func populateGraphValues(gender: Bool, weight: Double, startPlanStamp: NSDate, endPlanStamp: NSDate, sessionNumber: Int){
+    func populateGraphValues(_ gender: Bool, weight: Double, startPlanStamp: Date, endPlanStamp: Date, sessionNumber: Int){
         var sum : Double = 0.0
         var valueBetweenTerminated : Double = 0.0
         var genderScore : Double = 0.0
-        var datePerMin : NSDate = NSDate()
+        var datePerMin : Date = Date()
         var updateHighestPromhist = 0.0
         
         genderScore = setGenderScore(gender)
@@ -503,13 +503,13 @@ class SkallMenyBrain
         var count = 0
         
         var timeStamps = [TimeStamp2]()
-        let timeStampFetch = NSFetchRequest(entityName: "TimeStamp2")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "TimeStamp2")
         
-        let sesPlanKveldIntervall = endPlanStamp.timeIntervalSinceDate(startPlanStamp)
+        let sesPlanKveldIntervall = endPlanStamp.timeIntervalSince(startPlanStamp)
         
         while(valueBetweenTerminated < sesPlanKveldIntervall){
             do {
-                timeStamps = try moc.executeFetchRequest(timeStampFetch) as! [TimeStamp2]
+                timeStamps = try moc.fetch(timeStampFetch) as! [TimeStamp2]
                 
                 count = 0
                 var beer = 0.0
@@ -517,19 +517,19 @@ class SkallMenyBrain
                 var drink = 0.0
                 var shot = 0.0
                 
-                datePerMin = NSCalendar.currentCalendar().dateByAddingUnit(.Minute, value: countIterasjons, toDate: startPlanStamp, options: NSCalendarOptions(rawValue: 0))!
+                datePerMin = (Calendar.current as NSCalendar).date(byAdding: .minute, value: countIterasjons, to: startPlanStamp, options: NSCalendar.Options(rawValue: 0))!
                
-                let mathematicalDateFromStart = datePerMin.timeIntervalSinceDate(startPlanStamp)
+                let mathematicalDateFromStart = datePerMin.timeIntervalSince(startPlanStamp)
                 let convertMin = mathematicalDateFromStart / 60
                 let convertHours = convertMin / 60 as Double
                 for unitOfAlcohol in timeStamps {
-                    let timeStampTesting : NSDate = unitOfAlcohol.timeStamp! as NSDate
+                    let timeStampTesting : Date = unitOfAlcohol.timeStamp! as Date
                     let unit : String = unitOfAlcohol.unitAlkohol! as String
                     
                     count += 1
                     
-                    let intervallShiz = datePerMin.timeIntervalSinceDate(timeStampTesting)
-                    let mathematicalDateFromStart = datePerMin.timeIntervalSinceDate(startPlanStamp)
+                    let intervallShiz = datePerMin.timeIntervalSince(timeStampTesting)
+                    let mathematicalDateFromStart = datePerMin.timeIntervalSince(startPlanStamp)
                     
                     if(intervallShiz <= 0){
                         // enhet ikke lagt til
@@ -568,7 +568,8 @@ class SkallMenyBrain
                     print("Lengde på sesjon: \(sesPlanKveldIntervall)")
                     brainCoreData.updateGraphHighestProm(updateHighestPromhist)
                 }
-                let tempSum = Double(sum).roundToPlaces(2)
+                let tempSum = roundToPlaces(number: sum, 2)
+                //let tempSum = Double(sum).roundToPlaces(2)
                 print("Double sum with 2 integers: \(tempSum)")
                 if(sum <= 0){
                     sum = 0
@@ -586,27 +587,27 @@ class SkallMenyBrain
         }
     }
     
-    func updateSpecificValue(isDateForekommet: NSDate, summelum: Double, datePerMin: NSDate, promPerMin: Double, sesNr: Int){
+    func updateSpecificValue(_ isDateForekommet: Date, summelum: Double, datePerMin: Date, promPerMin: Double, sesNr: Int){
         var datesGraph = [GraphHistorikk]()
         
-        let fetchRequest = NSFetchRequest(entityName: "GraphHistorikk")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GraphHistorikk")
         do {
             let sortDescriptor = NSSortDescriptor(key: "timeStampAdded", ascending: false)
             
             fetchRequest.sortDescriptors = [sortDescriptor]
             
-            if let fetchResults = try moc.executeFetchRequest(fetchRequest) as? [GraphHistorikk] {
+            if let fetchResults = try moc.fetch(fetchRequest) as? [GraphHistorikk] {
                 datesGraph = fetchResults
                 for items in datesGraph {
                     print("GRAPH - GRAPH - GRAPH - GRAPH")
-                    print("DATE HOME: \(items.timeStampAdded! as NSDate)")
-                    let checkTimeStamp = items.timeStampAdded! as NSDate
-                    if(checkTimeStamp.isEqualToDate(isDateForekommet)){
+                    print("DATE HOME: \(items.timeStampAdded! as Date)")
+                    let checkTimeStamp = items.timeStampAdded! as Date
+                    if(checkTimeStamp == isDateForekommet){
                         let currNr = items.currentPromille! as Double
                         print("Current value prom: \(currNr)")
                         let sumPromille = currNr + summelum
                         print("Sum promillen da: \(sumPromille)")
-                        items.currentPromille! = sumPromille
+                        items.currentPromille! = NSNumber(value: sumPromille)
                         print("ny sum promille er: \(items.currentPromille!)")
                     } else {
                         print("Legg til ny verdi")
@@ -624,7 +625,7 @@ class SkallMenyBrain
         }
     }
     
-    func randomWord(wordArray: [String]) -> String{
+    func randomWord(_ wordArray: [String]) -> String{
         let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
         let finalString = wordArray[randomIndex]
         return finalString
@@ -634,17 +635,22 @@ class SkallMenyBrain
         static let boolKey = "notificationKey"
     }
     
-    func calcualteTotalCosts(beer: Int, wine: Int, drink: Int, shot: Int, bPrice: Int, wPrice: Int, dPrice:Int, sPrice:Int) -> Int{
+    func calcualteTotalCosts(_ beer: Int, wine: Int, drink: Int, shot: Int, bPrice: Int, wPrice: Int, dPrice:Int, sPrice:Int) -> Int{
         var totalCost = 0
         totalCost = (beer * bPrice) + (wine * wPrice) + (drink * dPrice) + (shot * sPrice)
         return totalCost
     }
+    
+    func roundToPlaces(number:Double, _ places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(number * divisor) / divisor
+    }
 }
-
+/*
 extension Double {
     /// Rounds the double to decimal places value
-    func roundToPlaces(places:Int) -> Double {
+    func roundToPlaces(_ places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return round(self * divisor) / divisor
     }
-}
+}*/

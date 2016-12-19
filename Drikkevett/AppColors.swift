@@ -38,7 +38,7 @@ class AppColors {
     }
     
     func descriptTextColor() -> UIColor {
-        return UIColor.darkGrayColor()
+        return UIColor.darkGray
     }
     
     func setLineColor() -> UIColor {
@@ -54,7 +54,7 @@ class AppColors {
         return UIColor(red: 179/255.0, green: 35/255.0, blue: 34/255.0, alpha: 0.6)
     }
     
-    func updateFeedBack(distance: Double) -> UIColor{
+    func updateFeedBack(_ distance: Double) -> UIColor{
         var color = UIColor()
         
         if(distance < 0.1){
@@ -109,26 +109,26 @@ class AppColors {
         UIButton.appearance().tintColor = buttonsColor
     }
     
-    func buttonFonts(fontSize: CGFloat) -> UIFont{
+    func buttonFonts(_ fontSize: CGFloat) -> UIFont{
          return UIFont(name: "HelveticaNeue-Light", size: fontSize)!
     }
     
-    func drawRoundedBordersButtons(button: UIButton, trueFalse: Bool){
+    func drawRoundedBordersButtons(_ button: UIButton, trueFalse: Bool){
         button.layer.cornerRadius = 3;
         button.layer.borderWidth = 0.5;
-        button.layer.borderColor = UIColor.whiteColor().CGColor
+        button.layer.borderColor = UIColor.white.cgColor
     }
     
-    func swipeInfoStatsFontsChosen(fontSize: CGFloat) -> UIFont{
+    func swipeInfoStatsFontsChosen(_ fontSize: CGFloat) -> UIFont{
         return UIFont(name: "HelveticaNeue-Medium", size: fontSize)!
     }
     
-    func swipeInfoStatsFontsNotChosen(fontSize: CGFloat) -> UIFont{
+    func swipeInfoStatsFontsNotChosen(_ fontSize: CGFloat) -> UIFont{
         return UIFont(name: "HelveticaNeue-UltraLight", size: fontSize)!
     }
     
-    func headlineFont(fontSize: CGFloat) -> UIFont {
-        return UIFont.systemFontOfSize(fontSize)
+    func headlineFont(_ fontSize: CGFloat) -> UIFont {
+        return UIFont.systemFont(ofSize: fontSize)
     }
     func behindLineColor() -> UIColor{
         return UIColor(red: 200/255.0, green: 135/255.0, blue: 235/255.0, alpha: 1.0)
@@ -140,7 +140,7 @@ class AppColors {
         return headlines
     }
     
-    func textHeadlinesFonts(fontSize: CGFloat) -> UIFont{
+    func textHeadlinesFonts(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST HEADLINES
         var headlineFont = UIFont()
         headlineFont = UIFont(name: "HelveticaNeue-Light", size: fontSize)!
@@ -148,7 +148,7 @@ class AppColors {
         return headlineFont
     }
     
-    func welcomeTextHeadlinesFonts(fontSize: CGFloat) -> UIFont{
+    func welcomeTextHeadlinesFonts(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST HEADLINES
         var headlineFont = UIFont()
         headlineFont = UIFont(name: "HelveticaNeue-UltraLight", size: fontSize)!
@@ -156,7 +156,7 @@ class AppColors {
         return headlineFont
     }
     
-    func titleFont(fontSize: CGFloat) -> UIFont{
+    func titleFont(_ fontSize: CGFloat) -> UIFont{
         var font = UIFont()
         font = UIFont(name: "HelveticaNeue-Light", size: fontSize)!
         
@@ -166,16 +166,16 @@ class AppColors {
     func testConstraintFont() -> UIFont{
         var font = UIFont()
         
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             font = UIFont(name: "HelveticaNeue-Light", size: 12)!
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             font = UIFont(name: "HelveticaNeue-Light", size: 20)!
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             font = UIFont(name: "HelveticaNeue-Light", size: 30)!
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             font = UIFont(name: "HelveticaNeue-Light", size: 40)!
         }
@@ -188,7 +188,7 @@ class AppColors {
         return underHeadlines
     }
     
-    func textUnderHeadlinesFonts(fontSize: CGFloat) -> UIFont{
+    func textUnderHeadlinesFonts(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST UNDERHEADLINES
         let underHeadlineFont = UIFont(name: "HelveticaNeue-Light", size: fontSize)
         return underHeadlineFont!
@@ -206,7 +206,7 @@ class AppColors {
         return textViewFont!
     }
     
-    func textViewFont(fontSize: CGFloat) -> UIFont{
+    func textViewFont(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST UNDERHEADLINES
         let textViewFont = UIFont(name: "HelveticaNeue-Light", size: fontSize)
         return textViewFont!
@@ -230,7 +230,7 @@ class AppColors {
         return textDatePicker
     }
     
-    func setTextQuoteFont(fontSize: CGFloat) -> UIFont{
+    func setTextQuoteFont(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST UNDERHEADLINES
         let textViewFont = UIFont(name: "HelveticaNeue-MediumItalic", size: fontSize)
         return textViewFont!
@@ -304,7 +304,7 @@ class AppColors {
         return textColor
     }
     
-    func cellTextFonts(fontSize: CGFloat) -> UIFont{
+    func cellTextFonts(_ fontSize: CGFloat) -> UIFont{
         // FONT OG SIZE PÅ TEKST UNDERHEADLINES
         let cellFont = UIFont(name: "HelveticaNeue-Light", size: fontSize)
         return cellFont!

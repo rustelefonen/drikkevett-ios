@@ -16,24 +16,24 @@ class Historikk: NSManagedObject {
     @NSManaged var antallOl: NSNumber?
     @NSManaged var antallShot: NSNumber?
     @NSManaged var antallVin: NSNumber?
-    @NSManaged var dato: NSDate?
+    @NSManaged var dato: Date?
     @NSManaged var datoTwo: String?
-    @NSManaged var endOfSesDato: NSDate?
-    @NSManaged var firstUnitTimeStamp: NSDate?
+    @NSManaged var endOfSesDato: Date?
+    @NSManaged var firstUnitTimeStamp: Date?
     @NSManaged var forbruk: NSNumber?
     @NSManaged var hoyestePromille: NSNumber?
     @NSManaged var sessionNumber: NSNumber?
     @NSManaged var plannedNrUnits: NSNumber?
 
-    class func createInManagedObjectContext(moc: NSManagedObjectContext, dato: NSDate, forbruk: Int, hoyestePromille: Double, antOl: Int, antVin: Int, antDrink: Int, antShot: Int, stringDato: String) -> Historikk {
-        let newItem = NSEntityDescription.insertNewObjectForEntityForName("Historikk", inManagedObjectContext: moc) as! Historikk
+    class func createInManagedObjectContext(_ moc: NSManagedObjectContext, dato: Date, forbruk: Int, hoyestePromille: Double, antOl: Int, antVin: Int, antDrink: Int, antShot: Int, stringDato: String) -> Historikk {
+        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Historikk", into: moc) as! Historikk
         newItem.dato = dato
-        newItem.forbruk = forbruk
-        newItem.hoyestePromille = hoyestePromille
-        newItem.antallOl = antOl
-        newItem.antallVin = antVin
-        newItem.antallDrink = antDrink
-        newItem.antallShot = antShot
+        newItem.forbruk = forbruk as NSNumber?
+        newItem.hoyestePromille = hoyestePromille as NSNumber?
+        newItem.antallOl = antOl as NSNumber?
+        newItem.antallVin = antVin as NSNumber?
+        newItem.antallDrink = antDrink as NSNumber?
+        newItem.antallShot = antShot as NSNumber?
         newItem.datoTwo = stringDato
         
         return newItem

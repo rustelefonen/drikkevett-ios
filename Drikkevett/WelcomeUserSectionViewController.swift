@@ -32,7 +32,7 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
         self.profileImageView.clipsToBounds = true
         //self.profileImageView.layer.masksToBounds = true
         self.profileImageView.layer.borderWidth = 1.0
-        self.profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.profileImageView.layer.borderColor = UIColor.white.cgColor
         
         self.greetingLabel.text = randomGreeting()
         self.motivationPhrases.text = randomQuote()
@@ -44,7 +44,7 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
         setConstraints()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         changeWelcomeNickName()
         setConstraints()
@@ -73,9 +73,9 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     func fetchNickname() -> String{
         var userData = [UserData]()
         var tempNickName = ""
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             for item in userData {
                 tempNickName = item.height! as String
             }
@@ -127,69 +127,69 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
         return finalString
     }
     
-    @IBAction func changeProfilePicButton(sender: UIButton) {
+    @IBAction func changeProfilePicButton(_ sender: UIButton) {
         //Create the AlertController
-        let actionSheetController: UIAlertController = UIAlertController(title: "Sett Profilbilde", message: "Velg fra kamerarull eller ta bilde selv", preferredStyle: .ActionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Sett Profilbilde", message: "Velg fra kamerarull eller ta bilde selv", preferredStyle: .actionSheet)
         
         //Create and add the Cancel action
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Avbryt", style: .Cancel) { action -> Void in
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Avbryt", style: .cancel) { action -> Void in
             //Just dismiss the action sheet
         }
         actionSheetController.addAction(cancelAction)
         //Create and add first option action
-        let takePictureAction: UIAlertAction = UIAlertAction(title: "Ta Bilde", style: .Default) { action -> Void in
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Ta Bilde", style: .default) { action -> Void in
             self.takepic()
         }
         actionSheetController.addAction(takePictureAction)
         //Create and add a second option action
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Velg fra kamerarull", style: .Default) { action -> Void in
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Velg fra kamerarull", style: .default) { action -> Void in
             self.selectPicture()
         }
         actionSheetController.addAction(choosePictureAction)
         
         //Present the AlertController
-        self.presentViewController(actionSheetController, animated: true, completion: nil)
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     // TESTING PROFILE PIC
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
-            let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:context:")
+            let selectorToCall = #selector(WelcomeUserSectionViewController.imageWasSavedSuccessfully(_:didFinishSavingWithError:context:))
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
         }
-        imagePicker.dismissViewControllerAnimated(true, completion: {
+        imagePicker.dismiss(animated: true, completion: {
             // anything you want to happen when the user saves an image
         })
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: {
             // anything you want to happen when the user selects cancel
         })
     }
     
-    func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
+    func imageWasSavedSuccessfully(_ image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutableRawPointer){
         if let theError = error {
             print("An error happond while saving the image = \(theError)")
         } else {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 self.profileImageView.image = image
                 //self.buttonOutlet.setImage(image, forState: UIControlState.Normal)
                 
                 // TESTING SAVING PIC IN USER DATA
                 
                 let imageData = UIImageJPEGRepresentation(image, 1)
-                let relativePath = "image_\(NSDate.timeIntervalSinceReferenceDate()).jpg"
+                let relativePath = "image_\(Date.timeIntervalSinceReferenceDate).jpg"
                 let path = self.documentsPathForFileName(relativePath)
-                imageData!.writeToFile(path, atomically: true)
-                NSUserDefaults.standardUserDefaults().setObject(relativePath, forKey: "path")
-                NSUserDefaults.standardUserDefaults().synchronize()
+                try? imageData!.write(to: URL(fileURLWithPath: path), options: [.atomic])
+                UserDefaults.standard.set(relativePath, forKey: "path")
+                UserDefaults.standard.synchronize()
             })
         }
     }
     
     // TESTING SAVING PIC IN USER DATA
-    func documentsPathForFileName(name: String) -> String {
+    func documentsPathForFileName(_ name: String) -> String {
         //let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
         //let path = paths[0] as String;
         
@@ -201,10 +201,10 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     }
     
     func readData(){
-        let possibleOldImagePath = NSUserDefaults.standardUserDefaults().objectForKey("path") as! String?
+        let possibleOldImagePath = UserDefaults.standard.object(forKey: "path") as! String?
         if let oldImagePath = possibleOldImagePath {
             let oldFullPath = self.documentsPathForFileName(oldImagePath)
-            let oldImageData = NSData(contentsOfFile: oldFullPath)
+            let oldImageData = try? Data(contentsOf: URL(fileURLWithPath: oldFullPath))
             // here is your saved image:
             let oldImage = UIImage(data: oldImageData!)
             self.profileImageView.image = oldImage
@@ -214,18 +214,18 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     // PICK FROM CAMERA ROLE
     func selectPicture() {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
+        imagePicker.sourceType = .photoLibrary
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func takepic(){
-        if(UIImagePickerController.isSourceTypeAvailable(.Camera)){
-            if(UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil){
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            if(UIImagePickerController.availableCaptureModes(for: .rear) != nil){
                 imagePicker.allowsEditing = false
-                imagePicker.sourceType = .Camera
-                imagePicker.cameraCaptureMode = .Photo
-                presentViewController(imagePicker, animated: true, completion: {})
+                imagePicker.sourceType = .camera
+                imagePicker.cameraCaptureMode = .photo
+                present(imagePicker, animated: true, completion: {})
             } else {
                 //postAlert("Rear Camera does not exist", message: "Application cannot access the camera.")
             }
@@ -235,29 +235,29 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.helloUserNicknameLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.helloUserNicknameLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
             //self.motivationPhrases.transform = CGAffineTransformTranslate(self.view.transform, -20.0, 0.0)
-            self.greetingLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 18.0)
+            self.greetingLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 18.0)
             
             // FONT
             self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(12)
             self.motivationPhrases.font = setAppColors.setTextQuoteFont(10)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.helloUserNicknameLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.helloUserNicknameLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
             //self.motivationPhrases.transform = CGAffineTransformTranslate(self.view.transform, -20.0, 0.0)
-            self.greetingLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 21.0)
+            self.greetingLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 21.0)
             
             // FONT
             self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(12.5)
             self.motivationPhrases.font = setAppColors.setTextQuoteFont(10)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.helloUserNicknameLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 11.0)
+            self.helloUserNicknameLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 11.0)
             //self.motivationPhrases.transform = CGAffineTransformTranslate(self.view.transform, -20.0, 0.0)
-            self.greetingLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 18.0)
+            self.greetingLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 18.0)
             
             // FONT
             self.greetingLabel.font = setAppColors.textHeadlinesFonts(20)
@@ -271,11 +271,11 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
             if(fetchNickname().length >= 13){
                 self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(13.0)
             }
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.helloUserNicknameLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.helloUserNicknameLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
             //self.motivationPhrases.transform = CGAffineTransformTranslate(self.view.transform, -20.0, 0.0)
-            self.greetingLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 25.0)
+            self.greetingLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 25.0)
         }
     }
 }

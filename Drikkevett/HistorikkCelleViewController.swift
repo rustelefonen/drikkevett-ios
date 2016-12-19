@@ -29,8 +29,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     var xAxis : [String] = [String]()
     var yAxis : [Double] = [Double]()
     
-    //let xAxis = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
-    //let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
+    var newXAxis : [Double] = [Double]()
     
     // LABELS
     @IBOutlet weak var forbrukLabel: UILabel!
@@ -56,7 +55,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     var antallVin: Int = 0
     var antallDrink: Int = 0
     var antallShot: Int = 0
-    var tidspunktDato: NSDate = NSDate()
+    var tidspunktDato: Date = Date()
     var sessionNumber: Int = 0
     var helvete : String = ""
     
@@ -64,13 +63,13 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         // FONTS AND COLORS
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
         // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         
         // TITLE ON COST AND HIGH PROM
@@ -106,87 +105,79 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         
         testSessionNumber()
         
-        // GRAPH
-        self.lineGraph.delegate = self
-        // Set descriptionText
-        self.lineGraph.descriptionText = ""
-        //Removing background grid
-        self.lineGraph.leftAxis.drawGridLinesEnabled = true
-        self.lineGraph.rightAxis.drawGridLinesEnabled = false
-        self.lineGraph.leftAxis.forceLabelsEnabled = true
-        
-        self.lineGraph.xAxis.drawGridLinesEnabled = false
-        //Removing frame:
-        self.lineGraph.rightAxis.drawLabelsEnabled = false
-        self.lineGraph.rightAxis.drawTopYLabelEntryEnabled = false
-        self.lineGraph.rightAxis.drawAxisLineEnabled = false
-        self.lineGraph.xAxis.labelPosition = .Bottom
-        // Set color of descriptionText
-        self.lineGraph.descriptionTextColor = setAppColors.descriptTextColor()
-        // Set default text if there exists no data
-        self.lineGraph.noDataText = "No data provided"
-        self.lineGraph.userInteractionEnabled = false
-        self.lineGraph.descriptionTextColor = UIColor.whiteColor()
-        self.lineGraph.leftAxis.labelTextColor = UIColor.whiteColor()
-        self.lineGraph.xAxis.labelTextColor = UIColor.whiteColor()
-        
-        //Experimentation
-        self.lineGraph.backgroundColor = setAppColors.lineChartBackgroundColor()
-        
-        // add data to Chart
+        initLineChart()
         setChartData(xAxis)
         
-        // set constraints
         setConstraints()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func initLineChart(){
+        lineGraph.delegate = self
+        lineGraph.chartDescription?.text = ""
+        lineGraph.leftAxis.drawGridLinesEnabled = true
+        lineGraph.rightAxis.drawGridLinesEnabled = false
+        lineGraph.leftAxis.forceLabelsEnabled = true
+        lineGraph.xAxis.drawGridLinesEnabled = false
+        lineGraph.rightAxis.drawLabelsEnabled = false
+        lineGraph.rightAxis.drawTopYLabelEntryEnabled = false
+        lineGraph.rightAxis.drawAxisLineEnabled = false
+        lineGraph.xAxis.labelPosition = .bottom
+        lineGraph.noDataText = "No data provided"
+        lineGraph.isUserInteractionEnabled = false
+        lineGraph.chartDescription?.textColor = UIColor.white
+        lineGraph.leftAxis.labelTextColor = UIColor.white
+        lineGraph.xAxis.labelTextColor = UIColor.white
+        lineGraph.legend.enabled = false
+        lineGraph.backgroundColor = setAppColors.lineChartBackgroundColor()
     }
     
-    func setChartData(months: [String]) {
-        // Creating an array of data entries
-        var yValues1 : [ChartDataEntry] = [ChartDataEntry]()
-        for i in 0 ..< months.count {
-            yValues1.append(ChartDataEntry(value: yAxis[i], xIndex: i))
-        }
-        
-        // 2 - create a data set with our array
-        let set1: LineChartDataSet = LineChartDataSet(yVals: yValues1, label: "")
-        set1.axisDependency = .Left // Line will correlate with left axis values
-        set1.setColor(setAppColors.setLineColor().colorWithAlphaComponent(1.0)) // our line's opacity is 0%
+    func setLineChartDataProperties(set1: LineChartDataSet){
+        set1.axisDependency = .left // Line will correlate with left axis values
+        set1.setColor(setAppColors.setLineColor().withAlphaComponent(1.0)) // our line's opacity is 0%
         set1.setCircleColor(setAppColors.setLineSircleColor()) // our circle will be blue
         set1.lineWidth = 0.9
         set1.circleRadius = 6.0 // the radius of the node circle
-        //set1.fillAlpha = 65 / 255.0
-        //set1.fillColor = UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
-        
+        set1.fillAlpha = 65 / 255.0
+        set1.fillColor = UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
         set1.highlightColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         set1.drawCubicEnabled = false
         set1.drawFilledEnabled = true
         set1.drawCirclesEnabled = false
         set1.drawCircleHoleEnabled = false
         set1.drawValuesEnabled = false
+    }
+    
+    func setChartData(_ months: [String]) {
+        let formato = HistoryFormatter()
+        let xaxis:XAxis = XAxis()
         
-        //3 - create an array to store our LineChartDataSets
-        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+        var yValues1 = [ChartDataEntry]()
+        for i in 0 ..< months.count {
+            formato.stringForValue(newXAxis[i], axis: xaxis)    //This is needed
+            yValues1.append(ChartDataEntry(x: newXAxis[i], y: yAxis[i]))
+        }
+        
+        xaxis.valueFormatter = formato
+        lineGraph.xAxis.valueFormatter = xaxis.valueFormatter
+        
+        
+        let set1 = LineChartDataSet(values: yValues1, label: "")
+        setLineChartDataProperties(set1: set1)
+        
+        var dataSets = [LineChartDataSet]()
         dataSets.append(set1)
-        //4 - pass our months in for our x-axis label value along with our dataSets
-        let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
+        
+        let data: LineChartData = LineChartData(dataSets: dataSets)
         data.setValueTextColor(setAppColors.setTitleColorTextOnCircles())
         
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
+        /*let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 3
-        data.setValueFormatter(formatter)
+        formatter.maximumFractionDigits = 3*/
         
-        //5 - finally set our data
-        self.lineGraph.data = data
-        self.lineGraph.legend.enabled = false
+        lineGraph.data = data
         
-        var graphGradiantColor = UIColor.whiteColor()
+        var graphGradiantColor = UIColor.white
         
         let userGoal = coreDataBrain.fetchGoal()
         if(userGoal <= hoyestePromille){
@@ -195,10 +186,10 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
             graphGradiantColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
         }
         
-        let gradColors = [graphGradiantColor.CGColor, UIColor.blackColor().CGColor]
+        let gradColors = [graphGradiantColor.cgColor, UIColor.black.cgColor]
         let colorLocations:[CGFloat] = [0.5, 0.1]
-        if let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradColors, colorLocations) {
-            set1.fill = ChartFill(linearGradient: gradient, angle: 90.0)
+        if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradColors as CFArray, locations: colorLocations) {
+            set1.fill = Fill(linearGradient: gradient, angle: 90.0)
         }
     }
     
@@ -208,33 +199,41 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
         xAxis.removeAll()
         yAxis.removeAll()
         
-        let timeStampFetch = NSFetchRequest(entityName: "GraphHistorikk")
+        let timeStampFetch:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "GraphHistorikk")
         
         do {
-            graphHistorikk = try moc.executeFetchRequest(timeStampFetch) as! [GraphHistorikk]
+            graphHistorikk = try moc.fetch(timeStampFetch) as! [GraphHistorikk]
             for timeStampItem in graphHistorikk {
                 let graphHistorikkSession = timeStampItem.sessionNumber!
                 
-                if(sessionNumber == graphHistorikkSession){
+                if(NSNumber(value: sessionNumber) == graphHistorikkSession){
+                    
+                    
+                    
                     // populate x and y values with these values
-                    let something = timeStampItem.timeStampAdded! as NSDate
+                    let something = timeStampItem.timeStampAdded! as Date
+                    
+                    newXAxis.append(Double(something.timeIntervalSince1970))
+                    
                     var formatHour = ""
                     var formatMinute = ""
                     
-                    let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: something)
-                    let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: something)
+                    let hour = (Calendar.current as NSCalendar).component(.hour, from: something)
+                    let minute = (Calendar.current as NSCalendar).component(.minute, from: something)
                     
-                    if(hour < 10){
-                        formatHour = "0\(hour)"
-                    } else {
-                        formatHour = "\(hour)"
-                    }
-                    if(minute < 10){
-                        formatMinute = "0\(minute)"
-                    } else {
-                        formatMinute = "\(minute)"
-                    }
+                    if(hour < 10) {formatHour = "0\(hour)"}
+                    else {formatHour = "\(hour)"}
+                    
+                    if(minute < 10) {formatMinute = "0\(minute)"}
+                    else {formatMinute = "\(minute)"}
+                    
+                    
+                    
                     let formatOfDate = "\(formatHour).\(formatMinute)"
+                    
+                    print("\n\n\n\n")
+                    print("hour: \(formatHour), minute: \(formatMinute), formatOfDate: \(formatOfDate)")
+                    print("\n\n\n\n")
                     
                     print("Array X: \(formatOfDate)")
                     xAxis.append(formatOfDate)
@@ -249,69 +248,69 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             let transformLeft : CGFloat = -35.0
             
             // OVERSIKT
-            self.forbrukLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.costTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.hoyestePromilleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.highPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
+            self.forbrukLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.costTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.hoyestePromilleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.highPromTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
             
             let yValueUnits : CGFloat = -20.0
-            self.beerImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallOlLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.wineImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallVinLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.drinkImageVIew.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.shotImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallShotLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
+            self.beerImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallOlLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.wineImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallVinLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.drinkImageVIew.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallDrinkLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.shotImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallShotLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
             
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             let transformLeft : CGFloat = -35.0
             
             // OVERSIKT
-            self.forbrukLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.costTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.hoyestePromilleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.highPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
+            self.forbrukLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.costTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.hoyestePromilleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.highPromTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
             
             let yValueUnits : CGFloat = 0.0
-            self.beerImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallOlLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.wineImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallVinLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.drinkImageVIew.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.shotImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallShotLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
+            self.beerImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallOlLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.wineImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallVinLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.drinkImageVIew.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallDrinkLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.shotImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallShotLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
             
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             let transformLeft : CGFloat = 10.0
             
             // OVERSIKT
-            self.forbrukLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.costTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.hoyestePromilleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
-            self.highPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, 0.0)
+            self.forbrukLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.costTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.hoyestePromilleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
+            self.highPromTitleLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: 0.0)
             
             let yValueUnits : CGFloat = 10.0
-            self.beerImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallOlLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.wineImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallVinLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.drinkImageVIew.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.shotImageView.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
-            self.antallShotLabel.transform = CGAffineTransformTranslate(self.view.transform, transformLeft, yValueUnits)
+            self.beerImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallOlLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.wineImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallVinLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.drinkImageVIew.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallDrinkLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.shotImageView.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
+            self.antallShotLabel.transform = self.view.transform.translatedBy(x: transformLeft, y: yValueUnits)
         }
     }
     

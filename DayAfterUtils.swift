@@ -18,12 +18,12 @@ class DayAfterUtils {
         var historikk = [Historikk]()
         var tempHighestProm = 0.0
         
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Historikk")
         timeStampFetch.sortDescriptors = [NSSortDescriptor(key: "dato", ascending: false)]
         timeStampFetch.fetchLimit = 1
         
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for hoyesteProm in historikk {
                 tempHighestProm = hoyesteProm.hoyestePromille! as Double
             }

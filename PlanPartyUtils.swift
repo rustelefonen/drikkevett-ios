@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class PlanPartyUtil {
-    func setTextQuote(totalPromille: Double) -> String{
+    func setTextQuote(_ totalPromille: Double) -> String{
         var tempTextQuote = ""
         
         // HVA SKAL DET STÅ I TEKST FELTENE:
@@ -42,11 +42,11 @@ class PlanPartyUtil {
         return tempTextQuote
     }
     
-    func setTextQuoteColor(totalPromille: Double) -> UIColor{
+    func setTextQuoteColor(_ totalPromille: Double) -> UIColor{
         var tempQuoteColor = UIColor()
         
         if(totalPromille >= 0.0 && totalPromille < 0.4){
-            tempQuoteColor = UIColor.whiteColor()
+            tempQuoteColor = UIColor.white
         }
         // LYKKE PROMILLE
         if(totalPromille >= 0.4 && totalPromille < 0.8){
@@ -59,16 +59,16 @@ class PlanPartyUtil {
             tempQuoteColor = UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
         }
         if(totalPromille >= 1.2 && totalPromille < 1.4){
-            tempQuoteColor = UIColor.orangeColor()
+            tempQuoteColor = UIColor.orange
         }
         if(totalPromille >= 1.4 && totalPromille < 1.8){
-            tempQuoteColor = UIColor.orangeColor()
+            tempQuoteColor = UIColor.orange
         }
         if(totalPromille >= 1.8 && totalPromille < 3.0){
             tempQuoteColor = UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
         }
         if(totalPromille >= 3.0){
-            tempQuoteColor = UIColor.redColor()
+            tempQuoteColor = UIColor.red
         }
         
         return tempQuoteColor

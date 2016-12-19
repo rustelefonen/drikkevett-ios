@@ -26,27 +26,27 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
         self.pageUnits = NSArray(objects: "LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS")
         self.pageImages = NSArray(objects: "LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS")
         
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondPageViewController") as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondPageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
         let startVC = self.viewControllerAtIndex(0) as CalcSwipeViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
         //var font = UIFont()
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 90)
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 90)
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 60)
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 10)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 10)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
         }
         
@@ -55,20 +55,20 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        self.pageViewController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func viewControllerAtIndex(index: Int) -> CalcSwipeViewController
+    func viewControllerAtIndex(_ index: Int) -> CalcSwipeViewController
     {
         if ((self.pageUnits.count == 0) || (index >= self.pageUnits.count)) {
             return CalcSwipeViewController()
         }
         
-        let vc: CalcSwipeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CalcSwipeViewController") as! CalcSwipeViewController
+        let vc: CalcSwipeViewController = self.storyboard?.instantiateViewController(withIdentifier: "CalcSwipeViewController") as! CalcSwipeViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.unitTitle = self.pageUnits[index] as! String
@@ -79,7 +79,7 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         let vc = viewController as! CalcSwipeViewController
         var index = vc.pageIndex as Int
@@ -94,7 +94,7 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
         return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! CalcSwipeViewController
         var index = vc.pageIndex as Int
@@ -113,12 +113,12 @@ class CalcMiddleViewController: UIViewController, UIPageViewControllerDataSource
         return self.viewControllerAtIndex(index)
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationCount(for pageViewController: UIPageViewController) -> Int
     {
         return self.pageUnits.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int
     {
         return 0
     }

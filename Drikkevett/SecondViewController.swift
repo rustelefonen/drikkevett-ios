@@ -68,7 +68,7 @@ class SecondViewController: UIViewController {
         isViewLunchedBefore()
     }
     
-    func setFontsOnConstStats(statsFont: CGFloat, titleStatsFont: CGFloat){
+    func setFontsOnConstStats(_ statsFont: CGFloat, titleStatsFont: CGFloat){
         // STATS: (20)
         self.numberOfBeersLabel.font = setAppColors.textUnderHeadlinesFonts(statsFont)
         self.numberOfWinesLabel.font = setAppColors.textUnderHeadlinesFonts(statsFont)
@@ -81,17 +81,17 @@ class SecondViewController: UIViewController {
         self.titleShotLabel.font = setAppColors.textHeadlinesFonts(titleStatsFont)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
-        pageControll.hidden = false
+        pageControll.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func resetProps(sender: AnyObject) {
+    @IBAction func resetProps(_ sender: AnyObject) {
         beerCount = 0
         let formatBeer = Int(beerCount)
         self.numberOfBeersLabel.text = "\(formatBeer)"
@@ -106,8 +106,8 @@ class SecondViewController: UIViewController {
         self.numberOfShots.text = "\(formatShot)"
         self.promilleLabel.text = "0.00"
         self.textQuotes.text = "Kalkuler Promille"
-        self.promilleLabel.textColor = UIColor.whiteColor()
-        self.textQuotes.textColor = UIColor.whiteColor()
+        self.promilleLabel.textColor = UIColor.white
+        self.textQuotes.textColor = UIColor.white
         
         sliderOutlet.value = 1
         numHours = 1
@@ -142,9 +142,9 @@ class SecondViewController: UIViewController {
     
     func fetchUserData(){
         var userData = [UserData]()
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             for item in userData {
                 getGender = item.gender! as Bool
                 getWeight = item.weight! as Double
@@ -154,7 +154,7 @@ class SecondViewController: UIViewController {
         }
     }
     
-    @IBAction func minusUnitButton(sender: AnyObject) {
+    @IBAction func minusUnitButton(_ sender: AnyObject) {
         getUnitValues()
         if(fetchUnitType == "Beer"){
             beerCount -= 1
@@ -183,7 +183,7 @@ class SecondViewController: UIViewController {
         totalPromille()
     }
     
-    @IBAction func addUnitButton(sender: AnyObject) {
+    @IBAction func addUnitButton(_ sender: AnyObject) {
         getUnitValues()
         if(fetchUnitType == "Beer"){
             beerCount += 1
@@ -212,12 +212,12 @@ class SecondViewController: UIViewController {
         totalPromille()
     }
     
-    @IBAction func slider(sender: UISlider) {
+    @IBAction func slider(_ sender: UISlider) {
         var promille = ""
         var hoursInt = 0
         let tempHours = Int(sender.value).description
         let valueOfStepper = Int(sender.value).description
-        if let myNumber = NSNumberFormatter().numberFromString(valueOfStepper) {
+        if let myNumber = NumberFormatter().number(from: valueOfStepper) {
             numHours = myNumber.doubleValue
             hoursInt = Int(numHours)
             if(numHours == 1){
@@ -232,12 +232,12 @@ class SecondViewController: UIViewController {
 
     // FØRSTE GANGEN SKAL TEXTVIEWET VISE : (swipe for å velge enhet ) 
     func isViewLunchedBefore()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isViewLunchedBefore"){
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isViewLunchedBefore"){
             return true
         }else{
-            defaults.setBool(true, forKey: "isViewLunchedBefore")
+            defaults.set(true, forKey: "isViewLunchedBefore")
             self.textQuotes.text = "Swipe for å velge enhet"
             return false
         }
@@ -252,31 +252,31 @@ class SecondViewController: UIViewController {
     }
     
     func storeUnitValues(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(fetchBeerFromSwipe, forKey: defaultKeys.secondBeerKey)
-        defaults.setObject(fetchWineFromSwipe, forKey: defaultKeys.secondWineKey)
-        defaults.setObject(fetchDrinkFromSwipe, forKey: defaultKeys.secondDrinkKey)
-        defaults.setObject(fetchShotFromSwipe, forKey: defaultKeys.secondShotKey)
-        defaults.setObject(fetchUnitType, forKey: defaultKeys.unitTypeKeys)
+        let defaults = UserDefaults.standard
+        defaults.set(fetchBeerFromSwipe, forKey: defaultKeys.secondBeerKey)
+        defaults.set(fetchWineFromSwipe, forKey: defaultKeys.secondWineKey)
+        defaults.set(fetchDrinkFromSwipe, forKey: defaultKeys.secondDrinkKey)
+        defaults.set(fetchShotFromSwipe, forKey: defaultKeys.secondShotKey)
+        defaults.set(fetchUnitType, forKey: defaultKeys.unitTypeKeys)
         defaults.synchronize()
     }
     
     func getUnitValues(){ // GETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let beer : AnyObject = defaults.objectForKey(defaultKeys.secondBeerKey) {
+        if let beer : AnyObject = defaults.object(forKey: defaultKeys.secondBeerKey) as AnyObject? {
             fetchBeerFromSwipe = beer as! String
         }
-        if let wine : AnyObject = defaults.objectForKey(defaultKeys.secondWineKey) {
+        if let wine : AnyObject = defaults.object(forKey: defaultKeys.secondWineKey) as AnyObject? {
             fetchWineFromSwipe = wine as! String
         }
-        if let drink : AnyObject = defaults.objectForKey(defaultKeys.secondDrinkKey) {
+        if let drink : AnyObject = defaults.object(forKey: defaultKeys.secondDrinkKey) as AnyObject? {
             fetchDrinkFromSwipe = drink as! String
         }
-        if let shot : AnyObject = defaults.objectForKey(defaultKeys.secondShotKey) {
+        if let shot : AnyObject = defaults.object(forKey: defaultKeys.secondShotKey) as AnyObject? {
             fetchShotFromSwipe = shot as! String
         }
-        if let unitType : AnyObject = defaults.objectForKey(defaultKeys.unitTypeKeys) {
+        if let unitType : AnyObject = defaults.object(forKey: defaultKeys.unitTypeKeys) as AnyObject? {
             fetchUnitType = unitType as! String
         }
     }
@@ -284,7 +284,7 @@ class SecondViewController: UIViewController {
     func secondViewFontsAndColors(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -327,69 +327,69 @@ class SecondViewController: UIViewController {
         self.textQuotes.textColor = setAppColors.textQuoteColors()
         
         // BUTTONS
-        self.minusButtonOutlet.setTitle("Fjern", forState: UIControlState.Normal)
-        self.addButtonOutlet.setTitle("Legg til", forState: UIControlState.Normal)
+        self.minusButtonOutlet.setTitle("Fjern", for: UIControlState())
+        self.addButtonOutlet.setTitle("Legg til", for: UIControlState())
         
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 35.0)
+            self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: 35.0)
             
             // BUTTONS
-            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -45.0)
-            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -45.0)
+            self.minusButtonOutlet.transform = self.view.transform.translatedBy(x: 10.0, y: -45.0)
+            self.addButtonOutlet.transform = self.view.transform.translatedBy(x: -10.0, y: -45.0)
             
             // STATS-NUMBERS
-            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0)
-            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -60.0)
-            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0)
-            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0)
+            self.numberOfBeersLabel.transform = self.view.transform.translatedBy(x: 25.0, y: -60.0)
+            self.numberOfWinesLabel.transform = self.view.transform.translatedBy(x: 10.0, y: -60.0)
+            self.numberOfDrinksLabel.transform = self.view.transform.translatedBy(x: -10.0, y: -60.0)
+            self.numberOfShots.transform = self.view.transform.translatedBy(x: -25.0, y: -60.0)
             
             // STATS-TITLES
-            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -70.0)
-            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -70.0)
-            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -70.0)
-            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -70.0)
+            self.titleBeerLabel.transform = self.view.transform.translatedBy(x: 25.0, y: -70.0)
+            self.titleWineLabel.transform = self.view.transform.translatedBy(x: 10.0, y: -70.0)
+            self.titleDrinkLabel.transform = self.view.transform.translatedBy(x: -10.0, y: -70.0)
+            self.titleShotLabel.transform = self.view.transform.translatedBy(x: -25.0, y: -70.0)
             
             // TEXT QUOTES
-            self.textQuotes.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -24.0)
-            self.promilleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -12.0)
+            self.textQuotes.transform = self.view.transform.translatedBy(x: 0.0, y: -24.0)
+            self.promilleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -12.0)
             self.textQuotes.font = setAppColors.setTextQuoteFont(12)
             self.promilleLabel.font = setAppColors.textHeadlinesFonts(60)
             
             // SLIDER OG SLIDER TEXT
-            self.sliderOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
-            self.numberOfHours.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.sliderOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
+            self.numberOfHours.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
             
             // FONTS
             setFontsOnConstStats(20, titleStatsFont: 12)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, 25.0)
+            self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: 25.0)
             
             // BUTTONS
-            self.minusButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
-            self.addButtonOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+            self.minusButtonOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
+            self.addButtonOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
             
             // STATS-NUMBERS
             let statsNumbersYVal : CGFloat = -33.0
-            self.numberOfBeersLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsNumbersYVal)
-            self.numberOfWinesLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsNumbersYVal)
-            self.numberOfDrinksLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsNumbersYVal)
-            self.numberOfShots.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsNumbersYVal)
+            self.numberOfBeersLabel.transform = self.view.transform.translatedBy(x: 25.0, y: statsNumbersYVal)
+            self.numberOfWinesLabel.transform = self.view.transform.translatedBy(x: 10.0, y: statsNumbersYVal)
+            self.numberOfDrinksLabel.transform = self.view.transform.translatedBy(x: -10.0, y: statsNumbersYVal)
+            self.numberOfShots.transform = self.view.transform.translatedBy(x: -25.0, y: statsNumbersYVal)
             
             // STATS-TITLES
             let statsTitlesYval : CGFloat = -40.0
-            self.titleBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsTitlesYval)
-            self.titleWineLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsTitlesYval)
-            self.titleDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsTitlesYval)
-            self.titleShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsTitlesYval)
+            self.titleBeerLabel.transform = self.view.transform.translatedBy(x: 25.0, y: statsTitlesYval)
+            self.titleWineLabel.transform = self.view.transform.translatedBy(x: 10.0, y: statsTitlesYval)
+            self.titleDrinkLabel.transform = self.view.transform.translatedBy(x: -10.0, y: statsTitlesYval)
+            self.titleShotLabel.transform = self.view.transform.translatedBy(x: -25.0, y: statsTitlesYval)
             
             // FONTS
             setFontsOnConstStats(25, titleStatsFont: 15)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
         }
     }

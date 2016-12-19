@@ -25,15 +25,15 @@ class MainDagenDerpaViewController: UIViewController {
         //UIColor(red: 40/255.0, green: 40/255.0, blue: 40/255.0, alpha: 1.0)
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
         let behindUnderlineLabel2 = UILabel()
         behindUnderlineLabel2.text = "____________________________________________"
-        behindUnderlineLabel2.textColor = UIColor.lightGrayColor()
-        behindUnderlineLabel2.font = UIFont.systemFontOfSize(36)
+        behindUnderlineLabel2.textColor = UIColor.lightGray
+        behindUnderlineLabel2.font = UIFont.systemFont(ofSize: 36)
         behindUnderlineLabel2.sizeToFit()
         behindUnderlineLabel2.center = CGPoint(x: 96, y: 100)
         view.addSubview(behindUnderlineLabel2)
@@ -42,7 +42,7 @@ class MainDagenDerpaViewController: UIViewController {
         viewOneBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
         viewTwoBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
         
-        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("componentA")
+        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "componentA")
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
         self.addSubview(self.currentViewController!.view, toView: self.containerView)
@@ -51,67 +51,67 @@ class MainDagenDerpaViewController: UIViewController {
         setConstraints()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
-        pageControll.hidden = false
+        pageControll.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func showViewOneBtn(sender: UIButton) {
+    @IBAction func showViewOneBtn(_ sender: UIButton) {
         viewOneBtnOutlet.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)!
         viewTwoBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
                 self.underlinedLabel.center = CGPoint(x: 83, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
                 self.underlinedLabel.center = CGPoint(x: 80, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
                 self.underlinedLabel.center = CGPoint(x: 96, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
                 self.underlinedLabel.center = CGPoint(x: 100, y: 100)
             }
             }, completion: nil)
-        let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("componentA")
+        let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "componentA")
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
     }
     
-    @IBAction func showViewTwoBtn(sender: UIButton) {
+    @IBAction func showViewTwoBtn(_ sender: UIButton) {
         viewTwoBtnOutlet.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)!
         viewOneBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: [], animations: {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
                 self.underlinedLabel.center = CGPoint(x: 250, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
                 self.underlinedLabel.center = CGPoint(x: 240, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
                 self.underlinedLabel.center = CGPoint(x: 279, y: 100)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
                 self.underlinedLabel.center = CGPoint(x: 310, y: 100)
             }
             }, completion: nil)
-        let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("componentB")
+        let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "componentB")
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
     }
     
     // WITHOUT ANIMATIONS
-    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
-        oldViewController.willMoveToParentViewController(nil)
+    func cycleFromViewController(_ oldViewController: UIViewController, toViewController newViewController: UIViewController) {
+        oldViewController.willMove(toParentViewController: nil)
         self.addChildViewController(newViewController)
         self.addSubview(newViewController.view, toView:self.containerView!)
         // TODO: Set the starting state of your constraints here
@@ -119,57 +119,57 @@ class MainDagenDerpaViewController: UIViewController {
     
         // TODO: Set the ending state of your constraints here
     
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             // only need to call layoutIfNeeded here
             newViewController.view.layoutIfNeeded()
             }, completion: { finished in
                 oldViewController.view.removeFromSuperview()
                 oldViewController.removeFromParentViewController()
-                newViewController.didMoveToParentViewController(self)
+                newViewController.didMove(toParentViewController: self)
             })
     }
     
-    func addSubview(subView:UIView, toView parentView: UIView){
+    func addSubview(_ subView:UIView, toView parentView: UIView){
         parentView.addSubview(subView)
         
         var viewBindingsDict = [String: AnyObject]()
         viewBindingsDict["subView"] = subView
         
-        parentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subView]|",
+        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",
             options: [], metrics: nil, views: viewBindingsDict))
-        parentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subView]|",
+        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
             options: [], metrics: nil, views: viewBindingsDict))
     }
     
     func setConstraints(){
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             print("iphone 4 - MainDagenDerpå")
-            self.viewOneBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, 0.0)
-            self.viewTwoBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -36.0, 0.0)
+            self.viewOneBtnOutlet.transform = self.view.transform.translatedBy(x: -10.0, y: 0.0)
+            self.viewTwoBtnOutlet.transform = self.view.transform.translatedBy(x: -36.0, y: 0.0)
             createSwipeLabel(83, yValue: 100, lineLenght: "___________")
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.viewOneBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, 0.0)
-            self.viewTwoBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -36.0, 0.0)
+            self.viewOneBtnOutlet.transform = self.view.transform.translatedBy(x: -10.0, y: 0.0)
+            self.viewTwoBtnOutlet.transform = self.view.transform.translatedBy(x: -36.0, y: 0.0)
             createSwipeLabel(80, yValue: 100, lineLenght: "___________")
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             createSwipeLabel(96, yValue: 100, lineLenght: "_____________")
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.viewOneBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 12.0, 0.0)
-            self.viewTwoBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 30.0, 0.0)
+            self.viewOneBtnOutlet.transform = self.view.transform.translatedBy(x: 12.0, y: 0.0)
+            self.viewTwoBtnOutlet.transform = self.view.transform.translatedBy(x: 30.0, y: 0.0)
             createSwipeLabel(100, yValue: 100, lineLenght: "______________")
         }
     }
     
-    func createSwipeLabel(xValue: Int, yValue: Int, lineLenght: String){
+    func createSwipeLabel(_ xValue: Int, yValue: Int, lineLenght: String){
         underlinedLabel = UILabel()
         underlinedLabel.text = lineLenght
         underlinedLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        underlinedLabel.font = UIFont.systemFontOfSize(36)
+        underlinedLabel.font = UIFont.systemFont(ofSize: 36)
         underlinedLabel.sizeToFit()
         underlinedLabel.center = CGPoint(x: xValue, y: yValue)
         view.addSubview(underlinedLabel)

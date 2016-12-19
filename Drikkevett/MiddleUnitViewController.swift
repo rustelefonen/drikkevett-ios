@@ -25,35 +25,35 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
         self.pageButtons = NSArray(objects: "LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS")
         self.pageImages = NSArray(objects: "LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS")
         
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FirstPageViewController") as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "FirstPageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
         let startVC = self.viewControllerAtIndex(0)! as ChooseUnitViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 90)
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 90)
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 60)
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 10)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 10)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
         }
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        self.pageViewController.didMove(toParentViewController: self)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
@@ -61,7 +61,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
         super.didReceiveMemoryWarning()
     }
     
-    func viewControllerAtIndex(index: Int) -> ChooseUnitViewController?
+    func viewControllerAtIndex(_ index: Int) -> ChooseUnitViewController?
     {
         //currentPageIndex = index
         //print("Current page index: \(currentPageIndex)")
@@ -69,7 +69,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
             return ChooseUnitViewController()
         }
         
-        let vc: ChooseUnitViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChooseUnitViewController") as! ChooseUnitViewController
+        let vc: ChooseUnitViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChooseUnitViewController") as! ChooseUnitViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.titleButton = self.pageButtons[index] as! String
@@ -80,7 +80,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         
         let vc = viewController as! ChooseUnitViewController
@@ -97,7 +97,7 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
         return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! ChooseUnitViewController
         var index = vc.pageIndex as Int
@@ -116,12 +116,12 @@ class MiddleUnitViewController: UIPageViewController, UIPageViewControllerDataSo
         return self.viewControllerAtIndex(index)
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationCount(for pageViewController: UIPageViewController) -> Int
     {
         return self.pageButtons.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int
     {
         return 0
     }

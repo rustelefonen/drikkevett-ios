@@ -35,7 +35,7 @@ class VelkommenViewController: UIViewController {
     
     func setColorsAndFonts(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -45,9 +45,9 @@ class VelkommenViewController: UIViewController {
         self.welcomeTextLabel.textColor = setAppColors.textHeadlinesColors()
         self.explanationTextView.font = setAppColors.textViewFont(16)
         self.explanationTextView.textColor = setAppColors.textViewsColors()
-        self.guidanceBtnOutlet.setTitle("Ønsker du veiledning? Klikk her!", forState: UIControlState.Normal)
+        self.guidanceBtnOutlet.setTitle("Ønsker du veiledning? Klikk her!", for: UIControlState())
         self.guidanceBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
-        self.getStartedBtnOutlet.setTitle("Sett i gang", forState: UIControlState.Normal)
+        self.getStartedBtnOutlet.setTitle("Sett i gang", for: UIControlState())
         self.getStartedBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(15)
         
         // PIC
@@ -61,63 +61,63 @@ class VelkommenViewController: UIViewController {
     }
     
     func timeToMoveOn() {
-        self.performSegueWithIdentifier("regCompletedSegue", sender: self) // tar deg til appen når du har logget inn
+        self.performSegue(withIdentifier: "regCompletedSegue", sender: self) // tar deg til appen når du har logget inn
     }
     
     func isAppAlreadyLaunchedOnce()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isAppAlreadyLaunchedOnce"){
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             print("App already launched")
             // HVIS REGISTRATION ER FULLFØRT:
             if(checkIfRegistrationWasCompleted() == true){
-                welcomeImageView.hidden = false
+                welcomeImageView.isHidden = false
                 //imageShit.hidden = false
-                let timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timeToMoveOn", userInfo: nil, repeats: false)
+                let timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(VelkommenViewController.timeToMoveOn), userInfo: nil, repeats: false)
             }
             return true
         }else{
-            defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
             print("App launched first time")
             return false
         }
     }
     
     func checkIfRegistrationWasCompleted() -> Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         // SESJON START
-        if let bool : Bool = defaults.boolForKey("isFirstRegistrationCompleted") {
+        if let bool : Bool = defaults.bool(forKey: "isFirstRegistrationCompleted") {
             print("\(bool)")
             return bool
         }
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.headPicImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 145.0)
+            self.headPicImageView.transform = self.view.transform.translatedBy(x: 0.0, y: 145.0)
             textsConst(0.0, yValue: 40.0)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.headPicImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 110.0)
+            self.headPicImageView.transform = self.view.transform.translatedBy(x: 0.0, y: 110.0)
             textsConst(0.0, yValue: 30.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             
         }
     }
     
-    func textsConst(xValue: CGFloat, yValue: CGFloat){
+    func textsConst(_ xValue: CGFloat, yValue: CGFloat){
         // TEXT VIEW AND TITLE
-        self.welcomeTextLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.explanationTextView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.welcomeTextLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.explanationTextView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
         
         // BUTTONS
-        self.getStartedBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.getStartedImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.getStartedBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.getStartedImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
     }
     
 }

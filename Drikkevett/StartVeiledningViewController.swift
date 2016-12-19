@@ -15,19 +15,19 @@ class StartVeiledningViewController: UIViewController {
         super.viewDidLoad()
         // COLORS AND FONTS
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
-        self.tabBarController?.tabBar.hidden = true
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         
         let pageControll = UIPageControl.appearance()
-        pageControll.hidden = false
+        pageControll.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

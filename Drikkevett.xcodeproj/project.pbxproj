@@ -73,9 +73,10 @@
 		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
 		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
 		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
-		D5958E941D29AA0A004FC6A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5958E931D29AA0A004FC6A3 /* Info.plist */; };
-		D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; };
-		D5A045DA1D1DF230006D3887 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5A045D21D1DF221006D3887 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D090FC1E076F670080B24F /* HomeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D090FB1E076F670080B24F /* HomeFormatter.swift */; };
+		D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */; };
+		D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */; };
+		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
 		D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661C1D492A4A00093F62 /* CountyController.swift */; };
 		D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661E1D492A9A00093F62 /* QuestionController.swift */; };
 		D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66201D492ACB00093F62 /* FormCell.swift */; };
@@ -85,40 +86,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5A045D11D1DF221006D3887 /* PBXContainerItemProxy */ = {
+		D5DB35C81DAAD970001C9413 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
+			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
-			remoteInfo = "Charts-iOS";
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
 		};
-		D5A045D31D1DF221006D3887 /* PBXContainerItemProxy */ = {
+		D5DB35CA1DAAD970001C9413 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
+			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
-			remoteInfo = "Charts-TV";
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
 		};
-		D5A045D51D1DF221006D3887 /* PBXContainerItemProxy */ = {
+		D5DB35CC1DAAD970001C9413 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
+			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
-			remoteInfo = "Charts-OSX";
-		};
-		D5A045D71D1DF221006D3887 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
-		};
-		D5A045DB1D1DF230006D3887 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
-			remoteInfo = "Charts-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -129,7 +116,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D5A045DA1D1DF230006D3887 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +191,10 @@
 		D5958E8F1D29A99A004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
-		D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D5D090FB1E076F670080B24F /* HomeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
+		D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		D5FC661C1D492A4A00093F62 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyController.swift; sourceTree = "<group>"; };
 		D5FC661E1D492A9A00093F62 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D5FC66201D492ACB00093F62 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
@@ -219,7 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A045D91D1DF230006D3887 /* Charts.framework in Frameworks */,
+				D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +310,7 @@
 				D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */,
 				D5958E811D29A817004FC6A3 /* PieChartViewController.swift */,
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
+				D5D090FB1E076F670080B24F /* HomeFormatter.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -365,6 +355,7 @@
 				D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */,
 				D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */,
 				D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */,
+				D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -436,8 +427,8 @@
 				D5412BB41D2810D900445D6C /* entities */,
 				D5412BC61D28607F00445D6C /* intro */,
 				D5412BBF1D285DAF00445D6C /* main */,
-				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
 				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
+				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
 				D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */,
 				D5958E851D29A932004FC6A3 /* Main.storyboard */,
 				D5958E881D29A93D004FC6A3 /* Main.strings */,
@@ -446,6 +437,7 @@
 				D5958E911D29A9DF004FC6A3 /* Assets.xcassets */,
 				D5958E931D29AA0A004FC6A3 /* Info.plist */,
 				D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */,
+				D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */,
 			);
 			name = Drikkevett;
 			sourceTree = "<group>";
@@ -453,18 +445,17 @@
 		D5412BCB1D286F6500445D6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */,
+				D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5A045CB1D1DF221006D3887 /* Products */ = {
+		D5DB35C31DAAD970001C9413 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5A045D21D1DF221006D3887 /* Charts.framework */,
-				D5A045D41D1DF221006D3887 /* Charts.framework */,
-				D5A045D61D1DF221006D3887 /* Charts.framework */,
-				D5A045D81D1DF221006D3887 /* ChartsTests.xctest */,
+				D5DB35C91DAAD970001C9413 /* Charts.framework */,
+				D5DB35CB1DAAD970001C9413 /* ChartsRealm.framework */,
+				D5DB35CD1DAAD970001C9413 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -496,7 +487,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D5A045DC1D1DF230006D3887 /* PBXTargetDependency */,
 			);
 			name = Drikkevett;
 			productName = Skall_Meny;
@@ -510,12 +500,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Lars Petter Kristiansen";
 				TargetAttributes = {
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DD7UHAK9R6;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -532,8 +523,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D5A045CB1D1DF221006D3887 /* Products */;
-					ProjectRef = D5A045CA1D1DF221006D3887 /* Charts.xcodeproj */;
+					ProductGroup = D5DB35C31DAAD970001C9413 /* Products */;
+					ProjectRef = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -544,32 +535,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D5A045D21D1DF221006D3887 /* Charts.framework */ = {
+		D5DB35C91DAAD970001C9413 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = D5A045D11D1DF221006D3887 /* PBXContainerItemProxy */;
+			remoteRef = D5DB35C81DAAD970001C9413 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D5A045D41D1DF221006D3887 /* Charts.framework */ = {
+		D5DB35CB1DAAD970001C9413 /* ChartsRealm.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = D5A045D31D1DF221006D3887 /* PBXContainerItemProxy */;
+			path = ChartsRealm.framework;
+			remoteRef = D5DB35CA1DAAD970001C9413 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D5A045D61D1DF221006D3887 /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = D5A045D51D1DF221006D3887 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D5A045D81D1DF221006D3887 /* ChartsTests.xctest */ = {
+		D5DB35CD1DAAD970001C9413 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = D5A045D71D1DF221006D3887 /* PBXContainerItemProxy */;
+			remoteRef = D5DB35CC1DAAD970001C9413 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -581,7 +565,6 @@
 			files = (
 				D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */,
 				D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */,
-				D5958E941D29AA0A004FC6A3 /* Info.plist in Resources */,
 				D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */,
 				D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */,
 				D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */,
@@ -610,6 +593,7 @@
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
 				D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */,
+				D5D090FC1E076F670080B24F /* HomeFormatter.swift in Sources */,
 				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
 				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
@@ -639,6 +623,7 @@
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
+				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
 				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
@@ -656,6 +641,7 @@
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,
 				7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */,
+				D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */,
@@ -666,14 +652,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D5A045DC1D1DF230006D3887 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Charts-iOS";
-			targetProxy = D5A045DB1D1DF230006D3887 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D5958E851D29A932004FC6A3 /* Main.storyboard */ = {
@@ -724,8 +702,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -770,8 +750,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -791,6 +773,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 			};
@@ -799,11 +782,12 @@
 		7FE4E4981C58BD12004465B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = DD7UHAK9R6;
 				INFOPLIST_FILE = "$(SRCROOT)/Drikkevett/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -813,6 +797,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -820,11 +805,12 @@
 		7FE4E4991C58BD12004465B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = DD7UHAK9R6;
 				INFOPLIST_FILE = "$(SRCROOT)/Drikkevett/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -833,6 +819,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -33,26 +33,26 @@ class CalcSwipeViewController: UIViewController {
         
         var font = UIFont()
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             //unitImageView = UIImageView(frame: CGRectMake(100, 150, 150, 150)); // set as you want
             
             // iPhone 4
             //var img : CGSize = 20
             ///unitImageView.frame.size = 20
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             font = UIFont(name: "HelveticaNeue-Light", size: 20)!
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             font = UIFont(name: "HelveticaNeue-Light", size: 30)!
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             font = UIFont(name: "HelveticaNeue-Light", size: 40)!
         }
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
          print("WHAT PAGE ARE WE ON: \(self.pageIndex)")
         

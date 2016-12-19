@@ -36,22 +36,22 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
             "Det anbefales å slutte å drikke i god tid før du skal legge deg for å lindre symptomer på bakrus dagen derpå. Da er sjansene for at du får en roligere søvn større. Det kan dessuten være farlig å legge seg på stigende rus, om promillen er høy."
         )
         
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
         let startVC = self.viewControllerAtIndex(0) as InnholdViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 26)
+        self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 26)
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        self.pageViewController.didMove(toParentViewController: self)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
@@ -60,18 +60,27 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
         // Dispose of any resources that can be recreated.
     }
     
-    func viewControllerAtIndex(index: Int) -> InnholdViewController
+    func viewControllerAtIndex(_ index: Int) -> InnholdViewController
     {
         if ((self.pageImages.count == 0) || (index >= self.pageImages.count)) {
             return InnholdViewController()
         }
         
-        let vc: InnholdViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InnholdViewController") as! InnholdViewController
+        let vc: InnholdViewController = self.storyboard?.instantiateViewController(withIdentifier: "InnholdViewController") as! InnholdViewController
+        
+        print("\n\n\n\n")
+        print(self.pageImages[index])
+        print(self.pageTitles[index])
+        print(self.pageTexts[index])
+        print("\n\n\n\n")
+
         
         vc.imageFile = self.pageImages[index] as! String
         vc.titleString = self.pageTitles[index] as! String
         vc.textString = self.pageTexts[index] as! String
         vc.pageIndex = index
+        
+        
         
         return vc
         
@@ -80,7 +89,7 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         
         let vc = viewController as! InnholdViewController
@@ -97,7 +106,7 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! InnholdViewController
         var index = vc.pageIndex as Int
@@ -118,12 +127,12 @@ class DagenDerpaViewController: UIViewController, UIPageViewControllerDataSource
         
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationCount(for pageViewController: UIPageViewController) -> Int
     {
         return self.pageImages.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int
     {
         return 0
     }

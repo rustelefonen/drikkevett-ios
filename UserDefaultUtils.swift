@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 class UserDefaultUtils {
-    func storedPlannedCounter(planCount: Double){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setDouble(planCount, forKey: defaultKeys.keyForPlannedCounter)
+    func storedPlannedCounter(_ planCount: Double){
+        let defaults = UserDefaults.standard
+        defaults.set(planCount, forKey: defaultKeys.keyForPlannedCounter)
         defaults.synchronize()
     }
     
     func getPlannedCounter() -> Double {
         var tempPlanCounter : Double = 0.0
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         // ANTALL SESJONER ( NR PÅ SESJON )
-        if let planCount : Double = defaults.doubleForKey(defaultKeys.keyForPlannedCounter) {
+        if let planCount : Double = defaults.double(forKey: defaultKeys.keyForPlannedCounter) {
             tempPlanCounter = planCount
         }
         return tempPlanCounter
@@ -28,8 +28,8 @@ class UserDefaultUtils {
     
     func getFetchedValue() -> String{
         var tempFetchedValue = ""
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let fetchedValue : AnyObject = defaults.objectForKey(defaultKeys.fetchUnitType) {
+        let defaults = UserDefaults.standard
+        if let fetchedValue : AnyObject = defaults.object(forKey: defaultKeys.fetchUnitType) as AnyObject? {
             tempFetchedValue = fetchedValue as! String
         }
         return tempFetchedValue
@@ -37,17 +37,17 @@ class UserDefaultUtils {
     
     func getPrevSessionNumber() -> Int{
         var tempPrevSes = 0
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         // ANTALL SESJONER ( NR PÅ SESJON )
-        if let sessions : Int = defaults.integerForKey(defaultKeys.numberOfSessions) {
+        if let sessions : Int = defaults.integer(forKey: defaultKeys.numberOfSessions) {
             tempPrevSes = sessions
         }
         return tempPrevSes
     }
     
-    func storeSessionNumber(sesNumber: Int){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(sesNumber, forKey: defaultKeys.numberOfSessions)
+    func storeSessionNumber(_ sesNumber: Int){
+        let defaults = UserDefaults.standard
+        defaults.set(sesNumber, forKey: defaultKeys.numberOfSessions)
         defaults.synchronize()
     }
 }

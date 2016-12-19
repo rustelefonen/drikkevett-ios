@@ -29,32 +29,32 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
             "Øl: 0,5 l (4,5 % alkohol)\nVin: 1,2 dl (13 % alkohol)\nDrink: 4 cl (40 % alkohol)\nShot: 4 cl (40 % alkohol)"
         )
         
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("VeiledningPageViewController") as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "VeiledningPageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
         let startVC = self.viewControllerAtIndex(0) as VeiledningInnholdViewController
         let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
+        self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.size.height - 60)
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        self.pageViewController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func viewControllerAtIndex(index: Int) -> VeiledningInnholdViewController
+    func viewControllerAtIndex(_ index: Int) -> VeiledningInnholdViewController
     {
         if ((self.pageTitles.count == 0) || (index >= self.pageTitles.count)) {
             return VeiledningInnholdViewController()
         }
         
-        let vc: VeiledningInnholdViewController = self.storyboard?.instantiateViewControllerWithIdentifier("VeiledningInnholdViewController") as! VeiledningInnholdViewController
+        let vc: VeiledningInnholdViewController = self.storyboard?.instantiateViewController(withIdentifier: "VeiledningInnholdViewController") as! VeiledningInnholdViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.titleText = self.pageTitles[index] as! String
@@ -67,7 +67,7 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         
         let vc = viewController as! VeiledningInnholdViewController
@@ -82,7 +82,7 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
         return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! VeiledningInnholdViewController
         var index = vc.pageIndex as Int
@@ -102,43 +102,43 @@ class VeiledningMiddleViewController: UIViewController, UIPageViewControllerData
         return self.viewControllerAtIndex(index)
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationCount(for pageViewController: UIPageViewController) -> Int
     {
         return self.pageTitles.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int
     {
         return 0
     }
 
-    @IBAction func skipBackButton(sender: AnyObject) {
+    @IBAction func skipBackButton(_ sender: AnyObject) {
         let getButtonTitle = self.underGuidanceTitleBtn.currentTitle!
         if(getButtonTitle == "Tilbake"){
-            self.navigationController?.navigationBarHidden = false
-            self.tabBarController?.tabBar.hidden = false
-            navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.isNavigationBarHidden = false
+            self.tabBarController?.tabBar.isHidden = false
+            navigationController?.popViewController(animated: true)
         }
         if(getButtonTitle == "Sett i gang"){
-            self.performSegueWithIdentifier("showUserInfo", sender: self)
+            self.performSegue(withIdentifier: "showUserInfo", sender: self)
         }
     }
     
     func isAppAlreadyLaunchedOnce()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isAppAlreadyLaunchedOnceGui"){
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnceGui"){
             print("App already launched")
             // GJØR TING NÅR APPEN HAR LUNCHA
             // SETTE TITTELEN PÅ KNAPPEN TIL "TILBAKE"
-            underGuidanceTitleBtn.setTitle("Tilbake", forState: UIControlState.Normal)
+            underGuidanceTitleBtn.setTitle("Tilbake", for: UIControlState())
             return true
         }else{
-            defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnceGui")
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnceGui")
             print("App launched first time")
             // APPEN HAR IKKE LUNCHA GJØR TING
             // SETTE TITTELEN PÅ KNAPPEN TIL "SETT I GANG"
-            underGuidanceTitleBtn.setTitle("Sett i gang", forState: UIControlState.Normal)
+            underGuidanceTitleBtn.setTitle("Sett i gang", for: UIControlState())
             return false
         }
     }

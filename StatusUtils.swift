@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 class StatusUtils{
-    func setState(status : AnyObject){ // SETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(status, forKey: defaultKeys.statusKey)
+    func setState(_ status : AnyObject){ // SETTING
+        let defaults = UserDefaults.standard
+        defaults.set(status, forKey: defaultKeys.statusKey)
         defaults.synchronize()
     }
     
     func getState() -> AnyObject{
-        var tempStatus : AnyObject = Status.DEFAULT
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let status : AnyObject = defaults.objectForKey(defaultKeys.statusKey) {
+        var tempStatus : AnyObject = Status.DEFAULT as AnyObject
+        let defaults = UserDefaults.standard
+        if let status : AnyObject = defaults.object(forKey: defaultKeys.statusKey) as AnyObject? {
             tempStatus = status
         }
         return tempStatus

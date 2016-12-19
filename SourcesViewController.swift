@@ -20,7 +20,7 @@ class SourcesViewController: UIViewController {
         setColors()
         
         // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
     }
     
@@ -28,7 +28,7 @@ class SourcesViewController: UIViewController {
         let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)

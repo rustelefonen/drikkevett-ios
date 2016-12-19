@@ -18,14 +18,14 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         self.navigationItem.title = "Informasjon"
         
         let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         self.collectionView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -34,43 +34,43 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false // var false
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false // var false
         self.collectionView.reloadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.collectionView.reloadData()
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.titles.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView?.image = self.imageArray[indexPath.row]
-        cell.titleLabel?.text = self.titles[indexPath.row]
-        cell.titleLabel?.textColor = UIColor.whiteColor()
-        cell.titleLabel?.highlightedTextColor = UIColor.lightGrayColor()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
+        cell.imageView?.image = self.imageArray[(indexPath as NSIndexPath).row]
+        cell.titleLabel?.text = self.titles[(indexPath as NSIndexPath).row]
+        cell.titleLabel?.textColor = UIColor.white
+        cell.titleLabel?.highlightedTextColor = UIColor.lightGray
         cell.sizeToFit()
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showImage", sender: self)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showImage", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showImage" {
-            let indexPaths = self.collectionView!.indexPathsForSelectedItems()
-            let indexPath = indexPaths![0] as NSIndexPath
+            let indexPaths = self.collectionView!.indexPathsForSelectedItems
+            let indexPath = indexPaths![0] as IndexPath
             
-            let vc = segue.destinationViewController as! InfoTableViewController
+            let vc = segue.destination as! InfoTableViewController
             
-            vc.getTitlesFromColl = self.titles[indexPath.row]
+            vc.getTitlesFromColl = self.titles[(indexPath as NSIndexPath).row]
             
         }
     }

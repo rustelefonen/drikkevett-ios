@@ -22,6 +22,6 @@ class UserData: NSManagedObject {
     @NSManaged var height: String?
     @NSManaged var weight: NSNumber?
     @NSManaged var goalPromille: NSNumber?
-    @NSManaged var goalDate: NSDate?
+    @NSManaged var goalDate: Date?
 
 }

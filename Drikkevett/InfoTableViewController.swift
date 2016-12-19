@@ -23,7 +23,7 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -31,7 +31,7 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Rename back button
         let backButton = UIBarButtonItem(
             title: "",
-            style: UIBarButtonItemStyle.Plain, // Note: .Bordered is deprecated
+            style: UIBarButtonItemStyle.plain, // Note: .Bordered is deprecated
             target: nil,
             action: nil
         )
@@ -157,20 +157,20 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! CustomCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! CustomCell
         
         //cell.photo.image = imageArray[indexPath.row]
-        cell.name.text = names[indexPath.row]
+        cell.name.text = names[(indexPath as NSIndexPath).row]
         //cell.subTitle.text = subTitles[indexPath.row]
         
         cell.name.textColor = setAppColors.textHeadlinesColors()
@@ -178,15 +178,15 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
         //cell.subTitle.textColor = setAppColors.textUnderHeadlinesColors()
         //cell.subTitle.font = setAppColors.textUnderHeadlinesFonts(13)
         
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         // CELL BACKGROUNDCOLOR ( BRUK INDIVD FARGER VED METODE: .cellBackgroundColors)
         //cell.textLabel?.backgroundColor = setAppColors.mainBackgroundColor()
-        cell.textLabel?.backgroundColor = UIColor.clearColor()
+        cell.textLabel?.backgroundColor = UIColor.clear
         
         // CELL SIDE-DCOLOR ( BRUK INDIVID FARGER VED METODE: .cellSidesColors()
         //cell.contentView.backgroundColor = setAppColors.mainBackgroundColor()
-        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.contentView.backgroundColor = UIColor.clear
         
         // CELL TEXT COLOR WHEN ENTERING VIEW ( NOT HIGHLIGHTED )
         cell.textLabel?.textColor = setAppColors.cellTextColors()
@@ -205,33 +205,33 @@ class InfoTableViewController: UIViewController, UITableViewDataSource, UITableV
         if(getTitlesFromColl == "Drikkevettreglene"){
             cell.name.textColor = setAppColors.textUnderHeadlinesColors()
             cell.name.font = setAppColors.textHeadlinesFonts(14)
-            cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.userInteractionEnabled = false
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.isUserInteractionEnabled = false
         }
         return cell
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("detailSegue", sender: self)
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailSegue") {
-            let upcoming: InfoDetailViewController = segue.destinationViewController as! InfoDetailViewController
+            let upcoming: InfoDetailViewController = segue.destination as! InfoDetailViewController
             
             if(getTitlesFromColl == "Drikkevettreglene"){
                 print("DO nothing...")
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow!
                 
-                let setTitle = self.names[indexPath.row]
-                let longerText = self.texts[indexPath.row]
-                let imageStuff = self.imageArray[indexPath.row]
+                let setTitle = self.names[(indexPath as NSIndexPath).row]
+                let longerText = self.texts[(indexPath as NSIndexPath).row]
+                let imageStuff = self.imageArray[(indexPath as NSIndexPath).row]
                 
                 upcoming.titleOnInf = setTitle
                 upcoming.longText = longerText

@@ -25,7 +25,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     var YAxis: [Double]! = [Double]()
     
     var getGoalPromille : Double = 0.0
-    var getGoalDate : NSDate = NSDate()
+    var getGoalDate : Date = Date()
     
     // hente core data metoder
     let brainCoreData = CoreDataMethods()
@@ -79,28 +79,28 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     
     func captureScreen() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image;
+        return image!;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
-        self.tabBarController?.tabBar.hidden = true
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
-    @IBAction func continueApplicationBtn(sender: AnyObject) {
+    @IBAction func continueApplicationBtn(_ sender: AnyObject) {
         // SETT NYTT MÅL
-        self.performSegueWithIdentifier("gratulationSegue", sender: self)
+        self.performSegue(withIdentifier: "gratulationSegue", sender: self)
     }
     
-    @IBAction func resetApplicationBtn(sender: AnyObject) {
+    @IBAction func resetApplicationBtn(_ sender: AnyObject) {
         // TØM HISTORIKK
         brainCoreData.clearCoreData("Historikk")
         brainCoreData.clearCoreData("GraphHistorikk")
@@ -110,19 +110,19 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         brainCoreData.clearCoreData("TimeStamp2")
         
         // SETT NYTT MÅL
-        self.performSegueWithIdentifier("gratulationSegue", sender: self)
+        self.performSegue(withIdentifier: "gratulationSegue", sender: self)
     }
     
-    @IBAction func screenshotBtn(sender: AnyObject) {
+    @IBAction func screenshotBtn(_ sender: AnyObject) {
         UIImageWriteToSavedPhotosAlbum(captureScreen(), nil, nil, nil)
         
         if let wnd = self.view{
             let v = UIView(frame: wnd.bounds)
-            v.backgroundColor = UIColor.whiteColor()
+            v.backgroundColor = UIColor.white
             v.alpha = 1
             
             wnd.addSubview(v)
-            UIView.animateWithDuration(1, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 v.alpha = 0.0
                 }, completion: {(finished:Bool) in
                     v.removeFromSuperview()
@@ -130,37 +130,37 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "gratulationSegue") {
-            let upcoming: OppdaterMalViewController = segue.destinationViewController as! OppdaterMalViewController
+            let upcoming: OppdaterMalViewController = segue.destination as! OppdaterMalViewController
             upcoming.isGratulationViewRunned = true
         }
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.titleOfAward.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -20.0)
-            self.barChartView.transform = CGAffineTransformTranslate(self.barChartView.transform, 0.0, -40.0)
+            self.titleOfAward.transform = self.view.transform.translatedBy(x: 0.0, y: -20.0)
+            self.barChartView.transform = self.barChartView.transform.translatedBy(x: 0.0, y: -40.0)
             
             let xValueStats : CGFloat = -45
-            self.costsTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -60.0)
-            self.highestPromilleTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -60.0)
-            self.averageHighestPromilleTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -60.0)
-            self.costsStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -50.0)
-            self.highestPromilleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -50.0)
-            self.averageHighestPromilleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, xValueStats, -50.0)
+            self.costsTitleStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -60.0)
+            self.highestPromilleTitleStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -60.0)
+            self.averageHighestPromilleTitleStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -60.0)
+            self.costsStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -50.0)
+            self.highestPromilleStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -50.0)
+            self.averageHighestPromilleStatsLabel.transform = self.view.transform.translatedBy(x: xValueStats, y: -50.0)
             
-            self.infoTextView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -89.0)
+            self.infoTextView.transform = self.view.transform.translatedBy(x: 0.0, y: -89.0)
             
             // BUTTONS
             let btnYValue : CGFloat = -175.0
-            self.screenshotBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
-            self.screenshotBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
-            self.restartBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
-            self.restartBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
-            self.continueBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
-            self.continueBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYValue)
+            self.screenshotBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
+            self.screenshotBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
+            self.restartBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
+            self.restartBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
+            self.continueBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
+            self.continueBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYValue)
             
             // FONTS
             // STATS AND TITLES
@@ -169,48 +169,48 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
             // TITLE AND INFO
             self.titleOfAward.font = setAppColors.welcomeTextHeadlinesFonts(28)
             self.infoTextView.font = setAppColors.textViewFont(9.2)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.titleOfAward.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -20.0)
-            self.barChartView.transform = CGAffineTransformTranslate(self.barChartView.transform, 0.0, -40.0)
+            self.titleOfAward.transform = self.view.transform.translatedBy(x: 0.0, y: -20.0)
+            self.barChartView.transform = self.barChartView.transform.translatedBy(x: 0.0, y: -40.0)
             
             // STATS AND TITLES
-            self.costsTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -30, -60.0)
-            self.highestPromilleTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -45.0, -60.0)
-            self.averageHighestPromilleTitleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -55, -60.0)
-            self.costsStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -30, -50.0)
-            self.highestPromilleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -45, -50.0)
-            self.averageHighestPromilleStatsLabel.transform = CGAffineTransformTranslate(self.view.transform, -55, -50.0)
+            self.costsTitleStatsLabel.transform = self.view.transform.translatedBy(x: -30, y: -60.0)
+            self.highestPromilleTitleStatsLabel.transform = self.view.transform.translatedBy(x: -45.0, y: -60.0)
+            self.averageHighestPromilleTitleStatsLabel.transform = self.view.transform.translatedBy(x: -55, y: -60.0)
+            self.costsStatsLabel.transform = self.view.transform.translatedBy(x: -30, y: -50.0)
+            self.highestPromilleStatsLabel.transform = self.view.transform.translatedBy(x: -45, y: -50.0)
+            self.averageHighestPromilleStatsLabel.transform = self.view.transform.translatedBy(x: -55, y: -50.0)
             
-            self.infoTextView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -70.0)
+            self.infoTextView.transform = self.view.transform.translatedBy(x: 0.0, y: -70.0)
             
             // BUTTONS
             let btnYvalue : CGFloat = -90.0
-            self.screenshotBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
-            self.screenshotBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
-            self.restartBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
-            self.restartBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
-            self.continueBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
-            self.continueBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, btnYvalue)
+            self.screenshotBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
+            self.screenshotBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
+            self.restartBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
+            self.restartBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
+            self.continueBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
+            self.continueBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: btnYvalue)
             
             // FONTS
             setFontsOnStats(12, statsFontSize: 22)
             self.infoTextView.font = setAppColors.textViewFont(13.5)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             // BUTTONS
-            self.screenshotBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-            self.screenshotBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-            self.restartBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-            self.restartBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-            self.continueBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-            self.continueBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
+            self.screenshotBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+            self.screenshotBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+            self.restartBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+            self.restartBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+            self.continueBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+            self.continueBtnImageView.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
         }
     }
     
-    func setFontsOnStats(titleFontSize: CGFloat, statsFontSize: CGFloat){
+    func setFontsOnStats(_ titleFontSize: CGFloat, statsFontSize: CGFloat){
         // FONTS
         self.costsTitleStatsLabel.font = setAppColors.textHeadlinesFonts(titleFontSize)
         self.costsStatsLabel.font = setAppColors.textUnderHeadlinesFonts(statsFontSize)
@@ -222,7 +222,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     
     func setColorsFonts(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -259,27 +259,29 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     // BARCHART
     func initaiteBarChart(){
         fetchUserData()
-        barChartView.noDataTextDescription = "Ingen data på graf"
+        barChartView.noDataText = "Ingen data på graf"
         populateAxises()
         designChart()
         setChart(XAxis, values: YAxis)
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(_ dataPoints: [String], values: [Double]) {
         barChartView.noDataText = "Statistikk over kveldene dine vil vises her."
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = BarChartDataEntry(x: values[i], y: Double(i))
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Høyeste Promille Kvelder")
-        let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet)
         
-        let numberFormatter = NSNumberFormatter()
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Høyeste Promille Kvelder")
+        //let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet)
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        let numberFormatter = NumberFormatter()
         numberFormatter.generatesDecimalNumbers = false
-        chartDataSet.valueFormatter = numberFormatter
+        chartDataSet.valueFormatter = numberFormatter as? IValueFormatter
         
         if(XAxis.isEmpty && YAxis.isEmpty){
         } else {
@@ -306,7 +308,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         barChartView.rightAxis.removeAllLimitLines()
         barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         let ll = ChartLimitLine(limit: getGoalPromille, label: "")
-        ll.lineColor = UIColor.whiteColor()
+        ll.lineColor = UIColor.white
         ll.lineDashLengths = [8.5]
         barChartView.rightAxis.addLimitLine(ll)
     }
@@ -316,15 +318,15 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         self.barChartView.leftAxis.drawGridLinesEnabled = false
         self.barChartView.rightAxis.drawGridLinesEnabled = false
         self.barChartView.xAxis.drawGridLinesEnabled = false
-        self.barChartView.xAxis.labelPosition = .Bottom
+        self.barChartView.xAxis.labelPosition = .bottom
         self.barChartView.rightAxis.drawTopYLabelEntryEnabled = false
-        self.barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
-        self.barChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        self.barChartView.leftAxis.labelTextColor = UIColor.white
+        self.barChartView.xAxis.labelTextColor = UIColor.white
         self.barChartView.rightAxis.enabled = false
         self.barChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
         self.barChartView.legend.enabled = false
-        self.barChartView.descriptionTextColor = UIColor.redColor()
-        self.barChartView.userInteractionEnabled = false
+        self.barChartView.descriptionTextColor = UIColor.red
+        self.barChartView.isUserInteractionEnabled = false
         self.barChartView.pinchZoomEnabled = false
         self.barChartView.doubleTapToZoomEnabled = false
     }
@@ -334,13 +336,13 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         YAxis.removeAll()
         
         var historikk = [Historikk]()
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Historikk")
         
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for timeStampItem in historikk {
                 print("Start Time PlanKveld: \(timeStampItem.dato!)")
-                let tempStartDate = timeStampItem.dato! as NSDate
+                let tempStartDate = timeStampItem.dato! as Date
                 
                 let date = dateUtil.getDateOfMonth(tempStartDate)!
                 let month = dateUtil.getMonthOfYear(tempStartDate)!
@@ -375,13 +377,13 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     func fetchUserData() {
         var userData = [UserData]()
         
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
-                getGoalDate = item.goalDate! as NSDate
+                getGoalDate = item.goalDate! as Date
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -428,11 +430,11 @@ public extension UIWindow {
     
     func capture() -> UIImage {
         
-        UIGraphicsBeginImageContextWithOptions(self.frame.size, self.opaque, UIScreen.mainScreen().scale)
-        self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, self.isOpaque, UIScreen.main.scale)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }

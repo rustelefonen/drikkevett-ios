@@ -12,10 +12,10 @@ class InnholdViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
-    var pageIndex: Int!
-    var imageFile: String!
-    var titleString: String!
-    var textString: String!
+    var pageIndex = Int()
+    var imageFile = String()
+    var titleString = String()
+    var textString = String()
     
     // set colors
     let setAppColors = AppColors()
@@ -36,26 +36,26 @@ class InnholdViewController: UIViewController {
         self.titleLabel.textColor = setAppColors.textHeadlinesColors()
         self.textView.font = setAppColors.textViewFont(16)
         self.textView.textColor = setAppColors.textViewsColors()
-        self.textView.backgroundColor = UIColor.clearColor()
+        self.textView.backgroundColor = UIColor.clear
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             self.textView.font = setAppColors.textViewFont(12)
-            self.textView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -20.0)
+            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -20.0)
 
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
             self.textView.font = setAppColors.textViewFont(14)
-            self.textView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -40.0)
-            self.imageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 50.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -40.0)
+            self.imageView.transform = self.view.transform.translatedBy(x: 0.0, y: 50.0)
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 26.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: 26.0)
             self.titleLabel.font = setAppColors.titleFont(25)
         }
     }

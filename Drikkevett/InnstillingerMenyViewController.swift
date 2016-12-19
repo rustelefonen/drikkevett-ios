@@ -18,7 +18,7 @@ class InnstillingerMenyViewController: UIViewController {
         
         self.navigationItem.title = "Innstillinger"
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -26,7 +26,7 @@ class InnstillingerMenyViewController: UIViewController {
         // Rename back button
         let backButton = UIBarButtonItem(
             title: "",
-            style: UIBarButtonItemStyle.Plain, // Note: .Bordered is deprecated
+            style: UIBarButtonItemStyle.plain, // Note: .Bordered is deprecated
             target: nil,
             action: nil
         )
@@ -37,8 +37,8 @@ class InnstillingerMenyViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        if (!(parent?.isEqual(self.parentViewController) ?? false)) {
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if (!(parent?.isEqual(self.parent) ?? false)) {
             print("Back Button Pressed!")
         }
     }

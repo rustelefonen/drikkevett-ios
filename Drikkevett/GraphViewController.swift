@@ -22,11 +22,12 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var lineGraph: LineChartView!
 
-    var XAxis: [String]! = [String]()
+    var xAxis: [String]! = [String]()
     var YAxis: [Double]! = [Double]()
+    var newXAxis : [Double] = [Double]()
     
     var getGoalPromille : Double = 0.0
-    var getGoalDate : NSDate = NSDate()
+    var getGoalDate : Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         //self.view.layer.shadowRadius = 10.0
         fetchUserData()
         
-        lineGraph.noDataTextDescription = "Ingen data på graf."
+        lineGraph.noDataText = "Ingen data på graf."
         
         /* DETTE SKAL BRUKES I "EKTE" VERSJON*/
         populateAxises()
@@ -45,13 +46,15 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         //YAxis = [0.6, 1.3, 1.1, 0.4, 0.9, 1.2, 2.2, 0.83, 0.98, 1.0, 1.9, 1.6, 1.1, 0.9, 1.0, 1.1, 1.3, 0.66, 0.9, 0.3, 2.1, 0.6, 0.2, 0.4, 1.1, 0.2, 1.8, 0.6, 0.33, 2.0]
         designChart()
         
-        setChart(XAxis, values: YAxis)
+        setChart(xAxis, values: YAxis)
+        
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchUserData()
-        lineGraph.noDataTextDescription = "Ingen data på graf."
+        lineGraph.noDataText = "Ingen data på graf."
         
         /* DETTE SKAL BRUKES I "EKTE" VERSJON*/
         populateAxises()
@@ -61,31 +64,61 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         //YAxis = [0.6, 1.3, 1.1, 0.4, 0.9, 1.2, 2.2, 0.83, 0.98, 1.0, 1.9, 1.6, 1.1, 0.9, 1.0, 1.1, 1.3, 0.66, 0.9, 0.3, 2.1, 0.6, 0.2, 0.4, 1.1, 0.2, 1.8, 0.6, 0.33, 2.0]
         
         designChart()
-        setChart(XAxis, values: YAxis)
+        setChart(xAxis, values: YAxis)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(_ dataPoints: [String], values: [Double]) {
         lineGraph.noDataText = "Statistikk over kveldene dine vil vises her."
+        
+        
+        
+        let formato = HomeFormatter()
+        let xaxis:XAxis = XAxis()
+        
+        
         var dataEntries: [BarChartDataEntry] = []
         
-        for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+        print("count: \(newXAxis.count)")
+        
+        
+        //lineGraph.xAxis.axisMinimum = Double(newXAxis.count) //max(0.0, lineChart.data!.yMin - 1.0)
+        //lineGraph.xAxis.axisMaximum = Double(newXAxis.count) //min(10.0, lineChart.data!.yMax + 1.0)
+        
+        for i in 0..<newXAxis.count {
+            
+            formato.stringForValue(newXAxis[i], axis: xaxis)    //This is needed
+            
+            let dataEntry = BarChartDataEntry(x: newXAxis[i], y: values[i])
             dataEntries.append(dataEntry)
         }
         
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
+        xaxis.valueFormatter = formato
+        lineGraph.xAxis.valueFormatter = xaxis.valueFormatter
+        
+        
+        
+        
+        print("\n\n\n")
+        print(dataEntries)
+        print("\n\n\n")
+        
+        /*let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
+        formatter.maximumFractionDigits = 2*/
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Høyeste Promille Kvelder")
-        let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet)
+        //let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Høyeste Promille Kvelder")
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Høyeste Promille Kvelder")
         
-        if(XAxis.isEmpty && YAxis.isEmpty){
+        //let chartData = BarChartData(xVals: XAxis, dataSet: chartDataSet) //gammel
+        let chartData = BarChartData(dataSet: chartDataSet) //ny
+        
+        
+        if(xAxis.isEmpty && YAxis.isEmpty){
         } else {
             lineGraph.data = chartData
         }
@@ -106,7 +139,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         lineGraph.rightAxis.removeAllLimitLines()
         lineGraph.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         let ll = ChartLimitLine(limit: getGoalPromille, label: "")
-        ll.lineColor = UIColor.whiteColor()
+        ll.lineColor = UIColor.white
         ll.lineDashLengths = [8.5]
         lineGraph.rightAxis.addLimitLine(ll)
     }
@@ -116,15 +149,15 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         self.lineGraph.leftAxis.drawGridLinesEnabled = false
         self.lineGraph.rightAxis.drawGridLinesEnabled = false
         self.lineGraph.xAxis.drawGridLinesEnabled = false
-        self.lineGraph.xAxis.labelPosition = .Bottom
+        self.lineGraph.xAxis.labelPosition = .bottom
         self.lineGraph.rightAxis.drawTopYLabelEntryEnabled = false
-        self.lineGraph.leftAxis.labelTextColor = UIColor.whiteColor()
-        self.lineGraph.xAxis.labelTextColor = UIColor.whiteColor()
+        self.lineGraph.leftAxis.labelTextColor = UIColor.white
+        self.lineGraph.xAxis.labelTextColor = UIColor.white
         self.lineGraph.rightAxis.enabled = false
         self.lineGraph.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
         self.lineGraph.legend.enabled = false
-        self.lineGraph.descriptionTextColor = UIColor.redColor()
-        self.lineGraph.userInteractionEnabled = false
+        self.lineGraph.descriptionTextColor = UIColor.red
+        self.lineGraph.isUserInteractionEnabled = false
         self.lineGraph.pinchZoomEnabled = false
         self.lineGraph.doubleTapToZoomEnabled = false
     }
@@ -132,13 +165,13 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     func fetchUserData() {
         var userData = [UserData]()
         
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
-                getGoalDate = item.goalDate! as NSDate
+                getGoalDate = item.goalDate! as Date
                 print("UserData Home Fetched...")
             }
         } catch {
@@ -147,24 +180,28 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     }
     
     func populateAxises() {
-        XAxis.removeAll()
+        xAxis.removeAll()
         YAxis.removeAll()
+        newXAxis.removeAll()
         
         var historikk = [Historikk]()
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Historikk")
         
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for timeStampItem in historikk {
                 print("Start Time PlanKveld: \(timeStampItem.dato!)")
-                let tempStartDate = timeStampItem.dato! as NSDate
+                let tempStartDate = timeStampItem.dato! as Date
+                
+                print("MONTH: \(getDayOfWeek(tempStartDate))")
                 
                 let date = dateUtil.getDateOfMonth(tempStartDate)!
                 let month = dateUtil.getMonthOfYear(tempStartDate)!
                 let formatOfDate = "\(date).\(month)"
                 
-                XAxis.append(formatOfDate)
-                for items in XAxis{
+                xAxis.append(formatOfDate)
+                newXAxis.append(Double(tempStartDate.timeIntervalSince1970))
+                for items in xAxis{
                 print("Array X: \(items)")
                 }
             }
@@ -183,5 +220,11 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         } catch {
             fatalError("bad things happened \(error)")
         }
+    }
+    
+    func getDayOfWeek(_ today:Date) -> Int? {
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.month, from: today)
+        return weekDay
     }
 }

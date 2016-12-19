@@ -8,13 +8,13 @@ import Foundation
 
 class DateUtil
 {
-    func getDayOfWeekAsString(today: NSDate?) -> String? {
-        let formatter = NSDateFormatter()
+    func getDayOfWeekAsString(_ today: Date?) -> String? {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         if let todayDate = today {
-            let myCalender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalender.components(.Weekday, fromDate: todayDate)
-            let weekDay = myComponents.weekday
+            let myCalender = Calendar(identifier: Calendar.Identifier.gregorian)
+            let myComponents = (myCalender as NSCalendar).components(.weekday, from: todayDate)
+            let weekDay = myComponents.weekday! as Int
             switch weekDay {
             case 1:
                 return "Søndag"
@@ -39,13 +39,13 @@ class DateUtil
         }
     }
     
-    func getDateOfMonth(today: NSDate?)->String? {
-        let formatter  = NSDateFormatter()
+    func getDateOfMonth(_ today: Date?)->String? {
+        let formatter  = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         if let todayDate = today {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Day, fromDate: todayDate)
-            let weekDay = myComponents.day
+            let myCalendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            let myComponents = (myCalendar as NSCalendar).components(.day, from: todayDate)
+            let weekDay = myComponents.day! as Int
             switch weekDay {
             case 1:
                 return "1"
@@ -118,13 +118,13 @@ class DateUtil
         }
     }
     
-    func getMonthOfYear(today:NSDate?)->String? {
-        let formatter  = NSDateFormatter()
+    func getMonthOfYear(_ today:Date?)->String? {
+        let formatter  = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         if let todayDate = today {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Month, fromDate: todayDate)
-            let month = myComponents.month
+            let myCalendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            let myComponents = (myCalendar as NSCalendar).components(.month, from: todayDate)
+            let month = myComponents.month! as Int
             switch month {
             case 1:
                 return "Januar"

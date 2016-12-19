@@ -61,12 +61,12 @@ class FirstViewController: UIViewController {
     var historyCountShot = 0
     
     // Setter timestampet når appen ble terminated
-    var timeStampTerminated : NSDate = NSDate()
+    var timeStampTerminated : Date = Date()
     
     // Start/End av sesjon timestamps og updateStamp som er tidspunktet nå
-    var startOfSessionStamp : NSDate = NSDate()
-    var setEndOfSessionStamp : NSDate = NSDate()
-    var updateStamp : NSDate = NSDate()
+    var startOfSessionStamp : Date = Date()
+    var setEndOfSessionStamp : Date = Date()
+    var updateStamp : Date = Date()
     
     // Nåværende promille ( blir vist i oppdaterlabel )
     var sumOnArray : Double = 0.0
@@ -85,17 +85,17 @@ class FirstViewController: UIViewController {
     
     // Har første enhet blitt lagt til
     var hasFirstUnitBeenAdded = false
-    var setDateOnFirstUnitAdded = NSDate()
+    var setDateOnFirstUnitAdded = Date()
     
     // TOTAL COSTS VARIABLE
     var costsVariable = 0
     
     //  TIMER VISUALS
-    var visualsTimer = NSTimer()
+    var visualsTimer = Timer()
      
     var plannedCounter : Double = 0
     
-    var status : AnyObject = Status.DEFAULT
+    var status : AnyObject = Status.DEFAULT as AnyObject
     
     // GET IF NOTIFICATIONS IS TURNED ON OR OFF
     let instMenu = InnstillingerMenyViewController()
@@ -115,16 +115,16 @@ class FirstViewController: UIViewController {
         checkSessionTimer()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         status = isSessionOver()
         statusHandler(status)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
-        pageControll.hidden = false
+        pageControll.isHidden = false
         
         status = isSessionOver()
         statusHandler(status)
@@ -134,7 +134,7 @@ class FirstViewController: UIViewController {
         }
     }
     
-    @IBAction func startKveld(sender: AnyObject) {
+    @IBAction func startKveld(_ sender: AnyObject) {
         let titleValueString = startEndPartyBtn.currentTitle!
         if(titleValueString == "Start Kvelden"){
             startBtnHandler()
@@ -145,7 +145,7 @@ class FirstViewController: UIViewController {
         statusHandler(status)
     }
     
-    @IBAction func minusUnitButton(sender: AnyObject) {
+    @IBAction func minusUnitButton(_ sender: AnyObject) {
         fetchUnitTypeFromSwipe = userDefaultUtils.getFetchedValue()
         if(status as! String == Status.NOT_RUNNING){
             minusBtnNotRunning()
@@ -157,7 +157,7 @@ class FirstViewController: UIViewController {
         statusHandler(status)
     }
     
-    @IBAction func addUnitButton(sender: AnyObject) {
+    @IBAction func addUnitButton(_ sender: AnyObject) {
         fetchUnitTypeFromSwipe = userDefaultUtils.getFetchedValue()
         if(status as! String == Status.NOT_RUNNING){
             numberOfBeerCount += checkWhichSession("Beer", numValue: numberOfBeerCount, histValue: historyCountBeer)
@@ -177,7 +177,7 @@ class FirstViewController: UIViewController {
         statusHandler(status)
     }
     
-    @IBAction func clearProps(sender: AnyObject) {
+    @IBAction func clearProps(_ sender: AnyObject) {
         numberOfBeerCount = 0
         numberOfWineCount = 0
         numberOfDrinkCount = 0
@@ -196,8 +196,8 @@ class FirstViewController: UIViewController {
             let refreshAlert = UIAlertView()
             refreshAlert.title = "Ingen enhet lagt til"
             refreshAlert.message = "Klikk på enhet for å legge til"
-            refreshAlert.addButtonWithTitle("OK")
-            refreshAlert.backgroundColor = UIColor.redColor()
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.backgroundColor = UIColor.red
             refreshAlert.show()
         } else {
             // Clear database slik at den skal ta inn nye timeStamp
@@ -205,10 +205,10 @@ class FirstViewController: UIViewController {
             brainCoreData.clearCoreData("StartEndTimeStamps")
             
             // Setter start av session
-            startOfSessionStamp = NSDate()
+            startOfSessionStamp = Date()
             
             // Setter slutt tidspunkt på session // .Hour, 12 timer
-            setEndOfSessionStamp = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: 12, toDate: startOfSessionStamp, options: NSCalendarOptions(rawValue: 0))!
+            setEndOfSessionStamp = (Calendar.current as NSCalendar).date(byAdding: .hour, value: 12, to: startOfSessionStamp, options: NSCalendar.Options(rawValue: 0))!
             
             numberOfSessionPlanParty = userDefaultUtils.getPrevSessionNumber()
             print("Prev sessionNumber: \(numberOfSessionPlanParty)")
@@ -224,10 +224,10 @@ class FirstViewController: UIViewController {
             
             unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
             
-            startEndPartyBtn.setTitle("Avslutt Kvelden", forState: UIControlState.Normal)
-            clearButtonOutlet.enabled = false
+            startEndPartyBtn.setTitle("Avslutt Kvelden", for: UIControlState())
+            clearButtonOutlet.isEnabled = false
             
-            status = Status.RUNNING
+            status = Status.RUNNING as AnyObject
             statusUtils.setState(status)
         }
     }
@@ -238,7 +238,7 @@ class FirstViewController: UIViewController {
         var cnclTitle = ""
         var confTitle = ""
         
-        let sesPlanKveldIntervall = NSDate().timeIntervalSinceDate(startOfSessionStamp)
+        let sesPlanKveldIntervall = Date().timeIntervalSince(startOfSessionStamp)
         if(sesPlanKveldIntervall < 900){
             title = "Avslutt Kvelden"
             msg = "Avslutter du kvelden før 15 minutter vil ingen historikk lagres!"
@@ -256,35 +256,35 @@ class FirstViewController: UIViewController {
         }
     }
     
-    func endPartyAlert(titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
+    func endPartyAlert(_ titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
         let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
-            let sesPlanKveldIntervall = NSDate().timeIntervalSinceDate(self.startOfSessionStamp)
+            msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.default, handler:  { action in
+            let sesPlanKveldIntervall = Date().timeIntervalSince(self.startOfSessionStamp)
             if(sesPlanKveldIntervall < 900){
                 self.lessThanFifteenEndMethod()
             } else {
                 self.endPartyMethod()
             }
         }))
-        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
         }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func endPartyMethod(){
-        self.setEndOfSessionStamp = NSDate()
+        self.setEndOfSessionStamp = Date()
         self.brainCoreData.clearCoreData("StartEndTimeStamps")
         self.endParty(self.setEndOfSessionStamp)
         self.brainCoreData.seedStartEndTimeStamp(self.startOfSessionStamp, endStamp: self.setEndOfSessionStamp)
-        self.status = Status.DA_RUNNING
+        self.status = Status.DA_RUNNING as AnyObject
         self.statusUtils.setState(self.status)
         self.dayAfterIsRunningAlertController("Dagen Derpå i gang", message: "Sjekk Dagen Derpå", delayTime: 2.5)
         statusHandler(status)
     }
     
     func lessThanFifteenEndMethod(){
-        status = Status.NOT_RUNNING
+        status = Status.NOT_RUNNING as AnyObject
         statusUtils.setState(status)
         brainCoreData.clearCoreData("StartEndTimeStamps")
         brainCoreData.clearCoreData("TimeStamp2")
@@ -372,7 +372,7 @@ class FirstViewController: UIViewController {
         if((historyCountBeer + historyCountWine + historyCountDrink + historyCountShot) == 0){
             promilleBAC = 0.0
             hasFirstUnitBeenAdded = false
-            setDateOnFirstUnitAdded = NSDate()
+            setDateOnFirstUnitAdded = Date()
             storeIsFirstUnitAdded()
         }
         storeConsumedUnits()
@@ -382,7 +382,7 @@ class FirstViewController: UIViewController {
      ADD BTN
      */
     
-    func addNumUnit(unit: String) -> Int{
+    func addNumUnit(_ unit: String) -> Int{
         let maxPlanUnitValue = 30.0
         var unitCount = 0
         
@@ -396,18 +396,18 @@ class FirstViewController: UIViewController {
         return unitCount
     }
     
-    func addHistUnit(unit: String, numVal: Int, historyValue: Int) -> Int{
+    func addHistUnit(_ unit: String, numVal: Int, historyValue: Int) -> Int{
         var histUnitCount = 0
         let maxUnitsOverGoal = 5
         
         if(historyValue < (numVal + maxUnitsOverGoal)){
-            let todaysTimeStamp = NSDate()
+            let todaysTimeStamp = Date()
             brainCoreData.seedTimeStamp(todaysTimeStamp, unitAlcohol: unit)
             histUnitCount += 1
             getIfFirstUnitHasBeenAdded()
             if(hasFirstUnitBeenAdded == false){
                 print("First unit added again! ")
-                setDateOnFirstUnitAdded = NSDate()
+                setDateOnFirstUnitAdded = Date()
                 hasFirstUnitBeenAdded = true
                 storeIsFirstUnitAdded()
             }
@@ -431,7 +431,7 @@ class FirstViewController: UIViewController {
         return histUnitCount
     }
     
-    func checkWhichSession(type: String, numValue: Int, histValue: Int) -> Int {
+    func checkWhichSession(_ type: String, numValue: Int, histValue: Int) -> Int {
         var tempValue = 0
         
         if(fetchUnitTypeFromSwipe == type){
@@ -454,20 +454,20 @@ class FirstViewController: UIViewController {
         }
     }
     
-    func unitsAddedPopUp(titleMsg: String, msg: String, buttonTitle:String){
+    func unitsAddedPopUp(_ titleMsg: String, msg: String, buttonTitle:String){
         let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+            msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
             print("TUILL")
         }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     /*
      STATUS
      */
     
-    func statusHandler(status : AnyObject){
+    func statusHandler(_ status : AnyObject){
         fetchUser()
         getUnit_userDefaults()
         
@@ -493,7 +493,7 @@ class FirstViewController: UIViewController {
     
     func dayAfterRunning(){
         visuals_DA_running()
-        let currentTime = NSDate()
+        let currentTime = Date()
         if(!checkIfHistValueExists()){
             endParty(setEndOfSessionStamp)
         }
@@ -502,11 +502,11 @@ class FirstViewController: UIViewController {
     func checkIfHistValueExists() -> Bool{
         var itExists = false
         var historikk = [Historikk]()
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Historikk")
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for row in historikk {
-                if(row.dato! == startOfSessionStamp){
+                if(row.dato! as Date == startOfSessionStamp){
                     itExists = true
                 } else {
                     itExists = false
@@ -519,8 +519,8 @@ class FirstViewController: UIViewController {
     }
     
     func checkSessionTimer(){
-        var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(FirstViewController.updateSession), userInfo: nil, repeats: true)
+        var timeTimer = Timer()
+        timeTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(FirstViewController.updateSession), userInfo: nil, repeats: true)
     }
     
     func updateSession(){
@@ -533,17 +533,17 @@ class FirstViewController: UIViewController {
     func isSessionOver() -> AnyObject{
         let isStartEndEmpty = brainCoreData.entityIsEmpty("StartEndTimeStamps")
         if(isStartEndEmpty == true){
-            status = Status.NOT_RUNNING
+            status = Status.NOT_RUNNING as AnyObject
         } else {
             getSessionStamps()
-            let currentTimeStamp = NSDate()
-            let distance = setEndOfSessionStamp.timeIntervalSinceDate(currentTimeStamp)
+            let currentTimeStamp = Date()
+            let distance = setEndOfSessionStamp.timeIntervalSince(currentTimeStamp)
             let secToMin = distance / 60
             let minToHour = secToMin / 60
             if(minToHour < 0.0) {
-                status = Status.DA_RUNNING
+                status = Status.DA_RUNNING as AnyObject
             } else {
-                status = Status.RUNNING
+                status = Status.RUNNING as AnyObject
             }
         }
         statusUtils.setState(status)
@@ -552,8 +552,8 @@ class FirstViewController: UIViewController {
     }
     
     func getSessionStamps(){
-        var getPlanPartyStamps : [NSDate] = [NSDate]()
-        getPlanPartyStamps = brainCoreData.getPlanPartySession()
+        var getPlanPartyStamps : [Date] = [Date]()
+        getPlanPartyStamps = brainCoreData.getPlanPartySession() as [Date]
         startOfSessionStamp = getPlanPartyStamps[0]
         setEndOfSessionStamp = getPlanPartyStamps[1]
     }
@@ -566,7 +566,7 @@ class FirstViewController: UIViewController {
         }
     }
     
-    func endParty(endedPartyStamp: NSDate){
+    func endParty(_ endedPartyStamp: Date){
         var totalCosts : Int = 0
         getIfFirstUnitHasBeenAdded()
         fetchUser()
@@ -606,7 +606,7 @@ class FirstViewController: UIViewController {
         userDefaultUtils.storedPlannedCounter(plannedCounter)
     }
     
-    func calcualteTotalCosts(beer: Int, wine: Int, drink: Int, shot: Int) -> Int{
+    func calcualteTotalCosts(_ beer: Int, wine: Int, drink: Int, shot: Int) -> Int{
         var totalCost = 0
         totalCost = (beer * fetchUser().beerCost) + (wine * fetchUser().wineCost) + (drink * fetchUser().drinkCost) + (shot * fetchUser().shotCost)
         return totalCost
@@ -616,34 +616,34 @@ class FirstViewController: UIViewController {
      POP UPS
      */
     
-    func unitAddedAlertController(title: String, message: String, delayTime: Double){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
-        self.presentViewController(alertController, animated: true, completion: nil)
+    func unitAddedAlertController(_ title: String, message: String, delayTime: Double){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        self.present(alertController, animated: true, completion: nil)
         let delay = delayTime * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            alertController.dismissViewControllerAnimated(true, completion: nil)
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            alertController.dismiss(animated: true, completion: nil)
         })
     }
     
-    func dayAfterIsRunningAlertController(title: String, message: String, delayTime: Double){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
-        self.presentViewController(alertController, animated: true, completion: nil)
+    func dayAfterIsRunningAlertController(_ title: String, message: String, delayTime: Double){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        self.present(alertController, animated: true, completion: nil)
         let delay = delayTime * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            alertController.dismissViewControllerAnimated(true, completion: nil)
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            alertController.dismiss(animated: true, completion: nil)
         })
     }
     
-    func dayAfterIsRunningPopUp(titleMsg: String, msg: String, buttonTitle:String){
+    func dayAfterIsRunningPopUp(_ titleMsg: String, msg: String, buttonTitle:String){
         let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.Default, handler:{ (action: UIAlertAction!) in
+            msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler:{ (action: UIAlertAction!) in
             print("Dagen Derpå Kjører Pop Up")
             self.tabBarController?.selectedIndex = 3
         }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     /*
@@ -651,78 +651,78 @@ class FirstViewController: UIViewController {
      */
     
     func storeIsFirstUnitAdded(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(hasFirstUnitBeenAdded, forKey: defaultKeys.firstUnitAdded)
-        defaults.setObject(setDateOnFirstUnitAdded, forKey: defaultKeys.storeFirstUnitAddedDate)
+        let defaults = UserDefaults.standard
+        defaults.set(hasFirstUnitBeenAdded, forKey: defaultKeys.firstUnitAdded)
+        defaults.set(setDateOnFirstUnitAdded, forKey: defaultKeys.storeFirstUnitAddedDate)
         defaults.synchronize()
     }
     
     func storePlannedUnits(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(numberOfBeerCount, forKey: defaultKeys.beerKey)
-        defaults.setInteger(numberOfWineCount, forKey: defaultKeys.wineKey)
-        defaults.setInteger(numberOfDrinkCount, forKey: defaultKeys.drinkKey)
-        defaults.setInteger(numberOfShotCount, forKey: defaultKeys.shotKey)
-        defaults.setDouble(counter, forKey: defaultKeys.totalNrOfUnits)
+        let defaults = UserDefaults.standard
+        defaults.set(numberOfBeerCount, forKey: defaultKeys.beerKey)
+        defaults.set(numberOfWineCount, forKey: defaultKeys.wineKey)
+        defaults.set(numberOfDrinkCount, forKey: defaultKeys.drinkKey)
+        defaults.set(numberOfShotCount, forKey: defaultKeys.shotKey)
+        defaults.set(counter, forKey: defaultKeys.totalNrOfUnits)
         defaults.synchronize()
     }
     
     func storeConsumedUnits(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(historyCountBeer, forKey: defaultKeys.histBeerKey)
-        defaults.setInteger(historyCountWine, forKey: defaultKeys.histWineKey)
-        defaults.setInteger(historyCountDrink, forKey: defaultKeys.histDrinkKey)
-        defaults.setInteger(historyCountShot, forKey: defaultKeys.histShotKey)
+        let defaults = UserDefaults.standard
+        defaults.set(historyCountBeer, forKey: defaultKeys.histBeerKey)
+        defaults.set(historyCountWine, forKey: defaultKeys.histWineKey)
+        defaults.set(historyCountDrink, forKey: defaultKeys.histDrinkKey)
+        defaults.set(historyCountShot, forKey: defaultKeys.histShotKey)
         defaults.synchronize()
     }
     
     func storeFetchValueType(){ // SETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(fetchUnitTypeFromSwipe, forKey: defaultKeys.fetchUnitType)
+        let defaults = UserDefaults.standard
+        defaults.set(fetchUnitTypeFromSwipe, forKey: defaultKeys.fetchUnitType)
         defaults.synchronize()
     }
     
     func getIfFirstUnitHasBeenAdded(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let firstUnitAdded : Bool = defaults.boolForKey(defaultKeys.firstUnitAdded) {
+        let defaults = UserDefaults.standard
+        if let firstUnitAdded : Bool = defaults.bool(forKey: defaultKeys.firstUnitAdded) {
             hasFirstUnitBeenAdded = firstUnitAdded
         }
-        if let dateFirstUnit : AnyObject = defaults.objectForKey(defaultKeys.storeFirstUnitAddedDate) {
-            setDateOnFirstUnitAdded = dateFirstUnit as! NSDate
+        if let dateFirstUnit : AnyObject = defaults.object(forKey: defaultKeys.storeFirstUnitAddedDate) as AnyObject? {
+            setDateOnFirstUnitAdded = dateFirstUnit as! Date
         }
     }
     
     func getUnit_userDefaults(){ // GETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         // VISUELLE ENHET VERDIER
-        if let beer : Int = defaults.integerForKey(defaultKeys.beerKey) {
+        if let beer : Int = defaults.integer(forKey: defaultKeys.beerKey) {
             numberOfBeerCount = beer
         }
-        if let wine : Int = defaults.integerForKey(defaultKeys.wineKey) {
+        if let wine : Int = defaults.integer(forKey: defaultKeys.wineKey) {
             numberOfWineCount = wine
         }
-        if let drink : Int = defaults.integerForKey(defaultKeys.drinkKey) {
+        if let drink : Int = defaults.integer(forKey: defaultKeys.drinkKey) {
             numberOfDrinkCount = drink
         }
-        if let shot : Int = defaults.integerForKey(defaultKeys.shotKey) {
+        if let shot : Int = defaults.integer(forKey: defaultKeys.shotKey) {
             numberOfShotCount = shot
         }
-        if let histBeer : Int = defaults.integerForKey(defaultKeys.histBeerKey) {
+        if let histBeer : Int = defaults.integer(forKey: defaultKeys.histBeerKey) {
             historyCountBeer = histBeer
         }
-        if let histWine : Int = defaults.integerForKey(defaultKeys.histWineKey) {
+        if let histWine : Int = defaults.integer(forKey: defaultKeys.histWineKey) {
             historyCountWine = histWine
         }
-        if let histDrink : Int = defaults.integerForKey(defaultKeys.histDrinkKey) {
+        if let histDrink : Int = defaults.integer(forKey: defaultKeys.histDrinkKey) {
             historyCountDrink = histDrink
         }
-        if let histShot : Int = defaults.integerForKey(defaultKeys.histShotKey) {
+        if let histShot : Int = defaults.integer(forKey: defaultKeys.histShotKey) {
             historyCountShot = histShot
         }
-        if let sessions : Int = defaults.integerForKey(defaultKeys.numberOfSessions) {
+        if let sessions : Int = defaults.integer(forKey: defaultKeys.numberOfSessions) {
             numberOfSessionPlanParty = sessions
         }
-        if let totUnitsCount : Double = defaults.doubleForKey(defaultKeys.totalNrOfUnits) {
+        if let totUnitsCount : Double = defaults.double(forKey: defaultKeys.totalNrOfUnits) {
             counter = totUnitsCount
         }
     }
@@ -734,9 +734,9 @@ class FirstViewController: UIViewController {
     func fetchUser() -> User{
         var userData = [UserData]()
         var user : User!
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             for item in userData {
                 let tempUuser = User(gender: item.gender! as Bool, weight: item.weight! as Double, beerCost: item.costsBeer! as Int, wineCost: item.costsWine! as Int, drinkCost: item.costsDrink! as Int, shotCost: item.costsShot! as Int)
                 user = tempUuser
@@ -752,11 +752,11 @@ class FirstViewController: UIViewController {
     }
     
     func isPlanPartyViewLunchedBefore()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let isViewLunchedBefore = defaults.stringForKey("isPlanPartyViewLunchedBefore"){
+        let defaults = UserDefaults.standard
+        if let isViewLunchedBefore = defaults.string(forKey: "isPlanPartyViewLunchedBefore"){
             return true
         }else{
-            defaults.setBool(true, forKey: "isPlanPartyViewLunchedBefore")
+            defaults.set(true, forKey: "isPlanPartyViewLunchedBefore")
             self.textViewQuotes.text = "Swipe for å velge enhet"
             return false
         }
@@ -772,13 +772,13 @@ class FirstViewController: UIViewController {
         self.antallDrinkLabel.text = "\(numberOfDrinkCount)"
         self.antallShotLabel.text = "\(numberOfShotCount)"
         self.oppdaterPromilleLabel.text = "0.00"
-        self.clearButtonOutlet.enabled = true
-        self.minusBeerBtnOutlet.enabled = true
-        self.minusBeerBtnOutlet.setTitle("Fjern", forState: UIControlState.Normal)
-        self.addUnitsBtnOutlet.enabled = true
-        self.addUnitsBtnOutlet.setTitle("Legg til", forState: UIControlState.Normal)
-        self.startEndPartyBtn.enabled = true
-        self.startEndPartyBtn.setTitle("Start Kvelden", forState: UIControlState.Normal)
+        self.clearButtonOutlet.isEnabled = true
+        self.minusBeerBtnOutlet.isEnabled = true
+        self.minusBeerBtnOutlet.setTitle("Fjern", for: UIControlState())
+        self.addUnitsBtnOutlet.isEnabled = true
+        self.addUnitsBtnOutlet.setTitle("Legg til", for: UIControlState())
+        self.startEndPartyBtn.isEnabled = true
+        self.startEndPartyBtn.setTitle("Start Kvelden", for: UIControlState())
         self.startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
         self.startEndImage.image = UIImage(named: "Ok Filled-100")!
         antallOlLabel.textColor = setAppColors.textUnderHeadlinesColors()
@@ -789,24 +789,24 @@ class FirstViewController: UIViewController {
         hideOutlets(false)
         
         self.textViewQuotes.text = "Planlegg kvelden din!"
-        self.oppdaterPromilleLabel.textColor = UIColor.whiteColor()
-        self.textViewQuotes.textColor = UIColor.whiteColor()
+        self.oppdaterPromilleLabel.textColor = UIColor.white
+        self.textViewQuotes.textColor = UIColor.white
         
         // SET CONSTRAINTS TILBAKE
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -45.0)
+            self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: -10.0, y: -45.0)
             //self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 0.0)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+            self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
             //self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 0.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 0.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 0.0)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 0.0)
+            self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: 0.0)
         }
     }
     
@@ -817,13 +817,13 @@ class FirstViewController: UIViewController {
         self.antallShotLabel.text = "\(historyCountShot)/\(numberOfShotCount)"
         let formatBAC = String(format: "%.2f", promilleBAC)
         self.oppdaterPromilleLabel.text = "\(formatBAC)"
-        self.clearButtonOutlet.enabled = false
-        self.minusBeerBtnOutlet.enabled = true
-        self.minusBeerBtnOutlet.setTitle("Fjern", forState: UIControlState.Normal)
-        self.addUnitsBtnOutlet.enabled = true
-        self.addUnitsBtnOutlet.setTitle("Drikk", forState: UIControlState.Normal)
-        self.startEndPartyBtn.enabled = true
-        self.startEndPartyBtn.setTitle("Avslutt Kvelden", forState: UIControlState.Normal)
+        self.clearButtonOutlet.isEnabled = false
+        self.minusBeerBtnOutlet.isEnabled = true
+        self.minusBeerBtnOutlet.setTitle("Fjern", for: UIControlState())
+        self.addUnitsBtnOutlet.isEnabled = true
+        self.addUnitsBtnOutlet.setTitle("Drikk", for: UIControlState())
+        self.startEndPartyBtn.isEnabled = true
+        self.startEndPartyBtn.setTitle("Avslutt Kvelden", for: UIControlState())
         self.startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
         self.startEndImage.image = UIImage(named: "Cancel Filled-100")!
         
@@ -857,9 +857,9 @@ class FirstViewController: UIViewController {
     func visuals_DA_running(){
         hideOutlets(true)
         
-        self.clearButtonOutlet.enabled = false
+        self.clearButtonOutlet.isEnabled = false
         
-        self.startEndPartyBtn.setTitle("Dagen Derpå Pågår", forState: UIControlState.Normal)
+        self.startEndPartyBtn.setTitle("Dagen Derpå Pågår", for: UIControlState())
         self.startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(10)
         self.startEndImage.image = UIImage(named: "Ok Filled-100")!
         
@@ -867,38 +867,38 @@ class FirstViewController: UIViewController {
         antallVinLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallDrinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
         antallShotLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        self.oppdaterPromilleLabel.textColor = UIColor.whiteColor()
-        self.textViewQuotes.textColor = UIColor.whiteColor()
+        self.oppdaterPromilleLabel.textColor = UIColor.white
+        self.textViewQuotes.textColor = UIColor.white
     }
     
-    func hideOutlets(isOutletHidden: Bool){
-        self.antallOlLabel.hidden = isOutletHidden
-        self.antallVinLabel.hidden = isOutletHidden
-        self.antallDrinkLabel.hidden = isOutletHidden
-        self.antallShotLabel.hidden = isOutletHidden
-        self.oppdaterPromilleLabel.hidden = isOutletHidden
-        self.minusBeerBtnOutlet.hidden = isOutletHidden
-        self.addUnitsBtnOutlet.hidden = isOutletHidden
-        self.startEndPartyBtn.hidden = isOutletHidden
-        self.startEndImage.hidden = isOutletHidden
-        self.containerView.hidden = isOutletHidden
-        self.titleBeer.hidden = isOutletHidden
-        self.titleWine.hidden = isOutletHidden
-        self.titleDrink.hidden = isOutletHidden
-        self.titleShot.hidden = isOutletHidden
-        self.textViewQuotes.hidden = isOutletHidden
+    func hideOutlets(_ isOutletHidden: Bool){
+        self.antallOlLabel.isHidden = isOutletHidden
+        self.antallVinLabel.isHidden = isOutletHidden
+        self.antallDrinkLabel.isHidden = isOutletHidden
+        self.antallShotLabel.isHidden = isOutletHidden
+        self.oppdaterPromilleLabel.isHidden = isOutletHidden
+        self.minusBeerBtnOutlet.isHidden = isOutletHidden
+        self.addUnitsBtnOutlet.isHidden = isOutletHidden
+        self.startEndPartyBtn.isHidden = isOutletHidden
+        self.startEndImage.isHidden = isOutletHidden
+        self.containerView.isHidden = isOutletHidden
+        self.titleBeer.isHidden = isOutletHidden
+        self.titleWine.isHidden = isOutletHidden
+        self.titleDrink.isHidden = isOutletHidden
+        self.titleShot.isHidden = isOutletHidden
+        self.textViewQuotes.isHidden = isOutletHidden
     }
     
     func setColorsFirstView(){
         // COLORS OG FONTS
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
-        containerView.frame = CGRectMake(0, 0, 100, 100)
+        containerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         containerView.frame.size.height = 600
         
         // SHOW PROMILLE
@@ -930,41 +930,41 @@ class FirstViewController: UIViewController {
         
         // BUTTON FONT
         startEndPartyBtn.titleLabel?.font = setAppColors.buttonFonts(14)
-        startEndPartyBtn.titleLabel?.textAlignment = NSTextAlignment.Center
+        startEndPartyBtn.titleLabel?.textAlignment = NSTextAlignment.center
         addUnitsBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(20)
         minusBeerBtnOutlet.titleLabel?.font = setAppColors.buttonFonts(20)
     }
     
     func setConstraints(){
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -124.0)
+            self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: -124.0)
             
             // BUTTONS
-            self.minusBeerBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -45.0)
-            self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -45.0)
+            self.minusBeerBtnOutlet.transform = self.view.transform.translatedBy(x: 10.0, y: -45.0)
+            self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: -10.0, y: -45.0)
             
             // STATS-NUMBERS
-            self.antallOlLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -60.0)
-            self.antallVinLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -60.0)
-            self.antallDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -60.0)
-            self.antallShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -60.0)
+            self.antallOlLabel.transform = self.view.transform.translatedBy(x: 25.0, y: -60.0)
+            self.antallVinLabel.transform = self.view.transform.translatedBy(x: 10.0, y: -60.0)
+            self.antallDrinkLabel.transform = self.view.transform.translatedBy(x: -10.0, y: -60.0)
+            self.antallShotLabel.transform = self.view.transform.translatedBy(x: -25.0, y: -60.0)
             
             // STATS-TITLES
-            self.titleBeer.transform = CGAffineTransformTranslate(self.view.transform, 25.0, -70.0)
-            self.titleWine.transform = CGAffineTransformTranslate(self.view.transform, 10.0, -70.0)
-            self.titleDrink.transform = CGAffineTransformTranslate(self.view.transform, -10.0, -70.0)
-            self.titleShot.transform = CGAffineTransformTranslate(self.view.transform, -25.0, -70.0)
+            self.titleBeer.transform = self.view.transform.translatedBy(x: 25.0, y: -70.0)
+            self.titleWine.transform = self.view.transform.translatedBy(x: 10.0, y: -70.0)
+            self.titleDrink.transform = self.view.transform.translatedBy(x: -10.0, y: -70.0)
+            self.titleShot.transform = self.view.transform.translatedBy(x: -25.0, y: -70.0)
             
             // TEXT QUOTES
-            self.textViewQuotes.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -24.0)
-            self.oppdaterPromilleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -12.0)
+            self.textViewQuotes.transform = self.view.transform.translatedBy(x: 0.0, y: -24.0)
+            self.oppdaterPromilleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -12.0)
 
             
             // SLIDER OG SLIDER TEXT
-            self.startEndPartyBtn.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
-            self.startEndImage.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+            self.startEndPartyBtn.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
+            self.startEndImage.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
             
             // FONTS
             // TITLE AND QUOTE
@@ -982,31 +982,31 @@ class FirstViewController: UIViewController {
             self.titleDrink.font = setAppColors.textHeadlinesFonts(12)
             self.titleShot.font = setAppColors.textHeadlinesFonts(12)
 
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-          self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -90.0)
+          self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: -90.0)
           
           // BUTTONS
-          self.minusBeerBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
-          self.addUnitsBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -30.0)
+          self.minusBeerBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
+          self.addUnitsBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -30.0)
           
           // STATS-NUMBERS
           let statsNumbersYVal : CGFloat = -33.0
-          self.antallOlLabel.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsNumbersYVal)
-          self.antallVinLabel.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsNumbersYVal)
-          self.antallDrinkLabel.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsNumbersYVal)
-          self.antallShotLabel.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsNumbersYVal)
+          self.antallOlLabel.transform = self.view.transform.translatedBy(x: 25.0, y: statsNumbersYVal)
+          self.antallVinLabel.transform = self.view.transform.translatedBy(x: 10.0, y: statsNumbersYVal)
+          self.antallDrinkLabel.transform = self.view.transform.translatedBy(x: -10.0, y: statsNumbersYVal)
+          self.antallShotLabel.transform = self.view.transform.translatedBy(x: -25.0, y: statsNumbersYVal)
           
           // STATS-TITLES
           let statsTitlesYVal : CGFloat = -40.0
-          self.titleBeer.transform = CGAffineTransformTranslate(self.view.transform, 25.0, statsTitlesYVal)
-          self.titleWine.transform = CGAffineTransformTranslate(self.view.transform, 10.0, statsTitlesYVal)
-          self.titleDrink.transform = CGAffineTransformTranslate(self.view.transform, -10.0, statsTitlesYVal)
-          self.titleShot.transform = CGAffineTransformTranslate(self.view.transform, -25.0, statsTitlesYVal)
+          self.titleBeer.transform = self.view.transform.translatedBy(x: 25.0, y: statsTitlesYVal)
+          self.titleWine.transform = self.view.transform.translatedBy(x: 10.0, y: statsTitlesYVal)
+          self.titleDrink.transform = self.view.transform.translatedBy(x: -10.0, y: statsTitlesYVal)
+          self.titleShot.transform = self.view.transform.translatedBy(x: -25.0, y: statsTitlesYVal)
           
           // SLIDER OG SLIDER TEXT
-          self.startEndPartyBtn.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
-          self.startEndImage.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 12.0)
+          self.startEndPartyBtn.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
+          self.startEndImage.transform = self.view.transform.translatedBy(x: 0.0, y: 12.0)
           
           // FONTS
           // STATS:
@@ -1019,12 +1019,12 @@ class FirstViewController: UIViewController {
           self.titleWine.font = setAppColors.textHeadlinesFonts(15)
           self.titleDrink.font = setAppColors.textHeadlinesFonts(15)
           self.titleShot.font = setAppColors.textHeadlinesFonts(15)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -66.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: -66.0)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.containerView.transform = CGAffineTransformTranslate(self.containerView.transform, 0.0, -32.0)
+            self.containerView.transform = self.containerView.transform.translatedBy(x: 0.0, y: -32.0)
         }
     }
 }

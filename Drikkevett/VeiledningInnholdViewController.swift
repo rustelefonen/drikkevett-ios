@@ -25,7 +25,7 @@ class VeiledningInnholdViewController: UIViewController {
         self.titleLabel.text = self.titleText
         self.textView.text = self.textViewString
         if(self.titleLabel.text == "Utregning"){
-            self.textView.textAlignment = .Left
+            self.textView.textAlignment = .left
         }
         
     }
@@ -37,7 +37,7 @@ class VeiledningInnholdViewController: UIViewController {
         self.titleLabel.textColor = setAppColors.textHeadlinesColors()
         self.textView.font = setAppColors.textViewFont(15)
         self.textView.textColor = setAppColors.textViewsColors()
-        self.textView.backgroundColor = UIColor.clearColor()
+        self.textView.backgroundColor = UIColor.clear
     }
     
     override func didReceiveMemoryWarning() {

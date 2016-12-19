@@ -70,7 +70,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     func setColorsAndFontsEnterCosts(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -95,34 +95,34 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         costsBeerLabel.textColor = setAppColors.textUnderHeadlinesColors()
         costsBeerLabel.font = setAppColors.textUnderHeadlinesFonts(15)
         costsBeerLabel.attributedPlaceholder = NSAttributedString(string:"oppgi ølpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         costsWineTextField.textColor = setAppColors.textUnderHeadlinesColors()
         costsWineTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         costsWineTextField.attributedPlaceholder = NSAttributedString(string:"oppgi vinpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         costsDrinkTextField.textColor = setAppColors.textUnderHeadlinesColors()
         costsDrinkTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         costsDrinkTextField.attributedPlaceholder = NSAttributedString(string:"oppgi drinkpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         costsShotTextField.textColor = setAppColors.textUnderHeadlinesColors()
         costsShotTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         costsShotTextField.attributedPlaceholder = NSAttributedString(string:"oppgi shotpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
-        standardPrizesBtnOutlet.setTitle("Standard", forState: UIControlState.Normal)
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        standardPrizesBtnOutlet.setTitle("Standard", for: UIControlState())
         
         // BUTTONS
-        self.standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.Center
+        self.standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.center
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    @IBAction func nextButton(sender: AnyObject) {
+    @IBAction func nextButton(_ sender: AnyObject) {
         //Parsing String values from UITextField to Integers:
         beerCostsInfo = Int(costsBeerLabel.text!)
         wineCostsInfo = Int(costsWineTextField.text!)
@@ -147,7 +147,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             errorMessage(errorMsg: "Så mye betaler du ikke for shot?")
         }
         //Printing input values in console:
-        else if let beerString:String! = String(beerCostsInfo!), wineString:String = String(wineCostsInfo), drinkString:String = String(drinkCostsInfo), shotString:String = String(shotCostsInfo){
+        else if let beerString:String? = String(beerCostsInfo!), let wineString:String = String(wineCostsInfo), let drinkString:String = String(drinkCostsInfo), let shotString:String = String(shotCostsInfo){
             
             let message = "Øl: \(beerCostsInfo) kr\nVin: \(wineCostsInfo) kr\nDrink: \(drinkCostsInfo) kr\nShot: \(shotCostsInfo) kr"
             confirmMessage("Kostnader", errorMsg: message, cancelMsg:"Avbryt", confirmMsg: "Bekreft")
@@ -155,29 +155,29 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     //Method for pop-up messages when handling wrong inputs:
-    func errorMessage(titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
+    func errorMessage(_ titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
         let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func confirmMessage(titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
+    func confirmMessage(_ titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
         let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
             print("Handle cancel logic here")
         }))
         
-        alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.Default, handler:  { action in
+        alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
             self.brainCoreData.updateUserDataCosts(self.beerCostsInfo, updateWineCost: self.wineCostsInfo, updateDrinkCost: self.drinkCostsInfo, updateShotCost: self.shotCostsInfo)
 
-            self.performSegueWithIdentifier("kostnadTilMalSegue"
+            self.performSegue(withIdentifier: "kostnadTilMalSegue"
             , sender: self) }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func useDefaultCosts(sender: AnyObject) {
+    @IBAction func useDefaultCosts(_ sender: AnyObject) {
         self.costsBeerLabel.text = "60"
         self.costsWineTextField.text = "70"
         self.costsDrinkTextField.text = "100"
@@ -186,7 +186,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     // SCROLL VIEW
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         //If sørger for at kun det textfeltet du ønsker å flytte blir flyttet
         // hvor høyt tekstfieldet skal flyttes
         
@@ -203,72 +203,72 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let moveTextFieldIphoneSixPlus : CGFloat = 70
         
         if(textField == costsBeerLabel){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
             }
         }
         if(textField == costsWineTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
             }
         }
         if(textField == costsDrinkTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
             }
         }
         if(textField == costsShotTextField){
             
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
             }
         }
         addDoneButton()
         //else kan brukes for å håndtere andre textfields som ikke må dyttes like høyt opp!
     }
     //Funksjonen under sørger for å re-posisjonere tekstfeltet etter en har skrevet noe.
-    func textFieldDidEndEditing(textField: UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     func addDoneButton() {
@@ -277,10 +277,10 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         keyboardToolbar.alpha = 0.9
         
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         //flexBarButton.tintColor = UIColor.whiteColor()
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done, target: view, action: #selector(UIView.endEditing(_:)))
-        doneBarButton.tintColor = UIColor.whiteColor()
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         costsBeerLabel.inputAccessoryView = keyboardToolbar
         costsWineTextField.inputAccessoryView = keyboardToolbar
@@ -289,7 +289,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     // MAXIMIZE TEXTFIELDS
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // We ignore any change that doesn't add characters to the text field.
         // These changes are things like character deletions and cuts, as well
         // as moving the insertion point.
@@ -304,11 +304,11 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         // If the contents still fit the constraints, allow the change
         // by returning true; otherwise disallow the change by returning false.
         let currentText = textField.text ?? ""
-        let prospectiveText = (currentText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
         switch textField {
         case textField:
-            let decimalSeparator = NSLocale.currentLocale().objectForKey(NSLocaleDecimalSeparator) as! String
+            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
             return prospectiveText.isNumeric() &&
                 prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
                 prospectiveText.characters.count <= 4
@@ -318,80 +318,80 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             
             // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -125.0)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -130.0)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -150.0)
-            self.textView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -160.0)
+            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -125.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -130.0)
+            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -150.0)
+            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
             
             setTextFieldPlaces(0.0, yAxisTextFields: -200.0)
             
             // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -50.0, -230.0)
-            self.nextBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, -50.0, -230.0)
-            self.standardBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, -20.0, -230.0)
-            self.standardPrizesBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -20.0, -230.0)
+            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: -50.0, y: -230.0)
+            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: -50.0, y: -230.0)
+            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: -20.0, y: -230.0)
+            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: -20.0, y: -230.0)
             
             setTextSizes(9, title: 30, subtitle: 17)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -130.0)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -140.0)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -160.0)
-            self.textView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -165.0)
+            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -130.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -140.0)
+            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
+            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -165.0)
             
             setTextFieldPlaces(0.0, yAxisTextFields: -180.0)
             
             // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -50.0, -180.0)
-            self.nextBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, -50.0, -180.0)
-            self.standardBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, -20.0, -180.0)
-            self.standardPrizesBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, -20.0, -180.0)
+            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: -50.0, y: -180.0)
+            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: -50.0, y: -180.0)
+            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: -20.0, y: -180.0)
+            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: -20.0, y: -180.0)
             
             setTextSizes(10, title: 27, subtitle: 17)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             setConstValues(0.0, yValue: -100.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0)
-            self.textView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -60.0)
+            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
+            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
+            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
             
             setTextFieldPlaces(0.0, yAxisTextFields: -60.0)
             
             // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 20.0, -60.0)
-            self.nextBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 20.0, -60.0)
-            self.standardBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, 20.0, -60.0)
-            self.standardPrizesBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 20.0, -60.0)
+            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
+            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
+            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
+            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
         }
     }
     
-    func setConstValues(xValue: CGFloat, yValue: CGFloat){
+    func setConstValues(_ xValue: CGFloat, yValue: CGFloat){
         
         // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-        self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.titleImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.textView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.titleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.subTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.titleImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.textView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
         
         setTextFieldPlaces(xValue, yAxisTextFields: yValue)
         
         // STANDARD AND NEXT ( IMG AND BTNS )
-        self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.nextBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.standardBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.standardPrizesBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.nextBtnImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.standardBtnImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
     }
     
-    func setTextSizes(textViewFontSize: CGFloat, title: CGFloat, subtitle: CGFloat){
+    func setTextSizes(_ textViewFontSize: CGFloat, title: CGFloat, subtitle: CGFloat){
         // TITLE AND SUBTITLE
         self.titleLabel.font = setAppColors.textHeadlinesFonts(title)
         self.subTitleLabel.font = setAppColors.textUnderHeadlinesFonts(subtitle)
@@ -400,30 +400,30 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         self.textView.font = setAppColors.setTextQuoteFont(textViewFontSize)
     }
     
-    func setTextFieldPlaces(xValue: CGFloat, yAxisTextFields: CGFloat){
+    func setTextFieldPlaces(_ xValue: CGFloat, yAxisTextFields: CGFloat){
         // TITLE UNITS
-        self.beerTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.wineTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.drinkTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.shotTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.beerTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.wineTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.drinkTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.shotTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         
         // TEXTFIELDS
-        self.costsBeerLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.costsWineTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.costsDrinkTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.costsShotTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.costsBeerLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.costsWineTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.costsDrinkTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.costsShotTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         // UNIT IMAGES
-        self.beerImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.wineImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.drinkImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.shotImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.beerImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.wineImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.drinkImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.shotImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         // UNIT UNDERSCORES
-        self.beerUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.wineUnderscor.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.drinkUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.shotUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.beerUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.wineUnderscor.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.drinkUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.shotUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
     }
  }

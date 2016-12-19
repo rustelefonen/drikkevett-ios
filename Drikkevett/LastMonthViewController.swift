@@ -27,10 +27,10 @@ class LastMonthViewController: UIViewController {
     @IBOutlet weak var lastMonthHighProm: UILabel!
     @IBOutlet weak var lastMonthAvgProm: UILabel!
     
-    let calendar = NSCalendar.currentCalendar()
+    let calendar = Calendar.current
     
     var getGoalPromille = 0.0
-    var getGoalDate = NSDate()
+    var getGoalDate = Date()
     
     //
     let brainCoreData = CoreDataMethods()
@@ -42,12 +42,12 @@ class LastMonthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let comps2 = NSDateComponents()
+        var comps2 = DateComponents()
         
         // DATOER SOM SKAL SJEKKES
         comps2.day = -23
         
-        let dueDate = calendar.dateByAddingComponents(comps2, toDate: NSDate(), options: NSCalendarOptions())
+        let dueDate = (calendar as NSCalendar).date(byAdding: comps2, to: Date(), options: NSCalendar.Options())
         print("Dato som skal sjekkes: \(dueDate!)")
         
         setValues()
@@ -87,7 +87,7 @@ class LastMonthViewController: UIViewController {
         setConstraints()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // START UP FUNCTIONS
         fetchUserData()
@@ -95,17 +95,17 @@ class LastMonthViewController: UIViewController {
         setValues()
     }
 
-    func checkDatesOneMonth(checkDate: NSDate){
+    func checkDatesOneMonth(_ checkDate: Date){
         // SJEKK DATOER INNEFOR 1 MÅNED
-        let comps = NSDateComponents()
+        var comps = DateComponents()
         comps.day = -30
         
-        let date2 = calendar.dateByAddingComponents(comps, toDate: NSDate(), options: NSCalendarOptions())
+        let date2 = (calendar as NSCalendar).date(byAdding: comps, to: Date(), options: NSCalendar.Options())
         print("DATOE FOR 30 DAGER SIDEN: \(date2!)")
-        if checkDate.compare(date2!) == NSComparisonResult.OrderedDescending
+        if checkDate.compare(date2!) == ComparisonResult.orderedDescending
         {
             print("DATOEN ER INNENFOR 1 MÅNED")
-        } else if checkDate.compare(date2!) == NSComparisonResult.OrderedAscending
+        } else if checkDate.compare(date2!) == ComparisonResult.orderedAscending
         {
             print("DATOEN ER LENGER UNNA ENN 1 MÅNED")
         } else
@@ -165,12 +165,12 @@ class LastMonthViewController: UIViewController {
     
     func fetchUserData() {
         var userData = [UserData]()
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
-                getGoalDate = item.goalDate! as NSDate
+                getGoalDate = item.goalDate! as Date
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -184,7 +184,7 @@ class LastMonthViewController: UIViewController {
     // CONSTRAINTS
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             self.titleTotalCosts.font = setAppColors.textUnderHeadlinesFonts(13)
             self.titleHighestProm.font = setAppColors.textUnderHeadlinesFonts(13)
@@ -194,17 +194,17 @@ class LastMonthViewController: UIViewController {
             self.lastMonthAvgProm.font = setAppColors.textUnderHeadlinesFonts(13)
             
             // TRANSFORM
-            self.titleTotalCosts.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.titleHighestProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.titleAvgProm.transform = CGAffineTransformTranslate(self.view.transform, -4.0, -17.0)
-            self.averageHighestPromille.transform = CGAffineTransformTranslate(self.view.transform, -4.0, 0.0)
+            self.titleTotalCosts.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.titleHighestProm.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.titleAvgProm.transform = self.view.transform.translatedBy(x: -4.0, y: -17.0)
+            self.averageHighestPromille.transform = self.view.transform.translatedBy(x: -4.0, y: 0.0)
             
-            self.lastMonthTitleCost.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.lastMonthHighProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.lastMonthAvgProm.transform = CGAffineTransformTranslate(self.view.transform, -4.0, -17.0)
-            self.averageHighPromLastMonth.transform = CGAffineTransformTranslate(self.view.transform, -4.0, 0.0)
+            self.lastMonthTitleCost.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.lastMonthHighProm.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.lastMonthAvgProm.transform = self.view.transform.translatedBy(x: -4.0, y: -17.0)
+            self.averageHighPromLastMonth.transform = self.view.transform.translatedBy(x: -4.0, y: 0.0)
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             // FONT
             self.titleTotalCosts.font = setAppColors.textUnderHeadlinesFonts(13)
@@ -215,27 +215,27 @@ class LastMonthViewController: UIViewController {
             self.lastMonthAvgProm.font = setAppColors.textUnderHeadlinesFonts(13)
             
             // TRANSFORM
-            self.titleTotalCosts.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.titleHighestProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.titleAvgProm.transform = CGAffineTransformTranslate(self.view.transform, -4.0, -17.0)
-            self.averageHighestPromille.transform = CGAffineTransformTranslate(self.view.transform, -4.0, 0.0)
+            self.titleTotalCosts.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.titleHighestProm.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.titleAvgProm.transform = self.view.transform.translatedBy(x: -4.0, y: -17.0)
+            self.averageHighestPromille.transform = self.view.transform.translatedBy(x: -4.0, y: 0.0)
             
-            self.lastMonthTitleCost.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.lastMonthHighProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.lastMonthAvgProm.transform = CGAffineTransformTranslate(self.view.transform, -4.0, -17.0)
-            self.averageHighPromLastMonth.transform = CGAffineTransformTranslate(self.view.transform, -4.0, 0.0)
+            self.lastMonthTitleCost.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.lastMonthHighProm.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.lastMonthAvgProm.transform = self.view.transform.translatedBy(x: -4.0, y: -17.0)
+            self.averageHighPromLastMonth.transform = self.view.transform.translatedBy(x: -4.0, y: 0.0)
             
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             // TRANSFORM
-            self.titleTotalCosts.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.titleHighestProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -17.0)
-            self.titleAvgProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -17.0)
+            self.titleTotalCosts.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.titleHighestProm.transform = self.view.transform.translatedBy(x: 0.0, y: -17.0)
+            self.titleAvgProm.transform = self.view.transform.translatedBy(x: 0.0, y: -17.0)
             
-            self.lastMonthTitleCost.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -23.0)
-            self.lastMonthHighProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -17.0)
-            self.lastMonthAvgProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -17.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.lastMonthTitleCost.transform = self.view.transform.translatedBy(x: 0.0, y: -23.0)
+            self.lastMonthHighProm.transform = self.view.transform.translatedBy(x: 0.0, y: -17.0)
+            self.lastMonthAvgProm.transform = self.view.transform.translatedBy(x: 0.0, y: -17.0)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
         }
     }

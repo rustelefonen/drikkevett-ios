@@ -49,7 +49,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         setConstraints()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Values:
         
@@ -66,16 +66,21 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(_ dataPoints: [String], values: [Double]) {
         //Creating Chart
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            //let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "???")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        //let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "???")
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "???")
+        
+        //let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        
         pieChartView.data = pieChartData
         pieChartData.setDrawValues(false)
         
@@ -89,29 +94,30 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         pieChartView.animate(yAxisDuration: 1.0)
         pieChartView.descriptionText = ""
         pieChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
-        pieChartView.transparentCircleColor?.CGColor
+        pieChartView.transparentCircleColor?.cgColor
         pieChartView.drawSliceTextEnabled = false
         pieChartView.legend.enabled = false
-        pieChartView.userInteractionEnabled = false
+        pieChartView.isUserInteractionEnabled = false
         
         let centerText = "\(fetchGoal())"
-        let fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(27.0), NSForegroundColorAttributeName: UIColor.whiteColor()]
+        let fontAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 27.0), NSForegroundColorAttributeName: UIColor.white]
         let attriButedString = NSAttributedString(string: centerText, attributes: fontAttributes)
         pieChartView.centerAttributedText = attriButedString
-        pieChartView.userInteractionEnabled = true
+        pieChartView.isUserInteractionEnabled = true
     }
     
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        if(entry.xIndex == 0){
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(entry)
+        if(entry.x == 0){
             self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget over makspromillen din"
             
         }
-        if(entry.xIndex == 1){
+        if(entry.x == 1){
             self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget under makspromillen din"
         }
     }
     
-    func chartValueNothingSelected(chartView: ChartViewBase) {
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
         self.pieChartTextVuew.text = "Målet ditt vises i diagrammet til høyre. Fargene illustrerer hvordan det står til med makspromillen din."
     }
     
@@ -121,10 +127,10 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         goalReached = 0
         
         var historikk = [Historikk]()
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Historikk")
         let goalProm = fetchGoal()
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for hoyesteProm in historikk {
                 let tempHighProm = hoyesteProm.hoyestePromille! as Double
                 if(goalProm >= tempHighProm){
@@ -143,9 +149,9 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         var userData = [UserData]()
         var getGoalPromille = 0.0
         
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             for item in userData {
                 getGoalPromille = item.goalPromille! as Double
             }
@@ -156,17 +162,17 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.pieChartTextVuew.transform = CGAffineTransformTranslate(self.view.transform, -35.0, 0.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.pieChartTextVuew.transform = self.view.transform.translatedBy(x: -35.0, y: 0.0)
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.pieChartTextVuew.transform = CGAffineTransformTranslate(self.view.transform, -50.0, 0.0)
+            self.pieChartTextVuew.transform = self.view.transform.translatedBy(x: -50.0, y: 0.0)
         }
     }
 }

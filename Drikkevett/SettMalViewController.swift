@@ -32,7 +32,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // sett verdier i picker view
     var pickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
     
-    var getDate = NSDate()
+    var getDate = Date()
     var goalPromille : Double! = 0.0
     
     // Kommunikasjon med database/Core Data
@@ -43,7 +43,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var setAppColors = AppColors()
     
     // Set current date
-    var todayDate = NSDate()
+    var todayDate = Date()
     
     // MÅL DATO DATEPICKERVIEW
     @IBOutlet weak var datePickerTextField: UITextField!
@@ -77,12 +77,12 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickGoalProm.dataSource = self
         pickGoalProm.delegate = self
         pickGoalProm.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
-        pickGoalProm.backgroundColor = UIColor.darkGrayColor()
+        pickGoalProm.backgroundColor = UIColor.darkGray
     }
     
     func setColorsAndFontsEnterGoals(){
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -106,9 +106,9 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickGoalTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         
         datePickerTextField.attributedPlaceholder = NSAttributedString(string:"dato",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         pickGoalTextField.attributedPlaceholder = NSAttributedString(string:"makspromille",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
     }
 
@@ -116,11 +116,11 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    @IBAction func letsRoleButton(sender: AnyObject) {
+    @IBAction func letsRoleButton(_ sender: AnyObject) {
         let maxPromille = 2.0
         
         //Handling wrong inputs in UITextFields:
@@ -131,57 +131,57 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             errorMessage(errorMsg: "Alle felter må fylles ut!")
         } else if(goalPromille >= maxPromille){
             errorMessage(errorMsg: "Du kan ikke legge inn høyere promille enn \(maxPromille)")
-        } else if let goalPromilleString:String! = String(goalPromille!){
+        } else if let goalPromilleString:String? = String(goalPromille!){
             let message = "Målsetning: \(goalPromille)\n\(dateMessage)"
             confirmMessage("Mål", errorMsg: message, cancelMsg:"Avbryt", confirmMsg: "Bekreft")
         }
     }
     
     //Method for pop-up messages when handling wrong inputs:
-    func errorMessage(titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
+    func errorMessage(_ titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
         let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func confirmMessage(titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
+    func confirmMessage(_ titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
         let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
             print("Handle cancel logic here")
         }))
         
-        alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.Default, handler:  { action in
+        alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
             self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
             self.isFirstRegistrationCompleted()
             self.isAppGuidanceDone()
-            self.performSegueWithIdentifier("goalSegue"
+            self.performSegue(withIdentifier: "goalSegue"
                 , sender: self) }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func isAppGuidanceDone()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isAppAlreadyLaunchedOnceGui"){
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnceGui"){
             print("App already launched")
             return true
         }else{
-            defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnceGui")
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnceGui")
             print("App launched first time")
             return false
         }
     }
     
     func isFirstRegistrationCompleted()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let isAppRegistrationCompleted = defaults.stringForKey("isFirstRegistrationCompleted"){
+        if let isAppRegistrationCompleted = defaults.string(forKey: "isFirstRegistrationCompleted"){
             print("Registration is completed")
             return true
         }else{
-            defaults.setBool(true, forKey: "isFirstRegistrationCompleted")
+            defaults.set(true, forKey: "isFirstRegistrationCompleted")
             print("Registration is NOT completed")
             return false
         }
@@ -189,22 +189,22 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     // PICKER METHODS
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //globalGender = pickerData[row]
         self.pickGoalTextField.text = "\(pickerData[row])"
         print("PickerValue: \(pickerData[row])")
         goalPromille = Double(pickerData[row])
         if(goalPromille == 0.0){
-            self.textViewGoal.textColor = UIColor.whiteColor()
+            self.textViewGoal.textColor = UIColor.white
             self.textViewGoal.text = "Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. \n\nMakspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av EN kveld. "
             self.smileyImageView.image = UIImage(named: "Happy-100")
         }
         if(goalPromille > 0.0 && goalPromille <= 0.3){
-            self.textViewGoal.textColor = UIColor.whiteColor()
+            self.textViewGoal.textColor = UIColor.white
             self.textViewGoal.text = "En promille der de fleste vil fremstå som normale."
             self.smileyImageView.image = UIImage(named: "Happy-100")
         }
@@ -235,22 +235,22 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         print("Goal Promille: \(goalPromille)")
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue-UltraLight", size: 0.01)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue-UltraLight", size: 0.01)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
     
     //MARK: - Delegates and data sources
     //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
     
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView!) -> UIView {
         
         var pickerLabel = view as? UILabel;
         
@@ -259,7 +259,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             pickerLabel = UILabel()
             
             pickerLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 30)
-            pickerLabel?.textAlignment = NSTextAlignment.Center
+            pickerLabel?.textAlignment = NSTextAlignment.center
             pickerLabel?.textColor = setAppColors.textUnderHeadlinesColors()
         }
         
@@ -273,80 +273,80 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView = UIDatePicker()
         //datePickerView.delegate = self
         datePickerTextField.inputView = datePickerView
-        datePickerTextField.textColor = UIColor.whiteColor()
+        datePickerTextField.textColor = UIColor.white
         
         // DATEPICKER
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        datePickerView.datePickerMode = .Date
+        datePickerView.datePickerMode = .date
         datePickerView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
-        datePickerView.backgroundColor = UIColor.darkGrayColor()
+        datePickerView.backgroundColor = UIColor.darkGray
         //let dateString = dateFormatter.stringFromDate(datePickerView.date)
-        todayDate = NSDate()
+        todayDate = Date()
         
-        let calendar = NSCalendar.currentCalendar()
-        let tomorrow = calendar.dateByAddingUnit(.Day, value: +1, toDate: NSDate(), options: [])
+        let calendar = Calendar.current
+        let tomorrow = (calendar as NSCalendar).date(byAdding: .day, value: +1, to: Date(), options: [])
         
         datePickerView.minimumDate = tomorrow
         datePickerView.setDate(tomorrow!, animated: true)
-        datePickerView.addTarget(self, action: "datePickerChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(SettMalViewController.datePickerChanged(_:)), for: UIControlEvents.valueChanged)
         //datePickerChanged(datePickerView)
         addDoneButton()
     }
     
-    func datePickerChanged(sender:UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+    func datePickerChanged(_ sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
         
         getDate = sender.date
-        let strDate = dateFormatter.stringFromDate(sender.date)
+        let strDate = dateFormatter.string(from: sender.date)
         dateMessage = "Måldato: \(strDate)"
         datePickerTextField.text = strDate
     }
     
     // SCROLL VIEW
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         //If sørger for at kun det textfeltet du ønsker å flytte blir flyttet
         // iPhone 6
         let moveTextField : CGFloat = 100
         
         if(textField == datePickerTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 167.5), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 167.5), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, 170), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 170), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, 80), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
             }
         }
         if(textField == pickGoalTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextField), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             }
         }
         addDoneButton()
         //else kan brukes for å håndtere andre textfields som ikke må dyttes like høyt opp!
     }
     //Funksjonen under sørger for å re-posisjonere tekstfeltet etter en har skrevet noe.
-    func textFieldDidEndEditing(textField: UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     // TATSTATUR
@@ -356,83 +356,83 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         keyboardToolbar.alpha = 0.9
         
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         //flexBarButton.tintColor = UIColor.whiteColor()
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done, target: view, action: #selector(UIView.endEditing(_:)))
-        doneBarButton.tintColor = UIColor.whiteColor()
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         datePickerTextField.inputAccessoryView = keyboardToolbar
         pickGoalTextField.inputAccessoryView = keyboardToolbar
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             // HEADER
-            self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -300)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -180)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -180)
-            self.textViewGoal.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -180)
-            self.smileyImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -180)
+            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -300)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
+            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
+            self.textViewGoal.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
+            self.smileyImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
             
             // TEXTFIELDS
             setTextFieldsConst(0.0, yValue: -200)
             
             // BUTTON
             // BUTTON AND BUTTON IMAGES
-            self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -235.0)
-            self.letsGoImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -235.0)
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -235.0)
+            self.letsGoImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -235.0)
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             // HEADER
-            self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -82) // -92
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -95)
-            self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -105)
-            self.smileyImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -110) // + 5
-            self.textViewGoal.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -105)
+            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -82) // -92
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -95)
+            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -105)
+            self.smileyImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -110) // + 5
+            self.textViewGoal.transform = self.view.transform.translatedBy(x: 0.0, y: -105)
             
             // TEXTFIELDS
             setTextFieldsConst(0.0, yValue: -132.5)
             
             // BUTTON AND BUTTON IMAGES
-            self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -160.0)
-            self.letsGoImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -160.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
+            self.letsGoImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             setWholeConstOverall(0.0, yValue: -82.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             setWholeConstOverall(0.0, yValue: -50)
         }
     }
     
-    func setTextFieldsConst(xValue: CGFloat, yValue: CGFloat){
+    func setTextFieldsConst(_ xValue: CGFloat, yValue: CGFloat){
         // TEXTFIELDS, TEXTF IMAGES, TEXTF TITLELABELS
-        self.pickGoalTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.datePickerTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.goalImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.goalDateImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.dateTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.goalTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.pickGoalTextField.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.datePickerTextField.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.goalImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.goalDateImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.dateTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.goalTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
         
         // UNDERSCORES
-        self.underscoreDate.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.underScoreGoal.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.underscoreDate.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.underScoreGoal.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
     }
     
-    func setWholeConstOverall(xValue: CGFloat, yValue: CGFloat){
+    func setWholeConstOverall(_ xValue: CGFloat, yValue: CGFloat){
 
         // HEADER
-        self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.subTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.textViewGoal.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.smileyImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.headerImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.titleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.subTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.textViewGoal.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.smileyImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
         
         setTextFieldsConst(xValue, yValue: yValue)
         
         // BUTTON AND BUTTON IMAGES
-        self.nextBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
-        self.letsGoImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yValue)
+        self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
+        self.letsGoImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
     }
 }

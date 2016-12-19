@@ -24,7 +24,7 @@ class ChooseUnitViewController: UIViewController {
         self.imageViewUnits.image = UIImage(named: self.imageFile)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("WHAT PAGE ARE WE ON: \(self.pageIndex)")
         if(self.pageIndex == 0){

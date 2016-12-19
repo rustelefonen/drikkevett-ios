@@ -87,7 +87,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         // Rename back button
         let backButton = UIBarButtonItem(
             title: "",
-            style: UIBarButtonItemStyle.Plain, // Note: .Bordered is deprecated
+            style: UIBarButtonItemStyle.plain, // Note: .Bordered is deprecated
             target: nil,
             action: nil
         )
@@ -100,7 +100,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     func pickViewGenderTextField(){
         let pickerView = UIPickerView()
         pickerView.delegate = self
-        pickerView.backgroundColor = UIColor.darkGrayColor()
+        pickerView.backgroundColor = UIColor.darkGray
         chooseGenderTextField.inputView = pickerView
     }
     
@@ -108,7 +108,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         //ageTextField.textColor = setAppColors.textUnderHeadlinesColors()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
@@ -117,21 +117,21 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         ageTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         ageTextField.textColor = setAppColors.textUnderHeadlinesColors()
         ageTextField.attributedPlaceholder = NSAttributedString(string:"alder",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         heightTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         heightTextField.textColor = setAppColors.textUnderHeadlinesColors()
         heightTextField.attributedPlaceholder = NSAttributedString(string:"kallenavn",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         weightTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         weightTextField.textColor = setAppColors.textUnderHeadlinesColors()
         weightTextField.attributedPlaceholder = NSAttributedString(string:"vekt",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         self.chooseGenderTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         self.chooseGenderTextField.textColor = setAppColors.textUnderHeadlinesColors()
         self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"kjønn",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         
         // LABELS
@@ -156,12 +156,12 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         setButtonsRounded(setAppColors.roundedCorners())
     }
     
-    func setButtonsRounded(turnOffOn: Bool){
+    func setButtonsRounded(_ turnOffOn: Bool){
         if(turnOffOn == true){
             // START END KVELDEN
             saveBtnOutlet.layer.cornerRadius = 25;
             saveBtnOutlet.layer.borderWidth = 0.5;
-            saveBtnOutlet.layer.borderColor = UIColor.whiteColor().CGColor
+            saveBtnOutlet.layer.borderColor = UIColor.white.cgColor
         }
     }
 
@@ -169,17 +169,17 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
     }
     
-    @IBAction func saveButton(sender: AnyObject) {
+    @IBAction func saveButton(_ sender: AnyObject) {
         //Parsing String values from UITextField to Integers:
         updateWeight = Double(weightTextField.text!)
         updateAge = Int(ageTextField.text!)
@@ -211,48 +211,48 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     
     func updateTextFields(){
         self.ageTextField.attributedPlaceholder = NSAttributedString(string:"\(updateAge)",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         self.ageTextField.text = ""
         
         self.heightTextField.attributedPlaceholder = NSAttributedString(string:"\(updateHeight)",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         self.heightTextField.text = ""
         
         self.weightTextField.attributedPlaceholder = NSAttributedString(string:"\(updateWeight)",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         self.weightTextField.text = ""
         
         self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"\(gender)",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         self.chooseGenderTextField.text = ""
     }
     
-    func infoIsStoredPopUp(titleMsg: String, msg: String, buttonTitle:String){
+    func infoIsStoredPopUp(_ titleMsg: String, msg: String, buttonTitle:String){
         let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.Default, handler:{ (action: UIAlertAction!) in
-            self.navigationController?.popViewControllerAnimated(true)
+            msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler:{ (action: UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
         }))
         let subview = alertController.view.subviews.first! as UIView
         let alertContentView = subview.subviews.first! as UIView
-        alertContentView.backgroundColor = UIColor.blackColor()
+        alertContentView.backgroundColor = UIColor.black
         alertContentView.layer.cornerRadius = 10
         //alertController.view.tintColor = UIColor.whiteColor()
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func errorMessage(titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
+    func errorMessage(_ titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
         let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func fetchUserData() {
         var userData = [UserData]()
-        let timeStampFetch = NSFetchRequest(entityName: "UserData")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
         do {
-            userData = try moc.executeFetchRequest(timeStampFetch) as! [UserData]
+            userData = try moc.fetch(timeStampFetch) as! [UserData]
             
             for item in userData {
                 tempUpdateGender = item.gender! as Bool
@@ -268,13 +268,13 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
                     gender = "Kvinne"
                 }
                 self.ageTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateAge)",
-                    attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+                    attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
                 self.heightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateHeight)",
-                    attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+                    attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
                 self.weightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateWeight)",
-                    attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+                    attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
                 self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"\(gender)",
-                    attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+                    attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
             }
         } catch {
             fatalError("bad things happened \(error)")
@@ -283,11 +283,11 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     
     // PICKER METHODS
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //globalGender = pickerData[row]
         print("Kjønn: \(pickerData[row])")
         if(pickerData[row] == "Mann"){
@@ -301,22 +301,22 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         //label.text = pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue-UltraLight", size: 0.01)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue-UltraLight", size: 0.01)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
     
     //MARK: - Delegates and data sources
     //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
     
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView!) -> UIView {
         
         var pickerLabel = view as? UILabel;
         
@@ -325,8 +325,8 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
             pickerLabel = UILabel()
             
             pickerLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 30)
-            pickerLabel?.textAlignment = NSTextAlignment.Center
-            pickerLabel?.textColor = UIColor.whiteColor()
+            pickerLabel?.textAlignment = NSTextAlignment.center
+            pickerLabel?.textColor = UIColor.white
         }
         
         pickerLabel?.text = pickerData[row]
@@ -334,21 +334,21 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         return pickerLabel!;
     }
     
-    func Alert(View: UIViewController, Title: String, TitleColor: UIColor, Message: String, MessageColor: UIColor, BackgroundColor: UIColor, BorderColor: UIColor, ButtonColor: UIColor) {
+    func Alert(_ View: UIViewController, Title: String, TitleColor: UIColor, Message: String, MessageColor: UIColor, BackgroundColor: UIColor, BorderColor: UIColor, ButtonColor: UIColor) {
         
-        let TitleString = NSAttributedString(string: Title, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(15), NSForegroundColorAttributeName : TitleColor])
-        let MessageString = NSAttributedString(string: Message, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(15), NSForegroundColorAttributeName : MessageColor])
+        let TitleString = NSAttributedString(string: Title, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15), NSForegroundColorAttributeName : TitleColor])
+        let MessageString = NSAttributedString(string: Message, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15), NSForegroundColorAttributeName : MessageColor])
         
-        let alertController = UIAlertController(title: Title, message: Message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
         
         alertController.setValue(TitleString, forKey: "attributedTitle")
         alertController.setValue(MessageString, forKey: "attributedMessage")
         
-        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             // GJØR WHATEVS OK SHIT
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
@@ -360,30 +360,30 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         alertContentView.layer.cornerRadius = 10
         alertContentView.alpha = 1
         alertContentView.layer.borderWidth = 1
-        alertContentView.layer.borderColor = BorderColor.CGColor
+        alertContentView.layer.borderColor = BorderColor.cgColor
         
         
         //alertContentView.tintColor = UIColor.whiteColor()
         alertController.view.tintColor = ButtonColor
         
-        View.presentViewController(alertController, animated: true) {
+        View.present(alertController, animated: true) {
             // ...
         }
     }
     
     // Alert om at du har lagret ting.
-    func savedAlertController(title: String, message: String, delayTime: Double){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
-        self.presentViewController(alertController, animated: true, completion: nil)
+    func savedAlertController(_ title: String, message: String, delayTime: Double){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        self.present(alertController, animated: true, completion: nil)
         let delay = delayTime * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            alertController.dismissViewControllerAnimated(true, completion: nil)
-            self.navigationController?.popViewControllerAnimated(true)
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            alertController.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         })
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         //If sørger for at kun det textfeltet du ønsker å flytte blir flyttet
         
         // iphone 4 - forskjellige for hver enkelt textfield
@@ -398,64 +398,64 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         let moveTextFieldSixPlus : CGFloat = 10
         
         if(textField == heightTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 65), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 65), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSix), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSix), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSixPlus), animated: true)
             }
         }
         if(textField == chooseGenderTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 128), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 128), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSix), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSix), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSixPlus), animated: true)
             }
         }
         if(textField == ageTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 128), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 128), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSix), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSix), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSixPlus), animated: true)
             }
         }
 
         if(textField == weightTextField){
-            if UIScreen.mainScreen().bounds.size.height == 480 {
+            if UIScreen.main.bounds.size.height == 480 {
                 // iPhone 4
-                scrollView.setContentOffset(CGPointMake(0, 128), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.height == 568 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 128), animated: true)
+            } else if UIScreen.main.bounds.size.height == 568 {
                 // IPhone 5
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 375 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
+            } else if UIScreen.main.bounds.size.width == 375 {
                 // iPhone 6
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSix), animated: true)
-            } else if UIScreen.mainScreen().bounds.size.width == 414 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSix), animated: true)
+            } else if UIScreen.main.bounds.size.width == 414 {
                 // iPhone 6+
-                scrollView.setContentOffset(CGPointMake(0, moveTextFieldSixPlus), animated: true)
+                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldSixPlus), animated: true)
             }
         }
         addDoneButton()
@@ -463,8 +463,8 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     }
     
     //Funksjonen under sørger for å re-posisjonere tekstfeltet etter en har skrevet noe.
-    func textFieldDidEndEditing(textField: UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     func addDoneButton() {
@@ -473,10 +473,10 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         keyboardToolbar.alpha = 0.9
         
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         //flexBarButton.tintColor = UIColor.whiteColor()
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done, target: view, action: #selector(UIView.endEditing(_:)))
-        doneBarButton.tintColor = UIColor.whiteColor()
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         ageTextField.inputAccessoryView = keyboardToolbar
         heightTextField.inputAccessoryView = keyboardToolbar
@@ -484,7 +484,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         chooseGenderTextField.inputAccessoryView = keyboardToolbar
     }
     
-    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+    func checkMaxLength(_ textField: UITextField!, maxLength: Int) {
         
         if (textField.text?.characters.count > maxLength) {
             textField.deleteBackward()
@@ -492,7 +492,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     }
     
     // MAXIMIZE TEXTFIELDS 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // We ignore any change that doesn't add characters to the text field.
         // These changes are things like character deletions and cuts, as well
         // as moving the insertion point.
@@ -507,7 +507,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         // If the contents still fit the constraints, allow the change
         // by returning true; otherwise disallow the change by returning false.
         let currentText = textField.text ?? ""
-        let prospectiveText = (currentText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
         switch textField {
             
@@ -517,7 +517,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
             return prospectiveText.characters.count <= 15
             
         case weightTextField:
-            let decimalSeparator = NSLocale.currentLocale().objectForKey(NSLocaleDecimalSeparator) as! String
+            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
             return prospectiveText.isNumeric() &&
                 prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
                 prospectiveText.characters.count <= 3
@@ -525,7 +525,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         // Allow only values that evaluate to proper numeric values in this field,
         // and limit its contents to a maximum of 7 characters.
         case ageTextField:
-            let decimalSeparator = NSLocale.currentLocale().objectForKey(NSLocaleDecimalSeparator) as! String
+            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
             return prospectiveText.isNumeric() &&
                 prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
                 prospectiveText.characters.count <= 2
@@ -541,51 +541,51 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
     // and set their keyboards while we're at it.
     func initializeTextFields() {
         heightTextField.delegate = self
-        heightTextField.keyboardType = UIKeyboardType.ASCIICapable
+        heightTextField.keyboardType = UIKeyboardType.asciiCapable
         
         weightTextField.delegate = self
-        weightTextField.keyboardType = UIKeyboardType.NumberPad
+        weightTextField.keyboardType = UIKeyboardType.numberPad
         
         ageTextField.delegate = self
-        ageTextField.keyboardType = UIKeyboardType.NumberPad
+        ageTextField.keyboardType = UIKeyboardType.numberPad
     }
     
     func setConstraints(){
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             /* ----- TRANSFORMERS -----*/
             // HEADER
-            self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -130.0)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -154)
-            self.subtitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -178)
+            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -130.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -154)
+            self.subtitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -178)
             
             // NICKNAME TEXTFIELD
             let nicknameYValue : CGFloat = -200.0
-            self.heightLabel.transform = CGAffineTransformTranslate(self.view.transform, 40.0, nicknameYValue)
-            self.heightTextField.transform = CGAffineTransformTranslate(self.view.transform, 30.0, nicknameYValue)
-            self.nicknameImageView.transform = CGAffineTransformTranslate(self.view.transform, -40.0, nicknameYValue)
-            self.nickenameUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, nicknameYValue)
+            self.heightLabel.transform = self.view.transform.translatedBy(x: 40.0, y: nicknameYValue)
+            self.heightTextField.transform = self.view.transform.translatedBy(x: 30.0, y: nicknameYValue)
+            self.nicknameImageView.transform = self.view.transform.translatedBy(x: -40.0, y: nicknameYValue)
+            self.nickenameUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: nicknameYValue)
             
             // GENDER TEXTFIELD
             let genderYValue : CGFloat = -215.0
-            self.kjonnLabel.transform = CGAffineTransformTranslate(self.view.transform, 40.0, genderYValue)
-            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, 30.0, genderYValue)
-            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, -40.0, genderYValue)
-            self.genderUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, genderYValue)
+            self.kjonnLabel.transform = self.view.transform.translatedBy(x: 40.0, y: genderYValue)
+            self.chooseGenderTextField.transform = self.view.transform.translatedBy(x: 30.0, y: genderYValue)
+            self.genderImageView.transform = self.view.transform.translatedBy(x: -40.0, y: genderYValue)
+            self.genderUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: genderYValue)
             
             // AGE TEXTFIELD
             let ageYValue : CGFloat = -230.0
-            self.alderLabel.transform = CGAffineTransformTranslate(self.view.transform, 40.0, ageYValue)
-            self.ageTextField.transform = CGAffineTransformTranslate(self.view.transform, 30.0, ageYValue)
-            self.ageImageview.transform = CGAffineTransformTranslate(self.view.transform, -40.0, ageYValue)
-            self.ageUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, ageYValue)
+            self.alderLabel.transform = self.view.transform.translatedBy(x: 40.0, y: ageYValue)
+            self.ageTextField.transform = self.view.transform.translatedBy(x: 30.0, y: ageYValue)
+            self.ageImageview.transform = self.view.transform.translatedBy(x: -40.0, y: ageYValue)
+            self.ageUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: ageYValue)
             
             // WEIGHT TEXTFIELD
             let weightYValue : CGFloat = -245.0
-            self.weightLabel.transform = CGAffineTransformTranslate(self.view.transform, 40.0, weightYValue)
-            self.weightTextField.transform = CGAffineTransformTranslate(self.view.transform, 30.0, weightYValue)
-            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, -40.0, weightYValue)
-            self.weightUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, weightYValue)
+            self.weightLabel.transform = self.view.transform.translatedBy(x: 40.0, y: weightYValue)
+            self.weightTextField.transform = self.view.transform.translatedBy(x: 30.0, y: weightYValue)
+            self.weightImageView.transform = self.view.transform.translatedBy(x: -40.0, y: weightYValue)
+            self.weightUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: weightYValue)
             
             // BUTTON
             self.setButtonConst(0.0, yAxisTextFields: -280.0)
@@ -601,13 +601,13 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
             self.ageUnderscore.font = setAppColors.textHeadlinesFonts(12)
             self.weightUnderscore.font = setAppColors.textHeadlinesFonts(12)
             
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             /* ----- TRANSFORMERS -----*/
             // HEADER
-            self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -120.0)
-            self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -140)
-            self.subtitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -155)
+            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -120.0)
+            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -140)
+            self.subtitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -155)
             
             let titleXvalue : CGFloat = 30.0
             let textFieldXValue : CGFloat = 20.0
@@ -615,31 +615,31 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
             
             // NICKNAME TEXTFIELD
             let nicknameYValue : CGFloat = -150.0
-            self.heightLabel.transform = CGAffineTransformTranslate(self.view.transform, titleXvalue, nicknameYValue)
-            self.heightTextField.transform = CGAffineTransformTranslate(self.view.transform, textFieldXValue, nicknameYValue)
-            self.nicknameImageView.transform = CGAffineTransformTranslate(self.view.transform, imageXValue, nicknameYValue)
-            self.nickenameUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, nicknameYValue)
+            self.heightLabel.transform = self.view.transform.translatedBy(x: titleXvalue, y: nicknameYValue)
+            self.heightTextField.transform = self.view.transform.translatedBy(x: textFieldXValue, y: nicknameYValue)
+            self.nicknameImageView.transform = self.view.transform.translatedBy(x: imageXValue, y: nicknameYValue)
+            self.nickenameUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: nicknameYValue)
             
             // GENDER TEXTFIELD
             let genderYValue : CGFloat = -165.0
-            self.kjonnLabel.transform = CGAffineTransformTranslate(self.view.transform, titleXvalue, genderYValue)
-            self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, textFieldXValue, genderYValue)
-            self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, imageXValue, genderYValue)
-            self.genderUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, genderYValue)
+            self.kjonnLabel.transform = self.view.transform.translatedBy(x: titleXvalue, y: genderYValue)
+            self.chooseGenderTextField.transform = self.view.transform.translatedBy(x: textFieldXValue, y: genderYValue)
+            self.genderImageView.transform = self.view.transform.translatedBy(x: imageXValue, y: genderYValue)
+            self.genderUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: genderYValue)
             
             // AGE TEXTFIELD
             let ageYValue : CGFloat = -180.0
-            self.alderLabel.transform = CGAffineTransformTranslate(self.view.transform, titleXvalue, ageYValue)
-            self.ageTextField.transform = CGAffineTransformTranslate(self.view.transform, textFieldXValue, ageYValue)
-            self.ageImageview.transform = CGAffineTransformTranslate(self.view.transform, imageXValue, ageYValue)
-            self.ageUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, ageYValue)
+            self.alderLabel.transform = self.view.transform.translatedBy(x: titleXvalue, y: ageYValue)
+            self.ageTextField.transform = self.view.transform.translatedBy(x: textFieldXValue, y: ageYValue)
+            self.ageImageview.transform = self.view.transform.translatedBy(x: imageXValue, y: ageYValue)
+            self.ageUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: ageYValue)
             
             // WEIGHT TEXTFIELD
             let weightYValue : CGFloat = -195.0
-            self.weightLabel.transform = CGAffineTransformTranslate(self.view.transform, titleXvalue, weightYValue)
-            self.weightTextField.transform = CGAffineTransformTranslate(self.view.transform, textFieldXValue, weightYValue)
-            self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, imageXValue, weightYValue)
-            self.weightUnderscore.transform = CGAffineTransformTranslate(self.view.transform, 0.0, weightYValue)
+            self.weightLabel.transform = self.view.transform.translatedBy(x: titleXvalue, y: weightYValue)
+            self.weightTextField.transform = self.view.transform.translatedBy(x: textFieldXValue, y: weightYValue)
+            self.weightImageView.transform = self.view.transform.translatedBy(x: imageXValue, y: weightYValue)
+            self.weightUnderscore.transform = self.view.transform.translatedBy(x: 0.0, y: weightYValue)
             
             // BUTTON
             self.setButtonConst(0.0, yAxisTextFields: -195.0)
@@ -650,50 +650,50 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
             self.genderUnderscore.font = setAppColors.textHeadlinesFonts(13)
             self.ageUnderscore.font = setAppColors.textHeadlinesFonts(13)
             self.weightUnderscore.font = setAppColors.textHeadlinesFonts(13)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
             setAllConst(0.0, yAxisTextFields: -120.0)
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
             setAllConst(0.0, yAxisTextFields: -120.0)
         }
     }
     
-    func setTextFieldPlaces(xValue: CGFloat, yAxisTextFields: CGFloat){
+    func setTextFieldPlaces(_ xValue: CGFloat, yAxisTextFields: CGFloat){
         // TITLE UNITS
-        self.heightLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.kjonnLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.alderLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.weightLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.heightLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.kjonnLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.alderLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.weightLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         // TEXTFIELDS
-        self.heightTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.chooseGenderTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.ageTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.weightTextField.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.heightTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.chooseGenderTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.ageTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.weightTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         // UNIT IMAGES
-        self.nicknameImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.genderImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.ageImageview.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.weightImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.nicknameImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.genderImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.ageImageview.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.weightImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         // UNIT UNDERSCORES
-        self.nickenameUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.genderUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.ageUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.weightUnderscore.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+        self.nickenameUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.genderUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.ageUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.weightUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
     }
     
-    func setButtonConst(xValue: CGFloat, yAxisTextFields: CGFloat){
-        self.saveBtnOutlet.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.saveBtnImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+    func setButtonConst(_ xValue: CGFloat, yAxisTextFields: CGFloat){
+        self.saveBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.saveBtnImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
     }
     
-    func setAllConst(xValue: CGFloat, yAxisTextFields: CGFloat){
-        self.headerImageView.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.titleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
-        self.subtitleLabel.transform = CGAffineTransformTranslate(self.view.transform, xValue, yAxisTextFields)
+    func setAllConst(_ xValue: CGFloat, yAxisTextFields: CGFloat){
+        self.headerImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.titleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
+        self.subtitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
         
         setTextFieldPlaces(xValue, yAxisTextFields: yAxisTextFields)
         setButtonConst(xValue, yAxisTextFields: yAxisTextFields)
@@ -701,31 +701,51 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
 }
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 extension String {
     
-    func containsCharactersIn(matchCharacters: String) -> Bool {
-        let characterSet = NSCharacterSet(charactersInString: matchCharacters)
-        return self.rangeOfCharacterFromSet(characterSet) != nil
+    func containsCharactersIn(_ matchCharacters: String) -> Bool {
+        let characterSet = CharacterSet(charactersIn: matchCharacters)
+        return self.rangeOfCharacter(from: characterSet) != nil
     }
     
-    func containsOnlyCharactersIn(matchCharacters: String) -> Bool {
-        let disallowedCharacterSet = NSCharacterSet(charactersInString: matchCharacters).invertedSet
-        return self.rangeOfCharacterFromSet(disallowedCharacterSet) == nil
+    func containsOnlyCharactersIn(_ matchCharacters: String) -> Bool {
+        let disallowedCharacterSet = CharacterSet(charactersIn: matchCharacters).inverted
+        return self.rangeOfCharacter(from: disallowedCharacterSet) == nil
     }
     
     
-    func doesNotContainCharactersIn(matchCharacters: String) -> Bool {
-        let characterSet = NSCharacterSet(charactersInString: matchCharacters)
-        return self.rangeOfCharacterFromSet(characterSet) == nil
+    func doesNotContainCharactersIn(_ matchCharacters: String) -> Bool {
+        let characterSet = CharacterSet(charactersIn: matchCharacters)
+        return self.rangeOfCharacter(from: characterSet) == nil
     }
     
     func isNumeric() -> Bool
     {
-        let scanner = NSScanner(string: self)
-        scanner.locale = NSLocale.currentLocale()
+        let scanner = Scanner(string: self)
+        scanner.locale = Locale.current
         
-        return scanner.scanDecimal(nil) && scanner.atEnd
+        return scanner.scanDecimal(nil) && scanner.isAtEnd
     }
     
     

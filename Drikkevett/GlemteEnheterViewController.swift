@@ -40,8 +40,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     let dayAfterUtils = DayAfterUtils()
     
     // endOf og startOf Planlegg kvelden sesjon
-    var startOfPlanPartyStamp : NSDate = NSDate()
-    var endOfPlanPartyStamp : NSDate = NSDate()
+    var startOfPlanPartyStamp : Date = Date()
+    var endOfPlanPartyStamp : Date = Date()
     
     // hente sessionsnummer
     var fetchSessionNumber : Int = 0
@@ -77,7 +77,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     // planlagte enheter
     var plannedNumberOfUnits = 0
     
-    var status : AnyObject = Status.DEFAULT
+    var status : AnyObject = Status.DEFAULT as AnyObject
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,10 +91,10 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         setConstraints()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let pageControll = UIPageControl.appearance()
-        pageControll.hidden = false
+        pageControll.isHidden = false
         
         status = statusUtils.getState()
         stateHandler(status)
@@ -106,8 +106,8 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
      */
     
     func checkSessionTimer(){
-        var timeTimer = NSTimer()
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(GlemteEnheterViewController.updateStatus), userInfo: nil, repeats: true)
+        var timeTimer = Timer()
+        timeTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(GlemteEnheterViewController.updateStatus), userInfo: nil, repeats: true)
     }
     
     func updateStatus(){
@@ -115,7 +115,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         stateHandler(status)
     }
     
-    func stateHandler(status : AnyObject){
+    func stateHandler(_ status : AnyObject){
         brainCoreData.fetchUserData()
         getUnits()
         getPlannedUnits()
@@ -152,12 +152,12 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     func getUnits(){
         var historikk = [Historikk]()
         
-        let timeStampFetch = NSFetchRequest(entityName: "Historikk")
+        let timeStampFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Historikk")
         timeStampFetch.sortDescriptors = [NSSortDescriptor(key: "dato", ascending: false)]
         timeStampFetch.fetchLimit = 1
         
         do {
-            historikk = try moc.executeFetchRequest(timeStampFetch) as! [Historikk]
+            historikk = try moc.fetch(timeStampFetch) as! [Historikk]
             for antOlLoop in historikk {
                 consumedBeers = antOlLoop.antallOl! as Int
             }
@@ -175,7 +175,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         }
     }
     
-    func calculateCosts(b:Int, w:Int, d:Int, s:Int) -> Int{
+    func calculateCosts(_ b:Int, w:Int, d:Int, s:Int) -> Int{
         return ((b * brainCoreData.fetchUserData().beerCost) + (w * brainCoreData.fetchUserData().wineCost) + (d * brainCoreData.fetchUserData().drinkCost) + (s * brainCoreData.fetchUserData().shotCost))
     }
     
@@ -183,64 +183,64 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
      ADD UNITS DAY AFTER
     */
     
-    @IBAction func addBeerDayAfter(sender: AnyObject) {
+    @IBAction func addBeerDayAfter(_ sender: AnyObject) {
         addUnitPopUp("Legg til Øl", messageAlCon: "Glemt av øl? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Beer")
     }
     
-    @IBAction func addWineDayAfter(sender: AnyObject) {
+    @IBAction func addWineDayAfter(_ sender: AnyObject) {
         addUnitPopUp("Legg til Vin", messageAlCon: "Glemt av vin? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Wine")
     }
     
-    @IBAction func addDrinkDayAfter(sender: AnyObject) {
+    @IBAction func addDrinkDayAfter(_ sender: AnyObject) {
         addUnitPopUp("Legg til Drink", messageAlCon: "Glemt av drink? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Drink")
     }
     
-    @IBAction func addShotDayAfter(sender: AnyObject) {
+    @IBAction func addShotDayAfter(_ sender: AnyObject) {
         addUnitPopUp("Legg til Shot", messageAlCon: "Glemt av shot? Det er ikke for sent", titleActionOne: "Legg til", titleActionTwo: "Avbryt", unit: "Shot")
     }
     
-    func addUnitPopUp(titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String, unit: String){
+    func addUnitPopUp(_ titleAlCon: String, messageAlCon: String, titleActionOne: String, titleActionTwo: String, unit: String){
         let datepicker = UIDatePicker()
-        datepicker.datePickerMode = .DateAndTime
-        var getPlanPartyStamps : [NSDate] = [NSDate]()
-        getPlanPartyStamps = brainCoreData.getPlanPartySession()
+        datepicker.datePickerMode = .dateAndTime
+        var getPlanPartyStamps : [Date] = [Date]()
+        getPlanPartyStamps = brainCoreData.getPlanPartySession() as [Date]
         startOfPlanPartyStamp = getPlanPartyStamps[0]
         endOfPlanPartyStamp = getPlanPartyStamps[1]
         
         datepicker.minimumDate = startOfPlanPartyStamp
         datepicker.maximumDate = endOfPlanPartyStamp
         datepicker.setDate(endOfPlanPartyStamp, animated: true)
-        datepicker.backgroundColor = UIColor.darkGrayColor()
+        datepicker.backgroundColor = UIColor.darkGray
         datepicker.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
         
-        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .Alert)
-        vc.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+        let vc = UIAlertController(title: titleAlCon, message: messageAlCon, preferredStyle: .alert)
+        vc.addTextField(configurationHandler: { (textField) -> Void in
             textField.delegate = self
             textField.inputView = datepicker
             textField.placeholder = "Dato"
         })
-        vc.addAction(UIAlertAction(title: titleActionOne, style: .Default, handler: { (action) -> Void in
+        vc.addAction(UIAlertAction(title: titleActionOne, style: .default, handler: { (action) -> Void in
             self.datePickValueChangedUnit(datepicker, unit: unit)
             self.resetHistoryValues(unit)
             self.status = self.statusUtils.getState()
             self.stateHandler(self.status)
             self.fillPieChart()
         }))
-        vc.addAction(UIAlertAction(title: titleActionTwo, style: .Cancel, handler: nil))
-        presentViewController(vc, animated: true, completion: nil)
+        vc.addAction(UIAlertAction(title: titleActionTwo, style: .cancel, handler: nil))
+        present(vc, animated: true, completion: nil)
     }
     
-    func datePickValueChangedUnit(sender:UIDatePicker, unit: String){
+    func datePickValueChangedUnit(_ sender:UIDatePicker, unit: String){
         let pickerTime = sender.date
         
         brainCoreData.seedTimeStamp(pickerTime, unitAlcohol: unit)
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
     }
     
-    func resetHistoryValues(unit: String){
+    func resetHistoryValues(_ unit: String){
         self.brainCoreData.fetchUserData()
         self.getUnits()
         
@@ -278,17 +278,17 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
      END DAY-AFTER BTN
      */
     
-    @IBAction func endDayAfterBtn(sender: UIButton) {
+    @IBAction func endDayAfterBtn(_ sender: UIButton) {
         endDayAfterAlert("Avslutt Dagen Derpå?", msg: "Du vil ikke kunne gå tilbake", cancelTitle: "Avbryt", confirmTitle: "Bekreft")
     }
     
-    func endDayAfterAlert(titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
+    func endDayAfterAlert(_ titleMsg: String, msg: String, cancelTitle:String, confirmTitle: String ){
         let alertController = UIAlertController(title: titleMsg, message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Destructive, handler:{ (action: UIAlertAction!) in
+            msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
         }))
         
-        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.Default, handler:  { action in
+        alertController.addAction(UIAlertAction(title:confirmTitle, style: UIAlertActionStyle.default, handler:  { action in
             self.consumedBeers = 0
             self.consumedWines = 0
             self.consumedDrinks = 0
@@ -305,9 +305,9 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             let unitsSold = [Double(self.consumedBeers), Double(self.consumedWines), Double(self.consumedDrinks), Double(self.consumedShots)]
             self.setChart(pieChartValue, values: unitsSold)
             self.visuals_not_running()
-            self.statusUtils.setState(Status.NOT_RUNNING)
+            self.statusUtils.setState(Status.NOT_RUNNING as AnyObject)
         }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     /*
@@ -333,20 +333,24 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         shotSliceColor = UIColor(red: 139/255, green: 65/255, blue: 232/255, alpha: 1.0) // BLÅ: 0, 170, 255
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(_ dataPoints: [String], values: [Double]) {
         setSliceColors()
         
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "???")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "???")
+        let kek = PieChartData(dataSet: pieChartDataSet)
+        //let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
-        pieChartView.data = pieChartData
-        pieChartData.setDrawValues(false)
+        kek.setDrawValues(false)
+        
+        pieChartView.data = kek
+        
+        
         
         var colors: [UIColor] = []
         
@@ -372,42 +376,42 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         var centerText = ""
         centerText = "\(totalUnits)"
         
-        var fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
+        var fontAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
         
         if(totalUnits > totalPlannedUnits){
-            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
+            fontAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30.0), NSForegroundColorAttributeName: UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)]
             yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
         } else {
-            fontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(30.0), NSForegroundColorAttributeName: UIColor.whiteColor()]
-            yesterdaysCosts.textColor = UIColor.whiteColor()
+            fontAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30.0), NSForegroundColorAttributeName: UIColor.white]
+            yesterdaysCosts.textColor = UIColor.white
         }
         
         let attriButedString = NSAttributedString(string: centerText, attributes: fontAttributes)
         pieChartView.centerAttributedText = attriButedString
-        pieChartView.userInteractionEnabled = true
+        pieChartView.isUserInteractionEnabled = true
     }
     
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         setSliceColors()
-        if(entry.xIndex == 0){
+        if(entry.x == 0){
             beerLabel.textColor = beerSliceColor
             wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
             drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
             shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
         }
-        if(entry.xIndex == 1){
+        if(entry.x == 1){
             wineLabel.textColor = wineSliceColor
             drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
             shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
             beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
         }
-        if(entry.xIndex == 2){
+        if(entry.x == 2){
             drinkLabel.textColor = drinkSliceColor
             beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
             wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
             shotLabel.textColor = setAppColors.textUnderHeadlinesColors()
         }
-        if(entry.xIndex == 3){
+        if(entry.x == 3){
             shotLabel.textColor = shotSliceColor
             beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
             wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
@@ -415,7 +419,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         }
     }
     
-    func chartValueNothingSelected(chartView: ChartViewBase) {
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
         self.beerLabel.textColor = setAppColors.textUnderHeadlinesColors()
         self.wineLabel.textColor = setAppColors.textUnderHeadlinesColors()
         self.drinkLabel.textColor = setAppColors.textUnderHeadlinesColors()
@@ -427,29 +431,29 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
      */
     
     func getPlannedUnits(){ // GETTING
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         // VISUELLE ENHET VERDIER
-        if let beer : Int = defaults.integerForKey(defaultKeys.beerKey) {
+        if let beer : Int = defaults.integer(forKey: defaultKeys.beerKey) {
             plannedBeers = beer
         }
-        if let wine : Int = defaults.integerForKey(defaultKeys.wineKey) {
+        if let wine : Int = defaults.integer(forKey: defaultKeys.wineKey) {
             plannedWines = wine
         }
-        if let drink : Int = defaults.integerForKey(defaultKeys.drinkKey) {
+        if let drink : Int = defaults.integer(forKey: defaultKeys.drinkKey) {
             plannedDrink = drink
         }
-        if let shot : Int = defaults.integerForKey(defaultKeys.shotKey) {
+        if let shot : Int = defaults.integer(forKey: defaultKeys.shotKey) {
             plannedShots = shot
         }
     }
     
     func clearPlannedUserDefaults(){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(0, forKey: defaultKeys.beerKey)
-        defaults.setInteger(0, forKey: defaultKeys.wineKey)
-        defaults.setInteger(0, forKey: defaultKeys.drinkKey)
-        defaults.setInteger(0, forKey: defaultKeys.shotKey)
-        defaults.setDouble(0, forKey: defaultKeys.totalNrOfUnits)
+        let defaults = UserDefaults.standard
+        defaults.set(0, forKey: defaultKeys.beerKey)
+        defaults.set(0, forKey: defaultKeys.wineKey)
+        defaults.set(0, forKey: defaultKeys.drinkKey)
+        defaults.set(0, forKey: defaultKeys.shotKey)
+        defaults.set(0, forKey: defaultKeys.totalNrOfUnits)
         defaults.synchronize()
     }
     
@@ -473,22 +477,22 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         self.overallSubtitle.text = "Klikk på enhetene for å legge til"
         hideVisuals(false)
         
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
-            self.xImageBtn.hidden = true
-            self.endDayAfterButtonOutlet.hidden = false
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            self.xImageBtn.isHidden = true
+            self.endDayAfterButtonOutlet.isHidden = false
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
-            self.xImageBtn.hidden = false
-            self.endDayAfterButtonOutlet.hidden = false
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.xImageBtn.isHidden = false
+            self.endDayAfterButtonOutlet.isHidden = false
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-            self.xImageBtn.hidden = false
-            self.endDayAfterButtonOutlet.hidden = false
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+            self.xImageBtn.isHidden = false
+            self.endDayAfterButtonOutlet.isHidden = false
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
-            self.xImageBtn.hidden = false
-            self.endDayAfterButtonOutlet.hidden = false
+            self.xImageBtn.isHidden = false
+            self.endDayAfterButtonOutlet.isHidden = false
         }
         
         checkIfUserWentOverPlanned()
@@ -497,31 +501,31 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     func checkIfUserWentOverPlanned(){
         // UNITS
         if(consumedBeers > plannedBeers){
-            self.beerLabel.textColor = UIColor.redColor()
+            self.beerLabel.textColor = UIColor.red
         } else {
-            self.beerLabel.textColor = UIColor.whiteColor()
+            self.beerLabel.textColor = UIColor.white
         }
         if(consumedWines > plannedWines){
-            self.wineLabel.textColor = UIColor.redColor()
+            self.wineLabel.textColor = UIColor.red
         } else {
-            self.beerLabel.textColor = UIColor.whiteColor()
+            self.beerLabel.textColor = UIColor.white
         }
         if(consumedDrinks > plannedDrink){
-            self.drinkLabel.textColor = UIColor.redColor()
+            self.drinkLabel.textColor = UIColor.red
         } else {
-            self.drinkLabel.textColor = UIColor.whiteColor()
+            self.drinkLabel.textColor = UIColor.white
         }
         if(consumedShots > plannedShots){
-            self.shotLabel.textColor = UIColor.redColor()
+            self.shotLabel.textColor = UIColor.red
         } else {
-            self.shotLabel.textColor = UIColor.whiteColor()
+            self.shotLabel.textColor = UIColor.white
         }
         
         // COSTS
         if(totalUnits > totalPlannedUnits){
             self.yesterdaysCosts.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
         } else {
-            self.yesterdaysCosts.textColor = UIColor.whiteColor()
+            self.yesterdaysCosts.textColor = UIColor.white
         }
         if(brainCoreData.fetchGoal() < yestHighProm){
             yesterdaysHighestProm.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
@@ -536,24 +540,24 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         self.overallSubtitle.text = "Her vil du se statistikk over den siste kvelden du har registrert"
     }
     
-    func hideVisuals(isHidden:Bool){
-        self.pieChartView.hidden = isHidden
-        self.beerOutletButton.hidden = isHidden
-        self.wineOutletButton.hidden = isHidden
-        self.drinkOutletButton.hidden = isHidden
-        self.shotOutletButton.hidden = isHidden
-        self.beerLabel.hidden = isHidden
-        self.wineLabel.hidden = isHidden
-        self.drinkLabel.hidden = isHidden
-        self.shotLabel.hidden = isHidden
-        self.yesterdaysCosts.hidden = isHidden
-        self.currentPromille.hidden = isHidden
-        self.yesterdaysHighestProm.hidden = isHidden
-        self.costsTitleLabel.hidden = isHidden
-        self.currPromTitleLabel.hidden = isHidden
-        self.yestHighestPromTitleLabel.hidden = isHidden
-        self.endDayAfterButtonOutlet.hidden = isHidden
-        self.xImageBtn.hidden = isHidden
+    func hideVisuals(_ isHidden:Bool){
+        self.pieChartView.isHidden = isHidden
+        self.beerOutletButton.isHidden = isHidden
+        self.wineOutletButton.isHidden = isHidden
+        self.drinkOutletButton.isHidden = isHidden
+        self.shotOutletButton.isHidden = isHidden
+        self.beerLabel.isHidden = isHidden
+        self.wineLabel.isHidden = isHidden
+        self.drinkLabel.isHidden = isHidden
+        self.shotLabel.isHidden = isHidden
+        self.yesterdaysCosts.isHidden = isHidden
+        self.currentPromille.isHidden = isHidden
+        self.yesterdaysHighestProm.isHidden = isHidden
+        self.costsTitleLabel.isHidden = isHidden
+        self.currPromTitleLabel.isHidden = isHidden
+        self.yestHighestPromTitleLabel.isHidden = isHidden
+        self.endDayAfterButtonOutlet.isHidden = isHidden
+        self.xImageBtn.isHidden = isHidden
     }
     
     func setColorsAndFontsDagenDerpa(){
@@ -578,7 +582,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         
         // BUTTONS
         beerOutletButton.titleLabel?.font = setAppColors.buttonFonts(14)
-        self.beerOutletButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        self.beerOutletButton.titleLabel?.textAlignment = NSTextAlignment.center
         wineOutletButton.titleLabel?.font = setAppColors.buttonFonts(14)
         drinkOutletButton.titleLabel?.font = setAppColors.buttonFonts(14)
         shotOutletButton.titleLabel?.font = setAppColors.buttonFonts(14)
@@ -604,45 +608,45 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
         
         // BUTTONS
         endDayAfterButtonOutlet.titleLabel?.font = setAppColors.buttonFonts(14)
-        endDayAfterButtonOutlet.setTitle("Avslutt", forState: UIControlState.Normal)
+        endDayAfterButtonOutlet.setTitle("Avslutt", for: UIControlState())
     }
     
     func setConstraints(){
         // CONSTRAINTS
-        if UIScreen.mainScreen().bounds.size.height == 480 {
+        if UIScreen.main.bounds.size.height == 480 {
             // iPhone 4
             print("iphone 4 - GlemteEnheter")
             let unitLabButHeight : CGFloat = -50.0
             let unitLabButWidthBeerWine : CGFloat = 18.0
             let unitLabButWidthDrinkShot : CGFloat = -18.0
             // PIE CHART
-            self.pieChartView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -50.0)
+            self.pieChartView.transform = self.view.transform.translatedBy(x: 0.0, y: -50.0)
             
             // TITLE AND SUBTITLE
             self.overallTitle.font = setAppColors.textHeadlinesFonts(18)
             self.overallSubtitle.font = setAppColors.textUnderHeadlinesFonts(11)
-            self.overallTitle.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -17.0)
-            self.overallSubtitle.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -32.0)
+            self.overallTitle.transform = self.view.transform.translatedBy(x: 0.0, y: -17.0)
+            self.overallSubtitle.transform = self.view.transform.translatedBy(x: 0.0, y: -32.0)
             
             // TOTAL RESULTS LABELS
             self.beerLabel.font = setAppColors.textUnderHeadlinesFonts(20)
             self.wineLabel.font = setAppColors.textUnderHeadlinesFonts(20)
             self.drinkLabel.font = setAppColors.textUnderHeadlinesFonts(20)
             self.shotLabel.font = setAppColors.textUnderHeadlinesFonts(20)
-            self.beerLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.wineLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.drinkLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
-            self.shotLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
+            self.beerLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.wineLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.drinkLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
+            self.shotLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
             
             // BUTTONS
             beerOutletButton.titleLabel?.font = setAppColors.buttonFonts(11)
             wineOutletButton.titleLabel?.font = setAppColors.buttonFonts(11)
             drinkOutletButton.titleLabel?.font = setAppColors.buttonFonts(11)
             shotOutletButton.titleLabel?.font = setAppColors.buttonFonts(11)
-            self.beerOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.wineOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.drinkOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
-            self.shotOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
+            self.beerOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.wineOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.drinkOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
+            self.shotOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
             
             let statsHeight : CGFloat = -85.0
             let titleStatsHeight : CGFloat = -95.0
@@ -651,58 +655,58 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
             yesterdaysCosts.font = setAppColors.textUnderHeadlinesFonts(20)
             yesterdaysHighestProm.font = setAppColors.textUnderHeadlinesFonts(20)
             currentPromille.font = setAppColors.textUnderHeadlinesFonts(20)
-            self.yesterdaysCosts.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
-            self.yesterdaysHighestProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
-            self.currentPromille.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
+            self.yesterdaysCosts.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
+            self.yesterdaysHighestProm.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
+            self.currentPromille.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
             
             // TITLES GÅRSDAGENS ERFARINGER
             costsTitleLabel.font = setAppColors.textHeadlinesFonts(11)
             yestHighestPromTitleLabel.font = setAppColors.textHeadlinesFonts(11)
             currPromTitleLabel.font = setAppColors.textHeadlinesFonts(11)
-            self.costsTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
-            self.yestHighestPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
-            self.currPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
+            self.costsTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
+            self.yestHighestPromTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
+            self.currPromTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
             
-            self.xImageBtn.hidden = true
-        } else if UIScreen.mainScreen().bounds.size.height == 568 {
+            self.xImageBtn.isHidden = true
+        } else if UIScreen.main.bounds.size.height == 568 {
             // IPhone 5
             let unitLabButHeight : CGFloat = -37.0
             let unitLabButWidthBeerWine : CGFloat = 18.0
             let unitLabButWidthDrinkShot : CGFloat = -18.0
             // PIE CHART
-            self.pieChartView.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -37.0)
+            self.pieChartView.transform = self.view.transform.translatedBy(x: 0.0, y: -37.0)
             
             // TITLE AND SUBTITLE
-            self.overallTitle.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -10.0)
-            self.overallSubtitle.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -18.0)
+            self.overallTitle.transform = self.view.transform.translatedBy(x: 0.0, y: -10.0)
+            self.overallSubtitle.transform = self.view.transform.translatedBy(x: 0.0, y: -18.0)
             
             // TOTAL RESULTS LABELS
-            self.beerLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.wineLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.drinkLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
-            self.shotLabel.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
+            self.beerLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.wineLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.drinkLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
+            self.shotLabel.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
             
             // BUTTONS
-            self.beerOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.wineOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthBeerWine, unitLabButHeight)
-            self.drinkOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
-            self.shotOutletButton.transform = CGAffineTransformTranslate(self.view.transform, unitLabButWidthDrinkShot, unitLabButHeight)
+            self.beerOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.wineOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthBeerWine, y: unitLabButHeight)
+            self.drinkOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
+            self.shotOutletButton.transform = self.view.transform.translatedBy(x: unitLabButWidthDrinkShot, y: unitLabButHeight)
             
             let statsHeight : CGFloat = -65.0
             let titleStatsHeight : CGFloat = -75.0
             
             // RESULTS GÅRSDAGENS ERFARINGER
-            self.yesterdaysCosts.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
-            self.yesterdaysHighestProm.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
-            self.currentPromille.transform = CGAffineTransformTranslate(self.view.transform, 0.0, statsHeight)
+            self.yesterdaysCosts.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
+            self.yesterdaysHighestProm.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
+            self.currentPromille.transform = self.view.transform.translatedBy(x: 0.0, y: statsHeight)
             
             // TITLES GÅRSDAGENS ERFARINGER
-            self.costsTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
-            self.yestHighestPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
-            self.currPromTitleLabel.transform = CGAffineTransformTranslate(self.view.transform, 0.0, titleStatsHeight)
-        } else if UIScreen.mainScreen().bounds.size.width == 375 {
+            self.costsTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
+            self.yestHighestPromTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
+            self.currPromTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: titleStatsHeight)
+        } else if UIScreen.main.bounds.size.width == 375 {
             // iPhone 6
-        } else if UIScreen.mainScreen().bounds.size.width == 414 {
+        } else if UIScreen.main.bounds.size.width == 414 {
             // iPhone 6+
         }
     }
