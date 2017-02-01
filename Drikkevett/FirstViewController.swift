@@ -113,6 +113,13 @@ class FirstViewController: UIViewController {
         
         // TIMERS
         checkSessionTimer()
+        
+        
+    }
+    
+    func isGoalDateReached() -> Bool {
+        let coreData = CoreDataMethods()
+        return Date().compare(coreData.fetchGoalDate() as Date) == ComparisonResult.orderedDescending
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,6 +142,17 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func startKveld(_ sender: AnyObject) {
+        if (isGoalDateReached()){
+            let alert = UIAlertController(title: "Du har nådd målet ditt", message: "For å kunne starte kvelder må du oppdatere måldato.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Oppdater måldato", style: .default) { action in
+                self.performSegue(withIdentifier: "goalDateSegue2", sender: self)
+            })
+            alert.addAction(UIAlertAction(title: "Sett senere", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
         let titleValueString = startEndPartyBtn.currentTitle!
         if(titleValueString == "Start Kvelden"){
             startBtnHandler()
@@ -144,6 +162,17 @@ class FirstViewController: UIViewController {
         }
         statusHandler(status)
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goalDateSegue2" {
+            let vc = segue.destination
+            if vc is GratulasjonsViewController {
+                let grat = vc as! GratulasjonsViewController
+                grat.cameFrom = "plan"
+            }
+        }
+    }*/
     
     @IBAction func minusUnitButton(_ sender: AnyObject) {
         fetchUnitTypeFromSwipe = userDefaultUtils.getFetchedValue()

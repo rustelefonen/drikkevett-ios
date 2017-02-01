@@ -75,6 +75,8 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     var isGratulationViewRunned = false
     
+    //var cameFrom:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColorsAndFontsUpdateGoals()
@@ -319,8 +321,9 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
                 self.navigationController?.isNavigationBarHidden = false
                 self.tabBarController?.tabBar.isHidden = false
                 self.isGratulationViewRunned = false
-                self.performSegue(withIdentifier: "newGoalRegSegue", sender: self)
-                // newGoalRegSegue
+                
+                self.performSegue(withIdentifier: "newGoalSegue2", sender: self)
+                
                 
             } else {
                 self.navigationController?.popViewController(animated: true)

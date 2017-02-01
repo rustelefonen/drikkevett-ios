@@ -61,6 +61,8 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     var overGoal : Int = 0
     var underGoal : Int = 0
     
+    //var cameFrom:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColorsFonts()
@@ -134,6 +136,7 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
         if (segue.identifier == "gratulationSegue") {
             let upcoming: OppdaterMalViewController = segue.destination as! OppdaterMalViewController
             upcoming.isGratulationViewRunned = true
+            //upcoming.cameFrom = cameFrom
         }
     }
     

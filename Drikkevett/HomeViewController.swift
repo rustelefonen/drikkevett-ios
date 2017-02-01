@@ -16,12 +16,20 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         scrollView.contentSize.height = 934
         setColorsHomeView()
-        if(isGoalDateReached()) { self.performSegue(withIdentifier: "goalDateSegue", sender: self) }
+        
+        //setGoalToToday()
+        
+        //if(isGoalDateReached()) { self.performSegue(withIdentifier: "goalDateSegue", sender: self) }
         
         // Rename back button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         
+    }
+    
+    func setGoalToToday(){
+        let brainCoreData = CoreDataMethods()
+        brainCoreData.updateUserDataGoals(2.0, updateGoalDate: Date())
     }
     
     func setColorsHomeView(){
