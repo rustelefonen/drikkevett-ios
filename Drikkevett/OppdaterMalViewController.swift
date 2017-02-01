@@ -189,7 +189,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
                             self.pickGoalProm.selectRow(i, inComponent: 0, animated: true)
                             goalPromille = tempGoalPromille
                             //self.pickGoalTextField.text = "\(goalPromille)"
-                            self.pickGoalTextField.attributedPlaceholder = NSAttributedString(string:"\(goalPromille)",
+                            self.pickGoalTextField.attributedPlaceholder = NSAttributedString(string:"\(goalPromille!)",
                                 attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
                         }
                     }

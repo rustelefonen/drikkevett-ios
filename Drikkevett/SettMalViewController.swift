@@ -132,7 +132,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         } else if(goalPromille >= maxPromille){
             errorMessage(errorMsg: "Du kan ikke legge inn høyere promille enn \(maxPromille)")
         } else if let goalPromilleString:String? = String(goalPromille!){
-            let message = "Målsetning: \(goalPromille)\n\(dateMessage)"
+            let message = "Målsetning: \(String(format: "%.2f", goalPromille!))\n\(dateMessage)"
             confirmMessage("Mål", errorMsg: message, cancelMsg:"Avbryt", confirmMsg: "Bekreft")
         }
     }
@@ -145,6 +145,24 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func privacyMessage(){
+        let message = "For å regne ut promille mest mulig nøyaktig, ber appen deg om å oppgi kjønn, alder og vekt. Ønsker du å opprette profilbilde behøver appen tilgang på kamera og galleri. Du kan velge å ikke gi appen tilgang til dette. All informasjon som lagres i appen krypteres på din telefon og vil ikke sendes videre. Dette gjelder alle versjoner i iOS og versjoner fra og med 5.0 (lollipop) i Android. Kildekoden til appen ligger åpen på Github under brukeren rustelefonen: https://github.com/rustelefonen."
+        let refreshAlert = UIAlertController(title: "Personvernerklæring", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
+            self.isFirstRegistrationCompleted()
+            self.isAppGuidanceDone()
+            self.performSegue(withIdentifier: "goalSegue", sender: self)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     func confirmMessage(_ titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
         let alertController = UIAlertController(title: titleMsg, message:
             errorMsg, preferredStyle: UIAlertControllerStyle.alert)
@@ -153,12 +171,16 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         }))
         
         alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
-            self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
+            self.privacyMessage()
+            /*self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
             self.isFirstRegistrationCompleted()
             self.isAppGuidanceDone()
             self.performSegue(withIdentifier: "goalSegue"
-                , sender: self) }))
-        self.present(alertController, animated: true, completion: nil)
+                , sender: self) */}))
+        self.present(alertController, animated: true, completion: { action in
+            
+        })
+
     }
     
     func isAppGuidanceDone()->Bool{

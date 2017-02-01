@@ -12,7 +12,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     let brain = SkallMenyBrain()
     let dateUtil = DateUtil()
     
-    var testArray = [Historikk]()
     var sectionsInTable = [String]()
     
     // Set app Colors
@@ -49,14 +48,11 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     
     // TESTING SECTIONS:
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return logItems.count
-        print("Number of rows? \(getSectionItems(section).count)")
+        let count = getSectionItems(section).count
         if(sectionsInTable.isEmpty){
-            print("return 1, bec sec is empty! number of rows in section")
-            return self.getSectionItems(section).count + 1
+            return count + 1
         } else {
-            print("return getsecitems(section).count")
-            return self.getSectionItems(section).count
+            return count
         }
     }
     
@@ -87,32 +83,27 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
         cell.undertitleLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
         cell.undertitleLabel?.textColor = UIColor.white
+        cell.undertitleLabel?.font = setAppColors.cellTextFonts(15)
+        cell.dateLabel?.layer.cornerRadius = 0.5 * cell.dateLabel.bounds.size.width
+        cell.dateLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
+        cell.dateLabel?.layer.borderWidth = 1.0
+        cell.dateLabel?.textColor = UIColor.white
+        cell.headTitleLabel?.font = setAppColors.cellTextFonts(18)
         
 
         let sectionItems = self.getSectionItems((indexPath as NSIndexPath).section)
         
         if sectionItems.isEmpty {
-            cell.textLabel?.textColor = UIColor.red
             cell.textLabel?.textColor = UIColor.green
-            
-            
             cell.dateLabel?.text = "Dato"
             cell.dateLabel?.font = setAppColors.cellTextFonts(14)
-            cell.dateLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
-            cell.dateLabel?.layer.cornerRadius = 0.5 * cell.dateLabel.bounds.size.width;
-            cell.dateLabel?.layer.borderWidth = 1.0;
-            cell.dateLabel?.textColor = UIColor.white
             cell.dateLabel?.layer.borderColor = UIColor.white.cgColor
             
             let headTitleString = "Ingen kvelder lagt til"
             cell.undertitleLabel?.text = "\(headTitleString)"
-            cell.undertitleLabel?.font = setAppColors.cellTextFonts(15)
-            
             cell.headTitleLabel?.text = "Høyeste Promille"
             cell.headTitleLabel?.textColor = UIColor.white
-            cell.headTitleLabel?.font = setAppColors.cellTextFonts(18)
             cell.headTitleLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
-            
             cell.accessoryType = UITableViewCellAccessoryType.none
             cell.isUserInteractionEnabled = false
         } else {
@@ -121,44 +112,27 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             if(highestPromilleTest > fetchGoal()) {
                 cell.textLabel?.textColor = UIColor.red
                 cell.dateLabel?.layer.borderColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0).cgColor
+                cell.headTitleLabel?.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0) // RED
             } else {
                 cell.textLabel?.textColor = UIColor.green
                 cell.dateLabel?.layer.borderColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0).cgColor
-            }
-            
-            // DATO TITLE CELL:
-            let dateTextItem = sectionItems[(indexPath as NSIndexPath).row].dato
-            
-            let getDate = dateUtil.getDateOfMonth(dateTextItem)
-            let stringDate = "\(getDate!)"
-            cell.dateLabel?.text = "\(stringDate)"
-            
-            cell.dateLabel?.font = setAppColors.cellTextFonts(18)
-            cell.dateLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
-            cell.dateLabel?.layer.cornerRadius = 0.5 * cell.dateLabel.bounds.size.width;
-            cell.dateLabel?.layer.borderWidth = 1.0;
-            cell.dateLabel?.textColor = UIColor.white
-            
-            let getCosts = sectionItems[(indexPath as NSIndexPath).row].forbruk as! Int
-            let getDay = dateUtil.getDayOfWeekAsString(dateTextItem)
-            
-            let headTitleString = "\(getDay!) brukte du \(getCosts),-"
-            print("HeadTitleString: \(headTitleString)")
-            
-            cell.undertitleLabel?.text = "\(headTitleString)"
-            cell.undertitleLabel?.font = setAppColors.cellTextFonts(15)
-            
-            let highProm = sectionItems[(indexPath as NSIndexPath).row].hoyestePromille as! Double
-            let faenskap = String(format: "%.2f", highProm)
-            
-            cell.headTitleLabel?.text = "Høyeste promille \(faenskap)"
-            
-            if(highestPromilleTest > fetchGoal()){
-                cell.headTitleLabel?.textColor = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0) // RED
-            } else {
                 cell.headTitleLabel?.textColor = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0) // GREEN
             }
-            cell.headTitleLabel?.font = setAppColors.cellTextFonts(18)
+            
+            let dateTextItem = sectionItems[(indexPath as NSIndexPath).row].dato
+            let getDate = dateUtil.getDateOfMonth(dateTextItem)
+            cell.dateLabel?.text = "\(getDate!)"
+            
+            cell.dateLabel?.font = setAppColors.cellTextFonts(18)
+            
+            let getDay = dateUtil.getDayOfWeekAsString(dateTextItem)
+            let getCosts = sectionItems[(indexPath as NSIndexPath).row].forbruk as! Int
+            cell.undertitleLabel?.text = "\(getDay!) brukte du \(getCosts),-"
+            
+            let highProm = sectionItems[(indexPath as NSIndexPath).row].hoyestePromille as! Double
+            let formattedHighestBac = String(format: "%.2f", highProm)
+            cell.headTitleLabel?.text = "Høyeste promille \(formattedHighestBac)"
+            
             cell.headTitleLabel?.highlightedTextColor = setAppColors.cellTextColorsPressed()
             
             cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
@@ -172,7 +146,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sectionItems = self.getSectionItems((indexPath as NSIndexPath).section)
         let logItem = sectionItems[(indexPath as NSIndexPath).row]
-        print(logItem.dato)
         self.performSegue(withIdentifier: "showCellSegue", sender: self)
     }
     
@@ -186,7 +159,6 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             var sectionItems = self.getSectionItems((indexPath as NSIndexPath).section)
             
             let object = sectionItems.remove(at: (indexPath as NSIndexPath).row)
-            
 
             managedObjectContext.delete(object)
             brainCoreData.deleteCellGraphHistory(object.sessionNumber as! Int)
@@ -221,12 +193,9 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         return 75
     }
     
-    // TESTING SECTIONS
-    //override func table
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCellSegue") {
-            let upcoming: HistorikkCelleViewController = segue.destination as! HistorikkCelleViewController
+            let upcoming = segue.destination as! HistorikkCelleViewController
             
             let indexPath = self.historikkTableView.indexPathForSelectedRow!
             
@@ -239,24 +208,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             let antallVinInt = sectionItems[(indexPath as NSIndexPath).row].antallVin as! Int
             let antallDrinkInt = sectionItems[(indexPath as NSIndexPath).row].antallDrink as! Int
             let antallShotInt = sectionItems[(indexPath as NSIndexPath).row].antallShot as! Int
-            //let dateStamp = sectionItems[indexPath.row].dato! as NSDate
             let sessionNumber = sectionItems[(indexPath as NSIndexPath).row].sessionNumber! as Int
-            
-            
-            /*let testingShit = self.testArray[indexPath.row].text
-            upcoming.helvete = testingShit*/
-            
-            //let sectionItems = self.getSectionItems(indexPath.section)
-            //let datoString = self.logItems[indexPath.row].datoTwo
-            //let forbrukInt = self.logItems[indexPath.row].forbruk as! Int
-            //let hoyestePromilleDouble = self.logItems[indexPath.row].hoyestePromille as! Double
-            //let antallOlInt = self.logItems[indexPath.row].antallOl as! Int
-            //let antallVinInt = self.logItems[indexPath.row].antallVin as! Int
-            //let antallDrinkInt = self.logItems[indexPath.row].antallDrink as! Int
-            //let antallShotInt = self.logItems[indexPath.row].antallShot as! Int
-            //let dateStamp = self.logItems[indexPath.row].dato! as NSDate
-            //let sessionNumber = self.logItems[indexPath.row].sessionNumber! as Int
-            
             
             upcoming.dato = datoString!
             upcoming.forbruk = forbrukInt
@@ -269,9 +221,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             
             self.historikkTableView.deselectRow(at: indexPath, animated: true)
             
-            if(sectionsInTable.isEmpty){
-                
-            } else {
+            if(!sectionsInTable.isEmpty){
                 self.fetchLog()
                 self.historikkTableView.reloadData()
             }
@@ -282,9 +232,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Historikk")
         do {
             let sortDescriptor = NSSortDescriptor(key: "dato", ascending: false)
-            
             fetchRequest.sortDescriptors = [sortDescriptor]
-            
             if let fetchResults = try managedObjectContext.fetch(fetchRequest) as? [Historikk] {
                 logItems = fetchResults
             }
@@ -292,36 +240,17 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
             fatalError("HAHA; ITS CRASHED")
         }
         
-        testArray.removeAll()
         sectionsInTable.removeAll()
         
-        // SECTIONS:
         for items in logItems {
-            print("Fetchlog for loop: \(items.dato!)")
-            testArray.append(items)
             
             let calendar = Calendar.current
             let components = (calendar as NSCalendar).components([.day , .month , .year], from: items.dato! as Date)
-            let year = components.year
-            print("\(year)")
-            // + " - " + String(year)
-            
-            // CHECK FOR WHICH MONTH
-            
-            //let checkForMonth = "\(dateUtil.getMonthOfYear(items.dato!)!) - \(year!)"
-            
-            
+            let year = components.year!
+
             let checkForMonth = dateUtil.getMonthOfYear(items.dato!)! + " - " + String(describing: year)
             
-            
-            print("checkFormonth: \(checkForMonth)")
-            
-            // create sections NSSet so we can use 'containsObject'
-            let sections: NSSet = NSSet(array: sectionsInTable)
-            
-            // if sectionsInTable doesn't contain the dateString, then add it
-            if !sections.contains(checkForMonth) {
-                //let formatToMonth = getMonthOfYear(newItem.insertDate)
+            if !sectionsInTable.contains(checkForMonth) {
                 sectionsInTable.append(checkForMonth)
             }
         }
@@ -371,23 +300,17 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     func getSectionItems(_ section: Int) -> [Historikk] {
         var sectionItems = [Historikk]()
         
-        // loop through the testArray to get the items for this sections's date
         for item in logItems {
             let dateTextItem = item as Historikk
             let df = DateFormatter()
             df.dateFormat = "MM/dd/yyyy"
-            //let dateString = df.stringFromDate(dateTextItem.dato!)
             
             let calendar = Calendar.current
             let components = (calendar as NSCalendar).components([.day , .month , .year], from: dateTextItem.dato! as Date)
-            let year = components.year
-            print("\(year)")
-            // + " - " + String(year)
-            
-            // CHECK OM MÅNEDEN ALLEREDE EKSISTERER
+            let year = components.year!
+
             let checkMonthExists = dateUtil.getMonthOfYear(dateTextItem.dato)! + " - " + String(describing: year)
             
-            // if the item's date equals the section's date then add it
             if checkMonthExists == sectionsInTable[section] {
                 sectionItems.append(dateTextItem)
             }

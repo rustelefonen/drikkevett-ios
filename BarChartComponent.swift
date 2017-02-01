@@ -1,21 +1,22 @@
-//  GraphViewController.swift
-//  Skall_Meny
 //
-//  Created by Lars Petter Kristiansen on 02.03.2016.
-//  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
+//  BarChartView.swift
+//  Drikkevett
+//
+//  Created by Simen Fonnes on 25.01.2017.
+//  Copyright © 2017 Lars Petter Kristiansen. All rights reserved.
+//
 
 import UIKit
 import Charts
 import CoreData
 
-class GraphViewController: UIViewController, ChartViewDelegate {
+class BarChartComponent: UIViewController {
     
-    @IBOutlet weak var barChartView: BarChartView!
     let moc = DataController().managedObjectContext
+    @IBOutlet weak var barChartView: BarChartView!
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)
-        
         let userData = getUserData()
         let historyList = getHistoryList()
         

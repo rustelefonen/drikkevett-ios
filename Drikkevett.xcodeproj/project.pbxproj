@@ -73,7 +73,8 @@
 		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
 		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
 		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
-		D5D090FC1E076F670080B24F /* HomeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D090FB1E076F670080B24F /* HomeFormatter.swift */; };
+		D59E98871E39610C00450EBA /* BarChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E98861E39610C00450EBA /* BarChartComponent.swift */; };
+		D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E988B1E39667300450EBA /* HomeBarChartView.swift */; };
 		D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */; };
 		D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */; };
 		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
@@ -191,7 +192,8 @@
 		D5958E8F1D29A99A004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
-		D5D090FB1E076F670080B24F /* HomeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D59E98861E39610C00450EBA /* BarChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartComponent.swift; sourceTree = SOURCE_ROOT; };
+		D59E988B1E39667300450EBA /* HomeBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBarChartView.swift; sourceTree = SOURCE_ROOT; };
 		D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
 		D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
 		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
@@ -310,7 +312,8 @@
 				D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */,
 				D5958E811D29A817004FC6A3 /* PieChartViewController.swift */,
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
-				D5D090FB1E076F670080B24F /* HomeFormatter.swift */,
+				D59E98861E39610C00450EBA /* BarChartComponent.swift */,
+				D59E988B1E39667300450EBA /* HomeBarChartView.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				7F850C981D4F61BC007B62DB /* User.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
+				D59E98871E39610C00450EBA /* BarChartComponent.swift in Sources */,
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
 				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
@@ -593,7 +597,6 @@
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
 				D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */,
-				D5D090FC1E076F670080B24F /* HomeFormatter.swift in Sources */,
 				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
 				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
@@ -613,6 +616,7 @@
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
 				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
+				D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
 				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,

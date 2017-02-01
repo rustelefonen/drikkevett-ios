@@ -149,7 +149,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         //Printing input values in console:
         else if let beerString:String? = String(beerCostsInfo!), let wineString:String = String(wineCostsInfo), let drinkString:String = String(drinkCostsInfo), let shotString:String = String(shotCostsInfo){
             
-            let message = "Øl: \(beerCostsInfo) kr\nVin: \(wineCostsInfo) kr\nDrink: \(drinkCostsInfo) kr\nShot: \(shotCostsInfo) kr"
+            let message = "Øl: \(beerCostsInfo!) kr\nVin: \(wineCostsInfo!) kr\nDrink: \(drinkCostsInfo!) kr\nShot: \(shotCostsInfo!) kr"
             confirmMessage("Kostnader", errorMsg: message, cancelMsg:"Avbryt", confirmMsg: "Bekreft")
         }
     }

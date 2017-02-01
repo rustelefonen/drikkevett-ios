@@ -116,8 +116,7 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
         // TEXT FIELDS
         ageTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         ageTextField.textColor = setAppColors.textUnderHeadlinesColors()
-        ageTextField.attributedPlaceholder = NSAttributedString(string:"alder",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        ageTextField.attributedPlaceholder = NSAttributedString(string:"alder", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         heightTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         heightTextField.textColor = setAppColors.textUnderHeadlinesColors()
@@ -267,11 +266,11 @@ class OppdaterInnstillingerViewController: UIViewController, UITextFieldDelegate
                 if(tempUpdateGender == false){
                     gender = "Kvinne"
                 }
-                self.ageTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateAge)",
+                self.ageTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateAge!)",
                     attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-                self.heightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateHeight)",
+                self.heightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateHeight!)",
                     attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-                self.weightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateWeight)",
+                self.weightTextField.attributedPlaceholder = NSAttributedString(string:"\(tempUpdateWeight!)",
                     attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
                 self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"\(gender)",
                     attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
