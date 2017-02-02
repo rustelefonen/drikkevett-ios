@@ -262,13 +262,13 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
             // FONT
             self.greetingLabel.font = setAppColors.textHeadlinesFonts(20)
         
-            if(fetchNickname().length >= 0 && fetchNickname().length < 10){
+            if(fetchNickname().characters.count >= 0 && fetchNickname().characters.count < 10){
                 self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(23.0)
             }
-            if(fetchNickname().length >= 10 && fetchNickname().length < 13){
+            if(fetchNickname().characters.count >= 10 && fetchNickname().characters.count < 13){
                 self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(17.0)
             }
-            if(fetchNickname().length >= 13){
+            if(fetchNickname().characters.count >= 13){
                 self.helloUserNicknameLabel.font = setAppColors.textHeadlinesFonts(13.0)
             }
         } else if UIScreen.main.bounds.size.width == 414 {

@@ -18,6 +18,9 @@
 		7F850C981D4F61BC007B62DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C971D4F61BC007B62DB /* User.swift */; };
 		7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */; };
 		7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */; };
+		D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */; };
+		D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A731E439F0400B42CCD /* UserDataDao.swift */; };
+		D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A751E43A39F00B42CCD /* HistoryDao.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -136,6 +139,9 @@
 		7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
+		D5735A731E439F0400B42CCD /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDao.swift; sourceTree = "<group>"; };
+		D5735A751E43A39F00B42CCD /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDao.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -405,6 +411,9 @@
 			children = (
 				D5958E3F1D29A4D1004FC6A3 /* DataController.swift */,
 				D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */,
+				D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */,
+				D5735A731E439F0400B42CCD /* UserDataDao.swift */,
+				D5735A751E43A39F00B42CCD /* HistoryDao.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
+				D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */,
 				D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
@@ -615,6 +625,7 @@
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
+				D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */,
 				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
 				D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
@@ -624,6 +635,7 @@
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
 				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
 				D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */,
+				D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */,
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,

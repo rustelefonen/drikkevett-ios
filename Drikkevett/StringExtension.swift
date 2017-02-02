@@ -10,10 +10,6 @@ import UIKit
 
 extension String {
     
-    var length: Int {
-        return characters.count
-    }
-    
     func stringByAppendingPathComponent(_ path: String) -> String {
         
         let nsSt = self as NSString
