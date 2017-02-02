@@ -21,6 +21,7 @@
 		D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */; };
 		D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A731E439F0400B42CCD /* UserDataDao.swift */; };
 		D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A751E43A39F00B42CCD /* HistoryDao.swift */; };
+		D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -142,6 +143,7 @@
 		D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
 		D5735A731E439F0400B42CCD /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDao.swift; sourceTree = "<group>"; };
 		D5735A751E43A39F00B42CCD /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDao.swift; sourceTree = "<group>"; };
+		D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHistoryDao.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -414,6 +416,7 @@
 				D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */,
 				D5735A731E439F0400B42CCD /* UserDataDao.swift */,
 				D5735A751E43A39F00B42CCD /* HistoryDao.swift */,
+				D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				D5958E521D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift in Sources */,
 				D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */,
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
+				D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
 				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,

@@ -22,6 +22,8 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         let historyDao = HistoryDao()
         let historyList = historyDao.getAll()
         
+        print(historyList.count)
+        
         let homeBarChartView = HomeBarChartView(barChartView: barChartView, userData:userData, historyList: historyList)
         homeBarChartView.styleBarChart()
         homeBarChartView.getDataSet()

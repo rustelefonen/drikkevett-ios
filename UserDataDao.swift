@@ -46,6 +46,12 @@ class UserDataDao: CoreDataDao {
         return userData
     }
     
+    func fetchGoalBac() -> Double{
+        let userData = fetchUserData()
+        if userData == nil {return 0.0}
+        return userData!.goalPromille as! Double
+    }
+    
     func deleteAll(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let userDatas = (try? managedObjectContext.fetch(fetchRequest)) as? [UserData] ?? []

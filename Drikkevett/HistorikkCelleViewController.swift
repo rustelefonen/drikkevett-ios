@@ -16,7 +16,7 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     let moc = DataController().managedObjectContext
     
     // Get Brain
-    let brain = SkallMenyBrain()
+    //let brain = SkallMenyBrain()
     let coreDataBrain = CoreDataMethods()
     
     // Set colors
@@ -59,8 +59,17 @@ class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     var sessionNumber: Int = 0
     var helvete : String = ""
     
+    
+    
+    
+    var history:Historikk!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(history)
+        
+        
         // FONTS AND COLORS
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)

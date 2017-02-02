@@ -16,7 +16,7 @@ class HistoryDao: CoreDataDao {
     
     //Constructor
     required init() {
-        entityName = String(describing: UserData.self)
+        entityName = String(describing: Historikk.self)
         super.init()
     }
     
@@ -47,5 +47,21 @@ class HistoryDao: CoreDataDao {
         let histories = (try? managedObjectContext.fetch(fetchRequest)) as? [Historikk]
         
         return histories ?? []
+    }
+    
+    func getAllOrderedByDate() -> [Historikk]{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dato", ascending: false)]
+        
+        let histories = (try? managedObjectContext.fetch(fetchRequest)) as? [Historikk]
+        
+        return histories ?? []
+    }
+    
+    func deleteAll(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let histories = (try? managedObjectContext.fetch(fetchRequest)) as? [Historikk] ?? []
+        
+        deleteObjects(histories)
     }
 }
