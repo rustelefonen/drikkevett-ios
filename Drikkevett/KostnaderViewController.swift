@@ -1,9 +1,3 @@
-//  KostnaderViewController.swift
-//  Skall_Meny
-//
-//  Created by Lars Petter Kristiansen on 01.03.2016.
-//  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
-
 import UIKit
 import CoreData
 
@@ -37,12 +31,6 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     // TITLE IMAGE
     @IBOutlet weak var titleImageView: UIImageView!
     
-    // UNIT IMAGES
-    @IBOutlet weak var beerImageView: UIImageView!
-    @IBOutlet weak var wineImageView: UIImageView!
-    @IBOutlet weak var drinkImageView: UIImageView!
-    @IBOutlet weak var shotImageView: UIImageView!
-    
     // UNDERSCORES
     @IBOutlet weak var beerUnderscore: UILabel!
     @IBOutlet weak var wineUnderscor: UILabel!
@@ -56,16 +44,9 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     // set Colors
     var setAppColors = AppColors()
     
-    // PARSE VALUES -
-    var beerCostsInfo : Int! = 0
-    var wineCostsInfo : Int! = 0
-    var drinkCostsInfo : Int! = 0
-    var shotCostsInfo : Int! = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColorsAndFontsEnterCosts()
-        setConstraints()
     }
     
     func setColorsAndFontsEnterCosts(){
@@ -75,47 +56,15 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
-        // TITLE OG SUBTITLE
-        titleLabel.textColor = setAppColors.textHeadlinesColors()
-        titleLabel.font = setAppColors.textHeadlinesFonts(34)
-        subTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        subTitleLabel.font = setAppColors.textUnderHeadlinesFonts(18)
-        
-        // LABELS
-        beerTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        beerTitleLabel.font = setAppColors.textUnderHeadlinesFonts(15)
-        wineTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        wineTitleLabel.font = setAppColors.textUnderHeadlinesFonts(15)
-        drinkTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        drinkTitleLabel.font = setAppColors.textUnderHeadlinesFonts(15)
-        wineTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        wineTitleLabel.font = setAppColors.textUnderHeadlinesFonts(15)
-        
-        // TEXTFIELDS ( SKREVET FEIL BEER SKAL VÆRE TEXTFIELD IKKE LABEL )
-        costsBeerLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        costsBeerLabel.font = setAppColors.textUnderHeadlinesFonts(15)
-        costsBeerLabel.attributedPlaceholder = NSAttributedString(string:"oppgi ølpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsWineTextField.textColor = setAppColors.textUnderHeadlinesColors()
-        costsWineTextField.font = setAppColors.textUnderHeadlinesFonts(15)
+        costsBeerLabel.attributedPlaceholder = NSAttributedString(string:"oppgi ølpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         costsWineTextField.attributedPlaceholder = NSAttributedString(string:"oppgi vinpris",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsDrinkTextField.textColor = setAppColors.textUnderHeadlinesColors()
-        costsDrinkTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         costsDrinkTextField.attributedPlaceholder = NSAttributedString(string:"oppgi drinkpris",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsShotTextField.textColor = setAppColors.textUnderHeadlinesColors()
-        costsShotTextField.font = setAppColors.textUnderHeadlinesFonts(15)
         costsShotTextField.attributedPlaceholder = NSAttributedString(string:"oppgi shotpris",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        standardPrizesBtnOutlet.setTitle("Standard", for: UIControlState())
         
-        // BUTTONS
-        self.standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.center
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.center
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -123,57 +72,38 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     @IBAction func nextButton(_ sender: AnyObject) {
-        //Parsing String values from UITextField to Integers:
-        beerCostsInfo = Int(costsBeerLabel.text!)
-        wineCostsInfo = Int(costsWineTextField.text!)
-        drinkCostsInfo = Int(costsDrinkTextField.text!)
-        shotCostsInfo = Int(costsShotTextField.text!)
+        let beerCostsInfo = Int(costsBeerLabel.text!)
+        let wineCostsInfo = Int(costsWineTextField.text!)
+        let drinkCostsInfo = Int(costsDrinkTextField.text!)
+        let shotCostsInfo = Int(costsShotTextField.text!)
         
-        //Handling wrong inputs in UITextFields:
         if(beerCostsInfo == nil || wineCostsInfo == nil || drinkCostsInfo == nil || shotCostsInfo == nil){
-            beerCostsInfo = 0; wineCostsInfo = 0; drinkCostsInfo = 0; shotCostsInfo = 0;
             errorMessage(errorMsg: "Alle felter må fylles ut!")
         }
-        if(beerCostsInfo >= 10000 || beerCostsInfo <= 0){
-            errorMessage(errorMsg: "Så mye betaler du ikke for øl?")
-        }
-        if(wineCostsInfo >= 10000 || wineCostsInfo <= 0){
-            errorMessage(errorMsg: "Så mye betaler du ikke for vin?")
-        }
-        if(drinkCostsInfo >= 10000 || drinkCostsInfo <= 0){
-            errorMessage(errorMsg: "Så mye betaler du ikke for drink?")
-        }
-        if(shotCostsInfo >= 10000 || shotCostsInfo <= 0){
-            errorMessage(errorMsg: "Så mye betaler du ikke for shot?")
-        }
-        //Printing input values in console:
-        else if let beerString:String? = String(beerCostsInfo!), let wineString:String = String(wineCostsInfo), let drinkString:String = String(drinkCostsInfo), let shotString:String = String(shotCostsInfo){
+        if(beerCostsInfo! >= 10000 || beerCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for øl?")}
+        if(wineCostsInfo! >= 10000 || wineCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for vin?")}
+        if(drinkCostsInfo! >= 10000 || drinkCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for drink?")}
+        if(shotCostsInfo! >= 10000 || shotCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for shot?")}
+        
+        let message = "Øl: \(beerCostsInfo!) kr\nVin: \(wineCostsInfo!) kr\nDrink: \(drinkCostsInfo!) kr\nShot: \(shotCostsInfo!) kr"
+        
+        let alertController = UIAlertController(title: "Kostnader", message:
+            message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.destructive, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title:"Bekreft", style: UIAlertActionStyle.default, handler:  { action in
+            self.brainCoreData.updateUserDataCosts(beerCostsInfo!, updateWineCost: wineCostsInfo!, updateDrinkCost: drinkCostsInfo!, updateShotCost: shotCostsInfo!)
             
-            let message = "Øl: \(beerCostsInfo!) kr\nVin: \(wineCostsInfo!) kr\nDrink: \(drinkCostsInfo!) kr\nShot: \(shotCostsInfo!) kr"
-            confirmMessage("Kostnader", errorMsg: message, cancelMsg:"Avbryt", confirmMsg: "Bekreft")
-        }
+            self.performSegue(withIdentifier: "kostnadTilMalSegue", sender: self)
+        }))
+        present(alertController, animated: true, completion: nil)
+        
     }
     
-    //Method for pop-up messages when handling wrong inputs:
     func errorMessage(_ titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
         let alertController = UIAlertController(title: titleMsg, message:
             errorMsg, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func confirmMessage(_ titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
-        let alertController = UIAlertController(title: titleMsg, message:
-            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
-            print("Handle cancel logic here")
-        }))
-        
-        alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
-            self.brainCoreData.updateUserDataCosts(self.beerCostsInfo, updateWineCost: self.wineCostsInfo, updateDrinkCost: self.drinkCostsInfo, updateShotCost: self.shotCostsInfo)
-
-            self.performSegue(withIdentifier: "kostnadTilMalSegue"
-            , sender: self) }))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -315,115 +245,5 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         default:
             return true
         }
-    }
-    
-    func setConstraints(){
-        if UIScreen.main.bounds.size.height == 480 {
-            // iPhone 4
-            
-            // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -125.0)
-            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -130.0)
-            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -150.0)
-            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
-            
-            setTextFieldPlaces(0.0, yAxisTextFields: -200.0)
-            
-            // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: -50.0, y: -230.0)
-            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: -50.0, y: -230.0)
-            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: -20.0, y: -230.0)
-            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: -20.0, y: -230.0)
-            
-            setTextSizes(9, title: 30, subtitle: 17)
-        } else if UIScreen.main.bounds.size.height == 568 {
-            // IPhone 5
-            // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -130.0)
-            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -140.0)
-            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
-            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -165.0)
-            
-            setTextFieldPlaces(0.0, yAxisTextFields: -180.0)
-            
-            // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: -50.0, y: -180.0)
-            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: -50.0, y: -180.0)
-            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: -20.0, y: -180.0)
-            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: -20.0, y: -180.0)
-            
-            setTextSizes(10, title: 27, subtitle: 17)
-        } else if UIScreen.main.bounds.size.width == 375 {
-            // iPhone 6
-            setConstValues(0.0, yValue: -100.0)
-        } else if UIScreen.main.bounds.size.width == 414 {
-            // iPhone 6+
-            // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-            self.titleImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
-            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
-            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
-            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -60.0)
-            
-            setTextFieldPlaces(0.0, yAxisTextFields: -60.0)
-            
-            // STANDARD AND NEXT ( IMG AND BTNS )
-            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
-            self.nextBtnImageView.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
-            self.standardBtnImageView.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
-            self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: 20.0, y: -60.0)
-        }
-    }
-    
-    func setConstValues(_ xValue: CGFloat, yValue: CGFloat){
-        
-        // TITLE, TITLEIMG, SUBTITLE AND TEXTVIEW
-        self.titleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.subTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.titleImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.textView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        
-        setTextFieldPlaces(xValue, yAxisTextFields: yValue)
-        
-        // STANDARD AND NEXT ( IMG AND BTNS )
-        self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.nextBtnImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.standardBtnImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.standardPrizesBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-    }
-    
-    func setTextSizes(_ textViewFontSize: CGFloat, title: CGFloat, subtitle: CGFloat){
-        // TITLE AND SUBTITLE
-        self.titleLabel.font = setAppColors.textHeadlinesFonts(title)
-        self.subTitleLabel.font = setAppColors.textUnderHeadlinesFonts(subtitle)
-        
-        // TEXT VIEW FONT
-        self.textView.font = setAppColors.setTextQuoteFont(textViewFontSize)
-    }
-    
-    func setTextFieldPlaces(_ xValue: CGFloat, yAxisTextFields: CGFloat){
-        // TITLE UNITS
-        self.beerTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.wineTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.drinkTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.shotTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        
-        
-        // TEXTFIELDS
-        self.costsBeerLabel.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.costsWineTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.costsDrinkTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.costsShotTextField.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        
-        // UNIT IMAGES
-        self.beerImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.wineImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.drinkImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.shotImageView.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        
-        // UNIT UNDERSCORES
-        self.beerUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.wineUnderscor.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.drinkUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
-        self.shotUnderscore.transform = self.view.transform.translatedBy(x: xValue, y: yAxisTextFields)
     }
  }

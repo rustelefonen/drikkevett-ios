@@ -1,9 +1,3 @@
-//  FirstViewController.swift
-//  Skall_Meny
-//
-//  Created by Lars Petter Kristiansen on 27.01.2016.
-//  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
-
 import UIKit
 import CoreData
 
@@ -12,27 +6,9 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var weightField: UITextField!
-    
-    @IBOutlet weak var nicknameUnderlinedLabel: UILabel!
-    @IBOutlet weak var genderUnderLinedLabel: UILabel!
-    @IBOutlet weak var weightUnderLinedLabel: UILabel!
-    @IBOutlet weak var ageUnderLinedLabel: UILabel!
-    
-    @IBOutlet weak var nextImageView: UIImageView!
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var nickNameImageView: UIImageView!
-    @IBOutlet weak var genderImageView: UIImageView!
-    @IBOutlet weak var ageImageView: UIImageView!
-    @IBOutlet weak var weightImageView: UIImageView!
-    
-    // BUTTONS
-    @IBOutlet weak var nextButtonOutlet: UIButton!
-    
-    var pickGenderView = UIPickerView()
     @IBOutlet weak var chooseGenderTextField: UITextField!
     
-    // SCROLL VIEW
-    @IBOutlet weak var scrollView: UIScrollView!
+    var pickGenderView = UIPickerView()
     
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
     let setAppColors = AppColors()
@@ -47,30 +23,13 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         view.addSubview(blurEffectView)
         
         // TEXTFIELDS
-        ageField.textColor = setAppColors.textUnderHeadlinesColors()
-        ageField.font = setAppColors.textUnderHeadlinesFonts(15)
-        ageField.attributedPlaceholder = NSAttributedString(string:"oppgi alder",
-                                                            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        ageField.attributedPlaceholder = NSAttributedString(string:"oppgi alder", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
-        heightField.textColor = setAppColors.textUnderHeadlinesColors()
-        heightField.font = setAppColors.textUnderHeadlinesFonts(15)
-        heightField.attributedPlaceholder = NSAttributedString(string:"oppgi kallenavn",
-                                                               attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        heightField.attributedPlaceholder = NSAttributedString(string:"oppgi kallenavn", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
-        weightField.textColor = setAppColors.textUnderHeadlinesColors()
-        weightField.font = setAppColors.textUnderHeadlinesFonts(15)
-        weightField.attributedPlaceholder = NSAttributedString(string:"oppgi vekt",
-                                                               attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        weightField.attributedPlaceholder = NSAttributedString(string:"oppgi vekt", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
-        self.chooseGenderTextField.font = setAppColors.textUnderHeadlinesFonts(15)
-        self.chooseGenderTextField.textColor = setAppColors.textUnderHeadlinesColors()
-        self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"oppgi kjønn",
-                                                                              attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        
-        
-        
-        
-        
+        self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"oppgi kjønn", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         pickViewGenderTextField()
         
@@ -94,11 +53,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         pickGenderView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func saveButton(_ sender: AnyObject) {
+    @IBAction func goNext(_ sender: UIButton) {
         let nickName = heightField.text
         var gender:Bool? = nil
         if chooseGenderTextField.text == pickerData[1] {gender = true}
@@ -106,7 +61,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         let age = Int(ageField.text!)
         let weight = Double(weightField.text!)
         
-        if (nickName == nil || gender == nil || age == nil || weight == nil) {
+        if (nickName == nil || nickName == "" || gender == nil || age == nil || weight == nil) {
             errorMessage(errorMsg: "Alle felter må fylles ut!")
             return
         }
@@ -135,6 +90,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         continueAlert.addAction(UIAlertAction(title: "Bekreft", style: .default, handler: { (action: UIAlertAction!) in
             self.setUserData(nickName: nickName, gender: gender, age: age, weight: weight)
+            self.performSegue(withIdentifier: "settingsSegue", sender: nil)
         }))
         
         continueAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
@@ -161,6 +117,23 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         try? moc.save()
     }
     
+    func addDoneButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+        keyboardToolbar.alpha = 0.9
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        //flexBarButton.tintColor = UIColor.whiteColor()
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        doneBarButton.tintColor = UIColor.white
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        ageField.inputAccessoryView = keyboardToolbar
+        heightField.inputAccessoryView = keyboardToolbar
+        weightField.inputAccessoryView = keyboardToolbar
+        chooseGenderTextField.inputAccessoryView = keyboardToolbar
+    }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
@@ -182,7 +155,6 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         return pickerData.count
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView!) -> UIView {
         
         var pickerLabel = view as? UILabel
@@ -203,27 +175,9 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     func textFieldDidBeginEditing(_ textField: UITextField) {addDoneButton()}
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
-    func addDoneButton() {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-        keyboardToolbar.alpha = 0.9
-        
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        //flexBarButton.tintColor = UIColor.whiteColor()
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
-        doneBarButton.tintColor = UIColor.white
-        keyboardToolbar.items = [flexBarButton, doneBarButton]
-        ageField.inputAccessoryView = keyboardToolbar
-        heightField.inputAccessoryView = keyboardToolbar
-        weightField.inputAccessoryView = keyboardToolbar
-        chooseGenderTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    // MAXIMIZE TEXTFIELDS
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.characters.count == 0 {return true}
 
@@ -245,5 +199,9 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             default:
                 return true
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

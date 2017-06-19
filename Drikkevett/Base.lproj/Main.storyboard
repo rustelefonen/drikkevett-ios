@@ -5090,7 +5090,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <constraint firstAttribute="width" constant="196" id="oag-gW-mL0"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="tv4-cL-YVr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5225,7 +5226,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <constraint firstAttribute="height" constant="42" id="0F4-be-6gp"/>
                                             <constraint firstAttribute="width" constant="196" id="Xki-bQ-3Kt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5249,7 +5251,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <constraint firstAttribute="width" constant="196" id="1cg-ph-DDr"/>
                                             <constraint firstAttribute="height" constant="42" id="KT4-RX-aMY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5377,7 +5380,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <constraint firstAttribute="height" constant="42" id="HSW-K4-wKq"/>
                                             <constraint firstAttribute="width" constant="196" id="bBZ-n8-LMt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5416,7 +5420,7 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="saveButton:" destination="UFE-QU-Y9H" eventType="touchUpInside" id="B1D-9A-s5H"/>
+                                            <action selector="goNext:" destination="UFE-QU-Y9H" eventType="touchUpInside" id="W0s-2r-eLx"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L20-Xj-QOy">
@@ -5676,9 +5680,6 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         <include reference="PdJ-JF-Mnb"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="UFE-QU-Y9H" id="r5J-5E-cft"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5702,28 +5703,16 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                     <navigationItem key="navigationItem" title="Din Informasjon" id="WjE-eU-EBg"/>
                     <connections>
                         <outlet property="ageField" destination="eBZ-u1-cpq" id="3YD-Mi-I3q"/>
-                        <outlet property="ageImageView" destination="gpO-Nt-LpA" id="cqS-68-pun"/>
-                        <outlet property="ageUnderLinedLabel" destination="1VO-yD-P3x" id="syM-Q8-8Wf"/>
                         <outlet property="chooseGenderTextField" destination="yCB-Lg-CkY" id="uOS-aB-LJP"/>
-                        <outlet property="genderImageView" destination="CZL-M7-6R2" id="u3i-TQ-31g"/>
-                        <outlet property="genderUnderLinedLabel" destination="85O-tl-9hl" id="1Da-2g-Hor"/>
-                        <outlet property="headerImageView" destination="xDh-OP-tSh" id="xYQ-QE-NfO"/>
                         <outlet property="heightField" destination="XtW-D8-cvS" id="itB-Iz-7Ab"/>
-                        <outlet property="nextButtonOutlet" destination="NkN-qH-hLU" id="eiW-CX-YFW"/>
-                        <outlet property="nextImageView" destination="RKu-hY-qws" id="dYV-DB-nW9"/>
-                        <outlet property="nickNameImageView" destination="Btn-gS-l5Q" id="gNt-go-3eg"/>
-                        <outlet property="nicknameUnderlinedLabel" destination="mNe-x5-pc1" id="xST-GM-2cf"/>
-                        <outlet property="scrollView" destination="7ec-AY-LKI" id="KBV-Sy-AXy"/>
                         <outlet property="weightField" destination="VFu-RN-kLK" id="fRE-D7-C71"/>
-                        <outlet property="weightImageView" destination="7WN-HX-0Il" id="XsC-ug-wJj"/>
-                        <outlet property="weightUnderLinedLabel" destination="L6a-oP-9Y6" id="H9p-ra-JEf"/>
                         <segue destination="JAr-uY-EtF" kind="show" identifier="settingsSegue" id="6eS-Ys-rbg"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="startAppSegue" id="xx1-SW-dKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otp-B7-NDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="-1004"/>
+            <point key="canvasLocation" x="96" y="-1004"/>
         </scene>
         <!--Kostnader View Controller-->
         <scene sceneID="Ewq-ee-FuW">
@@ -5745,8 +5734,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="qwh-5o-KKm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5788,7 +5777,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="uLy-On-kNc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -5809,7 +5798,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="width" constant="114" id="lAB-Tx-wEf"/>
                                         </constraints>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5835,8 +5824,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 <variation key="heightClass=regular-widthClass=compact" constant="49"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5857,7 +5846,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="width" constant="114" id="8Ku-fV-Nsy"/>
                                             <constraint firstAttribute="height" constant="42" id="goM-79-XmN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5881,8 +5871,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="height" constant="30" id="NOn-0w-Qu0"/>
                                             <constraint firstAttribute="width" constant="49" id="uph-3e-LOd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5903,7 +5893,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="height" constant="42" id="OC4-t2-dWZ"/>
                                             <constraint firstAttribute="width" constant="114" id="l8U-mj-ZSj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5927,8 +5918,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="width" constant="49" id="8rS-P0-f5Y"/>
                                             <constraint firstAttribute="height" constant="30" id="vWE-fi-ExT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5949,8 +5940,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="height" constant="30" id="V99-UO-uWd"/>
                                             <constraint firstAttribute="width" constant="49" id="zc1-dx-axr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -6085,7 +6076,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="width" constant="114" id="BL7-o9-JaR"/>
                                             <constraint firstAttribute="height" constant="42" id="XZY-SQ-jwi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -6517,20 +6509,17 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="beerImageView" destination="nlc-bF-zwL" id="gcN-Rr-cvh"/>
                         <outlet property="beerTitleLabel" destination="DrT-uJ-MtL" id="6ed-Mt-yzv"/>
                         <outlet property="beerUnderscore" destination="GlJ-d3-B8W" id="b3J-xG-8IT"/>
                         <outlet property="costsBeerLabel" destination="bva-Ig-Jdk" id="GHa-9X-APC"/>
                         <outlet property="costsDrinkTextField" destination="mvr-o8-1Lv" id="gPV-kk-GNY"/>
                         <outlet property="costsShotTextField" destination="Jse-Pi-eKg" id="2DN-z7-mG1"/>
                         <outlet property="costsWineTextField" destination="mv2-sD-tE7" id="PmN-Zj-suk"/>
-                        <outlet property="drinkImageView" destination="I60-hw-B6D" id="rba-HZ-sFD"/>
                         <outlet property="drinkTitleLabel" destination="4jY-No-2fw" id="eTk-8R-IRL"/>
                         <outlet property="drinkUnderscore" destination="EVQ-ML-i0v" id="DE3-H1-mVn"/>
                         <outlet property="nextBtnImageView" destination="DZ8-a2-JnN" id="yyk-9B-Xtz"/>
                         <outlet property="nextBtnOutlet" destination="ru5-Oc-8dK" id="fnc-eD-RtI"/>
                         <outlet property="scrollView" destination="eBu-xN-Wkx" id="bEI-CT-bja"/>
-                        <outlet property="shotImageView" destination="fZL-xU-Mwd" id="XyE-jT-DuO"/>
                         <outlet property="shotTitleLabel" destination="YDl-02-lYS" id="IMl-fG-xQs"/>
                         <outlet property="shotUnderscore" destination="WTJ-nq-4gO" id="ebR-zJ-cQW"/>
                         <outlet property="standardBtnImageView" destination="F6l-Xg-iiv" id="b8T-jD-JYt"/>
@@ -6539,7 +6528,6 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         <outlet property="textView" destination="Xgn-DZ-KqA" id="ga0-j2-RR6"/>
                         <outlet property="titleImageView" destination="3ML-qx-0XB" id="kZQ-XK-95Q"/>
                         <outlet property="titleLabel" destination="XIx-mQ-pop" id="1Hm-E1-R9p"/>
-                        <outlet property="wineImageView" destination="352-xe-Kn5" id="kG7-Qg-g2U"/>
                         <outlet property="wineTitleLabel" destination="jwa-bv-YK3" id="4RQ-3i-u26"/>
                         <outlet property="wineUnderscor" destination="jP4-wD-2Cj" id="wys-gE-Tra"/>
                         <segue destination="RyX-ik-qqG" kind="show" identifier="kostnadTilMalSegue" id="krb-Lr-Pvp"/>
