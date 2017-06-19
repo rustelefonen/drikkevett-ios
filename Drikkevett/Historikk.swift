@@ -11,6 +11,18 @@ import CoreData
 
 
 class Historikk: NSManagedObject {
+    /*@NSManaged public var antallDrink: NSNumber?
+    @NSManaged public var antallOl: NSNumber?
+    @NSManaged public var antallShot: NSNumber?
+    @NSManaged public var antallVin: NSNumber?
+    @NSManaged public var dato: NSDate?
+    @NSManaged public var datoTwo: String?
+    @NSManaged public var endOfSesDato: NSDate?
+    @NSManaged public var firstUnitTimeStamp: NSDate?
+    @NSManaged public var forbruk: NSNumber?
+    @NSManaged public var hoyestePromille: NSNumber?
+    @NSManaged public var plannedNrUnits: NSNumber?
+    @NSManaged public var sessionNumber: NSNumber?*/
     
     @NSManaged var antallDrink: NSNumber?
     @NSManaged var antallOl: NSNumber?
@@ -25,7 +37,7 @@ class Historikk: NSManagedObject {
     @NSManaged var sessionNumber: NSNumber?
     @NSManaged var plannedNrUnits: NSNumber?
 
-    class func createInManagedObjectContext(_ moc: NSManagedObjectContext, dato: Date, forbruk: Int, hoyestePromille: Double, antOl: Int, antVin: Int, antDrink: Int, antShot: Int, stringDato: String) -> Historikk {
+    /*class func createInManagedObjectContext(_ moc: NSManagedObjectContext, dato: Date, forbruk: Int, hoyestePromille: Double, antOl: Int, antVin: Int, antDrink: Int, antShot: Int, stringDato: String) -> Historikk {
         let newItem = NSEntityDescription.insertNewObject(forEntityName: "Historikk", into: moc) as! Historikk
         newItem.dato = dato
         newItem.forbruk = forbruk as NSNumber?
@@ -37,5 +49,5 @@ class Historikk: NSManagedObject {
         newItem.datoTwo = stringDato
         
         return newItem
-    }
+    }*/
 }

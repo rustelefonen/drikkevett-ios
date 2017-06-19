@@ -143,7 +143,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func startKveld(_ sender: AnyObject) {
         if (isGoalDateReached()){
-            let alert = UIAlertController(title: "Du har nådd målet ditt", message: "For å kunne starte kvelder må du oppdatere måldato.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Legg inn ønsket makspromille", message: "For å kunne starte kvelder må du oppdatere måldato.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Oppdater måldato", style: .default) { action in
                 self.performSegue(withIdentifier: "goalDateSegue2", sender: self)
             })

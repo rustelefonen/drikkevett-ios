@@ -58,8 +58,8 @@ class HomeBarChartView {
         for i in 0..<historyList.count{
             let history = historyList[i]
             let historyHighesetBAC = Double(history.hoyestePromille!)
-            let day = Calendar.current.component(.day, from: history.dato!)
-            let month = DateUtil().getMonthOfYear(history.dato)!
+            let day = Calendar.current.component(.day, from: history.dato! as Date)
+            let month = DateUtil().getMonthOfYear(history.dato as Date?)!
             
             days.append("\(String(day)). \(month)")
             dataEntries.append(BarChartDataEntry(x: Double(i), y: historyHighesetBAC))

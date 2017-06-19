@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kcL-4g-hAi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kcL-4g-hAi">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e33-wf-NIc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e33-wf-NIc">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="1051"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2R-F2-6ju">
@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQk-Q1-RqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612.75" y="-1830.75"/>
+            <point key="canvasLocation" x="-1086" y="1649"/>
         </scene>
         <!--Planlegg Kvelden-->
         <scene sceneID="hNz-n2-bh7">
@@ -296,7 +296,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD8-qj-uBr">
@@ -862,7 +862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="-858"/>
+            <point key="canvasLocation" x="661" y="1502"/>
         </scene>
         <!--Dagen derpå-->
         <scene sceneID="fam-8H-gOQ">
@@ -943,8 +943,8 @@
                                     <action selector="showViewOneBtn:" destination="1gA-4D-wPp" eventType="touchUpInside" id="sts-bc-O2F"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-Al-YgK">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-Al-YgK">
+                                <rect key="frame" x="0.0" y="123" width="414" height="564"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1013,7 +1013,7 @@
                     <navigationItem key="navigationItem" title="Dagen derpå" id="tg2-UM-l6u">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ise-vF-a3S">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ihr-jp-XsE">
-                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                <rect key="frame" x="20" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Info-50"/>
                                 <connections>
@@ -1031,7 +1031,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvJ-z0-y3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4424.5" y="575.5"/>
+            <point key="canvasLocation" x="1429" y="1501"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="l4S-xT-S0y">
@@ -1046,7 +1046,7 @@
                             <tableViewSection headerTitle="Generelt" id="Rhk-Qr-fCG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dff-6y-8CT">
-                                        <rect key="frame" x="0.0" y="55.333333333333336" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dff-6y-8CT" id="JtY-L2-eds">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -1151,7 +1151,7 @@
                             <tableViewSection headerTitle="Innstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
-                                        <rect key="frame" x="0.0" y="161.33333333333334" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="161.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -1250,7 +1250,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
-                                        <rect key="frame" x="0.0" y="211.33333333333334" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="211.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -1351,7 +1351,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euR-sU-CHU">
-                                        <rect key="frame" x="0.0" y="261.33333333333337" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="261.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euR-sU-CHU" id="ksU-32-R3r">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -1456,7 +1456,7 @@
                             <tableViewSection headerTitle="Ekstra" id="b8I-Rp-qd6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="19h-p1-aaZ">
-                                        <rect key="frame" x="0.0" y="367.33333333333337" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="367.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19h-p1-aaZ" id="bYG-fe-DHC">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -1557,7 +1557,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zmd-OH-F7f">
-                                        <rect key="frame" x="0.0" y="417.33333333333337" width="400" height="50"/>
+                                        <rect key="frame" x="0.0" y="417.5" width="400" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zmd-OH-F7f" id="Qh2-kx-bhi">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -2787,7 +2787,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <viewControllerLayoutGuide type="bottom" id="z3V-y3-z1a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KY5-BV-g5G">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VXE-qM-i7z">
@@ -2923,7 +2923,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <viewControllerLayoutGuide type="bottom" id="Qad-sd-W3D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pHn-8m-io1">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGT-Ft-naU">
@@ -3036,7 +3036,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <viewControllerLayoutGuide type="bottom" id="Y3f-Pz-0kD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bX6-Pp-9bs">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
@@ -3123,7 +3123,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <viewControllerLayoutGuide type="bottom" id="Wgk-tY-Tqz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X8B-eT-GJY">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="64" width="400" height="987"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3UR-Me-yKu">
@@ -3311,7 +3311,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ios-iH-yJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4424" y="1283"/>
+            <point key="canvasLocation" x="2332" y="1471"/>
         </scene>
         <!--Historikk Celle View Controller-->
         <scene sceneID="jqF-un-8Bq">
@@ -3787,7 +3787,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfE-dS-pSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="2055.75"/>
+            <point key="canvasLocation" x="2332" y="2211"/>
         </scene>
         <!--Promillekalkulator-->
         <scene sceneID="wg7-f3-ORb">
@@ -4376,7 +4376,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="-91.5"/>
+            <point key="canvasLocation" x="-113" y="1501"/>
         </scene>
         <!--Velkommen View Controller-->
         <scene sceneID="T3h-kk-r3Q">
@@ -4390,116 +4390,27 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-8u-ZtC">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Champagne-100" translatesAutoresizingMaskIntoConstraints="NO" id="laa-iE-stP">
+                                <rect key="frame" x="152" y="84" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1ib-z2-kd8"/>
+                                    <constraint firstAttribute="width" constant="110" id="Qlf-vz-cgw"/>
+                                    <constraint firstAttribute="height" constant="110" id="cBb-Ar-siB"/>
                                 </constraints>
-                                <state key="normal" title="Ønsker du veiledning? Klikk her! ">
-                                    <color key="titleColor" red="0.20419987419999999" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1ib-z2-kd8"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="1ib-z2-kd8"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="ncZ-Jv-0u0" kind="show" id="adh-vd-Tpt"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Velkommen!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-k8-YXr">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="AVe-EF-PkK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AVe-EF-PkK"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="AVe-EF-PkK"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1N-cg-a3w">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="6yI-t6-341"/>
-                                    <constraint firstAttribute="width" constant="160" id="8hJ-Oq-w0K"/>
-                                </constraints>
-                                <state key="normal" title="Sett i gang">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6yI-t6-341"/>
-                                        <exclude reference="8hJ-Oq-w0K"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6yI-t6-341"/>
-                                        <include reference="8hJ-Oq-w0K"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="UFE-QU-Y9H" kind="show" id="Tcy-bm-g9P"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker en oversikt over ditt alkoholinntak" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="3Ch-wQ-UTD"/>
-                                    <constraint firstAttribute="height" constant="64" id="hfD-Fa-RBp"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3Ch-wQ-UTD"/>
-                                        <exclude reference="hfD-Fa-RBp"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="3Ch-wQ-UTD"/>
-                                        <include reference="hfD-Fa-RBp"/>
-                                    </mask>
-                                </variation>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Champagne-100" translatesAutoresizingMaskIntoConstraints="NO" id="laa-iE-stP">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="jmi-uR-EUl"/>
-                                    <constraint firstAttribute="width" constant="110" id="kfy-Ec-WLG"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="jmi-uR-EUl"/>
-                                        <exclude reference="kfy-Ec-WLG"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="jmi-uR-EUl"/>
-                                        <include reference="kfy-Ec-WLG"/>
-                                    </mask>
-                                </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Play-100" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-rA-WGv">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-k8-YXr">
+                                <rect key="frame" x="20" y="294" width="374" height="40.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker en oversikt over ditt alkoholinntak" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
+                                <rect key="frame" x="20" y="342.33333333333326" width="374" height="159.66666666666669"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play-100" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-rA-WGv">
+                                <rect key="frame" x="182" y="544" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="BTg-vh-vKP"/>
                                     <constraint firstAttribute="height" constant="50" id="tNb-nk-X2r"/>
@@ -4517,100 +4428,75 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lunchscreen_1234" translatesAutoresizingMaskIntoConstraints="NO" id="j7H-9g-HdA">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1N-cg-a3w">
+                                <rect key="frame" x="20" y="602" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Sett i gang">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UFE-QU-Y9H" kind="show" id="Tcy-bm-g9P"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ocg-Wa-Hzo">
+                                <rect key="frame" x="0.0" y="690" width="414" height="46"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-8u-ZtC">
+                                        <rect key="frame" x="8" y="8" width="398" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Ønsker du veiledning? Klikk her! ">
+                                            <color key="titleColor" red="0.20419987419999999" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ncZ-Jv-0u0" kind="show" id="adh-vd-Tpt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="H4i-8u-ZtC" firstAttribute="leading" secondItem="ocg-Wa-Hzo" secondAttribute="leading" constant="8" id="5fr-c1-bnp"/>
+                                    <constraint firstAttribute="bottom" secondItem="H4i-8u-ZtC" secondAttribute="bottom" constant="8" id="THq-xa-iIt"/>
+                                    <constraint firstItem="H4i-8u-ZtC" firstAttribute="top" secondItem="ocg-Wa-Hzo" secondAttribute="top" constant="8" id="r7t-EC-Q1M"/>
+                                    <constraint firstAttribute="trailing" secondItem="H4i-8u-ZtC" secondAttribute="trailing" constant="8" id="zS7-2z-41l"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="K1N-cg-a3w" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="2jl-Ig-Nrl"/>
-                            <constraint firstItem="kAf-3d-CaZ" firstAttribute="trailing" secondItem="W7N-yb-Uyo" secondAttribute="trailingMargin" id="5gu-lA-uIa"/>
-                            <constraint firstItem="Juf-k8-YXr" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="79z-0G-zjV"/>
-                            <constraint firstItem="H4i-8u-ZtC" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="8jT-Xh-EDJ"/>
-                            <constraint firstItem="j7H-9g-HdA" firstAttribute="height" secondItem="W7N-yb-Uyo" secondAttribute="height" id="AV2-fa-MNy"/>
-                            <constraint firstItem="j7H-9g-HdA" firstAttribute="centerY" secondItem="W7N-yb-Uyo" secondAttribute="centerY" id="Ec0-1g-6ii"/>
-                            <constraint firstItem="Juf-k8-YXr" firstAttribute="top" secondItem="laa-iE-stP" secondAttribute="bottom" constant="195" id="JLH-5N-noU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="170"/>
-                            </constraint>
-                            <constraint firstItem="Juf-k8-YXr" firstAttribute="width" secondItem="W7N-yb-Uyo" secondAttribute="width" id="R0G-fI-E4b"/>
-                            <constraint firstItem="kAf-3d-CaZ" firstAttribute="top" secondItem="Juf-k8-YXr" secondAttribute="bottom" constant="8" id="SnV-5d-KjA"/>
-                            <constraint firstItem="SEq-rA-WGv" firstAttribute="top" secondItem="kAf-3d-CaZ" secondAttribute="bottom" constant="8" id="X1Z-lg-ygu"/>
-                            <constraint firstItem="kAf-3d-CaZ" firstAttribute="leading" secondItem="W7N-yb-Uyo" secondAttribute="leadingMargin" id="YjT-9P-gYi"/>
-                            <constraint firstItem="laa-iE-stP" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="bn3-Tw-npe"/>
-                            <constraint firstItem="H4i-8u-ZtC" firstAttribute="top" secondItem="K1N-cg-a3w" secondAttribute="bottom" constant="104" id="cnF-VA-rNA">
-                                <variation key="heightClass=regular-widthClass=compact" constant="65"/>
-                            </constraint>
-                            <constraint firstItem="H4i-8u-ZtC" firstAttribute="width" secondItem="W7N-yb-Uyo" secondAttribute="width" id="fwx-ip-Ryc"/>
-                            <constraint firstItem="NiK-ZG-VOy" firstAttribute="top" secondItem="H4i-8u-ZtC" secondAttribute="bottom" id="n3d-Tc-hCf"/>
-                            <constraint firstItem="H4i-8u-ZtC" firstAttribute="top" secondItem="SEq-rA-WGv" secondAttribute="bottom" constant="130" id="uwI-2E-LE9">
-                                <variation key="heightClass=regular-widthClass=compact" constant="91"/>
-                            </constraint>
-                            <constraint firstItem="j7H-9g-HdA" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="vnI-Wo-kKN"/>
-                            <constraint firstItem="SEq-rA-WGv" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="wp8-YY-AId"/>
-                            <constraint firstItem="j7H-9g-HdA" firstAttribute="width" secondItem="W7N-yb-Uyo" secondAttribute="width" id="zi8-hm-ndA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Juf-k8-YXr" secondAttribute="leading" id="66o-Ba-mMo"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="K1N-cg-a3w" secondAttribute="leading" id="J2S-ty-1Rf"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="kAf-3d-CaZ" secondAttribute="leading" id="L4F-DZ-wEC"/>
+                            <constraint firstItem="ocg-Wa-Hzo" firstAttribute="leading" secondItem="W7N-yb-Uyo" secondAttribute="leadingMargin" constant="-20" id="PHI-Dy-KOw"/>
+                            <constraint firstItem="K1N-cg-a3w" firstAttribute="top" secondItem="SEq-rA-WGv" secondAttribute="bottom" constant="8" id="PsB-EU-Kj3"/>
+                            <constraint firstItem="ocg-Wa-Hzo" firstAttribute="top" secondItem="K1N-cg-a3w" secondAttribute="bottom" constant="58" id="UeM-DN-54X"/>
+                            <constraint firstItem="laa-iE-stP" firstAttribute="top" secondItem="5BC-wU-HRC" secondAttribute="bottom" constant="64" id="UfQ-5N-uoj"/>
+                            <constraint firstItem="SEq-rA-WGv" firstAttribute="top" secondItem="kAf-3d-CaZ" secondAttribute="bottom" constant="42" id="XWi-VO-7bG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K1N-cg-a3w" secondAttribute="trailing" id="aU2-EI-37D"/>
+                            <constraint firstItem="kAf-3d-CaZ" firstAttribute="top" secondItem="Juf-k8-YXr" secondAttribute="bottom" constant="8" id="bgX-2w-0Yd"/>
+                            <constraint firstItem="Juf-k8-YXr" firstAttribute="top" secondItem="laa-iE-stP" secondAttribute="bottom" constant="100" id="geP-rP-gU2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Juf-k8-YXr" secondAttribute="trailing" id="hyQ-Ch-bME"/>
+                            <constraint firstItem="laa-iE-stP" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="ko9-9Q-GLJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ocg-Wa-Hzo" secondAttribute="trailing" constant="-20" id="kuX-Kj-2cM"/>
+                            <constraint firstItem="SEq-rA-WGv" firstAttribute="centerX" secondItem="W7N-yb-Uyo" secondAttribute="centerX" id="mpG-u4-NAI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kAf-3d-CaZ" secondAttribute="trailing" id="u9f-49-oX6"/>
+                            <constraint firstItem="NiK-ZG-VOy" firstAttribute="top" secondItem="ocg-Wa-Hzo" secondAttribute="bottom" id="z1r-KY-qwU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="H4i-8u-ZtC"/>
-                                <exclude reference="Juf-k8-YXr"/>
-                                <exclude reference="K1N-cg-a3w"/>
-                                <exclude reference="kAf-3d-CaZ"/>
                                 <exclude reference="laa-iE-stP"/>
+                                <exclude reference="Juf-k8-YXr"/>
+                                <exclude reference="kAf-3d-CaZ"/>
                                 <exclude reference="SEq-rA-WGv"/>
-                                <exclude reference="j7H-9g-HdA"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="n3d-Tc-hCf"/>
-                                <exclude reference="8jT-Xh-EDJ"/>
-                                <exclude reference="cnF-VA-rNA"/>
-                                <exclude reference="fwx-ip-Ryc"/>
-                                <exclude reference="uwI-2E-LE9"/>
-                                <exclude reference="2jl-Ig-Nrl"/>
-                                <exclude reference="79z-0G-zjV"/>
-                                <exclude reference="JLH-5N-noU"/>
-                                <exclude reference="R0G-fI-E4b"/>
-                                <exclude reference="X1Z-lg-ygu"/>
-                                <exclude reference="wp8-YY-AId"/>
-                                <exclude reference="AV2-fa-MNy"/>
-                                <exclude reference="Ec0-1g-6ii"/>
-                                <exclude reference="vnI-Wo-kKN"/>
-                                <exclude reference="zi8-hm-ndA"/>
-                                <exclude reference="5gu-lA-uIa"/>
-                                <exclude reference="SnV-5d-KjA"/>
-                                <exclude reference="YjT-9P-gYi"/>
-                                <exclude reference="bn3-Tw-npe"/>
+                                <exclude reference="K1N-cg-a3w"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="H4i-8u-ZtC"/>
-                                <include reference="Juf-k8-YXr"/>
-                                <include reference="K1N-cg-a3w"/>
-                                <include reference="kAf-3d-CaZ"/>
                                 <include reference="laa-iE-stP"/>
+                                <include reference="Juf-k8-YXr"/>
+                                <include reference="kAf-3d-CaZ"/>
                                 <include reference="SEq-rA-WGv"/>
-                                <include reference="j7H-9g-HdA"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="n3d-Tc-hCf"/>
-                                <include reference="8jT-Xh-EDJ"/>
-                                <include reference="cnF-VA-rNA"/>
-                                <include reference="fwx-ip-Ryc"/>
-                                <include reference="uwI-2E-LE9"/>
-                                <include reference="2jl-Ig-Nrl"/>
-                                <include reference="79z-0G-zjV"/>
-                                <include reference="JLH-5N-noU"/>
-                                <include reference="R0G-fI-E4b"/>
-                                <include reference="X1Z-lg-ygu"/>
-                                <include reference="wp8-YY-AId"/>
-                                <include reference="AV2-fa-MNy"/>
-                                <include reference="Ec0-1g-6ii"/>
-                                <include reference="vnI-Wo-kKN"/>
-                                <include reference="zi8-hm-ndA"/>
-                                <include reference="5gu-lA-uIa"/>
-                                <include reference="SnV-5d-KjA"/>
-                                <include reference="YjT-9P-gYi"/>
-                                <include reference="bn3-Tw-npe"/>
+                                <include reference="K1N-cg-a3w"/>
                             </mask>
                         </variation>
                     </view>
@@ -4621,14 +4507,13 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <outlet property="getStartedImageView" destination="SEq-rA-WGv" id="3sE-V4-Aeb"/>
                         <outlet property="guidanceBtnOutlet" destination="H4i-8u-ZtC" id="hp3-QJ-WBy"/>
                         <outlet property="headPicImageView" destination="laa-iE-stP" id="R86-Pf-Tkl"/>
-                        <outlet property="welcomeImageView" destination="j7H-9g-HdA" id="9lc-E2-x8p"/>
                         <outlet property="welcomeTextLabel" destination="Juf-k8-YXr" id="SY7-lq-FjC"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="regCompletedSegue" id="8qG-gV-Nma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww8-I8-Jhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1503" y="231.75"/>
+            <point key="canvasLocation" x="-733.33333333333337" y="-1004.3478260869566"/>
         </scene>
         <!--Gratulasjons View Controller-->
         <scene sceneID="Cc6-h9-D7F">
@@ -5149,19 +5034,36 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ec-AY-LKI">
-                                <rect key="frame" x="-1" y="0.0" width="401" height="800"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ec-AY-LKI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Kallenavn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-SV-py8">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CuckJoafuck2" translatesAutoresizingMaskIntoConstraints="NO" id="xDh-OP-tSh">
+                                        <rect key="frame" x="173" y="64" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="GsU-HA-ScP"/>
+                                            <constraint firstAttribute="height" constant="68" id="miV-Ek-lub"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GsU-HA-ScP"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="GsU-HA-ScP"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kallenavn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-SV-py8">
+                                        <rect key="frame" x="43" y="240" width="75" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4M6-Cm-x9p"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="fji-Yy-HTZ"/>
                                             <constraint firstAttribute="width" constant="75" id="qOM-gh-TDT"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="sKj-uh-OW8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5180,8 +5082,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn kallenavn" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-D8-cvS">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn kallenavn" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-D8-cvS">
+                                        <rect key="frame" x="126" y="222" width="196" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="8v6-wg-izO"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="196" id="ac7-gz-XXC"/>
@@ -5210,8 +5112,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <outlet property="delegate" destination="UFE-QU-Y9H" id="OmI-aQ-yNG"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-x5-pc1">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-x5-pc1">
+                                        <rect key="frame" x="49" y="259" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Ggg-fH-I5k"/>
                                             <constraint firstAttribute="width" constant="317" id="UTy-4B-vsx"/>
@@ -5232,8 +5134,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Navn" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-gS-l5Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navn" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-gS-l5Q">
+                                        <rect key="frame" x="330" y="240" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="33J-Fx-0g0"/>
                                             <constraint firstAttribute="height" constant="30" id="VtQ-KR-hB5"/>
@@ -5251,14 +5153,14 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Kjønn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-y7-DW8">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kjønn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-y7-DW8">
+                                        <rect key="frame" x="43" y="301" width="75" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="9kn-h4-ACK"/>
                                             <constraint firstAttribute="height" constant="30" id="ZOe-xU-TgD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5273,14 +5175,14 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vekt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-dA-bmp">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vekt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-dA-bmp">
+                                        <rect key="frame" x="43" y="431" width="75" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0NQ-G6-NPR"/>
                                             <constraint firstAttribute="width" constant="75" id="oOd-H9-Jsx"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5295,14 +5197,14 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZh-Jh-YPT">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZh-Jh-YPT">
+                                        <rect key="frame" x="43" y="368" width="75" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2ZA-Qx-LDI"/>
                                             <constraint firstAttribute="width" constant="75" id="z6C-eE-pZ3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5317,8 +5219,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn alder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eBZ-u1-cpq">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn alder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eBZ-u1-cpq">
+                                        <rect key="frame" x="126" y="350" width="196" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="0F4-be-6gp"/>
                                             <constraint firstAttribute="width" constant="196" id="Xki-bQ-3Kt"/>
@@ -5341,8 +5243,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <outlet property="delegate" destination="UFE-QU-Y9H" id="2f5-Nl-vus"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn vekt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFu-RN-kLK">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="skriv inn vekt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFu-RN-kLK">
+                                        <rect key="frame" x="126" y="413" width="196" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="196" id="1cg-ph-DDr"/>
                                             <constraint firstAttribute="height" constant="42" id="KT4-RX-aMY"/>
@@ -5365,8 +5267,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <outlet property="delegate" destination="UFE-QU-Y9H" id="x7M-Wy-sEy"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85O-tl-9hl">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85O-tl-9hl">
+                                        <rect key="frame" x="49" y="321" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="317" id="Amd-Mh-Evl"/>
                                             <constraint firstAttribute="height" constant="21" id="oL4-4H-Xen"/>
@@ -5387,8 +5289,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VO-yD-P3x">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VO-yD-P3x">
+                                        <rect key="frame" x="49" y="384" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="NfK-60-kec"/>
                                             <constraint firstAttribute="width" constant="317" id="mVc-Uw-7EW"/>
@@ -5409,8 +5311,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6a-oP-9Y6">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6a-oP-9Y6">
+                                        <rect key="frame" x="49" y="448" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="317" id="mU5-Gc-idg"/>
                                             <constraint firstAttribute="height" constant="21" id="vex-sD-xx5"/>
@@ -5431,8 +5333,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Kjønn" translatesAutoresizingMaskIntoConstraints="NO" id="CZL-M7-6R2">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kjønn" translatesAutoresizingMaskIntoConstraints="NO" id="CZL-M7-6R2">
+                                        <rect key="frame" x="330" y="301" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Z70-Jg-Fhd"/>
                                             <constraint firstAttribute="width" constant="30" id="sDu-pj-AAj"/>
@@ -5450,8 +5352,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Alder" translatesAutoresizingMaskIntoConstraints="NO" id="gpO-Nt-LpA">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alder" translatesAutoresizingMaskIntoConstraints="NO" id="gpO-Nt-LpA">
+                                        <rect key="frame" x="330" y="362" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FfT-ml-Sz3"/>
                                             <constraint firstAttribute="width" constant="30" id="Juk-bf-fIJ"/>
@@ -5469,8 +5371,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="kjønn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCB-Lg-CkY">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="kjønn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCB-Lg-CkY">
+                                        <rect key="frame" x="126" y="288" width="196" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="HSW-K4-wKq"/>
                                             <constraint firstAttribute="width" constant="196" id="bBZ-n8-LMt"/>
@@ -5493,8 +5395,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <outlet property="delegate" destination="UFE-QU-Y9H" id="DOd-gL-WX9"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkN-qH-hLU">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkN-qH-hLU">
+                                        <rect key="frame" x="162" y="507" width="91" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="9HR-YY-DXi"/>
                                             <constraint firstAttribute="width" constant="91" id="uoy-qG-gp1"/>
@@ -5517,14 +5419,14 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             <action selector="saveButton:" destination="UFE-QU-Y9H" eventType="touchUpInside" id="B1D-9A-s5H"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L20-Xj-QOy">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L20-Xj-QOy">
+                                        <rect key="frame" x="33" y="135" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Zg6-Cv-uqK"/>
                                             <constraint firstAttribute="width" constant="335" id="xuo-m5-maq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -5539,49 +5441,27 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Legg inn brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knT-XA-wgd">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knT-XA-wgd">
+                                        <rect key="frame" x="43" y="193" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Cyh-NG-j1I"/>
-                                            <constraint firstAttribute="width" constant="317" id="S1m-84-Adr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Cyh-NG-j1I"/>
-                                                <exclude reference="S1m-84-Adr"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Cyh-NG-j1I"/>
-                                                <include reference="S1m-84-Adr"/>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CuckJoafuck2" translatesAutoresizingMaskIntoConstraints="NO" id="xDh-OP-tSh">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="GsU-HA-ScP"/>
-                                            <constraint firstAttribute="height" constant="68" id="obz-Fg-cDs"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="GsU-HA-ScP"/>
-                                                <exclude reference="obz-Fg-cDs"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="GsU-HA-ScP"/>
-                                                <include reference="obz-Fg-cDs"/>
-                                            </mask>
-                                        </variation>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="RKu-hY-qws">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="RKu-hY-qws">
+                                        <rect key="frame" x="182" y="507" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JNY-ec-ShU"/>
                                             <constraint firstAttribute="width" constant="50" id="avk-fx-w62"/>
@@ -5599,8 +5479,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Vekt" translatesAutoresizingMaskIntoConstraints="NO" id="7WN-HX-0Il">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vekt" translatesAutoresizingMaskIntoConstraints="NO" id="7WN-HX-0Il">
+                                        <rect key="frame" x="330" y="431" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="0Vs-Xo-js6"/>
                                             <constraint firstAttribute="height" constant="30" id="C6s-aK-AtG"/>
@@ -5623,26 +5503,26 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                     <constraint firstItem="NkN-qH-hLU" firstAttribute="top" secondItem="L6a-oP-9Y6" secondAttribute="bottom" constant="38" id="05o-H0-8dj"/>
                                     <constraint firstItem="Glk-SV-py8" firstAttribute="top" secondItem="knT-XA-wgd" secondAttribute="bottom" constant="26" id="1SX-88-e0J"/>
                                     <constraint firstItem="VFu-RN-kLK" firstAttribute="leading" secondItem="VMe-dA-bmp" secondAttribute="trailing" constant="8" id="1X3-aR-rTz"/>
-                                    <constraint firstItem="L20-Xj-QOy" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="33" id="2Eg-8K-2sU"/>
                                     <constraint firstItem="Btn-gS-l5Q" firstAttribute="leading" secondItem="XtW-D8-cvS" secondAttribute="trailing" constant="8" id="2b4-qo-Ted"/>
                                     <constraint firstItem="Glk-SV-py8" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="42.5" id="2ft-ar-bxn"/>
                                     <constraint firstItem="XtW-D8-cvS" firstAttribute="top" secondItem="knT-XA-wgd" secondAttribute="bottom" constant="8" id="372-1m-AbB"/>
                                     <constraint firstItem="85O-tl-9hl" firstAttribute="top" secondItem="mNe-x5-pc1" secondAttribute="bottom" constant="41" id="3s5-Eh-OFy"/>
                                     <constraint firstItem="CZL-M7-6R2" firstAttribute="leading" secondItem="yCB-Lg-CkY" secondAttribute="trailing" constant="8" id="47u-ke-kRG"/>
+                                    <constraint firstItem="knT-XA-wgd" firstAttribute="leading" secondItem="Glk-SV-py8" secondAttribute="leading" id="9LP-TR-Rw2"/>
                                     <constraint firstItem="knT-XA-wgd" firstAttribute="top" secondItem="L20-Xj-QOy" secondAttribute="bottom" constant="8" id="AMA-ai-5Uh"/>
                                     <constraint firstItem="1VO-yD-P3x" firstAttribute="top" secondItem="85O-tl-9hl" secondAttribute="bottom" constant="42" id="B1z-wo-Kcu"/>
                                     <constraint firstItem="85O-tl-9hl" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="BHr-0q-dmE"/>
                                     <constraint firstItem="RKu-hY-qws" firstAttribute="top" secondItem="L6a-oP-9Y6" secondAttribute="bottom" constant="38" id="BZO-od-Fg1"/>
+                                    <constraint firstAttribute="trailing" secondItem="xDh-OP-tSh" secondAttribute="trailing" constant="173" id="Bzl-Un-CWZ"/>
                                     <constraint firstItem="gpO-Nt-LpA" firstAttribute="top" secondItem="85O-tl-9hl" secondAttribute="bottom" constant="20" id="CQW-a1-gae"/>
                                     <constraint firstItem="VFu-RN-kLK" firstAttribute="top" secondItem="1VO-yD-P3x" secondAttribute="bottom" constant="8" id="D8S-wX-6Vd"/>
                                     <constraint firstItem="gpO-Nt-LpA" firstAttribute="leading" secondItem="eBZ-u1-cpq" secondAttribute="trailing" constant="8" id="DwO-XG-FRl"/>
                                     <constraint firstItem="ycb-y7-DW8" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="42.5" id="Eew-26-faS"/>
-                                    <constraint firstAttribute="trailing" secondItem="knT-XA-wgd" secondAttribute="trailing" constant="42" id="GuT-yM-mt1"/>
+                                    <constraint firstItem="xDh-OP-tSh" firstAttribute="top" secondItem="7ec-AY-LKI" secondAttribute="top" constant="64" id="LJd-oC-tsn"/>
                                     <constraint firstItem="7WN-HX-0Il" firstAttribute="leading" secondItem="VFu-RN-kLK" secondAttribute="trailing" constant="8" id="Nfw-2i-fdd"/>
                                     <constraint firstItem="VMe-dA-bmp" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="42.5" id="Npc-T2-jAY"/>
+                                    <constraint firstItem="xDh-OP-tSh" firstAttribute="centerX" secondItem="mNe-x5-pc1" secondAttribute="centerX" id="PBd-8Q-MnR"/>
                                     <constraint firstItem="RKu-hY-qws" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="PdJ-JF-Mnb"/>
-                                    <constraint firstItem="xDh-OP-tSh" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="RtS-b7-It7"/>
-                                    <constraint firstItem="xDh-OP-tSh" firstAttribute="centerY" secondItem="7ec-AY-LKI" secondAttribute="centerY" constant="-168.5" id="U37-Nh-koI"/>
                                     <constraint firstItem="XtW-D8-cvS" firstAttribute="leading" secondItem="Glk-SV-py8" secondAttribute="trailing" constant="8" id="W4Y-hk-jjX"/>
                                     <constraint firstItem="XZh-Jh-YPT" firstAttribute="top" secondItem="85O-tl-9hl" secondAttribute="bottom" constant="26" id="WhW-DP-rSD"/>
                                     <constraint firstItem="L6a-oP-9Y6" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="azw-2D-Xt0"/>
@@ -5651,8 +5531,9 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                     <constraint firstItem="7WN-HX-0Il" firstAttribute="top" secondItem="1VO-yD-P3x" secondAttribute="bottom" constant="26" id="gHp-RT-CRF"/>
                                     <constraint firstItem="mNe-x5-pc1" firstAttribute="top" secondItem="knT-XA-wgd" secondAttribute="bottom" constant="45" id="hFE-iS-hUk"/>
                                     <constraint firstItem="CZL-M7-6R2" firstAttribute="top" secondItem="mNe-x5-pc1" secondAttribute="bottom" constant="21" id="hGs-Jz-tEM"/>
+                                    <constraint firstItem="L20-Xj-QOy" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="33" id="i2C-0q-qHV"/>
+                                    <constraint firstItem="knT-XA-wgd" firstAttribute="trailing" secondItem="Btn-gS-l5Q" secondAttribute="trailing" id="lVd-vN-QEO"/>
                                     <constraint firstItem="eBZ-u1-cpq" firstAttribute="leading" secondItem="XZh-Jh-YPT" secondAttribute="trailing" constant="8" id="nG6-Re-hx7"/>
-                                    <constraint firstAttribute="trailing" secondItem="L20-Xj-QOy" secondAttribute="trailing" constant="33" id="nYQ-Cw-nN9"/>
                                     <constraint firstItem="VMe-dA-bmp" firstAttribute="top" secondItem="1VO-yD-P3x" secondAttribute="bottom" constant="26" id="o9S-fp-7jY"/>
                                     <constraint firstItem="NkN-qH-hLU" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="ooX-1S-sh0"/>
                                     <constraint firstItem="eBZ-u1-cpq" firstAttribute="top" secondItem="85O-tl-9hl" secondAttribute="bottom" constant="8" id="p8L-rE-wN7"/>
@@ -5660,13 +5541,14 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                     <constraint firstItem="1VO-yD-P3x" firstAttribute="centerX" secondItem="7ec-AY-LKI" secondAttribute="centerX" id="sDT-eN-0uW"/>
                                     <constraint firstItem="yCB-Lg-CkY" firstAttribute="top" secondItem="mNe-x5-pc1" secondAttribute="bottom" constant="8" id="sEm-UC-okY"/>
                                     <constraint firstItem="Btn-gS-l5Q" firstAttribute="top" secondItem="knT-XA-wgd" secondAttribute="bottom" constant="26" id="uLq-ia-54k"/>
+                                    <constraint firstAttribute="bottom" secondItem="xDh-OP-tSh" secondAttribute="bottom" constant="567" id="uvZ-Rs-ebS"/>
                                     <constraint firstItem="L6a-oP-9Y6" firstAttribute="top" secondItem="1VO-yD-P3x" secondAttribute="bottom" constant="43" id="wJA-Id-dES"/>
                                     <constraint firstItem="ycb-y7-DW8" firstAttribute="top" secondItem="mNe-x5-pc1" secondAttribute="bottom" constant="21" id="waN-IA-172"/>
-                                    <constraint firstItem="knT-XA-wgd" firstAttribute="leading" secondItem="7ec-AY-LKI" secondAttribute="leading" constant="42" id="xii-Jp-6Vf"/>
                                     <constraint firstItem="yCB-Lg-CkY" firstAttribute="leading" secondItem="ycb-y7-DW8" secondAttribute="trailing" constant="8" id="yvg-kN-FsQ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="xDh-OP-tSh"/>
                                         <exclude reference="Glk-SV-py8"/>
                                         <exclude reference="XtW-D8-cvS"/>
                                         <exclude reference="mNe-x5-pc1"/>
@@ -5685,59 +5567,53 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         <exclude reference="NkN-qH-hLU"/>
                                         <exclude reference="L20-Xj-QOy"/>
                                         <exclude reference="knT-XA-wgd"/>
-                                        <exclude reference="xDh-OP-tSh"/>
                                         <exclude reference="RKu-hY-qws"/>
                                         <exclude reference="7WN-HX-0Il"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="1X3-aR-rTz"/>
-                                        <exclude reference="D8S-wX-6Vd"/>
-                                        <exclude reference="372-1m-AbB"/>
-                                        <exclude reference="W4Y-hk-jjX"/>
-                                        <exclude reference="nG6-Re-hx7"/>
-                                        <exclude reference="p8L-rE-wN7"/>
-                                        <exclude reference="sEm-UC-okY"/>
-                                        <exclude reference="yvg-kN-FsQ"/>
-                                        <exclude reference="05o-H0-8dj"/>
-                                        <exclude reference="ooX-1S-sh0"/>
-                                        <exclude reference="B1z-wo-Kcu"/>
-                                        <exclude reference="sDT-eN-0uW"/>
-                                        <exclude reference="3s5-Eh-OFy"/>
-                                        <exclude reference="BHr-0q-dmE"/>
+                                        <exclude reference="pcz-Dd-jqa"/>
+                                        <exclude reference="AMA-ai-5Uh"/>
                                         <exclude reference="1SX-88-e0J"/>
                                         <exclude reference="2ft-ar-bxn"/>
-                                        <exclude reference="2Eg-8K-2sU"/>
-                                        <exclude reference="nYQ-Cw-nN9"/>
-                                        <exclude reference="pcz-Dd-jqa"/>
-                                        <exclude reference="azw-2D-Xt0"/>
-                                        <exclude reference="wJA-Id-dES"/>
-                                        <exclude reference="Npc-T2-jAY"/>
-                                        <exclude reference="o9S-fp-7jY"/>
-                                        <exclude reference="WhW-DP-rSD"/>
-                                        <exclude reference="cQq-6X-b9A"/>
-                                        <exclude reference="AMA-ai-5Uh"/>
-                                        <exclude reference="GuT-yM-mt1"/>
-                                        <exclude reference="xii-Jp-6Vf"/>
+                                        <exclude reference="372-1m-AbB"/>
+                                        <exclude reference="W4Y-hk-jjX"/>
                                         <exclude reference="czQ-T2-Dvp"/>
                                         <exclude reference="hFE-iS-hUk"/>
                                         <exclude reference="Eew-26-faS"/>
                                         <exclude reference="waN-IA-172"/>
-                                        <exclude reference="Nfw-2i-fdd"/>
-                                        <exclude reference="gHp-RT-CRF"/>
+                                        <exclude reference="sEm-UC-okY"/>
+                                        <exclude reference="yvg-kN-FsQ"/>
+                                        <exclude reference="3s5-Eh-OFy"/>
+                                        <exclude reference="BHr-0q-dmE"/>
+                                        <exclude reference="nG6-Re-hx7"/>
+                                        <exclude reference="p8L-rE-wN7"/>
+                                        <exclude reference="WhW-DP-rSD"/>
+                                        <exclude reference="cQq-6X-b9A"/>
                                         <exclude reference="2b4-qo-Ted"/>
                                         <exclude reference="uLq-ia-54k"/>
+                                        <exclude reference="B1z-wo-Kcu"/>
+                                        <exclude reference="sDT-eN-0uW"/>
                                         <exclude reference="47u-ke-kRG"/>
                                         <exclude reference="hGs-Jz-tEM"/>
-                                        <exclude reference="BZO-od-Fg1"/>
-                                        <exclude reference="PdJ-JF-Mnb"/>
+                                        <exclude reference="1X3-aR-rTz"/>
+                                        <exclude reference="D8S-wX-6Vd"/>
+                                        <exclude reference="Npc-T2-jAY"/>
+                                        <exclude reference="o9S-fp-7jY"/>
+                                        <exclude reference="azw-2D-Xt0"/>
+                                        <exclude reference="wJA-Id-dES"/>
                                         <exclude reference="CQW-a1-gae"/>
                                         <exclude reference="DwO-XG-FRl"/>
-                                        <exclude reference="RtS-b7-It7"/>
-                                        <exclude reference="U37-Nh-koI"/>
+                                        <exclude reference="Nfw-2i-fdd"/>
+                                        <exclude reference="gHp-RT-CRF"/>
+                                        <exclude reference="05o-H0-8dj"/>
+                                        <exclude reference="ooX-1S-sh0"/>
+                                        <exclude reference="BZO-od-Fg1"/>
+                                        <exclude reference="PdJ-JF-Mnb"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
+                                        <include reference="xDh-OP-tSh"/>
                                         <include reference="Glk-SV-py8"/>
                                         <include reference="XtW-D8-cvS"/>
                                         <include reference="mNe-x5-pc1"/>
@@ -5756,55 +5632,48 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         <include reference="NkN-qH-hLU"/>
                                         <include reference="L20-Xj-QOy"/>
                                         <include reference="knT-XA-wgd"/>
-                                        <include reference="xDh-OP-tSh"/>
                                         <include reference="RKu-hY-qws"/>
                                         <include reference="7WN-HX-0Il"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="1X3-aR-rTz"/>
-                                        <include reference="D8S-wX-6Vd"/>
-                                        <include reference="372-1m-AbB"/>
-                                        <include reference="W4Y-hk-jjX"/>
-                                        <include reference="nG6-Re-hx7"/>
-                                        <include reference="p8L-rE-wN7"/>
-                                        <include reference="sEm-UC-okY"/>
-                                        <include reference="yvg-kN-FsQ"/>
-                                        <include reference="05o-H0-8dj"/>
-                                        <include reference="ooX-1S-sh0"/>
-                                        <include reference="B1z-wo-Kcu"/>
-                                        <include reference="sDT-eN-0uW"/>
-                                        <include reference="3s5-Eh-OFy"/>
-                                        <include reference="BHr-0q-dmE"/>
+                                        <include reference="pcz-Dd-jqa"/>
+                                        <include reference="AMA-ai-5Uh"/>
                                         <include reference="1SX-88-e0J"/>
                                         <include reference="2ft-ar-bxn"/>
-                                        <include reference="2Eg-8K-2sU"/>
-                                        <include reference="nYQ-Cw-nN9"/>
-                                        <include reference="pcz-Dd-jqa"/>
-                                        <include reference="azw-2D-Xt0"/>
-                                        <include reference="wJA-Id-dES"/>
-                                        <include reference="Npc-T2-jAY"/>
-                                        <include reference="o9S-fp-7jY"/>
-                                        <include reference="WhW-DP-rSD"/>
-                                        <include reference="cQq-6X-b9A"/>
-                                        <include reference="AMA-ai-5Uh"/>
-                                        <include reference="GuT-yM-mt1"/>
-                                        <include reference="xii-Jp-6Vf"/>
+                                        <include reference="372-1m-AbB"/>
+                                        <include reference="W4Y-hk-jjX"/>
                                         <include reference="czQ-T2-Dvp"/>
                                         <include reference="hFE-iS-hUk"/>
                                         <include reference="Eew-26-faS"/>
                                         <include reference="waN-IA-172"/>
-                                        <include reference="Nfw-2i-fdd"/>
-                                        <include reference="gHp-RT-CRF"/>
+                                        <include reference="sEm-UC-okY"/>
+                                        <include reference="yvg-kN-FsQ"/>
+                                        <include reference="3s5-Eh-OFy"/>
+                                        <include reference="BHr-0q-dmE"/>
+                                        <include reference="nG6-Re-hx7"/>
+                                        <include reference="p8L-rE-wN7"/>
+                                        <include reference="WhW-DP-rSD"/>
+                                        <include reference="cQq-6X-b9A"/>
                                         <include reference="2b4-qo-Ted"/>
                                         <include reference="uLq-ia-54k"/>
+                                        <include reference="B1z-wo-Kcu"/>
+                                        <include reference="sDT-eN-0uW"/>
                                         <include reference="47u-ke-kRG"/>
                                         <include reference="hGs-Jz-tEM"/>
-                                        <include reference="BZO-od-Fg1"/>
-                                        <include reference="PdJ-JF-Mnb"/>
+                                        <include reference="1X3-aR-rTz"/>
+                                        <include reference="D8S-wX-6Vd"/>
+                                        <include reference="Npc-T2-jAY"/>
+                                        <include reference="o9S-fp-7jY"/>
+                                        <include reference="azw-2D-Xt0"/>
+                                        <include reference="wJA-Id-dES"/>
                                         <include reference="CQW-a1-gae"/>
                                         <include reference="DwO-XG-FRl"/>
-                                        <include reference="RtS-b7-It7"/>
-                                        <include reference="U37-Nh-koI"/>
+                                        <include reference="Nfw-2i-fdd"/>
+                                        <include reference="gHp-RT-CRF"/>
+                                        <include reference="05o-H0-8dj"/>
+                                        <include reference="ooX-1S-sh0"/>
+                                        <include reference="BZO-od-Fg1"/>
+                                        <include reference="PdJ-JF-Mnb"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -5814,33 +5683,19 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7ec-AY-LKI" firstAttribute="width" secondItem="YNM-jg-AEB" secondAttribute="width" id="7zx-hR-2fy">
-                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
-                            </constraint>
-                            <constraint firstItem="7ec-AY-LKI" firstAttribute="height" secondItem="YNM-jg-AEB" secondAttribute="height" id="FQw-ld-jcG"/>
-                            <constraint firstItem="7ec-AY-LKI" firstAttribute="centerY" secondItem="YNM-jg-AEB" secondAttribute="centerY" id="jM8-3W-huF"/>
-                            <constraint firstItem="7ec-AY-LKI" firstAttribute="centerX" secondItem="YNM-jg-AEB" secondAttribute="centerX" id="uxP-4n-OHs"/>
+                            <constraint firstItem="7ec-AY-LKI" firstAttribute="top" secondItem="YNM-jg-AEB" secondAttribute="top" id="0MZ-mf-5A3"/>
+                            <constraint firstAttribute="trailing" secondItem="7ec-AY-LKI" secondAttribute="trailing" id="3vi-c1-67x"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7ec-AY-LKI" secondAttribute="bottom" constant="-64" id="6eQ-tO-MQS"/>
+                            <constraint firstItem="7ec-AY-LKI" firstAttribute="leading" secondItem="YNM-jg-AEB" secondAttribute="leading" id="c1z-Rz-C7J"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7ec-AY-LKI"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="7zx-hR-2fy"/>
-                                <exclude reference="FQw-ld-jcG"/>
-                                <exclude reference="jM8-3W-huF"/>
-                                <exclude reference="uxP-4n-OHs"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7ec-AY-LKI"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="7zx-hR-2fy"/>
-                                <include reference="FQw-ld-jcG"/>
-                                <include reference="jM8-3W-huF"/>
-                                <include reference="uxP-4n-OHs"/>
                             </mask>
                         </variation>
                     </view>
@@ -5848,25 +5703,19 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                     <connections>
                         <outlet property="ageField" destination="eBZ-u1-cpq" id="3YD-Mi-I3q"/>
                         <outlet property="ageImageView" destination="gpO-Nt-LpA" id="cqS-68-pun"/>
-                        <outlet property="ageTitleLabel" destination="XZh-Jh-YPT" id="bMZ-RV-Zjj"/>
                         <outlet property="ageUnderLinedLabel" destination="1VO-yD-P3x" id="syM-Q8-8Wf"/>
                         <outlet property="chooseGenderTextField" destination="yCB-Lg-CkY" id="uOS-aB-LJP"/>
                         <outlet property="genderImageView" destination="CZL-M7-6R2" id="u3i-TQ-31g"/>
-                        <outlet property="genderTitleLabel" destination="ycb-y7-DW8" id="7mN-JM-pwS"/>
                         <outlet property="genderUnderLinedLabel" destination="85O-tl-9hl" id="1Da-2g-Hor"/>
                         <outlet property="headerImageView" destination="xDh-OP-tSh" id="xYQ-QE-NfO"/>
                         <outlet property="heightField" destination="XtW-D8-cvS" id="itB-Iz-7Ab"/>
-                        <outlet property="heightTitleLabel" destination="Glk-SV-py8" id="lns-VV-qWq"/>
                         <outlet property="nextButtonOutlet" destination="NkN-qH-hLU" id="eiW-CX-YFW"/>
                         <outlet property="nextImageView" destination="RKu-hY-qws" id="dYV-DB-nW9"/>
                         <outlet property="nickNameImageView" destination="Btn-gS-l5Q" id="gNt-go-3eg"/>
                         <outlet property="nicknameUnderlinedLabel" destination="mNe-x5-pc1" id="xST-GM-2cf"/>
                         <outlet property="scrollView" destination="7ec-AY-LKI" id="KBV-Sy-AXy"/>
-                        <outlet property="subTitleLabel" destination="knT-XA-wgd" id="EJS-5r-kg7"/>
-                        <outlet property="titleLabel" destination="L20-Xj-QOy" id="eTa-ir-ftI"/>
                         <outlet property="weightField" destination="VFu-RN-kLK" id="fRE-D7-C71"/>
                         <outlet property="weightImageView" destination="7WN-HX-0Il" id="XsC-ug-wJj"/>
-                        <outlet property="weightTitleLabel" destination="VMe-dA-bmp" id="SHg-yc-UNZ"/>
                         <outlet property="weightUnderLinedLabel" destination="L6a-oP-9Y6" id="H9p-ra-JEf"/>
                         <segue destination="JAr-uY-EtF" kind="show" identifier="settingsSegue" id="6eS-Ys-rbg"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="startAppSegue" id="xx1-SW-dKo"/>
@@ -5874,7 +5723,7 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otp-B7-NDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-723" y="231.75"/>
+            <point key="canvasLocation" x="148" y="-1004"/>
         </scene>
         <!--Kostnader View Controller-->
         <scene sceneID="Ewq-ee-FuW">
@@ -5888,11 +5737,11 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBu-xN-Wkx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBu-xN-Wkx">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIx-mQ-pop">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIx-mQ-pop">
+                                        <rect key="frame" x="0.0" y="220" width="414" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="qwh-5o-KKm"/>
                                         </constraints>
@@ -5910,8 +5759,8 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgn-DZ-KqA">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgn-DZ-KqA">
+                                        <rect key="frame" x="93.666666666666686" y="307" width="227" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="227" id="ga3-qV-XWj"/>
                                             <constraint firstAttribute="height" constant="81" id="iUi-gz-Ics"/>
@@ -5934,8 +5783,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Legg inn kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPC-ja-TuU">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPC-ja-TuU">
+                                        <rect key="frame" x="0.0" y="278" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="uLy-On-kNc"/>
                                         </constraints>
@@ -5953,8 +5802,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi vinpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-sD-tE7">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi vinpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-sD-tE7">
+                                        <rect key="frame" x="150" y="445" width="114" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="gRn-Ua-0WF"/>
                                             <constraint firstAttribute="width" constant="114" id="lAB-Tx-wEf"/>
@@ -5978,8 +5827,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <outlet property="delegate" destination="JAr-uY-EtF" id="ixG-o5-1Lm"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-bv-YK3">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-bv-YK3">
+                                        <rect key="frame" x="93" y="458" width="49" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="IUj-Yr-RaN"/>
                                             <constraint firstAttribute="width" constant="48" id="ps7-6g-ZFs">
@@ -6002,8 +5851,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi drinkpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvr-o8-1Lv">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi drinkpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvr-o8-1Lv">
+                                        <rect key="frame" x="150" y="495" width="114" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="114" id="8Ku-fV-Nsy"/>
                                             <constraint firstAttribute="height" constant="42" id="goM-79-XmN"/>
@@ -6026,8 +5875,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <outlet property="delegate" destination="JAr-uY-EtF" id="DRV-0e-wVn"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jY-No-2fw">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jY-No-2fw">
+                                        <rect key="frame" x="94" y="507" width="49" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NOn-0w-Qu0"/>
                                             <constraint firstAttribute="width" constant="49" id="uph-3e-LOd"/>
@@ -6048,8 +5897,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-Pi-eKg">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-Pi-eKg">
+                                        <rect key="frame" x="150" y="545" width="114" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="OC4-t2-dWZ"/>
                                             <constraint firstAttribute="width" constant="114" id="l8U-mj-ZSj"/>
@@ -6072,8 +5921,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <outlet property="delegate" destination="JAr-uY-EtF" id="UY8-Ct-6On"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-02-lYS">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-02-lYS">
+                                        <rect key="frame" x="93" y="557" width="49" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="8rS-P0-f5Y"/>
                                             <constraint firstAttribute="height" constant="30" id="vWE-fi-ExT"/>
@@ -6094,8 +5943,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Øl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrT-uJ-MtL">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Øl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrT-uJ-MtL">
+                                        <rect key="frame" x="93" y="411" width="49" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="V99-UO-uWd"/>
                                             <constraint firstAttribute="width" constant="49" id="zc1-dx-axr"/>
@@ -6116,8 +5965,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-d3-B8W">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-d3-B8W">
+                                        <rect key="frame" x="0.0" y="429" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="zU2-kz-OvV"/>
                                         </constraints>
@@ -6135,8 +5984,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-wD-2Cj">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-wD-2Cj">
+                                        <rect key="frame" x="0.0" y="478" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Gqc-4R-ay5"/>
                                         </constraints>
@@ -6154,8 +6003,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVQ-ML-i0v">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVQ-ML-i0v">
+                                        <rect key="frame" x="0.0" y="528" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="WyT-Lf-EiT"/>
                                         </constraints>
@@ -6173,8 +6022,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTJ-nq-4gO">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTJ-nq-4gO">
+                                        <rect key="frame" x="0.0" y="581" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="5AK-iA-Bxx"/>
                                         </constraints>
@@ -6192,8 +6041,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-bF-zwL">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-bF-zwL">
+                                        <rect key="frame" x="291" y="411" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="2cc-h8-nfE"/>
                                             <constraint firstAttribute="height" constant="30" id="zGh-ym-sJ9"/>
@@ -6211,8 +6060,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Vin" translatesAutoresizingMaskIntoConstraints="NO" id="352-xe-Kn5">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vin" translatesAutoresizingMaskIntoConstraints="NO" id="352-xe-Kn5">
+                                        <rect key="frame" x="291" y="458" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="jvJ-Vv-Ngo"/>
                                             <constraint firstAttribute="height" constant="30" id="xZA-Lc-o6j"/>
@@ -6230,8 +6079,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bva-Ig-Jdk">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bva-Ig-Jdk">
+                                        <rect key="frame" x="150" y="395" width="114" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="114" id="BL7-o9-JaR"/>
                                             <constraint firstAttribute="height" constant="42" id="XZY-SQ-jwi"/>
@@ -6254,8 +6103,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <outlet property="delegate" destination="JAr-uY-EtF" id="tbV-Oi-WGB"/>
                                         </connections>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Drink" translatesAutoresizingMaskIntoConstraints="NO" id="I60-hw-B6D">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drink" translatesAutoresizingMaskIntoConstraints="NO" id="I60-hw-B6D">
+                                        <rect key="frame" x="291" y="507" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="hlf-QC-ESQ"/>
                                             <constraint firstAttribute="height" constant="30" id="llw-MK-x5j"/>
@@ -6273,8 +6122,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Shot" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-xU-Mwd">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shot" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-xU-Mwd">
+                                        <rect key="frame" x="291" y="557" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GZz-1A-p2A"/>
                                             <constraint firstAttribute="height" constant="30" id="H1A-3z-aSO"/>
@@ -6292,8 +6141,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3ML-qx-0XB">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3ML-qx-0XB">
+                                        <rect key="frame" x="173" y="144" width="68" height="68"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="68" id="Eef-n5-4Nx"/>
                                             <constraint firstAttribute="width" constant="68" id="NHf-ER-aS7"/>
@@ -6311,8 +6160,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RHB-Cw-t5F">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RHB-Cw-t5F">
+                                        <rect key="frame" x="44" y="640" width="91" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="BKH-eZ-y1R"/>
                                             <constraint firstAttribute="width" constant="91" id="ceL-Fg-BNZ"/>
@@ -6336,8 +6185,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <action selector="useDefaultCosts:" destination="JAr-uY-EtF" eventType="touchUpInside" id="yzC-Qm-ANc"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Average Math-100" translatesAutoresizingMaskIntoConstraints="NO" id="F6l-Xg-iiv">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Average Math-100" translatesAutoresizingMaskIntoConstraints="NO" id="F6l-Xg-iiv">
+                                        <rect key="frame" x="64" y="640" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0s2-6m-bma"/>
                                             <constraint firstAttribute="width" constant="50" id="IQd-MU-g6W"/>
@@ -6355,8 +6204,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-Oc-8dK">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-Oc-8dK">
+                                        <rect key="frame" x="254" y="640" width="91" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="0vF-lo-bVh"/>
                                             <constraint firstAttribute="width" constant="91" id="fQV-M7-ukZ"/>
@@ -6379,8 +6228,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             <action selector="nextButton:" destination="JAr-uY-EtF" eventType="touchUpInside" id="iFX-dY-sax"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-a2-JnN">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-a2-JnN">
+                                        <rect key="frame" x="274" y="640" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="E6k-RM-mf5"/>
                                             <constraint firstAttribute="width" constant="50" id="sDC-2e-FWD"/>
@@ -6698,7 +6547,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8z-Hc-SQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148.5" y="231.75"/>
+            <point key="canvasLocation" x="888" y="-1004"/>
         </scene>
         <!--Sett Mal View Controller-->
         <scene sceneID="T2N-rj-Q1O">
@@ -6712,11 +6561,11 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGz-CB-lh2">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGz-CB-lh2">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-VQ-mN2">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-VQ-mN2">
+                                        <rect key="frame" x="0.0" y="202" width="414" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Iuk-hK-6cl"/>
                                         </constraints>
@@ -6734,8 +6583,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Legg inn langsiktig makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-tx-xh3">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn langsiktig makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-tx-xh3">
+                                        <rect key="frame" x="0.0" y="254" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HeZ-3e-v4W"/>
                                         </constraints>
@@ -6753,8 +6602,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jmM-uN-LGV">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jmM-uN-LGV">
+                                        <rect key="frame" x="61" y="347" width="292" height="118"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="118" id="lQw-bv-KNM"/>
@@ -6779,8 +6628,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Happy-50" translatesAutoresizingMaskIntoConstraints="NO" id="7Lr-ve-pog">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Happy-50" translatesAutoresizingMaskIntoConstraints="NO" id="7Lr-ve-pog">
+                                        <rect key="frame" x="187" y="299" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="TKe-fg-bGF"/>
                                             <constraint firstAttribute="height" constant="40" id="aje-NL-lwW"/>
@@ -6798,8 +6647,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUn-NJ-Dma">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUn-NJ-Dma">
+                                        <rect key="frame" x="169" y="543" width="109" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="77" id="Eq6-3v-G4Y">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="109"/>
@@ -6824,8 +6673,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <outlet property="delegate" destination="RyX-ik-qqG" id="ZxN-oS-gFp"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="maks promille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-ps-NWF">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="maks promille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-ps-NWF">
+                                        <rect key="frame" x="169" y="473" width="109" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4ti-y9-asx"/>
                                             <constraint firstAttribute="width" constant="77" id="Pmv-vC-hGx">
@@ -6850,8 +6699,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <outlet property="delegate" destination="RyX-ik-qqG" id="shJ-dR-3ci"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-OW-fxh">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-OW-fxh">
+                                        <rect key="frame" x="0.0" y="505" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="kpF-gC-6DV"/>
                                         </constraints>
@@ -6869,8 +6718,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="–––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-X4-1JA">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––––––––––––––––––––––––––––––––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-X4-1JA">
+                                        <rect key="frame" x="0.0" y="575" width="414" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Gwc-Ei-zPB"/>
                                         </constraints>
@@ -6888,8 +6737,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Define Location-100" translatesAutoresizingMaskIntoConstraints="NO" id="Lj0-5p-Czo">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Define Location-100" translatesAutoresizingMaskIntoConstraints="NO" id="Lj0-5p-Czo">
+                                        <rect key="frame" x="323" y="483" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ONH-ru-OLf"/>
                                             <constraint firstAttribute="width" constant="30" id="rT1-Wp-tvT"/>
@@ -6907,8 +6756,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Date_From-100" translatesAutoresizingMaskIntoConstraints="NO" id="0NI-Oa-RAI">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Date_From-100" translatesAutoresizingMaskIntoConstraints="NO" id="0NI-Oa-RAI">
+                                        <rect key="frame" x="323" y="553" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="8xR-3N-hNT"/>
                                             <constraint firstAttribute="height" constant="30" id="Gtq-pE-32z"/>
@@ -6926,8 +6775,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-Pz-Lab">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-Pz-Lab">
+                                        <rect key="frame" x="54" y="559" width="107" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FP9-sQ-i4h"/>
                                             <constraint firstAttribute="width" constant="107" id="VlK-HZ-YW6"/>
@@ -6948,8 +6797,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="Puw-FU-cNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="More Than-100" translatesAutoresizingMaskIntoConstraints="NO" id="Puw-FU-cNF">
+                                        <rect key="frame" x="182" y="640" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="OzZ-3i-dcM"/>
                                             <constraint firstAttribute="width" constant="50" id="xmy-Op-I5V"/>
@@ -6967,8 +6816,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-Kp-bEc">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-Kp-bEc">
+                                        <rect key="frame" x="161.66666666666666" y="640" width="91" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="91" id="V3n-g9-R7D"/>
                                             <constraint firstAttribute="height" constant="74" id="onQ-8K-1ys"/>
@@ -6991,8 +6840,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <action selector="letsRoleButton:" destination="RyX-ik-qqG" eventType="touchUpInside" id="eDo-ts-cUn"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Makspromille" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRh-f5-gTg">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRh-f5-gTg">
+                                        <rect key="frame" x="54" y="489" width="107" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="EFI-e5-mo0"/>
                                             <constraint firstAttribute="width" constant="107" id="XrE-aJ-X2Q"/>
@@ -7013,8 +6862,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Goal-100" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-Ck-4kD">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goal-100" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-Ck-4kD">
+                                        <rect key="frame" x="173" y="114" width="68" height="68"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="7Py-pq-Ryt"/>
                                             <constraint firstAttribute="height" constant="68" id="WXk-Bx-iqE"/>
@@ -7241,7 +7090,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bk6-s6-DrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964.5" y="231.75"/>
+            <point key="canvasLocation" x="1761" y="-1004"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -7263,7 +7112,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="231.75"/>
+            <point key="canvasLocation" x="661" y="-91"/>
         </scene>
         <!--Dagen Derpå-->
         <scene sceneID="7SU-b4-Rjv">
@@ -7282,7 +7131,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmF-yU-pne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3404" y="575"/>
+            <point key="canvasLocation" x="1429" y="733"/>
         </scene>
         <!--Historikk-->
         <scene sceneID="gaj-lH-V2f">
@@ -7301,7 +7150,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-Hl-xDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3405" y="1276"/>
+            <point key="canvasLocation" x="2332" y="733"/>
         </scene>
         <!--Kalkulator-->
         <scene sceneID="vwa-x2-UNB">
@@ -7320,7 +7169,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vv-l1-KWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593.5" y="-91.5"/>
+            <point key="canvasLocation" x="-113" y="733"/>
         </scene>
         <!--Planlegg Kvelden-->
         <scene sceneID="BI1-vx-yEN">
@@ -7339,7 +7188,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTx-2X-eUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593.5" y="-798.75"/>
+            <point key="canvasLocation" x="661" y="733"/>
         </scene>
         <!--Glemte Enheter View Controller-->
         <scene sceneID="jen-r2-q5H">
@@ -7978,7 +7827,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upe-gh-mLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4371.75" y="511.125"/>
+            <point key="canvasLocation" x="3551" y="522"/>
         </scene>
         <!--Dagen Derpa View Controller-->
         <scene sceneID="KMd-nm-jMs">
@@ -8178,7 +8027,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-Xd-nsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593.5" y="-1579.5"/>
+            <point key="canvasLocation" x="-1075" y="733"/>
         </scene>
         <!--Last Month View Controller-->
         <scene sceneID="FLJ-3m-mdc">
@@ -8189,7 +8038,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="mW4-ni-tno"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Str-Ry-hBY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Siste 30 dager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-JQ-c1N">
@@ -10043,7 +9892,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oz-bH-g4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6246" y="-814.5"/>
+            <point key="canvasLocation" x="-1733" y="-485"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="drJ-El-C4w">
@@ -10333,7 +10182,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06h-K5-Jqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7138.5" y="-822"/>
+            <point key="canvasLocation" x="-762" y="-430"/>
         </scene>
         <!--Veiledning Innhold View Controller-->
         <scene sceneID="2e9-kE-vRP">
@@ -11023,7 +10872,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkL-vR-bQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="1191"/>
+            <point key="canvasLocation" x="-2516" y="1357"/>
         </scene>
         <!--Skriv ditt spørsmål-->
         <scene sceneID="tRE-QZ-425">
@@ -11074,7 +10923,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJI-PQ-uEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="1953"/>
+            <point key="canvasLocation" x="-3604" y="2195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pJk-bK-4cS">
@@ -11092,7 +10941,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xw-vn-oyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1483" y="1191"/>
+            <point key="canvasLocation" x="-3467" y="1127"/>
         </scene>
     </scenes>
     <resources>
@@ -11135,21 +10984,20 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Vin" width="335" height="351"/>
         <image name="WasaRugSprø" width="100" height="100"/>
         <image name="arrowLeft" width="100" height="100"/>
-        <image name="lunchscreen_1234" width="752" height="1334"/>
         <image name="money-icon" width="200" height="200"/>
         <image name="promilleKalk" width="25" height="25"/>
         <image name="rustelefonenLOGO" width="553" height="482"/>
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8qG-gV-Nma"/>
-        <segue reference="adh-vd-Tpt"/>
-        <segue reference="Tcy-bm-g9P"/>
         <segue reference="hZa-H8-f1E"/>
-        <segue reference="Kin-tM-h6B"/>
+        <segue reference="xx1-SW-dKo"/>
+        <segue reference="Tcy-bm-g9P"/>
+        <segue reference="adh-vd-Tpt"/>
+        <segue reference="kc0-Y5-8LJ"/>
+        <segue reference="xdm-17-Bmk"/>
+        <segue reference="ok4-15-RcB"/>
         <segue reference="eaF-C5-W73"/>
-        <segue reference="Isr-7k-rKz"/>
-        <segue reference="6CW-PT-Kpn"/>
-        <segue reference="g3V-wV-1SJ"/>
+        <segue reference="f4i-bJ-1Z1"/>
     </inferredMetricsTieBreakers>
 </document>

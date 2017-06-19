@@ -27,10 +27,10 @@ class HomeViewController: UIViewController {
         
     }
     
-    func setGoalToToday(){
+    /*func setGoalToToday(){
         let brainCoreData = CoreDataMethods()
         brainCoreData.updateUserDataGoals(2.0, updateGoalDate: Date())
-    }
+    }*/
     
     func setColorsHomeView(){
         let setAppColors = AppColors()

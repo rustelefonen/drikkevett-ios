@@ -25,7 +25,8 @@ class HistoryDao: CoreDataDao {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: managedObjectContext) as! Historikk
     }
     
-    func createNewHistory(antallDrink: NSNumber?, antallOl: NSNumber?, antallShot: NSNumber?, antallVin: NSNumber?, dato: Date?, datoTwo: String?, endOfSesDato: Date?, firstUnitTimeStamp: Date?, forbruk: NSNumber?, hoyestePromille: NSNumber?, sessionNumber: NSNumber?, plannedNrUnits: NSNumber?) -> Historikk{
+    /*func createNewHistory(antallDrink: NSNumber?, antallOl: NSNumber?, antallShot: NSNumber?, antallVin: NSNumber?, dato: NSDate?, datoTwo: String?, endOfSesDato: NSDate?, firstUnitTimeStamp: NSDate?, forbruk: NSNumber?, hoyestePromille: NSNumber?, sessionNumber: NSNumber?, plannedNrUnits: NSNumber?) -> Historikk{
+        print("halla")
         let newHistory = createNewHistory()
         newHistory.antallDrink = antallDrink
         newHistory.antallOl = antallOl
@@ -40,7 +41,7 @@ class HistoryDao: CoreDataDao {
         newHistory.sessionNumber = sessionNumber
         newHistory.plannedNrUnits = plannedNrUnits
         return newHistory
-    }
+    }*/
     
     func getAll() -> [Historikk] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

@@ -521,7 +521,7 @@
 					7FE4E4821C58BD12004465B7 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DD7UHAK9R6;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
