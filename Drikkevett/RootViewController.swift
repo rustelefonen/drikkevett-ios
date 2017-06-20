@@ -13,9 +13,7 @@ class RootViewController: UIViewController {
         super.viewDidAppear(animated)
         
         let userData = AppDelegate.getUserData()
-        
-        print(userData)
-        
+                
         let id = userData == nil ? VelkommenViewController.storyboardId : VelkommenViewController.storyboardId
         if let vc = storyboard?.instantiateViewController(withIdentifier: id){
             present(vc, animated: false, completion: nil)

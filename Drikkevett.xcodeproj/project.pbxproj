@@ -20,6 +20,7 @@
 		7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */; };
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
 		D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A31EF935FA008353AB /* UserInfo.swift */; };
+		D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A51EF93E93008353AB /* PrivacyViewController.swift */; };
 		D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */; };
 		D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A731E439F0400B42CCD /* UserDataDao.swift */; };
 		D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A751E43A39F00B42CCD /* HistoryDao.swift */; };
@@ -144,6 +145,7 @@
 		7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		D52D45A31EF935FA008353AB /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = SOURCE_ROOT; };
+		D52D45A51EF93E93008353AB /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
 		D5735A731E439F0400B42CCD /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDao.swift; sourceTree = "<group>"; };
 		D5735A751E43A39F00B42CCD /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDao.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */,
 				D52D459D1EF91737008353AB /* RootViewController.swift */,
 				D52D45A31EF935FA008353AB /* UserInfo.swift */,
+				D52D45A51EF93E93008353AB /* PrivacyViewController.swift */,
 			);
 			name = intro;
 			path = Skall_Meny;
@@ -640,6 +643,7 @@
 				D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */,
 				D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
+				D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */,
 				D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */,
 				D5958E271D29A243004FC6A3 /* UserData.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,

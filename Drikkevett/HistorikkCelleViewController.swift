@@ -6,14 +6,6 @@
 //  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
 //
 
-
-
-
-
-
-
-
-
 import UIKit
 import Charts
 import CoreData
