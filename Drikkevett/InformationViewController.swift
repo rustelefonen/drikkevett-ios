@@ -8,15 +8,13 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var chooseGenderTextField: UITextField!
     
-    var pickGenderView = UIPickerView()
-    
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
-    let setAppColors = AppColors()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = setAppColors.mainBackgroundColor()
+        let setAppColors = AppColors()
+        view.backgroundColor = setAppColors.mainBackgroundColor()
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
@@ -31,7 +29,10 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"oppgi kjønn", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
-        pickViewGenderTextField()
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.backgroundColor = UIColor.darkGray
+        chooseGenderTextField.inputView = pickerView
         
         heightField.delegate = self
         heightField.keyboardType = UIKeyboardType.asciiCapable
@@ -41,16 +42,6 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         ageField.delegate = self
         ageField.keyboardType = UIKeyboardType.numberPad
-    }
-    
-    func pickViewGenderTextField(){
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.backgroundColor = UIColor.darkGray
-        chooseGenderTextField.inputView = pickerView
-        pickGenderView.dataSource = self
-        pickGenderView.delegate = self
-        pickGenderView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
     }
     
     @IBAction func goNext(_ sender: UIButton) {
@@ -89,8 +80,13 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         let continueAlert = UIAlertController(title: "Brukerinfo", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         continueAlert.addAction(UIAlertAction(title: "Bekreft", style: .default, handler: { (action: UIAlertAction!) in
-            self.setUserData(nickName: nickName, gender: gender, age: age, weight: weight)
-            self.performSegue(withIdentifier: "settingsSegue", sender: nil)
+            
+            let userInfo = UserInfo()
+            userInfo.nickName = nickName
+            userInfo.gender = gender
+            userInfo.age = age
+            userInfo.weight = weight
+            self.performSegue(withIdentifier: "settingsSegue", sender: userInfo)
         }))
         
         continueAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
@@ -98,23 +94,20 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         present(continueAlert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settingsSegue" {
+            if segue.destination is KostnaderViewController {
+                let destinationVC = segue.destination as! KostnaderViewController
+                destinationVC.userInfo = sender as? UserInfo
+            }
+        }
+    }
+    
     func errorMessage(_ titleMsg:String = "Beklager,", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "OK"){
         let alertController = UIAlertController(title: titleMsg, message:
             errorMsg, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func setUserData(nickName:String?, gender:Bool?, age:Int?, weight:Double?) {
-        let moc = DataController().managedObjectContext
-        
-        let userData = NSEntityDescription.insertNewObject(forEntityName: "UserData", into: moc) as! UserData
-        userData.height = nickName
-        userData.gender = gender! as NSNumber
-        userData.age = age! as NSNumber
-        userData.weight = weight as NSNumber?
-        
-        try? moc.save()
     }
     
     func addDoneButton() {

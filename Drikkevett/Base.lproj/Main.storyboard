@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kcL-4g-hAi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0ay-BQ-7Lt">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -4378,10 +4378,28 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
             </objects>
             <point key="canvasLocation" x="-113" y="1501"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="2IA-uv-W6i">
+            <objects>
+                <viewController id="0ay-BQ-7Lt" customClass="RootViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EY9-KI-GGx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fhp-lb-aEv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tnS-Ju-ngD" customClass="RootViewCon">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-h2-xnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2136" y="-1368"/>
+        </scene>
         <!--Velkommen View Controller-->
         <scene sceneID="T3h-kk-r3Q">
             <objects>
-                <viewController id="kcL-4g-hAi" customClass="VelkommenViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VelkommenViewController" id="kcL-4g-hAi" customClass="VelkommenViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5BC-wU-HRC"/>
                         <viewControllerLayoutGuide type="bottom" id="NiK-ZG-VOy"/>
@@ -6509,27 +6527,12 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="beerTitleLabel" destination="DrT-uJ-MtL" id="6ed-Mt-yzv"/>
-                        <outlet property="beerUnderscore" destination="GlJ-d3-B8W" id="b3J-xG-8IT"/>
                         <outlet property="costsBeerLabel" destination="bva-Ig-Jdk" id="GHa-9X-APC"/>
                         <outlet property="costsDrinkTextField" destination="mvr-o8-1Lv" id="gPV-kk-GNY"/>
                         <outlet property="costsShotTextField" destination="Jse-Pi-eKg" id="2DN-z7-mG1"/>
                         <outlet property="costsWineTextField" destination="mv2-sD-tE7" id="PmN-Zj-suk"/>
-                        <outlet property="drinkTitleLabel" destination="4jY-No-2fw" id="eTk-8R-IRL"/>
-                        <outlet property="drinkUnderscore" destination="EVQ-ML-i0v" id="DE3-H1-mVn"/>
-                        <outlet property="nextBtnImageView" destination="DZ8-a2-JnN" id="yyk-9B-Xtz"/>
-                        <outlet property="nextBtnOutlet" destination="ru5-Oc-8dK" id="fnc-eD-RtI"/>
                         <outlet property="scrollView" destination="eBu-xN-Wkx" id="bEI-CT-bja"/>
-                        <outlet property="shotTitleLabel" destination="YDl-02-lYS" id="IMl-fG-xQs"/>
-                        <outlet property="shotUnderscore" destination="WTJ-nq-4gO" id="ebR-zJ-cQW"/>
-                        <outlet property="standardBtnImageView" destination="F6l-Xg-iiv" id="b8T-jD-JYt"/>
                         <outlet property="standardPrizesBtnOutlet" destination="RHB-Cw-t5F" id="vZI-It-leh"/>
-                        <outlet property="subTitleLabel" destination="tPC-ja-TuU" id="PLS-sj-Fxo"/>
-                        <outlet property="textView" destination="Xgn-DZ-KqA" id="ga0-j2-RR6"/>
-                        <outlet property="titleImageView" destination="3ML-qx-0XB" id="kZQ-XK-95Q"/>
-                        <outlet property="titleLabel" destination="XIx-mQ-pop" id="1Hm-E1-R9p"/>
-                        <outlet property="wineTitleLabel" destination="jwa-bv-YK3" id="4RQ-3i-u26"/>
-                        <outlet property="wineUnderscor" destination="jP4-wD-2Cj" id="wys-gE-Tra"/>
                         <segue destination="RyX-ik-qqG" kind="show" identifier="kostnadTilMalSegue" id="krb-Lr-Pvp"/>
                     </connections>
                 </viewController>
@@ -6557,8 +6560,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Iuk-hK-6cl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -6576,8 +6579,8 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HeZ-3e-v4W"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -6601,7 +6604,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
 
 Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av EN kveld. </string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -7058,21 +7061,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                     </view>
                     <connections>
                         <outlet property="datePickerTextField" destination="KUn-NJ-Dma" id="VX6-pn-IVj"/>
-                        <outlet property="dateTitleLabel" destination="ibd-Pz-Lab" id="OTD-dY-YP1"/>
-                        <outlet property="goalDateImageView" destination="0NI-Oa-RAI" id="GBy-aH-DwE"/>
-                        <outlet property="goalImageView" destination="Lj0-5p-Czo" id="1Yj-gy-78x"/>
-                        <outlet property="goalTitleLabel" destination="LRh-f5-gTg" id="EqB-B9-ykV"/>
-                        <outlet property="headerImageView" destination="ggS-Ck-4kD" id="P6U-Lv-YOd"/>
-                        <outlet property="letsGoImageView" destination="Puw-FU-cNF" id="PJ5-u3-1Cd"/>
-                        <outlet property="nextBtnOutlet" destination="Q6c-Kp-bEc" id="E6T-Wa-7Yi"/>
                         <outlet property="pickGoalTextField" destination="hxh-ps-NWF" id="ahu-s6-4Ge"/>
                         <outlet property="scrollView" destination="PGz-CB-lh2" id="LrK-ZD-5JG"/>
                         <outlet property="smileyImageView" destination="7Lr-ve-pog" id="QoH-8s-Xpi"/>
-                        <outlet property="subTitleLabel" destination="SMr-tx-xh3" id="cqp-hO-FaX"/>
-                        <outlet property="textViewGoal" destination="jmM-uN-LGV" id="QKY-Zs-IQo"/>
-                        <outlet property="titleLabel" destination="yQi-VQ-mN2" id="l8r-eM-0jX"/>
-                        <outlet property="underScoreGoal" destination="oMF-OW-fxh" id="trB-w0-Ot2"/>
-                        <outlet property="underscoreDate" destination="Ba4-X4-1JA" id="QTe-ZA-lZR"/>
+                        <outlet property="textViewGoal" destination="jmM-uN-LGV" id="NVx-KS-ws3"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="goalSegue" id="Tvs-by-ohK"/>
                     </connections>
                 </viewController>
@@ -10979,7 +10971,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hZa-H8-f1E"/>
-        <segue reference="xx1-SW-dKo"/>
+        <segue reference="Tvs-by-ohK"/>
         <segue reference="Tcy-bm-g9P"/>
         <segue reference="adh-vd-Tpt"/>
         <segue reference="kc0-Y5-8LJ"/>

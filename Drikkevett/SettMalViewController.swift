@@ -1,77 +1,39 @@
-//  SettMalViewController.swift
-//  Skall_Meny
-//
-//  Created by Lars Petter Kristiansen on 01.03.2016.
-//  Copyright © 2016 Lars Petter Kristiansen. All rights reserved.
-
 import UIKit
 import CoreData
 
 class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIScrollViewDelegate {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var textViewGoal: UITextView!
-    
-    // IMAGES
-    @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var smileyImageView: UIImageView!
-    @IBOutlet weak var goalImageView: UIImageView!
-    @IBOutlet weak var goalDateImageView: UIImageView!
-    @IBOutlet weak var letsGoImageView: UIImageView!
-    @IBOutlet weak var nextBtnOutlet: UIButton!
+    @IBOutlet weak var datePickerTextField: UITextField!
+    @IBOutlet weak var pickGoalTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    // UNDERSCORES
-    @IBOutlet weak var underScoreGoal: UILabel!
-    @IBOutlet weak var underscoreDate: UILabel!
-    
-    // TITLE LABELS
-    @IBOutlet weak var goalTitleLabel: UILabel!
-    @IBOutlet weak var dateTitleLabel: UILabel!
-    
-    // sett verdier i picker view
     var pickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
     
-    var getDate = Date()
     var goalPromille : Double! = 0.0
+    
+    var getDate = Date()
     
     // Kommunikasjon med database/Core Data
     let moc = DataController().managedObjectContext
     let brainCoreData = CoreDataMethods()
     
-    // set Colors
     var setAppColors = AppColors()
-    
-    // Set current date
-    var todayDate = Date()
-    
-    // MÅL DATO DATEPICKERVIEW
-    @IBOutlet weak var datePickerTextField: UITextField!
     var datePickerView = UIDatePicker()
-    
-    // MÅL PICKERVIEW
-    @IBOutlet weak var pickGoalTextField: UITextField!
     var pickGoalProm = UIPickerView()
     
-    // SCROLLVIEW
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     var dateMessage = ""
+    var userInfo:UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColorsAndFontsEnterGoals()
-        
-        // SET DATE PICKER
         datePickViewGenderTextField()
-        
-        // SET GOAL DATE PICKER
         setGoalPickerView()
-        setConstraints()
     }
     
-    func setGoalPickerView(){
-        // MÅLET
+    func setGoalPickerView(){       //DENNE ER RAR? SETTES ETTER AT INPUTVIEW ER SATT
         pickGoalProm = UIPickerView()
         pickGoalTextField.inputView = pickGoalProm
         pickGoalProm.dataSource = self
@@ -87,18 +49,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
-        // TITLE OG SUBTITLE
-        titleLabel.textColor = setAppColors.textHeadlinesColors()
-        titleLabel.font = setAppColors.textHeadlinesFonts(34)
-        subTitleLabel.textColor = setAppColors.textUnderHeadlinesColors()
-        subTitleLabel.font = setAppColors.textUnderHeadlinesFonts(18)
-        
-        // LABELS
-        
-        // TEXTVIEW
-        textViewGoal.textColor = setAppColors.textUnderHeadlinesColors()
-        textViewGoal.font = setAppColors.textUnderHeadlinesFonts(12)
-        
         // TEXTFIELDS
         datePickerTextField.textColor = setAppColors.textUnderHeadlinesColors()
         datePickerTextField.font = setAppColors.textUnderHeadlinesFonts(15)
@@ -111,10 +61,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -123,7 +69,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBAction func letsRoleButton(_ sender: AnyObject) {
         let maxPromille = 2.0
         
-        //Handling wrong inputs in UITextFields:
         if(goalPromille <= 0.0){
             errorMessage(errorMsg: "Fyll en en aktuell promille! ")
         } else if(goalPromille == nil){
@@ -146,19 +91,34 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func privacyMessage(){
-        let message = "For å regne ut promille mest mulig nøyaktig, ber appen deg om å oppgi kjønn, alder og vekt. Ønsker du å opprette profilbilde behøver appen tilgang på kamera og galleri. Du kan velge å ikke gi appen tilgang til dette. All informasjon som lagres i appen krypteres på din telefon og vil ikke sendes videre. Dette gjelder alle versjoner i iOS og versjoner fra og med 5.0 (lollipop) i Android. Kildekoden til appen ligger åpen på Github under brukeren rustelefonen: https://github.com/rustelefonen."
+        let message = ResourceList.privacyMessage
         let refreshAlert = UIAlertController(title: "Personvernerklæring", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
+            let userDataDao = UserDataDao()
+            let userData = userDataDao.createNewUserData()
+            
+            userData.height = self.userInfo?.nickName
+            userData.gender = self.userInfo?.gender as! NSNumber
+            userData.age = self.userInfo?.age as! NSNumber
+            userData.weight = self.userInfo?.weight as! NSNumber
+            
+            userData.costsBeer = self.userInfo?.costsBeer as! NSNumber
+            userData.costsWine = self.userInfo?.costsWine as! NSNumber
+            userData.costsDrink = self.userInfo?.costsDrink as! NSNumber
+            userData.costsShot = self.userInfo?.costsShot as! NSNumber
+            
+            userData.goalPromille = self.goalPromille as! NSNumber
+            userData.goalDate = self.getDate
+            
+            userDataDao.save()
+            
             self.isFirstRegistrationCompleted()
             self.isAppGuidanceDone()
             self.performSegue(withIdentifier: "goalSegue", sender: self)
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: { (action: UIAlertAction!) in
-            
-        }))
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
         
         present(refreshAlert, animated: true, completion: nil)
     }
@@ -166,21 +126,12 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func confirmMessage(_ titleMsg:String = "Bekreft", errorMsg:String = "Informasjon", cancelMsg:String = "Avbryt", confirmMsg: String = "Bekreft" ){
         let alertController = UIAlertController(title: titleMsg, message:
             errorMsg, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:{ (action: UIAlertAction!) in
-            print("Handle cancel logic here")
-        }))
+        alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:nil))
         
         alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
             self.privacyMessage()
-            /*self.brainCoreData.updateUserDataGoals(self.goalPromille, updateGoalDate: self.getDate)
-            self.isFirstRegistrationCompleted()
-            self.isAppGuidanceDone()
-            self.performSegue(withIdentifier: "goalSegue"
-                , sender: self) */}))
-        self.present(alertController, animated: true, completion: { action in
-            
-        })
-
+            }))
+        self.present(alertController, animated: true, completion: { action in})
     }
     
     func isAppGuidanceDone()->Bool{
@@ -263,8 +214,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         return myTitle
     }
     
-    //MARK: - Delegates and data sources
-    //MARK: Data Sources
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -304,7 +253,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
         datePickerView.backgroundColor = UIColor.darkGray
         //let dateString = dateFormatter.stringFromDate(datePickerView.date)
-        todayDate = Date()
         
         let calendar = Calendar.current
         let tomorrow = (calendar as NSCalendar).date(byAdding: .day, value: +1, to: Date(), options: [])
@@ -329,42 +277,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // SCROLL VIEW
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //If sørger for at kun det textfeltet du ønsker å flytte blir flyttet
-        // iPhone 6
-        let moveTextField : CGFloat = 100
-        
-        if(textField == datePickerTextField){
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: 167.5), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: 170), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
-            }
-        }
-        if(textField == pickGoalTextField){
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            }
-        }
         addDoneButton()
-        //else kan brukes for å håndtere andre textfields som ikke må dyttes like høyt opp!
     }
     //Funksjonen under sørger for å re-posisjonere tekstfeltet etter en har skrevet noe.
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -385,76 +298,5 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         datePickerTextField.inputAccessoryView = keyboardToolbar
         pickGoalTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    func setConstraints(){
-        if UIScreen.main.bounds.size.height == 480 {
-            // iPhone 4
-            // HEADER
-            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -300)
-            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
-            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
-            self.textViewGoal.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
-            self.smileyImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -180)
-            
-            // TEXTFIELDS
-            setTextFieldsConst(0.0, yValue: -200)
-            
-            // BUTTON
-            // BUTTON AND BUTTON IMAGES
-            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -235.0)
-            self.letsGoImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -235.0)
-        } else if UIScreen.main.bounds.size.height == 568 {
-            // IPhone 5
-            // HEADER
-            self.headerImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -82) // -92
-            self.titleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -95)
-            self.subTitleLabel.transform = self.view.transform.translatedBy(x: 0.0, y: -105)
-            self.smileyImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -110) // + 5
-            self.textViewGoal.transform = self.view.transform.translatedBy(x: 0.0, y: -105)
-            
-            // TEXTFIELDS
-            setTextFieldsConst(0.0, yValue: -132.5)
-            
-            // BUTTON AND BUTTON IMAGES
-            self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
-            self.letsGoImageView.transform = self.view.transform.translatedBy(x: 0.0, y: -160.0)
-        } else if UIScreen.main.bounds.size.width == 375 {
-            // iPhone 6
-            setWholeConstOverall(0.0, yValue: -82.0)
-        } else if UIScreen.main.bounds.size.width == 414 {
-            // iPhone 6+
-            setWholeConstOverall(0.0, yValue: -50)
-        }
-    }
-    
-    func setTextFieldsConst(_ xValue: CGFloat, yValue: CGFloat){
-        // TEXTFIELDS, TEXTF IMAGES, TEXTF TITLELABELS
-        self.pickGoalTextField.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.datePickerTextField.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.goalImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.goalDateImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.dateTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.goalTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        
-        // UNDERSCORES
-        self.underscoreDate.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.underScoreGoal.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-    }
-    
-    func setWholeConstOverall(_ xValue: CGFloat, yValue: CGFloat){
-
-        // HEADER
-        self.headerImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.titleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.subTitleLabel.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.textViewGoal.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.smileyImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        
-        setTextFieldsConst(xValue, yValue: yValue)
-        
-        // BUTTON AND BUTTON IMAGES
-        self.nextBtnOutlet.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
-        self.letsGoImageView.transform = self.view.transform.translatedBy(x: xValue, y: yValue)
     }
 }

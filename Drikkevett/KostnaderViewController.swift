@@ -7,49 +7,14 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var costsWineTextField: UITextField!
     @IBOutlet weak var costsDrinkTextField: UITextField!
     @IBOutlet weak var costsShotTextField: UITextField!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
-    @IBOutlet weak var beerTitleLabel: UILabel!
-    @IBOutlet weak var wineTitleLabel: UILabel!
-    @IBOutlet weak var drinkTitleLabel: UILabel!
-    @IBOutlet weak var shotTitleLabel: UILabel!
-    
-    // TEXTVIEW
-    @IBOutlet weak var textView: UITextView!
-    
-    // STANDARD OUTLET BTN
     @IBOutlet weak var standardPrizesBtnOutlet: UIButton!
-    @IBOutlet weak var standardBtnImageView: UIImageView!
-    
-    // NEXT BTN
-    @IBOutlet weak var nextBtnOutlet: UIButton!
-    @IBOutlet weak var nextBtnImageView: UIImageView!
-    
-    // SCROLL VIEW
     @IBOutlet weak var scrollView: UIScrollView!
     
-    // TITLE IMAGE
-    @IBOutlet weak var titleImageView: UIImageView!
-    
-    // UNDERSCORES
-    @IBOutlet weak var beerUnderscore: UILabel!
-    @IBOutlet weak var wineUnderscor: UILabel!
-    @IBOutlet weak var drinkUnderscore: UILabel!
-    @IBOutlet weak var shotUnderscore: UILabel!
-    
-    // Kommunikasjon med database/core data
-    let moc = DataController().managedObjectContext
-    let brainCoreData = CoreDataMethods()
-    
-    // set Colors
-    var setAppColors = AppColors()
+    var userInfo:UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setColorsAndFontsEnterCosts()
-    }
-    
-    func setColorsAndFontsEnterCosts(){
+        let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -57,12 +22,9 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         view.addSubview(blurEffectView)
         
         costsBeerLabel.attributedPlaceholder = NSAttributedString(string:"oppgi ølpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsWineTextField.attributedPlaceholder = NSAttributedString(string:"oppgi vinpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsDrinkTextField.attributedPlaceholder = NSAttributedString(string:"oppgi drinkpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsShotTextField.attributedPlaceholder = NSAttributedString(string:"oppgi shotpris",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        costsWineTextField.attributedPlaceholder = NSAttributedString(string:"oppgi vinpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        costsDrinkTextField.attributedPlaceholder = NSAttributedString(string:"oppgi drinkpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        costsShotTextField.attributedPlaceholder = NSAttributedString(string:"oppgi shotpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
         
         standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.center
     }
@@ -92,9 +54,13 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         alertController.addAction(UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.destructive, handler: nil))
         
         alertController.addAction(UIAlertAction(title:"Bekreft", style: UIAlertActionStyle.default, handler:  { action in
-            self.brainCoreData.updateUserDataCosts(beerCostsInfo!, updateWineCost: wineCostsInfo!, updateDrinkCost: drinkCostsInfo!, updateShotCost: shotCostsInfo!)
+            if self.userInfo == nil {return}
+            self.userInfo?.costsBeer = beerCostsInfo
+            self.userInfo?.costsWine = wineCostsInfo
+            self.userInfo?.costsDrink = drinkCostsInfo
+            self.userInfo?.costsShot = shotCostsInfo
             
-            self.performSegue(withIdentifier: "kostnadTilMalSegue", sender: self)
+            self.performSegue(withIdentifier: "kostnadTilMalSegue", sender: self.userInfo)
         }))
         present(alertController, animated: true, completion: nil)
         
@@ -114,94 +80,16 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         self.costsShotTextField.text = "110"
     }
     
-    // SCROLL VIEW
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "kostnadTilMalSegue" {
+            if segue.destination is SettMalViewController {
+                let destinationVC = segue.destination as! SettMalViewController
+                destinationVC.userInfo = sender as? UserInfo
+            }
+        }
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //If sørger for at kun det textfeltet du ønsker å flytte blir flyttet
-        // hvor høyt tekstfieldet skal flyttes
-        
-        // iphone 4
-        let moveTextFieldIphoneFour : CGFloat = 190
-        
-        // iPhone 5
-        let moveTextFieldIphoneFive : CGFloat = 140
-        
-        // iPhone 6
-        let moveTextField : CGFloat = 120
-        
-        // iphone 6+
-        let moveTextFieldIphoneSixPlus : CGFloat = 70
-        
-        if(textField == costsBeerLabel){
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
-            }
-        }
-        if(textField == costsWineTextField){
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
-            }
-        }
-        if(textField == costsDrinkTextField){
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
-            }
-        }
-        if(textField == costsShotTextField){
-            
-            if UIScreen.main.bounds.size.height == 480 {
-                // iPhone 4
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFour), animated: true)
-            } else if UIScreen.main.bounds.size.height == 568 {
-                // IPhone 5
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneFive), animated: true)
-            } else if UIScreen.main.bounds.size.width == 375 {
-                // iPhone 6
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextField), animated: true)
-            } else if UIScreen.main.bounds.size.width == 414 {
-                // iPhone 6+
-                scrollView.setContentOffset(CGPoint(x: 0, y: moveTextFieldIphoneSixPlus), animated: true)
-            }
-        }
-        addDoneButton()
-        //else kan brukes for å håndtere andre textfields som ikke må dyttes like høyt opp!
-    }
-    //Funksjonen under sørger for å re-posisjonere tekstfeltet etter en har skrevet noe.
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
-    func addDoneButton() {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
@@ -216,6 +104,10 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         costsWineTextField.inputAccessoryView = keyboardToolbar
         costsDrinkTextField.inputAccessoryView = keyboardToolbar
         costsShotTextField.inputAccessoryView = keyboardToolbar
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     // MAXIMIZE TEXTFIELDS

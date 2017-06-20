@@ -15,9 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var setAppColors = AppColors()
     var pageControll = UIPageControl()
+    
+    var userData:UserData?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        AppDelegate.initUserData()
+        
         setAppColors.tabBarColors()
 
         setAppColors.buttonColors()
@@ -57,6 +62,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    class func initUserData(){
+        getAppDelegate().userData = UserDataDao().fetchUserData()
+    }
+    
+    class func getUserData() -> UserData?{
+        return getAppDelegate().userData
+    }
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 }
 
