@@ -4,42 +4,39 @@ import CoreData
 class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     static let segueId = "settingsSegue"
-
-    @IBOutlet weak var costsBeerLabel: UITextField!
-    @IBOutlet weak var costsWineTextField: UITextField!
-    @IBOutlet weak var costsDrinkTextField: UITextField!
-    @IBOutlet weak var costsShotTextField: UITextField!
-    @IBOutlet weak var standardPrizesBtnOutlet: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var beerInput: UITextField!
+    @IBOutlet weak var wineInput: UITextField!
+    @IBOutlet weak var drinkInput: UITextField!
+    @IBOutlet weak var shotInput: UITextField!
+    
+    @IBOutlet weak var standardButton: UIView!
+    @IBOutlet weak var nextButton: UIView!
     
     var userInfo:UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let setAppColors = AppColors()
+        /*let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
-        view.addSubview(blurEffectView)
+        view.addSubview(blurEffectView)*/
         
-        costsBeerLabel.attributedPlaceholder = NSAttributedString(string:"oppgi ølpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsWineTextField.attributedPlaceholder = NSAttributedString(string:"oppgi vinpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsDrinkTextField.attributedPlaceholder = NSAttributedString(string:"oppgi drinkpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        costsShotTextField.attributedPlaceholder = NSAttributedString(string:"oppgi shotpris", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        
-        standardPrizesBtnOutlet.titleLabel?.textAlignment = NSTextAlignment.center
+        standardButton.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
+        nextButton.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector (self.goNext)))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    @IBAction func nextButton(_ sender: AnyObject) {
-        let beerCostsInfo = Int(costsBeerLabel.text!)
-        let wineCostsInfo = Int(costsWineTextField.text!)
-        let drinkCostsInfo = Int(costsDrinkTextField.text!)
-        let shotCostsInfo = Int(costsShotTextField.text!)
+    func goNext() {
+        let beerCostsInfo = Int(beerInput.text!)
+        let wineCostsInfo = Int(wineInput.text!)
+        let drinkCostsInfo = Int(drinkInput.text!)
+        let shotCostsInfo = Int(shotInput.text!)
         
         if(beerCostsInfo == nil || wineCostsInfo == nil || drinkCostsInfo == nil || shotCostsInfo == nil){
             errorMessage(errorMsg: "Alle felter må fylles ut!")
@@ -62,7 +59,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             self.userInfo?.costsDrink = drinkCostsInfo
             self.userInfo?.costsShot = shotCostsInfo
             
-            self.performSegue(withIdentifier: "kostnadTilMalSegue", sender: self.userInfo)
+            self.performSegue(withIdentifier: SettMalViewController.segueId, sender: self.userInfo)
         }))
         present(alertController, animated: true, completion: nil)
         
@@ -75,15 +72,15 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func useDefaultCosts(_ sender: AnyObject) {
-        self.costsBeerLabel.text = "60"
-        self.costsWineTextField.text = "70"
-        self.costsDrinkTextField.text = "100"
-        self.costsShotTextField.text = "110"
+    func useDefaultCosts() {
+        beerInput.text = "60"
+        wineInput.text = "70"
+        drinkInput.text = "100"
+        shotInput.text = "110"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "kostnadTilMalSegue" {
+        if segue.identifier == SettMalViewController.segueId {
             if segue.destination is SettMalViewController {
                 let destinationVC = segue.destination as! SettMalViewController
                 destinationVC.userInfo = sender as? UserInfo
@@ -102,42 +99,28 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
         doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        costsBeerLabel.inputAccessoryView = keyboardToolbar
-        costsWineTextField.inputAccessoryView = keyboardToolbar
-        costsDrinkTextField.inputAccessoryView = keyboardToolbar
-        costsShotTextField.inputAccessoryView = keyboardToolbar
+        
+        beerInput.inputAccessoryView = keyboardToolbar
+        wineInput.inputAccessoryView = keyboardToolbar
+        drinkInput.inputAccessoryView = keyboardToolbar
+        shotInput.inputAccessoryView = keyboardToolbar
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
-    // MAXIMIZE TEXTFIELDS
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // We ignore any change that doesn't add characters to the text field.
-        // These changes are things like character deletions and cuts, as well
-        // as moving the insertion point.
-        //
-        // We still return true to allow the change to take place.
-        if string.characters.count == 0 {
-            return true
-        }
-        
-        // Check to see if the text field's contents still fit the constraints
-        // with the new content added to it.
-        // If the contents still fit the constraints, allow the change
-        // by returning true; otherwise disallow the change by returning false.
+        let maxLength = 4
+
+        if string.characters.count == 0 {return true}
+
         let currentText = textField.text ?? ""
         let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
-        switch textField {
-        case textField:
-            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
-            return prospectiveText.isNumeric() &&
-                prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
-                prospectiveText.characters.count <= 4
-        default:
-            return true
-        }
+        let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
+        return prospectiveText.isNumeric() &&
+            prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
+            prospectiveText.characters.count <= maxLength
     }
  }

@@ -3,6 +3,8 @@ import CoreData
 
 class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIScrollViewDelegate {
     
+    static let segueId = "kostnadTilMalSegue"
+    
     @IBOutlet weak var textViewGoal: UITextView!
     @IBOutlet weak var smileyImageView: UIImageView!
     @IBOutlet weak var datePickerTextField: UITextField!
