@@ -5,11 +5,11 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     static let segueId = "kostnadTilMalSegue"
     
-    @IBOutlet weak var textViewGoal: UITextView!
-    @IBOutlet weak var smileyImageView: UIImageView!
-    @IBOutlet weak var datePickerTextField: UITextField!
-    @IBOutlet weak var pickGoalTextField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bacImage: UIImageView!
+    @IBOutlet weak var bacText: UITextView!
+    @IBOutlet weak var maxBacInput: UITextField!
+    @IBOutlet weak var goalInput: UITextField!
+    @IBOutlet weak var startApplication: UIView!
     
     var pickerData = [String]()
     var getDate = Date()
@@ -20,9 +20,11 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         super.viewDidLoad()
         pickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
         
-        setColorsAndFontsEnterGoals()
+        //setColorsAndFontsEnterGoals()
         datePickViewGenderTextField()
         setGoalPickerView()
+        
+        startApplication.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.beginApplication)))
     }
     
     func setColorsAndFontsEnterGoals(){
@@ -32,17 +34,12 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
-        
-        datePickerTextField.attributedPlaceholder = NSAttributedString(string:"dato",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-        pickGoalTextField.attributedPlaceholder = NSAttributedString(string:"makspromille",
-            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     }
     
     func datePickViewGenderTextField(){
         let datePickerView = UIDatePicker()
-        datePickerTextField.inputView = datePickerView
-        datePickerTextField.textColor = UIColor.white
+        goalInput.inputView = datePickerView
+        goalInput.textColor = UIColor.white
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -63,7 +60,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func setGoalPickerView(){       //DENNE ER RAR? SETTES ETTER AT INPUTVIEW ER SATT
         let pickGoalProm = UIPickerView()
-        pickGoalTextField.inputView = pickGoalProm
+        maxBacInput.inputView = pickGoalProm
         pickGoalProm.dataSource = self
         pickGoalProm.delegate = self
         let setAppColors = AppColors()
@@ -75,8 +72,8 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         self.view.endEditing(true)
     }
     
-    @IBAction func letsRoleButton(_ sender: AnyObject) {
-        var goalPromille = Double(pickGoalTextField.text!)
+    func beginApplication() {
+        var goalPromille = Double(maxBacInput.text!)
         if goalPromille == nil {return}
         
         let maxPromille = 2.0
@@ -105,7 +102,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         alertController.addAction(UIAlertAction(title: cancelMsg, style: UIAlertActionStyle.destructive, handler:nil))
         
         alertController.addAction(UIAlertAction(title:confirmMsg, style: UIAlertActionStyle.default, handler:  { action in
-            self.userInfo?.goalPromille = Double(self.pickGoalTextField.text!)
+            self.userInfo?.goalPromille = Double(self.maxBacInput.text!)
             self.userInfo?.goalDate = self.getDate
             self.performSegue(withIdentifier: PrivacyViewController.segueId, sender: self.userInfo)
         }))
@@ -132,41 +129,41 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let happyImage = UIImage(named: "Happy-100")
         let sadImage = UIImage(named: "Sad-100")
         
-        pickGoalTextField.text = "\(pickerData[row])"
+        maxBacInput.text = "\(pickerData[row])"
         let goalPromille = Double(pickerData[row])!
         if(goalPromille == 0.0){
-            textViewGoal.textColor = UIColor.white
-            textViewGoal.text = ResourceList.introBacInfos[0]
-            smileyImageView.image = happyImage
+            bacText.textColor = UIColor.white
+            bacText.text = ResourceList.introBacInfos[0]
+            bacImage.image = happyImage
         }
         else if(goalPromille > 0.0 && goalPromille <= 0.3){
-            textViewGoal.textColor = UIColor.white
-            textViewGoal.text = ResourceList.introBacInfos[1]
-            smileyImageView.image = happyImage
+            bacText.textColor = UIColor.white
+            bacText.text = ResourceList.introBacInfos[1]
+            bacImage.image = happyImage
         }
         else if(goalPromille > 0.3 && goalPromille <= 0.6){
-            textViewGoal.text = ResourceList.introBacInfos[2]
-            smileyImageView.image = happyImage
+            bacText.text = ResourceList.introBacInfos[2]
+            bacImage.image = happyImage
         }
         else if(goalPromille > 0.6 && goalPromille <= 0.9){
-            textViewGoal.text = ResourceList.introBacInfos[3]
-            smileyImageView.image = happyImage
+            bacText.text = ResourceList.introBacInfos[3]
+            bacImage.image = happyImage
         }
         else if(goalPromille > 0.9 && goalPromille <= 1.2){
-            textViewGoal.text = ResourceList.introBacInfos[4]
-            smileyImageView.image = sadImage
+            bacText.text = ResourceList.introBacInfos[4]
+            bacImage.image = sadImage
         }
         else if(goalPromille > 1.2 && goalPromille <= 1.5){
-            textViewGoal.text = ResourceList.introBacInfos[5]
-             smileyImageView.image = sadImage
+            bacText.text = ResourceList.introBacInfos[5]
+             bacImage.image = sadImage
         }
         else if(goalPromille > 1.5 && goalPromille <= 1.7){
-            textViewGoal.text = ResourceList.introBacInfos[6]
-            smileyImageView.image = sadImage
+            bacText.text = ResourceList.introBacInfos[6]
+            bacImage.image = sadImage
         }
         else if(goalPromille > 1.7){
-            textViewGoal.text = ResourceList.introBacInfos[7]
-            smileyImageView.image = UIImage(named: "Vomited-100")
+            bacText.text = ResourceList.introBacInfos[7]
+            bacImage.image = UIImage(named: "Vomited-100")
         }
     }
     
@@ -206,7 +203,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         getDate = sender.date
         let strDate = dateFormatter.string(from: sender.date)
         dateMessage = "Måldato: \(strDate)"
-        datePickerTextField.text = strDate
+        goalInput.text = strDate
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -214,7 +211,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     func addDoneButton() {
@@ -227,7 +224,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
         doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        datePickerTextField.inputAccessoryView = keyboardToolbar
-        pickGoalTextField.inputAccessoryView = keyboardToolbar
+        maxBacInput.inputAccessoryView = keyboardToolbar
+        goalInput.inputAccessoryView = keyboardToolbar
     }
 }

@@ -25,11 +25,6 @@ class webViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         loadFirstAid()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func webViewDidStartLoad(_ webView: UIWebView){
         activityIndicator.isHidden = false

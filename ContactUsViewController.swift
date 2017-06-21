@@ -17,32 +17,12 @@ class ContactUsViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var headPicture: UIImageView!
     
+    let rustelefonenPhoneNumber = "08588"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setColors()
-        setConstraints()
-        
-        // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
-    }
-    
-    @IBAction func btnCallUs(_ sender: AnyObject) {
-        callNumber("08588") // 08588 rustelefonen sitt nr
-    }
-    
-    fileprivate func callNumber(_ phoneNumber:String) {
-        if let phoneCallURL:URL = URL(string: "tel://\(phoneNumber)") {
-            let application:UIApplication = UIApplication.shared
-            if (application.canOpenURL(phoneCallURL)) {
-                application.openURL(phoneCallURL);
-            }
-        }
-    }
-    
-    func setColors(){
         let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
@@ -50,30 +30,16 @@ class ContactUsViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
+        
+        // Rename back button
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
     }
     
-    func setConstraints(){
-        if UIScreen.main.bounds.size.height == 480 {
-            // iPhone 4
-            self.headPicture.isHidden = true
-            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -150.0)
-            self.imgCallUs.transform = self.view.transform.translatedBy(x: 20.0, y: 0.0)
-            self.btnCallUs.transform = self.view.transform.translatedBy(x: 20.0, y: 0.0)
-            self.imgOpenWebPage.transform = self.view.transform.translatedBy(x: -20.0, y: 0.0)
-            self.btnOpenWebPage.transform = self.view.transform.translatedBy(x: -20.0, y: 0.0)
-        } else if UIScreen.main.bounds.size.height == 568 {
-            // IPhone 5
-            self.headPicture.transform = self.view.transform.translatedBy(x: 0.0, y: -50.0)
-            self.textView.transform = self.view.transform.translatedBy(x: 0.0, y: -50.0)
-            
-            self.imgCallUs.transform = self.view.transform.translatedBy(x: 20.0, y: 0.0)
-            self.btnCallUs.transform = self.view.transform.translatedBy(x: 20.0, y: 0.0)
-            self.imgOpenWebPage.transform = self.view.transform.translatedBy(x: -20.0, y: 0.0)
-            self.btnOpenWebPage.transform = self.view.transform.translatedBy(x: -20.0, y: 0.0)
-        } else if UIScreen.main.bounds.size.width == 375 {
-            // iPhone 6 ( OK )
-        } else if UIScreen.main.bounds.size.width == 414 {
-            // iPhone 6+ ( OK )
+    @IBAction func btnCallUs(_ sender: AnyObject) {
+        if let url = URL(string: "tel://\(rustelefonenPhoneNumber)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {UIApplication.shared.open(url)}
+            else {UIApplication.shared.openURL(url)}
         }
     }
 }

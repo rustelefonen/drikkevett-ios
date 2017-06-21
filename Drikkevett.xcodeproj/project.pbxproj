@@ -300,7 +300,6 @@
 				D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */,
 				D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */,
 				D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */,
-				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5958E591D29A682004FC6A3 /* CustomCell.swift */,
 			);
 			name = information;
@@ -413,6 +412,7 @@
 				D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */,
 				D5958E511D29A5D2004FC6A3 /* OppdaterInnstillingerViewController.swift */,
 				D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */,
+				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 			);
 			name = update;
 			sourceTree = "<group>";

@@ -24,8 +24,8 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)*/
         
-        standardButton.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
-        nextButton.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector (self.goNext)))
+        standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
+        nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.goNext)))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
