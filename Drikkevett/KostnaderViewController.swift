@@ -2,6 +2,8 @@ import UIKit
 import CoreData
 
 class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+    
+    static let segueId = "settingsSegue"
 
     @IBOutlet weak var costsBeerLabel: UITextField!
     @IBOutlet weak var costsWineTextField: UITextField!

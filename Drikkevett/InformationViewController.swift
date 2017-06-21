@@ -2,55 +2,53 @@ import UIKit
 import CoreData
 
 class InformationViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate {
-
-    @IBOutlet weak var ageField: UITextField!
-    @IBOutlet weak var heightField: UITextField!
-    @IBOutlet weak var weightField: UITextField!
-    @IBOutlet weak var chooseGenderTextField: UITextField!
+    
+    @IBOutlet weak var nicknameInput: UITextField!
+    @IBOutlet weak var genderInput: UITextField!
+    @IBOutlet weak var ageInput: UITextField!
+    @IBOutlet weak var weightInput: UITextField!
+    @IBOutlet weak var nextButton: UIView!
     
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let setAppColors = AppColors()
-        view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        /*let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
         
-        // TEXTFIELDS
-        ageField.attributedPlaceholder = NSAttributedString(string:"oppgi alder", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        view.backgroundColor = AppColors().mainBackgroundColor()*/
         
-        heightField.attributedPlaceholder = NSAttributedString(string:"oppgi kallenavn", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        nicknameInput.delegate = self
+        nicknameInput.keyboardType = UIKeyboardType.asciiCapable
         
-        weightField.attributedPlaceholder = NSAttributedString(string:"oppgi vekt", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        genderInput.inputView = initGenderPicker()
         
-        self.chooseGenderTextField.attributedPlaceholder = NSAttributedString(string:"oppgi kjønn", attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+        ageInput.delegate = self
+        ageInput.keyboardType = UIKeyboardType.numberPad
         
+        weightInput.delegate = self
+        weightInput.keyboardType = UIKeyboardType.numberPad
+        
+        nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector (self.goNext(_:))))
+    }
+    
+    func initGenderPicker() -> UIPickerView {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.backgroundColor = UIColor.darkGray
-        chooseGenderTextField.inputView = pickerView
-        
-        heightField.delegate = self
-        heightField.keyboardType = UIKeyboardType.asciiCapable
-        
-        weightField.delegate = self
-        weightField.keyboardType = UIKeyboardType.numberPad
-        
-        ageField.delegate = self
-        ageField.keyboardType = UIKeyboardType.numberPad
+        return pickerView
     }
     
-    @IBAction func goNext(_ sender: UIButton) {
-        let nickName = heightField.text
+    func goNext(_ sender: UIButton) {
+        let nickName = nicknameInput.text
         var gender:Bool? = nil
-        if chooseGenderTextField.text == pickerData[1] {gender = true}
-        else if (chooseGenderTextField.text == pickerData[2]) {gender = false}
-        let age = Int(ageField.text!)
-        let weight = Double(weightField.text!)
+        if genderInput.text == pickerData[1] {gender = true}
+        else if (genderInput.text == pickerData[2]) {gender = false}
+        let age = Int(ageInput.text!)
+        let weight = Double(weightInput.text!)
         
         if (nickName == nil || nickName == "" || gender == nil || age == nil || weight == nil) {
             errorMessage(errorMsg: "Alle felter må fylles ut!")
@@ -75,7 +73,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             return
         }
         
-        let message = "\(nickName!)\n\(chooseGenderTextField.text!)\n\(age!)\n\(weight!)"
+        let message = "\(nickName!)\n\(genderInput.text!)\n\(age!)\n\(weight!)"
         
         let continueAlert = UIAlertController(title: "Brukerinfo", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -86,7 +84,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             userInfo.gender = gender
             userInfo.age = age
             userInfo.weight = weight
-            self.performSegue(withIdentifier: "settingsSegue", sender: userInfo)
+            self.performSegue(withIdentifier: KostnaderViewController.segueId, sender: userInfo)
         }))
         
         continueAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
@@ -95,7 +93,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "settingsSegue" {
+        if segue.identifier == KostnaderViewController.segueId {
             if segue.destination is KostnaderViewController {
                 let destinationVC = segue.destination as! KostnaderViewController
                 destinationVC.userInfo = sender as? UserInfo
@@ -121,10 +119,11 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
         doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        ageField.inputAccessoryView = keyboardToolbar
-        heightField.inputAccessoryView = keyboardToolbar
-        weightField.inputAccessoryView = keyboardToolbar
-        chooseGenderTextField.inputAccessoryView = keyboardToolbar
+        
+        nicknameInput.inputAccessoryView = keyboardToolbar
+        genderInput.inputAccessoryView = keyboardToolbar
+        ageInput.inputAccessoryView = keyboardToolbar
+        weightInput.inputAccessoryView = keyboardToolbar
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -132,7 +131,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chooseGenderTextField.text = pickerData[row]
+        genderInput.text = pickerData[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -148,7 +147,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView!) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         var pickerLabel = view as? UILabel
         
@@ -171,30 +170,27 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.characters.count == 0 {return true}
-
+        let nicknameLength = 15
+        let weightLength = 3
+        let ageLength = 2
+        
         let currentText = textField.text ?? ""
         let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
-        switch textField {
-            case heightField:
-                return prospectiveText.characters.count <= 15
-            
-            case weightField:
-                let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
-                return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= 3
-            
-            case ageField:
-                let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
-                return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= 2
-
-            default:
-                return true
+        if textField == nicknameInput {return prospectiveText.characters.count <= nicknameLength}
+        else if textField == ageInput {
+            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
+            return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= ageLength
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        else if textField == weightInput {
+            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
+            return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= weightLength
+        }
+        return true
     }
 }
