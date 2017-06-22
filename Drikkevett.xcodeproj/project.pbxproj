@@ -25,6 +25,11 @@
 		D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A731E439F0400B42CCD /* UserDataDao.swift */; };
 		D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A751E43A39F00B42CCD /* HistoryDao.swift */; };
 		D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */; };
+		D5735D1B1EFBDA52002741E0 /* InfoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */; };
+		D5735D201EFBDA65002741E0 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D1F1EFBDA65002741E0 /* Info.swift */; };
+		D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */; };
+		D5735D241EFBFCE0002741E0 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D231EFBFCE0002741E0 /* InfoCell.swift */; };
+		D5735D261EFC005A002741E0 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D251EFC005A002741E0 /* BackButton.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -53,7 +58,6 @@
 		D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */; };
 		D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */; };
 		D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */; };
-		D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E591D29A682004FC6A3 /* CustomCell.swift */; };
 		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
 		D5958E5E1D29A697004FC6A3 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */; };
 		D5958E601D29A6A4004FC6A3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */; };
@@ -150,6 +154,11 @@
 		D5735A731E439F0400B42CCD /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDao.swift; sourceTree = "<group>"; };
 		D5735A751E43A39F00B42CCD /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDao.swift; sourceTree = "<group>"; };
 		D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHistoryDao.swift; sourceTree = "<group>"; };
+		D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCategory.swift; sourceTree = SOURCE_ROOT; };
+		D5735D1F1EFBDA65002741E0 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = SOURCE_ROOT; };
+		D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCategoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5735D231EFBFCE0002741E0 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = SOURCE_ROOT; };
+		D5735D251EFC005A002741E0 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -178,7 +187,6 @@
 		D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterKostnaderViewController.swift; path = Drikkevett/OppdaterKostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnstillingerMenyViewController.swift; path = Drikkevett/InnstillingerMenyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = Drikkevett/CollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		D5958E591D29A682004FC6A3 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = Drikkevett/CustomCell.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewController.swift; path = Drikkevett/InfoTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Drikkevett/InfoViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -300,7 +308,10 @@
 				D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */,
 				D5958E5D1D29A697004FC6A3 /* InfoTableViewController.swift */,
 				D5958E5F1D29A6A4004FC6A3 /* InfoViewController.swift */,
-				D5958E591D29A682004FC6A3 /* CustomCell.swift */,
+				D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */,
+				D5735D1F1EFBDA65002741E0 /* Info.swift */,
+				D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */,
+				D5735D231EFBFCE0002741E0 /* InfoCell.swift */,
 			);
 			name = information;
 			sourceTree = "<group>";
@@ -436,6 +447,7 @@
 				7F850C931D4F614A007B62DB /* DateUtil.swift */,
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
+				D5735D251EFC005A002741E0 /* BackButton.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -628,13 +640,14 @@
 				D5FC66231D492AFB00093F62 /* FormController.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
-				D5958E5A1D29A682004FC6A3 /* CustomCell.swift in Sources */,
+				D5735D241EFBFCE0002741E0 /* InfoCell.swift in Sources */,
 				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
 				7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
 				D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */,
+				D5735D201EFBDA65002741E0 /* Info.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
@@ -655,8 +668,10 @@
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
 				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
+				D5735D261EFC005A002741E0 /* BackButton.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
+				D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */,
 				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
 				D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */,
 				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
@@ -668,6 +683,7 @@
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
 				7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */,
+				D5735D1B1EFBDA52002741E0 /* InfoCategory.swift in Sources */,
 				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,

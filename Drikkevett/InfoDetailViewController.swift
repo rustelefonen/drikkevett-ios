@@ -10,12 +10,12 @@ import UIKit
 
 class InfoDetailViewController: UIViewController {
     
-    let setAppColors = AppColors()
+    static let segueId = "detailSegue"
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    var detailImage = UIImage()
-    var titleOnInf = ""
-    var longText = ""
+    
+    var info:Info?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,8 @@ class InfoDetailViewController: UIViewController {
         // Rename back button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
+        
+        let setAppColors = AppColors()
         
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
@@ -33,13 +35,8 @@ class InfoDetailViewController: UIViewController {
         self.textView.textColor = setAppColors.textViewsColors()
         self.textView.font = setAppColors.textViewsFonts()
         
-        self.navigationItem.title = "\(titleOnInf)"
-        self.textView.text = "\(longText)"
-        self.imageView.image = self.detailImage
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationItem.title = info?.title
+        self.textView.text = info?.text
+        self.imageView.image = UIImage(named: (info?.image)!)
     }
 }

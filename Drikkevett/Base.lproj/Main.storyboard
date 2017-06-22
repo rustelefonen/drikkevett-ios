@@ -171,21 +171,21 @@
                                         <exclude reference="qzv-Fd-7a8"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="KZT-FG-J1z"/>
-                                        <exclude reference="mIa-kx-oWb"/>
-                                        <exclude reference="utW-b5-Xeb"/>
-                                        <exclude reference="jrd-4A-gE9"/>
-                                        <exclude reference="kOk-Rr-o0R"/>
-                                        <exclude reference="qi3-xz-D3I"/>
                                         <exclude reference="CPD-0Q-W85"/>
                                         <exclude reference="ZJA-6G-7MS"/>
                                         <exclude reference="oOe-7p-GwY"/>
                                         <exclude reference="ETx-hx-WQg"/>
                                         <exclude reference="jaK-2M-baH"/>
                                         <exclude reference="qFd-Y3-Nsy"/>
+                                        <exclude reference="jrd-4A-gE9"/>
+                                        <exclude reference="kOk-Rr-o0R"/>
+                                        <exclude reference="qi3-xz-D3I"/>
                                         <exclude reference="F85-ML-M2d"/>
                                         <exclude reference="iau-50-MQ0"/>
                                         <exclude reference="uwW-2k-Xx0"/>
+                                        <exclude reference="KZT-FG-J1z"/>
+                                        <exclude reference="mIa-kx-oWb"/>
+                                        <exclude reference="utW-b5-Xeb"/>
                                         <exclude reference="6Ro-ti-zQh"/>
                                         <exclude reference="fJW-6D-pef"/>
                                     </mask>
@@ -200,21 +200,21 @@
                                         <include reference="qzv-Fd-7a8"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="KZT-FG-J1z"/>
-                                        <include reference="mIa-kx-oWb"/>
-                                        <include reference="utW-b5-Xeb"/>
-                                        <include reference="jrd-4A-gE9"/>
-                                        <include reference="kOk-Rr-o0R"/>
-                                        <include reference="qi3-xz-D3I"/>
                                         <include reference="CPD-0Q-W85"/>
                                         <include reference="ZJA-6G-7MS"/>
                                         <include reference="oOe-7p-GwY"/>
                                         <include reference="ETx-hx-WQg"/>
                                         <include reference="jaK-2M-baH"/>
                                         <include reference="qFd-Y3-Nsy"/>
+                                        <include reference="jrd-4A-gE9"/>
+                                        <include reference="kOk-Rr-o0R"/>
+                                        <include reference="qi3-xz-D3I"/>
                                         <include reference="F85-ML-M2d"/>
                                         <include reference="iau-50-MQ0"/>
                                         <include reference="uwW-2k-Xx0"/>
+                                        <include reference="KZT-FG-J1z"/>
+                                        <include reference="mIa-kx-oWb"/>
+                                        <include reference="utW-b5-Xeb"/>
                                         <include reference="6Ro-ti-zQh"/>
                                         <include reference="fJW-6D-pef"/>
                                     </mask>
@@ -296,11 +296,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="207"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QD8-qj-uBr">
-                                <rect key="frame" x="0.0" y="226" width="240" height="200"/>
+                                <rect key="frame" x="0.0" y="226" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="DBZ-0u-aSZ"/>
                                 </constraints>
@@ -323,7 +323,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUe-Bs-w7r">
-                                <rect key="frame" x="123" y="181.66666666666663" width="135" height="45"/>
+                                <rect key="frame" x="210" y="446" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0xq-6t-kLC"/>
                                     <constraint firstAttribute="width" constant="135" id="DCp-6N-spC"/>
@@ -349,7 +349,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-hh-OBG">
-                                <rect key="frame" x="-20" y="181.66666666666663" width="135" height="45"/>
+                                <rect key="frame" x="67" y="446" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="IJe-1q-UkI"/>
                                     <constraint firstAttribute="height" constant="45" id="bKd-hJ-wRP"/>
@@ -375,7 +375,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4to-5g-oXK">
-                                <rect key="frame" x="35" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="122" y="499" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="EYS-dA-6Vz"/>
                                     <constraint firstAttribute="height" constant="40" id="NJM-WT-j0y"/>
@@ -397,7 +397,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-5a-Zg6">
-                                <rect key="frame" x="123" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="210" y="499" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TFZ-yH-zQn"/>
                                     <constraint firstAttribute="width" constant="80" id="Zok-GX-XtA"/>
@@ -419,7 +419,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pX-mZ-HjT">
-                                <rect key="frame" x="211" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="298" y="499" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="JqY-sf-VQo"/>
                                     <constraint firstAttribute="height" constant="40" id="n4q-Mz-LxP"/>
@@ -441,7 +441,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ØL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-CQ-U6K">
-                                <rect key="frame" x="-53" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="34" y="526" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TZi-gg-nnX"/>
                                     <constraint firstAttribute="width" constant="80" id="ayk-qM-XCn"/>
@@ -463,7 +463,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zia-EE-Dlx">
-                                <rect key="frame" x="211" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="298" y="526" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I71-Ie-Hrr"/>
                                     <constraint firstAttribute="height" constant="40" id="hz2-Ge-dzD"/>
@@ -485,7 +485,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-Zo-1dn">
-                                <rect key="frame" x="35" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="122" y="526" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SS1-s7-NEC"/>
                                     <constraint firstAttribute="width" constant="80" id="ufj-RQ-oZN"/>
@@ -507,7 +507,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRINK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-Q3-Pgv">
-                                <rect key="frame" x="123" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="210" y="526" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9w5-7i-bnY"/>
                                     <constraint firstAttribute="width" constant="80" id="uCC-Fr-qwR"/>
@@ -529,7 +529,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-QG-3TV">
-                                <rect key="frame" x="-53" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="34" y="499" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ZgR-AP-dpU"/>
                                     <constraint firstAttribute="height" constant="40" id="hZS-Ge-wcp"/>
@@ -551,7 +551,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-5A-Cck">
-                                <rect key="frame" x="66" y="125" width="108" height="74"/>
+                                <rect key="frame" x="153" y="654" width="108" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="G2T-Br-emH"/>
                                     <constraint firstAttribute="height" constant="74" id="bSm-wM-ghx"/>
@@ -577,7 +577,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ok Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-6b-wnO">
-                                <rect key="frame" x="95" y="125" width="50" height="50"/>
+                                <rect key="frame" x="182" y="654" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Xop-rY-fws"/>
                                     <constraint firstAttribute="width" constant="50" id="xqN-w7-VO2"/>
@@ -596,7 +596,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j38-aN-3uL">
-                                <rect key="frame" x="35.666666666666657" y="28" width="169" height="70"/>
+                                <rect key="frame" x="122.66666666666669" y="28" width="169" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="WhG-Fx-SFO">
                                         <variation key="heightClass=regular-widthClass=compact" constant="169"/>
@@ -620,7 +620,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planlegg kvelden din!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLi-lb-TfP">
-                                <rect key="frame" x="0.0" y="102" width="240" height="50"/>
+                                <rect key="frame" x="87" y="102" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="AxT-xf-wes"/>
                                     <constraint firstAttribute="height" constant="50" id="HPW-m3-idi"/>
@@ -736,33 +736,33 @@
                             <mask key="constraints">
                                 <exclude reference="QhV-Vh-wpS"/>
                                 <exclude reference="qcu-fy-tK2"/>
-                                <exclude reference="PQ9-rd-94l"/>
-                                <exclude reference="lpb-o4-IZ1"/>
-                                <exclude reference="KKg-t3-9F8"/>
-                                <exclude reference="AuY-13-cQD"/>
-                                <exclude reference="vEL-Ue-6hp"/>
-                                <exclude reference="96X-F2-z54"/>
-                                <exclude reference="a3O-tA-4X6"/>
-                                <exclude reference="0Gp-Y7-zAt"/>
-                                <exclude reference="49a-NN-eMP"/>
-                                <exclude reference="lOC-0g-sfE"/>
-                                <exclude reference="uee-wV-CgW"/>
-                                <exclude reference="7c4-aP-vtw"/>
-                                <exclude reference="dPf-JX-Ebn"/>
-                                <exclude reference="Nzq-bb-UUA"/>
-                                <exclude reference="cP7-QZ-4zw"/>
-                                <exclude reference="3jE-UZ-JWJ"/>
-                                <exclude reference="MWV-8w-PXd"/>
                                 <exclude reference="AeX-9P-Ge5"/>
                                 <exclude reference="ByX-7X-c6n"/>
                                 <exclude reference="NsJ-vq-bqO"/>
+                                <exclude reference="Nzq-bb-UUA"/>
+                                <exclude reference="cP7-QZ-4zw"/>
+                                <exclude reference="dGi-eN-9Vn"/>
+                                <exclude reference="KKg-t3-9F8"/>
+                                <exclude reference="PQ9-rd-94l"/>
+                                <exclude reference="lpb-o4-IZ1"/>
+                                <exclude reference="AuY-13-cQD"/>
+                                <exclude reference="vEL-Ue-6hp"/>
+                                <exclude reference="0Gp-Y7-zAt"/>
+                                <exclude reference="49a-NN-eMP"/>
+                                <exclude reference="3jE-UZ-JWJ"/>
+                                <exclude reference="MWV-8w-PXd"/>
                                 <exclude reference="6HU-h8-aSt"/>
                                 <exclude reference="WrR-dd-gyZ"/>
                                 <exclude reference="ZUX-Xx-nBB"/>
                                 <exclude reference="b1j-oI-S0a"/>
+                                <exclude reference="lOC-0g-sfE"/>
+                                <exclude reference="uee-wV-CgW"/>
+                                <exclude reference="7c4-aP-vtw"/>
+                                <exclude reference="dPf-JX-Ebn"/>
+                                <exclude reference="96X-F2-z54"/>
+                                <exclude reference="a3O-tA-4X6"/>
                                 <exclude reference="NkV-DV-LBa"/>
                                 <exclude reference="ffb-60-eCS"/>
-                                <exclude reference="dGi-eN-9Vn"/>
                                 <exclude reference="0O1-0P-gl1"/>
                                 <exclude reference="fhX-tP-KUD"/>
                                 <exclude reference="zqz-S4-6Xt"/>
@@ -796,33 +796,33 @@
                             <mask key="constraints">
                                 <include reference="QhV-Vh-wpS"/>
                                 <include reference="qcu-fy-tK2"/>
-                                <include reference="PQ9-rd-94l"/>
-                                <include reference="lpb-o4-IZ1"/>
-                                <include reference="KKg-t3-9F8"/>
-                                <include reference="AuY-13-cQD"/>
-                                <include reference="vEL-Ue-6hp"/>
-                                <include reference="96X-F2-z54"/>
-                                <include reference="a3O-tA-4X6"/>
-                                <include reference="0Gp-Y7-zAt"/>
-                                <include reference="49a-NN-eMP"/>
-                                <include reference="lOC-0g-sfE"/>
-                                <include reference="uee-wV-CgW"/>
-                                <include reference="7c4-aP-vtw"/>
-                                <include reference="dPf-JX-Ebn"/>
-                                <include reference="Nzq-bb-UUA"/>
-                                <include reference="cP7-QZ-4zw"/>
-                                <include reference="3jE-UZ-JWJ"/>
-                                <include reference="MWV-8w-PXd"/>
                                 <include reference="AeX-9P-Ge5"/>
                                 <include reference="ByX-7X-c6n"/>
                                 <include reference="NsJ-vq-bqO"/>
+                                <include reference="Nzq-bb-UUA"/>
+                                <include reference="cP7-QZ-4zw"/>
+                                <include reference="dGi-eN-9Vn"/>
+                                <include reference="KKg-t3-9F8"/>
+                                <include reference="PQ9-rd-94l"/>
+                                <include reference="lpb-o4-IZ1"/>
+                                <include reference="AuY-13-cQD"/>
+                                <include reference="vEL-Ue-6hp"/>
+                                <include reference="0Gp-Y7-zAt"/>
+                                <include reference="49a-NN-eMP"/>
+                                <include reference="3jE-UZ-JWJ"/>
+                                <include reference="MWV-8w-PXd"/>
                                 <include reference="6HU-h8-aSt"/>
                                 <include reference="WrR-dd-gyZ"/>
                                 <include reference="ZUX-Xx-nBB"/>
                                 <include reference="b1j-oI-S0a"/>
+                                <include reference="lOC-0g-sfE"/>
+                                <include reference="uee-wV-CgW"/>
+                                <include reference="7c4-aP-vtw"/>
+                                <include reference="dPf-JX-Ebn"/>
+                                <include reference="96X-F2-z54"/>
+                                <include reference="a3O-tA-4X6"/>
                                 <include reference="NkV-DV-LBa"/>
                                 <include reference="ffb-60-eCS"/>
-                                <include reference="dGi-eN-9Vn"/>
                                 <include reference="0O1-0P-gl1"/>
                                 <include reference="fhX-tP-KUD"/>
                                 <include reference="zqz-S4-6Xt"/>
@@ -971,13 +971,13 @@
                                 <exclude reference="Ojf-Al-YgK"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Prx-RR-7gP"/>
-                                <exclude reference="op0-FB-4Lg"/>
                                 <exclude reference="5ED-SM-k0a"/>
                                 <exclude reference="ysd-s0-hwV"/>
                                 <exclude reference="TBu-q7-glZ"/>
                                 <exclude reference="gzb-bC-cOl"/>
                                 <exclude reference="xoO-yo-nQn"/>
+                                <exclude reference="Prx-RR-7gP"/>
+                                <exclude reference="op0-FB-4Lg"/>
                                 <exclude reference="3Ra-Q8-EpO"/>
                                 <exclude reference="42V-Pu-F6f"/>
                                 <exclude reference="Bcy-xS-lqK"/>
@@ -994,13 +994,13 @@
                                 <include reference="Ojf-Al-YgK"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Prx-RR-7gP"/>
-                                <include reference="op0-FB-4Lg"/>
                                 <include reference="5ED-SM-k0a"/>
                                 <include reference="ysd-s0-hwV"/>
                                 <include reference="TBu-q7-glZ"/>
                                 <include reference="gzb-bC-cOl"/>
                                 <include reference="xoO-yo-nQn"/>
+                                <include reference="Prx-RR-7gP"/>
+                                <include reference="op0-FB-4Lg"/>
                                 <include reference="3Ra-Q8-EpO"/>
                                 <include reference="42V-Pu-F6f"/>
                                 <include reference="Bcy-xS-lqK"/>
@@ -1122,10 +1122,10 @@
                                                     <exclude reference="0bn-ot-jUj"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="7Ke-MC-LXB"/>
-                                                    <exclude reference="bvL-zy-tUB"/>
                                                     <exclude reference="4Zy-ns-c2o"/>
                                                     <exclude reference="Nq5-TU-NkR"/>
+                                                    <exclude reference="7Ke-MC-LXB"/>
+                                                    <exclude reference="bvL-zy-tUB"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1134,10 +1134,10 @@
                                                     <include reference="0bn-ot-jUj"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="7Ke-MC-LXB"/>
-                                                    <include reference="bvL-zy-tUB"/>
                                                     <include reference="4Zy-ns-c2o"/>
                                                     <include reference="Nq5-TU-NkR"/>
+                                                    <include reference="7Ke-MC-LXB"/>
+                                                    <include reference="bvL-zy-tUB"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1225,10 +1225,10 @@
                                                     <exclude reference="LTd-xs-Ipq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="6xm-6F-gIo"/>
-                                                    <exclude reference="guB-SJ-CNC"/>
                                                     <exclude reference="7Y1-t9-OsP"/>
                                                     <exclude reference="h7l-aE-nWp"/>
+                                                    <exclude reference="6xm-6F-gIo"/>
+                                                    <exclude reference="guB-SJ-CNC"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1237,10 +1237,10 @@
                                                     <include reference="LTd-xs-Ipq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="6xm-6F-gIo"/>
-                                                    <include reference="guB-SJ-CNC"/>
                                                     <include reference="7Y1-t9-OsP"/>
                                                     <include reference="h7l-aE-nWp"/>
+                                                    <include reference="6xm-6F-gIo"/>
+                                                    <include reference="guB-SJ-CNC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1326,10 +1326,10 @@
                                                     <exclude reference="ecG-Zu-rTa"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="814-7k-POX"/>
-                                                    <exclude reference="Nuf-ek-dsd"/>
                                                     <exclude reference="IGN-iI-KJj"/>
                                                     <exclude reference="jHY-Wf-hgg"/>
+                                                    <exclude reference="814-7k-POX"/>
+                                                    <exclude reference="Nuf-ek-dsd"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1338,10 +1338,10 @@
                                                     <include reference="ecG-Zu-rTa"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="814-7k-POX"/>
-                                                    <include reference="Nuf-ek-dsd"/>
                                                     <include reference="IGN-iI-KJj"/>
                                                     <include reference="jHY-Wf-hgg"/>
+                                                    <include reference="814-7k-POX"/>
+                                                    <include reference="Nuf-ek-dsd"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1427,10 +1427,10 @@
                                                     <exclude reference="pWv-1H-2QE"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Jc6-Mt-LnR"/>
-                                                    <exclude reference="hXq-4Y-C4m"/>
                                                     <exclude reference="K1Q-3e-W5P"/>
                                                     <exclude reference="gkK-1D-Pe4"/>
+                                                    <exclude reference="Jc6-Mt-LnR"/>
+                                                    <exclude reference="hXq-4Y-C4m"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1439,10 +1439,10 @@
                                                     <include reference="pWv-1H-2QE"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Jc6-Mt-LnR"/>
-                                                    <include reference="hXq-4Y-C4m"/>
                                                     <include reference="K1Q-3e-W5P"/>
                                                     <include reference="gkK-1D-Pe4"/>
+                                                    <include reference="Jc6-Mt-LnR"/>
+                                                    <include reference="hXq-4Y-C4m"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1532,10 +1532,10 @@
                                                     <exclude reference="Q2Z-jg-iAf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="V9B-0w-Ve7"/>
-                                                    <exclude reference="zGZ-zh-HjK"/>
                                                     <exclude reference="I70-kF-k7E"/>
                                                     <exclude reference="ip0-8t-X2v"/>
+                                                    <exclude reference="V9B-0w-Ve7"/>
+                                                    <exclude reference="zGZ-zh-HjK"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1544,10 +1544,10 @@
                                                     <include reference="Q2Z-jg-iAf"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="V9B-0w-Ve7"/>
-                                                    <include reference="zGZ-zh-HjK"/>
                                                     <include reference="I70-kF-k7E"/>
                                                     <include reference="ip0-8t-X2v"/>
+                                                    <include reference="V9B-0w-Ve7"/>
+                                                    <include reference="zGZ-zh-HjK"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1633,10 +1633,10 @@
                                                     <exclude reference="Fd8-Xe-OGc"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="tGj-mQ-FDD"/>
-                                                    <exclude reference="ulz-LF-iLL"/>
                                                     <exclude reference="ivd-As-GSp"/>
                                                     <exclude reference="w7Z-2R-bLw"/>
+                                                    <exclude reference="tGj-mQ-FDD"/>
+                                                    <exclude reference="ulz-LF-iLL"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1645,10 +1645,10 @@
                                                     <include reference="Fd8-Xe-OGc"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="tGj-mQ-FDD"/>
-                                                    <include reference="ulz-LF-iLL"/>
                                                     <include reference="ivd-As-GSp"/>
                                                     <include reference="w7Z-2R-bLw"/>
+                                                    <include reference="tGj-mQ-FDD"/>
+                                                    <include reference="ulz-LF-iLL"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1849,15 +1849,15 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <exclude reference="drl-ti-kRc"/>
                                 <exclude reference="fgO-pt-pGC"/>
                                 <exclude reference="fmA-jh-ZY5"/>
-                                <exclude reference="SzQ-AI-hPw"/>
-                                <exclude reference="Q49-4l-y17"/>
                                 <exclude reference="2Vb-A8-NEp"/>
                                 <exclude reference="ZB4-zn-aLu"/>
-                                <exclude reference="4u6-wY-ZTg"/>
                                 <exclude reference="75z-8R-9ED"/>
                                 <exclude reference="JLO-WL-z8w"/>
                                 <exclude reference="Jms-Ka-Sx8"/>
                                 <exclude reference="qqn-bL-CKf"/>
+                                <exclude reference="SzQ-AI-hPw"/>
+                                <exclude reference="4u6-wY-ZTg"/>
+                                <exclude reference="Q49-4l-y17"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1874,15 +1874,15 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <include reference="drl-ti-kRc"/>
                                 <include reference="fgO-pt-pGC"/>
                                 <include reference="fmA-jh-ZY5"/>
-                                <include reference="SzQ-AI-hPw"/>
-                                <include reference="Q49-4l-y17"/>
                                 <include reference="2Vb-A8-NEp"/>
                                 <include reference="ZB4-zn-aLu"/>
-                                <include reference="4u6-wY-ZTg"/>
                                 <include reference="75z-8R-9ED"/>
                                 <include reference="JLO-WL-z8w"/>
                                 <include reference="Jms-Ka-Sx8"/>
                                 <include reference="qqn-bL-CKf"/>
+                                <include reference="SzQ-AI-hPw"/>
+                                <include reference="4u6-wY-ZTg"/>
+                                <include reference="Q49-4l-y17"/>
                             </mask>
                         </variation>
                     </view>
@@ -2009,18 +2009,18 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <exclude reference="RzD-RW-ogl"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Q3d-am-ZCc"/>
-                                <exclude reference="ZXZ-AE-3J1"/>
-                                <exclude reference="zuc-9r-Axc"/>
                                 <exclude reference="bW8-1Q-ShJ"/>
                                 <exclude reference="kOM-f1-bwf"/>
                                 <exclude reference="wYz-Zu-TYK"/>
-                                <exclude reference="6tS-lg-GCT"/>
-                                <exclude reference="DmS-AX-94G"/>
-                                <exclude reference="kA2-D2-zuq"/>
                                 <exclude reference="5J4-3s-AIm"/>
                                 <exclude reference="RWd-DO-Iae"/>
                                 <exclude reference="ruB-KR-wGa"/>
+                                <exclude reference="Q3d-am-ZCc"/>
+                                <exclude reference="ZXZ-AE-3J1"/>
+                                <exclude reference="zuc-9r-Axc"/>
+                                <exclude reference="6tS-lg-GCT"/>
+                                <exclude reference="DmS-AX-94G"/>
+                                <exclude reference="kA2-D2-zuq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2031,18 +2031,18 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <include reference="RzD-RW-ogl"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Q3d-am-ZCc"/>
-                                <include reference="ZXZ-AE-3J1"/>
-                                <include reference="zuc-9r-Axc"/>
                                 <include reference="bW8-1Q-ShJ"/>
                                 <include reference="kOM-f1-bwf"/>
                                 <include reference="wYz-Zu-TYK"/>
-                                <include reference="6tS-lg-GCT"/>
-                                <include reference="DmS-AX-94G"/>
-                                <include reference="kA2-D2-zuq"/>
                                 <include reference="5J4-3s-AIm"/>
                                 <include reference="RWd-DO-Iae"/>
                                 <include reference="ruB-KR-wGa"/>
+                                <include reference="Q3d-am-ZCc"/>
+                                <include reference="ZXZ-AE-3J1"/>
+                                <include reference="zuc-9r-Axc"/>
+                                <include reference="6tS-lg-GCT"/>
+                                <include reference="DmS-AX-94G"/>
+                                <include reference="kA2-D2-zuq"/>
                             </mask>
                         </variation>
                     </view>
@@ -2593,54 +2593,54 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <exclude reference="Ut7-6v-2yb"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="6J2-cT-vMf"/>
-                                        <exclude reference="T8d-BO-DZp"/>
-                                        <exclude reference="rIH-TX-H2k"/>
-                                        <exclude reference="Ebg-qG-PPf"/>
-                                        <exclude reference="hdr-gc-GDB"/>
-                                        <exclude reference="wGt-Bs-iQQ"/>
-                                        <exclude reference="cf2-7Y-rqw"/>
-                                        <exclude reference="iZv-nP-8xc"/>
-                                        <exclude reference="vNn-72-iKl"/>
-                                        <exclude reference="3Qi-eE-DJ9"/>
-                                        <exclude reference="OnD-uX-Qll"/>
-                                        <exclude reference="lfg-vb-8ak"/>
-                                        <exclude reference="C7Y-oA-yzP"/>
-                                        <exclude reference="YVR-Ri-MFU"/>
-                                        <exclude reference="yj4-oJ-mrA"/>
-                                        <exclude reference="eqP-Yn-l2k"/>
-                                        <exclude reference="Edb-qA-equ"/>
-                                        <exclude reference="Hqy-E5-Odb"/>
-                                        <exclude reference="KM2-a3-Q4Q"/>
-                                        <exclude reference="No9-5m-NfR"/>
-                                        <exclude reference="laK-9Z-bBf"/>
-                                        <exclude reference="t1l-BT-IeY"/>
-                                        <exclude reference="wRk-Yg-DnL"/>
+                                        <exclude reference="Eew-gN-f17"/>
+                                        <exclude reference="aKm-F2-qod"/>
                                         <exclude reference="0oW-fw-oMJ"/>
                                         <exclude reference="3ft-Ib-e8x"/>
                                         <exclude reference="PVG-bN-C2F"/>
+                                        <exclude reference="laK-9Z-bBf"/>
+                                        <exclude reference="t1l-BT-IeY"/>
+                                        <exclude reference="wRk-Yg-DnL"/>
+                                        <exclude reference="Edb-qA-equ"/>
                                         <exclude reference="Myh-9d-ZNZ"/>
                                         <exclude reference="SBH-0P-hZj"/>
                                         <exclude reference="vh7-3c-xi9"/>
+                                        <exclude reference="3Qi-eE-DJ9"/>
+                                        <exclude reference="OnD-uX-Qll"/>
+                                        <exclude reference="lfg-vb-8ak"/>
+                                        <exclude reference="yj4-oJ-mrA"/>
                                         <exclude reference="E1a-hA-b6H"/>
                                         <exclude reference="dQC-u0-JN8"/>
                                         <exclude reference="wn8-r7-eBB"/>
+                                        <exclude reference="cf2-7Y-rqw"/>
+                                        <exclude reference="iZv-nP-8xc"/>
+                                        <exclude reference="vNn-72-iKl"/>
+                                        <exclude reference="Ja9-kq-d13"/>
+                                        <exclude reference="yQ5-jr-QMX"/>
+                                        <exclude reference="eqP-Yn-l2k"/>
+                                        <exclude reference="Hqy-E5-Odb"/>
+                                        <exclude reference="KM2-a3-Q4Q"/>
+                                        <exclude reference="No9-5m-NfR"/>
+                                        <exclude reference="6J2-cT-vMf"/>
+                                        <exclude reference="T8d-BO-DZp"/>
+                                        <exclude reference="rIH-TX-H2k"/>
+                                        <exclude reference="Spd-hV-uu2"/>
+                                        <exclude reference="zI9-xJ-b3h"/>
                                         <exclude reference="p4f-22-U4C"/>
                                         <exclude reference="YBx-fA-Xf8"/>
                                         <exclude reference="bTG-gU-iWc"/>
                                         <exclude reference="fbv-mn-TKN"/>
-                                        <exclude reference="Eew-gN-f17"/>
-                                        <exclude reference="aKm-F2-qod"/>
-                                        <exclude reference="Ja9-kq-d13"/>
-                                        <exclude reference="yQ5-jr-QMX"/>
+                                        <exclude reference="Ebg-qG-PPf"/>
+                                        <exclude reference="hdr-gc-GDB"/>
+                                        <exclude reference="wGt-Bs-iQQ"/>
                                         <exclude reference="FPb-RJ-3ec"/>
                                         <exclude reference="kk2-zg-bTQ"/>
-                                        <exclude reference="Spd-hV-uu2"/>
-                                        <exclude reference="zI9-xJ-b3h"/>
-                                        <exclude reference="8XD-Kk-V3R"/>
-                                        <exclude reference="HVw-Ch-W2Z"/>
                                         <exclude reference="H9o-cM-pN6"/>
                                         <exclude reference="PWn-OG-QxM"/>
+                                        <exclude reference="8XD-Kk-V3R"/>
+                                        <exclude reference="HVw-Ch-W2Z"/>
+                                        <exclude reference="C7Y-oA-yzP"/>
+                                        <exclude reference="YVR-Ri-MFU"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2668,54 +2668,54 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <include reference="Ut7-6v-2yb"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="6J2-cT-vMf"/>
-                                        <include reference="T8d-BO-DZp"/>
-                                        <include reference="rIH-TX-H2k"/>
-                                        <include reference="Ebg-qG-PPf"/>
-                                        <include reference="hdr-gc-GDB"/>
-                                        <include reference="wGt-Bs-iQQ"/>
-                                        <include reference="cf2-7Y-rqw"/>
-                                        <include reference="iZv-nP-8xc"/>
-                                        <include reference="vNn-72-iKl"/>
-                                        <include reference="3Qi-eE-DJ9"/>
-                                        <include reference="OnD-uX-Qll"/>
-                                        <include reference="lfg-vb-8ak"/>
-                                        <include reference="C7Y-oA-yzP"/>
-                                        <include reference="YVR-Ri-MFU"/>
-                                        <include reference="yj4-oJ-mrA"/>
-                                        <include reference="eqP-Yn-l2k"/>
-                                        <include reference="Edb-qA-equ"/>
-                                        <include reference="Hqy-E5-Odb"/>
-                                        <include reference="KM2-a3-Q4Q"/>
-                                        <include reference="No9-5m-NfR"/>
-                                        <include reference="laK-9Z-bBf"/>
-                                        <include reference="t1l-BT-IeY"/>
-                                        <include reference="wRk-Yg-DnL"/>
+                                        <include reference="Eew-gN-f17"/>
+                                        <include reference="aKm-F2-qod"/>
                                         <include reference="0oW-fw-oMJ"/>
                                         <include reference="3ft-Ib-e8x"/>
                                         <include reference="PVG-bN-C2F"/>
+                                        <include reference="laK-9Z-bBf"/>
+                                        <include reference="t1l-BT-IeY"/>
+                                        <include reference="wRk-Yg-DnL"/>
+                                        <include reference="Edb-qA-equ"/>
                                         <include reference="Myh-9d-ZNZ"/>
                                         <include reference="SBH-0P-hZj"/>
                                         <include reference="vh7-3c-xi9"/>
+                                        <include reference="3Qi-eE-DJ9"/>
+                                        <include reference="OnD-uX-Qll"/>
+                                        <include reference="lfg-vb-8ak"/>
+                                        <include reference="yj4-oJ-mrA"/>
                                         <include reference="E1a-hA-b6H"/>
                                         <include reference="dQC-u0-JN8"/>
                                         <include reference="wn8-r7-eBB"/>
+                                        <include reference="cf2-7Y-rqw"/>
+                                        <include reference="iZv-nP-8xc"/>
+                                        <include reference="vNn-72-iKl"/>
+                                        <include reference="Ja9-kq-d13"/>
+                                        <include reference="yQ5-jr-QMX"/>
+                                        <include reference="eqP-Yn-l2k"/>
+                                        <include reference="Hqy-E5-Odb"/>
+                                        <include reference="KM2-a3-Q4Q"/>
+                                        <include reference="No9-5m-NfR"/>
+                                        <include reference="6J2-cT-vMf"/>
+                                        <include reference="T8d-BO-DZp"/>
+                                        <include reference="rIH-TX-H2k"/>
+                                        <include reference="Spd-hV-uu2"/>
+                                        <include reference="zI9-xJ-b3h"/>
                                         <include reference="p4f-22-U4C"/>
                                         <include reference="YBx-fA-Xf8"/>
                                         <include reference="bTG-gU-iWc"/>
                                         <include reference="fbv-mn-TKN"/>
-                                        <include reference="Eew-gN-f17"/>
-                                        <include reference="aKm-F2-qod"/>
-                                        <include reference="Ja9-kq-d13"/>
-                                        <include reference="yQ5-jr-QMX"/>
+                                        <include reference="Ebg-qG-PPf"/>
+                                        <include reference="hdr-gc-GDB"/>
+                                        <include reference="wGt-Bs-iQQ"/>
                                         <include reference="FPb-RJ-3ec"/>
                                         <include reference="kk2-zg-bTQ"/>
-                                        <include reference="Spd-hV-uu2"/>
-                                        <include reference="zI9-xJ-b3h"/>
-                                        <include reference="8XD-Kk-V3R"/>
-                                        <include reference="HVw-Ch-W2Z"/>
                                         <include reference="H9o-cM-pN6"/>
                                         <include reference="PWn-OG-QxM"/>
+                                        <include reference="8XD-Kk-V3R"/>
+                                        <include reference="HVw-Ch-W2Z"/>
+                                        <include reference="C7Y-oA-yzP"/>
+                                        <include reference="YVR-Ri-MFU"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -2792,7 +2792,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VXE-qM-i7z">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="711"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rns-h1-svL">
                                     <size key="itemSize" width="165" height="166"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -2838,13 +2838,13 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                 <exclude reference="oNZ-vR-ZRq"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="1gF-qG-azr"/>
-                                                <exclude reference="9V0-sr-JIU"/>
-                                                <exclude reference="PYz-tp-fxC"/>
                                                 <exclude reference="FOI-Od-Rkt"/>
                                                 <exclude reference="Tmm-Qf-tsQ"/>
                                                 <exclude reference="ecU-rM-Zki"/>
                                                 <exclude reference="o5L-zk-hHA"/>
+                                                <exclude reference="1gF-qG-azr"/>
+                                                <exclude reference="9V0-sr-JIU"/>
+                                                <exclude reference="PYz-tp-fxC"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -2853,13 +2853,13 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                 <include reference="oNZ-vR-ZRq"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="1gF-qG-azr"/>
-                                                <include reference="9V0-sr-JIU"/>
-                                                <include reference="PYz-tp-fxC"/>
                                                 <include reference="FOI-Od-Rkt"/>
                                                 <include reference="Tmm-Qf-tsQ"/>
                                                 <include reference="ecU-rM-Zki"/>
                                                 <include reference="o5L-zk-hHA"/>
+                                                <include reference="1gF-qG-azr"/>
+                                                <include reference="9V0-sr-JIU"/>
+                                                <include reference="PYz-tp-fxC"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -2908,125 +2908,61 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="VXE-qM-i7z" id="ayE-s0-Hrx"/>
-                        <segue destination="9VC-Nc-EqZ" kind="show" identifier="showImage" id="m1C-F7-H4b"/>
+                        <segue destination="jMs-fQ-EYs" kind="show" identifier="showImage" id="Txk-Ub-fNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGL-QX-A4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3696" y="1500"/>
+            <point key="canvasLocation" x="3688" y="1502"/>
         </scene>
-        <!--Info Table View Controller-->
-        <scene sceneID="gMa-me-duI">
+        <!--Info Category Table View Controller-->
+        <scene sceneID="i5i-ly-Yak">
             <objects>
-                <viewController id="9VC-Nc-EqZ" customClass="InfoTableViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ugO-5o-W2A"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qad-sd-W3D"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pHn-8m-io1">
+                <tableViewController id="jMs-fQ-EYs" customClass="InfoCategoryTableViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5aa-rD-clc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGT-Ft-naU">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="infoCell" rowHeight="100" id="pBL-xD-LXB" customClass="CustomCell" customModule="Drikkevett" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pBL-xD-LXB" id="xkr-IH-CMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="99.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq1-Jd-uzp">
-                                                    <rect key="frame" x="8" y="0.0" width="373" height="99.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Kq1-Jd-uzp" firstAttribute="leading" secondItem="xkr-IH-CMb" secondAttribute="leadingMargin" id="hIL-U7-1ZK"/>
-                                                <constraint firstAttribute="trailing" secondItem="Kq1-Jd-uzp" secondAttribute="trailing" id="rFX-qp-pqJ"/>
-                                                <constraint firstItem="Kq1-Jd-uzp" firstAttribute="top" secondItem="xkr-IH-CMb" secondAttribute="top" id="tpP-gs-4mA"/>
-                                                <constraint firstItem="Kq1-Jd-uzp" firstAttribute="centerY" secondItem="xkr-IH-CMb" secondAttribute="centerY" id="vRQ-1G-Bon"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="Kq1-Jd-uzp"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="hIL-U7-1ZK"/>
-                                                    <exclude reference="rFX-qp-pqJ"/>
-                                                    <exclude reference="tpP-gs-4mA"/>
-                                                    <exclude reference="vRQ-1G-Bon"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="Kq1-Jd-uzp"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="hIL-U7-1ZK"/>
-                                                    <include reference="rFX-qp-pqJ"/>
-                                                    <include reference="tpP-gs-4mA"/>
-                                                    <include reference="vRQ-1G-Bon"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="name" destination="Kq1-Jd-uzp" id="LLz-2r-cxn"/>
-                                            <segue destination="mzN-gI-fUP" kind="show" identifier="detailSegue" id="aZr-UE-RAj"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="Zyd-XZ-RKD" customClass="InfoCell" customModule="Drikkevett" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyd-XZ-RKD" id="jXL-2G-fLg">
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-ks-gTO">
+                                            <rect key="frame" x="8" y="35" width="373" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="gWM-ks-gTO" secondAttribute="leading" id="IvG-63-6Cr"/>
+                                        <constraint firstItem="gWM-ks-gTO" firstAttribute="centerY" secondItem="jXL-2G-fLg" secondAttribute="centerY" id="d3b-S0-AKN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gWM-ks-gTO" secondAttribute="trailing" constant="-8" id="e2V-qL-Hxw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="9VC-Nc-EqZ" id="2u1-Q1-9i9"/>
-                                    <outlet property="delegate" destination="9VC-Nc-EqZ" id="8HY-Kw-p5m"/>
+                                    <outlet property="title" destination="gWM-ks-gTO" id="qce-Ww-Ggm"/>
                                 </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZGT-Ft-naU" firstAttribute="top" secondItem="pHn-8m-io1" secondAttribute="top" id="Q7o-kM-1BU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="64"/>
-                            </constraint>
-                            <constraint firstAttribute="trailing" secondItem="ZGT-Ft-naU" secondAttribute="trailing" id="Z8t-S0-Flx"/>
-                            <constraint firstAttribute="bottom" secondItem="ZGT-Ft-naU" secondAttribute="bottom" id="fQt-94-Y75">
-                                <variation key="heightClass=regular-widthClass=compact" constant="49"/>
-                            </constraint>
-                            <constraint firstItem="ZGT-Ft-naU" firstAttribute="leading" secondItem="pHn-8m-io1" secondAttribute="leading" id="o2y-65-d0L"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ZGT-Ft-naU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Q7o-kM-1BU"/>
-                                <exclude reference="Z8t-S0-Flx"/>
-                                <exclude reference="fQt-94-Y75"/>
-                                <exclude reference="o2y-65-d0L"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="ZGT-Ft-naU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Q7o-kM-1BU"/>
-                                <include reference="Z8t-S0-Flx"/>
-                                <include reference="fQt-94-Y75"/>
-                                <include reference="o2y-65-d0L"/>
-                            </mask>
-                        </variation>
-                    </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jMs-fQ-EYs" id="pBA-ck-1Ot"/>
+                            <outlet property="delegate" destination="jMs-fQ-EYs" id="vEl-yN-CXa"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="tableView" destination="ZGT-Ft-naU" id="t6A-z9-k9a"/>
+                        <segue destination="mzN-gI-fUP" kind="show" identifier="detailSegue" id="EaI-6X-cQz"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ftV-mP-84B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SK5-cX-AXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4478" y="1499"/>
+            <point key="canvasLocation" x="4469.5652173913049" y="1497.554347826087"/>
         </scene>
         <!--Info Detail View Controller-->
         <scene sceneID="hXo-WC-0bS">
@@ -3041,7 +2977,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
-                                <rect key="frame" x="20" y="235" width="374" height="444"/>
+                                <rect key="frame" x="20" y="191" width="374" height="537"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3049,7 +2985,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EgE-Kt-tVw">
-                                <rect key="frame" x="162" y="107" width="90" height="90"/>
+                                <rect key="frame" x="162" y="63" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="AA7-mq-uar"/>
                                     <constraint firstAttribute="width" constant="90" id="olv-X3-1pv"/>
@@ -3205,7 +3141,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FFv-dR-4w7" id="YVd-Mk-5AH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxv-b6-OLK">
@@ -3677,40 +3613,40 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <exclude reference="xCU-ss-ny2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Jjc-PX-qeg"/>
-                                <exclude reference="xcH-Cn-DEh"/>
+                                <exclude reference="b3T-kh-yCY"/>
+                                <exclude reference="jdn-QL-7lj"/>
+                                <exclude reference="rjP-JG-PRu"/>
+                                <exclude reference="HZs-BI-Wtx"/>
+                                <exclude reference="Mz7-Wt-qzC"/>
+                                <exclude reference="O8x-Fq-0pV"/>
                                 <exclude reference="6A0-o7-RnA"/>
                                 <exclude reference="6eq-sB-ELr"/>
                                 <exclude reference="sg6-S1-Zfn"/>
                                 <exclude reference="wRI-sE-kY6"/>
-                                <exclude reference="c4L-0G-O3I"/>
-                                <exclude reference="sld-nK-ncf"/>
-                                <exclude reference="U07-u9-lnc"/>
-                                <exclude reference="kfg-58-vsu"/>
-                                <exclude reference="O0Q-8K-VXK"/>
-                                <exclude reference="iRD-oN-WJ6"/>
-                                <exclude reference="Csh-4l-a9d"/>
-                                <exclude reference="VVh-R9-YHP"/>
-                                <exclude reference="tbc-aN-aOt"/>
-                                <exclude reference="wRs-qV-uAX"/>
-                                <exclude reference="b3T-kh-yCY"/>
-                                <exclude reference="jdn-QL-7lj"/>
-                                <exclude reference="rjP-JG-PRu"/>
-                                <exclude reference="RUW-Z5-wLi"/>
-                                <exclude reference="cGI-Ig-GJa"/>
                                 <exclude reference="dcL-ew-vvX"/>
                                 <exclude reference="sP4-UT-Wdm"/>
-                                <exclude reference="Qzc-8Y-hZq"/>
-                                <exclude reference="dA5-oV-FSF"/>
+                                <exclude reference="c4L-0G-O3I"/>
+                                <exclude reference="sld-nK-ncf"/>
+                                <exclude reference="Csh-4l-a9d"/>
+                                <exclude reference="VVh-R9-YHP"/>
+                                <exclude reference="Jjc-PX-qeg"/>
+                                <exclude reference="xcH-Cn-DEh"/>
                                 <exclude reference="Hta-l6-r3t"/>
                                 <exclude reference="j7f-F7-VLn"/>
-                                <exclude reference="HZs-BI-Wtx"/>
-                                <exclude reference="Mz7-Wt-qzC"/>
-                                <exclude reference="O8x-Fq-0pV"/>
-                                <exclude reference="Duj-dK-ftz"/>
-                                <exclude reference="sWX-cq-ddr"/>
+                                <exclude reference="Qzc-8Y-hZq"/>
+                                <exclude reference="dA5-oV-FSF"/>
                                 <exclude reference="c2R-bH-GE3"/>
                                 <exclude reference="fn3-fZ-gcp"/>
+                                <exclude reference="U07-u9-lnc"/>
+                                <exclude reference="kfg-58-vsu"/>
+                                <exclude reference="RUW-Z5-wLi"/>
+                                <exclude reference="cGI-Ig-GJa"/>
+                                <exclude reference="Duj-dK-ftz"/>
+                                <exclude reference="sWX-cq-ddr"/>
+                                <exclude reference="tbc-aN-aOt"/>
+                                <exclude reference="wRs-qV-uAX"/>
+                                <exclude reference="O0Q-8K-VXK"/>
+                                <exclude reference="iRD-oN-WJ6"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -3732,40 +3668,40 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <include reference="xCU-ss-ny2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Jjc-PX-qeg"/>
-                                <include reference="xcH-Cn-DEh"/>
+                                <include reference="b3T-kh-yCY"/>
+                                <include reference="jdn-QL-7lj"/>
+                                <include reference="rjP-JG-PRu"/>
+                                <include reference="HZs-BI-Wtx"/>
+                                <include reference="Mz7-Wt-qzC"/>
+                                <include reference="O8x-Fq-0pV"/>
                                 <include reference="6A0-o7-RnA"/>
                                 <include reference="6eq-sB-ELr"/>
                                 <include reference="sg6-S1-Zfn"/>
                                 <include reference="wRI-sE-kY6"/>
-                                <include reference="c4L-0G-O3I"/>
-                                <include reference="sld-nK-ncf"/>
-                                <include reference="U07-u9-lnc"/>
-                                <include reference="kfg-58-vsu"/>
-                                <include reference="O0Q-8K-VXK"/>
-                                <include reference="iRD-oN-WJ6"/>
-                                <include reference="Csh-4l-a9d"/>
-                                <include reference="VVh-R9-YHP"/>
-                                <include reference="tbc-aN-aOt"/>
-                                <include reference="wRs-qV-uAX"/>
-                                <include reference="b3T-kh-yCY"/>
-                                <include reference="jdn-QL-7lj"/>
-                                <include reference="rjP-JG-PRu"/>
-                                <include reference="RUW-Z5-wLi"/>
-                                <include reference="cGI-Ig-GJa"/>
                                 <include reference="dcL-ew-vvX"/>
                                 <include reference="sP4-UT-Wdm"/>
-                                <include reference="Qzc-8Y-hZq"/>
-                                <include reference="dA5-oV-FSF"/>
+                                <include reference="c4L-0G-O3I"/>
+                                <include reference="sld-nK-ncf"/>
+                                <include reference="Csh-4l-a9d"/>
+                                <include reference="VVh-R9-YHP"/>
+                                <include reference="Jjc-PX-qeg"/>
+                                <include reference="xcH-Cn-DEh"/>
                                 <include reference="Hta-l6-r3t"/>
                                 <include reference="j7f-F7-VLn"/>
-                                <include reference="HZs-BI-Wtx"/>
-                                <include reference="Mz7-Wt-qzC"/>
-                                <include reference="O8x-Fq-0pV"/>
-                                <include reference="Duj-dK-ftz"/>
-                                <include reference="sWX-cq-ddr"/>
+                                <include reference="Qzc-8Y-hZq"/>
+                                <include reference="dA5-oV-FSF"/>
                                 <include reference="c2R-bH-GE3"/>
                                 <include reference="fn3-fZ-gcp"/>
+                                <include reference="U07-u9-lnc"/>
+                                <include reference="kfg-58-vsu"/>
+                                <include reference="RUW-Z5-wLi"/>
+                                <include reference="cGI-Ig-GJa"/>
+                                <include reference="Duj-dK-ftz"/>
+                                <include reference="sWX-cq-ddr"/>
+                                <include reference="tbc-aN-aOt"/>
+                                <include reference="wRs-qV-uAX"/>
+                                <include reference="O0Q-8K-VXK"/>
+                                <include reference="iRD-oN-WJ6"/>
                             </mask>
                         </variation>
                     </view>
@@ -3803,7 +3739,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNq-bf-92t">
-                                <rect key="frame" x="87" y="72" width="240" height="70"/>
+                                <rect key="frame" x="87" y="28" width="240" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="J3d-qt-ItL"/>
                                     <constraint firstAttribute="height" constant="70" id="Tdr-Mt-3S9"/>
@@ -3844,7 +3780,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalkuler Promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-IG-o3V">
-                                <rect key="frame" x="87" y="146" width="240" height="50"/>
+                                <rect key="frame" x="87" y="102" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3FN-3a-Wa4"/>
                                     <constraint firstAttribute="width" constant="240" id="Bhn-eX-dhm"/>
@@ -4132,7 +4068,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promillen om - Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGi-if-fC0">
-                                <rect key="frame" x="55" y="609" width="304" height="27"/>
+                                <rect key="frame" x="55" y="658" width="304" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="304" id="VRV-lp-xTZ"/>
                                     <constraint firstAttribute="height" constant="27" id="vbp-9s-upf"/>
@@ -4154,7 +4090,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="bBL-1q-igz">
-                                <rect key="frame" x="53" y="636" width="308" height="31"/>
+                                <rect key="frame" x="53" y="685" width="308" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CNz-DI-JOt"/>
                                     <constraint firstAttribute="width" constant="304" id="b02-VP-rlq"/>
@@ -4242,41 +4178,41 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="h3l-3Y-EfM"/>
-                                <exclude reference="Gnm-Uc-pFs"/>
-                                <exclude reference="csZ-gv-Lap"/>
-                                <exclude reference="WdU-o7-1NQ"/>
-                                <exclude reference="hiQ-pJ-XbL"/>
-                                <exclude reference="KKX-Yl-gWe"/>
-                                <exclude reference="fii-kT-Ygr"/>
-                                <exclude reference="qCw-0k-7bP"/>
-                                <exclude reference="joX-7K-H3V"/>
-                                <exclude reference="pjC-5o-XIN"/>
-                                <exclude reference="7OD-DE-fOA"/>
-                                <exclude reference="Pix-bJ-3fd"/>
-                                <exclude reference="d6r-CF-Ucg"/>
-                                <exclude reference="Xs3-dk-tfd"/>
-                                <exclude reference="xDf-F0-Bci"/>
-                                <exclude reference="GNW-eN-TQm"/>
                                 <exclude reference="0gs-i7-L8g"/>
                                 <exclude reference="Hf9-bN-yr7"/>
                                 <exclude reference="bEZ-Hw-qsi"/>
                                 <exclude reference="50E-oG-r6D"/>
                                 <exclude reference="Oms-7d-Gdj"/>
                                 <exclude reference="nO1-kO-pA5"/>
-                                <exclude reference="Oll-qr-zK7"/>
-                                <exclude reference="rsP-Xg-uVA"/>
-                                <exclude reference="KV8-NO-IXx"/>
-                                <exclude reference="iVb-64-QK8"/>
-                                <exclude reference="a6k-A5-Oi6"/>
-                                <exclude reference="bmc-DL-nOo"/>
-                                <exclude reference="Ag2-NN-kCV"/>
-                                <exclude reference="phg-zc-l27"/>
                                 <exclude reference="AoJ-9Z-Ylm"/>
                                 <exclude reference="Kfc-Q9-tOv"/>
                                 <exclude reference="lyR-Si-RzP"/>
                                 <exclude reference="s2e-Ma-gQA"/>
+                                <exclude reference="a6k-A5-Oi6"/>
+                                <exclude reference="bmc-DL-nOo"/>
+                                <exclude reference="KV8-NO-IXx"/>
+                                <exclude reference="iVb-64-QK8"/>
                                 <exclude reference="bLE-6T-tcD"/>
                                 <exclude reference="ktU-i4-fGp"/>
+                                <exclude reference="KKX-Yl-gWe"/>
+                                <exclude reference="fii-kT-Ygr"/>
+                                <exclude reference="qCw-0k-7bP"/>
+                                <exclude reference="WdU-o7-1NQ"/>
+                                <exclude reference="hiQ-pJ-XbL"/>
+                                <exclude reference="joX-7K-H3V"/>
+                                <exclude reference="pjC-5o-XIN"/>
+                                <exclude reference="Oll-qr-zK7"/>
+                                <exclude reference="rsP-Xg-uVA"/>
+                                <exclude reference="Ag2-NN-kCV"/>
+                                <exclude reference="phg-zc-l27"/>
+                                <exclude reference="Xs3-dk-tfd"/>
+                                <exclude reference="xDf-F0-Bci"/>
+                                <exclude reference="7OD-DE-fOA"/>
+                                <exclude reference="Pix-bJ-3fd"/>
+                                <exclude reference="d6r-CF-Ucg"/>
+                                <exclude reference="GNW-eN-TQm"/>
+                                <exclude reference="Gnm-Uc-pFs"/>
+                                <exclude reference="csZ-gv-Lap"/>
                                 <exclude reference="KS6-ei-am0"/>
                                 <exclude reference="PKp-xi-n2a"/>
                                 <exclude reference="6td-9q-q4S"/>
@@ -4305,41 +4241,41 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                             </mask>
                             <mask key="constraints">
                                 <include reference="h3l-3Y-EfM"/>
-                                <include reference="Gnm-Uc-pFs"/>
-                                <include reference="csZ-gv-Lap"/>
-                                <include reference="WdU-o7-1NQ"/>
-                                <include reference="hiQ-pJ-XbL"/>
-                                <include reference="KKX-Yl-gWe"/>
-                                <include reference="fii-kT-Ygr"/>
-                                <include reference="qCw-0k-7bP"/>
-                                <include reference="joX-7K-H3V"/>
-                                <include reference="pjC-5o-XIN"/>
-                                <include reference="7OD-DE-fOA"/>
-                                <include reference="Pix-bJ-3fd"/>
-                                <include reference="d6r-CF-Ucg"/>
-                                <include reference="Xs3-dk-tfd"/>
-                                <include reference="xDf-F0-Bci"/>
-                                <include reference="GNW-eN-TQm"/>
                                 <include reference="0gs-i7-L8g"/>
                                 <include reference="Hf9-bN-yr7"/>
                                 <include reference="bEZ-Hw-qsi"/>
                                 <include reference="50E-oG-r6D"/>
                                 <include reference="Oms-7d-Gdj"/>
                                 <include reference="nO1-kO-pA5"/>
-                                <include reference="Oll-qr-zK7"/>
-                                <include reference="rsP-Xg-uVA"/>
-                                <include reference="KV8-NO-IXx"/>
-                                <include reference="iVb-64-QK8"/>
-                                <include reference="a6k-A5-Oi6"/>
-                                <include reference="bmc-DL-nOo"/>
-                                <include reference="Ag2-NN-kCV"/>
-                                <include reference="phg-zc-l27"/>
                                 <include reference="AoJ-9Z-Ylm"/>
                                 <include reference="Kfc-Q9-tOv"/>
                                 <include reference="lyR-Si-RzP"/>
                                 <include reference="s2e-Ma-gQA"/>
+                                <include reference="a6k-A5-Oi6"/>
+                                <include reference="bmc-DL-nOo"/>
+                                <include reference="KV8-NO-IXx"/>
+                                <include reference="iVb-64-QK8"/>
                                 <include reference="bLE-6T-tcD"/>
                                 <include reference="ktU-i4-fGp"/>
+                                <include reference="KKX-Yl-gWe"/>
+                                <include reference="fii-kT-Ygr"/>
+                                <include reference="qCw-0k-7bP"/>
+                                <include reference="WdU-o7-1NQ"/>
+                                <include reference="hiQ-pJ-XbL"/>
+                                <include reference="joX-7K-H3V"/>
+                                <include reference="pjC-5o-XIN"/>
+                                <include reference="Oll-qr-zK7"/>
+                                <include reference="rsP-Xg-uVA"/>
+                                <include reference="Ag2-NN-kCV"/>
+                                <include reference="phg-zc-l27"/>
+                                <include reference="Xs3-dk-tfd"/>
+                                <include reference="xDf-F0-Bci"/>
+                                <include reference="7OD-DE-fOA"/>
+                                <include reference="Pix-bJ-3fd"/>
+                                <include reference="d6r-CF-Ucg"/>
+                                <include reference="GNW-eN-TQm"/>
+                                <include reference="Gnm-Uc-pFs"/>
+                                <include reference="csZ-gv-Lap"/>
                                 <include reference="KS6-ei-am0"/>
                                 <include reference="PKp-xi-n2a"/>
                                 <include reference="6td-9q-q4S"/>
@@ -4533,14 +4469,14 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="hnK-KB-qIV"/>
                                                         <exclude reference="dWZ-uS-z4d"/>
+                                                        <exclude reference="hnK-KB-qIV"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="hnK-KB-qIV"/>
                                                         <include reference="dWZ-uS-z4d"/>
+                                                        <include reference="hnK-KB-qIV"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -4653,14 +4589,14 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="hgz-E0-anY"/>
                                                         <exclude reference="HO0-Aw-yOm"/>
+                                                        <exclude reference="hgz-E0-anY"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="hgz-E0-anY"/>
                                                         <include reference="HO0-Aw-yOm"/>
+                                                        <include reference="hgz-E0-anY"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -5301,38 +5237,38 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                 <exclude reference="5oh-rI-c2H"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="VG9-nZ-AFh"/>
-                                <exclude reference="hbG-66-ZOH"/>
-                                <exclude reference="igT-fu-3Rg"/>
-                                <exclude reference="6lM-sY-Ula"/>
-                                <exclude reference="C7p-rs-YMd"/>
-                                <exclude reference="OTx-89-kA4"/>
-                                <exclude reference="fKN-Fd-gjL"/>
-                                <exclude reference="Hqu-pf-GX8"/>
-                                <exclude reference="cfb-Ez-2b7"/>
                                 <exclude reference="L1F-Dc-99D"/>
                                 <exclude reference="gEa-Yz-zT7"/>
                                 <exclude reference="owo-Pn-Tcz"/>
-                                <exclude reference="fx8-QT-64G"/>
-                                <exclude reference="g4F-6m-l8q"/>
-                                <exclude reference="KaZ-Og-1l5"/>
-                                <exclude reference="YwA-RV-HHO"/>
-                                <exclude reference="MOR-Zi-sPi"/>
-                                <exclude reference="SfU-0F-8mt"/>
+                                <exclude reference="1V0-bq-GcB"/>
+                                <exclude reference="30I-EW-jTS"/>
+                                <exclude reference="tC5-dW-NCw"/>
                                 <exclude reference="2En-9l-yQO"/>
                                 <exclude reference="hcD-Fh-VEY"/>
                                 <exclude reference="nAV-lm-ETJ"/>
                                 <exclude reference="urY-lO-qUY"/>
+                                <exclude reference="Hqu-pf-GX8"/>
+                                <exclude reference="cfb-Ez-2b7"/>
+                                <exclude reference="fx8-QT-64G"/>
+                                <exclude reference="g4F-6m-l8q"/>
+                                <exclude reference="MOR-Zi-sPi"/>
+                                <exclude reference="SfU-0F-8mt"/>
+                                <exclude reference="KaZ-Og-1l5"/>
+                                <exclude reference="YwA-RV-HHO"/>
                                 <exclude reference="KC7-fH-W6t"/>
                                 <exclude reference="rxA-cg-JVL"/>
-                                <exclude reference="8Ld-hb-2H2"/>
-                                <exclude reference="Yop-PH-trW"/>
-                                <exclude reference="1V0-bq-GcB"/>
-                                <exclude reference="30I-EW-jTS"/>
-                                <exclude reference="tC5-dW-NCw"/>
                                 <exclude reference="Tfk-s7-EWK"/>
                                 <exclude reference="Bom-3p-trB"/>
                                 <exclude reference="Tf8-jT-Ail"/>
+                                <exclude reference="VG9-nZ-AFh"/>
+                                <exclude reference="6lM-sY-Ula"/>
+                                <exclude reference="C7p-rs-YMd"/>
+                                <exclude reference="OTx-89-kA4"/>
+                                <exclude reference="fKN-Fd-gjL"/>
+                                <exclude reference="8Ld-hb-2H2"/>
+                                <exclude reference="Yop-PH-trW"/>
+                                <exclude reference="hbG-66-ZOH"/>
+                                <exclude reference="igT-fu-3Rg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -5354,38 +5290,38 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                 <include reference="5oh-rI-c2H"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="VG9-nZ-AFh"/>
-                                <include reference="hbG-66-ZOH"/>
-                                <include reference="igT-fu-3Rg"/>
-                                <include reference="6lM-sY-Ula"/>
-                                <include reference="C7p-rs-YMd"/>
-                                <include reference="OTx-89-kA4"/>
-                                <include reference="fKN-Fd-gjL"/>
-                                <include reference="Hqu-pf-GX8"/>
-                                <include reference="cfb-Ez-2b7"/>
                                 <include reference="L1F-Dc-99D"/>
                                 <include reference="gEa-Yz-zT7"/>
                                 <include reference="owo-Pn-Tcz"/>
-                                <include reference="fx8-QT-64G"/>
-                                <include reference="g4F-6m-l8q"/>
-                                <include reference="KaZ-Og-1l5"/>
-                                <include reference="YwA-RV-HHO"/>
-                                <include reference="MOR-Zi-sPi"/>
-                                <include reference="SfU-0F-8mt"/>
+                                <include reference="1V0-bq-GcB"/>
+                                <include reference="30I-EW-jTS"/>
+                                <include reference="tC5-dW-NCw"/>
                                 <include reference="2En-9l-yQO"/>
                                 <include reference="hcD-Fh-VEY"/>
                                 <include reference="nAV-lm-ETJ"/>
                                 <include reference="urY-lO-qUY"/>
+                                <include reference="Hqu-pf-GX8"/>
+                                <include reference="cfb-Ez-2b7"/>
+                                <include reference="fx8-QT-64G"/>
+                                <include reference="g4F-6m-l8q"/>
+                                <include reference="MOR-Zi-sPi"/>
+                                <include reference="SfU-0F-8mt"/>
+                                <include reference="KaZ-Og-1l5"/>
+                                <include reference="YwA-RV-HHO"/>
                                 <include reference="KC7-fH-W6t"/>
                                 <include reference="rxA-cg-JVL"/>
-                                <include reference="8Ld-hb-2H2"/>
-                                <include reference="Yop-PH-trW"/>
-                                <include reference="1V0-bq-GcB"/>
-                                <include reference="30I-EW-jTS"/>
-                                <include reference="tC5-dW-NCw"/>
                                 <include reference="Tfk-s7-EWK"/>
                                 <include reference="Bom-3p-trB"/>
                                 <include reference="Tf8-jT-Ail"/>
+                                <include reference="VG9-nZ-AFh"/>
+                                <include reference="6lM-sY-Ula"/>
+                                <include reference="C7p-rs-YMd"/>
+                                <include reference="OTx-89-kA4"/>
+                                <include reference="fKN-Fd-gjL"/>
+                                <include reference="8Ld-hb-2H2"/>
+                                <include reference="Yop-PH-trW"/>
+                                <include reference="hbG-66-ZOH"/>
+                                <include reference="igT-fu-3Rg"/>
                             </mask>
                         </variation>
                     </view>
@@ -5501,14 +5437,14 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="h62-sR-UZI"/>
                                                         <exclude reference="3yP-zi-6Od"/>
+                                                        <exclude reference="h62-sR-UZI"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="h62-sR-UZI"/>
                                                         <include reference="3yP-zi-6Od"/>
+                                                        <include reference="h62-sR-UZI"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -5615,14 +5551,14 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="pJb-gt-omG"/>
                                                         <exclude reference="nLw-hS-lMw"/>
+                                                        <exclude reference="pJb-gt-omG"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="pJb-gt-omG"/>
                                                         <include reference="nLw-hS-lMw"/>
+                                                        <include reference="pJb-gt-omG"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -6742,44 +6678,44 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                             <mask key="constraints">
                                 <exclude reference="aRU-CQ-rY4"/>
                                 <exclude reference="lBL-kA-Qko"/>
-                                <exclude reference="DK6-Dz-WzJ"/>
-                                <exclude reference="RDL-KU-PFl"/>
-                                <exclude reference="Vy9-qM-ZVW"/>
-                                <exclude reference="cMs-W9-Chv"/>
-                                <exclude reference="82V-ne-60n"/>
-                                <exclude reference="xgW-4L-UHe"/>
-                                <exclude reference="91j-GU-xbr"/>
-                                <exclude reference="9QT-j5-Pnn"/>
-                                <exclude reference="GSx-OI-ufD"/>
-                                <exclude reference="Tyv-u6-hXp"/>
-                                <exclude reference="m7s-lA-Eoj"/>
-                                <exclude reference="tIJ-qJ-hQk"/>
-                                <exclude reference="Mn3-1e-Xt6"/>
-                                <exclude reference="hw9-O2-hzf"/>
-                                <exclude reference="jdx-Hh-vIC"/>
-                                <exclude reference="uJK-5i-l78"/>
-                                <exclude reference="6QB-L4-vD1"/>
-                                <exclude reference="uXv-96-oms"/>
-                                <exclude reference="6oY-AG-sZl"/>
-                                <exclude reference="bz4-wD-pcu"/>
-                                <exclude reference="pho-5Y-iwe"/>
-                                <exclude reference="SwW-xr-f5q"/>
-                                <exclude reference="ceT-n0-ixt"/>
-                                <exclude reference="ekB-cq-LDD"/>
-                                <exclude reference="sSh-MX-6Y0"/>
-                                <exclude reference="whQ-Pa-BD4"/>
                                 <exclude reference="4bb-ZP-Bc2"/>
                                 <exclude reference="Ckq-7S-KOp"/>
                                 <exclude reference="w63-89-WDe"/>
-                                <exclude reference="hLJ-H9-Tfq"/>
+                                <exclude reference="6oY-AG-sZl"/>
+                                <exclude reference="bz4-wD-pcu"/>
+                                <exclude reference="pho-5Y-iwe"/>
+                                <exclude reference="cMs-W9-Chv"/>
                                 <exclude reference="G0d-xr-vTL"/>
+                                <exclude reference="Tyv-u6-hXp"/>
+                                <exclude reference="91j-GU-xbr"/>
                                 <exclude reference="0L9-ic-Wy7"/>
                                 <exclude reference="5pA-Fn-VhV"/>
                                 <exclude reference="Tc0-8N-Db7"/>
                                 <exclude reference="xH4-7j-ckq"/>
                                 <exclude reference="zXF-qZ-5qp"/>
                                 <exclude reference="zh1-9x-Rpm"/>
+                                <exclude reference="6QB-L4-vD1"/>
+                                <exclude reference="uXv-96-oms"/>
+                                <exclude reference="82V-ne-60n"/>
+                                <exclude reference="xgW-4L-UHe"/>
+                                <exclude reference="hLJ-H9-Tfq"/>
+                                <exclude reference="m7s-lA-Eoj"/>
+                                <exclude reference="tIJ-qJ-hQk"/>
+                                <exclude reference="SwW-xr-f5q"/>
+                                <exclude reference="DK6-Dz-WzJ"/>
+                                <exclude reference="RDL-KU-PFl"/>
+                                <exclude reference="jdx-Hh-vIC"/>
+                                <exclude reference="uJK-5i-l78"/>
+                                <exclude reference="ceT-n0-ixt"/>
+                                <exclude reference="ekB-cq-LDD"/>
+                                <exclude reference="sSh-MX-6Y0"/>
+                                <exclude reference="whQ-Pa-BD4"/>
+                                <exclude reference="9QT-j5-Pnn"/>
+                                <exclude reference="GSx-OI-ufD"/>
+                                <exclude reference="Mn3-1e-Xt6"/>
+                                <exclude reference="hw9-O2-hzf"/>
                                 <exclude reference="ivz-zC-xyd"/>
+                                <exclude reference="Vy9-qM-ZVW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -6807,44 +6743,44 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                             <mask key="constraints">
                                 <include reference="aRU-CQ-rY4"/>
                                 <include reference="lBL-kA-Qko"/>
-                                <include reference="DK6-Dz-WzJ"/>
-                                <include reference="RDL-KU-PFl"/>
-                                <include reference="Vy9-qM-ZVW"/>
-                                <include reference="cMs-W9-Chv"/>
-                                <include reference="82V-ne-60n"/>
-                                <include reference="xgW-4L-UHe"/>
-                                <include reference="91j-GU-xbr"/>
-                                <include reference="9QT-j5-Pnn"/>
-                                <include reference="GSx-OI-ufD"/>
-                                <include reference="Tyv-u6-hXp"/>
-                                <include reference="m7s-lA-Eoj"/>
-                                <include reference="tIJ-qJ-hQk"/>
-                                <include reference="Mn3-1e-Xt6"/>
-                                <include reference="hw9-O2-hzf"/>
-                                <include reference="jdx-Hh-vIC"/>
-                                <include reference="uJK-5i-l78"/>
-                                <include reference="6QB-L4-vD1"/>
-                                <include reference="uXv-96-oms"/>
-                                <include reference="6oY-AG-sZl"/>
-                                <include reference="bz4-wD-pcu"/>
-                                <include reference="pho-5Y-iwe"/>
-                                <include reference="SwW-xr-f5q"/>
-                                <include reference="ceT-n0-ixt"/>
-                                <include reference="ekB-cq-LDD"/>
-                                <include reference="sSh-MX-6Y0"/>
-                                <include reference="whQ-Pa-BD4"/>
                                 <include reference="4bb-ZP-Bc2"/>
                                 <include reference="Ckq-7S-KOp"/>
                                 <include reference="w63-89-WDe"/>
-                                <include reference="hLJ-H9-Tfq"/>
+                                <include reference="6oY-AG-sZl"/>
+                                <include reference="bz4-wD-pcu"/>
+                                <include reference="pho-5Y-iwe"/>
+                                <include reference="cMs-W9-Chv"/>
                                 <include reference="G0d-xr-vTL"/>
+                                <include reference="Tyv-u6-hXp"/>
+                                <include reference="91j-GU-xbr"/>
                                 <include reference="0L9-ic-Wy7"/>
                                 <include reference="5pA-Fn-VhV"/>
                                 <include reference="Tc0-8N-Db7"/>
                                 <include reference="xH4-7j-ckq"/>
                                 <include reference="zXF-qZ-5qp"/>
                                 <include reference="zh1-9x-Rpm"/>
+                                <include reference="6QB-L4-vD1"/>
+                                <include reference="uXv-96-oms"/>
+                                <include reference="82V-ne-60n"/>
+                                <include reference="xgW-4L-UHe"/>
+                                <include reference="hLJ-H9-Tfq"/>
+                                <include reference="m7s-lA-Eoj"/>
+                                <include reference="tIJ-qJ-hQk"/>
+                                <include reference="SwW-xr-f5q"/>
+                                <include reference="DK6-Dz-WzJ"/>
+                                <include reference="RDL-KU-PFl"/>
+                                <include reference="jdx-Hh-vIC"/>
+                                <include reference="uJK-5i-l78"/>
+                                <include reference="ceT-n0-ixt"/>
+                                <include reference="ekB-cq-LDD"/>
+                                <include reference="sSh-MX-6Y0"/>
+                                <include reference="whQ-Pa-BD4"/>
+                                <include reference="9QT-j5-Pnn"/>
+                                <include reference="GSx-OI-ufD"/>
+                                <include reference="Mn3-1e-Xt6"/>
+                                <include reference="hw9-O2-hzf"/>
                                 <include reference="ivz-zC-xyd"/>
+                                <include reference="Vy9-qM-ZVW"/>
                             </mask>
                         </variation>
                     </view>
@@ -6969,13 +6905,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <exclude reference="Dtu-aF-dng"/>
                                 <exclude reference="cE5-Yk-hBM"/>
                                 <exclude reference="oFy-Bl-UAa"/>
-                                <exclude reference="eQv-wg-Vjn"/>
-                                <exclude reference="p8s-6d-jal"/>
-                                <exclude reference="rmK-es-wlZ"/>
                                 <exclude reference="9rQ-ji-n3I"/>
                                 <exclude reference="Efj-xw-qFs"/>
                                 <exclude reference="btf-1F-RS1"/>
                                 <exclude reference="qTV-1o-Q2i"/>
+                                <exclude reference="eQv-wg-Vjn"/>
+                                <exclude reference="p8s-6d-jal"/>
+                                <exclude reference="rmK-es-wlZ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -6990,13 +6926,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <include reference="Dtu-aF-dng"/>
                                 <include reference="cE5-Yk-hBM"/>
                                 <include reference="oFy-Bl-UAa"/>
-                                <include reference="eQv-wg-Vjn"/>
-                                <include reference="p8s-6d-jal"/>
-                                <include reference="rmK-es-wlZ"/>
                                 <include reference="9rQ-ji-n3I"/>
                                 <include reference="Efj-xw-qFs"/>
                                 <include reference="btf-1F-RS1"/>
                                 <include reference="qTV-1o-Q2i"/>
+                                <include reference="eQv-wg-Vjn"/>
+                                <include reference="p8s-6d-jal"/>
+                                <include reference="rmK-es-wlZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -7452,39 +7388,39 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <exclude reference="8Of-3K-zgE"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="omF-oS-6Vo"/>
-                                <exclude reference="SyI-cR-eJ3"/>
-                                <exclude reference="0CS-TS-usw"/>
-                                <exclude reference="taK-e5-v2r"/>
-                                <exclude reference="vqP-1m-JlK"/>
-                                <exclude reference="hXf-ac-lJH"/>
-                                <exclude reference="iEh-jq-v7R"/>
-                                <exclude reference="pP2-lS-RSq"/>
-                                <exclude reference="GYh-vh-hBd"/>
-                                <exclude reference="ZRV-BX-rG6"/>
-                                <exclude reference="kWH-2w-4Yv"/>
-                                <exclude reference="5tW-AU-dkW"/>
-                                <exclude reference="oNv-Lj-wtJ"/>
-                                <exclude reference="8RX-9t-O6b"/>
-                                <exclude reference="Oq0-WX-yOA"/>
-                                <exclude reference="o4R-de-B4M"/>
-                                <exclude reference="1ih-7u-MMd"/>
-                                <exclude reference="679-1x-L2J"/>
-                                <exclude reference="OSF-Aw-hhX"/>
-                                <exclude reference="GVf-jA-tuc"/>
-                                <exclude reference="KlY-VI-f3y"/>
-                                <exclude reference="rwO-PS-X15"/>
                                 <exclude reference="3Pw-aZ-8sP"/>
                                 <exclude reference="cy6-Tf-aPY"/>
                                 <exclude reference="ziF-P4-a1i"/>
-                                <exclude reference="3Ia-yy-Qn7"/>
-                                <exclude reference="HW8-uw-h34"/>
-                                <exclude reference="6dS-5m-4Jr"/>
-                                <exclude reference="Rq2-qo-FTj"/>
-                                <exclude reference="oPE-Rc-rIh"/>
+                                <exclude reference="kWH-2w-4Yv"/>
+                                <exclude reference="GVf-jA-tuc"/>
                                 <exclude reference="kRE-yT-ewv"/>
                                 <exclude reference="vBh-UC-3F7"/>
                                 <exclude reference="yyZ-OP-ZgL"/>
+                                <exclude reference="hXf-ac-lJH"/>
+                                <exclude reference="iEh-jq-v7R"/>
+                                <exclude reference="pP2-lS-RSq"/>
+                                <exclude reference="5tW-AU-dkW"/>
+                                <exclude reference="oNv-Lj-wtJ"/>
+                                <exclude reference="3Ia-yy-Qn7"/>
+                                <exclude reference="HW8-uw-h34"/>
+                                <exclude reference="0CS-TS-usw"/>
+                                <exclude reference="taK-e5-v2r"/>
+                                <exclude reference="vqP-1m-JlK"/>
+                                <exclude reference="1ih-7u-MMd"/>
+                                <exclude reference="679-1x-L2J"/>
+                                <exclude reference="OSF-Aw-hhX"/>
+                                <exclude reference="SyI-cR-eJ3"/>
+                                <exclude reference="6dS-5m-4Jr"/>
+                                <exclude reference="Rq2-qo-FTj"/>
+                                <exclude reference="oPE-Rc-rIh"/>
+                                <exclude reference="omF-oS-6Vo"/>
+                                <exclude reference="8RX-9t-O6b"/>
+                                <exclude reference="Oq0-WX-yOA"/>
+                                <exclude reference="o4R-de-B4M"/>
+                                <exclude reference="GYh-vh-hBd"/>
+                                <exclude reference="ZRV-BX-rG6"/>
+                                <exclude reference="KlY-VI-f3y"/>
+                                <exclude reference="rwO-PS-X15"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -7506,39 +7442,39 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <include reference="8Of-3K-zgE"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="omF-oS-6Vo"/>
-                                <include reference="SyI-cR-eJ3"/>
-                                <include reference="0CS-TS-usw"/>
-                                <include reference="taK-e5-v2r"/>
-                                <include reference="vqP-1m-JlK"/>
-                                <include reference="hXf-ac-lJH"/>
-                                <include reference="iEh-jq-v7R"/>
-                                <include reference="pP2-lS-RSq"/>
-                                <include reference="GYh-vh-hBd"/>
-                                <include reference="ZRV-BX-rG6"/>
-                                <include reference="kWH-2w-4Yv"/>
-                                <include reference="5tW-AU-dkW"/>
-                                <include reference="oNv-Lj-wtJ"/>
-                                <include reference="8RX-9t-O6b"/>
-                                <include reference="Oq0-WX-yOA"/>
-                                <include reference="o4R-de-B4M"/>
-                                <include reference="1ih-7u-MMd"/>
-                                <include reference="679-1x-L2J"/>
-                                <include reference="OSF-Aw-hhX"/>
-                                <include reference="GVf-jA-tuc"/>
-                                <include reference="KlY-VI-f3y"/>
-                                <include reference="rwO-PS-X15"/>
                                 <include reference="3Pw-aZ-8sP"/>
                                 <include reference="cy6-Tf-aPY"/>
                                 <include reference="ziF-P4-a1i"/>
-                                <include reference="3Ia-yy-Qn7"/>
-                                <include reference="HW8-uw-h34"/>
-                                <include reference="6dS-5m-4Jr"/>
-                                <include reference="Rq2-qo-FTj"/>
-                                <include reference="oPE-Rc-rIh"/>
+                                <include reference="kWH-2w-4Yv"/>
+                                <include reference="GVf-jA-tuc"/>
                                 <include reference="kRE-yT-ewv"/>
                                 <include reference="vBh-UC-3F7"/>
                                 <include reference="yyZ-OP-ZgL"/>
+                                <include reference="hXf-ac-lJH"/>
+                                <include reference="iEh-jq-v7R"/>
+                                <include reference="pP2-lS-RSq"/>
+                                <include reference="5tW-AU-dkW"/>
+                                <include reference="oNv-Lj-wtJ"/>
+                                <include reference="3Ia-yy-Qn7"/>
+                                <include reference="HW8-uw-h34"/>
+                                <include reference="0CS-TS-usw"/>
+                                <include reference="taK-e5-v2r"/>
+                                <include reference="vqP-1m-JlK"/>
+                                <include reference="1ih-7u-MMd"/>
+                                <include reference="679-1x-L2J"/>
+                                <include reference="OSF-Aw-hhX"/>
+                                <include reference="SyI-cR-eJ3"/>
+                                <include reference="6dS-5m-4Jr"/>
+                                <include reference="Rq2-qo-FTj"/>
+                                <include reference="oPE-Rc-rIh"/>
+                                <include reference="omF-oS-6Vo"/>
+                                <include reference="8RX-9t-O6b"/>
+                                <include reference="Oq0-WX-yOA"/>
+                                <include reference="o4R-de-B4M"/>
+                                <include reference="GYh-vh-hBd"/>
+                                <include reference="ZRV-BX-rG6"/>
+                                <include reference="KlY-VI-f3y"/>
+                                <include reference="rwO-PS-X15"/>
                             </mask>
                         </variation>
                     </view>
@@ -8141,58 +8077,58 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                         <exclude reference="ugC-pd-0ld"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="Iyb-if-dKo"/>
-                                        <exclude reference="SOl-Yd-9Ml"/>
-                                        <exclude reference="TuP-dw-HMU"/>
-                                        <exclude reference="Xsa-HW-MIS"/>
-                                        <exclude reference="ao5-rj-gsq"/>
-                                        <exclude reference="b5T-DJ-nx4"/>
-                                        <exclude reference="49d-H2-dJ8"/>
-                                        <exclude reference="5me-61-fey"/>
-                                        <exclude reference="c9O-hO-4RU"/>
-                                        <exclude reference="6mJ-Ml-jns"/>
-                                        <exclude reference="7ur-ie-KuK"/>
-                                        <exclude reference="Q5K-I3-vfW"/>
-                                        <exclude reference="cnE-sH-mCm"/>
-                                        <exclude reference="viX-CM-7dL"/>
-                                        <exclude reference="VSK-81-1Sj"/>
-                                        <exclude reference="ZYT-1I-76p"/>
                                         <exclude reference="3ZS-ww-sKl"/>
                                         <exclude reference="eGo-Hk-fSE"/>
                                         <exclude reference="fJD-gc-gLj"/>
-                                        <exclude reference="1TC-6F-Gf9"/>
-                                        <exclude reference="FBU-FZ-m51"/>
-                                        <exclude reference="h7c-hP-8sM"/>
-                                        <exclude reference="eT0-xr-cmi"/>
+                                        <exclude reference="WEd-6e-Zpk"/>
+                                        <exclude reference="f8F-gl-uZD"/>
                                         <exclude reference="Cbr-CP-TCa"/>
                                         <exclude reference="QER-bh-7kH"/>
                                         <exclude reference="gjm-vI-FvM"/>
-                                        <exclude reference="JQ4-hy-etd"/>
-                                        <exclude reference="D3x-ha-Gkr"/>
-                                        <exclude reference="hST-gl-M9O"/>
-                                        <exclude reference="zVL-Nf-BxX"/>
-                                        <exclude reference="esQ-IO-6NP"/>
-                                        <exclude reference="usV-BI-PfI"/>
+                                        <exclude reference="eT0-xr-cmi"/>
                                         <exclude reference="Ak0-cA-Kv6"/>
                                         <exclude reference="fiE-jb-iRl"/>
                                         <exclude reference="jFK-tT-kja"/>
+                                        <exclude reference="49d-H2-dJ8"/>
+                                        <exclude reference="5me-61-fey"/>
+                                        <exclude reference="c9O-hO-4RU"/>
+                                        <exclude reference="esQ-IO-6NP"/>
+                                        <exclude reference="D3x-ha-Gkr"/>
+                                        <exclude reference="hST-gl-M9O"/>
+                                        <exclude reference="zVL-Nf-BxX"/>
+                                        <exclude reference="6mJ-Ml-jns"/>
+                                        <exclude reference="7ur-ie-KuK"/>
+                                        <exclude reference="Q5K-I3-vfW"/>
+                                        <exclude reference="0qf-Bh-G7h"/>
+                                        <exclude reference="iKa-2c-o3M"/>
+                                        <exclude reference="JQ4-hy-etd"/>
+                                        <exclude reference="1TC-6F-Gf9"/>
+                                        <exclude reference="FBU-FZ-m51"/>
+                                        <exclude reference="h7c-hP-8sM"/>
+                                        <exclude reference="Xsa-HW-MIS"/>
+                                        <exclude reference="ao5-rj-gsq"/>
+                                        <exclude reference="b5T-DJ-nx4"/>
+                                        <exclude reference="LHB-Fu-xA5"/>
+                                        <exclude reference="odH-tZ-WSb"/>
+                                        <exclude reference="usV-BI-PfI"/>
                                         <exclude reference="Wya-v9-rfV"/>
                                         <exclude reference="k0O-Xr-97y"/>
                                         <exclude reference="kel-0t-an4"/>
-                                        <exclude reference="rAt-Th-eFR"/>
-                                        <exclude reference="v7u-Qr-9H6"/>
+                                        <exclude reference="Iyb-if-dKo"/>
+                                        <exclude reference="SOl-Yd-9Ml"/>
+                                        <exclude reference="TuP-dw-HMU"/>
                                         <exclude reference="dsJ-sO-lgI"/>
                                         <exclude reference="kTH-cF-aYJ"/>
+                                        <exclude reference="rAt-Th-eFR"/>
+                                        <exclude reference="v7u-Qr-9H6"/>
                                         <exclude reference="kfR-KF-otw"/>
                                         <exclude reference="uIY-80-aZg"/>
-                                        <exclude reference="WEd-6e-Zpk"/>
-                                        <exclude reference="f8F-gl-uZD"/>
-                                        <exclude reference="LHB-Fu-xA5"/>
-                                        <exclude reference="odH-tZ-WSb"/>
+                                        <exclude reference="VSK-81-1Sj"/>
+                                        <exclude reference="ZYT-1I-76p"/>
                                         <exclude reference="WMV-N4-Qb8"/>
                                         <exclude reference="fcD-vU-uQ6"/>
-                                        <exclude reference="0qf-Bh-G7h"/>
-                                        <exclude reference="iKa-2c-o3M"/>
+                                        <exclude reference="cnE-sH-mCm"/>
+                                        <exclude reference="viX-CM-7dL"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -8222,58 +8158,58 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                         <include reference="ugC-pd-0ld"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="Iyb-if-dKo"/>
-                                        <include reference="SOl-Yd-9Ml"/>
-                                        <include reference="TuP-dw-HMU"/>
-                                        <include reference="Xsa-HW-MIS"/>
-                                        <include reference="ao5-rj-gsq"/>
-                                        <include reference="b5T-DJ-nx4"/>
-                                        <include reference="49d-H2-dJ8"/>
-                                        <include reference="5me-61-fey"/>
-                                        <include reference="c9O-hO-4RU"/>
-                                        <include reference="6mJ-Ml-jns"/>
-                                        <include reference="7ur-ie-KuK"/>
-                                        <include reference="Q5K-I3-vfW"/>
-                                        <include reference="cnE-sH-mCm"/>
-                                        <include reference="viX-CM-7dL"/>
-                                        <include reference="VSK-81-1Sj"/>
-                                        <include reference="ZYT-1I-76p"/>
                                         <include reference="3ZS-ww-sKl"/>
                                         <include reference="eGo-Hk-fSE"/>
                                         <include reference="fJD-gc-gLj"/>
-                                        <include reference="1TC-6F-Gf9"/>
-                                        <include reference="FBU-FZ-m51"/>
-                                        <include reference="h7c-hP-8sM"/>
-                                        <include reference="eT0-xr-cmi"/>
+                                        <include reference="WEd-6e-Zpk"/>
+                                        <include reference="f8F-gl-uZD"/>
                                         <include reference="Cbr-CP-TCa"/>
                                         <include reference="QER-bh-7kH"/>
                                         <include reference="gjm-vI-FvM"/>
-                                        <include reference="JQ4-hy-etd"/>
-                                        <include reference="D3x-ha-Gkr"/>
-                                        <include reference="hST-gl-M9O"/>
-                                        <include reference="zVL-Nf-BxX"/>
-                                        <include reference="esQ-IO-6NP"/>
-                                        <include reference="usV-BI-PfI"/>
+                                        <include reference="eT0-xr-cmi"/>
                                         <include reference="Ak0-cA-Kv6"/>
                                         <include reference="fiE-jb-iRl"/>
                                         <include reference="jFK-tT-kja"/>
+                                        <include reference="49d-H2-dJ8"/>
+                                        <include reference="5me-61-fey"/>
+                                        <include reference="c9O-hO-4RU"/>
+                                        <include reference="esQ-IO-6NP"/>
+                                        <include reference="D3x-ha-Gkr"/>
+                                        <include reference="hST-gl-M9O"/>
+                                        <include reference="zVL-Nf-BxX"/>
+                                        <include reference="6mJ-Ml-jns"/>
+                                        <include reference="7ur-ie-KuK"/>
+                                        <include reference="Q5K-I3-vfW"/>
+                                        <include reference="0qf-Bh-G7h"/>
+                                        <include reference="iKa-2c-o3M"/>
+                                        <include reference="JQ4-hy-etd"/>
+                                        <include reference="1TC-6F-Gf9"/>
+                                        <include reference="FBU-FZ-m51"/>
+                                        <include reference="h7c-hP-8sM"/>
+                                        <include reference="Xsa-HW-MIS"/>
+                                        <include reference="ao5-rj-gsq"/>
+                                        <include reference="b5T-DJ-nx4"/>
+                                        <include reference="LHB-Fu-xA5"/>
+                                        <include reference="odH-tZ-WSb"/>
+                                        <include reference="usV-BI-PfI"/>
                                         <include reference="Wya-v9-rfV"/>
                                         <include reference="k0O-Xr-97y"/>
                                         <include reference="kel-0t-an4"/>
-                                        <include reference="rAt-Th-eFR"/>
-                                        <include reference="v7u-Qr-9H6"/>
+                                        <include reference="Iyb-if-dKo"/>
+                                        <include reference="SOl-Yd-9Ml"/>
+                                        <include reference="TuP-dw-HMU"/>
                                         <include reference="dsJ-sO-lgI"/>
                                         <include reference="kTH-cF-aYJ"/>
+                                        <include reference="rAt-Th-eFR"/>
+                                        <include reference="v7u-Qr-9H6"/>
                                         <include reference="kfR-KF-otw"/>
                                         <include reference="uIY-80-aZg"/>
-                                        <include reference="WEd-6e-Zpk"/>
-                                        <include reference="f8F-gl-uZD"/>
-                                        <include reference="LHB-Fu-xA5"/>
-                                        <include reference="odH-tZ-WSb"/>
+                                        <include reference="VSK-81-1Sj"/>
+                                        <include reference="ZYT-1I-76p"/>
                                         <include reference="WMV-N4-Qb8"/>
                                         <include reference="fcD-vU-uQ6"/>
-                                        <include reference="0qf-Bh-G7h"/>
-                                        <include reference="iKa-2c-o3M"/>
+                                        <include reference="cnE-sH-mCm"/>
+                                        <include reference="viX-CM-7dL"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -8736,40 +8672,40 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <exclude reference="lJG-3p-JrC"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="UAa-Kr-Qjd"/>
-                                        <exclude reference="hTt-OT-MXw"/>
-                                        <exclude reference="sZn-s9-tdn"/>
-                                        <exclude reference="AYu-Gb-aTg"/>
-                                        <exclude reference="keN-ME-OoZ"/>
-                                        <exclude reference="s7T-vI-Zex"/>
-                                        <exclude reference="JiC-Tf-8Cg"/>
-                                        <exclude reference="o7q-EM-GVP"/>
-                                        <exclude reference="Gv7-i4-0dc"/>
-                                        <exclude reference="8jq-bv-pjj"/>
+                                        <exclude reference="4Yv-1e-KOj"/>
+                                        <exclude reference="C93-d9-0tl"/>
                                         <exclude reference="lta-3o-6cw"/>
                                         <exclude reference="qwd-BT-O2J"/>
                                         <exclude reference="wAN-on-Lcq"/>
-                                        <exclude reference="1Wt-LW-fu7"/>
-                                        <exclude reference="4w4-wi-oHc"/>
-                                        <exclude reference="fQz-kD-hsi"/>
                                         <exclude reference="XZa-xt-KEN"/>
                                         <exclude reference="Zlh-Tz-5Qy"/>
                                         <exclude reference="hjU-ps-yTs"/>
+                                        <exclude reference="Z6V-bh-hHq"/>
+                                        <exclude reference="pBl-WL-ZSp"/>
+                                        <exclude reference="qM1-J1-uCf"/>
+                                        <exclude reference="xTW-iS-ZAI"/>
+                                        <exclude reference="Gv7-i4-0dc"/>
+                                        <exclude reference="1Wt-LW-fu7"/>
+                                        <exclude reference="4w4-wi-oHc"/>
+                                        <exclude reference="fQz-kD-hsi"/>
+                                        <exclude reference="UAa-Kr-Qjd"/>
+                                        <exclude reference="hTt-OT-MXw"/>
+                                        <exclude reference="sZn-s9-tdn"/>
+                                        <exclude reference="8jq-bv-pjj"/>
                                         <exclude reference="Bf9-fy-IAw"/>
                                         <exclude reference="DKI-5Q-gTE"/>
                                         <exclude reference="yGx-iC-IMn"/>
                                         <exclude reference="4Ou-JM-nx5"/>
                                         <exclude reference="907-kL-evh"/>
-                                        <exclude reference="Z6V-bh-hHq"/>
-                                        <exclude reference="pBl-WL-ZSp"/>
-                                        <exclude reference="qM1-J1-uCf"/>
-                                        <exclude reference="xTW-iS-ZAI"/>
-                                        <exclude reference="4Yv-1e-KOj"/>
-                                        <exclude reference="C93-d9-0tl"/>
+                                        <exclude reference="AYu-Gb-aTg"/>
+                                        <exclude reference="keN-ME-OoZ"/>
+                                        <exclude reference="s7T-vI-Zex"/>
                                         <exclude reference="EFa-7t-4di"/>
                                         <exclude reference="rXY-O9-QeE"/>
                                         <exclude reference="ZzO-iy-c8r"/>
                                         <exclude reference="xBv-KD-GkE"/>
+                                        <exclude reference="JiC-Tf-8Cg"/>
+                                        <exclude reference="o7q-EM-GVP"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -8791,40 +8727,40 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <include reference="lJG-3p-JrC"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="UAa-Kr-Qjd"/>
-                                        <include reference="hTt-OT-MXw"/>
-                                        <include reference="sZn-s9-tdn"/>
-                                        <include reference="AYu-Gb-aTg"/>
-                                        <include reference="keN-ME-OoZ"/>
-                                        <include reference="s7T-vI-Zex"/>
-                                        <include reference="JiC-Tf-8Cg"/>
-                                        <include reference="o7q-EM-GVP"/>
-                                        <include reference="Gv7-i4-0dc"/>
-                                        <include reference="8jq-bv-pjj"/>
+                                        <include reference="4Yv-1e-KOj"/>
+                                        <include reference="C93-d9-0tl"/>
                                         <include reference="lta-3o-6cw"/>
                                         <include reference="qwd-BT-O2J"/>
                                         <include reference="wAN-on-Lcq"/>
-                                        <include reference="1Wt-LW-fu7"/>
-                                        <include reference="4w4-wi-oHc"/>
-                                        <include reference="fQz-kD-hsi"/>
                                         <include reference="XZa-xt-KEN"/>
                                         <include reference="Zlh-Tz-5Qy"/>
                                         <include reference="hjU-ps-yTs"/>
+                                        <include reference="Z6V-bh-hHq"/>
+                                        <include reference="pBl-WL-ZSp"/>
+                                        <include reference="qM1-J1-uCf"/>
+                                        <include reference="xTW-iS-ZAI"/>
+                                        <include reference="Gv7-i4-0dc"/>
+                                        <include reference="1Wt-LW-fu7"/>
+                                        <include reference="4w4-wi-oHc"/>
+                                        <include reference="fQz-kD-hsi"/>
+                                        <include reference="UAa-Kr-Qjd"/>
+                                        <include reference="hTt-OT-MXw"/>
+                                        <include reference="sZn-s9-tdn"/>
+                                        <include reference="8jq-bv-pjj"/>
                                         <include reference="Bf9-fy-IAw"/>
                                         <include reference="DKI-5Q-gTE"/>
                                         <include reference="yGx-iC-IMn"/>
                                         <include reference="4Ou-JM-nx5"/>
                                         <include reference="907-kL-evh"/>
-                                        <include reference="Z6V-bh-hHq"/>
-                                        <include reference="pBl-WL-ZSp"/>
-                                        <include reference="qM1-J1-uCf"/>
-                                        <include reference="xTW-iS-ZAI"/>
-                                        <include reference="4Yv-1e-KOj"/>
-                                        <include reference="C93-d9-0tl"/>
+                                        <include reference="AYu-Gb-aTg"/>
+                                        <include reference="keN-ME-OoZ"/>
+                                        <include reference="s7T-vI-Zex"/>
                                         <include reference="EFa-7t-4di"/>
                                         <include reference="rXY-O9-QeE"/>
                                         <include reference="ZzO-iy-c8r"/>
                                         <include reference="xBv-KD-GkE"/>
+                                        <include reference="JiC-Tf-8Cg"/>
+                                        <include reference="o7q-EM-GVP"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -9005,7 +8941,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <viewControllerLayoutGuide type="bottom" id="C8l-nm-VgS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dEt-5q-hst">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.43410099625415921" blue="0.89496270417951895" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -9581,6 +9517,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="j4b-qR-C0p"/>
+                                <exclude reference="729-QA-dEg"/>
+                                <exclude reference="OcO-CU-8fu"/>
                                 <exclude reference="1M8-xU-bFz"/>
                                 <exclude reference="zJN-CG-wsc"/>
                                 <exclude reference="YU0-Qt-2c0"/>
@@ -9588,8 +9526,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <exclude reference="TUa-tg-FVi"/>
                                 <exclude reference="WIU-jV-VmU"/>
                                 <exclude reference="WyS-zC-KK2"/>
-                                <exclude reference="729-QA-dEg"/>
-                                <exclude reference="OcO-CU-8fu"/>
                                 <exclude reference="1Z8-uV-xwl"/>
                                 <exclude reference="cBU-Zv-5VQ"/>
                                 <exclude reference="iP1-nq-NUM"/>
@@ -9605,6 +9541,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             </mask>
                             <mask key="constraints">
                                 <include reference="j4b-qR-C0p"/>
+                                <include reference="729-QA-dEg"/>
+                                <include reference="OcO-CU-8fu"/>
                                 <include reference="1M8-xU-bFz"/>
                                 <include reference="zJN-CG-wsc"/>
                                 <include reference="YU0-Qt-2c0"/>
@@ -9612,8 +9550,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 <include reference="TUa-tg-FVi"/>
                                 <include reference="WIU-jV-VmU"/>
                                 <include reference="WyS-zC-KK2"/>
-                                <include reference="729-QA-dEg"/>
-                                <include reference="OcO-CU-8fu"/>
                                 <include reference="1Z8-uV-xwl"/>
                                 <include reference="cBU-Zv-5VQ"/>
                                 <include reference="iP1-nq-NUM"/>
