@@ -10,6 +10,8 @@ import UIKit
 
 class InfoCategoryTableViewController : UITableViewController {
     
+    static let segueId = "showImage"
+    
     var infoCategory:InfoCategory?
     let cellId = "infoCell"
     let drinkSmartTitle = "Drikkevettreglene"

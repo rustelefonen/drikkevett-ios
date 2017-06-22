@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
         
+        infoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.lol)))
+        
     }
     
     /*func setGoalToToday(){
@@ -45,5 +47,9 @@ class HomeViewController: UIViewController {
     func isGoalDateReached() -> Bool {
         let coreData = CoreDataMethods()
         return Date().compare(coreData.fetchGoalDate() as Date) == ComparisonResult.orderedDescending
+    }
+    
+    func lol() {
+        performSegue(withIdentifier: "lol", sender: self)
     }
 }
