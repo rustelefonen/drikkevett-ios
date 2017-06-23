@@ -35,7 +35,6 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
     }
     
     func initUserValues() {
-        //let userData = AppDelegate.getUserData()
         let userData = UserDataDao().fetchUserData()
         if userData == nil {return}
         

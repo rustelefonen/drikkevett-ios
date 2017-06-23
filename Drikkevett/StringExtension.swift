@@ -16,4 +16,16 @@ extension String {
         
         return nsSt.appendingPathComponent(path)
     }
+    
+    func doesNotContainCharactersIn(_ matchCharacters: String) -> Bool {
+        let characterSet = NSCharacterSet(charactersIn: matchCharacters)
+        return self.rangeOfCharacter(from: characterSet as CharacterSet) == nil
+    }
+    
+    func isNumeric() -> Bool{
+        let scanner = Scanner(string: self)
+        scanner.locale = NSLocale.current
+        
+        return scanner.scanDecimal(nil) && scanner.isAtEnd
+    }
 }

@@ -95,6 +95,7 @@
 		D5FC66231D492AFB00093F62 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66221D492AFB00093F62 /* FormController.swift */; };
 		D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66241D492B5D00093F62 /* ResourceList.swift */; };
 		D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66261D492C3700093F62 /* UIViewExtension.swift */; };
+		D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +226,7 @@
 		D5FC66221D492AFB00093F62 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 		D5FC66241D492B5D00093F62 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
 		D5FC66261D492C3700093F62 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCostsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +426,7 @@
 				D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */,
 				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5735D2B1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift */,
+				D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */,
 			);
 			name = update;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
 				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
 				D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */,
+				D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
