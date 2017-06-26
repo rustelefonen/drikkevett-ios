@@ -96,6 +96,17 @@
 		D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66241D492B5D00093F62 /* ResourceList.swift */; };
 		D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66261D492C3700093F62 /* UIViewExtension.swift */; };
 		D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */; };
+		D5FCCD721EFD1D3400310084 /* UpdateMaxBacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */; };
+		D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD731EFD355200310084 /* BacCalcViewController.swift */; };
+		D5FCCD771F00EDC700310084 /* SelectDrinkPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */; };
+		D5FCCD7C1F00EF7300310084 /* SelectedDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */; };
+		D5FCCD7E1F00FD1900310084 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */; };
+		D5FCCD801F00FE2000310084 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */; };
+		D5FCCD821F01018C00310084 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD811F01018C00310084 /* CircleView.swift */; };
+		D5FCCD841F0116ED00310084 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD831F0116ED00310084 /* HistoryEntry.swift */; };
+		D5FCCD881F01262F00310084 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD871F01262F00310084 /* DoubleExtension.swift */; };
+		D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD891F013BBE00310084 /* HistoryViewController.swift */; };
+		D5FCCD8C1F01440400310084 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD8B1F01440400310084 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +238,17 @@
 		D5FC66241D492B5D00093F62 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
 		D5FC66261D492C3700093F62 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCostsViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMaxBacViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD731EFD355200310084 /* BacCalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacCalcViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDrinkPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDrinkViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD811F01018C00310084 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD831F0116ED00310084 /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD871F01262F00310084 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		D5FCCD891F013BBE00310084 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5FCCD8B1F01440400310084 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +309,7 @@
 			children = (
 				D5958E201D29A21C004FC6A3 /* StringExtension.swift */,
 				D5FC66261D492C3700093F62 /* UIViewExtension.swift */,
+				D5FCCD871F01262F00310084 /* DoubleExtension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -350,6 +373,9 @@
 				D5958E711D29A78F004FC6A3 /* SecondViewController.swift */,
 				D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */,
 				D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */,
+				D5FCCD731EFD355200310084 /* BacCalcViewController.swift */,
+				D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */,
+				D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */,
 			);
 			name = calculator;
 			sourceTree = "<group>";
@@ -385,6 +411,12 @@
 				D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */,
 				D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */,
 				D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */,
+				D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */,
+				D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */,
+				D5FCCD811F01018C00310084 /* CircleView.swift */,
+				D5FCCD831F0116ED00310084 /* HistoryEntry.swift */,
+				D5FCCD891F013BBE00310084 /* HistoryViewController.swift */,
+				D5FCCD8B1F01440400310084 /* History.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -427,6 +459,7 @@
 				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5735D2B1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift */,
 				D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */,
+				D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */,
 			);
 			name = update;
 			sourceTree = "<group>";
@@ -619,11 +652,13 @@
 			files = (
 				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
 				D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */,
+				D5FCCD771F00EDC700310084 /* SelectDrinkPageViewController.swift in Sources */,
 				D52D459E1EF91737008353AB /* RootViewController.swift in Sources */,
 				D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
 				7F850C981D4F61BC007B62DB /* User.swift in Sources */,
+				D5FCCD7E1F00FD1900310084 /* HistoryTableViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5735D2A1EFC1208002741E0 /* InfoCategoryCell.swift in Sources */,
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
@@ -636,13 +671,16 @@
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
+				D5FCCD881F01262F00310084 /* DoubleExtension.swift in Sources */,
 				D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */,
 				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
+				D5FCCD7C1F00EF7300310084 /* SelectedDrinkViewController.swift in Sources */,
 				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
 				7F114FA11D50D841000302DA /* ContactUsViewController.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
 				D5FC66231D492AFB00093F62 /* FormController.swift in Sources */,
+				D5FCCD841F0116ED00310084 /* HistoryEntry.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
 				D5735D241EFBFCE0002741E0 /* InfoCell.swift in Sources */,
@@ -650,15 +688,19 @@
 				7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */,
 				D5735D2C1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
+				D5FCCD821F01018C00310084 /* CircleView.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
+				D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
 				D5735D281EFC1166002741E0 /* InfoCollectionViewController.swift in Sources */,
+				D5FCCD801F00FE2000310084 /* HistoryCell.swift in Sources */,
 				D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */,
 				D5735D201EFBDA65002741E0 /* Info.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
 				D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */,
+				D5FCCD721EFD1D3400310084 /* UpdateMaxBacViewController.swift in Sources */,
 				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
 				D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
@@ -671,8 +713,10 @@
 				D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
+				D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */,
 				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
 				D5735D261EFC005A002741E0 /* BackButton.swift in Sources */,
+				D5FCCD8C1F01440400310084 /* History.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
 				D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */,

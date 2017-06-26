@@ -12,46 +12,31 @@ import CoreData
 
 class PieChartViewController: UIViewController, ChartViewDelegate {
 
-    // Talk with core data
     let moc = DataController().managedObjectContext
-    
-    // Get Brain
     var brain = SkallMenyBrain()
     
-    // LABEL
     @IBOutlet weak var pieChartTextVuew: UITextView!
+    @IBOutlet weak var pieChartView: PieChartView!
     
-    // pluss / minus
     var goalReached = 0
     var overGoal = 0
-    
-    @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)
         
-        // DELEGATE
         pieChartView.delegate = self
         
-        //Values:
         let months = ["", ""]
         populatePieChart()
         let unitsSold = [Double(goalReached), Double(overGoal)]
         
-        //DUMMY DATA:
-        //unitsSold = [10.0, 15.0]
-        
         setChart(months, values: unitsSold)
-        
-        // Constraints
-        setConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //Values:
         
         let months = ["", ""]
         populatePieChart()
@@ -61,11 +46,6 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func setChart(_ dataPoints: [String], values: [Double]) {
         //Creating Chart
         var dataEntries: [ChartDataEntry] = []
@@ -92,10 +72,10 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
         pieChartView.centerTextRadiusPercent = CGFloat(1.0)
         pieChartView.transparentCircleRadiusPercent = 0.85
         pieChartView.animate(yAxisDuration: 1.0)
-        pieChartView.descriptionText = ""
+        pieChartView.chartDescription?.text = ""
         pieChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
-        pieChartView.transparentCircleColor?.cgColor
-        pieChartView.drawSliceTextEnabled = false
+        //pieChartView.transparentCircleColor?.cgColor
+        pieChartView.drawEntryLabelsEnabled = false
         pieChartView.legend.enabled = false
         pieChartView.isUserInteractionEnabled = false
         
@@ -107,14 +87,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
-        if(entry.x == 0){
-            self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget over makspromillen din"
-            
-        }
-        if(entry.x == 1){
-            self.pieChartTextVuew.text = "Dette er andelen kvelder du har ligget under makspromillen din"
-        }
+        pieChartTextVuew.text = ResourceList.homeChartTexts[Int(entry.x)]
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
@@ -146,33 +119,6 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     }
 
     func fetchGoal() -> Double{
-        var userData = [UserData]()
-        var getGoalPromille = 0.0
-        
-        let timeStampFetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserData")
-        do {
-            userData = try moc.fetch(timeStampFetch) as! [UserData]
-            for item in userData {
-                getGoalPromille = item.goalPromille! as Double
-            }
-        } catch {
-            fatalError("bad things happened \(error)")
-        }
-        return getGoalPromille
-    }
-    
-    func setConstraints(){
-        if UIScreen.main.bounds.size.height == 480 {
-            // iPhone 4
-            
-        } else if UIScreen.main.bounds.size.height == 568 {
-            // IPhone 5
-        } else if UIScreen.main.bounds.size.width == 375 {
-            // iPhone 6
-            self.pieChartTextVuew.transform = self.view.transform.translatedBy(x: -35.0, y: 0.0)
-        } else if UIScreen.main.bounds.size.width == 414 {
-            // iPhone 6+
-            self.pieChartTextVuew.transform = self.view.transform.translatedBy(x: -50.0, y: 0.0)
-        }
+        return UserDataDao().fetchUserData()?.goalPromille as! Double
     }
 }
