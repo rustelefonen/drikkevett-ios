@@ -18,6 +18,7 @@
 		7F850C981D4F61BC007B62DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C971D4F61BC007B62DB /* User.swift */; };
 		7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */; };
 		7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */; };
+		D50D9C5F1F0253AE007A109D /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */; };
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
 		D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A31EF935FA008353AB /* UserInfo.swift */; };
 		D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A51EF93E93008353AB /* PrivacyViewController.swift */; };
@@ -106,7 +107,6 @@
 		D5FCCD841F0116ED00310084 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD831F0116ED00310084 /* HistoryEntry.swift */; };
 		D5FCCD881F01262F00310084 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD871F01262F00310084 /* DoubleExtension.swift */; };
 		D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD891F013BBE00310084 /* HistoryViewController.swift */; };
-		D5FCCD8C1F01440400310084 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD8B1F01440400310084 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +159,7 @@
 		7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
+		D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = SOURCE_ROOT; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		D52D45A31EF935FA008353AB /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = SOURCE_ROOT; };
 		D52D45A51EF93E93008353AB /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -248,7 +249,6 @@
 		D5FCCD831F0116ED00310084 /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = SOURCE_ROOT; };
 		D5FCCD871F01262F00310084 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		D5FCCD891F013BBE00310084 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD8B1F01440400310084 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,7 +416,7 @@
 				D5FCCD811F01018C00310084 /* CircleView.swift */,
 				D5FCCD831F0116ED00310084 /* HistoryEntry.swift */,
 				D5FCCD891F013BBE00310084 /* HistoryViewController.swift */,
-				D5FCCD8B1F01440400310084 /* History.swift */,
+				D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -716,7 +716,6 @@
 				D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */,
 				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
 				D5735D261EFC005A002741E0 /* BackButton.swift in Sources */,
-				D5FCCD8C1F01440400310084 /* History.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
 				D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */,
@@ -740,6 +739,7 @@
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */,
+				D50D9C5F1F0253AE007A109D /* ChartFormatter.swift in Sources */,
 				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
 				D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */,

@@ -344,4 +344,7 @@ class AppColors {
         // SEGMENT CONTROLLERS
         UISegmentedControl.appearance().tintColor = UIColor(red: 179/255.0, green: 35/255.0, blue: 34/255.0, alpha: 1.0)
     }
+    
+    static let graphRed = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+    static let graphGreen = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
 }

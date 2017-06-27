@@ -321,7 +321,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUe-Bs-w7r">
-                                <rect key="frame" x="123" y="181.66666666666666" width="135" height="45"/>
+                                <rect key="frame" x="123" y="182" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0xq-6t-kLC"/>
                                     <constraint firstAttribute="width" constant="135" id="DCp-6N-spC"/>
@@ -347,7 +347,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-hh-OBG">
-                                <rect key="frame" x="-20" y="181.66666666666666" width="135" height="45"/>
+                                <rect key="frame" x="-20" y="182" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="IJe-1q-UkI"/>
                                     <constraint firstAttribute="height" constant="45" id="bKd-hJ-wRP"/>
@@ -373,7 +373,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4to-5g-oXK">
-                                <rect key="frame" x="35" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="35" y="235" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="EYS-dA-6Vz"/>
                                     <constraint firstAttribute="height" constant="40" id="NJM-WT-j0y"/>
@@ -395,7 +395,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-5a-Zg6">
-                                <rect key="frame" x="123" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="123" y="235" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TFZ-yH-zQn"/>
                                     <constraint firstAttribute="width" constant="80" id="Zok-GX-XtA"/>
@@ -417,7 +417,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pX-mZ-HjT">
-                                <rect key="frame" x="211" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="211" y="235" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="JqY-sf-VQo"/>
                                     <constraint firstAttribute="height" constant="40" id="n4q-Mz-LxP"/>
@@ -439,7 +439,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ØL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-CQ-U6K">
-                                <rect key="frame" x="-53" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="-53" y="262" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TZi-gg-nnX"/>
                                     <constraint firstAttribute="width" constant="80" id="ayk-qM-XCn"/>
@@ -461,7 +461,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zia-EE-Dlx">
-                                <rect key="frame" x="211" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="211" y="262" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I71-Ie-Hrr"/>
                                     <constraint firstAttribute="height" constant="40" id="hz2-Ge-dzD"/>
@@ -483,7 +483,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-Zo-1dn">
-                                <rect key="frame" x="35" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="35" y="262" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SS1-s7-NEC"/>
                                     <constraint firstAttribute="width" constant="80" id="ufj-RQ-oZN"/>
@@ -505,7 +505,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRINK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-Q3-Pgv">
-                                <rect key="frame" x="123" y="261.66666666666669" width="80" height="40"/>
+                                <rect key="frame" x="123" y="262" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9w5-7i-bnY"/>
                                     <constraint firstAttribute="width" constant="80" id="uCC-Fr-qwR"/>
@@ -527,7 +527,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-QG-3TV">
-                                <rect key="frame" x="-53" y="234.66666666666669" width="80" height="40.000000000000057"/>
+                                <rect key="frame" x="-53" y="235" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ZgR-AP-dpU"/>
                                     <constraint firstAttribute="height" constant="40" id="hZS-Ge-wcp"/>
@@ -594,7 +594,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j38-aN-3uL">
-                                <rect key="frame" x="35.666666666666657" y="28" width="169" height="70"/>
+                                <rect key="frame" x="36" y="28" width="169" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="WhG-Fx-SFO">
                                         <variation key="heightClass=regular-widthClass=compact" constant="169"/>
@@ -1041,14 +1041,14 @@
                             <tableViewSection headerTitle="Generelt" id="Rhk-Qr-fCG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dff-6y-8CT">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dff-6y-8CT" id="JtY-L2-eds">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone-100-menu" translatesAutoresizingMaskIntoConstraints="NO" id="Z6w-t0-bog">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Z6w-t0-bog" secondAttribute="height" multiplier="1:1" id="RkP-MV-cEg"/>
                                                         <constraint firstAttribute="width" constant="35" id="fbV-uS-Fug">
@@ -1074,7 +1074,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakt oss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-ot-jUj">
-                                                    <rect key="frame" x="41" y="7.3333333333333321" width="351" height="35"/>
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="DCb-yn-LC2"/>
                                                         <constraint firstAttribute="width" constant="341" id="oEL-tE-SWD">
@@ -1146,14 +1146,14 @@
                             <tableViewSection headerTitle="Innstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
-                                        <rect key="frame" x="0.0" y="161.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="163" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yg-Zob">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="ArY-JQ-drV">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="25"/>
@@ -1179,7 +1179,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre din bruker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTd-xs-Ipq">
-                                                    <rect key="frame" x="41" y="5" width="351" height="39.666666666666664"/>
+                                                    <rect key="frame" x="41" y="5" width="351" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="341" id="oJx-QX-iZA">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="351"/>
@@ -1245,14 +1245,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
-                                        <rect key="frame" x="0.0" y="211.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="213" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NJR-rZ-8wN">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="JI2-UB-B0o">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="25"/>
@@ -1278,7 +1278,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre alkoholpriser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-Zu-rTa">
-                                                    <rect key="frame" x="41" y="7.3333333333333321" width="351" height="35"/>
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="341" id="2LY-dn-HIz">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="351"/>
@@ -1346,14 +1346,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euR-sU-CHU">
-                                        <rect key="frame" x="0.0" y="261.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="263" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euR-sU-CHU" id="ksU-32-R3r">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goal" translatesAutoresizingMaskIntoConstraints="NO" id="f5n-0E-fyH">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="f5n-0E-fyH" secondAttribute="height" multiplier="1:1" id="XjQ-pV-yyv"/>
                                                         <constraint firstAttribute="height" constant="35" id="pp7-kJ-bV4">
@@ -1379,7 +1379,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre din makspromille" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWv-1H-2QE">
-                                                    <rect key="frame" x="41" y="7.3333333333333321" width="351" height="35"/>
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="pWv-1H-2QE" secondAttribute="height" multiplier="341:35" id="16w-G4-gxY">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="10.000000000000057"/>
@@ -1451,14 +1451,14 @@
                             <tableViewSection headerTitle="Ekstra" id="b8I-Rp-qd6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="19h-p1-aaZ">
-                                        <rect key="frame" x="0.0" y="367.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="370" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19h-p1-aaZ" id="bYG-fe-DHC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Help-100" translatesAutoresizingMaskIntoConstraints="NO" id="S2P-24-m6M">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="Fq7-mP-cRS">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="25"/>
@@ -1484,7 +1484,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veiledning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-jg-iAf">
-                                                    <rect key="frame" x="41" y="7.3333333333333321" width="351" height="35"/>
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="341" id="HmS-jH-IQq">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="351"/>
@@ -1552,14 +1552,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zmd-OH-F7f">
-                                        <rect key="frame" x="0.0" y="417.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="420" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zmd-OH-F7f" id="Qh2-kx-bhi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page Overview -100" translatesAutoresizingMaskIntoConstraints="NO" id="WOx-6f-edS">
-                                                    <rect key="frame" x="8" y="12.333333333333336" width="25" height="25"/>
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="WOx-6f-edS" secondAttribute="height" multiplier="1:1" id="2VA-Np-Nqg"/>
                                                         <constraint firstAttribute="width" constant="35" id="KH8-Iu-rTM">
@@ -1585,7 +1585,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd8-Xe-OGc">
-                                                    <rect key="frame" x="41" y="7.3333333333333321" width="351" height="35"/>
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Fd8-Xe-OGc" secondAttribute="height" multiplier="341:35" id="3oq-P3-Zg8">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="10.000000000000057"/>
@@ -2071,7 +2071,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyd-XZ-RKD" id="jXL-2G-fLg">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-ks-gTO">
@@ -2155,7 +2155,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
-                                        <rect key="frame" x="20" y="175.99999999999997" width="374" height="242.33333333333329"/>
+                                        <rect key="frame" x="20" y="176" width="374" height="243"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2214,7 +2214,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </connections>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mSw-le-mUz">
-                                <rect key="frame" x="197" y="301.66666666666669" width="20" height="20"/>
+                                <rect key="frame" x="197" y="302" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2287,7 +2287,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FFv-dR-4w7" id="YVd-Mk-5AH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxv-b6-OLK">
@@ -2404,10 +2404,10 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="75" id="IxW-wH-fRL" customClass="HistoryCell" customModule="Drikkevett" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IxW-wH-fRL" id="EiX-l8-SR7">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-qA-eGY">
@@ -2417,7 +2417,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                     <rect key="frame" x="2" y="18" width="40" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-bK-iZX">
-                                                            <rect key="frame" x="10.666666666666664" y="9" width="19" height="21"/>
+                                                            <rect key="frame" x="11" y="9" width="19" height="21"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -2452,13 +2452,13 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                             <rect key="frame" x="75" y="0.0" width="298" height="75"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mandag brukte du 7864,-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9j-Ab-g1X">
-                                                    <rect key="frame" x="0.0" y="40" width="166.33333333333334" height="18"/>
+                                                    <rect key="frame" x="0.0" y="40" width="167" height="18"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille 5.42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ke-kr-jDq">
-                                                    <rect key="frame" x="0.0" y="12" width="169" height="21.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="12" width="169" height="22"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2617,7 +2617,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <rect key="frame" x="0.0" y="-8" width="187" height="79"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBc-tN-eMY">
-                                                <rect key="frame" x="72" y="21.666666666666686" width="43" height="36"/>
+                                                <rect key="frame" x="72" y="22" width="43" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Fjern">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2635,7 +2635,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         <rect key="frame" x="195" y="-8" width="187" height="79"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy3-JV-FOb">
-                                                <rect key="frame" x="61.666666666666686" y="21.666666666666686" width="63" height="36"/>
+                                                <rect key="frame" x="62" y="22" width="63" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Legg til">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2812,7 +2812,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-Z3-OH7">
-                                <rect key="frame" x="204" y="387.33333333333331" width="135" height="22"/>
+                                <rect key="frame" x="204" y="387" width="135" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Fog-NZ-5J7"/>
                                     <constraint firstAttribute="width" constant="135" id="rgd-16-XBn"/>
@@ -2834,11 +2834,11 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eud-tL-yg1" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="101" width="373" height="248.66666666666669"/>
+                                <rect key="frame" x="0.0" y="57" width="373" height="293"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgN-m9-Cp0">
-                                <rect key="frame" x="116" y="528.33333333333337" width="80" height="60"/>
+                                <rect key="frame" x="116" y="528" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="XHh-M6-Zcp"/>
                                     <constraint firstAttribute="height" constant="60" id="pMj-iQ-5Fy"/>
@@ -2860,7 +2860,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsK-mj-MTs">
-                                <rect key="frame" x="292" y="528.33333333333337" width="80" height="60"/>
+                                <rect key="frame" x="292" y="528" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5BW-2l-Ag6"/>
                                     <constraint firstAttribute="width" constant="80" id="nhc-sx-DiA"/>
@@ -2882,7 +2882,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LønningsPils" translatesAutoresizingMaskIntoConstraints="NO" id="Sef-s8-f8c">
-                                <rect key="frame" x="28" y="475.33333333333337" width="80" height="60.000000000000114"/>
+                                <rect key="frame" x="28" y="475" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5O3-c8-1Gf"/>
                                     <constraint firstAttribute="width" constant="80" id="IB5-Gc-OeY"/>
@@ -2901,7 +2901,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativVIN" translatesAutoresizingMaskIntoConstraints="NO" id="1OC-ua-FJg">
-                                <rect key="frame" x="116" y="475.33333333333337" width="80" height="60.000000000000114"/>
+                                <rect key="frame" x="116" y="475" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WDK-DK-Np5"/>
                                     <constraint firstAttribute="width" constant="80" id="hqs-ks-HHh"/>
@@ -2920,7 +2920,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativDRINK" translatesAutoresizingMaskIntoConstraints="NO" id="l1C-U3-69I">
-                                <rect key="frame" x="204" y="475.66666666666663" width="80" height="59.999999999999886"/>
+                                <rect key="frame" x="204" y="476" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="52q-Sb-9QH"/>
                                     <constraint firstAttribute="width" constant="80" id="YvW-UK-wYw"/>
@@ -2939,7 +2939,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1000SHOTS" translatesAutoresizingMaskIntoConstraints="NO" id="idR-gh-Llq">
-                                <rect key="frame" x="292" y="475.66666666666663" width="80" height="59.999999999999886"/>
+                                <rect key="frame" x="292" y="476" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="0sQ-Hz-4lS"/>
                                     <constraint firstAttribute="height" constant="60" id="pz6-yF-b07"/>
@@ -2958,7 +2958,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoz-R9-Mc6">
-                                <rect key="frame" x="61" y="416.33333333333331" width="135" height="21"/>
+                                <rect key="frame" x="61" y="416" width="135" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4uZ-Tj-WZI"/>
                                     <constraint firstAttribute="width" constant="135" id="RZO-aV-997"/>
@@ -2980,7 +2980,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10X-dx-GGX">
-                                <rect key="frame" x="204" y="417.33333333333326" width="135" height="19.666666666666686"/>
+                                <rect key="frame" x="204" y="417" width="135" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="Rse-Ot-qAY"/>
                                     <constraint firstAttribute="height" constant="19.5" id="b3D-uy-RiO"/>
@@ -3002,7 +3002,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-At-Xvc">
-                                <rect key="frame" x="204" y="528.66666666666663" width="80" height="60"/>
+                                <rect key="frame" x="204" y="529" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3LG-YE-0ru"/>
                                     <constraint firstAttribute="width" constant="80" id="nyC-zh-Ty3"/>
@@ -3024,7 +3024,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-hI-FkL">
-                                <rect key="frame" x="28" y="528.33333333333337" width="80" height="60"/>
+                                <rect key="frame" x="28" y="528" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="G5K-I7-pzU"/>
                                     <constraint firstAttribute="height" constant="60" id="U9C-5S-w7H"/>
@@ -3046,7 +3046,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slik forløp kvelden seg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-Im-2YZ">
-                                <rect key="frame" x="0.0" y="72" width="414" height="21"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rtK-Fu-V3i"/>
                                 </constraints>
@@ -3065,7 +3065,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oversikt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ai-Ef-CNN">
-                                <rect key="frame" x="0.0" y="357.66666666666669" width="414" height="21"/>
+                                <rect key="frame" x="0.0" y="358" width="414" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="db4-7a-cUX"/>
                                 </constraints>
@@ -3084,7 +3084,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCU-ss-ny2">
-                                <rect key="frame" x="61" y="387.33333333333331" width="135" height="22"/>
+                                <rect key="frame" x="61" y="387" width="135" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="bgp-Lq-eCb"/>
                                     <constraint firstAttribute="width" constant="135" id="yew-dE-ZYp"/>
@@ -3310,7 +3310,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <containerView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="YeV-wi-0gz">
-                                <rect key="frame" x="0.0" y="238.66666666666669" width="414" height="200.00000000000006"/>
+                                <rect key="frame" x="0.0" y="239" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="aNi-Ri-JgW"/>
                                 </constraints>
@@ -3351,7 +3351,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTj-7m-apu">
-                                <rect key="frame" x="210.66666666666669" y="499.66666666666663" width="80.000000000000057" height="39.999999999999886"/>
+                                <rect key="frame" x="211" y="500" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IDA-Kr-MyU"/>
                                     <constraint firstAttribute="width" constant="80" id="JgB-Ns-4l6"/>
@@ -3373,7 +3373,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEQ-Jg-X9K">
-                                <rect key="frame" x="298.66666666666669" y="499.66666666666663" width="80" height="39.999999999999886"/>
+                                <rect key="frame" x="299" y="500" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="O8O-D6-9Ng"/>
                                     <constraint firstAttribute="width" constant="80" id="WNP-Zj-cC9"/>
@@ -3395,7 +3395,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPR-Mi-Y2b">
-                                <rect key="frame" x="122.66666666666666" y="499.66666666666663" width="79.999999999999972" height="39.999999999999886"/>
+                                <rect key="frame" x="123" y="500" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="jdh-7y-xPZ"/>
                                     <constraint firstAttribute="height" constant="40" id="vE5-HS-H79"/>
@@ -3417,7 +3417,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3R-G6-cXx">
-                                <rect key="frame" x="67.666666666666686" y="446.66666666666669" width="135" height="45"/>
+                                <rect key="frame" x="68" y="447" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Cix-rp-Ez0"/>
                                     <constraint firstAttribute="width" constant="135" id="a77-rq-asc"/>
@@ -3443,7 +3443,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-FO-gFN">
-                                <rect key="frame" x="210.66666666666669" y="446.66666666666669" width="135.00000000000006" height="45"/>
+                                <rect key="frame" x="211" y="447" width="135" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="R7n-Qh-6il"/>
                                     <constraint firstAttribute="height" constant="45" id="bFg-va-y9T"/>
@@ -3491,7 +3491,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRINK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCj-nd-ay4">
-                                <rect key="frame" x="210.66666666666669" y="526.66666666666663" width="80.000000000000057" height="40"/>
+                                <rect key="frame" x="211" y="527" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="1ub-a0-syc"/>
                                     <constraint firstAttribute="height" constant="40" id="xYB-vc-ehX"/>
@@ -3535,7 +3535,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jn-dR-dVt">
-                                <rect key="frame" x="34.666666666666657" y="499.66666666666663" width="80" height="39.999999999999886"/>
+                                <rect key="frame" x="35" y="500" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ksb-AO-kTj"/>
                                     <constraint firstAttribute="width" constant="80" id="iED-Gh-Ppx"/>
@@ -3918,19 +3918,19 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brukerinformasjon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57c-VE-sNF">
-                                        <rect key="frame" x="8" y="146" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="146" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn brukerinformasjon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d9-YR-0Fn">
-                                        <rect key="frame" x="8" y="194" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="195" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxo-CC-Fye">
-                                        <rect key="frame" x="44" y="220" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="222" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kallenavn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGh-5A-zVf">
                                                 <rect key="frame" x="8" y="38" width="62" height="18"/>
@@ -3939,7 +3939,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi kallenavn" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KZS-wc-HZi">
-                                                <rect key="frame" x="96" y="37" width="104" height="19"/>
+                                                <rect key="frame" x="96" y="37" width="105" height="19"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -3990,7 +3990,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUe-ad-gJp">
-                                        <rect key="frame" x="44" y="285" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="287" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kjønn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-ex-Fh4">
                                                 <rect key="frame" x="8" y="38" width="37" height="18"/>
@@ -4050,7 +4050,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-OR-fLT">
-                                        <rect key="frame" x="44" y="350" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="352" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yV-ey-Ah5">
                                                 <rect key="frame" x="8" y="38" width="34" height="18"/>
@@ -4110,7 +4110,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgR-I2-n87">
-                                        <rect key="frame" x="44" y="415" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="417" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vekt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knj-vP-LRG">
                                                 <rect key="frame" x="8" y="38" width="28" height="18"/>
@@ -4170,7 +4170,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-9C-4cW">
-                                        <rect key="frame" x="8" y="499" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="501" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efS-KM-Cpy">
                                                 <rect key="frame" x="164" y="-7" width="70" height="85"/>
@@ -4277,13 +4277,13 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-k8-YXr">
-                                <rect key="frame" x="20" y="294" width="374" height="40.333333333333314"/>
+                                <rect key="frame" x="20" y="294" width="374" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker en oversikt over ditt alkoholinntak" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
-                                <rect key="frame" x="20" y="342.33333333333326" width="374" height="159.66666666666669"/>
+                                <rect key="frame" x="20" y="343" width="374" height="159"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -4575,7 +4575,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqJ-C5-SKM">
-                                <rect key="frame" x="154.66666666666666" y="577" width="91" height="74"/>
+                                <rect key="frame" x="155" y="577" width="91" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="1oG-XS-mOr"/>
                                     <constraint firstAttribute="height" constant="74" id="mp9-GN-ddS"/>
@@ -4600,7 +4600,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTV-fe-Dm5">
-                                <rect key="frame" x="263.66666666666669" y="577" width="91" height="74"/>
+                                <rect key="frame" x="264" y="577" width="91" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="Nsn-Ul-iDX"/>
                                     <constraint firstAttribute="height" constant="74" id="Z0k-R0-NGF"/>
@@ -4644,7 +4644,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right-100" translatesAutoresizingMaskIntoConstraints="NO" id="8RF-Ec-Cku">
-                                <rect key="frame" x="283.66666666666669" y="577" width="50" height="50"/>
+                                <rect key="frame" x="284" y="577" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Hd-0f-Fgx"/>
                                     <constraint firstAttribute="width" constant="50" id="uJj-9T-wO7"/>
@@ -4663,7 +4663,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xc-c2-xcv">
-                                <rect key="frame" x="45.666666666666657" y="577" width="91" height="74"/>
+                                <rect key="frame" x="46" y="577" width="91" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="bE3-tn-dLb"/>
                                     <constraint firstAttribute="width" constant="91" id="eEg-Ss-0mw"/>
@@ -4688,7 +4688,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot-100" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-ER-NUE">
-                                <rect key="frame" x="65.666666666666671" y="577" width="50" height="50"/>
+                                <rect key="frame" x="66" y="577" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Yn4-Kh-fEo"/>
                                     <constraint firstAttribute="height" constant="50" id="fff-sj-VLi"/>
@@ -4707,7 +4707,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                 </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-rI-c2H">
-                                <rect key="frame" x="35.666666666666657" y="429" width="329" height="118"/>
+                                <rect key="frame" x="36" y="429" width="329" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="GqZ-lt-Wrs"/>
                                     <constraint firstAttribute="width" constant="329" id="dEY-5n-dVP"/>
@@ -4934,19 +4934,19 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb2-ei-Dol">
-                                        <rect key="frame" x="8" y="131" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="131" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn4-eX-Kcm">
-                                        <rect key="frame" x="8" y="179" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="180" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3L-GW-QfN">
-                                        <rect key="frame" x="94" y="208" width="226" height="73.333333333333314"/>
+                                        <rect key="frame" x="94" y="210" width="226" height="74"/>
                                         <string key="text">Legg inn pris som tilsvarer ca. hva du betaler for en enkelt enhet. 
 Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4954,7 +4954,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OU-eG-zbS">
-                                        <rect key="frame" x="70" y="304" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="307" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Øl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37l-k9-JNd">
                                                 <rect key="frame" x="0.0" y="17" width="14" height="18"/>
@@ -4963,7 +4963,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1hz-fj-n9o">
-                                                <rect key="frame" x="80" y="17" width="79.333333333333343" height="18"/>
+                                                <rect key="frame" x="80" y="17" width="80" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -5013,7 +5013,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDc-fT-2GK">
-                                        <rect key="frame" x="70" y="348" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="351" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL8-ea-Vuc">
                                                 <rect key="frame" x="0.0" y="17" width="20" height="18"/>
@@ -5072,10 +5072,10 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-3a-VrS">
-                                        <rect key="frame" x="70" y="400" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="403" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9m-4J-cj1">
-                                                <rect key="frame" x="0.0" y="17" width="33.333333333333329" height="18"/>
+                                                <rect key="frame" x="0.0" y="17" width="34" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -5131,16 +5131,16 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-dm-LCm">
-                                        <rect key="frame" x="70" y="450" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="453" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-hN-Vqw">
-                                                <rect key="frame" x="0.0" y="17" width="30.333333333333329" height="18"/>
+                                                <rect key="frame" x="0.0" y="17" width="31" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWR-27-CJq">
-                                                <rect key="frame" x="80.000000000000014" y="17" width="96.333333333333357" height="18"/>
+                                                <rect key="frame" x="80" y="17" width="97" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -5190,7 +5190,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-We-qnA">
-                                        <rect key="frame" x="8" y="510" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="513" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-xZ-KF3">
                                                 <rect key="frame" x="37" y="0.0" width="70" height="70"/>
@@ -5349,19 +5349,19 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mål" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKL-pT-8nF">
-                                        <rect key="frame" x="8" y="125.00000000000001" width="398" height="40.333333333333357"/>
+                                        <rect key="frame" x="8" y="125" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn dine mål" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3a-BI-6Xn">
-                                        <rect key="frame" x="8" y="173" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="174" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3k-CF-Fjx">
-                                        <rect key="frame" x="8" y="202" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="204" width="398" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Happy-50" translatesAutoresizingMaskIntoConstraints="NO" id="zvs-Sz-O40">
                                                 <rect key="frame" x="179" y="0.0" width="40" height="40"/>
@@ -5379,7 +5379,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RVG-Kw-d2A">
-                                        <rect key="frame" x="61" y="249.99999999999997" width="292" height="103.33333333333329"/>
+                                        <rect key="frame" x="61" y="252" width="292" height="104"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. Husk å sette denne datoen en stund i fremtiden!
 
@@ -5389,7 +5389,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scm-OK-cKc">
-                                        <rect key="frame" x="61" y="373.33333333333331" width="292" height="40"/>
+                                        <rect key="frame" x="61" y="376" width="292" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hol-Ya-KJ5">
                                                 <rect key="frame" x="0.0" y="20" width="85" height="18"/>
@@ -5398,7 +5398,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="makspromille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfe-0W-tg7">
-                                                <rect key="frame" x="111" y="20" width="89.333333333333314" height="18"/>
+                                                <rect key="frame" x="111" y="20" width="90" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -5436,7 +5436,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-lm-xja">
-                                        <rect key="frame" x="61" y="430" width="292" height="40"/>
+                                        <rect key="frame" x="61" y="432" width="292" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-3d-ZaR">
                                                 <rect key="frame" x="0.0" y="20" width="31" height="18"/>
@@ -5445,7 +5445,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjt-78-KeP">
-                                                <rect key="frame" x="111" y="20" width="33.333333333333343" height="18"/>
+                                                <rect key="frame" x="111" y="20" width="34" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -5483,7 +5483,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-Km-wp1">
-                                        <rect key="frame" x="8" y="478" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="480" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-Cq-qDS">
                                                 <rect key="frame" x="159" y="0.0" width="80" height="70"/>
@@ -5922,7 +5922,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="w6P-NP-xfz">
-                                <rect key="frame" x="162.66666666666666" y="415" width="50" height="50"/>
+                                <rect key="frame" x="163" y="415" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="G6Q-oN-mWn"/>
                                     <constraint firstAttribute="height" constant="50" id="v0r-8R-3RZ"/>
@@ -6109,7 +6109,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55F-yD-hIb">
-                                <rect key="frame" x="133.66666666666666" y="415" width="108" height="74"/>
+                                <rect key="frame" x="134" y="415" width="108" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="EOx-JF-fwk"/>
                                     <constraint firstAttribute="height" constant="74" id="hjR-cr-c6G"/>
@@ -6625,7 +6625,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siste 30 dager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-JQ-c1N">
-                                <rect key="frame" x="0.0" y="144.66666666666666" width="400" height="20"/>
+                                <rect key="frame" x="0.0" y="145" width="400" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="xcZ-IO-buz"/>
                                 </constraints>
@@ -6644,7 +6644,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXY-N5-EQU">
-                                <rect key="frame" x="146" y="172.66666666666666" width="108" height="40"/>
+                                <rect key="frame" x="146" y="173" width="108" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="Oko-IO-pQe"/>
                                     <constraint firstAttribute="height" constant="40" id="h2l-6W-KPo"/>
@@ -6666,7 +6666,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTR-he-N3g">
-                                <rect key="frame" x="262" y="172.66666666666666" width="108" height="40"/>
+                                <rect key="frame" x="262" y="173" width="108" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="Wzb-hG-mCi"/>
                                     <constraint firstAttribute="height" constant="40" id="qjZ-U5-7hN"/>
@@ -6688,7 +6688,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLo-G6-Gyl">
-                                <rect key="frame" x="146" y="220.66666666666669" width="108" height="40.000000000000057"/>
+                                <rect key="frame" x="146" y="221" width="108" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="H4c-q3-PuX"/>
                                     <constraint firstAttribute="width" constant="108" id="XZP-3Z-UMY"/>
@@ -6710,7 +6710,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gjennomsnitt høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dum-cC-w4x">
-                                <rect key="frame" x="262" y="220.66666666666669" width="108" height="40.000000000000057"/>
+                                <rect key="frame" x="262" y="221" width="108" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lTw-nJ-Fqf"/>
                                     <constraint firstAttribute="width" constant="108" id="zoW-eJ-38p"/>
@@ -6732,7 +6732,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DW-12-84f">
-                                <rect key="frame" x="30" y="220.66666666666669" width="108" height="40.000000000000057"/>
+                                <rect key="frame" x="30" y="221" width="108" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mQA-Xc-nHc"/>
                                     <constraint firstAttribute="width" constant="108" id="yYA-AE-S3L"/>
@@ -6883,7 +6883,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–––––" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tc-ce-zgg">
-                                <rect key="frame" x="0.0" y="123.66666666666666" width="400" height="20.999999999999972"/>
+                                <rect key="frame" x="0.0" y="124" width="400" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -6911,7 +6911,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-3K-zgE">
-                                <rect key="frame" x="28" y="172.66666666666666" width="110" height="40"/>
+                                <rect key="frame" x="28" y="173" width="110" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Krl-Uo-A7I"/>
                                     <constraint firstAttribute="width" constant="110" id="uHv-cj-gWX"/>
@@ -7317,7 +7317,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </variation>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9q-m9-CGE">
-                                        <rect key="frame" x="161.66666666666666" y="640" width="91" height="74"/>
+                                        <rect key="frame" x="162" y="640" width="91" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="dIx-d9-9Ma"/>
                                             <constraint firstAttribute="width" constant="91" id="wW5-DE-bEw"/>
@@ -7940,61 +7940,227 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOv-gC-tKc">
-                                        <rect key="frame" x="8" y="268" width="398" height="128"/>
+                                        <rect key="frame" x="8" y="268" width="398" height="80"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-uN-5fI">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIg-Ck-zdU">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="800,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM9-CM-q5B">
-                                                        <rect key="frame" x="79" y="53" width="42" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="800,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM9-CM-q5B">
+                                                        <rect key="frame" x="8" y="8" width="183" height="30"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-40-Wip">
-                                                        <rect key="frame" x="60" y="94" width="81" height="26"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-40-Wip">
+                                                        <rect key="frame" x="8" y="41" width="183" height="19"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="r7b-40-Wip" firstAttribute="leading" secondItem="zIg-Ck-zdU" secondAttribute="leading" constant="8" id="5pE-7c-YgL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RM9-CM-q5B" secondAttribute="trailing" constant="8" id="6Cc-Gd-J5G"/>
+                                                    <constraint firstItem="RM9-CM-q5B" firstAttribute="leading" secondItem="zIg-Ck-zdU" secondAttribute="leading" constant="8" id="Mnt-e5-wKW"/>
+                                                    <constraint firstItem="RM9-CM-q5B" firstAttribute="top" secondItem="zIg-Ck-zdU" secondAttribute="top" constant="8" id="cab-xk-cB6"/>
+                                                    <constraint firstItem="r7b-40-Wip" firstAttribute="top" secondItem="RM9-CM-q5B" secondAttribute="bottom" constant="3" id="me9-k1-aWv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r7b-40-Wip" secondAttribute="trailing" constant="8" id="t0T-6A-fUd"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLf-sj-1Cm">
-                                                <rect key="frame" x="208" y="0.0" width="190" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMl-Rh-b57">
+                                                <rect key="frame" x="199" y="0.0" width="199" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-yx-3U2">
-                                                        <rect key="frame" x="74" y="54" width="42" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-yx-3U2">
+                                                        <rect key="frame" x="8" y="8" width="183" height="30"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Høyeste promille" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve8-5e-2lp">
-                                                        <rect key="frame" x="32" y="99" width="127" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve8-5e-2lp">
+                                                        <rect key="frame" x="8" y="41" width="183" height="19"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ve8-5e-2lp" secondAttribute="trailing" constant="8" id="Khz-1l-fUM"/>
+                                                    <constraint firstItem="tgn-yx-3U2" firstAttribute="leading" secondItem="ZMl-Rh-b57" secondAttribute="leading" constant="8" id="OLx-re-SWD"/>
+                                                    <constraint firstItem="ve8-5e-2lp" firstAttribute="leading" secondItem="ZMl-Rh-b57" secondAttribute="leading" constant="8" id="R0S-Jr-GSH"/>
+                                                    <constraint firstItem="tgn-yx-3U2" firstAttribute="top" secondItem="ZMl-Rh-b57" secondAttribute="top" constant="8" id="ZiI-Jk-3PE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tgn-yx-3U2" secondAttribute="trailing" constant="8" id="sPW-bz-Num"/>
+                                                    <constraint firstItem="ve8-5e-2lp" firstAttribute="top" secondItem="tgn-yx-3U2" secondAttribute="bottom" constant="3" id="ww0-8z-4oV"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="TRT-1w-ZlK"/>
+                                            <constraint firstItem="zIg-Ck-zdU" firstAttribute="leading" secondItem="sOv-gC-tKc" secondAttribute="leading" id="7z4-Kx-2NC"/>
+                                            <constraint firstItem="ZMl-Rh-b57" firstAttribute="top" secondItem="sOv-gC-tKc" secondAttribute="top" id="AgB-wp-fmC"/>
+                                            <constraint firstItem="ZMl-Rh-b57" firstAttribute="leading" secondItem="zIg-Ck-zdU" secondAttribute="trailing" id="MGR-QC-Gvt"/>
+                                            <constraint firstAttribute="height" constant="80" id="TRT-1w-ZlK"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZMl-Rh-b57" secondAttribute="trailing" id="TcS-iZ-GQQ"/>
+                                            <constraint firstItem="zIg-Ck-zdU" firstAttribute="width" secondItem="ZMl-Rh-b57" secondAttribute="width" id="Wfg-Tn-QKJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="zIg-Ck-zdU" secondAttribute="bottom" id="bmH-d2-yIR"/>
+                                            <constraint firstItem="ZMl-Rh-b57" firstAttribute="leading" secondItem="zIg-Ck-zdU" secondAttribute="trailing" id="dg1-ou-bYB"/>
+                                            <constraint firstItem="zIg-Ck-zdU" firstAttribute="top" secondItem="sOv-gC-tKc" secondAttribute="top" id="hRt-8c-VAH"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZMl-Rh-b57" secondAttribute="bottom" id="hYq-0r-p80"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-pU-yhM">
-                                        <rect key="frame" x="8" y="404" width="398" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="8" y="356" width="398" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-ku-C5d">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="128"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFg-wM-onX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LønningsPils" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-wV-4Ha">
+                                                                <rect key="frame" x="10" y="0.0" width="80" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="PEF-kQ-N4w"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="pBN-HS-0Tg"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-F3-koQ">
+                                                                <rect key="frame" x="7" y="68" width="85" height="30"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="tcR-F3-koQ" secondAttribute="trailing" constant="8" id="14U-wS-5kl"/>
+                                                            <constraint firstItem="vC5-wV-4Ha" firstAttribute="top" secondItem="bFg-wM-onX" secondAttribute="top" id="AAL-hs-n3b"/>
+                                                            <constraint firstItem="vC5-wV-4Ha" firstAttribute="centerX" secondItem="bFg-wM-onX" secondAttribute="centerX" id="BTG-dC-V7y"/>
+                                                            <constraint firstItem="tcR-F3-koQ" firstAttribute="top" secondItem="vC5-wV-4Ha" secondAttribute="bottom" constant="8" id="XTa-fw-btd"/>
+                                                            <constraint firstItem="tcR-F3-koQ" firstAttribute="leading" secondItem="bFg-wM-onX" secondAttribute="leading" constant="7" id="jey-fe-Vic"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-Qr-zDq">
+                                                        <rect key="frame" x="100" y="0.0" width="99" height="128"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativVIN" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-Xy-WgH">
+                                                                <rect key="frame" x="9" y="0.0" width="80" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="Ew2-o8-nUQ"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="o2s-bY-erV"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-Ma-8i5">
+                                                                <rect key="frame" x="7" y="68" width="80" height="30"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Pv3-Ma-8i5" firstAttribute="top" secondItem="sPG-Xy-WgH" secondAttribute="bottom" constant="8" id="DCI-fb-Qic"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Pv3-Ma-8i5" secondAttribute="trailing" constant="12" id="OxP-h9-y1t"/>
+                                                            <constraint firstItem="sPG-Xy-WgH" firstAttribute="top" secondItem="t4d-Qr-zDq" secondAttribute="top" id="Uax-BA-aHq"/>
+                                                            <constraint firstItem="Pv3-Ma-8i5" firstAttribute="leading" secondItem="t4d-Qr-zDq" secondAttribute="leading" constant="7" id="ek6-FP-7rQ"/>
+                                                            <constraint firstItem="sPG-Xy-WgH" firstAttribute="centerX" secondItem="t4d-Qr-zDq" secondAttribute="centerX" id="gZB-yb-JBc"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="t4d-Qr-zDq" secondAttribute="bottom" id="1dG-0E-aMc"/>
+                                                    <constraint firstItem="bFg-wM-onX" firstAttribute="top" secondItem="wG0-ku-C5d" secondAttribute="top" id="C0I-Fw-Vil"/>
+                                                    <constraint firstItem="t4d-Qr-zDq" firstAttribute="leading" secondItem="bFg-wM-onX" secondAttribute="trailing" id="TIM-JB-RAG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t4d-Qr-zDq" secondAttribute="trailing" id="Uf0-xV-4sQ"/>
+                                                    <constraint firstItem="bFg-wM-onX" firstAttribute="leading" secondItem="wG0-ku-C5d" secondAttribute="leading" id="Xkc-46-ziC"/>
+                                                    <constraint firstItem="t4d-Qr-zDq" firstAttribute="width" secondItem="bFg-wM-onX" secondAttribute="width" id="lda-vg-COg"/>
+                                                    <constraint firstItem="t4d-Qr-zDq" firstAttribute="top" secondItem="wG0-ku-C5d" secondAttribute="top" id="rZ2-PN-nZg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bFg-wM-onX" secondAttribute="bottom" id="tcu-w3-dep"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRx-DD-KV3">
+                                                <rect key="frame" x="199" y="0.0" width="199" height="128"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-Gt-MtX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativDRINK" translatesAutoresizingMaskIntoConstraints="NO" id="XMz-VO-fx2">
+                                                                <rect key="frame" x="10" y="0.0" width="80" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="XHr-nW-ARH"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="oSe-wf-40B"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGG-mM-j88">
+                                                                <rect key="frame" x="7" y="68" width="80" height="30"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="XMz-VO-fx2" firstAttribute="top" secondItem="Ydc-Gt-MtX" secondAttribute="top" id="Kxw-Gp-xWs"/>
+                                                            <constraint firstItem="QGG-mM-j88" firstAttribute="top" secondItem="XMz-VO-fx2" secondAttribute="bottom" constant="8" id="ipy-UB-dZn"/>
+                                                            <constraint firstItem="QGG-mM-j88" firstAttribute="leading" secondItem="Ydc-Gt-MtX" secondAttribute="leading" constant="7" id="lms-jh-VBg"/>
+                                                            <constraint firstItem="XMz-VO-fx2" firstAttribute="centerX" secondItem="Ydc-Gt-MtX" secondAttribute="centerX" id="uxu-6L-VVB"/>
+                                                            <constraint firstAttribute="trailing" secondItem="QGG-mM-j88" secondAttribute="trailing" constant="13" id="w8d-Fa-4pI"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7o-UL-lze">
+                                                        <rect key="frame" x="99" y="0.0" width="100" height="128"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1000SHOTS" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-uF-Zgv">
+                                                                <rect key="frame" x="10" y="0.0" width="80" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="1tb-sR-uOX"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="WRN-U3-eba"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gh-8U-ecM">
+                                                                <rect key="frame" x="7" y="68" width="80" height="30"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="3gh-8U-ecM" firstAttribute="leading" secondItem="g7o-UL-lze" secondAttribute="leading" constant="7" id="0ko-qT-ffU"/>
+                                                            <constraint firstItem="rbT-uF-Zgv" firstAttribute="centerX" secondItem="g7o-UL-lze" secondAttribute="centerX" id="BUr-Fc-wpG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3gh-8U-ecM" secondAttribute="trailing" constant="13" id="iNr-zP-I6h"/>
+                                                            <constraint firstItem="3gh-8U-ecM" firstAttribute="top" secondItem="rbT-uF-Zgv" secondAttribute="bottom" constant="8" id="sat-G8-oh6"/>
+                                                            <constraint firstItem="rbT-uF-Zgv" firstAttribute="top" secondItem="g7o-UL-lze" secondAttribute="top" id="znV-i5-CFf"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="g7o-UL-lze" secondAttribute="bottom" id="0BZ-2J-XMm"/>
+                                                    <constraint firstItem="g7o-UL-lze" firstAttribute="width" secondItem="Ydc-Gt-MtX" secondAttribute="width" id="Cdf-vE-F4I"/>
+                                                    <constraint firstItem="Ydc-Gt-MtX" firstAttribute="leading" secondItem="SRx-DD-KV3" secondAttribute="leading" id="Ijg-6t-L3M"/>
+                                                    <constraint firstAttribute="trailing" secondItem="g7o-UL-lze" secondAttribute="trailing" id="Iyf-kE-1s5"/>
+                                                    <constraint firstItem="g7o-UL-lze" firstAttribute="top" secondItem="SRx-DD-KV3" secondAttribute="top" id="WRE-rf-fNe"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ydc-Gt-MtX" secondAttribute="bottom" id="ZRg-fl-LDE"/>
+                                                    <constraint firstItem="Ydc-Gt-MtX" firstAttribute="top" secondItem="SRx-DD-KV3" secondAttribute="top" id="fti-Ss-6uW"/>
+                                                    <constraint firstItem="g7o-UL-lze" firstAttribute="leading" secondItem="Ydc-Gt-MtX" secondAttribute="trailing" constant="-0.66666666666665719" id="p0u-ya-O2e"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="7W5-c9-710"/>
+                                            <constraint firstAttribute="bottom" secondItem="SRx-DD-KV3" secondAttribute="bottom" id="JrL-f2-Xg8"/>
+                                            <constraint firstItem="SRx-DD-KV3" firstAttribute="leading" secondItem="wG0-ku-C5d" secondAttribute="trailing" id="KNS-kt-cT4"/>
+                                            <constraint firstItem="SRx-DD-KV3" firstAttribute="top" secondItem="3Wa-pU-yhM" secondAttribute="top" id="LMA-1Y-qqu"/>
+                                            <constraint firstItem="SRx-DD-KV3" firstAttribute="leading" secondItem="wG0-ku-C5d" secondAttribute="trailing" id="MMB-SF-pJW"/>
+                                            <constraint firstAttribute="trailing" secondItem="SRx-DD-KV3" secondAttribute="trailing" id="OkH-uW-NZF"/>
+                                            <constraint firstItem="wG0-ku-C5d" firstAttribute="top" secondItem="3Wa-pU-yhM" secondAttribute="top" id="Rdx-ga-sSh"/>
+                                            <constraint firstAttribute="bottom" secondItem="wG0-ku-C5d" secondAttribute="bottom" id="sHh-PE-a1B"/>
+                                            <constraint firstItem="SRx-DD-KV3" firstAttribute="width" secondItem="wG0-ku-C5d" secondAttribute="width" id="ta7-y0-AS6"/>
+                                            <constraint firstItem="wG0-ku-C5d" firstAttribute="leading" secondItem="3Wa-pU-yhM" secondAttribute="leading" id="vw0-pf-BD3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -8029,7 +8195,13 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bacLabel" destination="tgn-yx-3U2" id="4EJ-j4-znw"/>
+                        <outlet property="beerAmount" destination="tcR-F3-koQ" id="KxS-0B-CQo"/>
+                        <outlet property="costLabel" destination="RM9-CM-q5B" id="Gfb-gX-424"/>
+                        <outlet property="drinkAmount" destination="QGG-mM-j88" id="uh2-56-l3u"/>
                         <outlet property="lineChartView" destination="edp-Ok-OVc" id="KHI-5h-0zl"/>
+                        <outlet property="shotAmount" destination="3gh-8U-ecM" id="nLV-bO-3cI"/>
+                        <outlet property="wineAmount" destination="Pv3-Ma-8i5" id="0Gm-Hs-Gwh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aB7-0S-tPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8409,7 +8581,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QYS-UV-wEG">
-                                <rect key="frame" x="148" y="59.000000000000007" width="215" height="68.666666666666686"/>
+                                <rect key="frame" x="148" y="59" width="215" height="69"/>
                                 <string key="text">Motivasjonsfraser. Brukerne vil her få drikkevettsreglene på løpende bånd og i tillegg skal disse frasene hjelpe med å kontrollere alkoforbruket</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -8525,11 +8697,11 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <rect key="frame" x="0.0" y="35" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Qb-hS-oVd" id="b9L-zt-gDm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ky-be-2O7">
-                                                    <rect key="frame" x="8" y="8" width="398" height="93.666666666666671"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="94"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <string key="text">Har du spørsmål om rus? Still dem her! Alle som henvender seg er anonyme. RUStelefonen vil svare på ditt spørsmål så fort som mulig. I perioder med mye pågang kan det ta opptil 7 dager før svaret publiseres. Svar på spørsmål som stilles via denne tjenesten vil legges ut på internett.</string>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -8537,7 +8709,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-8N-xYR">
-                                                    <rect key="frame" x="12" y="101.66666666666666" width="147" height="29.999999999999972"/>
+                                                    <rect key="frame" x="12" y="102" width="147" height="30"/>
                                                     <state key="normal" title="Svarene finner du her">
                                                         <color key="titleColor" red="0.37885335087776184" green="0.85372364521026611" blue="0.42392438650131226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -8564,10 +8736,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             <tableViewSection headerTitle="Opplysninger" id="3AA-57-UGL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="15m-PG-6zi">
-                                        <rect key="frame" x="0.0" y="241" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="242" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15m-PG-6zi" id="F8h-TC-y21">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alder:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-5R-pUc">
@@ -8601,10 +8773,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="yZG-DY-FRI">
-                                        <rect key="frame" x="0.0" y="291" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="292" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZG-DY-FRI" id="s3z-Ko-GN8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kjønn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-QF-tpz">
@@ -8638,10 +8810,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Z3C-8O-eWF">
-                                        <rect key="frame" x="0.0" y="341" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="342" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3C-8O-eWF" id="1WB-GZ-6aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fylke:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-Gv-gAr">
@@ -8679,10 +8851,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             <tableViewSection headerTitle="Spørsmål" id="KL9-uD-ecV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="GBL-24-e6Y">
-                                        <rect key="frame" x="0.0" y="447" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="449" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GBL-24-e6Y" id="LBZ-yn-mfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdB-Id-qyB">
@@ -8716,10 +8888,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="5yw-uc-EVB">
-                                        <rect key="frame" x="0.0" y="497" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="499" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5yw-uc-EVB" id="8lI-Nd-kvY">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spørsmål:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-uG-vjh">
@@ -8759,10 +8931,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             <tableViewSection footerTitle="Spørsmålet er helt anonymt" id="RbI-2e-GdF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="noZ-yo-jzF">
-                                        <rect key="frame" x="0.0" y="583" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="585" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="noZ-yo-jzF" id="cRM-ZD-RNm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-DU-94F">
@@ -8924,19 +9096,19 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrq-PT-NWL">
-                                        <rect key="frame" x="8" y="146" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="146" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre dine brukerinnstillinger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiM-FM-AGc">
-                                        <rect key="frame" x="8" y="194" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="195" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXH-8m-Vlq">
-                                        <rect key="frame" x="44" y="220" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="222" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kallenavn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-t6-E0R">
                                                 <rect key="frame" x="8" y="38" width="62" height="18"/>
@@ -8945,7 +9117,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi kallenavn" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Po1-tW-CYA">
-                                                <rect key="frame" x="96" y="37" width="104" height="19"/>
+                                                <rect key="frame" x="96" y="37" width="105" height="19"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -8996,7 +9168,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erx-Bn-Kli">
-                                        <rect key="frame" x="44" y="285" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="287" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kjønn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Guh-aa-Pyf">
                                                 <rect key="frame" x="8" y="38" width="37" height="18"/>
@@ -9056,7 +9228,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfN-OG-Efg">
-                                        <rect key="frame" x="44" y="350" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="352" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gg-nJ-yZw">
                                                 <rect key="frame" x="8" y="38" width="34" height="18"/>
@@ -9116,7 +9288,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yk-gJ-MDf">
-                                        <rect key="frame" x="44" y="415" width="326" height="60"/>
+                                        <rect key="frame" x="44" y="417" width="326" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vekt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bco-N9-jx8">
                                                 <rect key="frame" x="8" y="38" width="28" height="18"/>
@@ -9176,7 +9348,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b47-f1-fcu">
-                                        <rect key="frame" x="8" y="499" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="501" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nls-vX-dtk">
                                                 <rect key="frame" x="164" y="-7" width="70" height="85"/>
@@ -9296,19 +9468,19 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzQ-4i-krI">
-                                        <rect key="frame" x="8" y="131" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="131" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre dine kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL0-LG-RUU">
-                                        <rect key="frame" x="8" y="179" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="180" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ii-9q-22x">
-                                        <rect key="frame" x="70" y="220" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="222" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Øl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-sq-8Lk">
                                                 <rect key="frame" x="0.0" y="17" width="14" height="18"/>
@@ -9317,7 +9489,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Q-nt-Z8B">
-                                                <rect key="frame" x="80" y="17" width="79.333333333333343" height="18"/>
+                                                <rect key="frame" x="80" y="17" width="80" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -9367,7 +9539,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPG-gV-030">
-                                        <rect key="frame" x="70" y="264" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="266" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lec-lE-UNR">
                                                 <rect key="frame" x="0.0" y="17" width="20" height="18"/>
@@ -9426,10 +9598,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEj-ex-gKS">
-                                        <rect key="frame" x="70" y="316" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="318" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-Yp-jCI">
-                                                <rect key="frame" x="0.0" y="17" width="33.333333333333329" height="18"/>
+                                                <rect key="frame" x="0.0" y="17" width="34" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -9485,16 +9657,16 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGo-O3-X8p">
-                                        <rect key="frame" x="70" y="366" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="368" width="274" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-nG-HWG">
-                                                <rect key="frame" x="0.0" y="17" width="30.333333333333329" height="18"/>
+                                                <rect key="frame" x="0.0" y="17" width="31" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNV-sw-pHQ">
-                                                <rect key="frame" x="80.000000000000014" y="17" width="96.333333333333357" height="18"/>
+                                                <rect key="frame" x="80" y="17" width="97" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -9544,7 +9716,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvv-I9-OjG">
-                                        <rect key="frame" x="8" y="426" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="428" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlr-IC-0jz">
                                                 <rect key="frame" x="37" y="0.0" width="70" height="70"/>
@@ -9699,19 +9871,19 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjB-Ye-2Yj">
-                                        <rect key="frame" x="8" y="125.00000000000001" width="398" height="40.333333333333357"/>
+                                        <rect key="frame" x="8" y="125" width="398" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre din makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtU-yi-DVM">
-                                        <rect key="frame" x="8" y="173" width="398" height="21"/>
+                                        <rect key="frame" x="8" y="174" width="398" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfy-gV-51b">
-                                        <rect key="frame" x="8" y="202" width="398" height="40"/>
+                                        <rect key="frame" x="8" y="204" width="398" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Happy-50" translatesAutoresizingMaskIntoConstraints="NO" id="TQ5-W8-uIc">
                                                 <rect key="frame" x="179" y="0.0" width="40" height="40"/>
@@ -9729,7 +9901,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qQb-7G-SGk">
-                                        <rect key="frame" x="61" y="249.99999999999997" width="292" height="103.33333333333329"/>
+                                        <rect key="frame" x="61" y="252" width="292" height="104"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. Husk å sette denne datoen en stund i fremtiden!
 
@@ -9739,7 +9911,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVj-LW-S1i">
-                                        <rect key="frame" x="61" y="373.33333333333331" width="292" height="40"/>
+                                        <rect key="frame" x="61" y="376" width="292" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxI-Xv-c7p">
                                                 <rect key="frame" x="0.0" y="20" width="85" height="18"/>
@@ -9748,7 +9920,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="makspromille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-6v-kpv">
-                                                <rect key="frame" x="111" y="20" width="89.333333333333314" height="18"/>
+                                                <rect key="frame" x="111" y="20" width="90" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -9786,7 +9958,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efL-xJ-zzy">
-                                        <rect key="frame" x="61" y="430" width="292" height="40"/>
+                                        <rect key="frame" x="61" y="432" width="292" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-e6-lnL">
                                                 <rect key="frame" x="0.0" y="20" width="31" height="18"/>
@@ -9795,7 +9967,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-l1-pAv">
-                                                <rect key="frame" x="111" y="20" width="33.333333333333343" height="18"/>
+                                                <rect key="frame" x="111" y="20" width="34" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -9833,7 +10005,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIr-k9-rFf">
-                                        <rect key="frame" x="8" y="478" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="480" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhI-i1-rJt">
                                                 <rect key="frame" x="159" y="0.0" width="80" height="70"/>

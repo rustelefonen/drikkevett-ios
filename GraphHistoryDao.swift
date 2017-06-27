@@ -40,11 +40,12 @@ class GraphHistoryDao: CoreDataDao {
         return graphHistories ?? []
     }
     
-    func getBySessionNumber(sessionNumber:NSNumber) -> GraphHistorikk?{
+    func getBySessionNumber(sessionNumber:NSNumber) -> [GraphHistorikk?]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.predicate = NSPredicate(format: "sessionNumber == %@", sessionNumber)
+        let graphHistories = (try? managedObjectContext.fetch(fetchRequest)) as? [GraphHistorikk]
         
-        return (try! managedObjectContext.fetch(fetchRequest) as! [GraphHistorikk]).first
+        return graphHistories ?? []
     }
     
     func deleteAll(){

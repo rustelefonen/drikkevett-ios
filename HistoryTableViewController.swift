@@ -12,6 +12,7 @@ class HistoryTableViewController : UITableViewController {
     let cellId = "historyCell"
     
     var historyEntries = [HistoryEntry]()
+    let historyDao = HistoryDao()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class HistoryTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyEntries[section].histories!.count
+        return historyEntries[section].histories?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -112,7 +113,6 @@ class HistoryTableViewController : UITableViewController {
     }
     
     func initHistoryEntries() {
-        let historyDao = HistoryDao()
         let allHistories = historyDao.getAllOrderedByDate()
         
         for history in allHistories {
