@@ -19,6 +19,7 @@
 		7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */; };
 		7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */; };
 		D50D9C5F1F0253AE007A109D /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */; };
+		D50D9C611F0296ED007A109D /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D9C601F0296ED007A109D /* MyScrollVC.swift */; };
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
 		D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A31EF935FA008353AB /* UserInfo.swift */; };
 		D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A51EF93E93008353AB /* PrivacyViewController.swift */; };
@@ -160,6 +161,7 @@
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
 		D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D50D9C601F0296ED007A109D /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		D52D45A31EF935FA008353AB /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = SOURCE_ROOT; };
 		D52D45A51EF93E93008353AB /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -376,6 +378,7 @@
 				D5FCCD731EFD355200310084 /* BacCalcViewController.swift */,
 				D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */,
 				D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */,
+				D50D9C601F0296ED007A109D /* MyScrollVC.swift */,
 			);
 			name = calculator;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				D5735D2C1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5FCCD821F01018C00310084 /* CircleView.swift in Sources */,
+				D50D9C611F0296ED007A109D /* MyScrollVC.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
 				D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
