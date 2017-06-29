@@ -20,7 +20,10 @@ class HistoryTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyEntries[section].histories?.count ?? 1
+        if historyEntries.count > 0 {
+            return historyEntries[section].histories?.count ?? 0
+        }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

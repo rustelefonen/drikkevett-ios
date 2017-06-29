@@ -14,7 +14,7 @@ class CoreDataDao {
     var managedObjectContext:NSManagedObjectContext
     
     required init(){
-        managedObjectContext = DataController().managedObjectContext
+        managedObjectContext = AppDelegate.getManagedObjectContext()
     }
     
     func save() -> Bool{

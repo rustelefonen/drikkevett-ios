@@ -12,7 +12,7 @@ import CoreData
 
 class DayAfterUtils {
     
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     func getHighestBAC() -> Double{
         var historikk = [Historikk]()

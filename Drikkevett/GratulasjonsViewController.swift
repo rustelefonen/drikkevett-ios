@@ -13,7 +13,7 @@ import CoreData
 class GratulasjonsViewController: UIViewController, ChartViewDelegate {
 
     // Talk with core data
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     // funksjonelle metoder
     let brain = SkallMenyBrain()

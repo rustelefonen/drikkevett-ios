@@ -13,7 +13,7 @@ import CoreData
 class HistorikkCelleViewController: UIViewController, ChartViewDelegate {
     
     // Talk with core data
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     // Get Brain
     //let brain = SkallMenyBrain()

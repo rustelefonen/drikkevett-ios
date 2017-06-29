@@ -12,7 +12,7 @@ import CoreData
 
 class BarChartComponent: UIViewController {
     
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     @IBOutlet weak var barChartView: BarChartView!
     
     override func viewDidLoad() {

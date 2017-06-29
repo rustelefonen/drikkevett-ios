@@ -17,14 +17,6 @@ class SourcesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setColors()
-        
-        // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
-    }
-    
-    func setColors(){
         let setAppColors = AppColors()
         self.view.backgroundColor = setAppColors.mainBackgroundColor()
         
@@ -42,5 +34,7 @@ class SourcesViewController: UIViewController {
         self.librariesTextView.font = setAppColors.textViewFont(16)
         self.iconsTextView.textColor = setAppColors.textViewsColors()
         self.librariesTextView.textColor = setAppColors.textViewsColors()
+        
+    
     }
 }

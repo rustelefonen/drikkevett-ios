@@ -12,7 +12,7 @@ import CoreData
 
 class PieChartViewController: UIViewController, ChartViewDelegate {
 
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     var brain = SkallMenyBrain()
     
     @IBOutlet weak var pieChartTextVuew: UITextView!

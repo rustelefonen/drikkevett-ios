@@ -9,7 +9,7 @@ import CoreData
 
 class SecondViewController: UIViewController {
     // Database/Core Data kommunikasjon
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
 
     // SET COLORS
     var setAppColors = AppColors()

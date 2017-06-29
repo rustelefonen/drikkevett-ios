@@ -51,7 +51,7 @@ class OppdaterKostnaderViewController: UIViewController, UITextFieldDelegate, UI
     @IBOutlet weak var saveImageView: UIImageView!
     
     // Kommunikasjon med database/Core Data
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     let brainCoreData = CoreDataMethods()
     
     // set Colors

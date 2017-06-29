@@ -11,7 +11,7 @@ import CoreData
 class GraphViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var barChartView: BarChartView!
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.6)

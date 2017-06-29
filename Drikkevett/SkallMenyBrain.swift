@@ -10,7 +10,7 @@ import UIKit
 
 class SkallMenyBrain
 {
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     let brainCoreData = CoreDataMethods()
     
     let universalBeerGrams = 23.0

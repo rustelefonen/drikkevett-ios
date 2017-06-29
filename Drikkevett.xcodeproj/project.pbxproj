@@ -50,7 +50,6 @@
 		D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */; };
 		D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */; };
 		D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */; };
-		D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3F1D29A4D1004FC6A3 /* DataController.swift */; };
 		D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */; };
 		D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */; };
 		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
@@ -92,6 +91,8 @@
 		D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */; };
 		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
 		D5ED09F01F03E9C90091F98C /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */; };
+		D5ED09FA1F051D9A0091F98C /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */; };
+		D5ED09FC1F051DEE0091F98C /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */; };
 		D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661C1D492A4A00093F62 /* CountyController.swift */; };
 		D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661E1D492A9A00093F62 /* QuestionController.swift */; };
 		D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66201D492ACB00093F62 /* FormCell.swift */; };
@@ -193,7 +194,6 @@
 		D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Drikkevett/GlemteEnheterViewController.swift; sourceTree = "<group>"; };
 		D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Drikkevett/SkallMenyBrain.swift; sourceTree = "<group>"; };
 		D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Drikkevett/CoreDataMethods.swift; sourceTree = "<group>"; };
-		D5958E3F1D29A4D1004FC6A3 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = Drikkevett/DataController.swift; sourceTree = "<group>"; };
 		D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartVeiledningViewController.swift; path = Drikkevett/StartVeiledningViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VelkommenViewController.swift; path = Drikkevett/VelkommenViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -236,6 +236,8 @@
 		D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
 		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
+		D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidancePageViewController.swift; sourceTree = "<group>"; };
+		D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidanceContentViewController.swift; sourceTree = "<group>"; };
 		D5FC661C1D492A4A00093F62 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyController.swift; sourceTree = "<group>"; };
 		D5FC661E1D492A9A00093F62 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D5FC66201D492ACB00093F62 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		D5412BBC1D28553000445D6C /* tabs */ = {
 			isa = PBXGroup;
 			children = (
+				D5ED09FD1F05357C0091F98C /* drinkEpisode */,
 				D5412BC41D285E4E00445D6C /* history */,
 				D5412BC31D285E3800445D6C /* dayAfter */,
 				D5412BC21D285E2400445D6C /* planEvening */,
@@ -473,7 +476,6 @@
 		D5412BC81D28640200445D6C /* persistence */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E3F1D29A4D1004FC6A3 /* DataController.swift */,
 				D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */,
 				D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */,
 				D5735A731E439F0400B42CCD /* UserDataDao.swift */,
@@ -497,6 +499,7 @@
 		D5412BCA1D286E9200445D6C /* Drikkevett */ = {
 			isa = PBXGroup;
 			children = (
+				D5ED09F51F051D700091F98C /* guidance */,
 				7F850C851D4F562F007B62DB /* status */,
 				D5FC66181D492A1E00093F62 /* questionForm */,
 				D5412BC91D286A0000445D6C /* utilities */,
@@ -508,6 +511,7 @@
 				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
 				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
 				D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */,
+				D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */,
 				D5958E851D29A932004FC6A3 /* Main.storyboard */,
 				D5958E881D29A93D004FC6A3 /* Main.strings */,
 				D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */,
@@ -515,7 +519,6 @@
 				D5958E911D29A9DF004FC6A3 /* Assets.xcassets */,
 				D5958E931D29AA0A004FC6A3 /* Info.plist */,
 				D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */,
-				D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */,
 			);
 			name = Drikkevett;
 			sourceTree = "<group>";
@@ -536,6 +539,22 @@
 				D5DB35CD1DAAD970001C9413 /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D5ED09F51F051D700091F98C /* guidance */ = {
+			isa = PBXGroup;
+			children = (
+				D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */,
+				D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */,
+			);
+			name = guidance;
+			sourceTree = "<group>";
+		};
+		D5ED09FD1F05357C0091F98C /* drinkEpisode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = drinkEpisode;
 			sourceTree = "<group>";
 		};
 		D5FC66181D492A1E00093F62 /* questionForm */ = {
@@ -671,7 +690,6 @@
 				D59E98871E39610C00450EBA /* BarChartComponent.swift in Sources */,
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
-				D5958E401D29A4D1004FC6A3 /* DataController.swift in Sources */,
 				D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */,
 				D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
@@ -724,6 +742,7 @@
 				D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */,
 				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
 				D5735D261EFC005A002741E0 /* BackButton.swift in Sources */,
+				D5ED09FC1F051DEE0091F98C /* GuidanceContentViewController.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
 				D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */,
@@ -737,6 +756,7 @@
 				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
+				D5ED09FA1F051D9A0091F98C /* GuidancePageViewController.swift in Sources */,
 				7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */,
 				D5735D1B1EFBDA52002741E0 /* InfoCategory.swift in Sources */,
 				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,

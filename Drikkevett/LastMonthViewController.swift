@@ -34,7 +34,7 @@ class LastMonthViewController: UIViewController {
     
     //
     let brainCoreData = CoreDataMethods()
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     // set colors
     let setAppColors = AppColors()

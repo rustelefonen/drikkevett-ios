@@ -38,7 +38,7 @@ class FirstViewController: UIViewController {
     var brain = SkallMenyBrain()
     let dateUtil = DateUtil()
     var brainCoreData = CoreDataMethods()
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     var setAppColors = AppColors()
     var forgotViewCont = GlemteEnheterViewController()
     let planPartyUtils = PlanPartyUtil()

@@ -31,7 +31,7 @@ class GlemteEnheterViewController: UIViewController, ChartViewDelegate, UITextFi
     @IBOutlet weak var xImageBtn: UIImageView!
     @IBOutlet weak var pieChartView: PieChartView!
     
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     let brainCoreData = CoreDataMethods()
     let dateUtil = DateUtil()
     let brain = SkallMenyBrain()

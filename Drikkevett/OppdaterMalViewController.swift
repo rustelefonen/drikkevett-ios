@@ -13,7 +13,7 @@ class OppdaterMalViewController: UIViewController, UIPickerViewDataSource, UIPic
     var brain = SkallMenyBrain()
     
     // Kommunikasjon med database/CoreData
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     let brainCoreData = CoreDataMethods()
     
     // Set Colors

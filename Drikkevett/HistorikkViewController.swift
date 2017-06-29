@@ -7,7 +7,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var historikkTableView: UITableView!
     
     // Hente managedObjectContext fra AppDelegate (DATABASE)
-    let managedObjectContext = DataController().managedObjectContext
+    let managedObjectContext = AppDelegate.getManagedObjectContext()
     let brainCoreData = CoreDataMethods()
     let brain = SkallMenyBrain()
     let dateUtil = DateUtil()

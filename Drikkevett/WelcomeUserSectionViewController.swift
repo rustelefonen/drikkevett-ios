@@ -14,7 +14,7 @@ class WelcomeUserSectionViewController: UIViewController, UIImagePickerControlle
     let setAppColors = AppColors()
     
     // Talk with core data
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     

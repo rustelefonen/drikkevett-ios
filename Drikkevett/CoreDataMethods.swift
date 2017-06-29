@@ -9,7 +9,7 @@ import CoreData
 
 class CoreDataMethods
 {
-    let moc = DataController().managedObjectContext
+    let moc = AppDelegate.getManagedObjectContext()
     
     // Å LEGGE INN BRAIN I DENNE FILA ØDELEGGER APPLIKASJONEN --> let brain = SkallMenyBrain()
     

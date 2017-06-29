@@ -19,7 +19,6 @@ class ContactUsViewController: UIViewController {
     
     let rustelefonenPhoneNumber = "08588"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,10 +29,6 @@ class ContactUsViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
-        
-        // Rename back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
     }
     
     @IBAction func btnCallUs(_ sender: AnyObject) {

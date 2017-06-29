@@ -38,6 +38,10 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
         initPieCard()
         initBarCard()
         initCostCard()
+        
+        
+        print(AppDelegate.getUserData())
+        print(AppDelegate.getUserData()?.height)
     }
     
     func initTopCard() {
