@@ -13,10 +13,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller New-->
         <scene sceneID="ds1-dv-E1U">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4pW-UC-neg" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4pW-UC-neg" customClass="HomeViewControllerNew" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="82n-AJ-Ytv"/>
                         <viewControllerLayoutGuide type="bottom" id="2ws-Vf-AYL"/>
@@ -433,10 +433,25 @@ høyeste promille</string>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="820"/>
+                    <connections>
+                        <outlet property="defaultImage" destination="kMA-X2-u5e" id="rTn-HL-JAx"/>
+                        <outlet property="goalPieChartView" destination="Ube-co-h0u" id="HV7-dP-5Fd"/>
+                        <outlet property="goalTextView" destination="5Is-Ja-kuc" id="lWd-Ox-YES"/>
+                        <outlet property="greetingLabel" destination="zqt-8S-bz9" id="ySS-EL-fca"/>
+                        <outlet property="historyBarChartView" destination="I0E-eo-OZP" id="erj-SU-nNm"/>
+                        <outlet property="lastMonthCost" destination="NDa-Zm-e4h" id="hkg-LE-ADj"/>
+                        <outlet property="lastMonthHighestAvgBac" destination="Wf9-df-1W7" id="F4i-ed-fmW"/>
+                        <outlet property="lastMonthHighestBac" destination="Wz3-ZN-sZ0" id="Tb7-xr-Fk0"/>
+                        <outlet property="nicknameLabel" destination="cr8-0H-IBR" id="mqW-OR-mth"/>
+                        <outlet property="quoteTextView" destination="yZH-fX-2fo" id="2Ek-Wf-awu"/>
+                        <outlet property="totalCost" destination="ro0-CR-edQ" id="dr1-I0-8mE"/>
+                        <outlet property="totalHighestAvgBac" destination="V1Y-6Z-BOs" id="aJy-85-vLh"/>
+                        <outlet property="totalHighestBac" destination="rbR-QN-GtY" id="eqr-so-gXB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkL-td-pPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2252.1739130434785" y="1434.7826086956522"/>
+            <point key="canvasLocation" x="-2168" y="1465"/>
         </scene>
         <!--Hjem-->
         <scene sceneID="IRu-yh-ha2">

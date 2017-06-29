@@ -91,6 +91,7 @@
 		D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */; };
 		D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */; };
 		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
+		D5ED09F01F03E9C90091F98C /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */; };
 		D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661C1D492A4A00093F62 /* CountyController.swift */; };
 		D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661E1D492A9A00093F62 /* QuestionController.swift */; };
 		D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66201D492ACB00093F62 /* FormCell.swift */; };
@@ -234,6 +235,7 @@
 		D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
 		D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
 		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
+		D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
 		D5FC661C1D492A4A00093F62 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyController.swift; sourceTree = "<group>"; };
 		D5FC661E1D492A9A00093F62 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D5FC66201D492ACB00093F62 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
 				D59E98861E39610C00450EBA /* BarChartComponent.swift */,
 				D59E988B1E39667300450EBA /* HomeBarChartView.swift */,
+				D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5FCCD821F01018C00310084 /* CircleView.swift in Sources */,
 				D50D9C611F0296ED007A109D /* MyScrollVC.swift in Sources */,
+				D5ED09F01F03E9C90091F98C /* HomeViewControllerNew.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
 				D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
