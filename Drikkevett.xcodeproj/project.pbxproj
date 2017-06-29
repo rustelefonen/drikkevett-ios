@@ -7,34 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F114FA11D50D841000302DA /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F114FA01D50D841000302DA /* ContactUsViewController.swift */; };
-		7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */; };
-		7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */; };
-		7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C8A1D4F56A9007B62DB /* Status.swift */; };
-		7F850C901D4F56B5007B62DB /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */; };
-		7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C911D4F56D7007B62DB /* defaultKeys.swift */; };
-		7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C931D4F614A007B62DB /* DateUtil.swift */; };
-		7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C951D4F619E007B62DB /* DayAfterUtils.swift */; };
-		7F850C981D4F61BC007B62DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C971D4F61BC007B62DB /* User.swift */; };
-		7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */; };
-		7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */; };
-		D50D9C5F1F0253AE007A109D /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */; };
-		D50D9C611F0296ED007A109D /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D9C601F0296ED007A109D /* MyScrollVC.swift */; };
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
-		D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A31EF935FA008353AB /* UserInfo.swift */; };
-		D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D45A51EF93E93008353AB /* PrivacyViewController.swift */; };
-		D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */; };
-		D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A731E439F0400B42CCD /* UserDataDao.swift */; };
-		D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A751E43A39F00B42CCD /* HistoryDao.swift */; };
-		D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */; };
-		D5735D1B1EFBDA52002741E0 /* InfoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */; };
-		D5735D201EFBDA65002741E0 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D1F1EFBDA65002741E0 /* Info.swift */; };
-		D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */; };
-		D5735D241EFBFCE0002741E0 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D231EFBFCE0002741E0 /* InfoCell.swift */; };
-		D5735D261EFC005A002741E0 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D251EFC005A002741E0 /* BackButton.swift */; };
-		D5735D281EFC1166002741E0 /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D271EFC1166002741E0 /* InfoCollectionViewController.swift */; };
-		D5735D2A1EFC1208002741E0 /* InfoCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D291EFC1208002741E0 /* InfoCategoryCell.swift */; };
-		D5735D2C1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5735D2B1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -85,31 +58,58 @@
 		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
 		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
 		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
-		D59E98871E39610C00450EBA /* BarChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E98861E39610C00450EBA /* BarChartComponent.swift */; };
-		D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E988B1E39667300450EBA /* HomeBarChartView.swift */; };
-		D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */; };
-		D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */; };
+		D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */; };
+		D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */; };
+		D5C3FAB31F0573040059AA90 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB11F0573040059AA90 /* Status.swift */; };
+		D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB21F0573040059AA90 /* StatusUtils.swift */; };
+		D5C3FAB61F05737B0059AA90 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB51F05737B0059AA90 /* CountyController.swift */; };
+		D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB71F0573880059AA90 /* QuestionController.swift */; };
+		D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB91F0573920059AA90 /* FormCell.swift */; };
+		D5C3FABC1F05739F0059AA90 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABB1F05739F0059AA90 /* FormController.swift */; };
+		D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABD1F0573B50059AA90 /* ResourceList.swift */; };
+		D5C3FAC01F0574130059AA90 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABF1F0574130059AA90 /* BackButton.swift */; };
+		D5C3FAC21F05741E0059AA90 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC11F05741E0059AA90 /* DateUtil.swift */; };
+		D5C3FAC41F05747E0059AA90 /* GraphHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */; };
+		D5C3FAC61F0574920059AA90 /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC51F0574920059AA90 /* UserDataDao.swift */; };
+		D5C3FAC81F0574A00059AA90 /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC71F0574A00059AA90 /* CoreDataDao.swift */; };
+		D5C3FACA1F0574E80059AA90 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC91F0574E80059AA90 /* DoubleExtension.swift */; };
+		D5C3FACC1F0574F50059AA90 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */; };
+		D5C3FACE1F0575E60059AA90 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACD1F0575E60059AA90 /* UserInfo.swift */; };
+		D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */; };
+		D5C3FAD21F0576090059AA90 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD11F0576090059AA90 /* BarChartFormatter.swift */; };
+		D5C3FAD41F0576250059AA90 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */; };
+		D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */; };
+		D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */; };
+		D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */; };
+		D5C3FADC1F0576610059AA90 /* UpdateCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */; };
+		D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */; };
+		D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADF1F0576860059AA90 /* InfoCategory.swift */; };
+		D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE11F05768C0059AA90 /* Info.swift */; };
+		D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE31F0576980059AA90 /* InfoCategoryTableViewController.swift */; };
+		D5C3FAE61F0576D60059AA90 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE51F0576D60059AA90 /* InfoCell.swift */; };
+		D5C3FAE81F0576E30059AA90 /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE71F0576E30059AA90 /* InfoCollectionViewController.swift */; };
+		D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE91F0576ED0059AA90 /* InfoCategoryCell.swift */; };
+		D5C3FAEC1F0577320059AA90 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAEB1F0577320059AA90 /* HistoryFormatter.swift */; };
+		D5C3FAEE1F05773B0059AA90 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAED1F05773B0059AA90 /* HistoryTableViewController.swift */; };
+		D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAEF1F0577440059AA90 /* HistoryCell.swift */; };
+		D5C3FAF21F05774E0059AA90 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF11F05774E0059AA90 /* CircleView.swift */; };
+		D5C3FAF41F0577590059AA90 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */; };
+		D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */; };
+		D5C3FAF81F05776B0059AA90 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */; };
+		D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */; };
+		D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */; };
+		D5C3FAFE1F0577B70059AA90 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */; };
+		D5C3FB001F0577C50059AA90 /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */; };
+		D5C3FB021F0577CE0059AA90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB011F0577CE0059AA90 /* User.swift */; };
+		D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */; };
+		D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */; };
+		D5C3FB081F0578120059AA90 /* SelectedDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB071F0578120059AA90 /* SelectedDrinkViewController.swift */; };
+		D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB091F0578200059AA90 /* MyScrollVC.swift */; };
+		D5C3FB0C1F0578320059AA90 /* BarChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */; };
+		D5C3FB0E1F05783F0059AA90 /* HomeBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */; };
+		D5C3FB121F05785B0059AA90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB111F05785B0059AA90 /* HomeViewController.swift */; };
 		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
-		D5ED09F01F03E9C90091F98C /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */; };
-		D5ED09FA1F051D9A0091F98C /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */; };
-		D5ED09FC1F051DEE0091F98C /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */; };
-		D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661C1D492A4A00093F62 /* CountyController.swift */; };
-		D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC661E1D492A9A00093F62 /* QuestionController.swift */; };
-		D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66201D492ACB00093F62 /* FormCell.swift */; };
-		D5FC66231D492AFB00093F62 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66221D492AFB00093F62 /* FormController.swift */; };
-		D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66241D492B5D00093F62 /* ResourceList.swift */; };
-		D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66261D492C3700093F62 /* UIViewExtension.swift */; };
-		D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */; };
-		D5FCCD721EFD1D3400310084 /* UpdateMaxBacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */; };
-		D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD731EFD355200310084 /* BacCalcViewController.swift */; };
-		D5FCCD771F00EDC700310084 /* SelectDrinkPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */; };
-		D5FCCD7C1F00EF7300310084 /* SelectedDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */; };
-		D5FCCD7E1F00FD1900310084 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */; };
-		D5FCCD801F00FE2000310084 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */; };
-		D5FCCD821F01018C00310084 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD811F01018C00310084 /* CircleView.swift */; };
-		D5FCCD841F0116ED00310084 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD831F0116ED00310084 /* HistoryEntry.swift */; };
-		D5FCCD881F01262F00310084 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD871F01262F00310084 /* DoubleExtension.swift */; };
-		D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCD891F013BBE00310084 /* HistoryViewController.swift */; };
+		D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,35 +150,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F114FA01D50D841000302DA /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = SOURCE_ROOT; };
-		7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F850C8A1D4F56A9007B62DB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUtils.swift; sourceTree = "<group>"; };
-		7F850C911D4F56D7007B62DB /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultKeys.swift; sourceTree = SOURCE_ROOT; };
-		7F850C931D4F614A007B62DB /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		7F850C951D4F619E007B62DB /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F850C971D4F61BC007B62DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
-		7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
-		D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = SOURCE_ROOT; };
-		D50D9C601F0296ED007A109D /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
-		D52D45A31EF935FA008353AB /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = SOURCE_ROOT; };
-		D52D45A51EF93E93008353AB /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
-		D5735A731E439F0400B42CCD /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDao.swift; sourceTree = "<group>"; };
-		D5735A751E43A39F00B42CCD /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDao.swift; sourceTree = "<group>"; };
-		D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHistoryDao.swift; sourceTree = "<group>"; };
-		D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCategory.swift; sourceTree = SOURCE_ROOT; };
-		D5735D1F1EFBDA65002741E0 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = SOURCE_ROOT; };
-		D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCategoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5735D231EFBFCE0002741E0 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = SOURCE_ROOT; };
-		D5735D251EFC005A002741E0 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		D5735D271EFC1166002741E0 /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5735D291EFC1208002741E0 /* InfoCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCategoryCell.swift; sourceTree = SOURCE_ROOT; };
-		D5735D2B1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -230,31 +203,58 @@
 		D5958E8F1D29A99A004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
-		D59E98861E39610C00450EBA /* BarChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartComponent.swift; sourceTree = SOURCE_ROOT; };
-		D59E988B1E39667300450EBA /* HomeBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBarChartView.swift; sourceTree = SOURCE_ROOT; };
-		D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
-		D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidanceContentViewController.swift; path = Drikkevett/GuidanceContentViewController.swift; sourceTree = "<group>"; };
+		D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidancePageViewController.swift; path = Drikkevett/GuidancePageViewController.swift; sourceTree = "<group>"; };
+		D5C3FAB11F0573040059AA90 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Drikkevett/Status.swift; sourceTree = "<group>"; };
+		D5C3FAB21F0573040059AA90 /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusUtils.swift; path = Drikkevett/StatusUtils.swift; sourceTree = "<group>"; };
+		D5C3FAB51F05737B0059AA90 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountyController.swift; path = Drikkevett/CountyController.swift; sourceTree = "<group>"; };
+		D5C3FAB71F0573880059AA90 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionController.swift; path = Drikkevett/QuestionController.swift; sourceTree = "<group>"; };
+		D5C3FAB91F0573920059AA90 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormCell.swift; path = Drikkevett/FormCell.swift; sourceTree = "<group>"; };
+		D5C3FABB1F05739F0059AA90 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormController.swift; path = Drikkevett/FormController.swift; sourceTree = "<group>"; };
+		D5C3FABD1F0573B50059AA90 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceList.swift; path = Drikkevett/ResourceList.swift; sourceTree = "<group>"; };
+		D5C3FABF1F0574130059AA90 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackButton.swift; path = Drikkevett/BackButton.swift; sourceTree = "<group>"; };
+		D5C3FAC11F05741E0059AA90 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtil.swift; path = Drikkevett/DateUtil.swift; sourceTree = "<group>"; };
+		D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistoryDao.swift; path = Drikkevett/GraphHistoryDao.swift; sourceTree = "<group>"; };
+		D5C3FAC51F0574920059AA90 /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataDao.swift; path = Drikkevett/UserDataDao.swift; sourceTree = "<group>"; };
+		D5C3FAC71F0574A00059AA90 /* CoreDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataDao.swift; path = Drikkevett/CoreDataDao.swift; sourceTree = "<group>"; };
+		D5C3FAC91F0574E80059AA90 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = Drikkevett/DoubleExtension.swift; sourceTree = "<group>"; };
+		D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Drikkevett/UIViewExtension.swift; sourceTree = "<group>"; };
+		D5C3FACD1F0575E60059AA90 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Drikkevett/UserInfo.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = Drikkevett/PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAD11F0576090059AA90 /* BarChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarChartFormatter.swift; path = Drikkevett/BarChartFormatter.swift; sourceTree = "<group>"; };
+		D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Drikkevett/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourcesViewController.swift; path = Drikkevett/SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUsViewController.swift; path = Drikkevett/ContactUsViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateUserSettingsViewController.swift; path = Drikkevett/UpdateUserSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCostsViewController.swift; path = Drikkevett/UpdateCostsViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateMaxBacViewController.swift; path = Drikkevett/UpdateMaxBacViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FADF1F0576860059AA90 /* InfoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCategory.swift; path = Drikkevett/InfoCategory.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAE11F05768C0059AA90 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Info.swift; path = Drikkevett/Info.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAE31F0576980059AA90 /* InfoCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCategoryTableViewController.swift; path = Drikkevett/InfoCategoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAE51F0576D60059AA90 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCell.swift; path = Drikkevett/InfoCell.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAE71F0576E30059AA90 /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCollectionViewController.swift; path = Drikkevett/InfoCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAE91F0576ED0059AA90 /* InfoCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCategoryCell.swift; path = Drikkevett/InfoCategoryCell.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAEB1F0577320059AA90 /* HistoryFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryFormatter.swift; path = Drikkevett/HistoryFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAED1F05773B0059AA90 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = Drikkevett/HistoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAEF1F0577440059AA90 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = Drikkevett/HistoryCell.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAF11F05774E0059AA90 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Drikkevett/CircleView.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryEntry.swift; path = Drikkevett/HistoryEntry.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = Drikkevett/HistoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartFormatter.swift; path = Drikkevett/ChartFormatter.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayAfterUtils.swift; path = Drikkevett/DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = defaultKeys.swift; path = Drikkevett/defaultKeys.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanPartyUtils.swift; path = Drikkevett/PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultUtils.swift; path = Drikkevett/UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB011F0577CE0059AA90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Drikkevett/User.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BacCalcViewController.swift; path = Drikkevett/BacCalcViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectDrinkPageViewController.swift; path = Drikkevett/SelectDrinkPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB071F0578120059AA90 /* SelectedDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedDrinkViewController.swift; path = Drikkevett/SelectedDrinkViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB091F0578200059AA90 /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScrollVC.swift; path = Drikkevett/MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarChartComponent.swift; path = Drikkevett/BarChartComponent.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeBarChartView.swift; path = Drikkevett/HomeBarChartView.swift; sourceTree = SOURCE_ROOT; };
+		D5C3FB111F05785B0059AA90 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Drikkevett/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
-		D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
-		D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidancePageViewController.swift; sourceTree = "<group>"; };
-		D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidanceContentViewController.swift; sourceTree = "<group>"; };
-		D5FC661C1D492A4A00093F62 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyController.swift; sourceTree = "<group>"; };
-		D5FC661E1D492A9A00093F62 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
-		D5FC66201D492ACB00093F62 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
-		D5FC66221D492AFB00093F62 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
-		D5FC66241D492B5D00093F62 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
-		D5FC66261D492C3700093F62 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCostsViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMaxBacViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD731EFD355200310084 /* BacCalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacCalcViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDrinkPageViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDrinkViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD811F01018C00310084 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD831F0116ED00310084 /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = SOURCE_ROOT; };
-		D5FCCD871F01262F00310084 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
-		D5FCCD891F013BBE00310084 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryDao.swift; path = Drikkevett/HistoryDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +272,8 @@
 		7F850C851D4F562F007B62DB /* status */ = {
 			isa = PBXGroup;
 			children = (
-				7F850C8A1D4F56A9007B62DB /* Status.swift */,
-				7F850C8F1D4F56B5007B62DB /* StatusUtils.swift */,
+				D5C3FAB11F0573040059AA90 /* Status.swift */,
+				D5C3FAB21F0573040059AA90 /* StatusUtils.swift */,
 			);
 			name = status;
 			sourceTree = "<group>";
@@ -314,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				D5958E201D29A21C004FC6A3 /* StringExtension.swift */,
-				D5FC66261D492C3700093F62 /* UIViewExtension.swift */,
-				D5FCCD871F01262F00310084 /* DoubleExtension.swift */,
+				D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */,
+				D5C3FAC91F0574E80059AA90 /* DoubleExtension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -338,12 +338,12 @@
 			children = (
 				D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */,
 				D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */,
-				D5735D1A1EFBDA52002741E0 /* InfoCategory.swift */,
-				D5735D1F1EFBDA65002741E0 /* Info.swift */,
-				D5735D211EFBF811002741E0 /* InfoCategoryTableViewController.swift */,
-				D5735D231EFBFCE0002741E0 /* InfoCell.swift */,
-				D5735D271EFC1166002741E0 /* InfoCollectionViewController.swift */,
-				D5735D291EFC1208002741E0 /* InfoCategoryCell.swift */,
+				D5C3FADF1F0576860059AA90 /* InfoCategory.swift */,
+				D5C3FAE11F05768C0059AA90 /* Info.swift */,
+				D5C3FAE31F0576980059AA90 /* InfoCategoryTableViewController.swift */,
+				D5C3FAE51F0576D60059AA90 /* InfoCell.swift */,
+				D5C3FAE71F0576E30059AA90 /* InfoCollectionViewController.swift */,
+				D5C3FAE91F0576ED0059AA90 /* InfoCategoryCell.swift */,
 			);
 			name = information;
 			sourceTree = "<group>";
@@ -368,9 +368,9 @@
 				D5958E7F1D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift */,
 				D5958E811D29A817004FC6A3 /* PieChartViewController.swift */,
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
-				D59E98861E39610C00450EBA /* BarChartComponent.swift */,
-				D59E988B1E39667300450EBA /* HomeBarChartView.swift */,
-				D5ED09EF1F03E9C90091F98C /* HomeViewControllerNew.swift */,
+				D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */,
+				D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */,
+				D5C3FB111F05785B0059AA90 /* HomeViewController.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -381,10 +381,10 @@
 				D5958E711D29A78F004FC6A3 /* SecondViewController.swift */,
 				D5958E751D29A7BB004FC6A3 /* CalcSwipeViewController.swift */,
 				D5958E731D29A7B4004FC6A3 /* CalcMiddleViewController.swift */,
-				D5FCCD731EFD355200310084 /* BacCalcViewController.swift */,
-				D5FCCD761F00EDC700310084 /* SelectDrinkPageViewController.swift */,
-				D5FCCD7B1F00EF7300310084 /* SelectedDrinkViewController.swift */,
-				D50D9C601F0296ED007A109D /* MyScrollVC.swift */,
+				D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */,
+				D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */,
+				D5C3FB071F0578120059AA90 /* SelectedDrinkViewController.swift */,
+				D5C3FB091F0578200059AA90 /* MyScrollVC.swift */,
 			);
 			name = calculator;
 			sourceTree = "<group>";
@@ -393,12 +393,12 @@
 			isa = PBXGroup;
 			children = (
 				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
-				7F850C911D4F56D7007B62DB /* defaultKeys.swift */,
+				D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */,
 				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
 				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
-				7F7EC8D91D48083D00359052 /* PlanPartyUtils.swift */,
-				7F850C991D4F61C4007B62DB /* UserDefaultUtils.swift */,
-				7F850C971D4F61BC007B62DB /* User.swift */,
+				D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */,
+				D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */,
+				D5C3FB011F0577CE0059AA90 /* User.swift */,
 			);
 			name = planEvening;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 		D5412BC31D285E3800445D6C /* dayAfter */ = {
 			isa = PBXGroup;
 			children = (
-				7F850C951D4F619E007B62DB /* DayAfterUtils.swift */,
+				D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */,
 				D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */,
 				D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */,
 			);
@@ -419,13 +419,13 @@
 				D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */,
 				D5958E651D29A70B004FC6A3 /* HistorikkCelleViewController.swift */,
 				D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */,
-				D5D6EE0A1E07602100AEFA86 /* HistoryFormatter.swift */,
-				D5FCCD7D1F00FD1900310084 /* HistoryTableViewController.swift */,
-				D5FCCD7F1F00FE2000310084 /* HistoryCell.swift */,
-				D5FCCD811F01018C00310084 /* CircleView.swift */,
-				D5FCCD831F0116ED00310084 /* HistoryEntry.swift */,
-				D5FCCD891F013BBE00310084 /* HistoryViewController.swift */,
-				D50D9C5E1F0253AE007A109D /* ChartFormatter.swift */,
+				D5C3FAEB1F0577320059AA90 /* HistoryFormatter.swift */,
+				D5C3FAED1F05773B0059AA90 /* HistoryTableViewController.swift */,
+				D5C3FAEF1F0577440059AA90 /* HistoryCell.swift */,
+				D5C3FAF11F05774E0059AA90 /* CircleView.swift */,
+				D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */,
+				D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */,
+				D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -435,9 +435,9 @@
 			children = (
 				D5412BC71D2860D100445D6C /* update */,
 				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
-				7F7EC8D71D47FAF200359052 /* SettingsTableViewController.swift */,
-				7FF065901D50A3F9008A1B5E /* SourcesViewController.swift */,
-				7F114FA01D50D841000302DA /* ContactUsViewController.swift */,
+				D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */,
+				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
+				D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -450,8 +450,8 @@
 				D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */,
 				D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */,
 				D52D459D1EF91737008353AB /* RootViewController.swift */,
-				D52D45A31EF935FA008353AB /* UserInfo.swift */,
-				D52D45A51EF93E93008353AB /* PrivacyViewController.swift */,
+				D5C3FACD1F0575E60059AA90 /* UserInfo.swift */,
+				D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */,
 			);
 			name = intro;
 			path = Skall_Meny;
@@ -466,9 +466,9 @@
 				D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */,
 				D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */,
 				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
-				D5735D2B1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift */,
-				D5FCCD691EFC63B900310084 /* UpdateCostsViewController.swift */,
-				D5FCCD711EFD1D3400310084 /* UpdateMaxBacViewController.swift */,
+				D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */,
+				D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */,
+				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
 			);
 			name = update;
 			sourceTree = "<group>";
@@ -477,10 +477,10 @@
 			isa = PBXGroup;
 			children = (
 				D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */,
-				D5735A6E1E439D5000B42CCD /* CoreDataDao.swift */,
-				D5735A731E439F0400B42CCD /* UserDataDao.swift */,
-				D5735A751E43A39F00B42CCD /* HistoryDao.swift */,
-				D5735A771E43E08F00B42CCD /* GraphHistoryDao.swift */,
+				D5C3FAC71F0574A00059AA90 /* CoreDataDao.swift */,
+				D5C3FAC51F0574920059AA90 /* UserDataDao.swift */,
+				D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */,
+				D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -488,10 +488,10 @@
 		D5412BC91D286A0000445D6C /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7F850C931D4F614A007B62DB /* DateUtil.swift */,
+				D5C3FABF1F0574130059AA90 /* BackButton.swift */,
+				D5C3FAC11F05741E0059AA90 /* DateUtil.swift */,
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
-				D5735D251EFC005A002741E0 /* BackButton.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				D5958E351D29A430004FC6A3 /* AppDelegate.swift */,
 				D5958E391D29A471004FC6A3 /* GlemteEnheterViewController.swift */,
 				D5958E371D29A45F004FC6A3 /* InnholdViewController.swift */,
-				D5D6EE071E02217000AEFA86 /* BarChartFormatter.swift */,
+				D5C3FAD11F0576090059AA90 /* BarChartFormatter.swift */,
 				D5958E851D29A932004FC6A3 /* Main.storyboard */,
 				D5958E881D29A93D004FC6A3 /* Main.strings */,
 				D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */,
@@ -544,8 +544,8 @@
 		D5ED09F51F051D700091F98C /* guidance */ = {
 			isa = PBXGroup;
 			children = (
-				D5ED09F91F051D9A0091F98C /* GuidancePageViewController.swift */,
-				D5ED09FB1F051DEE0091F98C /* GuidanceContentViewController.swift */,
+				D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */,
+				D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */,
 			);
 			name = guidance;
 			sourceTree = "<group>";
@@ -560,11 +560,11 @@
 		D5FC66181D492A1E00093F62 /* questionForm */ = {
 			isa = PBXGroup;
 			children = (
-				D5FC661C1D492A4A00093F62 /* CountyController.swift */,
-				D5FC661E1D492A9A00093F62 /* QuestionController.swift */,
-				D5FC66201D492ACB00093F62 /* FormCell.swift */,
-				D5FC66221D492AFB00093F62 /* FormController.swift */,
-				D5FC66241D492B5D00093F62 /* ResourceList.swift */,
+				D5C3FAB51F05737B0059AA90 /* CountyController.swift */,
+				D5C3FAB71F0573880059AA90 /* QuestionController.swift */,
+				D5C3FAB91F0573920059AA90 /* FormCell.swift */,
+				D5C3FABB1F05739F0059AA90 /* FormController.swift */,
+				D5C3FABD1F0573B50059AA90 /* ResourceList.swift */,
 			);
 			name = questionForm;
 			sourceTree = "<group>";
@@ -675,103 +675,103 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C3FADC1F0576610059AA90 /* UpdateCostsViewController.swift in Sources */,
 				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
-				D5735A761E43A39F00B42CCD /* HistoryDao.swift in Sources */,
-				D5FCCD771F00EDC700310084 /* SelectDrinkPageViewController.swift in Sources */,
+				D5C3FAEC1F0577320059AA90 /* HistoryFormatter.swift in Sources */,
 				D52D459E1EF91737008353AB /* RootViewController.swift in Sources */,
-				D5FC66251D492B5D00093F62 /* ResourceList.swift in Sources */,
+				D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */,
+				D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
-				7F850C981D4F61BC007B62DB /* User.swift in Sources */,
-				D5FCCD7E1F00FD1900310084 /* HistoryTableViewController.swift in Sources */,
+				D5C3FAD41F0576250059AA90 /* SettingsTableViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
-				D5735D2A1EFC1208002741E0 /* InfoCategoryCell.swift in Sources */,
+				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
+				D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */,
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
-				D59E98871E39610C00450EBA /* BarChartComponent.swift in Sources */,
+				D5C3FAC81F0574A00059AA90 /* CoreDataDao.swift in Sources */,
+				D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */,
+				D5C3FAC01F0574130059AA90 /* BackButton.swift in Sources */,
+				D5C3FAC41F05747E0059AA90 /* GraphHistoryDao.swift in Sources */,
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
+				D5C3FAD21F0576090059AA90 /* BarChartFormatter.swift in Sources */,
+				D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */,
 				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
-				D5FC66211D492ACB00093F62 /* FormCell.swift in Sources */,
-				D5FCCD6A1EFC63B900310084 /* UpdateCostsViewController.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
-				D5FCCD881F01262F00310084 /* DoubleExtension.swift in Sources */,
-				D5FC661F1D492A9A00093F62 /* QuestionController.swift in Sources */,
-				7F850C8B1D4F56A9007B62DB /* Status.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
-				D5FCCD7C1F00EF7300310084 /* SelectedDrinkViewController.swift in Sources */,
-				7F850C9A1D4F61C4007B62DB /* UserDefaultUtils.swift in Sources */,
-				7F114FA11D50D841000302DA /* ContactUsViewController.swift in Sources */,
+				D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */,
+				D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */,
+				D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */,
+				D5C3FACE1F0575E60059AA90 /* UserInfo.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
-				D5FC66231D492AFB00093F62 /* FormController.swift in Sources */,
-				D5FCCD841F0116ED00310084 /* HistoryEntry.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
-				D5735D241EFBFCE0002741E0 /* InfoCell.swift in Sources */,
+				D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */,
 				D5958E721D29A78F004FC6A3 /* SecondViewController.swift in Sources */,
-				7F850C921D4F56D7007B62DB /* defaultKeys.swift in Sources */,
-				D5735D2C1EFC4A4A002741E0 /* UpdateUserSettingsViewController.swift in Sources */,
 				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
-				D5FCCD821F01018C00310084 /* CircleView.swift in Sources */,
-				D50D9C611F0296ED007A109D /* MyScrollVC.swift in Sources */,
-				D5ED09F01F03E9C90091F98C /* HomeViewControllerNew.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
-				D5FCCD741EFD355200310084 /* BacCalcViewController.swift in Sources */,
+				D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */,
+				D5C3FAC61F0574920059AA90 /* UserDataDao.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
-				D5735D281EFC1166002741E0 /* InfoCollectionViewController.swift in Sources */,
-				D5FCCD801F00FE2000310084 /* HistoryCell.swift in Sources */,
-				D5FC66271D492C3700093F62 /* UIViewExtension.swift in Sources */,
-				D5735D201EFBDA65002741E0 /* Info.swift in Sources */,
+				D5C3FAC21F05741E0059AA90 /* DateUtil.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5958E7C1D29A7FE004FC6A3 /* LastMonthViewController.swift in Sources */,
+				D5C3FB0C1F0578320059AA90 /* BarChartComponent.swift in Sources */,
 				D5958E3A1D29A471004FC6A3 /* GlemteEnheterViewController.swift in Sources */,
-				D5735A741E439F0400B42CCD /* UserDataDao.swift in Sources */,
-				D5FCCD721EFD1D3400310084 /* UpdateMaxBacViewController.swift in Sources */,
-				7F7EC8D81D47FAF200359052 /* SettingsTableViewController.swift in Sources */,
-				D59E988C1E39667300450EBA /* HomeBarChartView.swift in Sources */,
+				D5C3FACA1F0574E80059AA90 /* DoubleExtension.swift in Sources */,
+				D5C3FAF81F05776B0059AA90 /* ChartFormatter.swift in Sources */,
+				D5C3FAB61F05737B0059AA90 /* CountyController.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
-				D52D45A61EF93E93008353AB /* PrivacyViewController.swift in Sources */,
 				D5958E271D29A243004FC6A3 /* UserData.swift in Sources */,
+				D5C3FABC1F05739F0059AA90 /* FormController.swift in Sources */,
+				D5C3FACC1F0574F50059AA90 /* UIViewExtension.swift in Sources */,
+				D5C3FAF41F0577590059AA90 /* HistoryEntry.swift in Sources */,
+				D5C3FAFE1F0577B70059AA90 /* PlanPartyUtils.swift in Sources */,
+				D5C3FAEE1F05773B0059AA90 /* HistoryTableViewController.swift in Sources */,
+				D5C3FAE81F0576E30059AA90 /* InfoCollectionViewController.swift in Sources */,
+				D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
 				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
-				D5735A6F1E439D5000B42CCD /* CoreDataDao.swift in Sources */,
+				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
+				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
 				D5958E741D29A7B4004FC6A3 /* CalcMiddleViewController.swift in Sources */,
-				D5735A781E43E08F00B42CCD /* GraphHistoryDao.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
-				D5FCCD8A1F013BBE00310084 /* HistoryViewController.swift in Sources */,
-				D5D6EE0B1E07602100AEFA86 /* HistoryFormatter.swift in Sources */,
-				D5735D261EFC005A002741E0 /* BackButton.swift in Sources */,
-				D5ED09FC1F051DEE0091F98C /* GuidanceContentViewController.swift in Sources */,
+				D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */,
+				D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */,
+				D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
-				D5735D221EFBF811002741E0 /* InfoCategoryTableViewController.swift in Sources */,
+				D5C3FB001F0577C50059AA90 /* UserDefaultUtils.swift in Sources */,
+				D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */,
 				D5958E821D29A817004FC6A3 /* PieChartViewController.swift in Sources */,
 				D5958E761D29A7BB004FC6A3 /* CalcSwipeViewController.swift in Sources */,
 				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
-				7F850C901D4F56B5007B62DB /* StatusUtils.swift in Sources */,
-				7F7EC8DA1D48083D00359052 /* PlanPartyUtils.swift in Sources */,
 				D5958E661D29A70B004FC6A3 /* HistorikkCelleViewController.swift in Sources */,
-				D5FC661D1D492A4A00093F62 /* CountyController.swift in Sources */,
 				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
+				D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */,
+				D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */,
+				D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */,
 				D5958E801D29A80F004FC6A3 /* WelcomeUserSectionViewController.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
-				D5ED09FA1F051D9A0091F98C /* GuidancePageViewController.swift in Sources */,
-				7F850C941D4F614A007B62DB /* DateUtil.swift in Sources */,
-				D5735D1B1EFBDA52002741E0 /* InfoCategory.swift in Sources */,
 				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
+				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
+				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
+				D5C3FB081F0578120059AA90 /* SelectedDrinkViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,
-				7FF065911D50A3F9008A1B5E /* SourcesViewController.swift in Sources */,
-				D5D6EE081E02217000AEFA86 /* BarChartFormatter.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
+				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
+				D5C3FB121F05785B0059AA90 /* HomeViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
-				7F850C961D4F619E007B62DB /* DayAfterUtils.swift in Sources */,
-				D50D9C5F1F0253AE007A109D /* ChartFormatter.swift in Sources */,
+				D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */,
 				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
-				D52D45A41EF935FA008353AB /* UserInfo.swift in Sources */,
 				D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */,
+				D5C3FAF21F05774E0059AA90 /* CircleView.swift in Sources */,
+				D5C3FB0E1F05783F0059AA90 /* HomeBarChartView.swift in Sources */,
+				D5C3FAE61F0576D60059AA90 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
