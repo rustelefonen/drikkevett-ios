@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
+		D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -107,7 +108,6 @@
 		D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB091F0578200059AA90 /* MyScrollVC.swift */; };
 		D5C3FB0C1F0578320059AA90 /* BarChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */; };
 		D5C3FB0E1F05783F0059AA90 /* HomeBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */; };
-		D5C3FB121F05785B0059AA90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB111F05785B0059AA90 /* HomeViewController.swift */; };
 		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
 		D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */; };
 /* End PBXBuildFile section */
@@ -152,6 +152,7 @@
 /* Begin PBXFileReference section */
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewControllerNew.swift; path = Drikkevett/HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -252,7 +253,6 @@
 		D5C3FB091F0578200059AA90 /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScrollVC.swift; path = Drikkevett/MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarChartComponent.swift; path = Drikkevett/BarChartComponent.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeBarChartView.swift; path = Drikkevett/HomeBarChartView.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FB111F05785B0059AA90 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Drikkevett/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryDao.swift; path = Drikkevett/HistoryDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,7 +370,7 @@
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
 				D5C3FB0B1F0578320059AA90 /* BarChartComponent.swift */,
 				D5C3FB0D1F05783F0059AA90 /* HomeBarChartView.swift */,
-				D5C3FB111F05785B0059AA90 /* HomeViewController.swift */,
+				D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -763,8 +763,8 @@
 				D5958E381D29A45F004FC6A3 /* InnholdViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
-				D5C3FB121F05785B0059AA90 /* HomeViewController.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
+				D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */,
 				D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */,
 				D5958E7A1D29A7F4004FC6A3 /* GraphViewController.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
