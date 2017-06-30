@@ -194,7 +194,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showCellSegue") {
+        /*if (segue.identifier == "showCellSegue") {
             let upcoming = segue.destination as! HistorikkCelleViewController
             
             let indexPath = self.historikkTableView.indexPathForSelectedRow!
@@ -225,7 +225,7 @@ class HistorikkViewController: UIViewController, UITableViewDataSource, UITableV
                 self.fetchLog()
                 self.historikkTableView.reloadData()
             }
-        }
+        }*/
     }
     
     func fetchLog() {
