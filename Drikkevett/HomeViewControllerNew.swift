@@ -254,8 +254,8 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
     // TESTING PROFILE PIC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
-            let selectorToCall = #selector(WelcomeUserSectionViewController.imageWasSavedSuccessfully(_:didFinishSavingWithError:context:))
-            UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+            /*let selectorToCall = #selector(WelcomeUserSectionViewController.imageWasSavedSuccessfully(_:didFinishSavingWithError:context:))*/
+            //UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
         }
         imagePicker.dismiss(animated: true, completion: {
             // anything you want to happen when the user saves an image
