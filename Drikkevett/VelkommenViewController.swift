@@ -14,13 +14,7 @@ class VelkommenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let setAppColors = AppColors()
-        
-        /*view.backgroundColor = setAppColors.mainBackgroundColor()
-         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-         blurEffectView.frame = view.bounds
-         view.addSubview(blurEffectView)*/
+        AppColors.setBackground(view: view)
         
         // PIC
         self.headPicImageView.layer.cornerRadius = 55

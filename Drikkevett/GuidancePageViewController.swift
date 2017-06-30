@@ -10,7 +10,6 @@ import UIKit
 
 class GuidancePageViewController : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     
-    
     lazy var vcArr: [GuidanceContentViewController] = {
         return [
             self.VCInstance(name: "guidanceContent"),
@@ -27,8 +26,6 @@ class GuidancePageViewController : UIPageViewController, UIPageViewControllerDat
     }
     
     override func viewDidLoad() {
-        
-        
         self.delegate = self
         self.dataSource = self
         
@@ -41,17 +38,6 @@ class GuidancePageViewController : UIPageViewController, UIPageViewControllerDat
         
         if let firstVC = vcArr.first {
             setViewControllers([firstVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        for view in self.view.subviews {
-            if view is UIScrollView {
-                view.frame = UIScreen.main.bounds
-            } else if view is UIPageControl {
-                view.backgroundColor = UIColor.clear
-            }
         }
     }
     

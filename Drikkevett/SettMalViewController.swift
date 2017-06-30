@@ -10,14 +10,24 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var maxBacInput: UITextField!
     @IBOutlet weak var goalInput: UITextField!
     @IBOutlet weak var startApplication: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var pickerData = [String]()
     var getDate = Date()
     var dateMessage = ""
     var userInfo:UserInfo?
     
+    
+    var activeField:UITextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
+        
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
+        
+        
         pickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
         
         //setColorsAndFontsEnterGoals()
@@ -25,6 +35,11 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         setGoalPickerView()
         
         startApplication.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.beginApplication)))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterFromKeyboardNotifications()
     }
     
     func setColorsAndFontsEnterGoals(){
@@ -206,14 +221,6 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         goalInput.text = strDate
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        addDoneButton()
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
     func addDoneButton() {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -226,5 +233,56 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         maxBacInput.inputAccessoryView = keyboardToolbar
         goalInput.inputAccessoryView = keyboardToolbar
+    }
+    
+    
+    
+    
+    
+    func registerForKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification){
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        addDoneButton()
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        activeField = nil
     }
 }

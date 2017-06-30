@@ -98,7 +98,7 @@ class FirstViewController: UIViewController {
     var status : AnyObject = Status.DEFAULT as AnyObject
     
     // GET IF NOTIFICATIONS IS TURNED ON OR OFF
-    let instMenu = InnstillingerMenyViewController()
+    //let instMenu = InnstillingerMenyViewController()
     
     var promilleBAC : Double = 0.0
     

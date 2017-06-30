@@ -34,7 +34,5 @@ class SourcesViewController: UIViewController {
         self.librariesTextView.font = setAppColors.textViewFont(16)
         self.iconsTextView.textColor = setAppColors.textViewsColors()
         self.librariesTextView.textColor = setAppColors.textViewsColors()
-        
-    
     }
 }

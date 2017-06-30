@@ -28,7 +28,6 @@
 		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
 		D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */; };
 		D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */; };
-		D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */; };
 		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
 		D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */; };
 		D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */; };
@@ -62,7 +61,6 @@
 		D5C3FACC1F0574F50059AA90 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */; };
 		D5C3FACE1F0575E60059AA90 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACD1F0575E60059AA90 /* UserInfo.swift */; };
 		D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */; };
-		D5C3FAD41F0576250059AA90 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */; };
 		D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */; };
 		D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */; };
 		D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */; };
@@ -153,7 +151,6 @@
 		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KostnaderViewController.swift; path = Drikkevett/KostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettMalViewController.swift; path = Drikkevett/SettMalViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnstillingerMenyViewController.swift; path = Drikkevett/InnstillingerMenyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = Drikkevett/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHistorikkCellTableViewCell.swift; path = Drikkevett/CustomHistorikkCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -188,7 +185,6 @@
 		D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Drikkevett/UIViewExtension.swift; sourceTree = "<group>"; };
 		D5C3FACD1F0575E60059AA90 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Drikkevett/UserInfo.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = Drikkevett/PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Drikkevett/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourcesViewController.swift; path = Drikkevett/SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUsViewController.swift; path = Drikkevett/ContactUsViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateUserSettingsViewController.swift; path = Drikkevett/UpdateUserSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -385,12 +381,12 @@
 		D5412BC51D285EAF00445D6C /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				D5412BC71D2860D100445D6C /* update */,
-				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
-				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
-				D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */,
-				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
 				D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */,
+				D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */,
+				D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */,
+				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
+				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
+				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -408,16 +404,6 @@
 			);
 			name = intro;
 			path = Skall_Meny;
-			sourceTree = "<group>";
-		};
-		D5412BC71D2860D100445D6C /* update */ = {
-			isa = PBXGroup;
-			children = (
-				D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */,
-				D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */,
-				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
-			);
-			name = update;
 			sourceTree = "<group>";
 		};
 		D5412BC81D28640200445D6C /* persistence */ = {
@@ -625,7 +611,6 @@
 				D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */,
 				D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
-				D5C3FAD41F0576250059AA90 /* SettingsTableViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
 				D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */,
@@ -679,7 +664,6 @@
 				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
 				D5C3FB001F0577C50059AA90 /* UserDefaultUtils.swift in Sources */,
 				D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */,
-				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
 				D5371A701F06748800B81A89 /* GlemteEnheterViewController.swift in Sources */,
 				D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */,
 				D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */,

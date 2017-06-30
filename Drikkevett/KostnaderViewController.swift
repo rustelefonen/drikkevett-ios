@@ -13,23 +13,33 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var standardButton: UIView!
     @IBOutlet weak var nextButton: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var userInfo:UserInfo?
+    var activeField:UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*let setAppColors = AppColors()
-        self.view.backgroundColor = setAppColors.mainBackgroundColor()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        view.addSubview(blurEffectView)*/
+        AppColors.setBackground(view: view)
+        
+        beerInput.delegate = self
+        beerInput.keyboardType = UIKeyboardType.numberPad
+        wineInput.delegate = self
+        wineInput.keyboardType = UIKeyboardType.numberPad
+        drinkInput.delegate = self
+        drinkInput.keyboardType = UIKeyboardType.numberPad
+        shotInput.delegate = self
+        shotInput.keyboardType = UIKeyboardType.numberPad
+        
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
         
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
         nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.goNext)))
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterFromKeyboardNotifications()
     }
     
     func goNext() {
@@ -88,28 +98,6 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         }
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-        keyboardToolbar.alpha = 0.9
-        
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        //flexBarButton.tintColor = UIColor.whiteColor()
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
-        doneBarButton.tintColor = UIColor.white
-        keyboardToolbar.items = [flexBarButton, doneBarButton]
-        
-        beerInput.inputAccessoryView = keyboardToolbar
-        wineInput.inputAccessoryView = keyboardToolbar
-        drinkInput.inputAccessoryView = keyboardToolbar
-        shotInput.inputAccessoryView = keyboardToolbar
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let maxLength = 4
 
@@ -122,5 +110,68 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         return prospectiveText.isNumeric() &&
             prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) &&
             prospectiveText.characters.count <= maxLength
+    }
+    
+    func registerForKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification){
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    func addDoneButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+        keyboardToolbar.alpha = 0.9
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        doneBarButton.tintColor = UIColor.white
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        beerInput.inputAccessoryView = keyboardToolbar
+        wineInput.inputAccessoryView = keyboardToolbar
+        drinkInput.inputAccessoryView = keyboardToolbar
+        shotInput.inputAccessoryView = keyboardToolbar
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        addDoneButton()
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        activeField = nil
     }
  }

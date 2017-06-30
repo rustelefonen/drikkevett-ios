@@ -24,6 +24,5 @@ class GuidanceContentViewController: UIViewController {
         titleLabel.text = titleValue
         imageView.image = UIImage(named: imageValue!)
         textView.text = textValue
-        
     }
 }

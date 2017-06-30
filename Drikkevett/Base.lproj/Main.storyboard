@@ -3703,13 +3703,14 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <outlet property="genderInput" destination="mMU-MI-cST" id="uCT-Dm-TqI"/>
                         <outlet property="nextButton" destination="efS-KM-Cpy" id="eCt-w4-ohL"/>
                         <outlet property="nicknameInput" destination="KZS-wc-HZi" id="2Hi-zO-fAG"/>
+                        <outlet property="scrollView" destination="QyL-04-PzS" id="AtF-aC-XvC"/>
                         <outlet property="weightInput" destination="2Hl-rY-oYD" id="yX9-GE-xi5"/>
                         <segue destination="d3g-OP-BCe" kind="show" identifier="settingsSegue" id="FUx-uF-hRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMA-yO-Bcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="-1343"/>
+            <point key="canvasLocation" x="607.24637681159425" y="-1343.4782608695652"/>
         </scene>
         <!--Velkommen View Controller-->
         <scene sceneID="T3h-kk-r3Q">
@@ -3724,20 +3725,20 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Champagne-100" translatesAutoresizingMaskIntoConstraints="NO" id="laa-iE-stP">
-                                <rect key="frame" x="152" y="84" width="110" height="110"/>
+                                <rect key="frame" x="152" y="128" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Qlf-vz-cgw"/>
                                     <constraint firstAttribute="height" constant="110" id="cBb-Ar-siB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velkommen!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-k8-YXr">
-                                <rect key="frame" x="20" y="294" width="374" height="41"/>
+                                <rect key="frame" x="20" y="338" width="374" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker en oversikt over ditt alkoholinntak" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
-                                <rect key="frame" x="20" y="343" width="374" height="159"/>
+                                <rect key="frame" x="20" y="387" width="374" height="115"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3781,7 +3782,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                                             <color key="titleColor" red="0.20419987419999999" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="RgA-y6-j1e" kind="show" id="dnJ-dE-Ek1"/>
+                                            <segue destination="l5l-yX-n5u" kind="show" id="CQh-uE-pLP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3833,6 +3834,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="ubh-Ki-1a4"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
                     <connections>
@@ -3846,7 +3848,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww8-I8-Jhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="-1343"/>
+            <point key="canvasLocation" x="-189.85507246376812" y="-1343.4782608695652"/>
         </scene>
         <!--Gratulasjons View Controller-->
         <scene sceneID="Cc6-h9-D7F">
@@ -4367,7 +4369,7 @@ Hvis ikke kan du starte applikasjonen helt på nytt ved å klikke på "Start på
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-pC-PVh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBS-1R-xMG">
                                         <rect key="frame" x="8" y="55" width="398" height="68"/>
@@ -4585,16 +4587,16 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-dm-LCm">
-                                        <rect key="frame" x="70" y="452.33333333333331" width="274" height="40"/>
+                                        <rect key="frame" x="70" y="452.33333333333337" width="274" height="40.000000000000057"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-hN-Vqw">
-                                                <rect key="frame" x="0.0" y="17" width="31" height="18"/>
+                                                <rect key="frame" x="0.0" y="17.000000000000057" width="31" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWR-27-CJq">
-                                                <rect key="frame" x="80" y="17" width="97" height="18"/>
+                                                <rect key="frame" x="80" y="17.000000000000057" width="97" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -4605,7 +4607,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shot" translatesAutoresizingMaskIntoConstraints="NO" id="6Zg-mC-cFP">
-                                                <rect key="frame" x="244" y="8" width="30" height="30"/>
+                                                <rect key="frame" x="244" y="8" width="30" height="30.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="9yG-Ef-JCU"/>
                                                     <constraint firstAttribute="height" constant="30" id="d8A-mt-UqS"/>
@@ -4624,7 +4626,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                                                 </variation>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpN-a7-rQ9">
-                                                <rect key="frame" x="0.0" y="39" width="274" height="1"/>
+                                                <rect key="frame" x="0.0" y="39.000000000000057" width="274" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -4759,6 +4761,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         <outlet property="beerInput" destination="1hz-fj-n9o" id="F9J-a5-Q2e"/>
                         <outlet property="drinkInput" destination="3zJ-ak-icQ" id="v83-9K-qxK"/>
                         <outlet property="nextButton" destination="j6q-lM-t2F" id="3nZ-KG-oms"/>
+                        <outlet property="scrollView" destination="YKe-pC-PVh" id="HK2-w7-cPc"/>
                         <outlet property="shotInput" destination="nWR-27-CJq" id="ac0-zu-VQ6"/>
                         <outlet property="standardButton" destination="1eb-xZ-KF3" id="KgX-iF-KEr"/>
                         <outlet property="wineInput" destination="4tn-d4-w59" id="mKU-mU-KMu"/>
@@ -4767,7 +4770,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csm-Re-NSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="-1343"/>
+            <point key="canvasLocation" x="1376.8115942028987" y="-1343.4782608695652"/>
         </scene>
         <!--Sett Mal View Controller-->
         <scene sceneID="ZRQ-SS-eCL">
@@ -4782,7 +4785,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ett-mX-TrY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPA-Jo-Ujf">
                                         <rect key="frame" x="8" y="41" width="398" height="68"/>
@@ -4890,16 +4893,16 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-lm-xja">
-                                        <rect key="frame" x="61" y="431.33333333333331" width="292" height="40"/>
+                                        <rect key="frame" x="61" y="431.33333333333337" width="292" height="40.000000000000057"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-3d-ZaR">
-                                                <rect key="frame" x="0.0" y="20" width="31" height="18"/>
+                                                <rect key="frame" x="0.0" y="20" width="31" height="18.000000000000057"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjt-78-KeP">
-                                                <rect key="frame" x="111" y="20" width="34" height="18"/>
+                                                <rect key="frame" x="111" y="20" width="34" height="18.000000000000057"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -4910,11 +4913,11 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-Ub-0zx">
-                                                <rect key="frame" x="0.0" y="39" width="292" height="1"/>
+                                                <rect key="frame" x="0.0" y="39.000000000000057" width="292" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Date_From-100" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-nk-fH4">
-                                                <rect key="frame" x="262" y="8" width="30" height="30"/>
+                                                <rect key="frame" x="262" y="8" width="30" height="30.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Mch-5f-qoQ"/>
                                                     <constraint firstAttribute="width" constant="30" id="nWG-Xg-Z90"/>
@@ -4937,20 +4940,20 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-Km-wp1">
-                                        <rect key="frame" x="8" y="479.33333333333337" width="398" height="70.000000000000114"/>
+                                        <rect key="frame" x="8" y="479.33333333333337" width="398" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-Cq-qDS">
-                                                <rect key="frame" x="159" y="0.0" width="80" height="70.000000000000057"/>
+                                                <rect key="frame" x="159" y="0.0" width="80" height="70"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextButton" translatesAutoresizingMaskIntoConstraints="NO" id="yYN-Gg-vuu">
-                                                        <rect key="frame" x="15" y="10" width="50" height="50.000000000000057"/>
+                                                        <rect key="frame" x="15" y="10" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="SlN-1N-9aQ"/>
                                                             <constraint firstAttribute="width" constant="50" id="hwg-cW-Jz7"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kom i gang!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er6-TW-VOw">
-                                                        <rect key="frame" x="0.0" y="58.000000000000057" width="80" height="18"/>
+                                                        <rect key="frame" x="0.0" y="58" width="80" height="18"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -5020,13 +5023,14 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <outlet property="bacText" destination="RVG-Kw-d2A" id="ovJ-rr-QpD"/>
                         <outlet property="goalInput" destination="Yjt-78-KeP" id="Z0j-rE-4Be"/>
                         <outlet property="maxBacInput" destination="qfe-0W-tg7" id="owM-P5-BKY"/>
+                        <outlet property="scrollView" destination="ett-mX-TrY" id="F8u-AM-4kw"/>
                         <outlet property="startApplication" destination="d3q-Cq-qDS" id="5FJ-Ze-FVT"/>
                         <segue destination="J15-sG-qdn" kind="show" identifier="privacySegue" id="VuS-xF-3xR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzf-rH-ZUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="-1343"/>
+            <point key="canvasLocation" x="2249.275362318841" y="-1343.4782608695652"/>
         </scene>
         <!--Privacy View Controller-->
         <scene sceneID="rZy-KV-pVh">
@@ -5075,7 +5079,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dk-b5-Kd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3123.1884057971015" y="-1343.4782608695652"/>
+            <point key="canvasLocation" x="4030.434782608696" y="-1343.4782608695652"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -7752,7 +7756,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWB-Eb-QcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2215.9420289855075" y="-1343.4782608695652"/>
+            <point key="canvasLocation" x="3123.1884057971015" y="-1343.4782608695652"/>
         </scene>
         <!--Brukerinnstillinger-->
         <scene sceneID="UHC-WP-xu3">
@@ -8839,22 +8843,22 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
             <point key="canvasLocation" x="-178" y="2279"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="K8w-g7-mlo">
+        <scene sceneID="6s0-nI-MMD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RgA-y6-j1e" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qZn-Kh-ef0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b82-xK-4Ag">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Qh-GY-KtO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="l5l-yX-n5u" kind="relationship" relationship="rootViewController" id="i6u-Z9-2XB"/>
+                        <segue destination="kcL-4g-hAi" kind="relationship" relationship="rootViewController" id="mFm-HT-yLc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jjs-qt-a2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXd-zd-flN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3419" y="-383"/>
+            <point key="canvasLocation" x="-1097.1014492753625" y="-1343.4782608695652"/>
         </scene>
     </scenes>
     <resources>
@@ -8904,7 +8908,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gc8-OL-txm"/>
+        <segue reference="CQh-uE-pLP"/>
         <segue reference="f4i-bJ-1Z1"/>
         <segue reference="Isr-7k-rKz"/>
     </inferredMetricsTieBreakers>

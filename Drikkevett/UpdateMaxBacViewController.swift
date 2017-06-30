@@ -263,14 +263,7 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
         self.scrollView.isScrollEnabled = false
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField){
-        addDoneButton()
-        activeField = textField
-    }
     
-    func textFieldDidEndEditing(_ textField: UITextField){
-        activeField = nil
-    }
     
     
 }
