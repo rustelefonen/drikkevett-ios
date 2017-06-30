@@ -347,4 +347,15 @@ class AppColors {
     
     static let graphRed = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
     static let graphGreen = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
+    
+    static func setBackground(view:UIView) {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "black_back_1")!)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        
+        view.sendSubview(toBack: blurEffectView)
+    }
 }

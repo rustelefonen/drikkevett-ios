@@ -9,8 +9,10 @@
 import UIKit
 import Charts
 
-class HomeViewControllerNew: UIViewController, ChartViewDelegate {
+class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+        
     @IBOutlet weak var defaultImage: UIImageView!
     
     @IBOutlet weak var greetingLabel: UILabel!
@@ -30,23 +32,29 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
     @IBOutlet weak var lastMonthHighestBac: UILabel!
     @IBOutlet weak var lastMonthHighestAvgBac: UILabel!
     
-    let userDataDao = UserDataDao()
+    var userData:UserData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userData = AppDelegate.getUserData()
+        
+        AppColors.setBackground(view: view)
+        
         initTopCard()
         initPieCard()
         initBarCard()
         initCostCard()
-        
-        
-        print(AppDelegate.getUserData())
-        print(AppDelegate.getUserData()?.height)
     }
     
     func initTopCard() {
+        defaultImage.layer.cornerRadius = 60
+        self.defaultImage.clipsToBounds = true
+        self.defaultImage.layer.borderWidth = 1.0
+        self.defaultImage.layer.borderColor = UIColor.white.cgColor
+        
+        defaultImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.changeProfilePicButton)))
         greetingLabel.text = ResourceList.greetingArray[Int(arc4random_uniform(UInt32(ResourceList.greetingArray.count)))]
-        nicknameLabel.text = userDataDao.fetchUserData()?.height
+        nicknameLabel.text = userData?.height
         quoteTextView.text = ResourceList.quoteArray[Int(arc4random_uniform(UInt32(ResourceList.quoteArray.count)))]
     }
     
@@ -54,7 +62,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
         goalPieChartView.delegate = self
         let allHistories = HistoryDao().getAll()
         
-        guard let goalBac = userDataDao.fetchUserData()?.goalPromille as? Double else {return}
+        guard let goalBac = userData?.goalPromille as? Double else {return}
         
         var overGoal = 0.0
         var underGoal = 0.0
@@ -65,8 +73,8 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
             else {underGoal += 1.0}
         }
         var dataEntries = [ChartDataEntry]()
-        dataEntries.append(ChartDataEntry(x: 0.0, y: underGoal))
-        dataEntries.append(ChartDataEntry(x: 1.0, y: overGoal))
+        dataEntries.append(ChartDataEntry(x: 0.0, y: overGoal))
+        dataEntries.append(ChartDataEntry(x: 1.0, y: underGoal))
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "")
         pieChartDataSet.colors = [AppColors.graphRed, AppColors.graphGreen]
@@ -110,7 +118,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
     func initBarCard() {
         let historyList = HistoryDao().getAll()
         
-        guard let goalBac = userDataDao.fetchUserData()?.goalPromille as? Double else {return}
+        guard let goalBac = userData?.goalPromille as? Double else {return}
         styleBarChart(goalBac: goalBac)
         
         var dataEntries = [BarChartDataEntry]()
@@ -153,7 +161,6 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
         historyBarChartView.xAxis.drawGridLinesEnabled = false
         historyBarChartView.noDataText = "ingen graf."
         historyBarChartView.rightAxis.drawTopYLabelEntryEnabled = false
-        historyBarChartView.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.0)
         historyBarChartView.leftAxis.labelTextColor = UIColor.white
         historyBarChartView.xAxis.labelTextColor = UIColor.white
         historyBarChartView.chartDescription?.text = ""
@@ -217,5 +224,102 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate {
             return false
         }
         return date > oneMonthAgo
+    }
+    
+    func changeProfilePicButton() {
+        print("lol")
+        //Create the AlertController
+        let actionSheetController: UIAlertController = UIAlertController(title: "Sett Profilbilde", message: "Velg fra kamerarull eller ta bilde selv", preferredStyle: .actionSheet)
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Avbryt", style: .cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        actionSheetController.addAction(cancelAction)
+        //Create and add first option action
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Ta Bilde", style: .default) { action -> Void in
+            self.takepic()
+        }
+        actionSheetController.addAction(takePictureAction)
+        //Create and add a second option action
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Velg fra kamerarull", style: .default) { action -> Void in
+            self.selectPicture()
+        }
+        actionSheetController.addAction(choosePictureAction)
+        
+        //Present the AlertController
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    // TESTING PROFILE PIC
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+            let selectorToCall = #selector(WelcomeUserSectionViewController.imageWasSavedSuccessfully(_:didFinishSavingWithError:context:))
+            UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+        }
+        imagePicker.dismiss(animated: true, completion: {
+            // anything you want to happen when the user saves an image
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: {
+            // anything you want to happen when the user selects cancel
+        })
+    }
+    
+    func imageWasSavedSuccessfully(_ image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutableRawPointer){
+        if let theError = error {
+            print("An error happond while saving the image = \(theError)")
+        } else {
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.defaultImage.image = image
+                
+                let imageData = UIImageJPEGRepresentation(image, 1)
+                let relativePath = "image_\(Date.timeIntervalSinceReferenceDate).jpg"
+                let path = self.documentsPathForFileName(relativePath)
+                try? imageData!.write(to: URL(fileURLWithPath: path), options: [.atomic])
+                UserDefaults.standard.set(relativePath, forKey: "path")
+                UserDefaults.standard.synchronize()
+            })
+        }
+    }
+    
+    func documentsPathForFileName(_ name: String) -> String {
+        return NSTemporaryDirectory().stringByAppendingPathComponent(name)
+    }
+    
+    func readData(){
+        let possibleOldImagePath = UserDefaults.standard.object(forKey: "path") as! String?
+        if let oldImagePath = possibleOldImagePath {
+            let oldFullPath = self.documentsPathForFileName(oldImagePath)
+            let oldImageData = try? Data(contentsOf: URL(fileURLWithPath: oldFullPath))
+            // here is your saved image:
+            let oldImage = UIImage(data: oldImageData!)
+            self.defaultImage.image = oldImage
+        }
+    }
+    
+    // PICK FROM CAMERA ROLE
+    func selectPicture() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func takepic(){
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            if(UIImagePickerController.availableCaptureModes(for: .rear) != nil){
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .camera
+                imagePicker.cameraCaptureMode = .photo
+                present(imagePicker, animated: true, completion: {})
+            } else {
+                //postAlert("Rear Camera does not exist", message: "Application cannot access the camera.")
+            }
+        } else {
+            //postAlert("Camera inaccesible", message: "Application cannot access the camera.")
+        }
     }
 }

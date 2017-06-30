@@ -19,6 +19,7 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
         nicknameInput.delegate = self
         nicknameInput.keyboardType = UIKeyboardType.asciiCapable
         

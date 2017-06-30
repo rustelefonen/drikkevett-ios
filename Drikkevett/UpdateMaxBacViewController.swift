@@ -20,6 +20,7 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
         
         initMaxBacPicker()
         datePickViewGenderTextField()

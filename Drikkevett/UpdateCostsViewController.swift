@@ -19,6 +19,8 @@ class UpdateCostsViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
+        
         beerInput.delegate = self
         beerInput.keyboardType = UIKeyboardType.numberPad
         wineInput.delegate = self

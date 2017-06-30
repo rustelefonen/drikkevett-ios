@@ -28,14 +28,11 @@ class BacCalcViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
     }
     
     @IBAction func bacSliderChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
-        
-        if currentValue == 1 {bacHours.text = "Promillen om \(currentValue) Time"}
-        else {bacHours.text = "Promillen om \(currentValue) Timer"}
-        
+        updateSliderText(currentValue: Int(sender.value))
         updateBac()
     }
     
@@ -50,6 +47,22 @@ class BacCalcViewController: UIViewController {
         modifyUnit(index: index, increment: true)
         updateBac()
     }
+    
+    @IBAction func removeAllUnits(_ sender: UIBarButtonItem) {
+        beerAmount.text = "0"
+        wineAmount.text = "0"
+        drinkAmount.text = "0"
+        shotAmount.text = "0"
+        bacSlider.value = 1
+        updateSliderText(currentValue: 1)
+        updateBac()
+    }
+    
+    func updateSliderText(currentValue:Int) {
+        if currentValue == 1 {bacHours.text = "Promillen om \(currentValue) Time"}
+        else {bacHours.text = "Promillen om \(currentValue) Timer"}
+    }
+    
     
     func modifyUnit(index:Int, increment:Bool) {
         if index == 0 {

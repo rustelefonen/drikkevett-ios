@@ -20,6 +20,8 @@ class InfoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppColors.setBackground(view: view)
+        
         BackButton.setTitle(title: "", navigationController: navigationController!)
         navigationItem.title = info?.title
         textView.text = info?.text
