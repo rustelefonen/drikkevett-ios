@@ -14,12 +14,18 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
     @IBOutlet weak var ageInput: UITextField!
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var saveButton: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    var activeField: UITextField?
     let pickerData = ["Mann", "Kvinne"]
+    var userData:UserData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
+        
+        userData = AppDelegate.getUserData()
+        
         nicknameInput.delegate = self
         nicknameInput.keyboardType = UIKeyboardType.asciiCapable
         
@@ -33,12 +39,17 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
         saveButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.save)))
         
         initUserValues()
+        
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterFromKeyboardNotifications()
     }
     
     func initUserValues() {
-        let userData = UserDataDao().fetchUserData()
-        if userData == nil {return}
-        
         nicknameInput.text = userData?.height
         
         if let gender = userData?.gender as? Int {genderInput.text = gender == 0 ? pickerData[1] : pickerData[0]}
@@ -54,39 +65,47 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
     }
     
     func save() {
-        let nickName = nicknameInput.text
+        guard let nickName = nicknameInput.text else {
+            errorMessage(errorMsg: "Alle felter må fylles ut!")
+            return
+        }
         let gender = genderInput.text == pickerData[0]
-        let age = Int(ageInput.text!)
-        let weight = Double(weightInput.text!)
-        
-        if (nickName == nil || nickName == "" || age == nil || weight == nil) {
+        guard let age = Int(ageInput.text!) else {
+            errorMessage(errorMsg: "Alle felter må fylles ut!")
+            return
+        }
+        guard let weight = Double(weightInput.text!) else {
             errorMessage(errorMsg: "Alle felter må fylles ut!")
             return
         }
         
-        if (age! >= 120) {
+        if nickName == "" {
+            errorMessage(errorMsg: "Alle felter må fylles ut!")
+            return
+        }
+        
+        if (age >= 120) {
             errorMessage(errorMsg: "Du valgte for ung alder")
             return
         }
-        else if (age! < 18) {
+        else if (age < 18) {
             errorMessage(errorMsg: "Du er for gammel!")
             return
         }
         
-        if (weight! >= 300.0) {
+        if (weight >= 300.0) {
             errorMessage(errorMsg: "Du valgte for tung vekt")
             return
         }
-        else if (weight! < 20.0) {
+        else if (weight < 20.0) {
             errorMessage(errorMsg: "Du valgte for lett vekt")
             return
         }
         let userDataDao = UserDataDao()
-        let user = userDataDao.fetchUserData()
-        user?.height = nickName
-        user?.gender = gender as NSNumber?
-        user?.age = age as NSNumber?
-        user?.weight = weight as NSNumber?
+        userData?.height = nickName
+        userData?.gender = gender as NSNumber?
+        userData?.age = age as NSNumber?
+        userData?.weight = weight as NSNumber?
         userDataDao.save()
         AppDelegate.initUserData()
         
@@ -167,11 +186,7 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
         return pickerLabel!
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {addDoneButton()}
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -195,5 +210,52 @@ class UpdateUserSettingsViewController : UIViewController, UITextFieldDelegate, 
             return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= weightLength
         }
         return true
+    }
+    
+    func registerForKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification){
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        addDoneButton()
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        activeField = nil
     }
 }

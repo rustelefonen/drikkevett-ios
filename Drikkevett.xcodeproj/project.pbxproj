@@ -24,17 +24,11 @@
 		D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E351D29A430004FC6A3 /* AppDelegate.swift */; };
 		D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */; };
 		D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */; };
-		D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */; };
 		D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */; };
 		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
 		D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */; };
 		D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */; };
-		D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */; };
-		D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */; };
-		D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */; };
-		D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */; };
 		D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */; };
-		D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */; };
 		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
 		D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */; };
 		D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */; };
@@ -60,7 +54,6 @@
 		D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB91F0573920059AA90 /* FormCell.swift */; };
 		D5C3FABC1F05739F0059AA90 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABB1F05739F0059AA90 /* FormController.swift */; };
 		D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABD1F0573B50059AA90 /* ResourceList.swift */; };
-		D5C3FAC01F0574130059AA90 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FABF1F0574130059AA90 /* BackButton.swift */; };
 		D5C3FAC21F05741E0059AA90 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC11F05741E0059AA90 /* DateUtil.swift */; };
 		D5C3FAC41F05747E0059AA90 /* GraphHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */; };
 		D5C3FAC61F0574920059AA90 /* UserDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAC51F0574920059AA90 /* UserDataDao.swift */; };
@@ -156,17 +149,11 @@
 		D5958E351D29A430004FC6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Drikkevett/AppDelegate.swift; sourceTree = "<group>"; };
 		D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Drikkevett/SkallMenyBrain.swift; sourceTree = "<group>"; };
 		D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Drikkevett/CoreDataMethods.swift; sourceTree = "<group>"; };
-		D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartVeiledningViewController.swift; path = Drikkevett/StartVeiledningViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VelkommenViewController.swift; path = Drikkevett/VelkommenViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KostnaderViewController.swift; path = Drikkevett/KostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E491D29A53F004FC6A3 /* SettMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettMalViewController.swift; path = Drikkevett/SettMalViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeiledningInnholdViewController.swift; path = Drikkevett/VeiledningInnholdViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeiledningMiddleViewController.swift; path = Drikkevett/VeiledningMiddleViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterMalViewController.swift; path = Drikkevett/OppdaterMalViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OppdaterKostnaderViewController.swift; path = Drikkevett/OppdaterKostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnstillingerMenyViewController.swift; path = Drikkevett/InnstillingerMenyViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = Drikkevett/CollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = Drikkevett/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHistorikkCellTableViewCell.swift; path = Drikkevett/CustomHistorikkCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -193,7 +180,6 @@
 		D5C3FAB91F0573920059AA90 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormCell.swift; path = Drikkevett/FormCell.swift; sourceTree = "<group>"; };
 		D5C3FABB1F05739F0059AA90 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormController.swift; path = Drikkevett/FormController.swift; sourceTree = "<group>"; };
 		D5C3FABD1F0573B50059AA90 /* ResourceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceList.swift; path = Drikkevett/ResourceList.swift; sourceTree = "<group>"; };
-		D5C3FABF1F0574130059AA90 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackButton.swift; path = Drikkevett/BackButton.swift; sourceTree = "<group>"; };
 		D5C3FAC11F05741E0059AA90 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtil.swift; path = Drikkevett/DateUtil.swift; sourceTree = "<group>"; };
 		D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphHistoryDao.swift; path = Drikkevett/GraphHistoryDao.swift; sourceTree = "<group>"; };
 		D5C3FAC51F0574920059AA90 /* UserDataDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataDao.swift; path = Drikkevett/UserDataDao.swift; sourceTree = "<group>"; };
@@ -312,7 +298,6 @@
 		D5412BBD1D285D7E00445D6C /* information */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E571D29A671004FC6A3 /* CollectionViewCell.swift */,
 				D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */,
 				D5C3FADF1F0576860059AA90 /* InfoCategory.swift */,
 				D5C3FAE11F05768C0059AA90 /* Info.swift */,
@@ -401,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				D5412BC71D2860D100445D6C /* update */,
+				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5958E551D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift */,
 				D5C3FAD31F0576250059AA90 /* SettingsTableViewController.swift */,
 				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
@@ -427,12 +413,6 @@
 		D5412BC71D2860D100445D6C /* update */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E411D29A506004FC6A3 /* StartVeiledningViewController.swift */,
-				D5958E4B1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift */,
-				D5958E4D1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift */,
-				D5958E4F1D29A5C8004FC6A3 /* OppdaterMalViewController.swift */,
-				D5958E531D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift */,
-				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */,
 				D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */,
 				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
@@ -455,7 +435,7 @@
 		D5412BC91D286A0000445D6C /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D5C3FABF1F0574130059AA90 /* BackButton.swift */,
+				D5C3FABD1F0573B50059AA90 /* ResourceList.swift */,
 				D5C3FAC11F05741E0059AA90 /* DateUtil.swift */,
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
@@ -528,7 +508,6 @@
 				D5C3FAB71F0573880059AA90 /* QuestionController.swift */,
 				D5C3FAB91F0573920059AA90 /* FormCell.swift */,
 				D5C3FABB1F05739F0059AA90 /* FormController.swift */,
-				D5C3FABD1F0573B50059AA90 /* ResourceList.swift */,
 			);
 			name = questionForm;
 			sourceTree = "<group>";
@@ -646,7 +625,6 @@
 				D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */,
 				D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
-				D5958E581D29A671004FC6A3 /* CollectionViewCell.swift in Sources */,
 				D5C3FAD41F0576250059AA90 /* SettingsTableViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
@@ -654,12 +632,10 @@
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
 				D5C3FAC81F0574A00059AA90 /* CoreDataDao.swift in Sources */,
 				D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */,
-				D5C3FAC01F0574130059AA90 /* BackButton.swift in Sources */,
 				D5C3FAC41F05747E0059AA90 /* GraphHistoryDao.swift in Sources */,
 				D5371A6E1F06747100B81A89 /* InnholdViewController.swift in Sources */,
 				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */,
-				D5958E541D29A5DC004FC6A3 /* OppdaterKostnaderViewController.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
 				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
 				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
@@ -692,7 +668,6 @@
 				D5C3FAE81F0576E30059AA90 /* InfoCollectionViewController.swift in Sources */,
 				D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
-				D5958E4E1D29A5B3004FC6A3 /* VeiledningMiddleViewController.swift in Sources */,
 				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
 				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
@@ -706,12 +681,10 @@
 				D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */,
 				D5958E561D29A5EA004FC6A3 /* InnstillingerMenyViewController.swift in Sources */,
 				D5371A701F06748800B81A89 /* GlemteEnheterViewController.swift in Sources */,
-				D5958E501D29A5C8004FC6A3 /* OppdaterMalViewController.swift in Sources */,
 				D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */,
 				D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */,
 				D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
-				D5958E421D29A506004FC6A3 /* StartVeiledningViewController.swift in Sources */,
 				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
 				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
@@ -721,7 +694,6 @@
 				D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */,
 				D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
-				D5958E4C1D29A5A7004FC6A3 /* VeiledningInnholdViewController.swift in Sources */,
 				D5C3FAF21F05774E0059AA90 /* CircleView.swift in Sources */,
 				D5C3FAE61F0576D60059AA90 /* InfoCell.swift in Sources */,
 			);

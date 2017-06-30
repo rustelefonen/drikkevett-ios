@@ -22,7 +22,6 @@ class InfoDetailViewController: UIViewController {
         
         AppColors.setBackground(view: view)
         
-        BackButton.setTitle(title: "", navigationController: navigationController!)
         navigationItem.title = info?.title
         textView.text = info?.text
         imageView.image = UIImage(named: (info?.image)!)

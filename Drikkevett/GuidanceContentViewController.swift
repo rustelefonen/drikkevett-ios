@@ -20,6 +20,7 @@ class GuidanceContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppColors.setBackground(view: view)
         titleLabel.text = titleValue
         imageView.image = UIImage(named: imageValue!)
         textView.text = textValue

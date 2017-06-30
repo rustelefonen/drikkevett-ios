@@ -133,11 +133,11 @@ class GratulasjonsViewController: UIViewController, ChartViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "gratulationSegue") {
+        /*if (segue.identifier == "gratulationSegue") {
             let upcoming: OppdaterMalViewController = segue.destination as! OppdaterMalViewController
             upcoming.isGratulationViewRunned = true
             //upcoming.cameFrom = cameFrom
-        }
+        }*/
     }
     
     func setConstraints(){

@@ -20,7 +20,6 @@ class InfoCategoryTableViewController : UITableViewController {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
         navigationItem.title = infoCategory?.title
-        BackButton.setTitle(title: "", navigationController: navigationController!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

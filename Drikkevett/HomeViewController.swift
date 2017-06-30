@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
         
         //if(isGoalDateReached()) { self.performSegue(withIdentifier: "goalDateSegue", sender: self) }
         
-        BackButton.setTitle(title: "", navigationController: navigationController!)
         
         infoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.lol)))
         

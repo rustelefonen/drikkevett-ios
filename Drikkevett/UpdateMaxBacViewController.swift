@@ -17,16 +17,27 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var maxBacInput: UITextField!
     @IBOutlet weak var goalInput: UITextField!
     @IBOutlet weak var saveButton: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var activeField:UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
+        
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
         
         initMaxBacPicker()
         datePickViewGenderTextField()
         
         saveButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.save)))
         initUserValues()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterFromKeyboardNotifications()
     }
     
     func initUserValues() {
@@ -111,7 +122,7 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
         
         datePickerView.minimumDate = tomorrow
         datePickerView.setDate(tomorrow!, animated: true)
-        datePickerView.addTarget(self, action: #selector(OppdaterMalViewController.datePickerChanged(_:)), for: UIControlEvents.valueChanged)
+        //DENNE MÅ FIKSES AS WTF datePickerView.addTarget(self, action: #selector(OppdaterMalViewController.datePickerChanged(_:)), for: UIControlEvents.valueChanged)
         //datePickerChanged(datePickerView)
         addDoneButton()
     }
@@ -214,11 +225,52 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
         goalInput.text = strDate
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        addDoneButton()
+    func registerForKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    func deregisterFromKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    func keyboardWasShown(notification: NSNotification){
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        addDoneButton()
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        activeField = nil
+    }
+    
+    
 }
