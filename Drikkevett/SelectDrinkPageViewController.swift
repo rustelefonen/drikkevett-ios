@@ -11,6 +11,8 @@ import UIKit
 class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     static let segueId = "selectDrinkSegue"
+    static let planPartySegueId = "planPartySelectUnit"
+    static let partySegueId = "partySelectUnit"
     
     var currentIndex: (() -> Int)?
     

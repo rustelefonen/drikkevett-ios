@@ -11,6 +11,10 @@
 		D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */; };
 		D5371A6E1F06747100B81A89 /* InnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6D1F06747100B81A89 /* InnholdViewController.swift */; };
 		D5371A701F06748800B81A89 /* GlemteEnheterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6F1F06748800B81A89 /* GlemteEnheterViewController.swift */; };
+		D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */; };
+		D5371A741F0A858C00B81A89 /* UnitAddedDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */; };
+		D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */; };
+		D5371A781F0A912500B81A89 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A771F0A912500B81A89 /* PartyViewController.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -37,7 +41,6 @@
 		D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */; };
 		D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */; };
 		D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */; };
-		D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */; };
 		D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E831D29A81F004FC6A3 /* HomeViewController.swift */; };
 		D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E851D29A932004FC6A3 /* Main.storyboard */; };
 		D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E881D29A93D004FC6A3 /* Main.strings */; };
@@ -134,6 +137,10 @@
 		D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewControllerNew.swift; path = Drikkevett/HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
 		D5371A6D1F06747100B81A89 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnholdViewController.swift; path = Drikkevett/InnholdViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A6F1F06748800B81A89 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Drikkevett/GlemteEnheterViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitAddedDao.swift; sourceTree = "<group>"; };
+		D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartEndTimestampsDao.swift; sourceTree = "<group>"; };
+		D5371A771F0A912500B81A89 /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -160,7 +167,6 @@
 		D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiddleUnitViewController.swift; path = Drikkevett/MiddleUnitViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUnitViewController.swift; path = Drikkevett/ChooseUnitViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Drikkevett/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GratulasjonsViewController.swift; path = Drikkevett/GratulasjonsViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E831D29A81F004FC6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Drikkevett/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E861D29A932004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5958E891D29A93D004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/Main.strings; sourceTree = "<group>"; };
@@ -319,7 +325,6 @@
 		D5412BC01D285DFD00445D6C /* home */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E7D1D29A807004FC6A3 /* GratulasjonsViewController.swift */,
 				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
 				D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */,
 			);
@@ -414,6 +419,8 @@
 				D5C3FAC51F0574920059AA90 /* UserDataDao.swift */,
 				D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */,
 				D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */,
+				D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */,
+				D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -483,6 +490,8 @@
 		D5ED09FD1F05357C0091F98C /* drinkEpisode */ = {
 			isa = PBXGroup;
 			children = (
+				D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */,
+				D5371A771F0A912500B81A89 /* PartyViewController.swift */,
 			);
 			name = drinkEpisode;
 			sourceTree = "<group>";
@@ -613,6 +622,7 @@
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
+				D5371A781F0A912500B81A89 /* PartyViewController.swift in Sources */,
 				D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */,
 				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
 				D5C3FAC81F0574A00059AA90 /* CoreDataDao.swift in Sources */,
@@ -633,8 +643,8 @@
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
 				D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */,
-				D5958E7E1D29A807004FC6A3 /* GratulasjonsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
+				D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */,
 				D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */,
 				D5C3FAC61F0574920059AA90 /* UserDataDao.swift in Sources */,
 				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
@@ -675,11 +685,13 @@
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
+				D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */,
 				D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */,
 				D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */,
 				D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */,
 				D5C3FAF21F05774E0059AA90 /* CircleView.swift in Sources */,
 				D5C3FAE61F0576D60059AA90 /* InfoCell.swift in Sources */,
+				D5371A741F0A858C00B81A89 /* UnitAddedDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

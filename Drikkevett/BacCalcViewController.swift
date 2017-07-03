@@ -36,15 +36,15 @@ class BacCalcViewController: UIViewController {
         updateBac()
     }
     
-    @IBAction func removeUnit(_ sender: UIButton) {
-        let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        modifyUnit(index: index, increment: false)
-        updateBac()
-    }
-    
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         modifyUnit(index: index, increment: true)
+        updateBac()
+    }
+    
+    @IBAction func removeUnit(_ sender: UIButton) {
+        let index = selectDrinkPageViewController?.currentIndex!() ?? 0
+        modifyUnit(index: index, increment: false)
         updateBac()
     }
     
