@@ -84,7 +84,7 @@ class PlanPartyViewController: UIViewController {
         else if segue.identifier == PartyViewController.partySegueId {
             if segue.destination is PartyViewController {
                 let destination = segue.destination as! PartyViewController
-                destination.firstUnitAdded = StartEndTimestampsDao().getAll().first?.startStamp
+                //destination.firstUnitAdded = StartEndTimestampsDao().getAll().first?.startStamp
             }
         }
     }

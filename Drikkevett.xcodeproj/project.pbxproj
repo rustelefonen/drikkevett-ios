@@ -15,6 +15,8 @@
 		D5371A741F0A858C00B81A89 /* UnitAddedDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */; };
 		D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */; };
 		D5371A781F0A912500B81A89 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A771F0A912500B81A89 /* PartyViewController.swift */; };
+		D5371A7A1F0AC46E00B81A89 /* DrinkEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */; };
+		D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -141,6 +143,8 @@
 		D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitAddedDao.swift; sourceTree = "<group>"; };
 		D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartEndTimestampsDao.swift; sourceTree = "<group>"; };
 		D5371A771F0A912500B81A89 /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkEpisodeViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNew.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -238,6 +242,7 @@
 			children = (
 				D5C3FAB11F0573040059AA90 /* Status.swift */,
 				D5C3FAB21F0573040059AA90 /* StatusUtils.swift */,
+				D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */,
 			);
 			name = status;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 			children = (
 				D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */,
 				D5371A771F0A912500B81A89 /* PartyViewController.swift */,
+				D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */,
 			);
 			name = drinkEpisode;
 			sourceTree = "<group>";
@@ -651,6 +657,7 @@
 				D5C3FAC21F05741E0059AA90 /* DateUtil.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5C3FACA1F0574E80059AA90 /* DoubleExtension.swift in Sources */,
+				D5371A7A1F0AC46E00B81A89 /* DrinkEpisodeViewController.swift in Sources */,
 				D5C3FAF81F05776B0059AA90 /* ChartFormatter.swift in Sources */,
 				D5C3FAB61F05737B0059AA90 /* CountyController.swift in Sources */,
 				D5958E291D29A24E004FC6A3 /* TimeStamp2.swift in Sources */,
@@ -683,6 +690,7 @@
 				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
+				D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */,
 				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */,

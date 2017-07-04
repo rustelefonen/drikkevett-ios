@@ -2936,11 +2936,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                     </tableView>
                     <navigationItem key="navigationItem" title="Historikk" id="luw-f1-Omg">
                         <barButtonItem key="leftBarButtonItem" image="Info-50" id="t3T-nM-Od6"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="gga-tv-6H1">
-                            <connections>
-                                <segue destination="IaN-Wg-EsQ" kind="show" id="JEa-64-O7F"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="gga-tv-6H1"/>
                     </navigationItem>
                     <connections>
                         <segue destination="HAK-n6-lO6" kind="show" identifier="showCellSegue" id="xU3-ek-uM9"/>
@@ -2949,6 +2945,25 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az3-6B-3Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3522" y="1674"/>
+        </scene>
+        <!--Drink Episode View Controller-->
+        <scene sceneID="tRB-Wj-NTo">
+            <objects>
+                <viewController id="Qxe-Hn-xZf" customClass="DrinkEpisodeViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="16F-72-YRk"/>
+                        <viewControllerLayoutGuide type="bottom" id="m3b-74-zr9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dod-Hn-lUs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dAH-Ij-AHR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vch-df-E6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5863.768115942029" y="981.52173913043487"/>
         </scene>
         <!--Informasjon-->
         <scene sceneID="grI-FW-BZf">
@@ -4592,7 +4607,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <segue destination="zur-AH-XC9" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="h83-wA-6bG" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="atQ-iW-dCy" kind="relationship" relationship="viewControllers" id="16b-sf-syh"/>
-                        <segue destination="Bwq-SR-8OY" kind="relationship" relationship="viewControllers" id="DFw-Oc-XBF"/>
+                        <segue destination="AVM-f1-2CF" kind="relationship" relationship="viewControllers" id="2oz-g6-3l9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -4636,76 +4651,6 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-Hl-xDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2332" y="733"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="IEc-3Q-wW8">
-            <objects>
-                <viewController id="TxZ-ig-cWn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XMk-LF-UHE"/>
-                        <viewControllerLayoutGuide type="bottom" id="NRf-Cz-RJb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zth-6I-aOr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-nI-2EX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hpz-nI-2EX" firstAttribute="top" secondItem="XMk-LF-UHE" secondAttribute="bottom" constant="-20" id="7cP-5l-31J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hpz-nI-2EX" secondAttribute="trailing" constant="-20" id="eS6-3o-bq0"/>
-                            <constraint firstItem="hpz-nI-2EX" firstAttribute="leading" secondItem="Zth-6I-aOr" secondAttribute="leadingMargin" constant="-20" id="gXw-Z9-Xpb"/>
-                            <constraint firstItem="NRf-Cz-RJb" firstAttribute="top" secondItem="hpz-nI-2EX" secondAttribute="bottom" id="yYo-Wf-eTf"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="jwJ-VC-P94" kind="custom" id="fVN-Nb-bPY"/>
-                        <segue destination="q3y-h2-EEw" kind="custom" id="aTY-fQ-nna"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BTv-lC-76T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5340.579710144928" y="-92.119565217391312"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bQb-cB-WUf">
-            <objects>
-                <viewController id="jwJ-VC-P94" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qqD-2I-uFS"/>
-                        <viewControllerLayoutGuide type="bottom" id="R9r-eJ-mDk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cXK-Di-Dd9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PG8-01-27Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5342" y="765"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="sA6-Tl-fMc">
-            <objects>
-                <viewController id="q3y-h2-EEw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qu3-4Y-eCj"/>
-                        <viewControllerLayoutGuide type="bottom" id="oqh-k5-6jR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3ac-Zf-7x8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vut-4f-h2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6130" y="765"/>
         </scene>
         <!--Kalkulator-->
         <scene sceneID="vwa-x2-UNB">
@@ -5771,7 +5716,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G01-WY-iLS">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slik forløp kvelden seg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-2H-Ga4">
                                         <rect key="frame" x="8" y="8" width="398" height="18"/>
@@ -7546,7 +7491,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <!--Promillekalkulator-->
         <scene sceneID="aNb-qm-OL1">
             <objects>
-                <viewController id="IaN-Wg-EsQ" customClass="PlanPartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NOT_RUNNING" id="IaN-Wg-EsQ" customClass="PlanPartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GE0-xz-QsP"/>
                         <viewControllerLayoutGuide type="bottom" id="Dx9-fB-JOn"/>
@@ -7838,11 +7783,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Promillekalkulator" id="w9b-ZP-4j7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ueO-V0-hvi">
-                            <connections>
-                                <segue destination="e40-VC-JjO" kind="show" identifier="partySegueYo" id="H1R-aP-flc"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ueO-V0-hvi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="bacLabel" destination="Kb1-Xa-Dh8" id="avj-vJ-RR1"/>
@@ -7856,12 +7797,12 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h4-rA-FXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5341" y="1714"/>
+            <point key="canvasLocation" x="4742" y="1852"/>
         </scene>
         <!--Promillekalkulator-->
         <scene sceneID="cMi-fT-PXx">
             <objects>
-                <viewController id="e40-VC-JjO" customClass="PartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RUNNING" id="e40-VC-JjO" customClass="PartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cHO-wd-hLa"/>
                         <viewControllerLayoutGuide type="bottom" id="Daz-iU-4GX"/>
@@ -7871,19 +7812,19 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzR-Qc-IK1">
-                                <rect key="frame" x="20" y="64" width="374" height="77"/>
+                                <rect key="frame" x="20" y="20" width="374" height="77"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planlegg kvelden din!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYm-5W-OI1">
-                                <rect key="frame" x="20" y="149" width="374" height="18"/>
+                                <rect key="frame" x="20" y="105" width="374" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-x4-f8Q">
-                                <rect key="frame" x="0.0" y="210" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="166" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="qun-YY-0of"/>
                                 </constraints>
@@ -7892,7 +7833,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-NC-Q7J">
-                                <rect key="frame" x="20" y="418" width="374" height="64"/>
+                                <rect key="frame" x="20" y="374" width="374" height="64"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-DM-Xje">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="64"/>
@@ -7949,7 +7890,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-w5-bfY">
-                                <rect key="frame" x="20" y="490" width="374" height="60"/>
+                                <rect key="frame" x="20" y="446" width="374" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-F9-uf7">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -7957,7 +7898,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-SS-dHL">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHx-kC-FJK">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHx-kC-FJK">
                                                         <rect key="frame" x="8" y="8" width="78" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7983,7 +7924,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApK-YP-dda">
                                                 <rect key="frame" x="93" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-s1-Nhf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-s1-Nhf">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8025,7 +7966,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dj8-hG-JD8">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-fZ-7a7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-fZ-7a7">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8051,7 +7992,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkt-vq-l0R">
                                                 <rect key="frame" x="93" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Wh-1AZ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Wh-1AZ">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8103,16 +8044,16 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-of-ABD">
-                                <rect key="frame" x="20" y="558" width="374" height="131"/>
+                                <rect key="frame" x="20" y="514" width="374" height="131"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ok Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="mFD-La-77Q">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="mFD-La-77Q">
                                         <rect key="frame" x="162" y="40" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="4Qf-pQ-flQ"/>
                                             <constraint firstAttribute="height" constant="50" id="5Rv-Yv-hi9"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start kvelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5G-4t-32y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avslutt kvelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5G-4t-32y">
                                         <rect key="frame" x="8" y="98" width="358" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8159,6 +8100,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <outlet property="bacLabel" destination="wzR-Qc-IK1" id="XTc-sz-oRK"/>
                         <outlet property="beerAmount" destination="EHx-kC-FJK" id="TAS-38-nxQ"/>
                         <outlet property="drinkAmount" destination="iXI-fZ-7a7" id="QJb-AV-sPN"/>
+                        <outlet property="endEveningView" destination="NAJ-of-ABD" id="QrD-hO-ObJ"/>
                         <outlet property="quoteLabel" destination="GYm-5W-OI1" id="qJi-Na-adb"/>
                         <outlet property="shotAmount" destination="Rzm-Wh-1AZ" id="vDp-aa-uiY"/>
                         <outlet property="wineAmount" destination="uh5-s1-Nhf" id="3cU-xi-0F3"/>
@@ -8166,7 +8108,44 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mh-hb-eAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6642" y="1714"/>
+            <point key="canvasLocation" x="5481" y="1851"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DIN-hj-bAn">
+            <objects>
+                <viewController storyboardIdentifier="DA_RUNNING" id="30m-4b-Lkn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Td-np-ppm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tu4-UN-4Ts"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nKd-08-tX1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqO-FE-QIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6245" y="1852"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="wsF-bE-tjn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVM-f1-2CF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="b8a-UY-CWx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B5r-v2-8zu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qxe-Hn-xZf" kind="relationship" relationship="rootViewController" id="e8G-Qb-5Lu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSF-KJ-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4956.521739130435" y="981.52173913043487"/>
         </scene>
     </scenes>
     <resources>
