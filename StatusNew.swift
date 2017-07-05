@@ -12,7 +12,6 @@ enum StatusNew {
     case DEFAULT
     case RUNNING
     case NOT_RUNNING
-    case DA_RUNNING
     
     var name: String {
         get { return String(describing: self) }

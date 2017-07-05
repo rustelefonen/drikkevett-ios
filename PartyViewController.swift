@@ -25,6 +25,7 @@ class PartyViewController: UIViewController {
     let universalShotGrams = 16.0
     
     var selectDrinkPageViewController:SelectDrinkPageViewController?
+    var drinkEpisodeViewController:DrinkEpisodeViewController?
     var userData:UserData?
     var updateTimer:Timer!
     
@@ -270,6 +271,8 @@ class PartyViewController: UIViewController {
         }
         history.hoyestePromille = highestBac as NSNumber
         historyDao.save()
+        
+        drinkEpisodeViewController?.insertView()
         
     }
     

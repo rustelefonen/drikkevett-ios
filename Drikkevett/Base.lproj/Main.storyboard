@@ -1296,7 +1296,7 @@ høyeste promille</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="1791"/>
+            <point key="canvasLocation" x="58" y="6010"/>
         </scene>
         <!--Dagen derpå-->
         <scene sceneID="fam-8H-gOQ">
@@ -1462,7 +1462,7 @@ høyeste promille</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvJ-z0-y3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216" y="1676"/>
+            <point key="canvasLocation" x="58" y="6821"/>
         </scene>
         <!--Innstillinger-->
         <scene sceneID="l4S-xT-S0y">
@@ -2959,11 +2959,27 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dAH-Ij-AHR"/>
+                    <navigationItem key="navigationItem" id="dAH-Ij-AHR">
+                        <barButtonItem key="leftBarButtonItem" title="Tips" id="fx4-jF-rVQ">
+                            <connections>
+                                <segue destination="agG-IE-3nb" kind="show" id="Sg1-1T-cGj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="hHj-Pm-mwp">
+                            <connections>
+                                <action selector="clearUnits:" destination="Qxe-Hn-xZf" id="4ph-Po-3Yv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="trash" destination="hHj-Pm-mwp" id="B7Q-ZL-LIn"/>
+                        <segue destination="IaN-Wg-EsQ" kind="custom" id="2bh-pY-D76"/>
+                        <segue destination="e40-VC-JjO" kind="custom" id="qE4-Gr-SOe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vch-df-E6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5863.768115942029" y="981.52173913043487"/>
+            <point key="canvasLocation" x="1690" y="1608"/>
         </scene>
         <!--Informasjon-->
         <scene sceneID="grI-FW-BZf">
@@ -3335,7 +3351,7 @@ Fra fasttelefon koster det 59 øre i oppstart og 39 øre per minutt. Fra mobil: 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKf-QL-qiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-190" y="1541"/>
+            <point key="canvasLocation" x="-68" y="1541"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2IA-uv-W6i">
@@ -4605,9 +4621,8 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                     <connections>
                         <segue destination="rR4-lb-MwF" kind="relationship" relationship="viewControllers" id="lev-GY-ADI"/>
                         <segue destination="zur-AH-XC9" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="h83-wA-6bG" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="atQ-iW-dCy" kind="relationship" relationship="viewControllers" id="16b-sf-syh"/>
                         <segue destination="AVM-f1-2CF" kind="relationship" relationship="viewControllers" id="2oz-g6-3l9"/>
+                        <segue destination="Bwq-SR-8OY" kind="relationship" relationship="viewControllers" id="aFY-pg-YDl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -4631,7 +4646,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmF-yU-pne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="733"/>
+            <point key="canvasLocation" x="-694" y="6821"/>
         </scene>
         <!--Historikk-->
         <scene sceneID="gaj-lH-V2f">
@@ -4650,7 +4665,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-Hl-xDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="733"/>
+            <point key="canvasLocation" x="2674" y="733"/>
         </scene>
         <!--Kalkulator-->
         <scene sceneID="vwa-x2-UNB">
@@ -4669,7 +4684,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vv-l1-KWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="733"/>
+            <point key="canvasLocation" x="-68" y="733"/>
         </scene>
         <!--Planlegg Kvelden-->
         <scene sceneID="BI1-vx-yEN">
@@ -4688,7 +4703,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTx-2X-eUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="733"/>
+            <point key="canvasLocation" x="-693" y="6026"/>
         </scene>
         <!--Glemte Enheter View Controller-->
         <scene sceneID="jen-r2-q5H">
@@ -5327,7 +5342,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upe-gh-mLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="3424"/>
+            <point key="canvasLocation" x="2278" y="6713"/>
         </scene>
         <!--Dagen Derpa View Controller-->
         <scene sceneID="KMd-nm-jMs">
@@ -5347,7 +5362,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zi-yE-4od" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216" y="2353"/>
+            <point key="canvasLocation" x="793" y="6821"/>
         </scene>
         <!--Innhold View Controller-->
         <scene sceneID="I85-eS-6mb">
@@ -5463,7 +5478,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUp-AG-Asa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="2951"/>
+            <point key="canvasLocation" x="1575" y="6718"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Uzm-s4-b2D">
@@ -5474,7 +5489,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9r9-uU-ndq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="4000"/>
+            <point key="canvasLocation" x="3124" y="6718"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RNc-Di-hMA">
@@ -5545,7 +5560,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-Xd-nsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1075" y="733"/>
+            <point key="canvasLocation" x="-1362" y="733"/>
         </scene>
         <!--Veiledning-->
         <scene sceneID="zfP-A1-Gtp">
@@ -5633,7 +5648,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNn-KK-BfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="2163"/>
+            <point key="canvasLocation" x="794" y="6010"/>
         </scene>
         <!--Choose Unit View Controller-->
         <scene sceneID="bS8-LV-rbM">
@@ -5693,7 +5708,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHN-mh-zV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="1282"/>
+            <point key="canvasLocation" x="58" y="5484"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="iY3-ek-ABD">
@@ -5701,7 +5716,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                 <pageViewController storyboardIdentifier="FirstPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gfG-Gw-8sS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0I-0R-W0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="635" y="3251"/>
+            <point key="canvasLocation" x="1603" y="6010"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="Si2-Z9-NDZ">
@@ -5716,7 +5731,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G01-WY-iLS">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slik forløp kvelden seg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-2H-Ga4">
                                         <rect key="frame" x="8" y="8" width="398" height="18"/>
@@ -7283,68 +7298,21 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                             <constraint firstItem="gLR-2v-PCV" firstAttribute="leading" secondItem="iVj-LW-S1i" secondAttribute="leading" id="vFl-i7-KcZ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efL-xJ-zzy">
-                                        <rect key="frame" x="61" y="431.33333333333337" width="292" height="40.000000000000057"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-e6-lnL">
-                                                <rect key="frame" x="0.0" y="20" width="31" height="18.000000000000057"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="dato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-l1-pAv">
-                                                <rect key="frame" x="111" y="20" width="34" height="18.000000000000057"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGH-2p-4ma">
-                                                <rect key="frame" x="0.0" y="39.000000000000057" width="292" height="1"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Date_From-100" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Zb-p2X">
-                                                <rect key="frame" x="262" y="8" width="30" height="30.000000000000057"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="BLS-fW-6IK"/>
-                                                    <constraint firstAttribute="width" constant="30" id="qxh-eY-SMw"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="sbS-l1-pAv" firstAttribute="leading" secondItem="efL-xJ-zzy" secondAttribute="leading" constant="111" id="1wU-G4-p3I"/>
-                                            <constraint firstAttribute="bottom" secondItem="tGH-2p-4ma" secondAttribute="bottom" id="69u-4s-ium"/>
-                                            <constraint firstAttribute="bottom" secondItem="7RF-Zb-p2X" secondAttribute="bottom" constant="2" id="KDE-zc-ee6"/>
-                                            <constraint firstAttribute="bottom" secondItem="sbS-l1-pAv" secondAttribute="bottom" constant="2" id="Lbn-2Y-8PH"/>
-                                            <constraint firstAttribute="bottom" secondItem="Wlz-e6-lnL" secondAttribute="bottom" constant="2" id="NjP-Aa-ygf"/>
-                                            <constraint firstItem="tGH-2p-4ma" firstAttribute="leading" secondItem="efL-xJ-zzy" secondAttribute="leading" id="S4X-Ed-m4A"/>
-                                            <constraint firstAttribute="trailing" secondItem="tGH-2p-4ma" secondAttribute="trailing" id="X8U-kf-CHE"/>
-                                            <constraint firstItem="tGH-2p-4ma" firstAttribute="top" secondItem="efL-xJ-zzy" secondAttribute="top" constant="39" id="Xlm-8Z-RVf"/>
-                                            <constraint firstAttribute="trailing" secondItem="7RF-Zb-p2X" secondAttribute="trailing" id="YZW-uV-NZe"/>
-                                            <constraint firstAttribute="height" constant="40" id="se1-KH-yUG"/>
-                                            <constraint firstItem="Wlz-e6-lnL" firstAttribute="leading" secondItem="efL-xJ-zzy" secondAttribute="leading" id="wzV-Xr-aO8"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIr-k9-rFf">
-                                        <rect key="frame" x="8" y="479.33333333333337" width="398" height="70"/>
+                                        <rect key="frame" x="8" y="423.33333333333337" width="398" height="70.000000000000057"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhI-i1-rJt">
-                                                <rect key="frame" x="159" y="0.0" width="80" height="70"/>
+                                                <rect key="frame" x="159" y="0.0" width="80" height="70.000000000000057"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ok Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-Rl-0Bu">
-                                                        <rect key="frame" x="15" y="10" width="50" height="50"/>
+                                                        <rect key="frame" x="15" y="10" width="50" height="50.000000000000057"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="fMB-9Q-Ymk"/>
                                                             <constraint firstAttribute="width" constant="50" id="i0M-4B-fKK"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lagre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHd-Jd-jvr">
-                                                        <rect key="frame" x="0.0" y="58" width="80" height="18"/>
+                                                        <rect key="frame" x="0.0" y="58.000000000000057" width="80" height="18"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -7375,12 +7343,11 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     <constraint firstItem="eQv-eQ-zc2" firstAttribute="top" secondItem="Toq-rX-k1Q" secondAttribute="top" constant="41" id="FNi-gm-UUd"/>
                                     <constraint firstItem="NjB-Ye-2Yj" firstAttribute="top" secondItem="eQv-eQ-zc2" secondAttribute="bottom" constant="16" id="GEE-Su-g7a"/>
                                     <constraint firstItem="eQv-eQ-zc2" firstAttribute="leading" secondItem="Toq-rX-k1Q" secondAttribute="leading" constant="8" id="Hdh-Cp-Xz8"/>
+                                    <constraint firstItem="iIr-k9-rFf" firstAttribute="top" secondItem="iVj-LW-S1i" secondAttribute="bottom" constant="8" id="IQG-UM-gId"/>
                                     <constraint firstItem="qQb-7G-SGk" firstAttribute="top" secondItem="kfy-gV-51b" secondAttribute="bottom" constant="8" id="J12-ij-8pi"/>
                                     <constraint firstAttribute="bottom" secondItem="iIr-k9-rFf" secondAttribute="bottom" constant="188" id="RLq-qX-Ysa"/>
                                     <constraint firstAttribute="trailing" secondItem="eQv-eQ-zc2" secondAttribute="trailing" constant="8" id="dkw-bY-aN2"/>
-                                    <constraint firstItem="efL-xJ-zzy" firstAttribute="top" secondItem="iVj-LW-S1i" secondAttribute="bottom" constant="16.666666666666686" id="gXn-MP-zNU"/>
                                     <constraint firstItem="iVj-LW-S1i" firstAttribute="top" secondItem="qQb-7G-SGk" secondAttribute="bottom" constant="20" id="hgF-L9-Mrh"/>
-                                    <constraint firstItem="iIr-k9-rFf" firstAttribute="top" secondItem="efL-xJ-zzy" secondAttribute="bottom" constant="8" id="sdm-ko-vmX"/>
                                     <constraint firstItem="vtU-yi-DVM" firstAttribute="top" secondItem="NjB-Ye-2Yj" secondAttribute="bottom" constant="7.6666666666666288" id="yUy-nA-4Ag"/>
                                 </constraints>
                             </scrollView>
@@ -7388,7 +7355,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vtU-yi-DVM" secondAttribute="trailing" constant="-12" id="HAg-Dh-pww"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="efL-xJ-zzy" secondAttribute="trailing" constant="41" id="JyY-8f-atZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iIr-k9-rFf" secondAttribute="trailing" constant="-12" id="MRh-9i-LnC"/>
                             <constraint firstItem="GBV-k6-qGa" firstAttribute="top" secondItem="Toq-rX-k1Q" secondAttribute="bottom" id="NY2-N1-OPo"/>
                             <constraint firstItem="iIr-k9-rFf" firstAttribute="leading" secondItem="flL-Uu-lpj" secondAttribute="leadingMargin" constant="-12" id="NmR-8q-Bti"/>
@@ -7404,7 +7370,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                             <constraint firstItem="Toq-rX-k1Q" firstAttribute="top" secondItem="XmH-Ie-tHf" secondAttribute="bottom" constant="-20" id="puD-48-TCz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iVj-LW-S1i" secondAttribute="trailing" constant="41" id="q4T-6h-Gy3"/>
                             <constraint firstItem="kfy-gV-51b" firstAttribute="leading" secondItem="flL-Uu-lpj" secondAttribute="leadingMargin" constant="-12" id="raW-tl-wF8"/>
-                            <constraint firstItem="efL-xJ-zzy" firstAttribute="leading" secondItem="flL-Uu-lpj" secondAttribute="leadingMargin" constant="41" id="uRG-jP-ARI"/>
                             <constraint firstItem="Toq-rX-k1Q" firstAttribute="leading" secondItem="flL-Uu-lpj" secondAttribute="leadingMargin" constant="-20" id="xc0-YN-B6w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qQb-7G-SGk" secondAttribute="trailing" constant="41" id="zx1-Da-FXP"/>
                         </constraints>
@@ -7412,7 +7377,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                     <connections>
                         <outlet property="bacImage" destination="TQ5-W8-uIc" id="2m6-wc-vCX"/>
                         <outlet property="bacText" destination="qQb-7G-SGk" id="ZrC-xx-SBj"/>
-                        <outlet property="goalInput" destination="sbS-l1-pAv" id="g6U-uJ-DXr"/>
                         <outlet property="maxBacInput" destination="zrh-6v-kpv" id="RoF-hb-hRa"/>
                         <outlet property="saveButton" destination="yhI-i1-rJt" id="tzf-ot-Pa2"/>
                         <outlet property="scrollView" destination="Toq-rX-k1Q" id="mz6-am-ukS"/>
@@ -7432,7 +7396,77 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63B-W8-eAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="2071"/>
+            <point key="canvasLocation" x="987" y="3186"/>
+        </scene>
+        <!--Tips Page View Controller-->
+        <scene sceneID="RQQ-Sq-QHf">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="agG-IE-3nb" customClass="TipsPageViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="bN3-rO-Tak" kind="custom" id="4xB-aI-ruO"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8YN-44-Z6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="2433"/>
+        </scene>
+        <!--Dagen derpå-->
+        <scene sceneID="QQ6-Mh-Amh">
+            <objects>
+                <viewController storyboardIdentifier="dayAfterContent" title="Dagen derpå" id="bN3-rO-Tak" customClass="DayAfterViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AxM-k5-13e"/>
+                        <viewControllerLayoutGuide type="bottom" id="9aV-Oz-p1I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TgX-bn-4I6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dagen derpå" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz3-3N-wZv">
+                                <rect key="frame" x="20" y="180" width="374" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-hU-T3t">
+                                <rect key="frame" x="20" y="221" width="374" height="495"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-p3-ZT7">
+                                <rect key="frame" x="157" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Rql-UW-vo7"/>
+                                    <constraint firstAttribute="width" constant="100" id="ld7-zU-9QR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Xz3-3N-wZv" secondAttribute="leading" id="4Pu-Bu-dzy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xz3-3N-wZv" secondAttribute="trailing" id="CKM-gK-euu"/>
+                            <constraint firstItem="7kF-p3-ZT7" firstAttribute="top" secondItem="AxM-k5-13e" secondAttribute="bottom" constant="8" id="NdV-En-KIn"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="z8y-hU-T3t" secondAttribute="leading" id="OKh-Yx-oiN"/>
+                            <constraint firstItem="z8y-hU-T3t" firstAttribute="top" secondItem="Xz3-3N-wZv" secondAttribute="bottom" constant="16" id="Rkt-4J-HlB"/>
+                            <constraint firstItem="Xz3-3N-wZv" firstAttribute="top" secondItem="7kF-p3-ZT7" secondAttribute="bottom" constant="8" id="WAi-I0-zbD"/>
+                            <constraint firstItem="9aV-Oz-p1I" firstAttribute="top" secondItem="z8y-hU-T3t" secondAttribute="bottom" constant="20" id="sHU-9F-dQT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z8y-hU-T3t" secondAttribute="trailing" id="uPS-B8-L1K"/>
+                            <constraint firstItem="7kF-p3-ZT7" firstAttribute="centerX" secondItem="TgX-bn-4I6" secondAttribute="centerX" id="ymq-zq-DLF"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="z8y-hU-T3t" id="xJx-fp-UPq"/>
+                        <outlet property="imageView" destination="7kF-p3-ZT7" id="A6v-hb-8my"/>
+                        <outlet property="titleLabel" destination="Xz3-3N-wZv" id="E2v-w0-d8H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoz-aO-D1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="3186"/>
         </scene>
         <!--My ScrollVC-->
         <scene sceneID="3aB-mX-UHD">
@@ -7468,7 +7502,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvq-ns-z1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="2353"/>
+            <point key="canvasLocation" x="987" y="3438"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6s0-nI-MMD">
@@ -7488,7 +7522,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
             </objects>
             <point key="canvasLocation" x="-1097.1014492753625" y="-1343.4782608695652"/>
         </scene>
-        <!--Promillekalkulator-->
+        <!--Planlegg kvelden-->
         <scene sceneID="aNb-qm-OL1">
             <objects>
                 <viewController storyboardIdentifier="NOT_RUNNING" id="IaN-Wg-EsQ" customClass="PlanPartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
@@ -7500,35 +7534,20 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb1-Xa-Dh8">
-                                <rect key="frame" x="20" y="20" width="374" height="77"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planlegg kvelden din!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-Mi-y4f">
-                                <rect key="frame" x="20" y="105" width="374" height="18"/>
+                                <rect key="frame" x="20" y="80" width="374" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-5y-HPs">
-                                <rect key="frame" x="0.0" y="166" width="414" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="XvC-Gg-Ccy"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="DSq-nk-W0a" kind="embed" identifier="planPartySelectUnit" id="8JJ-IU-8ug"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jud-AT-b4P">
-                                <rect key="frame" x="20" y="374" width="374" height="64"/>
+                                <rect key="frame" x="20" y="322" width="374" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWz-3m-Ile">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFN-Za-IeG">
-                                                <rect key="frame" x="72" y="14" width="43" height="36"/>
+                                                <rect key="frame" x="72" y="2" width="43" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Fjern">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7545,10 +7564,10 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAN-QB-JQY">
-                                        <rect key="frame" x="187" y="0.0" width="187" height="64"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qS-wi-fQZ">
-                                                <rect key="frame" x="62" y="14" width="63" height="36"/>
+                                                <rect key="frame" x="62" y="2" width="63" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Legg til">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7571,7 +7590,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     <constraint firstItem="SAN-QB-JQY" firstAttribute="leading" secondItem="iWz-3m-Ile" secondAttribute="trailing" id="5vh-t7-BVz"/>
                                     <constraint firstAttribute="bottom" secondItem="iWz-3m-Ile" secondAttribute="bottom" id="DSb-dH-YbP"/>
                                     <constraint firstAttribute="bottom" secondItem="SAN-QB-JQY" secondAttribute="bottom" id="KqR-6G-zXR"/>
-                                    <constraint firstAttribute="height" constant="64" id="OPa-9v-p9E"/>
+                                    <constraint firstAttribute="height" constant="40" id="OPa-9v-p9E"/>
                                     <constraint firstItem="iWz-3m-Ile" firstAttribute="width" secondItem="SAN-QB-JQY" secondAttribute="width" id="aSe-to-FFm"/>
                                     <constraint firstItem="SAN-QB-JQY" firstAttribute="top" secondItem="jud-AT-b4P" secondAttribute="top" id="qJS-yP-pOP"/>
                                     <constraint firstAttribute="trailing" secondItem="SAN-QB-JQY" secondAttribute="trailing" id="rKT-GJ-7wX"/>
@@ -7579,7 +7598,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jez-4l-iE0">
-                                <rect key="frame" x="20" y="446" width="374" height="60"/>
+                                <rect key="frame" x="20" y="370" width="374" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-6o-Dtz">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -7732,18 +7751,88 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                     <constraint firstAttribute="trailing" secondItem="yLU-cb-dbf" secondAttribute="trailing" id="rdB-k1-x0J"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2j-s6-2Sq">
+                                <rect key="frame" x="20" y="438" width="374" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-MW-2xf">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce4-zh-M7n">
+                                                <rect key="frame" x="8" y="31" width="171" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-h3-6Hl">
+                                                <rect key="frame" x="8" y="8" width="171" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="X2f-h3-6Hl" secondAttribute="trailing" constant="8" id="0Ec-Es-TKx"/>
+                                            <constraint firstItem="ce4-zh-M7n" firstAttribute="top" secondItem="X2f-h3-6Hl" secondAttribute="bottom" constant="2" id="E1K-D8-PuI"/>
+                                            <constraint firstItem="X2f-h3-6Hl" firstAttribute="leading" secondItem="SyQ-MW-2xf" secondAttribute="leading" constant="8" id="QAp-zC-olx"/>
+                                            <constraint firstItem="ce4-zh-M7n" firstAttribute="leading" secondItem="SyQ-MW-2xf" secondAttribute="leading" constant="8" id="VXc-jV-iWZ"/>
+                                            <constraint firstItem="X2f-h3-6Hl" firstAttribute="top" secondItem="SyQ-MW-2xf" secondAttribute="top" constant="8" id="W4H-Wn-iHr"/>
+                                            <constraint firstAttribute="trailing" secondItem="ce4-zh-M7n" secondAttribute="trailing" constant="8" id="eeH-mC-y6k"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-NG-jK3">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv9-27-zYp">
+                                                <rect key="frame" x="8" y="8" width="171" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forventet kostnad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb2-z6-KbQ">
+                                                <rect key="frame" x="8" y="31" width="171" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="mb2-z6-KbQ" firstAttribute="leading" secondItem="Aa4-NG-jK3" secondAttribute="leading" constant="8" id="1V9-xr-ODA"/>
+                                            <constraint firstItem="Jv9-27-zYp" firstAttribute="top" secondItem="Aa4-NG-jK3" secondAttribute="top" constant="8" id="5sD-sI-lHd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jv9-27-zYp" secondAttribute="trailing" constant="8" id="9Cu-76-SEW"/>
+                                            <constraint firstItem="mb2-z6-KbQ" firstAttribute="top" secondItem="Jv9-27-zYp" secondAttribute="bottom" constant="2" id="JtZ-3U-EsB"/>
+                                            <constraint firstAttribute="trailing" secondItem="mb2-z6-KbQ" secondAttribute="trailing" constant="8" id="NCX-Rv-yUk"/>
+                                            <constraint firstItem="Jv9-27-zYp" firstAttribute="leading" secondItem="Aa4-NG-jK3" secondAttribute="leading" constant="8" id="gT5-Jz-95I"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Aa4-NG-jK3" firstAttribute="leading" secondItem="SyQ-MW-2xf" secondAttribute="trailing" id="4T7-Tb-mLv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aa4-NG-jK3" secondAttribute="bottom" id="Db0-kO-jOa"/>
+                                    <constraint firstAttribute="bottom" secondItem="SyQ-MW-2xf" secondAttribute="bottom" id="Ifw-0A-MEW"/>
+                                    <constraint firstItem="SyQ-MW-2xf" firstAttribute="top" secondItem="U2j-s6-2Sq" secondAttribute="top" id="JFf-Aw-ZFZ"/>
+                                    <constraint firstItem="Aa4-NG-jK3" firstAttribute="width" secondItem="SyQ-MW-2xf" secondAttribute="width" id="Ml7-gA-hLz"/>
+                                    <constraint firstItem="Aa4-NG-jK3" firstAttribute="leading" secondItem="SyQ-MW-2xf" secondAttribute="trailing" id="PtB-Sj-j6v"/>
+                                    <constraint firstAttribute="height" constant="60" id="TSJ-Zt-5y2"/>
+                                    <constraint firstItem="Aa4-NG-jK3" firstAttribute="top" secondItem="U2j-s6-2Sq" secondAttribute="top" id="ih9-lk-mDY"/>
+                                    <constraint firstItem="SyQ-MW-2xf" firstAttribute="leading" secondItem="U2j-s6-2Sq" secondAttribute="leading" id="pxY-aH-MLX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aa4-NG-jK3" secondAttribute="trailing" id="w2G-K7-ebT"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70m-Dw-bW5">
-                                <rect key="frame" x="20" y="514" width="374" height="131"/>
+                                <rect key="frame" x="20" y="506" width="374" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ok Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="o1L-fP-kwA">
-                                        <rect key="frame" x="162" y="40" width="50" height="50"/>
+                                        <rect key="frame" x="162" y="8" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="idP-ee-gxu"/>
                                             <constraint firstAttribute="height" constant="50" id="sTU-Ww-Vin"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start kvelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP9-5j-PAI">
-                                        <rect key="frame" x="8" y="98" width="358" height="18"/>
+                                        <rect key="frame" x="8" y="66" width="358" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -7751,45 +7840,57 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="o1L-fP-kwA" firstAttribute="centerY" secondItem="70m-Dw-bW5" secondAttribute="centerY" id="7WJ-jy-Yze"/>
                                     <constraint firstAttribute="trailing" secondItem="BP9-5j-PAI" secondAttribute="trailing" constant="8" id="Az2-OO-aRV"/>
+                                    <constraint firstItem="o1L-fP-kwA" firstAttribute="top" secondItem="70m-Dw-bW5" secondAttribute="top" constant="8" id="GbZ-az-DbZ"/>
                                     <constraint firstItem="o1L-fP-kwA" firstAttribute="centerX" secondItem="70m-Dw-bW5" secondAttribute="centerX" id="JPw-Gz-hw6"/>
-                                    <constraint firstAttribute="height" constant="131" id="LwI-sH-MmF"/>
+                                    <constraint firstAttribute="height" constant="80" id="LwI-sH-MmF"/>
                                     <constraint firstItem="BP9-5j-PAI" firstAttribute="leading" secondItem="70m-Dw-bW5" secondAttribute="leading" constant="8" id="fqv-Xt-2sh"/>
                                     <constraint firstItem="BP9-5j-PAI" firstAttribute="top" secondItem="o1L-fP-kwA" secondAttribute="bottom" constant="8" id="nDK-LO-RMS"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-5y-HPs">
+                                <rect key="frame" x="0.0" y="114" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="XvC-Gg-Ccy"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="DSq-nk-W0a" kind="embed" identifier="planPartySelectUnit" id="8JJ-IU-8ug"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="70m-Dw-bW5" firstAttribute="top" secondItem="Jez-4l-iE0" secondAttribute="bottom" constant="8" id="1Bz-22-m9Y"/>
                             <constraint firstItem="IUz-5y-HPs" firstAttribute="leading" secondItem="pXa-hY-AtE" secondAttribute="leadingMargin" constant="-20" id="4eN-JG-s7C"/>
+                            <constraint firstItem="U2j-s6-2Sq" firstAttribute="top" secondItem="Jez-4l-iE0" secondAttribute="bottom" constant="8" id="9do-nE-CgS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jud-AT-b4P" secondAttribute="trailing" id="BCK-r7-HaB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="70m-Dw-bW5" secondAttribute="trailing" id="BMN-Re-l4k"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="U2j-s6-2Sq" secondAttribute="leading" id="FAW-Fr-FmO"/>
+                            <constraint firstItem="70m-Dw-bW5" firstAttribute="top" secondItem="U2j-s6-2Sq" secondAttribute="bottom" constant="8" id="G7L-8G-EMg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4x4-Mi-y4f" secondAttribute="leading" id="HM9-Hj-82O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kb1-Xa-Dh8" secondAttribute="trailing" id="KUx-Ko-21s"/>
+                            <constraint firstItem="IUz-5y-HPs" firstAttribute="top" secondItem="4x4-Mi-y4f" secondAttribute="bottom" constant="16" id="I9U-aK-Q7y"/>
+                            <constraint firstItem="4x4-Mi-y4f" firstAttribute="top" secondItem="GE0-xz-QsP" secondAttribute="bottom" constant="16" id="QyW-tk-fmr"/>
                             <constraint firstItem="jud-AT-b4P" firstAttribute="top" secondItem="IUz-5y-HPs" secondAttribute="bottom" constant="8" id="YNU-VS-NKC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IUz-5y-HPs" secondAttribute="trailing" constant="-20" id="ZdU-9n-D7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4x4-Mi-y4f" secondAttribute="trailing" id="aNP-ii-oj8"/>
-                            <constraint firstItem="IUz-5y-HPs" firstAttribute="top" secondItem="4x4-Mi-y4f" secondAttribute="bottom" constant="43" id="b1h-Ym-T5z"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jud-AT-b4P" secondAttribute="leading" id="dLV-Dt-4IW"/>
-                            <constraint firstItem="Kb1-Xa-Dh8" firstAttribute="top" secondItem="GE0-xz-QsP" secondAttribute="bottom" id="dvm-1f-5Ul"/>
-                            <constraint firstItem="4x4-Mi-y4f" firstAttribute="top" secondItem="Kb1-Xa-Dh8" secondAttribute="bottom" constant="8" id="gIC-CF-jPQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="70m-Dw-bW5" secondAttribute="leading" id="geK-Zq-AzF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jez-4l-iE0" secondAttribute="trailing" id="grk-ky-inW"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Kb1-Xa-Dh8" secondAttribute="leading" id="hNb-0a-yMb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Jez-4l-iE0" secondAttribute="leading" id="jaw-Ey-C5Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U2j-s6-2Sq" secondAttribute="trailing" id="kKp-bu-z43"/>
                             <constraint firstItem="Jez-4l-iE0" firstAttribute="top" secondItem="jud-AT-b4P" secondAttribute="bottom" constant="8" id="pJl-we-YuI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Promillekalkulator" id="w9b-ZP-4j7">
+                    <navigationItem key="navigationItem" title="Planlegg kvelden" id="w9b-ZP-4j7">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ueO-V0-hvi"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bacLabel" destination="Kb1-Xa-Dh8" id="avj-vJ-RR1"/>
                         <outlet property="bacQuoteLabel" destination="4x4-Mi-y4f" id="lnu-qP-Nqj"/>
                         <outlet property="beerAmount" destination="rF9-wl-kmf" id="Iav-Ji-tLO"/>
                         <outlet property="drinkAmount" destination="586-NK-zb1" id="z6Q-6O-d0Q"/>
+                        <outlet property="expectedBac" destination="X2f-h3-6Hl" id="JSJ-GV-v6P"/>
+                        <outlet property="expectedCost" destination="Jv9-27-zYp" id="rdt-Ii-2wt"/>
                         <outlet property="shotAmount" destination="hmr-LM-m5p" id="Ciz-fN-AcE"/>
                         <outlet property="startEveningView" destination="70m-Dw-bW5" id="tLk-8V-1dp"/>
                         <outlet property="wineAmount" destination="72j-EB-VbL" id="XBq-Yq-qXg"/>
@@ -7797,7 +7898,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h4-rA-FXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4742" y="1852"/>
+            <point key="canvasLocation" x="986.95652173913049" y="2433.4239130434785"/>
         </scene>
         <!--Promillekalkulator-->
         <scene sceneID="cMi-fT-PXx">
@@ -7812,19 +7913,19 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzR-Qc-IK1">
-                                <rect key="frame" x="20" y="20" width="374" height="77"/>
+                                <rect key="frame" x="20" y="64" width="374" height="77"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planlegg kvelden din!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYm-5W-OI1">
-                                <rect key="frame" x="20" y="105" width="374" height="18"/>
+                                <rect key="frame" x="20" y="149" width="374" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-x4-f8Q">
-                                <rect key="frame" x="0.0" y="166" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="qun-YY-0of"/>
                                 </constraints>
@@ -7833,7 +7934,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-NC-Q7J">
-                                <rect key="frame" x="20" y="374" width="374" height="64"/>
+                                <rect key="frame" x="20" y="418" width="374" height="64"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-DM-Xje">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="64"/>
@@ -7859,9 +7960,9 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                         <rect key="frame" x="187" y="0.0" width="187" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="009-sN-ozQ">
-                                                <rect key="frame" x="62" y="14" width="63" height="36"/>
+                                                <rect key="frame" x="71.666666666666686" y="14" width="44" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="Legg til">
+                                                <state key="normal" title="Drikk">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -7890,7 +7991,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-w5-bfY">
-                                <rect key="frame" x="20" y="446" width="374" height="60"/>
+                                <rect key="frame" x="20" y="490" width="374" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-F9-uf7">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -8044,7 +8145,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-of-ABD">
-                                <rect key="frame" x="20" y="514" width="374" height="131"/>
+                                <rect key="frame" x="20" y="558" width="374" height="131"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="mFD-La-77Q">
                                         <rect key="frame" x="162" y="40" width="50" height="50"/>
@@ -8096,6 +8197,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                     <navigationItem key="navigationItem" title="Promillekalkulator" id="Fyh-3W-zla">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="4oG-Nr-uPq"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bacLabel" destination="wzR-Qc-IK1" id="XTc-sz-oRK"/>
                         <outlet property="beerAmount" destination="EHx-kC-FJK" id="TAS-38-nxQ"/>
@@ -8108,31 +8211,13 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mh-hb-eAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5481" y="1851"/>
+            <point key="canvasLocation" x="1690" y="2433"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="DIN-hj-bAn">
-            <objects>
-                <viewController storyboardIdentifier="DA_RUNNING" id="30m-4b-Lkn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Td-np-ppm"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tu4-UN-4Ts"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nKd-08-tX1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iqO-FE-QIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6245" y="1852"/>
-        </scene>
-        <!--Item-->
+        <!--Drikkeepisode-->
         <scene sceneID="wsF-bE-tjn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVM-f1-2CF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b8a-UY-CWx"/>
+                    <tabBarItem key="tabBarItem" title="Drikkeepisode" image="Todo" id="b8a-UY-CWx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B5r-v2-8zu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -8145,7 +8230,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSF-KJ-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4956.521739130435" y="981.52173913043487"/>
+            <point key="canvasLocation" x="1690" y="733"/>
         </scene>
     </scenes>
     <resources>
@@ -8191,8 +8276,8 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CQh-uE-pLP"/>
         <segue reference="WLe-Mb-qZs"/>
+        <segue reference="CQh-uE-pLP"/>
         <segue reference="f4i-bJ-1Z1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,15 +10,22 @@ import UIKit
 
 class PlanPartyViewController: UIViewController {
     
-    @IBOutlet weak var bacLabel: UILabel!
     @IBOutlet weak var bacQuoteLabel: UILabel!
     @IBOutlet weak var beerAmount: UILabel!
     @IBOutlet weak var wineAmount: UILabel!
     @IBOutlet weak var drinkAmount: UILabel!
     @IBOutlet weak var shotAmount: UILabel!
+    @IBOutlet weak var expectedBac: UILabel!
+    @IBOutlet weak var expectedCost: UILabel!
     @IBOutlet weak var startEveningView: UIView!
     
+    let universalBeerGrams = 23.0
+    let universalWineGrams = 16.0
+    let universalDrinkGrams = 16.0
+    let universalShotGrams = 16.0
+    
     var selectDrinkPageViewController:SelectDrinkPageViewController?
+    var drinkEpisodeViewController:DrinkEpisodeViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +77,8 @@ class PlanPartyViewController: UIViewController {
         defaults.set(unitsCount, forKey: defaultKeys.keyForPlannedCounter)
         defaults.synchronize()
         
+        drinkEpisodeViewController?.insertView()
+        
         unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
         
         //Segue
@@ -79,12 +88,6 @@ class PlanPartyViewController: UIViewController {
         if segue.identifier == SelectDrinkPageViewController.planPartySegueId {
             if segue.destination is SelectDrinkPageViewController {
                 selectDrinkPageViewController = segue.destination as? SelectDrinkPageViewController
-            }
-        }
-        else if segue.identifier == PartyViewController.partySegueId {
-            if segue.destination is PartyViewController {
-                let destination = segue.destination as! PartyViewController
-                //destination.firstUnitAdded = StartEndTimestampsDao().getAll().first?.startStamp
             }
         }
     }
@@ -110,6 +113,8 @@ class PlanPartyViewController: UIViewController {
             if increment && shotUnits < 20 {shotAmount.text = String(describing: shotUnits + 1)}
             else if !increment && shotUnits > 0 {shotAmount.text = String(describing: shotUnits - 1)}
         }
+        updateExpectedBac()
+        updateExpectedCost()
     }
     
     func unitAddedAlertController(_ title: String, message: String, delayTime: Double){
@@ -120,5 +125,52 @@ class PlanPartyViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: time, execute: {
             alertController.dismiss(animated: true, completion: nil)
         })
+    }
+    
+    func resetUnits() {
+        beerAmount.text = "0"
+        wineAmount.text = "0"
+        drinkAmount.text = "0"
+        shotAmount.text = "0"
+        expectedBac.text = "0.0"
+        expectedCost.text = "0,-"
+    }
+    
+    func updateExpectedBac() {
+        guard let beerUnits = Double(beerAmount.text!) else {return}
+        guard let wineUnits = Double(wineAmount.text!) else {return}
+        guard let drinkUnits = Double(drinkAmount.text!) else {return}
+        guard let shotUnits = Double(shotAmount.text!) else {return}
+        
+        let totalGrams = beerUnits * universalBeerGrams +
+            wineUnits * universalWineGrams +
+            drinkUnits * universalDrinkGrams +
+            shotUnits * universalShotGrams
+        
+        guard let userData = AppDelegate.getUserData() else {return}
+        
+        guard let weight = userData.weight as? Double else {return}
+        guard let gender = userData.gender as? Bool else {return}
+        let genderScore = gender ? 0.7 : 0.6
+        
+        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
+        if currentBac < 0.0 {expectedBac.text = String(describing: 0.0)}
+        else {expectedBac.text = String(describing: currentBac)}
+    }
+    
+    func updateExpectedCost() {
+        guard let beerUnits = Int(beerAmount.text!) else {return}
+        guard let wineUnits = Int(wineAmount.text!) else {return}
+        guard let drinkUnits = Int(drinkAmount.text!) else {return}
+        guard let shotUnits = Int(shotAmount.text!) else {return}
+        
+        guard let userData = AppDelegate.getUserData() else {return}
+        
+        let totalCost = beerUnits * Int(userData.costsBeer ?? 0) +
+            wineUnits * Int(userData.costsWine ?? 0) +
+            drinkUnits * Int(userData.costsDrink ?? 0) +
+            shotUnits * Int(userData.costsShot ?? 0)
+        
+        expectedCost.text = String(totalCost) + ",-"
     }
 }

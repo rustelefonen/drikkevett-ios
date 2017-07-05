@@ -17,6 +17,8 @@
 		D5371A781F0A912500B81A89 /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A771F0A912500B81A89 /* PartyViewController.swift */; };
 		D5371A7A1F0AC46E00B81A89 /* DrinkEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */; };
 		D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */; };
+		D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A801F0D1B9100B81A89 /* TipsPageViewController.swift */; };
+		D5371A851F0D1BD900B81A89 /* DayAfterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -145,6 +147,8 @@
 		D5371A771F0A912500B81A89 /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkEpisodeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNew.swift; sourceTree = "<group>"; };
+		D5371A801F0D1B9100B81A89 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -262,6 +266,15 @@
 				7FE4E4831C58BD12004465B7 /* Drikkevett.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D5371A7F1F0D1B4400B81A89 /* tips */ = {
+			isa = PBXGroup;
+			children = (
+				D5371A801F0D1B9100B81A89 /* TipsPageViewController.swift */,
+				D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */,
+			);
+			name = tips;
 			sourceTree = "<group>";
 		};
 		D5412BB41D2810D900445D6C /* entities */ = {
@@ -495,6 +508,7 @@
 		D5ED09FD1F05357C0091F98C /* drinkEpisode */ = {
 			isa = PBXGroup;
 			children = (
+				D5371A7F1F0D1B4400B81A89 /* tips */,
 				D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */,
 				D5371A771F0A912500B81A89 /* PartyViewController.swift */,
 				D5371A791F0AC46E00B81A89 /* DrinkEpisodeViewController.swift */,
@@ -644,6 +658,7 @@
 				D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */,
 				D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */,
 				D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */,
+				D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */,
 				D5C3FACE1F0575E60059AA90 /* UserInfo.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
@@ -691,6 +706,7 @@
 				D5958E4A1D29A53F004FC6A3 /* SettMalViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */,
+				D5371A851F0D1BD900B81A89 /* DayAfterViewController.swift in Sources */,
 				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */,

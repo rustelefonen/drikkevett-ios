@@ -15,21 +15,21 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var bacImage: UIImageView!
     @IBOutlet weak var bacText: UITextView!
     @IBOutlet weak var maxBacInput: UITextField!
-    @IBOutlet weak var goalInput: UITextField!
     @IBOutlet weak var saveButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     var activeField:UITextField?
+    var userData:UserData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
+        userData = AppDelegate.getUserData()
         
         activeField?.delegate = self
         registerForKeyboardNotifications()
         
         initMaxBacPicker()
-        datePickViewGenderTextField()
         
         saveButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.save)))
         initUserValues()
@@ -41,32 +41,21 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func initUserValues() {
-        let userData = UserDataDao().fetchUserData()
-        if userData == nil {return}
-        
-        if userData!.goalPromille != nil {maxBacInput.text = String(describing: userData!.goalPromille!)}
-        
-        if userData!.goalDate != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = DateFormatter.Style.short
-            goalInput.text = dateFormatter.string(from: userData!.goalDate!)
+        if userData != nil && userData!.goalPromille != nil {
+            maxBacInput.text = String(describing: userData!.goalPromille!)
         }
     }
     
     func save() {
         let maxBac = Double(maxBacInput.text!)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        let goal = dateFormatter.date(from: goalInput.text!)
         
-        if maxBac == nil || goal == nil {errorMessage(errorMsg: "Alle felter må fylles ut!")}
+        if maxBac == nil {errorMessage(errorMsg: "Alle felter må fylles ut!")}
         
         if maxBac! <= 0.0 || maxBac! > 2.0 {errorMessage(errorMsg: "Makspromillen må være mellom 0.1 og 2.0!")}
         
         let userDataDao = UserDataDao()
         let userData = userDataDao.fetchUserData()
         userData?.goalPromille = maxBac! as NSNumber
-        userData?.goalDate = goal
         userDataDao.save()
         AppDelegate.initUserData()
         
@@ -98,33 +87,6 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
         pickGoalProm.setValue(AppColors().datePickerTextColor(), forKey: "textColor")
         pickGoalProm.backgroundColor = UIColor.darkGray
         maxBacInput.inputView = pickGoalProm
-    }
-    
-    func datePickViewGenderTextField(){
-        let datePickerView = UIDatePicker()
-        goalInput.inputView = datePickerView
-        goalInput.textColor = UIColor.white
-        
-        let setAppColors = AppColors()
-        
-        // DATEPICKER
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        datePickerView.datePickerMode = .date
-        datePickerView.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
-        datePickerView.backgroundColor = UIColor.darkGray
-        //let dateString = dateFormatter.stringFromDate(datePickerView.date)
-        let todayDate = Date()
-        
-        let calendar = Calendar.current
-        let tomorrow = (calendar as NSCalendar).date(byAdding: .day, value: +1, to: Date(), options: [])
-        
-        
-        datePickerView.minimumDate = tomorrow
-        datePickerView.setDate(tomorrow!, animated: true)
-        //DENNE MÅ FIKSES AS WTF datePickerView.addTarget(self, action: #selector(OppdaterMalViewController.datePickerChanged(_:)), for: UIControlEvents.valueChanged)
-        //datePickerChanged(datePickerView)
-        addDoneButton()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -213,16 +175,7 @@ class UpdateMaxBacViewController:UIViewController, UIPickerViewDataSource, UIPic
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing(_:)))
         doneBarButton.tintColor = UIColor.white
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        goalInput.inputAccessoryView = keyboardToolbar
         maxBacInput.inputAccessoryView = keyboardToolbar
-    }
-    
-    func datePickerChanged(_ sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        
-        let strDate = dateFormatter.string(from: sender.date)
-        goalInput.text = strDate
     }
     
     func registerForKeyboardNotifications(){
