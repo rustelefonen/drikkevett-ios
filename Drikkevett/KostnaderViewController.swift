@@ -15,13 +15,9 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var shotImageView: UIImageView!
     
-    
-    
-    
     @IBOutlet weak var standardButton: UIView!
-    //@IBOutlet weak var nextButton: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var userInfo:UserInfo?
     var activeField:UITextField?
     
@@ -41,10 +37,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         activeField?.delegate = self
         registerForKeyboardNotifications()
         
-        standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
-        //nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.goNext)))
-        
-        
+        standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (useDefaultCosts)))
         beerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editBeer)))
         wineImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editWine)))
         drinkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editDrink)))
@@ -54,6 +47,12 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+        deregisterFromKeyboardNotifications()
     }
     
     func editBeer() {
@@ -76,11 +75,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
-        deregisterFromKeyboardNotifications()
-    }
+    
     
     func goNext() {
         let beerCostsInfo = Int(beerInput.text!)
@@ -130,12 +125,6 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*if segue.identifier == SettMalViewController.segueId {
-            if segue.destination is SettMalViewController {
-                let destinationVC = segue.destination as! SettMalViewController
-                destinationVC.userInfo = sender as? UserInfo
-            }
-        }*/
         if segue.identifier == UnitViewController.segueId {
             if segue.destination is UnitViewController {
                 let destination = segue.destination as! UnitViewController

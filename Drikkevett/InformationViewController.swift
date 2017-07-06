@@ -5,13 +5,15 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     @IBOutlet weak var nicknameInput: UITextField!
     @IBOutlet weak var genderInput: UITextField!
-    @IBOutlet weak var ageInput: UITextField!
     @IBOutlet weak var weightInput: UITextField!
+    @IBOutlet weak var maxBacInput: UITextField!
     @IBOutlet weak var nextButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
     var activeField: UITextField?
+    
+    var introPageViewController:IntroPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,6 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         nicknameInput.keyboardType = UIKeyboardType.asciiCapable
         
         genderInput.inputView = initGenderPicker()
-        
-        ageInput.delegate = self
-        ageInput.keyboardType = UIKeyboardType.numberPad
         
         weightInput.delegate = self
         weightInput.keyboardType = UIKeyboardType.numberPad
@@ -48,7 +47,8 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func goNext(_ sender: UIButton) {
-        let nickName = nicknameInput.text
+        introPageViewController?.saveUser()
+        /*let nickName = nicknameInput.text
         var gender:Bool? = nil
         if genderInput.text == pickerData[1] {gender = true}
         else if (genderInput.text == pickerData[2]) {gender = false}
@@ -94,7 +94,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         continueAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
         
-        present(continueAlert, animated: true, completion: nil)
+        present(continueAlert, animated: true, completion: nil)*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -127,7 +127,6 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         nicknameInput.inputAccessoryView = keyboardToolbar
         genderInput.inputAccessoryView = keyboardToolbar
-        ageInput.inputAccessoryView = keyboardToolbar
         weightInput.inputAccessoryView = keyboardToolbar
     }
     
@@ -176,16 +175,11 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let nicknameLength = 15
         let weightLength = 3
-        let ageLength = 2
         
         let currentText = textField.text ?? ""
         let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
         
         if textField == nicknameInput {return prospectiveText.characters.count <= nicknameLength}
-        else if textField == ageInput {
-            let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
-            return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= ageLength
-        }
         else if textField == weightInput {
             let decimalSeparator = (Locale.current as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
             return prospectiveText.isNumeric() && prospectiveText.doesNotContainCharactersIn("-e" + decimalSeparator) && prospectiveText.characters.count <= weightLength
