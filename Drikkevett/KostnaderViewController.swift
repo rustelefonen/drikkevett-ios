@@ -10,8 +10,16 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var drinkInput: UITextField!
     @IBOutlet weak var shotInput: UITextField!
     
+    @IBOutlet weak var beerImageView: UIImageView!
+    @IBOutlet weak var wineImageView: UIImageView!
+    @IBOutlet weak var drinkImageView: UIImageView!
+    @IBOutlet weak var shotImageView: UIImageView!
+    
+    
+    
+    
     @IBOutlet weak var standardButton: UIView!
-    @IBOutlet weak var nextButton: UIView!
+    //@IBOutlet weak var nextButton: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     var userInfo:UserInfo?
@@ -34,10 +42,42 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         registerForKeyboardNotifications()
         
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.useDefaultCosts)))
-        nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.goNext)))
+        //nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (self.goNext)))
+        
+        
+        beerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editBeer)))
+        wineImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editWine)))
+        drinkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editDrink)))
+        shotImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editShot)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
+    func editBeer() {
+        performSegue(withIdentifier: UnitViewController.segueId, sender: 0)
+    }
+    func editWine() {
+        performSegue(withIdentifier: UnitViewController.segueId, sender: 1)
+    }
+    func editDrink() {
+        performSegue(withIdentifier: UnitViewController.segueId, sender: 2)
+    }
+    func editShot() {
+        performSegue(withIdentifier: UnitViewController.segueId, sender: 3)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
         deregisterFromKeyboardNotifications()
     }
@@ -90,10 +130,16 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SettMalViewController.segueId {
+        /*if segue.identifier == SettMalViewController.segueId {
             if segue.destination is SettMalViewController {
                 let destinationVC = segue.destination as! SettMalViewController
                 destinationVC.userInfo = sender as? UserInfo
+            }
+        }*/
+        if segue.identifier == UnitViewController.segueId {
+            if segue.destination is UnitViewController {
+                let destination = segue.destination as! UnitViewController
+                destination.unitType = sender as? Int
             }
         }
     }

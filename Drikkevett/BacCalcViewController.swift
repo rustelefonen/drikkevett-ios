@@ -59,8 +59,8 @@ class BacCalcViewController: UIViewController {
     }
     
     func updateSliderText(currentValue:Int) {
-        if currentValue == 1 {bacHours.text = "Promillen om \(currentValue) Time"}
-        else {bacHours.text = "Promillen om \(currentValue) Timer"}
+        if currentValue == 1 {bacHours.text = "Promillen om \(currentValue) time"}
+        else {bacHours.text = "Promillen om \(currentValue) timer"}
     }
     
     
@@ -86,6 +86,7 @@ class BacCalcViewController: UIViewController {
             else if !increment && shotUnits > 0 {shotAmount.text = String(describing: shotUnits - 1)}
         }
         updateBac()
+        updateQuote()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,5 +114,31 @@ class BacCalcViewController: UIViewController {
         let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
         if currentBac < 0.0 {bacLabel.text = String(describing: 0.0)}
         else {bacLabel.text = String(describing: currentBac)}
+    }
+    
+    func updateQuote() {
+        guard let currentBac = Double(bacLabel.text!) else {return}
+        bacLabel.text = getQuoteTextBy(bac: currentBac)
+        bacLabel.textColor = getQuoteTextColorBy(bac: currentBac)
+    }
+    
+    func getQuoteTextBy(bac:Double) -> String {
+        if bac < 0.4 {return "Kos deg!"}
+        else if bac < 0.8 {return "Lykkepromille"}
+        else if bac < 1.0 {return "Du blir mer kritikkløs og risikovillig"}
+        else if bac < 1.2 {return "Balansen blir dårligere"}
+        else if bac < 1.4 {return "Talen snøvlete og \nkontroll på bevegelser forverres"}
+        else if bac < 1.8 {return "Man blir trøtt, sløv og \nkan bli kvalm"}
+        else if bac < 3.0 {return "Hukommelsen sliter! "}
+        return "Svært høy promille! \nMan kan bli bevistløs!"
+    }
+    
+    func getQuoteTextColorBy(bac:Double) -> UIColor {
+        if bac < 0.4 {return UIColor.white}
+        else if bac < 0.8 {return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)}
+        else if bac < 1.2 {return UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)}
+        else if bac < 1.8 {return UIColor.orange}
+        else if bac < 3.0 {return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)}
+        return UIColor.red
     }
 }
