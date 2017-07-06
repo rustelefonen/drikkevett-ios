@@ -34,7 +34,13 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector (self.goNext(_:))))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
         deregisterFromKeyboardNotifications()
     }
@@ -47,7 +53,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func goNext(_ sender: UIButton) {
-        introPageViewController?.saveUser()
+        performSegue(withIdentifier: PrivacyViewController.segueId, sender: nil)
         /*let nickName = nicknameInput.text
         var gender:Bool? = nil
         if genderInput.text == pickerData[1] {gender = true}
@@ -98,10 +104,10 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == KostnaderViewController.segueId {
-            if segue.destination is KostnaderViewController {
-                let destinationVC = segue.destination as! KostnaderViewController
-                destinationVC.userInfo = sender as? UserInfo
+        if segue.identifier == PrivacyViewController.segueId {
+            if segue.destination is PrivacyViewController {
+                let destination = segue.destination as! PrivacyViewController
+                destination.introPageViewController = introPageViewController
             }
         }
     }

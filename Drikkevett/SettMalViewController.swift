@@ -130,7 +130,7 @@ class SettMalViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 let navController = segue.destination as! UINavigationController
                 if navController.viewControllers.first is PrivacyViewController {
                     let destinationVC = navController.viewControllers.first as! PrivacyViewController
-                    destinationVC.userInfo = sender as? UserInfo
+                    //destinationVC.userInfo = sender as? UserInfo
                 }
             }
         }

@@ -10,41 +10,27 @@ import UIKit
 class PrivacyViewController: UIViewController {
     
     static let segueId = "privacySegue"
-    var userInfo:UserInfo?
+    var introPageViewController:IntroPageViewController?
     
     override func viewDidLoad() {
     }
     
     @IBAction func startApplication(_ sender: UIBarButtonItem) {
-        let userDataDao = UserDataDao()
-        let userData = userDataDao.createNewUserData()
+        print("lol")
+        print(introPageViewController)
+        introPageViewController?.saveUser()
         
-        if userInfo == nil {return}
         
-        userData.height = userInfo!.nickName
-        userData.gender = userInfo!.gender! as NSNumber?
-        userData.age = userInfo!.age! as NSNumber?
-        userData.weight = userInfo!.weight! as NSNumber?
-        
-        userData.costsBeer = userInfo!.costsBeer! as NSNumber?
-        userData.costsWine = userInfo!.costsWine! as NSNumber?
-        userData.costsDrink = userInfo!.costsDrink! as NSNumber?
-        userData.costsShot = userInfo!.costsShot! as NSNumber?
-        
-        userData.goalPromille = userInfo!.goalPromille! as NSNumber?
-        userData.goalDate = userInfo?.goalDate
-        
-        userDataDao.save()
-        
-        isFirstRegistrationCompleted()
-        isAppGuidanceDone()
-        
-        AppDelegate.initUserData()
-        
+        /*
         if let vc = storyboard?.instantiateViewController(withIdentifier: "tabBarController"){
             present(vc, animated: true, completion: nil)
-        }
+        }*/
     }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     func isAppGuidanceDone()->Bool{
         let defaults = UserDefaults.standard

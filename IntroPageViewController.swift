@@ -26,9 +26,13 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     override func viewDidLoad() {
         
-        if vcArr[3] is InformationViewController {
-            let informationVc = vcArr[3] as! InformationViewController
-            informationVc.introPageViewController = self
+        if vcArr[3] is UINavigationController {
+            let navController = vcArr[3] as! UINavigationController
+            if navController.viewControllers.first is InformationViewController {
+                let informationVc = navController.viewControllers.first as! InformationViewController
+                informationVc.introPageViewController = self
+            }
+            
             
         }
         
@@ -75,11 +79,13 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     func saveUser() {
-        if vcArr[2] is UINavigationController {
-            let navController = vcArr[2] as! UINavigationController
-            if navController.viewControllers.first is KostnaderViewController && vcArr[3] is InformationViewController {
-                let costsVc = navController.viewControllers.first as! KostnaderViewController
-                let informationVc = vcArr[3] as! InformationViewController
+        if vcArr[2] is UINavigationController && vcArr[3] is UINavigationController {
+            let navController1 = vcArr[2] as! UINavigationController
+            let navController2 = vcArr[3] as! UINavigationController
+            
+            if navController1.viewControllers.first is KostnaderViewController && navController2.viewControllers.first is InformationViewController {
+                let costsVc = navController1.viewControllers.first as! KostnaderViewController
+                let informationVc = navController2.viewControllers.first as! InformationViewController
                 
                 //Critical
                 let gender = informationVc.genderInput.text
