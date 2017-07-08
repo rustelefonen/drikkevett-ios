@@ -3,6 +3,8 @@ import CoreData
 
 class InformationViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate {
     
+    @IBOutlet weak var bacImage: UIImageView!
+    @IBOutlet weak var bacText: UITextView!
     @IBOutlet weak var nicknameInput: UITextField!
     @IBOutlet weak var genderInput: UITextField!
     @IBOutlet weak var weightInput: UITextField!
@@ -10,8 +12,12 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     @IBOutlet weak var nextButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var maxBacPickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
     var activeField: UITextField?
+    
+    let maxBacTag = 555
+    let genderTag = 666
     
     var introPageViewController:IntroPageViewController?
     
@@ -28,15 +34,18 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         weightInput.delegate = self
         weightInput.keyboardType = UIKeyboardType.numberPad
         
-        activeField?.delegate = self
-        registerForKeyboardNotifications()
+        setGoalPickerView()
         
         nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector (self.goNext(_:))))
+    
+        addDoneButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,62 +54,69 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         deregisterFromKeyboardNotifications()
     }
     
+    func setGoalPickerView(){       //DENNE ER RAR? SETTES ETTER AT INPUTVIEW ER SATT
+        let pickGoalProm = UIPickerView()
+        maxBacInput.inputView = pickGoalProm
+        pickGoalProm.dataSource = self
+        pickGoalProm.delegate = self
+        let setAppColors = AppColors()
+        pickGoalProm.setValue(setAppColors.datePickerTextColor(), forKey: "textColor")
+        pickGoalProm.backgroundColor = UIColor.darkGray
+        
+        pickGoalProm.tag = maxBacTag
+    }
+    
     func initGenderPicker() -> UIPickerView {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.backgroundColor = UIColor.darkGray
+        pickerView.tag = genderTag
         return pickerView
     }
     
+    func updateBacText() {
+        guard let bacChosen = Double(maxBacInput.text!) else {return}
+        let happyImage = UIImage(named: "Happy-100")
+        let sadImage = UIImage(named: "Sad-100")
+        
+        if(bacChosen == 0.0){
+            bacText.textColor = UIColor.white
+            bacText.text = ResourceList.introBacInfos[0]
+            bacImage.image = happyImage
+        }
+        else if(bacChosen > 0.0 && bacChosen <= 0.3){
+            bacText.textColor = UIColor.white
+            bacText.text = ResourceList.introBacInfos[1]
+            bacImage.image = happyImage
+        }
+        else if(bacChosen > 0.3 && bacChosen <= 0.6){
+            bacText.text = ResourceList.introBacInfos[2]
+            bacImage.image = happyImage
+        }
+        else if(bacChosen > 0.6 && bacChosen <= 0.9){
+            bacText.text = ResourceList.introBacInfos[3]
+            bacImage.image = happyImage
+        }
+        else if(bacChosen > 0.9 && bacChosen <= 1.2){
+            bacText.text = ResourceList.introBacInfos[4]
+            bacImage.image = sadImage
+        }
+        else if(bacChosen > 1.2 && bacChosen <= 1.5){
+            bacText.text = ResourceList.introBacInfos[5]
+            bacImage.image = sadImage
+        }
+        else if(bacChosen > 1.5 && bacChosen <= 1.7){
+            bacText.text = ResourceList.introBacInfos[6]
+            bacImage.image = sadImage
+        }
+        else if(bacChosen > 1.7){
+            bacText.text = ResourceList.introBacInfos[7]
+            bacImage.image = UIImage(named: "Vomited-100")
+        }
+    }
+    
     func goNext(_ sender: UIButton) {
-        performSegue(withIdentifier: PrivacyViewController.segueId, sender: nil)
-        /*let nickName = nicknameInput.text
-        var gender:Bool? = nil
-        if genderInput.text == pickerData[1] {gender = true}
-        else if (genderInput.text == pickerData[2]) {gender = false}
-        let age = Int(ageInput.text!)
-        let weight = Double(weightInput.text!)
-        
-        if (nickName == nil || nickName == "" || gender == nil || age == nil || weight == nil) {
-            errorMessage(errorMsg: "Alle felter må fylles ut!")
-            return
-        }
-        
-        if (age! >= 120) {
-            errorMessage(errorMsg: "Du valgte for ung alder")
-            return
-        }
-        else if (age! < 18) {
-            errorMessage(errorMsg: "Du er for gammel!")
-            return
-        }
-        
-        if (weight! >= 300.0) {
-            errorMessage(errorMsg: "Du valgte for tung vekt")
-            return
-        }
-        else if (weight! < 20.0) {
-            errorMessage(errorMsg: "Du valgte for lett vekt")
-            return
-        }
-        
-        let message = "\(nickName!)\n\(genderInput.text!)\n\(age!)\n\(weight!)"
-        
-        let continueAlert = UIAlertController(title: "Brukerinfo", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        continueAlert.addAction(UIAlertAction(title: "Bekreft", style: .default, handler: { (action: UIAlertAction!) in
-            
-            let userInfo = UserInfo()
-            userInfo.nickName = nickName
-            userInfo.gender = gender
-            userInfo.age = age
-            userInfo.weight = weight
-            self.performSegue(withIdentifier: KostnaderViewController.segueId, sender: userInfo)
-        }))
-        
-        continueAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        
-        present(continueAlert, animated: true, completion: nil)*/
+        if (introPageViewController?.areCriticalFieldsValid())! {performSegue(withIdentifier: PrivacyViewController.segueId, sender: nil)}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -134,18 +150,21 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         nicknameInput.inputAccessoryView = keyboardToolbar
         genderInput.inputAccessoryView = keyboardToolbar
         weightInput.inputAccessoryView = keyboardToolbar
+        maxBacInput.inputAccessoryView = keyboardToolbar
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return pickerView.tag == genderTag ? pickerData[row] : maxBacPickerData[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        genderInput.text = pickerData[row]
+        if pickerView.tag == genderTag {genderInput.text = pickerData[row]}
+        else if pickerView.tag == maxBacTag {maxBacInput.text = maxBacPickerData[row]}
+        updateBacText()
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = pickerData[row]
+        let titleData = pickerView.tag == genderTag ? pickerData[row] : maxBacPickerData[row]
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue-UltraLight", size: 0.01)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
@@ -154,7 +173,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return pickerView.tag == genderTag ? pickerData.count : maxBacPickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -169,7 +188,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
             pickerLabel?.textColor = UIColor.white
         }
         
-        pickerLabel?.text = pickerData[row]
+        pickerLabel?.text = pickerView.tag == genderTag ? pickerData[row] : maxBacPickerData[row]
         
         return pickerLabel!
     }

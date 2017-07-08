@@ -12,9 +12,10 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     var currentIndex: (() -> Int)?
     
+    static let segueId = "introSegue"
+    
     lazy var vcArr: [UIViewController] = {
         return [
-            self.VCInstance(name: "disclaimer"),
             self.VCInstance(name: "intro_welcome"),
             self.VCInstance(name: "intro_costs"),
             self.VCInstance(name: "intro_userInfo")]
@@ -25,16 +26,25 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     override func viewDidLoad() {
+        if let navController = vcArr[0] as? UINavigationController {
+            if let welcomeVc = navController.viewControllers.first as? VelkommenViewController {
+                welcomeVc.introPageViewController = self
+            }
+        }
         
-        if vcArr[3] is UINavigationController {
-            let navController = vcArr[3] as! UINavigationController
-            if navController.viewControllers.first is InformationViewController {
-                let informationVc = navController.viewControllers.first as! InformationViewController
+        
+        if let navController = vcArr[1] as? UINavigationController {
+            if let costsVc = navController.viewControllers.first as? KostnaderViewController {
+                costsVc.introPageViewController = self
+            }
+        }
+        
+        if let navController = vcArr[2] as? UINavigationController {
+            if let informationVc = navController.viewControllers.first as? InformationViewController {
                 informationVc.introPageViewController = self
             }
-            
-            
         }
+        
         
         self.delegate = self
         self.dataSource = self
@@ -45,6 +55,17 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         if let firstVC = vcArr.first {
             setViewControllers([firstVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for view in view.subviews {
+            if view is UIScrollView {
+                view.frame = UIScreen.main.bounds
+            } else if view is UIPageControl {
+                view.backgroundColor = UIColor.clear
+            }
         }
     }
     
@@ -78,10 +99,47 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
         return firstViewControllerIndex
     }
     
+    func areCriticalFieldsValid() -> Bool {
+        if vcArr[2] is UINavigationController {
+            let navController = vcArr[2] as! UINavigationController
+            
+            if navController.viewControllers.first is InformationViewController {
+                let informationVc = navController.viewControllers.first as! InformationViewController
+                
+                let gender = informationVc.genderInput.text
+                var genderScore:Bool? = nil
+                
+                if gender == "Mann" || gender == "Kvinne" {genderScore = gender == "Mann"}
+                let weight = Double(informationVc.weightInput.text!)
+                let maxBac = Double(informationVc.maxBacInput.text!)
+                
+                if genderScore == nil || weight == nil || maxBac == nil {
+                    errorMessage(errorMsg: "Alle felter må fylles ut!")
+                    return false
+                }
+                
+                if weight! >= 300.0 {
+                    errorMessage(errorMsg: "Du valgte for tung vekt")
+                    return false
+                }
+                else if weight! < 20.0 {
+                    errorMessage(errorMsg: "Du valgte for lett vekt")
+                    return false
+                }
+                
+                if maxBac! < 0.1 || maxBac! > 2.0 {
+                    errorMessage(errorMsg: "Du valgte et ugyldig promillemål")
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
     func saveUser() {
-        if vcArr[2] is UINavigationController && vcArr[3] is UINavigationController {
-            let navController1 = vcArr[2] as! UINavigationController
-            let navController2 = vcArr[3] as! UINavigationController
+        if vcArr[1] is UINavigationController && vcArr[2] is UINavigationController {
+            let navController1 = vcArr[1] as! UINavigationController
+            let navController2 = vcArr[2] as! UINavigationController
             
             if navController1.viewControllers.first is KostnaderViewController && navController2.viewControllers.first is InformationViewController {
                 let costsVc = navController1.viewControllers.first as! KostnaderViewController
@@ -96,7 +154,21 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
                 let maxBac = Double(informationVc.maxBacInput.text!)
                 
                 if genderScore == nil || weight == nil || maxBac == nil {
-                    print("myNil")
+                    errorMessage(errorMsg: "Alle felter må fylles ut!")
+                    return
+                }
+                
+                if (weight! >= 300.0) {
+                    errorMessage(errorMsg: "Du valgte for tung vekt")
+                    return
+                }
+                else if (weight! < 20.0) {
+                    errorMessage(errorMsg: "Du valgte for lett vekt")
+                    return
+                }
+                
+                if maxBac! < 0.1 || maxBac! > 2.0 {
+                    errorMessage(errorMsg: "Du valgte et ugyldig promillemål")
                     return
                 }
                 
@@ -114,10 +186,37 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
                 userData.costsDrink = (Int(costsVc.drinkInput.text!) ?? 100) as NSNumber
                 userData.costsShot = (Int(costsVc.shotInput.text!) ?? 110) as NSNumber
                 
-                print(userData)
-                
-                /*userDataDao.save()
-                AppDelegate.initUserData()*/
+                userDataDao.save()
+                AppDelegate.initUserData()
+            }
+        }
+    }
+    
+    func errorMessage(_ titleMsg:String = "Beklager,", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "OK"){
+        let alertController = UIAlertController(title: titleMsg, message:
+            errorMsg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: confirmMsg, style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func removeSwipeGesture(){
+        for view in view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+            if let lol = view as? UIPageControl {
+                lol.isHidden = true
+            }
+        }
+    }
+    
+    func restoreSwipeGesture() {
+        for view in view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = true
+            }
+            if let lol = view as? UIPageControl {
+                lol.isHidden = false
             }
         }
     }

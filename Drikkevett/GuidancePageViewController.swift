@@ -10,6 +10,9 @@ import UIKit
 
 class GuidancePageViewController : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     
+    static let segueId = "welcomeToGuidanceSegue"
+    var introPageViewController:IntroPageViewController?
+    
     lazy var vcArr: [GuidanceContentViewController] = {
         return [
             self.VCInstance(name: "guidanceContent"),
@@ -26,6 +29,7 @@ class GuidancePageViewController : UIPageViewController, UIPageViewControllerDat
     }
     
     override func viewDidLoad() {
+        introPageViewController?.removeSwipeGesture()
         self.delegate = self
         self.dataSource = self
         
@@ -39,6 +43,11 @@ class GuidancePageViewController : UIPageViewController, UIPageViewControllerDat
         if let firstVC = vcArr.first {
             setViewControllers([firstVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        introPageViewController?.restoreSwipeGesture()
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

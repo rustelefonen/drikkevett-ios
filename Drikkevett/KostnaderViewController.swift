@@ -18,8 +18,8 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var standardButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var userInfo:UserInfo?
     var activeField:UITextField?
+    var introPageViewController:IntroPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,6 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         shotInput.delegate = self
         shotInput.keyboardType = UIKeyboardType.numberPad
         
-        activeField?.delegate = self
-        registerForKeyboardNotifications()
-        
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (useDefaultCosts)))
         beerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editBeer)))
         wineImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editWine)))
@@ -45,12 +42,14 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        activeField?.delegate = self
+        registerForKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
         deregisterFromKeyboardNotifications()
     }
@@ -66,48 +65,6 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     func editShot() {
         performSegue(withIdentifier: UnitViewController.segueId, sender: 3)
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func goNext() {
-        let beerCostsInfo = Int(beerInput.text!)
-        let wineCostsInfo = Int(wineInput.text!)
-        let drinkCostsInfo = Int(drinkInput.text!)
-        let shotCostsInfo = Int(shotInput.text!)
-        
-        if(beerCostsInfo == nil || wineCostsInfo == nil || drinkCostsInfo == nil || shotCostsInfo == nil){
-            errorMessage(errorMsg: "Alle felter må fylles ut!")
-        }
-        if(beerCostsInfo! >= 10000 || beerCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for øl?")}
-        if(wineCostsInfo! >= 10000 || wineCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for vin?")}
-        if(drinkCostsInfo! >= 10000 || drinkCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for drink?")}
-        if(shotCostsInfo! >= 10000 || shotCostsInfo! <= 0){errorMessage(errorMsg: "Så mye betaler du ikke for shot?")}
-        
-        let message = "Øl: \(beerCostsInfo!) kr\nVin: \(wineCostsInfo!) kr\nDrink: \(drinkCostsInfo!) kr\nShot: \(shotCostsInfo!) kr"
-        
-        let alertController = UIAlertController(title: "Kostnader", message:
-            message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.destructive, handler: nil))
-        
-        alertController.addAction(UIAlertAction(title:"Bekreft", style: UIAlertActionStyle.default, handler:  { action in
-            if self.userInfo == nil {return}
-            self.userInfo?.costsBeer = beerCostsInfo
-            self.userInfo?.costsWine = wineCostsInfo
-            self.userInfo?.costsDrink = drinkCostsInfo
-            self.userInfo?.costsShot = shotCostsInfo
-            
-            self.performSegue(withIdentifier: SettMalViewController.segueId, sender: self.userInfo)
-        }))
-        present(alertController, animated: true, completion: nil)
-        
     }
     
     func errorMessage(_ titleMsg:String = "Feil", errorMsg:String = "Noe gikk galt!", confirmMsg:String = "Okei"){
@@ -129,6 +86,11 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             if segue.destination is UnitViewController {
                 let destination = segue.destination as! UnitViewController
                 destination.unitType = sender as? Int
+                destination.introPageViewController = introPageViewController
+                
+                let backItem = UIBarButtonItem()
+                backItem.title = "Kostnader"
+                navigationItem.backBarButtonItem = backItem
             }
         }
     }

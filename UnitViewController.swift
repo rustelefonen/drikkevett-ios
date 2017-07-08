@@ -21,6 +21,7 @@ class UnitViewController: UIViewController {
     @IBOutlet weak var standardButton: UIView!
     
     var unitType:Int?
+    var introPageViewController:IntroPageViewController?
     
     let titles = ["Øl", "Vin", "Drink", "Shot"]
     let images = ["LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS"]
@@ -31,12 +32,17 @@ class UnitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        introPageViewController?.removeSwipeGesture()
+        
         AppColors.setBackground(view: view)
         initUnit()
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setStandardValues)))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        introPageViewController?.restoreSwipeGesture()
+        
         guard let unitPercentageChosen = Double(String(describing: unitPercent.text!.components(separatedBy: "%").first!)) else {return}
         guard let unitAmountChosen = Double(String(describing: unitAmount.text!.components(separatedBy: " ").first!)) else {return}
         
