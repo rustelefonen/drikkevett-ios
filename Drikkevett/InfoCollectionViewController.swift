@@ -44,7 +44,15 @@ class InfoCollectionViewController : UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: InfoCategoryTableViewController.segueId, sender: self)
+        if infoCategories[indexPath.row].title == "Veiledning" {
+            performSegue(withIdentifier: "intoToGuidanceSegue", sender: self)
+        }
+        else if infoCategories[indexPath.row].title == "Kilder" {
+            performSegue(withIdentifier: "infoToSourcesSegue", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: InfoCategoryTableViewController.segueId, sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

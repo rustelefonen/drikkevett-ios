@@ -19,11 +19,6 @@ class PartyViewController: UIViewController {
     @IBOutlet weak var shotAmount: UILabel!
     @IBOutlet weak var endEveningView: UIView!
     
-    let universalBeerGrams = 23.0
-    let universalWineGrams = 16.0
-    let universalDrinkGrams = 16.0
-    let universalShotGrams = 16.0
-    
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     var drinkEpisodeViewController:DrinkEpisodeViewController?
     var userData:UserData?
@@ -32,6 +27,9 @@ class PartyViewController: UIViewController {
     static let partySegueId = "partySegueYo"
     let units = ["Øl", "Vin", "Drink", "Shot"]
     let unitsEnglish = ["Beer", "Wine", "Drink", "Shot"]
+    
+    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
+    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,7 +153,7 @@ class PartyViewController: UIViewController {
         guard let wineUnits = Double(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let drinkUnits = Double(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let shotUnits = Double(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return}
-        let totalGrams = (beerUnits * universalBeerGrams) + (wineUnits * universalWineGrams) + (drinkUnits * universalDrinkGrams) + (shotUnits * universalShotGrams)
+        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
         
         guard let firstUnitAdded = getFirstUnitAdded() else {return}
         let hours = Double(Date().timeIntervalSince(firstUnitAdded)) / 3600.0
@@ -246,7 +244,7 @@ class PartyViewController: UIViewController {
                     else if unit.unitAlkohol == unitsEnglish[3] {tmpShotUnits += 1.0}
                 }
                 
-                let totalGrams = tmpBeerUnits * universalBeerGrams + tmpWineUnits * universalWineGrams + tmpDrinkUnits * universalDrinkGrams + tmpShotUnits * universalShotGrams
+                let totalGrams = tmpBeerUnits * getUnitGrams(unitType: 0) + tmpWineUnits * getUnitGrams(unitType: 1) + tmpDrinkUnits * getUnitGrams(unitType: 2) + tmpShotUnits * getUnitGrams(unitType: 3)
                 
                 guard let weight = userData?.weight as? Double else {return}
                 guard let gender = userData?.gender as? Bool else {return}
@@ -284,6 +282,11 @@ class PartyViewController: UIViewController {
             if unit.timeStamp! < firstUnitAdded! {firstUnitAdded = unit.timeStamp}
         }
         return firstUnitAdded
+    }
+    
+    func getUnitGrams(unitType:Int) -> Double{
+        let defaults = UserDefaults.standard
+        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
     }
     
     

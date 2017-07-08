@@ -10,6 +10,9 @@ import UIKit
 
 class BacCalcViewController: UIViewController {
     
+    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
+    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
+    
     @IBOutlet weak var bacLabel: UILabel!
     @IBOutlet weak var bacQuoteLabel: UILabel!
     @IBOutlet weak var beerAmount: UILabel!
@@ -18,11 +21,6 @@ class BacCalcViewController: UIViewController {
     @IBOutlet weak var shotAmount: UILabel!
     @IBOutlet weak var bacHours: UILabel!
     @IBOutlet weak var bacSlider: UISlider!
-    
-    let universalBeerGrams = 23.0
-    let universalWineGrams = 16.0
-    let universalDrinkGrams = 16.0
-    let universalShotGrams = 16.0
     
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     
@@ -102,7 +100,7 @@ class BacCalcViewController: UIViewController {
         guard let wineUnits = Double(wineAmount.text!) else {return}
         guard let drinkUnits = Double(drinkAmount.text!) else {return}
         guard let shotUnits = Double(shotAmount.text!) else {return}
-        let totalGrams = (beerUnits * universalBeerGrams) + (wineUnits * universalWineGrams) + (drinkUnits * universalDrinkGrams) + (shotUnits * universalShotGrams)
+        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
         
         let hours = Double(bacSlider.value)
         
@@ -118,8 +116,11 @@ class BacCalcViewController: UIViewController {
     
     func updateQuote() {
         guard let currentBac = Double(bacLabel.text!) else {return}
-        bacLabel.text = getQuoteTextBy(bac: currentBac)
-        bacLabel.textColor = getQuoteTextColorBy(bac: currentBac)
+        bacQuoteLabel.text = getQuoteTextBy(bac: currentBac)
+        let currentColor = getQuoteTextColorBy(bac: currentBac)
+        
+        bacQuoteLabel.textColor = currentColor
+        bacLabel.textColor = currentColor
     }
     
     func getQuoteTextBy(bac:Double) -> String {
@@ -141,4 +142,11 @@ class BacCalcViewController: UIViewController {
         else if bac < 3.0 {return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)}
         return UIColor.red
     }
+    
+    func getUnitGrams(unitType:Int) -> Double{
+        let defaults = UserDefaults.standard
+        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
+    }
+    
+    
 }

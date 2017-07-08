@@ -18,6 +18,11 @@ class UpdateCostsViewController: UIViewController, UITextFieldDelegate, UIPicker
     @IBOutlet weak var saveButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var beerImageView: UIImageView!
+    @IBOutlet weak var wineImageView: UIImageView!
+    @IBOutlet weak var drinkImageView: UIImageView!
+    @IBOutlet weak var shotImageView: UIImageView!
+    
     var activeField: UITextField?
     
     override func viewDidLoad() {
@@ -39,6 +44,32 @@ class UpdateCostsViewController: UIViewController, UITextFieldDelegate, UIPicker
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.insertStandardValues)))
         saveButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.save)))
         initUserValues()
+        
+        beerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editBeer)))
+        wineImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editWine)))
+        drinkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editDrink)))
+        shotImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editShot)))
+    }
+    
+    func editBeer() {
+        performSegue(withIdentifier: "editUnit", sender: 0)
+    }
+    func editWine() {
+        performSegue(withIdentifier: "editUnit", sender: 1)
+    }
+    func editDrink() {
+        performSegue(withIdentifier: "editUnit", sender: 2)
+    }
+    func editShot() {
+        performSegue(withIdentifier: "editUnit", sender: 3)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editUnit" {
+            if let destination = segue.destination as? UnitViewController {
+                destination.unitType = sender as? Int
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

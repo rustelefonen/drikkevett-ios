@@ -19,10 +19,8 @@ class PlanPartyViewController: UIViewController {
     @IBOutlet weak var expectedCost: UILabel!
     @IBOutlet weak var startEveningView: UIView!
     
-    let universalBeerGrams = 23.0
-    let universalWineGrams = 16.0
-    let universalDrinkGrams = 16.0
-    let universalShotGrams = 16.0
+    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
+    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
     
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     var drinkEpisodeViewController:DrinkEpisodeViewController?
@@ -142,10 +140,10 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Double(drinkAmount.text!) else {return}
         guard let shotUnits = Double(shotAmount.text!) else {return}
         
-        let totalGrams = beerUnits * universalBeerGrams +
-            wineUnits * universalWineGrams +
-            drinkUnits * universalDrinkGrams +
-            shotUnits * universalShotGrams
+        let totalGrams = beerUnits * getUnitGrams(unitType: 0) +
+            wineUnits * getUnitGrams(unitType: 1) +
+            drinkUnits * getUnitGrams(unitType: 2) +
+            shotUnits * getUnitGrams(unitType: 3)
         
         guard let userData = AppDelegate.getUserData() else {return}
         
@@ -172,5 +170,10 @@ class PlanPartyViewController: UIViewController {
             shotUnits * Int(userData.costsShot ?? 0)
         
         expectedCost.text = String(totalCost) + ",-"
+    }
+    
+    func getUnitGrams(unitType:Int) -> Double{
+        let defaults = UserDefaults.standard
+        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
     }
 }
