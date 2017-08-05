@@ -51,6 +51,7 @@
 		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
 		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
 		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
+		D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */; };
 		D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */; };
 		D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */; };
 		D5C3FAB31F0573040059AA90 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB11F0573040059AA90 /* Status.swift */; };
@@ -183,6 +184,7 @@
 		D5958E8F1D29A99A004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
+		D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsPerWeekViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidanceContentViewController.swift; path = Drikkevett/GuidanceContentViewController.swift; sourceTree = "<group>"; };
 		D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidancePageViewController.swift; path = Drikkevett/GuidancePageViewController.swift; sourceTree = "<group>"; };
 		D5C3FAB11F0573040059AA90 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Drikkevett/Status.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
 				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
 				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
+				D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */,
 				D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */,
 				D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */,
+				D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */,
 				D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */,
 				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,

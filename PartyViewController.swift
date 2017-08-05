@@ -42,6 +42,7 @@ class PartyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        updateBac()
         updateTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         RunLoop.main.add(updateTimer, forMode: RunLoopMode.commonModes)
     }

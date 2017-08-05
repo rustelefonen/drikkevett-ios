@@ -36,10 +36,13 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userData = AppDelegate.getUserData()
-        
         AppColors.setBackground(view: view)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        userData = AppDelegate.getUserData()
         initTopCard()
         initPieCard()
         initBarCard()

@@ -1474,13 +1474,13 @@ høyeste promille</string>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.13333333333333333" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection id="aT4-mX-RD7">
+                            <tableViewSection headerTitle="Brukerinnstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
-                                        <rect key="frame" x="0.0" y="35" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yg-Zob">
@@ -1576,10 +1576,10 @@ høyeste promille</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
-                                        <rect key="frame" x="0.0" y="85" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="105.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NJR-rZ-8wN">
@@ -1677,10 +1677,10 @@ høyeste promille</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euR-sU-CHU">
-                                        <rect key="frame" x="0.0" y="135" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euR-sU-CHU" id="ksU-32-R3r">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goal" translatesAutoresizingMaskIntoConstraints="NO" id="f5n-0E-fyH">
@@ -1775,6 +1775,109 @@ høyeste promille</string>
                                         <color key="backgroundColor" red="0.070588235289999995" green="0.066666666669999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="HSo-n6-1Mf" kind="show" id="9rb-6c-NHC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Varslingsinnstillinger" id="Cgz-VX-fLd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ib8-LQ-RhR">
+                                        <rect key="frame" x="0.0" y="261.5" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ib8-LQ-RhR" id="Sw9-lS-lFB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-Gd-iyN">
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="HPk-Gd-iyN" secondAttribute="height" multiplier="1:1" id="7sb-8f-16E"/>
+                                                        <constraint firstAttribute="height" constant="35" id="8TS-Ts-vCY">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="35" id="cbA-bs-DgR">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="8TS-Ts-vCY"/>
+                                                            <exclude reference="7sb-8f-16E"/>
+                                                            <exclude reference="cbA-bs-DgR"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="8TS-Ts-vCY"/>
+                                                            <include reference="7sb-8f-16E"/>
+                                                            <include reference="cbA-bs-DgR"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enhetsvarsling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-4f-Jd2">
+                                                    <rect key="frame" x="41" y="5" width="351" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="341" id="Frg-2X-WzA">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="351"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="39.5" id="UuV-Df-wjC"/>
+                                                        <constraint firstAttribute="width" secondItem="Mpp-4f-Jd2" secondAttribute="height" multiplier="341:39" id="mLU-5m-TDS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Frg-2X-WzA"/>
+                                                            <exclude reference="mLU-5m-TDS"/>
+                                                            <exclude reference="UuV-Df-wjC"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Frg-2X-WzA"/>
+                                                            <exclude reference="mLU-5m-TDS"/>
+                                                            <include reference="UuV-Df-wjC"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HPk-Gd-iyN" firstAttribute="centerY" secondItem="Sw9-lS-lFB" secondAttribute="centerY" id="2nT-rW-j9S"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="HPk-Gd-iyN" secondAttribute="leading" id="5bt-aW-q71"/>
+                                                <constraint firstItem="Mpp-4f-Jd2" firstAttribute="leading" secondItem="Sw9-lS-lFB" secondAttribute="leadingMargin" constant="43" id="eEQ-Lf-WZo">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="33"/>
+                                                </constraint>
+                                                <constraint firstItem="Mpp-4f-Jd2" firstAttribute="centerY" secondItem="Sw9-lS-lFB" secondAttribute="centerY" id="r5a-0a-XY9"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="HPk-Gd-iyN"/>
+                                                    <exclude reference="Mpp-4f-Jd2"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="5bt-aW-q71"/>
+                                                    <exclude reference="2nT-rW-j9S"/>
+                                                    <exclude reference="eEQ-Lf-WZo"/>
+                                                    <exclude reference="r5a-0a-XY9"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="HPk-Gd-iyN"/>
+                                                    <include reference="Mpp-4f-Jd2"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="5bt-aW-q71"/>
+                                                    <include reference="2nT-rW-j9S"/>
+                                                    <include reference="eEQ-Lf-WZo"/>
+                                                    <include reference="r5a-0a-XY9"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.070588235289999995" green="0.066666666669999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="QY0-oe-YRF" kind="show" id="SsM-mA-Phf"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -6195,7 +6298,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMq-Zm-x5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6207" y="-625"/>
+            <point key="canvasLocation" x="5675" y="196"/>
         </scene>
         <!--Select Drink Page View Controller-->
         <scene sceneID="tI9-vj-JVT">
@@ -7514,7 +7617,6 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
         <!--Navigation Controller-->
         <scene sceneID="zQ0-bY-jV1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eb9-I2-DfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="intro_costs" automaticallyAdjustsScrollViewInsets="NO" id="Swx-w5-Z0S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qbi-O3-RmK">
@@ -7526,6 +7628,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                         <segue destination="d3g-OP-BCe" kind="relationship" relationship="rootViewController" id="I3f-EE-tLv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eb9-I2-DfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-788" y="-2050"/>
         </scene>
@@ -7564,6 +7667,62 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMH-99-eYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="-2050.271739130435"/>
+        </scene>
+        <!--Enhetsvarsel-->
+        <scene sceneID="JD9-c3-9cQ">
+            <objects>
+                <viewController title="Enhetsvarsel" automaticallyAdjustsScrollViewInsets="NO" id="QY0-oe-YRF" customClass="UnitsPerWeekViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sMd-TL-Rxr"/>
+                        <viewControllerLayoutGuide type="bottom" id="LYY-je-npO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jsB-Za-yre">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-SZ-wsM">
+                                <rect key="frame" x="20" y="72" width="374" height="221.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">I følge WHO er det anbefalt med maks 14 alkoholholdige enheter per uke. Du kan lese om dette her: https://www.drinkaware.co.uk/alcohol-facts/alcoholic-drinks-units/alcohol-limits-unit-guidelines/ 
+
+Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i appen som advarer deg mot dette. Du velger selv nedenfor om du ønsker dette eller ikke.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
+                                <rect key="frame" x="345" y="317.66666666666669" width="51" height="31"/>
+                                <connections>
+                                    <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel er skrudd på" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-SC-U1D">
+                                <rect key="frame" x="20" y="317.66666666666669" width="141.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i1z-SC-U1D" firstAttribute="top" secondItem="tYX-SZ-wsM" secondAttribute="bottom" constant="24" id="BQu-Nm-a1K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tYX-SZ-wsM" secondAttribute="trailing" id="Fc2-M9-Q7M"/>
+                            <constraint firstItem="svg-qw-sLc" firstAttribute="top" secondItem="tYX-SZ-wsM" secondAttribute="bottom" constant="24" id="Hf1-w1-B5V"/>
+                            <constraint firstItem="tYX-SZ-wsM" firstAttribute="top" secondItem="sMd-TL-Rxr" secondAttribute="bottom" constant="8" id="Np0-No-SBG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tYX-SZ-wsM" secondAttribute="leading" id="cF0-vk-12B"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="i1z-SC-U1D" secondAttribute="leading" id="dEv-8g-vn4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="svg-qw-sLc" secondAttribute="trailing" id="eSm-5i-5Lg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shouldWarnLabel" destination="i1z-SC-U1D" id="tOy-pE-bcz"/>
+                        <outlet property="shouldWarnSwitch" destination="svg-qw-sLc" id="49l-1K-BjN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nce-QV-tiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6376.811594202899" y="195.6521739130435"/>
         </scene>
     </scenes>
     <resources>
