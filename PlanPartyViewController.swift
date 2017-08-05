@@ -23,7 +23,7 @@ class PlanPartyViewController: UIViewController {
     var drinkEpisodeViewController:DrinkEpisodeViewController?
     
     var hasBeenWarned = false
-    
+    var hasBeenWhoWarned = false
     let maxBac = 3.0
     
     override func viewDidLoad() {
@@ -36,8 +36,8 @@ class PlanPartyViewController: UIViewController {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         
         let estimatedBac = estimateBac(unitType: index)
-        
-        if estimatedBac > 3.0 {displayMaxBacDialog()}
+        if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
+        else if estimatedBac > 3.0 {displayMaxBacDialog()}
         else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {
             displayUserMaxBacDialog(index: index)
         }
@@ -238,5 +238,55 @@ class PlanPartyViewController: UIViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
         present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func getUnitCountForCurrentWeek() -> Int {
+        let historyDao = HistoryDao()
+        var currentWeekUnitCount = 0
+        
+        let histories = historyDao.getAll()
+        let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+        
+        for history in histories {
+            guard let historyDate = history.dato else {continue}
+            
+            if historyDate > sevenDaysAgo {
+                currentWeekUnitCount += history.antallOl as! Int
+                currentWeekUnitCount += history.antallVin as! Int
+                currentWeekUnitCount += history.antallDrink as! Int
+                currentWeekUnitCount += history.antallShot as! Int
+            }
+        }
+        return currentWeekUnitCount
+    }
+    
+    func getUnitCount() ->Int {
+        guard let beerUnits = Int(beerAmount.text!) else {return 0}
+        guard let wineUnits = Int(wineAmount.text!) else {return 0}
+        guard let drinkUnits = Int(drinkAmount.text!) else {return 0}
+        guard let shotUnits = Int(shotAmount.text!) else {return 0}
+        
+        return beerUnits + wineUnits + drinkUnits + shotUnits
+    }
+    
+    func displayWhoMaxBacDialog(index:Int) {
+        let refreshAlert = UIAlertController(title: "Mange enheter!", message: "Hvis du legger til denne enheten vil du overstige WHO sin anbefaling om maks 14 enheter per uke. Er du sikker?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWhoWarned = !self.hasBeenWhoWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func shouldDisplayWhoWarning() -> Bool {
+        let defaults = UserDefaults.standard
+        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
+        
+        if shoudBeWhoWarnedSavedValue {return true}
+        
+        return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > ResourceList.whoMaxUnitCount && !hasBeenWhoWarned
     }
 }
