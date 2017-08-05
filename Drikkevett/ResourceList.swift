@@ -64,4 +64,9 @@ struct ResourceList {
     static let tipsImages = ["Bed", "Idea-100", "Wink"]
     static let tipsTitles = ["Dagen Derpå", "Råd for å unngå fyllesyke", "Ikke sov på stigende rus"]
     static let tipsTexts = ["Hodepine, kvalme, mageforstyrrelser og uro (fylleangst), er vanlige symptomer på bakrus. Bakrus eller fyllesyke kan forklares som en slags abstinensstilstand der hjernen sliter med å venne seg til at alkoholen blir borte. Dehydrering, søvnmangel, lite matinntak, og allergi mot noen av tilsetningsstoffene i alkoholen, har skylden for hvordan formen din er dagen derpå. \n\nEr skaden allerede skjedd, er det dessverre få vidunderkurer som hjelper.", "De fleste rådene for å unngå fyllesyke, er råd som ikke har dokumentert effekt. Likevel er det enkelte grep noen føler letter plagene. Å drikke vann eller annen alkoholfri veske, er viktig, siden kroppen din er uttørket. Å spise et godt måltid, kan også hjelpe. Det kan også hjelpe å sove. Det beste rådet mot fyllesyke er likevel å ha drikkevett dagen før. ", "Det anbefales å slutte å drikke i god tid før du skal legge deg for å lindre symptomer på bakrus dagen derpå. Da er sjansene for at du får en roligere søvn større. Det kan dessuten være farlig å legge seg på stigende rus, om promillen er høy."]
+    
+    static let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
+    static let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
+    static let defaultPercentage = [4.5, 12.0, 20.5, 40.0]
+    static let defaultAmount = [50.0, 20.0, 20.0, 4.0]
 }

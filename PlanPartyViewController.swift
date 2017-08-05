@@ -19,11 +19,12 @@ class PlanPartyViewController: UIViewController {
     @IBOutlet weak var expectedCost: UILabel!
     @IBOutlet weak var startEveningView: UIView!
     
-    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
-    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
-    
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     var drinkEpisodeViewController:DrinkEpisodeViewController?
+    
+    var hasBeenWarned = false
+    
+    let maxBac = 3.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,14 @@ class PlanPartyViewController: UIViewController {
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        modifyUnit(index: index, increment: true)
+        
+        let estimatedBac = estimateBac(unitType: index)
+        
+        if estimatedBac > 3.0 {displayMaxBacDialog()}
+        else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {
+            displayUserMaxBacDialog(index: index)
+        }
+        else {modifyUnit(index: index, increment: true)}
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -174,6 +182,61 @@ class PlanPartyViewController: UIViewController {
     
     func getUnitGrams(unitType:Int) -> Double{
         let defaults = UserDefaults.standard
-        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
+        
+        let savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.percentageKeys[unitType]) : ResourceList.defaultPercentage[unitType]
+        let savedAmount = defaults.double(forKey: ResourceList.amountKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.amountKeys[unitType]) : ResourceList.defaultAmount[unitType]
+        
+        return savedAmount * savedPercentage / 10.0
+    }
+    
+    func estimateBac(unitType:Int) -> Double{
+        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
+        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
+        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
+        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
+        
+        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
+        amounts[unitType] += 1.0
+        
+        let totalGrams = amounts[0] * getUnitGrams(unitType: 0) +
+            amounts[1] * getUnitGrams(unitType: 1) +
+            amounts[2] * getUnitGrams(unitType: 2) +
+            amounts[3] * getUnitGrams(unitType: 3)
+        
+        guard let userData = AppDelegate.getUserData() else {return 0.0}
+        
+        guard let weight = userData.weight as? Double else {return 0.0}
+        guard let gender = userData.gender as? Bool else {return 0.0}
+        let genderScore = gender ? 0.7 : 0.6
+        
+        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
+        if currentBac > 0.0 {return currentBac}
+        return 0.0
+    }
+    
+    func estimatedBacIsHigherThanGoalBac(index:Int) -> Bool{
+        let maxBac = AppDelegate.getUserData()?.goalPromille ?? 0.0
+        let estimatedBac = estimateBac(unitType: index)
+        
+        return estimatedBac > Double(maxBac)
+    }
+    
+    func displayMaxBacDialog() {
+        let refreshAlert = UIAlertController(title: "For høy promille!", message: "Du kan død!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func displayUserMaxBacDialog(index:Int) {
+        let refreshAlert = UIAlertController(title: "Høy promille!", message: "Hvis du legger til denne enheten vil du overstige din makspromille.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWarned = !self.hasBeenWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
     }
 }

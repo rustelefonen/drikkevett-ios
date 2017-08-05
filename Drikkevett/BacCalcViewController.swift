@@ -24,6 +24,8 @@ class BacCalcViewController: UIViewController {
     
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     
+    let maxBac = 3.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
@@ -36,8 +38,14 @@ class BacCalcViewController: UIViewController {
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        modifyUnit(index: index, increment: true)
-        updateBac()
+        
+        print(calculateAlcoholEnergyAmount(unitType: index))
+        
+        if estimateBac(unitType: index) > maxBac {displayMaxBacDialog()}
+        else {
+            modifyUnit(index: index, increment: true)
+            updateBac()
+        }
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -145,8 +153,52 @@ class BacCalcViewController: UIViewController {
     
     func getUnitGrams(unitType:Int) -> Double{
         let defaults = UserDefaults.standard
-        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
+        
+        let savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.percentageKeys[unitType]) : ResourceList.defaultPercentage[unitType]
+        let savedAmount = defaults.double(forKey: ResourceList.amountKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.amountKeys[unitType]) : ResourceList.defaultAmount[unitType]
+        
+        return savedAmount * savedPercentage / 10.0
     }
     
+    func estimateBac(unitType:Int) -> Double{
+        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
+        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
+        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
+        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
+        
+        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
+        amounts[unitType] += 1.0
+        
+        let totalGrams = amounts[0] * getUnitGrams(unitType: 0) +
+            amounts[1] * getUnitGrams(unitType: 1) +
+            amounts[2] * getUnitGrams(unitType: 2) +
+            amounts[3] * getUnitGrams(unitType: 3)
+        
+        guard let userData = AppDelegate.getUserData() else {return 0.0}
+        
+        guard let weight = userData.weight as? Double else {return 0.0}
+        guard let gender = userData.gender as? Bool else {return 0.0}
+        let genderScore = gender ? 0.7 : 0.6
+        
+        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
+        if currentBac > 0.0 {return currentBac}
+        return 0.0
+    }
     
+    func displayMaxBacDialog() {
+        let refreshAlert = UIAlertController(title: "For høy promille!", message: "Du kan død!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func calculateAlcoholEnergyAmount(unitType:Int) -> Double{
+        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
+        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
+        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
+        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
+        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
+        
+        return totalGrams * 7.0
+    }
 }
