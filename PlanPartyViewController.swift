@@ -38,9 +38,7 @@ class PlanPartyViewController: UIViewController {
         let estimatedBac = estimateBac(unitType: index)
         if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
         else if estimatedBac > 3.0 {displayMaxBacDialog()}
-        else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {
-            displayUserMaxBacDialog(index: index)
-        }
+        else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
         else {modifyUnit(index: index, increment: true)}
     }
     
@@ -148,10 +146,7 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Double(drinkAmount.text!) else {return}
         guard let shotUnits = Double(shotAmount.text!) else {return}
         
-        let totalGrams = beerUnits * getUnitGrams(unitType: 0) +
-            wineUnits * getUnitGrams(unitType: 1) +
-            drinkUnits * getUnitGrams(unitType: 2) +
-            shotUnits * getUnitGrams(unitType: 3)
+        let totalGrams = beerUnits * getUnitGrams(unitType: 0) + wineUnits * getUnitGrams(unitType: 1) + drinkUnits * getUnitGrams(unitType: 2) + shotUnits * getUnitGrams(unitType: 3)
         
         guard let userData = AppDelegate.getUserData() else {return}
         
@@ -172,7 +167,8 @@ class PlanPartyViewController: UIViewController {
         
         guard let userData = AppDelegate.getUserData() else {return}
         
-        let totalCost = beerUnits * Int(userData.costsBeer ?? 0) +
+        let totalCost =
+            beerUnits * Int(userData.costsBeer ?? 0) +
             wineUnits * Int(userData.costsWine ?? 0) +
             drinkUnits * Int(userData.costsDrink ?? 0) +
             shotUnits * Int(userData.costsShot ?? 0)
@@ -198,7 +194,8 @@ class PlanPartyViewController: UIViewController {
         var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
         amounts[unitType] += 1.0
         
-        let totalGrams = amounts[0] * getUnitGrams(unitType: 0) +
+        let totalGrams =
+            amounts[0] * getUnitGrams(unitType: 0) +
             amounts[1] * getUnitGrams(unitType: 1) +
             amounts[2] * getUnitGrams(unitType: 2) +
             amounts[3] * getUnitGrams(unitType: 3)

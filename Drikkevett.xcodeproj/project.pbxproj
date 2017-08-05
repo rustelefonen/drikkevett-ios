@@ -52,6 +52,7 @@
 		D5958E901D29A99A004FC6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8E1D29A99A004FC6A3 /* LaunchScreen.storyboard */; };
 		D5958E921D29A9DF004FC6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5958E911D29A9DF004FC6A3 /* Assets.xcassets */; };
 		D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */; };
+		D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7396D1F36745C009EDC88 /* AfterRegisterViewController.swift */; };
 		D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */; };
 		D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */; };
 		D5C3FAB31F0573040059AA90 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB11F0573040059AA90 /* Status.swift */; };
@@ -185,6 +186,7 @@
 		D5958E911D29A9DF004FC6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drikkevett/Assets.xcassets; sourceTree = "<group>"; };
 		D5958E931D29AA0A004FC6A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Drikkevett/Info.plist; sourceTree = "<group>"; };
 		D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsPerWeekViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5B7396D1F36745C009EDC88 /* AfterRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterRegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidanceContentViewController.swift; path = Drikkevett/GuidanceContentViewController.swift; sourceTree = "<group>"; };
 		D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidancePageViewController.swift; path = Drikkevett/GuidancePageViewController.swift; sourceTree = "<group>"; };
 		D5C3FAB11F0573040059AA90 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Drikkevett/Status.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */,
 				D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */,
 				D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */,
+				D5B7396D1F36745C009EDC88 /* AfterRegisterViewController.swift */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
 				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
+				D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */,
 				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */,

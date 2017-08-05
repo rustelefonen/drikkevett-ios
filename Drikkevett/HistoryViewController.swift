@@ -141,4 +141,9 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
             title = ResourceList.norwegianWeekDays[americanWeekDay - 2] + " " + String(describing: day) + ". " + month
         }
     }
+    
+    @IBAction func editHistory(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "registerSegue", sender: self)
+    }
+    
 }
