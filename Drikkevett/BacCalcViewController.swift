@@ -92,7 +92,6 @@ class BacCalcViewController: UIViewController {
             else if !increment && shotUnits > 0 {shotAmount.text = String(describing: shotUnits - 1)}
         }
         updateBac()
-        updateQuote()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,6 +119,8 @@ class BacCalcViewController: UIViewController {
         let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
         if currentBac < 0.0 {bacLabel.text = String(describing: 0.0)}
         else {bacLabel.text = String(describing: currentBac)}
+        
+        updateQuote()
     }
     
     func updateQuote() {

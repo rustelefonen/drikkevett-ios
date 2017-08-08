@@ -25,8 +25,6 @@ class PartyViewController: UIViewController {
     var updateTimer:Timer!
     
     static let partySegueId = "partySegueYo"
-    let units = ["Øl", "Vin", "Drink", "Shot"]
-    let unitsEnglish = ["Beer", "Wine", "Drink", "Shot"]
     
     let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
     let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
@@ -55,17 +53,18 @@ class PartyViewController: UIViewController {
     
     func update() {
         updateBac()
+        if getBac() <= 0.0 && getUnitCount() > 0 {endEvening()}
     }
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         let unitAddedDao = UnitAddedDao()
-        _ = unitAddedDao.createNewUnitAdded(timeStamp: Date(), unitAlkohol: unitsEnglish[index])
+        _ = unitAddedDao.createNewUnitAdded(timeStamp: Date(), unitAlkohol: ResourceList.unitsEnglish[index])
         _ = unitAddedDao.save()
         
         modifyUnit(index: index, increment: true)
         updateBac()
-        unitAddedAlertController(String(describing: units[index] + " drukket!"), message: "", delayTime: 0.8)
+        unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -121,10 +120,10 @@ class PartyViewController: UIViewController {
         var addedShotUnits = 0
         
         for unit in unitsAdded {
-            if unit.unitAlkohol == unitsEnglish[0] {addedBeerUnits += 1}
-            else if unit.unitAlkohol == unitsEnglish[1] {addedWineUnits += 1}
-            else if unit.unitAlkohol == unitsEnglish[2] {addedDrinkUnits += 1}
-            else if unit.unitAlkohol == unitsEnglish[3] {addedShotUnits += 1}
+            if unit.unitAlkohol == ResourceList.unitsEnglish[0] {addedBeerUnits += 1}
+            else if unit.unitAlkohol == ResourceList.unitsEnglish[1] {addedWineUnits += 1}
+            else if unit.unitAlkohol == ResourceList.unitsEnglish[2] {addedDrinkUnits += 1}
+            else if unit.unitAlkohol == ResourceList.unitsEnglish[3] {addedShotUnits += 1}
         }
         
         beerAmount.text = String(describing: addedBeerUnits) + String(beerAmount.text!.characters.dropFirst())
@@ -166,6 +165,34 @@ class PartyViewController: UIViewController {
         let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
         if currentBac < 0.0 {bacLabel.text = String(describing: 0.0)}
         else {bacLabel.text = String(describing: currentBac)}
+    }
+    
+    func getBac() -> Double {
+        guard let beerUnits = Double(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let wineUnits = Double(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let drinkUnits = Double(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let shotUnits = Double(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
+        
+        guard let firstUnitAdded = getFirstUnitAdded() else {return 0.0}
+        let hours = Double(Date().timeIntervalSince(firstUnitAdded)) / 3600.0
+        
+        guard let weight = userData?.weight as? Double else {return 0.0}
+        guard let gender = userData?.gender as? Bool else {return 0.0}
+        let genderScore = gender ? 0.7 : 0.6
+        
+        let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
+        if currentBac < 0.0 {return 0.0}
+        else {return currentBac}
+    }
+    
+    func getUnitCount() -> Int{
+        guard let beerUnits = Int(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return 0}
+        guard let wineUnits = Int(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return 0}
+        guard let drinkUnits = Int(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return 0}
+        guard let shotUnits = Int(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return 0}
+        
+        return beerUnits + wineUnits + drinkUnits + shotUnits
     }
     
     func updateAmountLabel(label:UILabel, value:Int) {
@@ -239,10 +266,10 @@ class PartyViewController: UIViewController {
                 var tmpShotUnits = 0.0
                 
                 if (tmpDate...nextTmpDate).contains(unit.timeStamp!) {
-                    if unit.unitAlkohol == unitsEnglish[0] {tmpBeerUnits += 1.0}
-                    else if unit.unitAlkohol == unitsEnglish[1] {tmpWineUnits += 1.0}
-                    else if unit.unitAlkohol == unitsEnglish[2] {tmpDrinkUnits += 1.0}
-                    else if unit.unitAlkohol == unitsEnglish[3] {tmpShotUnits += 1.0}
+                    if unit.unitAlkohol == ResourceList.unitsEnglish[0] {tmpBeerUnits += 1.0}
+                    else if unit.unitAlkohol == ResourceList.unitsEnglish[1] {tmpWineUnits += 1.0}
+                    else if unit.unitAlkohol == ResourceList.unitsEnglish[2] {tmpDrinkUnits += 1.0}
+                    else if unit.unitAlkohol == ResourceList.unitsEnglish[3] {tmpShotUnits += 1.0}
                 }
                 
                 let totalGrams = tmpBeerUnits * getUnitGrams(unitType: 0) + tmpWineUnits * getUnitGrams(unitType: 1) + tmpDrinkUnits * getUnitGrams(unitType: 2) + tmpShotUnits * getUnitGrams(unitType: 3)

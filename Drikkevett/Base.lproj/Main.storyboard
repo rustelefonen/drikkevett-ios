@@ -6318,7 +6318,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63B-W8-eAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8351" y="-135"/>
+            <point key="canvasLocation" x="9038" y="22"/>
         </scene>
         <!--Tips Page View Controller-->
         <scene sceneID="RQQ-Sq-QHf">
@@ -6424,7 +6424,7 @@ Makspromillen tilsvarer et nivå av promille du ikke vil overstige i løpet av E
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvq-ns-z1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8351" y="105"/>
+            <point key="canvasLocation" x="9038" y="300"/>
         </scene>
         <!--Intro Page View Controller-->
         <scene sceneID="IlM-B4-tbz">
@@ -7756,7 +7756,7 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                     <constraint firstAttribute="height" constant="200" id="BdN-fk-JE3"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="DSq-nk-W0a" kind="embed" id="XPq-kw-nB1"/>
+                                    <segue destination="DSq-nk-W0a" kind="embed" identifier="afterRegisterSegue" id="XPq-kw-nB1"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k20-0C-D7w">
@@ -7768,7 +7768,7 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-XL-UBA">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-Qi-cof">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-Qi-cof">
                                                         <rect key="frame" x="8" y="8" width="78" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7794,7 +7794,7 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jv-Na-Pew">
                                                 <rect key="frame" x="93" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-XL-OHa">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-XL-OHa">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7836,7 +7836,7 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzK-OG-Nrh">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDm-Xj-sJE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDm-Xj-sJE">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7862,7 +7862,7 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osE-Vz-OKj">
                                                 <rect key="frame" x="93" y="0.0" width="94" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBI-Qm-PkP">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBI-Qm-PkP">
                                                         <rect key="frame" x="0.0" y="8" width="94" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -7919,6 +7919,9 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                 <state key="normal" title="Legg til">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addUnit:" destination="5sD-WC-dYs" eventType="touchUpInside" id="X8C-nG-ytv"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="e1W-cI-cVV">
                                 <rect key="frame" x="20" y="390" width="374" height="216"/>
@@ -7947,7 +7950,11 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                     </view>
                     <navigationItem key="navigationItem" title="Etterregistrering" id="47G-CN-CKN"/>
                     <connections>
+                        <outlet property="beerUnits" destination="L2g-Qi-cof" id="Tei-cg-YrY"/>
                         <outlet property="datePicker" destination="e1W-cI-cVV" id="Ott-qD-IOK"/>
+                        <outlet property="drinkUnits" destination="lDm-Xj-sJE" id="e79-Dr-95u"/>
+                        <outlet property="shotUnits" destination="KBI-Qm-PkP" id="Oen-OD-vFg"/>
+                        <outlet property="wineUnits" destination="WCl-XL-OHa" id="yfC-ou-zMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdH-s1-wYh" userLabel="First Responder" sceneMemberID="firstResponder"/>

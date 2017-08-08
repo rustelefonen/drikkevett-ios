@@ -73,4 +73,7 @@ struct ResourceList {
     static let weekUnitWarningKey = "weekUnitWarning"
     static let weekUnitWarningDefault = true
     static let whoMaxUnitCount = 14
+    
+    static let unitsEnglish = ["Beer", "Wine", "Drink", "Shot"]
+    static let units = ["Øl", "Vin", "Drink", "Shot"]
 }

@@ -13,6 +13,7 @@ class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerD
     static let segueId = "selectDrinkSegue"
     static let planPartySegueId = "planPartySelectUnit"
     static let partySegueId = "partySelectUnit"
+    static let afterRegisterSegueId = "afterRegisterSegue"
     
     var currentIndex: (() -> Int)?
     

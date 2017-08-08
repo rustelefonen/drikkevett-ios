@@ -143,7 +143,15 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
     }
     
     @IBAction func editHistory(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "registerSegue", sender: self)
+        performSegue(withIdentifier: AfterRegisterViewController.segueId, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AfterRegisterViewController.segueId {
+            if let destination = segue.destination as? AfterRegisterViewController {
+                destination.history = history
+            }
+        }
     }
     
 }
