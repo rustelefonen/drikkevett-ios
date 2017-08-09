@@ -54,6 +54,7 @@
 		D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */; };
 		D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7396D1F36745C009EDC88 /* AfterRegisterViewController.swift */; };
 		D5B739701F3A0A86009EDC88 /* CostUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7396F1F3A0A86009EDC88 /* CostUpdateViewController.swift */; };
+		D5B739731F3B3E5B009EDC88 /* InformationUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B739721F3B3E5B009EDC88 /* InformationUpdateViewController.swift */; };
 		D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */; };
 		D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */; };
 		D5C3FAB31F0573040059AA90 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB11F0573040059AA90 /* Status.swift */; };
@@ -189,6 +190,7 @@
 		D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsPerWeekViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5B7396D1F36745C009EDC88 /* AfterRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterRegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5B7396F1F3A0A86009EDC88 /* CostUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5B739721F3B3E5B009EDC88 /* InformationUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidanceContentViewController.swift; path = Drikkevett/GuidanceContentViewController.swift; sourceTree = "<group>"; };
 		D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidancePageViewController.swift; path = Drikkevett/GuidancePageViewController.swift; sourceTree = "<group>"; };
 		D5C3FAB11F0573040059AA90 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Drikkevett/Status.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */,
 				D5B7396F1F3A0A86009EDC88 /* CostUpdateViewController.swift */,
+				D5B739721F3B3E5B009EDC88 /* InformationUpdateViewController.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
 				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
+				D5B739731F3B3E5B009EDC88 /* InformationUpdateViewController.swift in Sources */,
 				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
 				D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */,
 				D5B739701F3A0A86009EDC88 /* CostUpdateViewController.swift in Sources */,
