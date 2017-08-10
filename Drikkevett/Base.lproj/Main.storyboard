@@ -713,7 +713,7 @@ høyeste promille</string>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enhetsvarsling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-4f-Jd2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel om risikofylt alkoholbruk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpp-4f-Jd2">
                                                     <rect key="frame" x="41" y="5" width="351" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="341" id="Frg-2X-WzA">
@@ -4144,10 +4144,10 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="-2050.271739130435"/>
         </scene>
-        <!--Enhetsvarsel-->
+        <!--Varsel om risikofylt alkoholbruk-->
         <scene sceneID="JD9-c3-9cQ">
             <objects>
-                <viewController title="Enhetsvarsel" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QY0-oe-YRF" customClass="UnitsPerWeekViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Varsel om risikofylt alkoholbruk" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QY0-oe-YRF" customClass="UnitsPerWeekViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sMd-TL-Rxr"/>
                         <viewControllerLayoutGuide type="bottom" id="LYY-je-npO"/>
@@ -4157,9 +4157,9 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-SZ-wsM">
-                                <rect key="frame" x="20" y="72" width="374" height="221.66666666666669"/>
+                                <rect key="frame" x="20" y="72" width="374" height="262.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">I følge WHO er det anbefalt med maks 14 alkoholholdige enheter per uke. Du kan lese om dette her: https://www.drinkaware.co.uk/alcohol-facts/alcoholic-drinks-units/alcohol-limits-unit-guidelines/ 
+                                <string key="text">I følge Verdens helseorganisasjon er det en helt klart forhøyet risiko for svært alvorlige helseskader om du drikker 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Du kan lese mer om dette her: https://www.drinkaware.co.uk/alcohol-facts/alcoholic-drinks-units/alcohol-limits-unit-guidelines/
 
 Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i appen som advarer deg mot dette. Du velger selv nedenfor om du ønsker dette eller ikke.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4168,13 +4168,13 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
-                                <rect key="frame" x="345" y="317.66666666666669" width="51" height="31"/>
+                                <rect key="frame" x="345" y="358.66666666666669" width="51" height="31"/>
                                 <connections>
                                     <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel er skrudd på" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-SC-U1D">
-                                <rect key="frame" x="20" y="317.66666666666669" width="141.33333333333334" height="21"/>
+                                <rect key="frame" x="20" y="358.66666666666669" width="141.33333333333334" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -4817,12 +4817,17 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
                     <connections>
+                        <outlet property="beerImageView" destination="Gan-rB-RcS" id="6xL-1j-pdR"/>
                         <outlet property="beerPrice" destination="7wu-9t-PBk" id="Imt-Ob-DKm"/>
+                        <outlet property="drinkImageView" destination="xSl-iB-I8a" id="hMP-63-HMU"/>
                         <outlet property="drinkPrice" destination="PMz-kV-fvP" id="11D-Dz-N06"/>
                         <outlet property="scrollView" destination="Gjz-zr-yYO" id="kQj-eQ-LJS"/>
+                        <outlet property="shotImageView" destination="412-Gh-Lcn" id="4g3-T7-oad"/>
                         <outlet property="shotPrice" destination="fOp-DX-oGV" id="mgx-gX-nnW"/>
                         <outlet property="standardButton" destination="mJK-zz-0tJ" id="BXV-OA-shV"/>
+                        <outlet property="wineImageView" destination="PuP-rc-lbw" id="Alr-K1-ioo"/>
                         <outlet property="winePrice" destination="RBW-C8-LMJ" id="xBl-QZ-GVf"/>
+                        <segue destination="bVV-v6-sKW" kind="show" identifier="updateDrink" id="P8r-xW-vls"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyt-xM-bZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5221,6 +5226,7 @@ Klikk på "Standard"-knappen for gjennomsnittlige priser.</string>
     <inferredMetricsTieBreakers>
         <segue reference="xh3-Bq-Jx1"/>
         <segue reference="TeW-c2-XaW"/>
+        <segue reference="P8r-xW-vls"/>
         <segue reference="4pK-Q8-oE7"/>
     </inferredMetricsTieBreakers>
 </document>

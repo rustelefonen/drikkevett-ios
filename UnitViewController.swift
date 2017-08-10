@@ -11,6 +11,7 @@ import UIKit
 class UnitViewController: UIViewController {
     
     static let segueId = "modifyDrink"
+    static let updateSegueId = "updateDrink"
     
     @IBOutlet weak var unitTitle: UILabel!
     @IBOutlet weak var unitImage: UIImageView!
@@ -32,7 +33,10 @@ class UnitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        introPageViewController?.removeSwipeGesture()
+        
+        if let introPage = introPageViewController {
+            introPage.removeSwipeGesture()
+        }
         
         AppColors.setBackground(view: view)
         initUnit()
@@ -41,7 +45,9 @@ class UnitViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        introPageViewController?.restoreSwipeGesture()
+        if let introPage = introPageViewController {
+            introPage.restoreSwipeGesture()
+        }
         
         guard let unitPercentageChosen = Double(String(describing: unitPercent.text!.components(separatedBy: "%").first!)) else {return}
         guard let unitAmountChosen = Double(String(describing: unitAmount.text!.components(separatedBy: " ").first!)) else {return}

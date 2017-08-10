@@ -146,17 +146,14 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Double(drinkAmount.text!) else {return}
         guard let shotUnits = Double(shotAmount.text!) else {return}
         
-        let totalGrams = beerUnits * getUnitGrams(unitType: 0) + wineUnits * getUnitGrams(unitType: 1) + drinkUnits * getUnitGrams(unitType: 2) + shotUnits * getUnitGrams(unitType: 3)
-        
         guard let userData = AppDelegate.getUserData() else {return}
         
         guard let weight = userData.weight as? Double else {return}
         guard let gender = userData.gender as? Bool else {return}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
-        if currentBac < 0.0 {expectedBac.text = String(describing: 0.0)}
-        else {expectedBac.text = String(describing: currentBac)}
+        let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: 0, weight: weight, gender: gender)
+        
+        expectedBac.text = String(describing: currentBac)
     }
     
     func updateExpectedCost() {
@@ -226,7 +223,7 @@ class PlanPartyViewController: UIViewController {
     }
     
     func displayUserMaxBacDialog(index:Int) {
-        let refreshAlert = UIAlertController(title: "Høy promille!", message: "Hvis du legger til denne enheten vil du overstige din makspromille.", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Husk ditt eget mål!", message: "Hvis du legger til denne enheten vil du overstige din selvbestemte makspromille.", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
             self.hasBeenWarned = !self.hasBeenWarned

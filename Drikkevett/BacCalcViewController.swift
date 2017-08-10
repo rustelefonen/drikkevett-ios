@@ -134,11 +134,11 @@ class BacCalcViewController: UIViewController {
         guard let weight = userData.weight as? Double else {return 0.0}
         guard let gender = userData.gender as? Bool else {return 0.0}
         
-        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 0, weight: weight, gender: gender)
+        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 1, weight: weight, gender: gender)
     }
     
     func displayMaxBacDialog() {
-        let refreshAlert = UIAlertController(title: "For høy promille!", message: "Du kan død!", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(refreshAlert, animated: true, completion: nil)

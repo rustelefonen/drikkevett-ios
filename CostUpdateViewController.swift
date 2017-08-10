@@ -17,6 +17,12 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var standardButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var beerImageView: UIImageView!
+    @IBOutlet weak var wineImageView: UIImageView!
+    @IBOutlet weak var drinkImageView: UIImageView!
+    @IBOutlet weak var shotImageView: UIImageView!
+    
+    
     var activeField:UITextField?
     
     override func viewDidLoad() {
@@ -24,6 +30,11 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
         AppColors.setBackground(view: view)
         
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(useDefaultCosts)))
+        
+        beerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editBeer)))
+        wineImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editWine)))
+        drinkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editDrink)))
+        shotImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (editShot)))
         
         beerPrice.delegate = self
         beerPrice.keyboardType = UIKeyboardType.numberPad
@@ -85,6 +96,32 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
         userDataDao.save()
         AppDelegate.initUserData()
         navigateToPreviousViewController()
+    }
+    
+    func editBeer() {
+        performSegue(withIdentifier: UnitViewController.updateSegueId, sender: 0)
+    }
+    func editWine() {
+        performSegue(withIdentifier: UnitViewController.updateSegueId, sender: 1)
+    }
+    func editDrink() {
+        performSegue(withIdentifier: UnitViewController.updateSegueId, sender: 2)
+    }
+    func editShot() {
+        performSegue(withIdentifier: UnitViewController.updateSegueId, sender: 3)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == UnitViewController.updateSegueId {
+            if segue.destination is UnitViewController {
+                let destination = segue.destination as! UnitViewController
+                destination.unitType = sender as? Int
+                
+                let backItem = UIBarButtonItem()
+                backItem.title = "Kostnader"
+                navigationItem.backBarButtonItem = backItem
+            }
+        }
     }
     
     func hasValidCost(price:Int, unitType:Int) ->Bool {

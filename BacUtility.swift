@@ -39,6 +39,33 @@ func getQuoteTextBy(bac:Double) -> String {
     }
 }
 
+func getQuoteRegisterTextBy(bac:Double) -> String {
+    switch bac {
+    case _ where bac < 0.2:
+        return "Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. Makspromillen tilsvarer et promillenivå du ikke ønsker å gå over i løpet av én kveld/fest/drikkeepisode."
+    case 0.2..<0.3:
+        return "Du merker så vidt at du har drukket."
+    case 0.3..<0.4:
+        return "Du føler deg lett påvirket."
+    case 0.4..<0.6:
+        return "De fleste kjenner seg avslappet og man blir mer pratsom."
+    case 0.6..<0.8:
+        return "Lykkepromille: Hevet stemningsleie og en følelse av velbehag, men man blir også mer impulsiv, kritikkløs og risikovillig."
+    case 0.8..<1.0:
+        return "Koordinasjon og balanse påvirkes. Drikker du mer enn dette vil de uønskede virkningene av alkoholen bli mer fremtredende enn de ønskede."
+    case 1.0..<1.3:
+        return "Balansen blir dårligere, man snakker snøvlete, og kontroll med bevegelser forverres."
+    case 1.3..<1.5:
+        return "Uønskede virkninger som kvalme, brekninger, tretthet og sløvhet øker. Mange blir også mer aggressive."
+    case 1.5..<2.0:
+        return "Hukommelsen sliter, faren for blackout øker."
+    case 2.0..<2.5:
+        return "Bevissthetsgraden senkes og man blir vanskelig å få kontakt med."
+    default:
+        return "Bevisstløshet og pustehemning kan inntreffe."
+    }
+}
+
 func getQuoteTextColorBy(bac:Double) -> UIColor {
     if bac < 0.4 {return UIColor.white}
     else if bac < 0.8 {return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)}
