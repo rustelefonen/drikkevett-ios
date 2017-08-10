@@ -167,7 +167,7 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
                     return
                 }
                 
-                if maxBac! < 0.1 || maxBac! > 2.0 {
+                if maxBac! < 0.1 || maxBac! > 1.4 {
                     errorMessage(errorMsg: "Du valgte et ugyldig promillemål")
                     return
                 }

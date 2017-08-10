@@ -16,6 +16,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var bacLabel: UILabel!
+    @IBOutlet weak var energyLabel: UILabel!
     
     @IBOutlet weak var beerAmount: UILabel!
     @IBOutlet weak var wineAmount: UILabel!
@@ -38,6 +39,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         
         costLabel.text = String(describing: history!.forbruk!) + ",-"
         bacLabel.text = String(describing: Double(history!.hoyestePromille!).roundTo(places: 2))
+        setEnergyLabel()
         
         beerAmount.text = String(describing: history!.antallOl!)
         wineAmount.text = String(describing: history!.antallVin!)
@@ -64,6 +66,18 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         lineChartView.xAxis.labelTextColor = UIColor.white
         lineChartView.legend.enabled = false
         lineChartView.backgroundColor = AppColors().lineChartBackgroundColor()
+    }
+    
+    func setEnergyLabel() {
+        let beerUnits = Double(history?.antallOl ?? 0.0)
+        let wineUnits = Double(history?.antallVin ?? 0.0)
+        let drinkUnits = Double(history?.antallDrink ?? 0.0)
+        let shotUnits = Double(history?.antallShot ?? 0.0)
+        
+        let kiloCalories = calculateAlcoholKiloCalories(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits).roundTo(places: 1)
+        let kiloJoules = calculateAlcoholKiloJoules(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits).roundTo(places: 1)
+    
+        energyLabel.text = "\(kiloCalories)/\(kiloJoules)"
     }
     
     func fillLineChart(selected:[GraphHistorikk]) {

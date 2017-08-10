@@ -12,7 +12,7 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     @IBOutlet weak var nextButton: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var maxBacPickerData = ["0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0"]
+    var maxBacPickerData = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.1", "1.2", "1.3", "1.4"]
     let pickerData = ["Velg Kjønn", "Mann", "Kvinne"]
     var activeField: UITextField?
     
@@ -76,43 +76,10 @@ class InformationViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     func updateBacText() {
         guard let bacChosen = Double(maxBacInput.text!) else {return}
-        let happyImage = UIImage(named: "Happy-100")
-        let sadImage = UIImage(named: "Sad-100")
         
-        if(bacChosen == 0.0){
-            bacText.textColor = UIColor.white
-            bacText.text = ResourceList.introBacInfos[0]
-            bacImage.image = happyImage
-        }
-        else if(bacChosen > 0.0 && bacChosen <= 0.3){
-            bacText.textColor = UIColor.white
-            bacText.text = ResourceList.introBacInfos[1]
-            bacImage.image = happyImage
-        }
-        else if(bacChosen > 0.3 && bacChosen <= 0.6){
-            bacText.text = ResourceList.introBacInfos[2]
-            bacImage.image = happyImage
-        }
-        else if(bacChosen > 0.6 && bacChosen <= 0.9){
-            bacText.text = ResourceList.introBacInfos[3]
-            bacImage.image = happyImage
-        }
-        else if(bacChosen > 0.9 && bacChosen <= 1.2){
-            bacText.text = ResourceList.introBacInfos[4]
-            bacImage.image = sadImage
-        }
-        else if(bacChosen > 1.2 && bacChosen <= 1.5){
-            bacText.text = ResourceList.introBacInfos[5]
-            bacImage.image = sadImage
-        }
-        else if(bacChosen > 1.5 && bacChosen <= 1.7){
-            bacText.text = ResourceList.introBacInfos[6]
-            bacImage.image = sadImage
-        }
-        else if(bacChosen > 1.7){
-            bacText.text = ResourceList.introBacInfos[7]
-            bacImage.image = UIImage(named: "Vomited-100")
-        }
+        bacText.textColor = getQuoteTextColorBy(bac: bacChosen)
+        bacText.text = getQuoteRegisterTextBy(bac: bacChosen)
+        bacImage.image = getUIImageRegisterBy(bac: bacChosen)
     }
     
     func goNext(_ sender: UIButton) {

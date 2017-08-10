@@ -42,7 +42,7 @@ func getQuoteTextBy(bac:Double) -> String {
 func getQuoteRegisterTextBy(bac:Double) -> String {
     switch bac {
     case _ where bac < 0.2:
-        return "Legg inn en langsiktig makspromille du ønsker å holde deg under frem til en ønsket dato. Makspromillen tilsvarer et promillenivå du ikke ønsker å gå over i løpet av én kveld/fest/drikkeepisode."
+        return "Legg inn en langsiktig makspromille du ønsker å holde deg under. Makspromillen tilsvarer et promillenivå du ikke ønsker å gå over i løpet av én kveld/fest/drikkeepisode."
     case 0.2..<0.3:
         return "Du merker så vidt at du har drukket."
     case 0.3..<0.4:
@@ -66,6 +66,17 @@ func getQuoteRegisterTextBy(bac:Double) -> String {
     }
 }
 
+func getUIImageRegisterBy(bac:Double) -> UIImage? {
+    switch bac {
+    case _ where bac < 0.9:
+        return UIImage(named: "Happy-100")
+    case 0.9..<1.7:
+        return UIImage(named: "Sad-100")
+    default:
+        return UIImage(named: "Vomited-100")
+    }
+}
+
 func getQuoteTextColorBy(bac:Double) -> UIColor {
     if bac < 0.4 {return UIColor.white}
     else if bac < 0.8 {return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)}
@@ -85,10 +96,16 @@ func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUni
     else {return currentBac}
 }
 
-func calculateAlcoholEnergyAmount(unitType:Int, beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
+func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
     let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
     
     return totalGrams * 7.0
+}
+
+func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
+    let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
+    
+    return totalGrams * 29.3
 }
 
 fileprivate func getUnitGrams(unitType:Int) -> Double{
