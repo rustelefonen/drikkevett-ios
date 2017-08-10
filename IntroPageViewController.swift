@@ -181,6 +181,7 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
                 
                 //Not critical
                 userData.height = informationVc.nicknameInput.text ?? ""
+                
                 userData.costsBeer = (Int(costsVc.beerInput.text!) ?? 60) as NSNumber
                 userData.costsWine = (Int(costsVc.wineInput.text!) ?? 70) as NSNumber
                 userData.costsDrink = (Int(costsVc.drinkInput.text!) ?? 100) as NSNumber

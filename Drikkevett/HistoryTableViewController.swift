@@ -16,7 +16,9 @@ class HistoryTableViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppColors.setBackground(view: view)
+        if let tableBackground = tableView.backgroundView {
+            AppColors.setBackground(view: tableBackground)
+        }
         initHistoryEntries()
     }
     

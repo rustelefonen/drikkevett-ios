@@ -23,10 +23,18 @@ class DrinkEpisodeViewController: UIViewController {
     }
     
     func insertView() {
-        for childViewController in childViewControllers {
-            childViewController.removeFromParentViewController()
+        if childViewControllers.first == nil {
+            drawChildViewController()
         }
-        
+        else {
+            if (childViewControllers.first is PlanPartyViewController && getCurrentStatus() != StatusNew.NOT_RUNNING) || (childViewControllers.first is PartyViewController && getCurrentStatus() != StatusNew.RUNNING){
+                deleteSubView()
+                drawChildViewController()
+            }
+        }
+    }
+    
+    private func drawChildViewController() {
         if let vc = storyboard?.instantiateViewController(withIdentifier: getCurrentStatus().name){
             if vc is PlanPartyViewController {
                 (vc as! PlanPartyViewController).drinkEpisodeViewController = self
@@ -45,6 +53,12 @@ class DrinkEpisodeViewController: UIViewController {
         }
     }
     
+    private func deleteSubView() {
+        for childViewController in childViewControllers {
+            childViewController.removeFromParentViewController()
+        }
+    }
+    
     private func getCurrentStatus() -> StatusNew {
         let startEndTimestampsList = StartEndTimestampsDao().getAll()
         if startEndTimestampsList.count > 0 && Date() < startEndTimestampsList.first!.endStamp! {
@@ -54,16 +68,8 @@ class DrinkEpisodeViewController: UIViewController {
     }
     
     @IBAction func clearUnits(_ sender: UIBarButtonItem) {
-        print("i metoden")
-        print(childViewControllers)
         if trash.isEnabled && childViewControllers.first is PlanPartyViewController {
-            print("sletter")
             (childViewControllers.first as! PlanPartyViewController).resetUnits()
         }
-    }
-    
-    
-    func kek() {
-        print("kek")
     }
 }

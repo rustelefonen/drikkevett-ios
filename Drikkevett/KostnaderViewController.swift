@@ -96,7 +96,7 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 4
+        let maxLength = 3
 
         if string.characters.count == 0 {return true}
 

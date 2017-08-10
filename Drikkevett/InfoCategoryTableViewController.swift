@@ -18,7 +18,10 @@ class InfoCategoryTableViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppColors.setBackground(view: view)
+        if let tableViewBackgroundView = tableView.backgroundView {
+            AppColors.setBackground(view: tableViewBackgroundView)
+        }
+        
         navigationItem.title = infoCategory?.title
     }
     

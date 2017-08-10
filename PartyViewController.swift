@@ -53,7 +53,10 @@ class PartyViewController: UIViewController {
     
     func update() {
         updateBac()
-        if getBac() <= 0.0 && getUnitCount() > 0 {endEvening()}
+        if getBac() <= 0.0 && getUnitCount() > 0 {
+            print("ending evening")
+            //endEvening()
+        }
     }
     
     @IBAction func addUnit(_ sender: UIButton) {
@@ -163,7 +166,13 @@ class PartyViewController: UIViewController {
         let genderScore = gender ? 0.7 : 0.6
         
         let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
-        if currentBac < 0.0 {bacLabel.text = String(describing: 0.0)}
+        
+        print(currentBac)
+        
+        if currentBac < 0.0 {
+            print("ye")
+            bacLabel.text = String(describing: 0.0)
+        }
         else {bacLabel.text = String(describing: currentBac)}
     }
     

@@ -282,8 +282,6 @@ class PlanPartyViewController: UIViewController {
         let defaults = UserDefaults.standard
         let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
         
-        if shoudBeWhoWarnedSavedValue {return true}
-        
-        return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > ResourceList.whoMaxUnitCount && !hasBeenWhoWarned
+        return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > ResourceList.whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
     }
 }

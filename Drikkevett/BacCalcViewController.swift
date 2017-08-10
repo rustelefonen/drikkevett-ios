@@ -10,11 +10,8 @@ import UIKit
 
 class BacCalcViewController: UIViewController {
     
-    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
-    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
-    
     @IBOutlet weak var bacLabel: UILabel!
-    @IBOutlet weak var bacQuoteLabel: UILabel!
+    @IBOutlet weak var bacQuoteTextView: UITextView!
     @IBOutlet weak var beerAmount: UILabel!
     @IBOutlet weak var wineAmount: UILabel!
     @IBOutlet weak var drinkAmount: UILabel!
@@ -38,8 +35,6 @@ class BacCalcViewController: UIViewController {
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        
-        print(calculateAlcoholEnergyAmount(unitType: index))
         
         if estimateBac(unitType: index) > maxBac {displayMaxBacDialog()}
         else {
@@ -107,58 +102,22 @@ class BacCalcViewController: UIViewController {
         guard let wineUnits = Double(wineAmount.text!) else {return}
         guard let drinkUnits = Double(drinkAmount.text!) else {return}
         guard let shotUnits = Double(shotAmount.text!) else {return}
-        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
         
         let hours = Double(bacSlider.value)
         
         let userDataDao = UserDataDao()
         guard let weight = userDataDao.fetchUserData()?.weight as? Double else {return}
         guard let gender = userDataDao.fetchUserData()?.gender as? Bool else {return}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
-        if currentBac < 0.0 {bacLabel.text = String(describing: 0.0)}
-        else {bacLabel.text = String(describing: currentBac)}
+        let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: hours, weight: weight, gender: gender)
         
-        updateQuote()
-    }
-    
-    func updateQuote() {
-        guard let currentBac = Double(bacLabel.text!) else {return}
-        bacQuoteLabel.text = getQuoteTextBy(bac: currentBac)
+        bacLabel.text = String(describing: currentBac)
+        
+        bacQuoteTextView.text = getQuoteTextBy(bac: currentBac)
         let currentColor = getQuoteTextColorBy(bac: currentBac)
         
-        bacQuoteLabel.textColor = currentColor
+        bacQuoteTextView.textColor = currentColor
         bacLabel.textColor = currentColor
-    }
-    
-    func getQuoteTextBy(bac:Double) -> String {
-        if bac < 0.4 {return "Kos deg!"}
-        else if bac < 0.8 {return "Lykkepromille"}
-        else if bac < 1.0 {return "Du blir mer kritikkløs og risikovillig"}
-        else if bac < 1.2 {return "Balansen blir dårligere"}
-        else if bac < 1.4 {return "Talen snøvlete og \nkontroll på bevegelser forverres"}
-        else if bac < 1.8 {return "Man blir trøtt, sløv og \nkan bli kvalm"}
-        else if bac < 3.0 {return "Hukommelsen sliter! "}
-        return "Svært høy promille! \nMan kan bli bevistløs!"
-    }
-    
-    func getQuoteTextColorBy(bac:Double) -> UIColor {
-        if bac < 0.4 {return UIColor.white}
-        else if bac < 0.8 {return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)}
-        else if bac < 1.2 {return UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)}
-        else if bac < 1.8 {return UIColor.orange}
-        else if bac < 3.0 {return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)}
-        return UIColor.red
-    }
-    
-    func getUnitGrams(unitType:Int) -> Double{
-        let defaults = UserDefaults.standard
-        
-        let savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.percentageKeys[unitType]) : ResourceList.defaultPercentage[unitType]
-        let savedAmount = defaults.double(forKey: ResourceList.amountKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.amountKeys[unitType]) : ResourceList.defaultAmount[unitType]
-        
-        return savedAmount * savedPercentage / 10.0
     }
     
     func estimateBac(unitType:Int) -> Double{
@@ -170,20 +129,12 @@ class BacCalcViewController: UIViewController {
         var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
         amounts[unitType] += 1.0
         
-        let totalGrams = amounts[0] * getUnitGrams(unitType: 0) +
-            amounts[1] * getUnitGrams(unitType: 1) +
-            amounts[2] * getUnitGrams(unitType: 2) +
-            amounts[3] * getUnitGrams(unitType: 3)
-        
         guard let userData = AppDelegate.getUserData() else {return 0.0}
         
         guard let weight = userData.weight as? Double else {return 0.0}
         guard let gender = userData.gender as? Bool else {return 0.0}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
-        if currentBac > 0.0 {return currentBac}
-        return 0.0
+        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 0, weight: weight, gender: gender)
     }
     
     func displayMaxBacDialog() {
@@ -191,15 +142,5 @@ class BacCalcViewController: UIViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(refreshAlert, animated: true, completion: nil)
-    }
-    
-    func calculateAlcoholEnergyAmount(unitType:Int) -> Double{
-        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
-        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
-        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
-        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
-        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
-        
-        return totalGrams * 7.0
     }
 }
