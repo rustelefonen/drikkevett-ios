@@ -47,7 +47,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ki" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr8-0H-IBR">
-                                                        <rect key="frame" x="0.0" y="29" width="254" height="23.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="29" width="254" height="24"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="130"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Målet ditt vises i diagrammet til høyre. Fargene illustrerer hvordan det står til med makspromillen din." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Is-Ja-kuc">
-                                                        <rect key="frame" x="35" y="22.333333333333343" width="129" height="85.999999999999972"/>
+                                                        <rect key="frame" x="35" y="22" width="129" height="86"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="129" id="cJZ-S9-YV6"/>
@@ -114,7 +114,7 @@
                                                 <rect key="frame" x="199" y="0.0" width="199" height="130"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-co-h0u" customClass="PieChartView" customModule="Charts">
-                                                        <rect key="frame" x="49.666666666666686" y="15" width="100" height="100"/>
+                                                        <rect key="frame" x="50" y="15" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="izM-7n-EQ0"/>
@@ -172,7 +172,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8P-Xr-Qvt">
-                                                                <rect key="frame" x="8" y="42" width="117" height="15.666666666666629"/>
+                                                                <rect key="frame" x="8" y="42" width="117" height="16"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -289,7 +289,7 @@ høyeste promille</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTr-Mz-Roz">
-                                                                <rect key="frame" x="8" y="42" width="117" height="15.666666666666629"/>
+                                                                <rect key="frame" x="8" y="42" width="117" height="16"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -477,10 +477,10 @@ høyeste promille</string>
                             <tableViewSection headerTitle="Brukerinnstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yg-Zob">
@@ -576,10 +576,10 @@ høyeste promille</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
-                                        <rect key="frame" x="0.0" y="105.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="106" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NJR-rZ-8wN">
@@ -681,10 +681,10 @@ høyeste promille</string>
                             <tableViewSection headerTitle="Varslingsinnstillinger" id="Cgz-VX-fLd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ib8-LQ-RhR">
-                                        <rect key="frame" x="0.0" y="211.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="213" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ib8-LQ-RhR" id="Sw9-lS-lFB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-Gd-iyN">
@@ -967,7 +967,7 @@ høyeste promille</string>
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyd-XZ-RKD" id="jXL-2G-fLg">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-ks-gTO">
@@ -1051,7 +1051,7 @@ høyeste promille</string>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
-                                        <rect key="frame" x="20" y="175.99999999999997" width="374" height="242.33333333333329"/>
+                                        <rect key="frame" x="20" y="176" width="374" height="243"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1104,10 +1104,10 @@ høyeste promille</string>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="75" id="IxW-wH-fRL" customClass="HistoryCell" customModule="Drikkevett" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IxW-wH-fRL" id="EiX-l8-SR7">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-qA-eGY">
@@ -1253,7 +1253,7 @@ høyeste promille</string>
         <scene sceneID="grI-FW-BZf">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="rzY-lE-cnA" customClass="InfoCollectionViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="axG-ye-tdu">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="axG-ye-tdu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2213,19 +2213,19 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alkoholprosent:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV2-9E-Nxv">
-                                <rect key="frame" x="61" y="262.33333333333331" width="100.33333333333334" height="18"/>
+                                <rect key="frame" x="61" y="262" width="101" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp1-t2-Fa8">
-                                <rect key="frame" x="314" y="262.33333333333331" width="39" height="21"/>
+                                <rect key="frame" x="314" y="262" width="39" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4.5" minValue="0.10000000000000001" maxValue="96" translatesAutoresizingMaskIntoConstraints="NO" id="hQc-1w-SXB">
-                                <rect key="frame" x="59" y="299.33333333333331" width="296" height="31"/>
+                                <rect key="frame" x="59" y="299" width="296" height="31"/>
                                 <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="unitPercentChanged:" destination="bVV-v6-sKW" eventType="valueChanged" id="cbE-kq-vfB"/>
@@ -2238,20 +2238,20 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 cl" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26A-uS-Qwp">
-                                <rect key="frame" x="317" y="345" width="35.666666666666686" height="21"/>
+                                <rect key="frame" x="317" y="345" width="36" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="w8x-4w-8Ve">
-                                <rect key="frame" x="59" y="382.33333333333331" width="296" height="31"/>
+                                <rect key="frame" x="59" y="382" width="296" height="31"/>
                                 <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="unitAmountChanged:" destination="bVV-v6-sKW" eventType="valueChanged" id="Xiu-IT-u7T"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iy8-iU-dmh">
-                                <rect key="frame" x="157" y="428.33333333333331" width="100" height="70"/>
+                                <rect key="frame" x="157" y="428" width="100" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Average Math-100" translatesAutoresizingMaskIntoConstraints="NO" id="AdE-zV-lFp">
                                         <rect key="frame" x="25" y="0.0" width="50" height="50"/>
@@ -2436,13 +2436,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fs-hR-eM9">
-                                <rect key="frame" x="20" y="40" width="374" height="20"/>
+                                <rect key="frame" x="20" y="40" width="374" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-qj-tk7">
-                                <rect key="frame" x="20" y="80" width="374" height="439"/>
+                                <rect key="frame" x="20" y="81" width="374" height="438"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-9I-6r8">
                                 <rect key="frame" x="20" y="559" width="374" height="157"/>
@@ -2518,16 +2518,16 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                         <rect key="frame" x="8" y="268" width="398" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIg-Ck-zdU">
-                                                <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="800,-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM9-CM-q5B">
-                                                        <rect key="frame" x="37.333333333333329" y="8" width="57.999999999999986" height="30"/>
+                                                        <rect key="frame" x="37" y="8" width="58" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kostnader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-40-Wip">
-                                                        <rect key="frame" x="30.666666666666671" y="41" width="71.333333333333343" height="19"/>
+                                                        <rect key="frame" x="30" y="41" width="72" height="19"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2546,13 +2546,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                                 <rect key="frame" x="133" y="0.0" width="132" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-yx-3U2">
-                                                        <rect key="frame" x="41.666666666666657" y="8" width="48.666666666666686" height="30"/>
+                                                        <rect key="frame" x="42" y="8" width="49" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Høyeste promille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve8-5e-2lp">
-                                                        <rect key="frame" x="8.6666666666666572" y="41" width="114.66666666666666" height="19"/>
+                                                        <rect key="frame" x="9" y="41" width="115" height="19"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2571,13 +2571,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                                 <rect key="frame" x="266" y="0.0" width="132" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120/400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDb-z4-cux">
-                                                        <rect key="frame" x="20.333333333333314" y="8" width="92" height="29.666666666666686"/>
+                                                        <rect key="frame" x="20" y="8" width="92" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kcal/kJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0F-Yy-bbQ">
-                                                        <rect key="frame" x="42" y="39.666666666666686" width="49" height="19"/>
+                                                        <rect key="frame" x="42" y="40" width="49" height="19"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2614,17 +2614,17 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFg-wM-onX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LønningsPils" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-wV-4Ha">
-                                                                <rect key="frame" x="9.6666666666666714" y="0.0" width="80" height="60"/>
+                                                                <rect key="frame" x="10" y="0.0" width="80" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="PEF-kQ-N4w"/>
                                                                     <constraint firstAttribute="width" constant="80" id="pBN-HS-0Tg"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-F3-koQ">
-                                                                <rect key="frame" x="7" y="68" width="84.666666666666671" height="30"/>
+                                                                <rect key="frame" x="7" y="68" width="85" height="30"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -2640,17 +2640,17 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-Qr-zDq">
-                                                        <rect key="frame" x="99.666666666666686" y="0.0" width="99.333333333333314" height="128"/>
+                                                        <rect key="frame" x="100" y="0.0" width="99" height="128"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativVIN" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-Xy-WgH">
-                                                                <rect key="frame" x="9" y="0.0" width="79.999999999999986" height="60"/>
+                                                                <rect key="frame" x="9" y="0.0" width="80" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="Ew2-o8-nUQ"/>
                                                                     <constraint firstAttribute="width" constant="80" id="o2s-bY-erV"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-Ma-8i5">
-                                                                <rect key="frame" x="7" y="68" width="80.333333333333329" height="30"/>
+                                                                <rect key="frame" x="7" y="68" width="80" height="30"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -2960,7 +2960,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBS," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xid-wa-icr">
-                                <rect key="frame" x="20" y="266.33333333333326" width="374" height="29.666666666666686"/>
+                                <rect key="frame" x="20" y="266" width="374" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3262,7 +3262,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makspromille" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce4-zh-M7n">
-                                                <rect key="frame" x="8" y="31" width="171" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="31" width="171" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -3443,13 +3443,13 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-NC-Q7J">
-                                <rect key="frame" x="20" y="425" width="374" height="40"/>
+                                <rect key="frame" x="20" y="425" width="374" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-DM-Xje">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SR-41-TUU">
-                                                <rect key="frame" x="72" y="2" width="43" height="36"/>
+                                                <rect key="frame" x="72" y="-2" width="43" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Fjern">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3466,10 +3466,10 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfu-8D-5IQ">
-                                        <rect key="frame" x="187" y="0.0" width="187" height="40"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="009-sN-ozQ">
-                                                <rect key="frame" x="71.666666666666686" y="2" width="44" height="36"/>
+                                                <rect key="frame" x="72" y="-2" width="44" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Drikk">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3496,11 +3496,11 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                     <constraint firstAttribute="bottom" secondItem="Wfu-8D-5IQ" secondAttribute="bottom" id="ZyE-Av-gYO"/>
                                     <constraint firstItem="PWB-DM-Xje" firstAttribute="width" secondItem="Wfu-8D-5IQ" secondAttribute="width" id="aKb-7z-V0q"/>
                                     <constraint firstItem="PWB-DM-Xje" firstAttribute="top" secondItem="Kgq-NC-Q7J" secondAttribute="top" id="fm2-Bz-nhz"/>
-                                    <constraint firstAttribute="height" constant="40" id="zc3-Ot-Lel"/>
+                                    <constraint firstAttribute="height" constant="32" id="zc3-Ot-Lel"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-w5-bfY">
-                                <rect key="frame" x="20" y="473" width="374" height="60"/>
+                                <rect key="frame" x="20" y="465" width="374" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-F9-uf7">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -3654,10 +3654,10 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-of-ABD">
-                                <rect key="frame" x="20" y="541" width="374" height="70"/>
+                                <rect key="frame" x="20" y="533" width="374" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avslutt kvelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5G-4t-32y">
-                                        <rect key="frame" x="8" y="58" width="358" height="18"/>
+                                        <rect key="frame" x="8" y="52" width="358" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -3673,11 +3673,11 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="mFD-La-77Q" firstAttribute="top" secondItem="NAJ-of-ABD" secondAttribute="top" id="85z-pw-Ua3"/>
-                                    <constraint firstItem="Y5G-4t-32y" firstAttribute="top" secondItem="mFD-La-77Q" secondAttribute="bottom" constant="8" id="AhH-fz-h1o"/>
+                                    <constraint firstItem="Y5G-4t-32y" firstAttribute="top" secondItem="mFD-La-77Q" secondAttribute="bottom" constant="2" id="AhH-fz-h1o"/>
                                     <constraint firstAttribute="trailing" secondItem="Y5G-4t-32y" secondAttribute="trailing" constant="8" id="LC1-bq-E4a"/>
                                     <constraint firstItem="mFD-La-77Q" firstAttribute="centerX" secondItem="NAJ-of-ABD" secondAttribute="centerX" id="d0H-ir-jM4"/>
                                     <constraint firstItem="Y5G-4t-32y" firstAttribute="leading" secondItem="NAJ-of-ABD" secondAttribute="leading" constant="8" id="kvG-1p-AgX"/>
-                                    <constraint firstAttribute="height" constant="70" id="tSO-i6-eCm"/>
+                                    <constraint firstAttribute="height" constant="62" id="tSO-i6-eCm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4202,7 +4202,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-SZ-wsM">
-                                <rect key="frame" x="20" y="72" width="374" height="262.66666666666669"/>
+                                <rect key="frame" x="20" y="72" width="374" height="263"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">I følge Verdens helseorganisasjon er det en helt klart forhøyet risiko for svært alvorlige helseskader om du drikker 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Du kan lese mer om dette her: https://www.drinkaware.co.uk/alcohol-facts/alcoholic-drinks-units/alcohol-limits-unit-guidelines/
 
@@ -4213,13 +4213,13 @@ Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i app
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
-                                <rect key="frame" x="345" y="358.66666666666669" width="51" height="31"/>
+                                <rect key="frame" x="345" y="359" width="51" height="31"/>
                                 <connections>
                                     <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel er skrudd på" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-SC-U1D">
-                                <rect key="frame" x="20" y="358.66666666666669" width="141.33333333333334" height="21"/>
+                                <rect key="frame" x="20" y="359" width="142" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -4951,14 +4951,14 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="voa-tC-lf4"/>
                                                         <exclude reference="gYj-sh-sYg"/>
+                                                        <exclude reference="voa-tC-lf4"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="voa-tC-lf4"/>
                                                         <include reference="gYj-sh-sYg"/>
+                                                        <include reference="voa-tC-lf4"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -5012,14 +5012,14 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="oHt-4D-fwy"/>
                                                         <exclude reference="gDe-sb-jZx"/>
+                                                        <exclude reference="oHt-4D-fwy"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="oHt-4D-fwy"/>
                                                         <include reference="gDe-sb-jZx"/>
+                                                        <include reference="oHt-4D-fwy"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>

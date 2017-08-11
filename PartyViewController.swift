@@ -35,7 +35,7 @@ class PartyViewController: UIViewController {
         userData = AppDelegate.getUserData()
         initPlannedUnits()
         initAddedUnits()
-        endEveningView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEvening)))
+        endEveningView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleEndEvening)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +49,41 @@ class PartyViewController: UIViewController {
         super.viewDidDisappear(animated)
         update()
         updateTimer.invalidate()
+    }
+    
+    func handleEndEvening() {
+        if !isWithinTheFirstFifteenMinutes() {
+            displayEndEvening()
+        }
+        else {
+            displayEndEveningFirstFifteen()
+        }
+    }
+    
+    func displayEndEveningFirstFifteen() {
+        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Avslutter du kvelden innen 15 minutter vil ingen historikk lagres.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
+            let startEndTimestampsDao = StartEndTimestampsDao()
+            let startEndTimestamps = startEndTimestampsDao.getAll().first
+            startEndTimestamps?.endStamp = Date()
+            startEndTimestampsDao.save()
+            self.drinkEpisodeViewController?.insertView()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func displayEndEvening() {
+        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Er du sikker på at du vil avslutte kvelden?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.endEvening()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     func update() {
@@ -233,6 +268,11 @@ class PartyViewController: UIViewController {
         
         let startOfSessionStamp = getFirstUnitAdded()
         
+        if startOfSessionStamp == nil {
+            drinkEpisodeViewController?.insertView()
+            return
+        }
+        
         //Register history
         let historyDao = HistoryDao()
         let history = historyDao.createNewHistory()
@@ -321,7 +361,14 @@ class PartyViewController: UIViewController {
         return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
     }
     
-    
+    func isWithinTheFirstFifteenMinutes() -> Bool {
+        let startEndTimestampsDao = StartEndTimestampsDao()
+        let startEndTimestamps = startEndTimestampsDao.getAll().first
+        
+        guard let sessionStart = startEndTimestamps?.startStamp else {return false}
+        
+        return Calendar.current.date(byAdding: .minute, value: 15, to: sessionStart)! > Date()
+    }
     
     
     

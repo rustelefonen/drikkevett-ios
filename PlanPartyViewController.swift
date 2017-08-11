@@ -23,7 +23,9 @@ class PlanPartyViewController: UIViewController {
     var drinkEpisodeViewController:DrinkEpisodeViewController?
     
     var hasBeenWarned = false
+    var hasBeenMaxWarned = false
     var hasBeenWhoWarned = false
+    var hasBeenConcerned = false
     let maxBac = 3.0
     
     override func viewDidLoad() {
@@ -36,8 +38,9 @@ class PlanPartyViewController: UIViewController {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         
         let estimatedBac = estimateBac(unitType: index)
-        if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
-        else if estimatedBac > 3.0 {displayMaxBacDialog()}
+        if shouldDisplayConcernedWarning() {displayWhoConcernedBacDialog(index: index)}
+        else if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
+        else if estimatedBac > 3.0 && !hasBeenMaxWarned {displayMaxBacDialog(index: index)}
         else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
         else {modifyUnit(index: index, increment: true)}
     }
@@ -97,7 +100,7 @@ class PlanPartyViewController: UIViewController {
                 let info = Info()
                 info.title = ResourceList.exerciseTitles[4]
                 info.text = ResourceList.exerciseTexts[4]
-                info.image = ""
+                info.image = "poison"
                 destination.info = info
             }
         }
@@ -146,7 +149,9 @@ class PlanPartyViewController: UIViewController {
         expectedBac.text = "0.0"
         expectedCost.text = "0,-"
         hasBeenWarned = false
+        hasBeenMaxWarned = false
         hasBeenWhoWarned = false
+        hasBeenConcerned = false
     }
     
     func updateExpectedBac() {
@@ -198,13 +203,6 @@ class PlanPartyViewController: UIViewController {
         let estimatedBac = estimateBac(unitType: index)
         
         return estimatedBac > Double(maxBac)
-    }
-    
-    func displayMaxBacDialog() {
-        let refreshAlert = UIAlertController(title: "For høy promille!", message: "Du kan død!", preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(refreshAlert, animated: true, completion: nil)
     }
     
     func displayUserMaxBacDialog(index:Int) {
@@ -269,7 +267,7 @@ class PlanPartyViewController: UIViewController {
         let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
-            self.hasBeenWhoWarned = !self.hasBeenWhoWarned
+            self.hasBeenConcerned = !self.hasBeenConcerned
             self.modifyUnit(index: index, increment: true)
         }))
         
@@ -278,10 +276,38 @@ class PlanPartyViewController: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
     }
     
+    func displayMaxBacDialog(index:Int) {
+        let alert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenMaxWarned = !self.hasBeenMaxWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func shouldDisplayWhoWarning() -> Bool {
         let defaults = UserDefaults.standard
         let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
         
-        return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > ResourceList.whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
+        guard let userData = AppDelegate.getUserData() else {return false}
+        if let gender = userData.gender {
+            let whoMaxUnitCount = Bool(gender) ? ResourceList.whoMaxUnitCountMale : ResourceList.whoMaxUnitCountFemale
+            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
+        }
+        return false
+    }
+    
+    func shouldDisplayConcernedWarning() -> Bool {
+        let defaults = UserDefaults.standard
+        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
+        
+        guard let userData = AppDelegate.getUserData() else {return false}
+        if let gender = userData.gender {
+            let whoMaxUnitCount = Bool(gender) ? ResourceList.concernUnitCountMale : ResourceList.concernUnitCountFemale
+            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenConcerned && shoudBeWhoWarnedSavedValue
+        }
+        return false
     }
 }
