@@ -22,6 +22,7 @@ class BacCalcViewController: UIViewController {
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     
     let maxBac = 3.0
+    var hasBeenWarned = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class BacCalcViewController: UIViewController {
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         
-        if estimateBac(unitType: index) > maxBac {displayMaxBacDialog()}
+        if !hasBeenWarned && estimateBac(unitType: index) > maxBac {displayMaxBacDialog(index: index)}
         else {
             modifyUnit(index: index, increment: true)
             updateBac()
@@ -56,6 +57,7 @@ class BacCalcViewController: UIViewController {
         shotAmount.text = "0"
         bacSlider.value = 1
         updateSliderText(currentValue: 1)
+        hasBeenWarned = false
         updateBac()
     }
     
@@ -137,10 +139,14 @@ class BacCalcViewController: UIViewController {
         return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 1, weight: weight, gender: gender)
     }
     
-    func displayMaxBacDialog() {
-        let refreshAlert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
+    func displayMaxBacDialog(index:Int) {
+        let alert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
         
-        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(refreshAlert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWarned = !self.hasBeenWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

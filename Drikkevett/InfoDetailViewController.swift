@@ -11,6 +11,7 @@ import UIKit
 class InfoDetailViewController: UIViewController {
     
     static let segueId = "detailSegue"
+    static let whoSegue = "whoInfo"
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!

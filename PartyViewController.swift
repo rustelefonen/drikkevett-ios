@@ -12,7 +12,7 @@ import CoreData
 class PartyViewController: UIViewController {
     
     @IBOutlet weak var bacLabel: UILabel!
-    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var quoteTextView: UITextView!
     @IBOutlet weak var beerAmount: UILabel!
     @IBOutlet weak var wineAmount: UILabel!
     @IBOutlet weak var drinkAmount: UILabel!
@@ -55,7 +55,7 @@ class PartyViewController: UIViewController {
         updateBac()
         if getBac() <= 0.0 && getUnitCount() > 0 {
             print("ending evening")
-            //endEvening()
+            endEvening()
         }
     }
     
@@ -163,17 +163,13 @@ class PartyViewController: UIViewController {
         
         guard let weight = userData?.weight as? Double else {return}
         guard let gender = userData?.gender as? Bool else {return}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
+        let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: hours, weight: weight, gender: gender).roundTo(places: 2)
         
-        print(currentBac)
-        
-        if currentBac < 0.0 {
-            print("ye")
-            bacLabel.text = String(describing: 0.0)
-        }
-        else {bacLabel.text = String(describing: currentBac)}
+        bacLabel.text = String(describing: currentBac)
+        bacLabel.textColor = getQuoteTextColorBy(bac: currentBac)
+        quoteTextView.text = getQuoteTextBy(bac: currentBac)
+        quoteTextView.textColor = getQuoteTextColorBy(bac: currentBac)
     }
     
     func getBac() -> Double {
@@ -188,11 +184,10 @@ class PartyViewController: UIViewController {
         
         guard let weight = userData?.weight as? Double else {return 0.0}
         guard let gender = userData?.gender as? Bool else {return 0.0}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
-        if currentBac < 0.0 {return 0.0}
-        else {return currentBac}
+        let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: hours, weight: weight, gender: gender).roundTo(places: 2)
+        
+        return currentBac
     }
     
     func getUnitCount() -> Int{

@@ -1008,7 +1008,7 @@ høyeste promille</string>
         <!--Info Detail View Controller-->
         <scene sceneID="hXo-WC-0bS">
             <objects>
-                <viewController id="mzN-gI-fUP" customClass="InfoDetailViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="mzN-gI-fUP" customClass="InfoDetailViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d1b-lP-YhE"/>
                         <viewControllerLayoutGuide type="bottom" id="Y3f-Pz-0kD"/>
@@ -1090,7 +1090,7 @@ høyeste promille</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7k-K4-8PT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3509" y="938"/>
+            <point key="canvasLocation" x="6152" y="1776"/>
         </scene>
         <!--Historikk-->
         <scene sceneID="b4r-Rg-FeB">
@@ -3398,13 +3398,14 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <outlet property="shotAmount" destination="hmr-LM-m5p" id="Ciz-fN-AcE"/>
                         <outlet property="startEveningView" destination="70m-Dw-bW5" id="tLk-8V-1dp"/>
                         <outlet property="wineAmount" destination="72j-EB-VbL" id="XBq-Yq-qXg"/>
+                        <segue destination="mzN-gI-fUP" kind="show" identifier="whoInfo" id="Rxa-yF-pA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5h4-rA-FXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8323" y="-1410"/>
         </scene>
-        <!--Promillekalkulator-->
+        <!--MyKveld-->
         <scene sceneID="cMi-fT-PXx">
             <objects>
                 <viewController storyboardIdentifier="RUNNING" id="e40-VC-JjO" customClass="PartyViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
@@ -3422,14 +3423,18 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planlegg kvelden din!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYm-5W-OI1">
-                                <rect key="frame" x="20" y="149" width="374" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Kos deg!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-LY-OXF">
+                                <rect key="frame" x="20" y="149" width="374" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Oyh-ja-Q6O"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-x4-f8Q">
-                                <rect key="frame" x="0.0" y="210" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="qun-YY-0of"/>
                                 </constraints>
@@ -3438,7 +3443,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-NC-Q7J">
-                                <rect key="frame" x="20" y="418" width="374" height="40"/>
+                                <rect key="frame" x="20" y="425" width="374" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-DM-Xje">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
@@ -3495,7 +3500,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-w5-bfY">
-                                <rect key="frame" x="20" y="466" width="374" height="60"/>
+                                <rect key="frame" x="20" y="473" width="374" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X5-F9-uf7">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -3649,7 +3654,7 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-of-ABD">
-                                <rect key="frame" x="20" y="534" width="374" height="70"/>
+                                <rect key="frame" x="20" y="541" width="374" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avslutt kvelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5G-4t-32y">
                                         <rect key="frame" x="8" y="58" width="358" height="18"/>
@@ -3679,26 +3684,26 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wzR-Qc-IK1" firstAttribute="top" secondItem="cHO-wd-hLa" secondAttribute="bottom" id="0At-4h-7h2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9oC-LY-OXF" secondAttribute="trailing" id="4L4-p6-bKm"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wzR-Qc-IK1" secondAttribute="leading" id="8hK-IB-fi6"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="GYm-5W-OI1" secondAttribute="leading" id="9Xj-u2-y4p"/>
-                            <constraint firstItem="GYm-5W-OI1" firstAttribute="top" secondItem="wzR-Qc-IK1" secondAttribute="bottom" constant="8" id="B6J-7N-5li"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Kgq-NC-Q7J" secondAttribute="leading" id="Bwr-nz-27N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kgq-NC-Q7J" secondAttribute="trailing" id="Ey9-8d-Wjt"/>
-                            <constraint firstItem="7iu-x4-f8Q" firstAttribute="top" secondItem="GYm-5W-OI1" secondAttribute="bottom" constant="43" id="FSy-dt-eZ4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7iu-x4-f8Q" secondAttribute="trailing" constant="-20" id="GhT-ht-lci"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GYm-5W-OI1" secondAttribute="trailing" id="QDr-wt-QNa"/>
                             <constraint firstItem="Kgq-NC-Q7J" firstAttribute="top" secondItem="7iu-x4-f8Q" secondAttribute="bottom" constant="8" id="QbR-XU-i8q"/>
                             <constraint firstItem="NAJ-of-ABD" firstAttribute="top" secondItem="RgD-w5-bfY" secondAttribute="bottom" constant="8" id="Rvm-Bt-EfT"/>
                             <constraint firstItem="RgD-w5-bfY" firstAttribute="top" secondItem="Kgq-NC-Q7J" secondAttribute="bottom" constant="8" id="WSv-nk-8St"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NAJ-of-ABD" secondAttribute="trailing" id="ZQW-Ma-nkY"/>
+                            <constraint firstItem="7iu-x4-f8Q" firstAttribute="top" secondItem="9oC-LY-OXF" secondAttribute="bottom" constant="8" id="dcJ-TV-j0B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RgD-w5-bfY" secondAttribute="trailing" id="g7x-WD-luz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9oC-LY-OXF" secondAttribute="leading" id="iWS-QU-y0d"/>
                             <constraint firstItem="7iu-x4-f8Q" firstAttribute="leading" secondItem="kOR-kl-ln8" secondAttribute="leadingMargin" constant="-20" id="jRB-g7-Egq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="NAJ-of-ABD" secondAttribute="leading" id="jqy-Qc-mmh"/>
+                            <constraint firstItem="9oC-LY-OXF" firstAttribute="top" secondItem="wzR-Qc-IK1" secondAttribute="bottom" constant="8" id="khj-H4-lIJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RgD-w5-bfY" secondAttribute="leading" id="rim-a3-L11"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wzR-Qc-IK1" secondAttribute="trailing" id="s9T-H9-0Wn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Promillekalkulator" id="Fyh-3W-zla">
+                    <navigationItem key="navigationItem" title="MyKveld" id="Fyh-3W-zla">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="4oG-Nr-uPq"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -3708,14 +3713,14 @@ Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren 
                         <outlet property="beerAmount" destination="EHx-kC-FJK" id="TAS-38-nxQ"/>
                         <outlet property="drinkAmount" destination="iXI-fZ-7a7" id="QJb-AV-sPN"/>
                         <outlet property="endEveningView" destination="NAJ-of-ABD" id="QrD-hO-ObJ"/>
-                        <outlet property="quoteLabel" destination="GYm-5W-OI1" id="qJi-Na-adb"/>
+                        <outlet property="quoteTextView" destination="9oC-LY-OXF" id="Lan-xK-Drf"/>
                         <outlet property="shotAmount" destination="Rzm-Wh-1AZ" id="vDp-aa-uiY"/>
                         <outlet property="wineAmount" destination="uh5-s1-Nhf" id="3cU-xi-0F3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mh-hb-eAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9144.927536231884" y="-1410.3260869565217"/>
+            <point key="canvasLocation" x="9143.4782608695659" y="-1410.3260869565217"/>
         </scene>
         <!--Drikkeepisode-->
         <scene sceneID="wsF-bE-tjn">
@@ -5261,6 +5266,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
         <segue reference="xh3-Bq-Jx1"/>
         <segue reference="GXO-mE-sV2"/>
         <segue reference="O2D-nZ-bBk"/>
-        <segue reference="TeW-c2-XaW"/>
+        <segue reference="Rxa-yF-pA4"/>
+        <segue reference="WLe-Mb-qZs"/>
     </inferredMetricsTieBreakers>
 </document>

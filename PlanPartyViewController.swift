@@ -84,14 +84,21 @@ class PlanPartyViewController: UIViewController {
         drinkEpisodeViewController?.insertView()
         
         unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
-        
-        //Segue
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SelectDrinkPageViewController.planPartySegueId {
             if segue.destination is SelectDrinkPageViewController {
                 selectDrinkPageViewController = segue.destination as? SelectDrinkPageViewController
+            }
+        }
+        else if segue.identifier == InfoDetailViewController.whoSegue {
+            if let destination = segue.destination as? InfoDetailViewController {
+                let info = Info()
+                info.title = ResourceList.exerciseTitles[4]
+                info.text = ResourceList.exerciseTexts[4]
+                info.image = ""
+                destination.info = info
             }
         }
     }
@@ -138,6 +145,8 @@ class PlanPartyViewController: UIViewController {
         shotAmount.text = "0"
         expectedBac.text = "0.0"
         expectedCost.text = "0,-"
+        hasBeenWarned = false
+        hasBeenWhoWarned = false
     }
     
     func updateExpectedBac() {
@@ -162,24 +171,9 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Int(drinkAmount.text!) else {return}
         guard let shotUnits = Int(shotAmount.text!) else {return}
         
-        guard let userData = AppDelegate.getUserData() else {return}
-        
-        let totalCost =
-            beerUnits * Int(userData.costsBeer ?? 0) +
-            wineUnits * Int(userData.costsWine ?? 0) +
-            drinkUnits * Int(userData.costsDrink ?? 0) +
-            shotUnits * Int(userData.costsShot ?? 0)
+        let totalCost = calculateTotalCost(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits)
         
         expectedCost.text = String(totalCost) + ",-"
-    }
-    
-    func getUnitGrams(unitType:Int) -> Double{
-        let defaults = UserDefaults.standard
-        
-        let savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.percentageKeys[unitType]) : ResourceList.defaultPercentage[unitType]
-        let savedAmount = defaults.double(forKey: ResourceList.amountKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.amountKeys[unitType]) : ResourceList.defaultAmount[unitType]
-        
-        return savedAmount * savedPercentage / 10.0
     }
     
     func estimateBac(unitType:Int) -> Double{
@@ -188,24 +182,15 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
         guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
         
-        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
-        amounts[unitType] += 1.0
-        
-        let totalGrams =
-            amounts[0] * getUnitGrams(unitType: 0) +
-            amounts[1] * getUnitGrams(unitType: 1) +
-            amounts[2] * getUnitGrams(unitType: 2) +
-            amounts[3] * getUnitGrams(unitType: 3)
-        
         guard let userData = AppDelegate.getUserData() else {return 0.0}
         
         guard let weight = userData.weight as? Double else {return 0.0}
         guard let gender = userData.gender as? Bool else {return 0.0}
-        let genderScore = gender ? 0.7 : 0.6
         
-        let currentBac = (totalGrams/(weight * genderScore)).roundTo(places: 2)
-        if currentBac > 0.0 {return currentBac}
-        return 0.0
+        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
+        amounts[unitType] += 1.0
+        
+        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 0, weight: weight, gender: gender)
     }
     
     func estimatedBacIsHigherThanGoalBac(index:Int) -> Bool{
@@ -264,7 +249,8 @@ class PlanPartyViewController: UIViewController {
     }
     
     func displayWhoMaxBacDialog(index:Int) {
-        let refreshAlert = UIAlertController(title: "Mange enheter!", message: "Hvis du legger til denne enheten vil du overstige WHO sin anbefaling om maks 14 enheter per uke. Er du sikker?", preferredStyle: UIAlertControllerStyle.alert)
+        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som Verdens helseorganisasjon definerer som \"klart risikofylt drikking\". Dette vil si 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Har du et så høyt forbruk er det helt klart en forhøyet risiko for svært alvorlige helseskader."
+        let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
             self.hasBeenWhoWarned = !self.hasBeenWhoWarned
@@ -272,6 +258,23 @@ class PlanPartyViewController: UIViewController {
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: { (action: UIAlertAction!) in
+            self.performSegue(withIdentifier: InfoDetailViewController.whoSegue, sender: self)
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func displayWhoConcernedBacDialog(index:Int) {
+        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som kan defineres som bekymringsfullt. Dette vil si mellom 13 og 21 alkoholenheter per uke for menn og mellom 9 og 14 alkoholenheter per uke for kvinner."
+        let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWhoWarned = !self.hasBeenWhoWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: nil))
         present(refreshAlert, animated: true, completion: nil)
     }
     

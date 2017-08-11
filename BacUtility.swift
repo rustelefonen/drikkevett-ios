@@ -108,6 +108,12 @@ func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:D
     return totalGrams * 29.3
 }
 
+func calculateTotalCost(beerUnits:Int, wineUnits:Int, drinkUnits:Int, shotUnits:Int) ->Int {
+    guard let userData = AppDelegate.getUserData() else {return 0}
+    
+    return beerUnits * Int(userData.costsBeer ?? 0) + wineUnits * Int(userData.costsWine ?? 0) + drinkUnits * Int(userData.costsDrink ?? 0) + shotUnits * Int(userData.costsShot ?? 0)
+}
+
 fileprivate func getUnitGrams(unitType:Int) -> Double{
     let defaults = UserDefaults.standard
     
