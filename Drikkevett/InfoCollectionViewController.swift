@@ -122,5 +122,13 @@ class InfoCollectionViewController : UICollectionViewController {
             info.text = ResourceList.rustelefonenTexts[i]
             infoCategories[5].infos?.append(info)
         }
+        
+        for i in 0..<ResourceList.tipsTitles.count {
+            let info = Info()
+            info.title = ResourceList.tipsTitles[i]
+            info.image = ResourceList.tipsImages[i]
+            info.text = ResourceList.tipsTexts[i]
+            infoCategories[6].infos?.append(info)
+        }
     }
 }

@@ -78,12 +78,18 @@ func getUIImageRegisterBy(bac:Double) -> UIImage? {
 }
 
 func getQuoteTextColorBy(bac:Double) -> UIColor {
-    if bac < 0.4 {return UIColor.white}
-    else if bac < 0.8 {return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)}
-    else if bac < 1.2 {return UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)}
-    else if bac < 1.8 {return UIColor.orange}
-    else if bac < 3.0 {return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)}
-    return UIColor.red
+    switch bac {
+    case _ where bac < 0.8:
+        return UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
+    case 0.8..<1.3:
+        return UIColor(red: 255/255.0, green: 180/255.0, blue: 10/255.0, alpha: 1.0)
+    case 1.3..<2.0:
+        return UIColor.orange
+    case 2.0..<3.0:
+        return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
+    default:
+        return UIColor.red
+    }
 }
 
 func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, hours:Double, weight:Double, gender:Bool) -> Double {

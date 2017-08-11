@@ -27,6 +27,7 @@ class BacCalcViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
+        updateBac()
     }
     
     @IBAction func bacSliderChanged(_ sender: UISlider) {
@@ -142,7 +143,7 @@ class BacCalcViewController: UIViewController {
     func displayMaxBacDialog(index:Int) {
         let alert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Ok, legg til", style: .destructive, handler: { (action: UIAlertAction!) in
             self.hasBeenWarned = !self.hasBeenWarned
             self.modifyUnit(index: index, increment: true)
         }))

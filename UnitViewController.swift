@@ -21,6 +21,7 @@ class UnitViewController: UIViewController {
     @IBOutlet weak var unitAmountSlider: UISlider!
     @IBOutlet weak var standardButton: UIView!
     
+    @IBOutlet weak var tipsTextView: UITextView!
     var unitType:Int?
     var introPageViewController:IntroPageViewController?
     
@@ -34,20 +35,20 @@ class UnitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let introPage = introPageViewController {
-            introPage.removeSwipeGesture()
-        }
+        if let introPage = introPageViewController {introPage.removeSwipeGesture()}
         
         AppColors.setBackground(view: view)
         initUnit()
         standardButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setStandardValues)))
+        
+        if unitType == 2 {
+            tipsTextView.text = tipsTextView.text + "\nI drink regnes promillen kun ut i fra shottet som er brukt. Skriv derfor mengden og prosenandelen på shottet."
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let introPage = introPageViewController {
-            introPage.restoreSwipeGesture()
-        }
+        if let introPage = introPageViewController {introPage.restoreSwipeGesture()}
         
         guard let unitPercentageChosen = Double(String(describing: unitPercent.text!.components(separatedBy: "%").first!)) else {return}
         guard let unitAmountChosen = Double(String(describing: unitAmount.text!.components(separatedBy: " ").first!)) else {return}
