@@ -28,186 +28,71 @@ class AfterRegisterViewController: UIViewController {
     }
     
     func setDatePicker() {
-        /*datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        datePicker.datePickerMode = .countDownTimer
-        datePicker.datePickerMode = .dateAndTime
-        
-        datePicker.minimumDate = history?.dato
-        datePicker.maximumDate = history?.endOfSesDato
-        if let startOfSession = history!.dato {
-            datePicker.date = startOfSession
-        }*/
-        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         datePicker.datePickerMode = .countDownTimer
         datePicker.datePickerMode = .dateAndTime
         
-        //Varsku hei, her kan man muligens legge inn før første enhet, burde sjekkes!
-        datePicker.minimumDate = history?.beginDate
+        datePicker.minimumDate = getDateOfFirstUnitAdded(units: history?.units?.allObjects as! [Unit])
         datePicker.maximumDate = history?.endDate
         if let startOfSession = history!.beginDate {
             datePicker.date = startOfSession
         }
     }
     
+    func getDateOfFirstUnitAdded(units:[Unit]) -> Date?{
+        return units.sorted(by: { $0.timeStamp! < $1.timeStamp! }).first?.timeStamp
+    }
+    
     func setUnitsFromHistory() {
-        /*beerUnits.text = String(describing: history!.antallOl!)
-        wineUnits.text = String(describing: history!.antallVin!)
-        drinkUnits.text = String(describing: history!.antallDrink!)
-        shotUnits.text = String(describing: history!.antallShot!)*/
+        var beerCount = 0
+        var wineCount = 0
+        var drinkCount = 0
+        var shotCount = 0
         
-       
+        if let units = history?.units {
+            for unit in units.allObjects as! [Unit] {
+                if unit.unitType == "Beer" {
+                    beerCount += 1
+                } else if unit.unitType == "Wine" {
+                    wineCount += 1
+                } else if unit.unitType == "Drink" {
+                    drinkCount += 1
+                } else if unit.unitType == "Shot" {
+                    shotCount += 1
+                }
+            }
+        }
+        
+        beerUnits.text = String(describing: beerCount)
+        wineUnits.text = String(describing: wineCount)
+        drinkUnits.text = String(describing: drinkCount)
+        shotUnits.text = String(describing: shotCount)
     }
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        let historyDao = HistoryDao()
-        let histories = historyDao.getAll()
         
-        if let currentHistory = incrementUnit(index: index, histories: histories) {
-            
-            /*
-            guard let userData = AppDelegate.getUserData() else {return}
-            
-            let totalCost =
-                Int(currentHistory.antallOl ?? 0) * Int(userData.costsBeer ?? 0) +
-                Int(currentHistory.antallVin ?? 0) * Int(userData.costsWine ?? 0) +
-                Int(currentHistory.antallDrink ?? 0) * Int(userData.costsDrink ?? 0) +
-                Int(currentHistory.antallShot ?? 0) * Int(userData.costsShot ?? 0)
-            
-            currentHistory.forbruk = totalCost as NSNumber
-            
-            //Register graph history
-            
-            let unitAddedDao = UnitAddedDao()
-            
-            let grr = unitAddedDao.createNewUnitAdded()
-            
-            
-            let unitsAdded = unitAddedDao.getAll()
-
-            var highestBac = 0.0
-            
-            
-            while tmpDate < endStamp {
-                let nextTmpDate = Calendar.current.date(byAdding: .minute, value: 15, to: tmpDate)!
-                for unit in unitsAdded {
-                    
-                    var tmpBeerUnits = 0.0
-                    var tmpWineUnits = 0.0
-                    var tmpDrinkUnits = 0.0
-                    var tmpShotUnits = 0.0
-                    
-                    if (tmpDate...nextTmpDate).contains(unit.timeStamp!) {
-                        if unit.unitAlkohol == ResourceList.unitsEnglish[0] {tmpBeerUnits += 1.0}
-                        else if unit.unitAlkohol == ResourceList.unitsEnglish[1] {tmpWineUnits += 1.0}
-                        else if unit.unitAlkohol == ResourceList.unitsEnglish[2] {tmpDrinkUnits += 1.0}
-                        else if unit.unitAlkohol == ResourceList.unitsEnglish[3] {tmpShotUnits += 1.0}
-                    }
-                    
-                    let totalGrams = tmpBeerUnits * getUnitGrams(unitType: 0) + tmpWineUnits * getUnitGrams(unitType: 1) + tmpDrinkUnits * getUnitGrams(unitType: 2) + tmpShotUnits * getUnitGrams(unitType: 3)
-                    
-                    guard let weight = userData?.weight as? Double else {return}
-                    guard let gender = userData?.gender as? Bool else {return}
-                    let genderScore = gender ? 0.7 : 0.6
-                    
-                    let hours = Double(nextTmpDate.timeIntervalSince(startEndTimestamps!.startStamp!)) / 3600.0
-                    
-                    var currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
-                    if currentBac < 0.0 {currentBac = 0.0}
-                    
-                    if currentBac > highestBac {highestBac = currentBac}
-                    
-                    let graphHistoryDao = GraphHistoryDao()
-                    let graphHistory = graphHistoryDao.createNewGraphHistory()
-                    graphHistory.timeStampAdded = tmpDate
-                    graphHistory.currentPromille = currentBac as NSNumber
-                    graphHistory.sessionNumber = defaults.integer(forKey: defaultKeys.numberOfSessions) as NSNumber
-                    graphHistoryDao.save()
-                    
-                    tmpDate = nextTmpDate
-                }
-            }
-            history.hoyestePromille = highestBac as NSNumber
-            historyDao.save()
-            
-            drinkEpisodeViewController?.insertView()*/
+        let unitDao = UnitDao()
+        let unit = unitDao.createNewUnit()
+        unit.timeStamp = Date()
+        
+        switch index {
+        case 0:
+            unit.unitType = "Beer"
+        case 1:
+            unit.unitType = "Wine"
+        case 2:
+            unit.unitType = "Drink"
+        default:
+            unit.unitType = "Shot"
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        historyDao.save()
+        history?.addToUnits(unit)
+        unitDao.save()
         
         setUnitsFromHistory()
         
-        //HER MÅ ALT ANNET OPPDATERS OG
-        
-        unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
-    }
-    
-    func incrementUnit(index:Int, histories:[Historikk]) -> Historikk?{
-        /*for fetchedHistory in histories {
-            if fetchedHistory.sessionNumber == history?.sessionNumber {
-                if index == 0 {
-                    let incremented:NSNumber? = NSNumber(integerLiteral:Int(fetchedHistory.antallOl!) + 1)
-                    fetchedHistory.antallOl = incremented
-                    return fetchedHistory
-                }
-                else if index == 1 {
-                    let incremented:NSNumber? = NSNumber(integerLiteral:Int(fetchedHistory.antallVin!) + 1)
-                    fetchedHistory.antallVin = incremented
-                    return fetchedHistory
-                }
-                else if index == 2 {
-                    let incremented:NSNumber? = NSNumber(integerLiteral:Int(fetchedHistory.antallDrink!) + 1)
-                    fetchedHistory.antallDrink = incremented
-                    return fetchedHistory
-                }
-                else if index == 3 {
-                    let incremented:NSNumber? = NSNumber(integerLiteral:Int(fetchedHistory.antallShot!) + 1)
-                    fetchedHistory.antallShot = incremented
-                    return fetchedHistory
-                }
-            }
-        }
-        return nil*/
-        
-        return nil
+        unitAddedAlertController(String(describing: ResourceList.units[index] + " lagt til!"), message: "", delayTime: 0.8)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

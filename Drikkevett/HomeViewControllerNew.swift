@@ -118,7 +118,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         goalTextView.text = ResourceList.pieChartTexts[2]
     }
     
-    func initBarCard() {        
+    func initBarCard() {
         let historyList = NewHistoryDao().getAll()
         
         guard let goalBac = userData?.goalPromille as? Double else {return}
