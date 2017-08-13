@@ -26,9 +26,6 @@ class PartyViewController: UIViewController {
     
     static let partySegueId = "partySegueYo"
     
-    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
-    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
-    
     var hasBeenWarned = false
     
     override func viewDidLoad() {
@@ -54,12 +51,8 @@ class PartyViewController: UIViewController {
     }
     
     func handleEndEvening() {
-        if !isWithinTheFirstFifteenMinutes() {
-            displayEndEvening()
-        }
-        else {
-            displayEndEveningFirstFifteen()
-        }
+        if !isWithinTheFirstFifteenMinutes() {displayEndEvening()}
+        else {displayEndEveningFirstFifteen()}
     }
     
     func displayEndEveningFirstFifteen() {
@@ -109,8 +102,6 @@ class PartyViewController: UIViewController {
             updateBac()
             unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
         }
-        
-        
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -366,7 +357,7 @@ class PartyViewController: UIViewController {
     
     func getUnitGrams(unitType:Int) -> Double{
         let defaults = UserDefaults.standard
-        return defaults.double(forKey: amountKeys[unitType]) * defaults.double(forKey: percentageKeys[unitType]) / 10.0
+        return defaults.double(forKey: ResourceList.amountKeys[unitType]) * defaults.double(forKey: ResourceList.percentageKeys[unitType]) / 10.0
     }
     
     func isWithinTheFirstFifteenMinutes() -> Bool {

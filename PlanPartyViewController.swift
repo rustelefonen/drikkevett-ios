@@ -55,7 +55,7 @@ class PlanPartyViewController: UIViewController {
         guard let shotUnits = Int(shotAmount.text!) else {return}
         
         let unitsCount = beerUnits + wineUnits + drinkUnits + shotUnits
-        if unitsCount <= 0 {return}
+        if unitsCount <= 0 {displayNoUnitsDialog()}
         
         UnitAddedDao().deleteAll()
         
@@ -202,8 +202,6 @@ class PlanPartyViewController: UIViewController {
         return estimatedBac > Double(maxBac)
     }
     
-    
-    
     func getUnitCountForCurrentWeek() -> Int {
         let historyDao = HistoryDao()
         var currentWeekUnitCount = 0
@@ -271,6 +269,13 @@ class PlanPartyViewController: UIViewController {
             self.modifyUnit(index: index, increment: true)
         }))
         alert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func displayNoUnitsDialog() {
+        let alert = UIAlertController(title: "Ingen enheter lagt til", message: "Du må legge til minst en enhet for å starte en kveld.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

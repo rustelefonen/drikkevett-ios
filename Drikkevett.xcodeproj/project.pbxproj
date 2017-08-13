@@ -21,6 +21,7 @@
 		D5371A851F0D1BD900B81A89 /* DayAfterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */; };
 		D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A861F0D845C00B81A89 /* UnitViewController.swift */; };
 		D58F50DD1F3FDA7F0013C41F /* UnitUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50DC1F3FDA7F0013C41F /* UnitUpdateViewController.swift */; };
+		D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -158,6 +159,7 @@
 		D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A861F0D845C00B81A89 /* UnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = SOURCE_ROOT; };
 		D58F50DC1F3FDA7F0013C41F /* UnitUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
+		D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryUtility.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -471,6 +473,7 @@
 				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
 				D5B739781F3CA9FB009EDC88 /* BacUtility.swift */,
+				D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
 				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
 				D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */,
+				D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */,
 				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
 				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */,

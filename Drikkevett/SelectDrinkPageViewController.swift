@@ -47,14 +47,6 @@ class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerD
         }
     }
     
-    func lol() -> Int{
-        if let vc = childViewControllers.first as? myScrollVC {
-            return vcArr.index(of: vc)!
-        }
-        return -1
-        
-    }
-    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = vcArr.index(of: viewController as! myScrollVC) else {return nil}
         let previousIndex = viewControllerIndex - 1
