@@ -38,7 +38,6 @@
 		D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */; };
 		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
 		D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */; };
-		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
 		D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */; };
 		D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E851D29A932004FC6A3 /* Main.storyboard */; };
 		D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E881D29A93D004FC6A3 /* Main.strings */; };
@@ -65,10 +64,6 @@
 		D5C3FACC1F0574F50059AA90 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */; };
 		D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */; };
 		D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */; };
-		D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */; };
-		D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */; };
-		D5C3FADC1F0576610059AA90 /* UpdateCostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */; };
-		D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */; };
 		D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FADF1F0576860059AA90 /* InfoCategory.swift */; };
 		D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE11F05768C0059AA90 /* Info.swift */; };
 		D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAE31F0576980059AA90 /* InfoCategoryTableViewController.swift */; };
@@ -162,7 +157,6 @@
 		D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VelkommenViewController.swift; path = Drikkevett/VelkommenViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KostnaderViewController.swift; path = Drikkevett/KostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = Drikkevett/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E861D29A932004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5958E891D29A93D004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/Main.strings; sourceTree = "<group>"; };
@@ -190,10 +184,6 @@
 		D5C3FACB1F0574F50059AA90 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Drikkevett/UIViewExtension.swift; sourceTree = "<group>"; };
 		D5C3FACF1F0575F50059AA90 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = Drikkevett/PrivacyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourcesViewController.swift; path = Drikkevett/SourcesViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUsViewController.swift; path = Drikkevett/ContactUsViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateUserSettingsViewController.swift; path = Drikkevett/UpdateUserSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCostsViewController.swift; path = Drikkevett/UpdateCostsViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateMaxBacViewController.swift; path = Drikkevett/UpdateMaxBacViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FADF1F0576860059AA90 /* InfoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCategory.swift; path = Drikkevett/InfoCategory.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAE11F05768C0059AA90 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Info.swift; path = Drikkevett/Info.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAE31F0576980059AA90 /* InfoCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCategoryTableViewController.swift; path = Drikkevett/InfoCategoryTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -361,12 +351,7 @@
 		D5412BC51D285EAF00445D6C /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				D5C3FAD71F05763F0059AA90 /* ContactUsViewController.swift */,
-				D5C3FAD91F0576550059AA90 /* UpdateUserSettingsViewController.swift */,
-				D5C3FADB1F0576610059AA90 /* UpdateCostsViewController.swift */,
-				D5C3FADD1F0576690059AA90 /* UpdateMaxBacViewController.swift */,
 				D5C3FAD51F0576320059AA90 /* SourcesViewController.swift */,
-				D5958E5B1D29A68D004FC6A3 /* webViewController.swift */,
 				D5B739681F362FF1009EDC88 /* UnitsPerWeekViewController.swift */,
 				D5B7396F1F3A0A86009EDC88 /* CostUpdateViewController.swift */,
 				D5B739721F3B3E5B009EDC88 /* InformationUpdateViewController.swift */,
@@ -597,7 +582,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C3FADC1F0576610059AA90 /* UpdateCostsViewController.swift in Sources */,
 				D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */,
 				D5C3FAEC1F0577320059AA90 /* HistoryFormatter.swift in Sources */,
 				D52D459E1EF91737008353AB /* RootViewController.swift in Sources */,
@@ -618,12 +602,10 @@
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
 				D58F50DD1F3FDA7F0013C41F /* UnitUpdateViewController.swift in Sources */,
 				D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */,
-				D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */,
 				D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */,
 				D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
-				D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */,
 				D5958E251D29A239004FC6A3 /* TerminatedTimeStamp.swift in Sources */,
 				D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */,
 				D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */,
@@ -645,7 +627,6 @@
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
 				D58F50EF1F3FF58E0013C41F /* UnitDao.swift in Sources */,
 				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
-				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
 				D5B739731F3B3E5B009EDC88 /* InformationUpdateViewController.swift in Sources */,
 				D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */,
 				D5B739701F3A0A86009EDC88 /* CostUpdateViewController.swift in Sources */,
@@ -653,7 +634,6 @@
 				D58F50ED1F3FEECD0013C41F /* NewHistoryDao.swift in Sources */,
 				D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */,
 				D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */,
-				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
 				D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */,
 				D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */,
 				D5E709551F0E501E00254218 /* IntroPageViewController.swift in Sources */,
