@@ -6,10 +6,7 @@
 //  Copyright © 2017 Lars Petter Kristiansen. All rights reserved.
 //
 
-class HistoryEntry {
-    /*var section:String?
-    var histories:[Historikk]?*/
-    
+class HistoryEntry {    
     var section:String?
     var histories:[History]?
 }

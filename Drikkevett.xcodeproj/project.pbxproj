@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D52D459E1EF91737008353AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D459D1EF91737008353AB /* RootViewController.swift */; };
 		D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */; };
-		D5371A6E1F06747100B81A89 /* InnholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6D1F06747100B81A89 /* InnholdViewController.swift */; };
-		D5371A701F06748800B81A89 /* GlemteEnheterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A6F1F06748800B81A89 /* GlemteEnheterViewController.swift */; };
 		D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */; };
 		D5371A741F0A858C00B81A89 /* UnitAddedDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */; };
 		D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */; };
@@ -37,21 +35,11 @@
 		D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E2E1D29A2A9004FC6A3 /* Historikk.swift */; };
 		D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */; };
 		D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E351D29A430004FC6A3 /* AppDelegate.swift */; };
-		D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */; };
-		D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */; };
 		D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */; };
 		D5958E461D29A524004FC6A3 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E451D29A524004FC6A3 /* InformationViewController.swift */; };
 		D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */; };
 		D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E5B1D29A68D004FC6A3 /* webViewController.swift */; };
 		D5958E621D29A6AC004FC6A3 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */; };
-		D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */; };
-		D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */; };
-		D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */; };
-		D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */; };
-		D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */; };
-		D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */; };
-		D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */; };
-		D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E831D29A81F004FC6A3 /* HomeViewController.swift */; };
 		D5958E871D29A932004FC6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5958E851D29A932004FC6A3 /* Main.storyboard */; };
 		D5958E8A1D29A93D004FC6A3 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E881D29A93D004FC6A3 /* Main.strings */; };
 		D5958E8D1D29A98C004FC6A3 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5958E8B1D29A98C004FC6A3 /* LaunchScreen.strings */; };
@@ -64,8 +52,6 @@
 		D5B739791F3CA9FB009EDC88 /* BacUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B739781F3CA9FB009EDC88 /* BacUtility.swift */; };
 		D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */; };
 		D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */; };
-		D5C3FAB31F0573040059AA90 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB11F0573040059AA90 /* Status.swift */; };
-		D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB21F0573040059AA90 /* StatusUtils.swift */; };
 		D5C3FAB61F05737B0059AA90 /* CountyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB51F05737B0059AA90 /* CountyController.swift */; };
 		D5C3FAB81F0573880059AA90 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB71F0573880059AA90 /* QuestionController.swift */; };
 		D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAB91F0573920059AA90 /* FormCell.swift */; };
@@ -96,11 +82,6 @@
 		D5C3FAF41F0577590059AA90 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */; };
 		D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */; };
 		D5C3FAF81F05776B0059AA90 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */; };
-		D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */; };
-		D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */; };
-		D5C3FAFE1F0577B70059AA90 /* PlanPartyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */; };
-		D5C3FB001F0577C50059AA90 /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */; };
-		D5C3FB021F0577CE0059AA90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB011F0577CE0059AA90 /* User.swift */; };
 		D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */; };
 		D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */; };
 		D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB091F0578200059AA90 /* MyScrollVC.swift */; };
@@ -151,8 +132,6 @@
 		7FE4E4831C58BD12004465B7 /* Drikkevett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drikkevett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52D459D1EF91737008353AB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = Drikkevett/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewControllerNew.swift; path = Drikkevett/HomeViewControllerNew.swift; sourceTree = SOURCE_ROOT; };
-		D5371A6D1F06747100B81A89 /* InnholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InnholdViewController.swift; path = Drikkevett/InnholdViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5371A6F1F06748800B81A89 /* GlemteEnheterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlemteEnheterViewController.swift; path = Drikkevett/GlemteEnheterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A711F0A7BB000B81A89 /* PlanPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPartyViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitAddedDao.swift; sourceTree = "<group>"; };
 		D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartEndTimestampsDao.swift; sourceTree = "<group>"; };
@@ -180,21 +159,11 @@
 		D5958E2E1D29A2A9004FC6A3 /* Historikk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historikk.swift; path = Drikkevett/Historikk.swift; sourceTree = SOURCE_ROOT; };
 		D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D5958E351D29A430004FC6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Drikkevett/AppDelegate.swift; sourceTree = "<group>"; };
-		D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkallMenyBrain.swift; path = Drikkevett/SkallMenyBrain.swift; sourceTree = "<group>"; };
-		D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataMethods.swift; path = Drikkevett/CoreDataMethods.swift; sourceTree = "<group>"; };
 		D5958E431D29A513004FC6A3 /* VelkommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VelkommenViewController.swift; path = Drikkevett/VelkommenViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E451D29A524004FC6A3 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = Drikkevett/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E471D29A531004FC6A3 /* KostnaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KostnaderViewController.swift; path = Drikkevett/KostnaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E5B1D29A68D004FC6A3 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = webViewController.swift; path = Drikkevett/webViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E611D29A6AC004FC6A3 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = Drikkevett/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHistorikkCellTableViewCell.swift; path = Drikkevett/CustomHistorikkCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorikkViewController.swift; path = Drikkevett/HistorikkViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DagenDerpaViewController.swift; path = Drikkevett/DagenDerpaViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainDagenDerpaViewController.swift; path = Drikkevett/MainDagenDerpaViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiddleUnitViewController.swift; path = Drikkevett/MiddleUnitViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseUnitViewController.swift; path = Drikkevett/ChooseUnitViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Drikkevett/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5958E831D29A81F004FC6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Drikkevett/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5958E861D29A932004FC6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Drikkevett/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5958E891D29A93D004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/Main.strings; sourceTree = "<group>"; };
 		D5958E8C1D29A98C004FC6A3 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Drikkevett/nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -208,8 +177,6 @@
 		D5B739781F3CA9FB009EDC88 /* BacUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacUtility.swift; sourceTree = "<group>"; };
 		D5C3FAAA1F05723B0059AA90 /* GuidanceContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidanceContentViewController.swift; path = Drikkevett/GuidanceContentViewController.swift; sourceTree = "<group>"; };
 		D5C3FAAB1F05723B0059AA90 /* GuidancePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuidancePageViewController.swift; path = Drikkevett/GuidancePageViewController.swift; sourceTree = "<group>"; };
-		D5C3FAB11F0573040059AA90 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Drikkevett/Status.swift; sourceTree = "<group>"; };
-		D5C3FAB21F0573040059AA90 /* StatusUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusUtils.swift; path = Drikkevett/StatusUtils.swift; sourceTree = "<group>"; };
 		D5C3FAB51F05737B0059AA90 /* CountyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountyController.swift; path = Drikkevett/CountyController.swift; sourceTree = "<group>"; };
 		D5C3FAB71F0573880059AA90 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionController.swift; path = Drikkevett/QuestionController.swift; sourceTree = "<group>"; };
 		D5C3FAB91F0573920059AA90 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormCell.swift; path = Drikkevett/FormCell.swift; sourceTree = "<group>"; };
@@ -240,11 +207,6 @@
 		D5C3FAF31F0577590059AA90 /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryEntry.swift; path = Drikkevett/HistoryEntry.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAF51F0577620059AA90 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = Drikkevett/HistoryViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FAF71F05776B0059AA90 /* ChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartFormatter.swift; path = Drikkevett/ChartFormatter.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayAfterUtils.swift; path = Drikkevett/DayAfterUtils.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = defaultKeys.swift; path = Drikkevett/defaultKeys.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanPartyUtils.swift; path = Drikkevett/PlanPartyUtils.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultUtils.swift; path = Drikkevett/UserDefaultUtils.swift; sourceTree = SOURCE_ROOT; };
-		D5C3FB011F0577CE0059AA90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Drikkevett/User.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BacCalcViewController.swift; path = Drikkevett/BacCalcViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectDrinkPageViewController.swift; path = Drikkevett/SelectDrinkPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB091F0578200059AA90 /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScrollVC.swift; path = Drikkevett/MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
@@ -269,8 +231,6 @@
 		7F850C851D4F562F007B62DB /* status */ = {
 			isa = PBXGroup;
 			children = (
-				D5C3FAB11F0573040059AA90 /* Status.swift */,
-				D5C3FAB21F0573040059AA90 /* StatusUtils.swift */,
 				D5371A7D1F0AC92D00B81A89 /* StatusNew.swift */,
 			);
 			name = status;
@@ -334,8 +294,6 @@
 			children = (
 				D5ED09FD1F05357C0091F98C /* drinkEpisode */,
 				D5412BC41D285E4E00445D6C /* history */,
-				D5412BC31D285E3800445D6C /* dayAfter */,
-				D5412BC21D285E2400445D6C /* planEvening */,
 				D5412BC11D285E0E00445D6C /* calculator */,
 				D5412BC01D285DFD00445D6C /* home */,
 			);
@@ -370,7 +328,6 @@
 		D5412BC01D285DFD00445D6C /* home */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E831D29A81F004FC6A3 /* HomeViewController.swift */,
 				D5371A6B1F057DF700B81A89 /* HomeViewControllerNew.swift */,
 			);
 			name = home;
@@ -386,37 +343,9 @@
 			name = calculator;
 			sourceTree = "<group>";
 		};
-		D5412BC21D285E2400445D6C /* planEvening */ = {
-			isa = PBXGroup;
-			children = (
-				D5958E771D29A7C6004FC6A3 /* FirstViewController.swift */,
-				D5C3FAFB1F0577A50059AA90 /* defaultKeys.swift */,
-				D5958E6D1D29A77D004FC6A3 /* MiddleUnitViewController.swift */,
-				D5958E6F1D29A787004FC6A3 /* ChooseUnitViewController.swift */,
-				D5C3FAFD1F0577B70059AA90 /* PlanPartyUtils.swift */,
-				D5C3FAFF1F0577C50059AA90 /* UserDefaultUtils.swift */,
-				D5C3FB011F0577CE0059AA90 /* User.swift */,
-				D5371A6D1F06747100B81A89 /* InnholdViewController.swift */,
-			);
-			name = planEvening;
-			sourceTree = "<group>";
-		};
-		D5412BC31D285E3800445D6C /* dayAfter */ = {
-			isa = PBXGroup;
-			children = (
-				D5C3FAF91F0577910059AA90 /* DayAfterUtils.swift */,
-				D5958E691D29A735004FC6A3 /* DagenDerpaViewController.swift */,
-				D5958E6B1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift */,
-				D5371A6F1F06748800B81A89 /* GlemteEnheterViewController.swift */,
-			);
-			name = dayAfter;
-			sourceTree = "<group>";
-		};
 		D5412BC41D285E4E00445D6C /* history */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E631D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift */,
-				D5958E671D29A718004FC6A3 /* HistorikkViewController.swift */,
 				D5C3FAEB1F0577320059AA90 /* HistoryFormatter.swift */,
 				D5C3FAED1F05773B0059AA90 /* HistoryTableViewController.swift */,
 				D5C3FAEF1F0577440059AA90 /* HistoryCell.swift */,
@@ -465,7 +394,6 @@
 		D5412BC81D28640200445D6C /* persistence */ = {
 			isa = PBXGroup;
 			children = (
-				D5958E3D1D29A4C4004FC6A3 /* CoreDataMethods.swift */,
 				D5C3FAC71F0574A00059AA90 /* CoreDataDao.swift */,
 				D5C3FAC51F0574920059AA90 /* UserDataDao.swift */,
 				D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */,
@@ -483,7 +411,6 @@
 			children = (
 				D5C3FABD1F0573B50059AA90 /* ResourceList.swift */,
 				D5C3FAC11F05741E0059AA90 /* DateUtil.swift */,
-				D5958E3B1D29A494004FC6A3 /* SkallMenyBrain.swift */,
 				D5958E1E1D29A194004FC6A3 /* AppColors.swift */,
 				D5B739781F3CA9FB009EDC88 /* BacUtility.swift */,
 				D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */,
@@ -679,29 +606,21 @@
 				D58F50EA1F3FED880013C41F /* History.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
-				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
 				D5371A781F0A912500B81A89 /* PartyViewController.swift in Sources */,
 				D5C3FAE41F0576980059AA90 /* InfoCategoryTableViewController.swift in Sources */,
 				D5E709571F1049FF00254218 /* DisclaimerViewController.swift in Sources */,
-				D5958E6E1D29A77D004FC6A3 /* MiddleUnitViewController.swift in Sources */,
 				D5C3FAC81F0574A00059AA90 /* CoreDataDao.swift in Sources */,
 				D5C3FAAD1F05723B0059AA90 /* GuidancePageViewController.swift in Sources */,
 				D5C3FAC41F05747E0059AA90 /* GraphHistoryDao.swift in Sources */,
-				D5371A6E1F06747100B81A89 /* InnholdViewController.swift in Sources */,
-				D5958E6C1D29A73E004FC6A3 /* MainDagenDerpaViewController.swift in Sources */,
 				D5B739791F3CA9FB009EDC88 /* BacUtility.swift in Sources */,
 				D5C3FAD01F0575F50059AA90 /* PrivacyViewController.swift in Sources */,
 				D5958E2B1D29A25A004FC6A3 /* TimeStamp.swift in Sources */,
-				D5958E781D29A7C6004FC6A3 /* FirstViewController.swift in Sources */,
-				D5958E3C1D29A494004FC6A3 /* SkallMenyBrain.swift in Sources */,
 				D5958E2F1D29A2A9004FC6A3 /* Historikk.swift in Sources */,
 				D58F50DD1F3FDA7F0013C41F /* UnitUpdateViewController.swift in Sources */,
 				D5C3FAEA1F0576ED0059AA90 /* InfoCategoryCell.swift in Sources */,
 				D5C3FADE1F0576690059AA90 /* UpdateMaxBacViewController.swift in Sources */,
-				D5C3FAFA1F0577910059AA90 /* DayAfterUtils.swift in Sources */,
 				D5B739691F362FF1009EDC88 /* UnitsPerWeekViewController.swift in Sources */,
 				D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */,
-				D5958E3E1D29A4C4004FC6A3 /* CoreDataMethods.swift in Sources */,
 				D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */,
 				D5958E361D29A430004FC6A3 /* AppDelegate.swift in Sources */,
 				D5C3FADA1F0576550059AA90 /* UpdateUserSettingsViewController.swift in Sources */,
@@ -709,7 +628,6 @@
 				D5371A761F0A87B800B81A89 /* StartEndTimestampsDao.swift in Sources */,
 				D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */,
 				D5C3FAC61F0574920059AA90 /* UserDataDao.swift in Sources */,
-				D5958E841D29A81F004FC6A3 /* HomeViewController.swift in Sources */,
 				D5C3FAC21F05741E0059AA90 /* DateUtil.swift in Sources */,
 				D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */,
 				D5C3FACA1F0574E80059AA90 /* DoubleExtension.swift in Sources */,
@@ -721,7 +639,6 @@
 				D5C3FABC1F05739F0059AA90 /* FormController.swift in Sources */,
 				D5C3FACC1F0574F50059AA90 /* UIViewExtension.swift in Sources */,
 				D5C3FAF41F0577590059AA90 /* HistoryEntry.swift in Sources */,
-				D5C3FAFE1F0577B70059AA90 /* PlanPartyUtils.swift in Sources */,
 				D5C3FAEE1F05773B0059AA90 /* HistoryTableViewController.swift in Sources */,
 				D5C3FAE81F0576E30059AA90 /* InfoCollectionViewController.swift in Sources */,
 				D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */,
@@ -729,9 +646,7 @@
 				D58F50EF1F3FF58E0013C41F /* UnitDao.swift in Sources */,
 				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
 				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
-				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
 				D5B739731F3B3E5B009EDC88 /* InformationUpdateViewController.swift in Sources */,
-				D5958E641D29A701004FC6A3 /* CustomHistorikkCellTableViewCell.swift in Sources */,
 				D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */,
 				D5B739701F3A0A86009EDC88 /* CostUpdateViewController.swift in Sources */,
 				D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */,
@@ -739,24 +654,17 @@
 				D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */,
 				D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
-				D5958E6A1D29A735004FC6A3 /* DagenDerpaViewController.swift in Sources */,
-				D5C3FB001F0577C50059AA90 /* UserDefaultUtils.swift in Sources */,
-				D5C3FAB41F0573040059AA90 /* StatusUtils.swift in Sources */,
-				D5371A701F06748800B81A89 /* GlemteEnheterViewController.swift in Sources */,
 				D5C3FABA1F0573920059AA90 /* FormCell.swift in Sources */,
 				D5C3FAE21F05768C0059AA90 /* Info.swift in Sources */,
 				D5E709551F0E501E00254218 /* IntroPageViewController.swift in Sources */,
 				D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
 				D58F50E81F3FED880013C41F /* Unit.swift in Sources */,
-				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
 				D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */,
 				D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */,
 				D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */,
-				D5958E701D29A787004FC6A3 /* ChooseUnitViewController.swift in Sources */,
 				D5371A7E1F0AC92D00B81A89 /* StatusNew.swift in Sources */,
 				D5371A851F0D1BD900B81A89 /* DayAfterViewController.swift in Sources */,
-				D5C3FB021F0577CE0059AA90 /* User.swift in Sources */,
 				D5958E481D29A531004FC6A3 /* KostnaderViewController.swift in Sources */,
 				D5371A721F0A7BB000B81A89 /* PlanPartyViewController.swift in Sources */,
 				D5371A6C1F057DF700B81A89 /* HomeViewControllerNew.swift in Sources */,
