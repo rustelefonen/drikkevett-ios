@@ -3550,9 +3550,9 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SR-41-TUU">
-                                                <rect key="frame" x="72" y="-2" width="43" height="36"/>
+                                                <rect key="frame" x="68" y="-2" width="51" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="Fjern">
+                                                <state key="normal" title="Angre">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -5490,7 +5490,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
         <segue reference="O2D-nZ-bBk"/>
         <segue reference="CpQ-yR-y4x"/>
         <segue reference="iFk-Mw-GtV"/>
+        <segue reference="WLe-Mb-qZs"/>
         <segue reference="Rxa-yF-pA4"/>
-        <segue reference="8JJ-IU-8ug"/>
     </inferredMetricsTieBreakers>
 </document>

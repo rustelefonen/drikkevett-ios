@@ -102,6 +102,16 @@ func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUni
     else {return currentBac}
 }
 
+func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, hours:Double, weight:Double, gender:Bool, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double {
+    let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
+    
+    let genderScore = gender ? 0.7 : 0.6
+    
+    let currentBac = (totalGrams/(weight * genderScore) - (0.15 * hours)).roundTo(places: 2)
+    if currentBac < 0.0 {return 0.0}
+    else {return currentBac}
+}
+
 func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
     let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
     
@@ -110,6 +120,18 @@ func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits
 
 func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
     let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
+    
+    return totalGrams * 29.3
+}
+
+func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double{
+    let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
+    
+    return totalGrams * 7.0
+}
+
+func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double{
+    let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
     
     return totalGrams * 29.3
 }

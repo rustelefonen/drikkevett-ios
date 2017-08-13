@@ -51,28 +51,6 @@ class HistoryTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
-        
-        cell.dateLabel.text = "\(getDayFrom(date: (historyEntry.dato)!))"
-        cell.highestBacLabel.text = "Høyeste promille " + String(describing: Double(historyEntry.hoyestePromille!).roundTo(places: 2))
-        cell.costLabel.text = String(describing: getNorwegianDayFrom(date: (historyEntry.dato!))) + " brukte du " + String(describing: historyEntry.forbruk!) + ",-"
-        
-        let goal = Double(UserDataDao().fetchUserData()!.goalPromille!)
-        let red = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
-        let green = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
-        
-        if Double(historyEntry.hoyestePromille!) > goal {
-            cell.highestBacLabel.textColor = red
-            cell.circleView.ringColor = red
-        }
-        else {
-            cell.highestBacLabel.textColor = green
-            cell.circleView.ringColor = green
-        }
-        
-        return cell*/
-        
         let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
         
@@ -179,28 +157,7 @@ class HistoryTableViewController : UITableViewController {
         return ResourceList.norwegianWeekDays[calendar.component(.weekday, from: date) - 2]
     }
     
-    func initHistoryEntries() {
-        /*let allHistories = historyDao.getAllOrderedByDate()
-        
-        for history in allHistories {
-            let label = getMonthYearLabelFrom(date: history.dato!)
-            var historyWasAdded = false
-            for historyEntry in historyEntries {
-                if label == historyEntry.section {
-                    historyEntry.histories?.append(history)
-                    historyWasAdded = true
-                    break
-                }
-            }
-            if !historyWasAdded {
-                let historyEntry = HistoryEntry()
-                historyEntry.section = label
-                historyEntry.histories = [Historikk]()
-                historyEntry.histories?.append(history)
-                historyEntries.append(historyEntry)
-            }
-        }*/
-        
+    func initHistoryEntries() {        
         let allHistories = newHistoryDao.getAllOrderedByDate()
         
         for history in allHistories {

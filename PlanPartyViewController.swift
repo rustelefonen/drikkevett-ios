@@ -65,41 +65,7 @@ class PlanPartyViewController: UIViewController {
         newHistoryDao.save()
                 
         drinkEpisodeViewController?.insertView()
-        
         unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
-        
-        
-        /*let unitsCount = beerUnits + wineUnits + drinkUnits + shotUnits
-        if unitsCount <= 0 {displayNoUnitsDialog()}
-        
-        UnitAddedDao().deleteAll()
-        
-        let startEndTimestampsDao = StartEndTimestampsDao()
-        startEndTimestampsDao.deleteAll()
-        
-        let startOfSessionStamp = Date()
-        let setEndOfSessionStamp = Calendar.current.date(byAdding: .hour, value: 12, to: startOfSessionStamp)
-        
-        let _ = startEndTimestampsDao.createNewStartEndTimestamps(startStamp: startOfSessionStamp, endStamp: setEndOfSessionStamp)
-        startEndTimestampsDao.save()
-        
-        let defaults = UserDefaults.standard
-        
-        var numberOfSessionPlanParty = defaults.integer(forKey: defaultKeys.numberOfSessions)
-        numberOfSessionPlanParty += 1
-        
-        defaults.set(beerUnits, forKey: defaultKeys.beerKey)
-        defaults.set(wineUnits, forKey: defaultKeys.wineKey)
-        defaults.set(drinkUnits, forKey: defaultKeys.drinkKey)
-        defaults.set(shotUnits, forKey: defaultKeys.shotKey)
-        defaults.set(unitsCount, forKey: defaultKeys.totalNrOfUnits)
-        defaults.set(numberOfSessionPlanParty, forKey: defaultKeys.numberOfSessions)
-        defaults.set(unitsCount, forKey: defaultKeys.keyForPlannedCounter)
-        defaults.synchronize()
-        
-        drinkEpisodeViewController?.insertView()
-        
-        unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -142,16 +108,6 @@ class PlanPartyViewController: UIViewController {
         }
         updateExpectedBac()
         updateExpectedCost()
-    }
-    
-    func unitAddedAlertController(_ title: String, message: String, delayTime: Double){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        self.present(alertController, animated: true, completion: nil)
-        let delay = delayTime * Double(NSEC_PER_SEC)
-        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: time, execute: {
-            alertController.dismiss(animated: true, completion: nil)
-        })
     }
     
     func resetUnits() {
@@ -218,20 +174,19 @@ class PlanPartyViewController: UIViewController {
     }
     
     func getUnitCountForCurrentWeek() -> Int {
-        let historyDao = HistoryDao()
+        let historyDao = NewHistoryDao()
         var currentWeekUnitCount = 0
         
         let histories = historyDao.getAll()
         let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         
         for history in histories {
-            guard let historyDate = history.dato else {continue}
+            guard let historyDate = history.beginDate else {continue}
             
             if historyDate > sevenDaysAgo {
-                currentWeekUnitCount += history.antallOl as! Int
-                currentWeekUnitCount += history.antallVin as! Int
-                currentWeekUnitCount += history.antallDrink as! Int
-                currentWeekUnitCount += history.antallShot as! Int
+                if let units = history.units {
+                    for _ in units.allObjects {currentWeekUnitCount += 1}
+                }
             }
         }
         return currentWeekUnitCount
@@ -246,20 +201,38 @@ class PlanPartyViewController: UIViewController {
         return beerUnits + wineUnits + drinkUnits + shotUnits
     }
     
-    func displayWhoMaxBacDialog(index:Int) {
-        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som Verdens helseorganisasjon definerer som \"klart risikofylt drikking\". Dette vil si 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Har du et så høyt forbruk er det helt klart en forhøyet risiko for svært alvorlige helseskader."
-        let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+    func shouldDisplayWhoWarning() -> Bool {
+        let defaults = UserDefaults.standard
+        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
         
-        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
-            self.hasBeenWhoWarned = !self.hasBeenWhoWarned
-            self.modifyUnit(index: index, increment: true)
-        }))
+        guard let userData = AppDelegate.getUserData() else {return false}
+        if let gender = userData.gender {
+            let whoMaxUnitCount = Bool(gender) ? ResourceList.whoMaxUnitCountMale : ResourceList.whoMaxUnitCountFemale
+            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
+        }
+        return false
+    }
+    
+    func shouldDisplayConcernedWarning() -> Bool {
+        let defaults = UserDefaults.standard
+        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
         
-        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: { (action: UIAlertAction!) in
-            self.performSegue(withIdentifier: InfoDetailViewController.whoSegue, sender: self)
-        }))
-        present(refreshAlert, animated: true, completion: nil)
+        guard let userData = AppDelegate.getUserData() else {return false}
+        if let gender = userData.gender {
+            let whoMaxUnitCount = Bool(gender) ? ResourceList.concernUnitCountMale : ResourceList.concernUnitCountFemale
+            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenConcerned && shoudBeWhoWarnedSavedValue
+        }
+        return false
+    }
+    
+    func unitAddedAlertController(_ title: String, message: String, delayTime: Double){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        self.present(alertController, animated: true, completion: nil)
+        let delay = delayTime * Double(NSEC_PER_SEC)
+        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            alertController.dismiss(animated: true, completion: nil)
+        })
     }
     
     func displayWhoConcernedBacDialog(index:Int) {
@@ -287,34 +260,26 @@ class PlanPartyViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func displayWhoMaxBacDialog(index:Int) {
+        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som Verdens helseorganisasjon definerer som \"klart risikofylt drikking\". Dette vil si 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Har du et så høyt forbruk er det helt klart en forhøyet risiko for svært alvorlige helseskader."
+        let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWhoWarned = !self.hasBeenWhoWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: { (action: UIAlertAction!) in
+            self.performSegue(withIdentifier: InfoDetailViewController.whoSegue, sender: self)
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     func displayNoUnitsDialog() {
         let alert = UIAlertController(title: "Ingen enheter lagt til", message: "Du må legge til minst en enhet for å starte en kveld.", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
-    }
-    
-    func shouldDisplayWhoWarning() -> Bool {
-        let defaults = UserDefaults.standard
-        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
-        
-        guard let userData = AppDelegate.getUserData() else {return false}
-        if let gender = userData.gender {
-            let whoMaxUnitCount = Bool(gender) ? ResourceList.whoMaxUnitCountMale : ResourceList.whoMaxUnitCountFemale
-            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
-        }
-        return false
-    }
-    
-    func shouldDisplayConcernedWarning() -> Bool {
-        let defaults = UserDefaults.standard
-        let shoudBeWhoWarnedSavedValue = defaults.object(forKey: ResourceList.weekUnitWarningKey) != nil ? defaults.bool(forKey: ResourceList.weekUnitWarningKey) : ResourceList.weekUnitWarningDefault
-        
-        guard let userData = AppDelegate.getUserData() else {return false}
-        if let gender = userData.gender {
-            let whoMaxUnitCount = Bool(gender) ? ResourceList.concernUnitCountMale : ResourceList.concernUnitCountFemale
-            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenConcerned && shoudBeWhoWarnedSavedValue
-        }
-        return false
     }
 }
