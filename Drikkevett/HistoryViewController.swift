@@ -23,13 +23,13 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var drinkAmount: UILabel!
     @IBOutlet weak var shotAmount: UILabel!
     
-    var history:Historikk?
+    var history:History?
     let userDataDao = UserDataDao()
     let graphHistoryDao = GraphHistoryDao()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if history == nil {return}
+        /*if history == nil {return}
         setTitle(date: history!.dato!)
         
         let selected = graphHistoryDao.getBySessionNumber(sessionNumber: history!.sessionNumber!)
@@ -44,7 +44,11 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         beerAmount.text = String(describing: history!.antallOl!)
         wineAmount.text = String(describing: history!.antallVin!)
         drinkAmount.text = String(describing: history!.antallDrink!)
-        shotAmount.text = String(describing: history!.antallShot!)
+        shotAmount.text = String(describing: history!.antallShot!)*/
+        
+        
+        
+        print(history)
         
     }
 
@@ -69,7 +73,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
     }
     
     func setEnergyLabel() {
-        let beerUnits = Double(history?.antallOl ?? 0.0)
+        /*let beerUnits = Double(history?.antallOl ?? 0.0)
         let wineUnits = Double(history?.antallVin ?? 0.0)
         let drinkUnits = Double(history?.antallDrink ?? 0.0)
         let shotUnits = Double(history?.antallShot ?? 0.0)
@@ -77,7 +81,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         let kiloCalories = calculateAlcoholKiloCalories(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits).roundTo(places: 1)
         let kiloJoules = calculateAlcoholKiloJoules(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits).roundTo(places: 1)
     
-        energyLabel.text = "\(kiloCalories)/\(kiloJoules)"
+        energyLabel.text = "\(kiloCalories)/\(kiloJoules)"*/
     }
     
     func fillLineChart(selected:[GraphHistorikk]) {

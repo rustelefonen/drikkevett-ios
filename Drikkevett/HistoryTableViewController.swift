@@ -13,6 +13,7 @@ class HistoryTableViewController : UITableViewController {
     
     var historyEntries = [HistoryEntry]()
     let historyDao = HistoryDao()
+    let newHistoryDao = NewHistoryDao()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class HistoryTableViewController : UITableViewController {
             AppColors.setBackground(view: tableBackground)
         }
         initHistoryEntries()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +51,7 @@ class HistoryTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
+        /*let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
         
         cell.dateLabel.text = "\(getDayFrom(date: (historyEntry.dato)!))"
@@ -66,7 +71,63 @@ class HistoryTableViewController : UITableViewController {
             cell.circleView.ringColor = green
         }
         
+        return cell*/
+        
+        let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
+        
+        cell.dateLabel.text = "\(getDayFrom(date: (historyEntry.beginDate)!))"
+        
+        let highestBac = getHighestBac(history: historyEntry)
+        cell.highestBacLabel.text = "Høyeste promille " + String(describing: Double(highestBac).roundTo(places: 2))
+        
+        cell.costLabel.text = String(describing: getNorwegianDayFrom(date: (historyEntry.beginDate!))) + " brukte du " + String(describing: calculateTotalCostBy(history: historyEntry)) + ",-"
+        
+        let goal = Double(AppDelegate.getUserData()?.goalPromille ?? 0.0)
+        let red = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+        let green = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
+        
+        if highestBac > goal {
+            cell.highestBacLabel.textColor = red
+            cell.circleView.ringColor = red
+        }
+        else {
+            cell.highestBacLabel.textColor = green
+            cell.circleView.ringColor = green
+        }
+        
         return cell
+    }
+    
+    
+    func getHighestBac(history:History) ->Double {
+        var addedBeerUnits = 0.0
+        var addedWineUnits = 0.0
+        var addedDrinkUnits = 0.0
+        var addedShotUnits = 0.0
+        
+        if let units = history.units {
+            for unit in units.allObjects as! [Unit] {
+                if unit.unitType == "Beer" {
+                    addedBeerUnits += 1.0
+                } else if unit.unitType == "Wine" {
+                    addedWineUnits += 1.0
+                } else if unit.unitType == "Drink" {
+                    addedDrinkUnits += 1.0
+                } else if unit.unitType == "Shot" {
+                    addedShotUnits += 1.0
+                }
+            }
+        }
+        
+        let totalGrams = (addedBeerUnits * Double(history.beerGrams ?? 0.0)) + (addedWineUnits * Double(history.wineGrams ?? 0.0)) + (addedDrinkUnits * Double(history.drinkGrams ?? 0.0)) + (addedShotUnits * Double(history.shotGrams ?? 0.0))
+        
+        let genderScore = Bool(history.gender ?? 1) ? 0.7 : 0.6
+        
+        var highestBac = (totalGrams/(Double(history.weight ?? 0.0) * genderScore)).roundTo(places: 2)
+        if highestBac < 0.0 {highestBac = 0.0}
+        
+        return highestBac
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {       //Rar kode
@@ -119,7 +180,7 @@ class HistoryTableViewController : UITableViewController {
     }
     
     func initHistoryEntries() {
-        let allHistories = historyDao.getAllOrderedByDate()
+        /*let allHistories = historyDao.getAllOrderedByDate()
         
         for history in allHistories {
             let label = getMonthYearLabelFrom(date: history.dato!)
@@ -138,6 +199,30 @@ class HistoryTableViewController : UITableViewController {
                 historyEntry.histories?.append(history)
                 historyEntries.append(historyEntry)
             }
+        }*/
+        
+        let allHistories = newHistoryDao.getAllOrderedByDate()
+        
+        for history in allHistories {
+            let label = getMonthYearLabelFrom(date: history.beginDate!)
+            var historyWasAdded = false
+            for historyEntry in historyEntries {
+                if label == historyEntry.section {
+                    historyEntry.histories?.append(history)
+                    historyWasAdded = true
+                    break
+                }
+            }
+            if !historyWasAdded {
+                let historyEntry = HistoryEntry()
+                historyEntry.section = label
+                historyEntry.histories = [History]()
+                historyEntry.histories?.append(history)
+                historyEntries.append(historyEntry)
+            }
         }
+        print(historyEntries.count)
+        let h = historyEntries.first
+        print(h?.histories?.first?.beginDate)
     }
 }

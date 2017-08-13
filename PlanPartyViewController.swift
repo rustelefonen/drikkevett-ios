@@ -54,7 +54,22 @@ class PlanPartyViewController: UIViewController {
         guard let drinkUnits = Int(drinkAmount.text!) else {return}
         guard let shotUnits = Int(shotAmount.text!) else {return}
         
-        let unitsCount = beerUnits + wineUnits + drinkUnits + shotUnits
+        let newHistoryDao = NewHistoryDao()
+        let history = newHistoryDao.createNewHistory()
+        
+        history.plannedBeerCount = beerUnits as NSNumber
+        history.plannedWineCount = wineUnits as NSNumber
+        history.plannedDrinkCount = drinkUnits as NSNumber
+        history.plannedShotCount = shotUnits as NSNumber
+        history.beginDate = Date()
+        newHistoryDao.save()
+                
+        drinkEpisodeViewController?.insertView()
+        
+        unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
+        
+        
+        /*let unitsCount = beerUnits + wineUnits + drinkUnits + shotUnits
         if unitsCount <= 0 {displayNoUnitsDialog()}
         
         UnitAddedDao().deleteAll()
@@ -84,7 +99,7 @@ class PlanPartyViewController: UIViewController {
         
         drinkEpisodeViewController?.insertView()
         
-        unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)
+        unitAddedAlertController("Kvelden er startet", message: "Ha det gøy og drikk med måte!", delayTime: 3.0)*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

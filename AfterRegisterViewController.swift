@@ -18,7 +18,7 @@ class AfterRegisterViewController: UIViewController {
     @IBOutlet weak var shotUnits: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var history:Historikk?
+    var history:History?
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class AfterRegisterViewController: UIViewController {
     }
     
     func setDatePicker() {
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        /*datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         datePicker.datePickerMode = .countDownTimer
         datePicker.datePickerMode = .dateAndTime
         
@@ -36,14 +36,27 @@ class AfterRegisterViewController: UIViewController {
         datePicker.maximumDate = history?.endOfSesDato
         if let startOfSession = history!.dato {
             datePicker.date = startOfSession
+        }*/
+        
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.datePickerMode = .countDownTimer
+        datePicker.datePickerMode = .dateAndTime
+        
+        //Varsku hei, her kan man muligens legge inn før første enhet, burde sjekkes!
+        datePicker.minimumDate = history?.beginDate
+        datePicker.maximumDate = history?.endDate
+        if let startOfSession = history!.beginDate {
+            datePicker.date = startOfSession
         }
     }
     
     func setUnitsFromHistory() {
-        beerUnits.text = String(describing: history!.antallOl!)
+        /*beerUnits.text = String(describing: history!.antallOl!)
         wineUnits.text = String(describing: history!.antallVin!)
         drinkUnits.text = String(describing: history!.antallDrink!)
-        shotUnits.text = String(describing: history!.antallShot!)
+        shotUnits.text = String(describing: history!.antallShot!)*/
+        
+       
     }
     
     @IBAction func addUnit(_ sender: UIButton) {
@@ -168,7 +181,7 @@ class AfterRegisterViewController: UIViewController {
     }
     
     func incrementUnit(index:Int, histories:[Historikk]) -> Historikk?{
-        for fetchedHistory in histories {
+        /*for fetchedHistory in histories {
             if fetchedHistory.sessionNumber == history?.sessionNumber {
                 if index == 0 {
                     let incremented:NSNumber? = NSNumber(integerLiteral:Int(fetchedHistory.antallOl!) + 1)
@@ -192,6 +205,8 @@ class AfterRegisterViewController: UIViewController {
                 }
             }
         }
+        return nil*/
+        
         return nil
     }
     

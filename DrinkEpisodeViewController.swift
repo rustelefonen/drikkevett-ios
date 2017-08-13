@@ -45,6 +45,7 @@ class DrinkEpisodeViewController: UIViewController {
                 (vc as! PartyViewController).drinkEpisodeViewController = self
                 title = "Pågående kveld"
                 trash.isEnabled = false
+                (vc as! PartyViewController).history = getCurrentHistory()
             }
             
             addChildViewController(vc)
@@ -59,12 +60,34 @@ class DrinkEpisodeViewController: UIViewController {
         }
     }
     
+    private func getCurrentHistory() ->History? {
+        let histories = NewHistoryDao().getAll()
+        
+        for history in histories {
+            if history.endDate == nil {
+                return history
+            }
+        }
+        return nil
+    }
+    
     private func getCurrentStatus() -> StatusNew {
+        let histories = NewHistoryDao().getAll()
+        
+        for history in histories {
+            if history.endDate == nil {
+                return StatusNew.RUNNING
+            }
+        }
+        return StatusNew.NOT_RUNNING
+        
+        
+        /*
         let startEndTimestampsList = StartEndTimestampsDao().getAll()
         if startEndTimestampsList.count > 0 && Date() < startEndTimestampsList.first!.endStamp! {
             return StatusNew.RUNNING
         }
-        return StatusNew.NOT_RUNNING
+        return StatusNew.NOT_RUNNING*/
     }
     
     @IBAction func clearUnits(_ sender: UIBarButtonItem) {

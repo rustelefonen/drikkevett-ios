@@ -28,6 +28,8 @@ class PartyViewController: UIViewController {
     
     var hasBeenWarned = false
     
+    var history:History?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
@@ -51,8 +53,10 @@ class PartyViewController: UIViewController {
     }
     
     func handleEndEvening() {
-        if !isWithinTheFirstFifteenMinutes() {displayEndEvening()}
-        else {displayEndEveningFirstFifteen()}
+        /*if !isWithinTheFirstFifteenMinutes() {displayEndEvening()}
+        else {displayEndEveningFirstFifteen()}*/
+        
+        endEvening()
     }
     
     func displayEndEveningFirstFifteen() {
@@ -92,7 +96,30 @@ class PartyViewController: UIViewController {
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         
-        if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
+        let unitDao = UnitDao()
+        let unit = unitDao.createNewUnit()
+        unit.timeStamp = Date()
+        
+        switch index {
+        case 0:
+            unit.unitType = "Beer"
+        case 1:
+            unit.unitType = "Wine"
+        case 2:
+            unit.unitType = "Drink"
+        default:
+            unit.unitType = "Shot"
+        }
+        
+        history?.addToUnits(unit)
+        unitDao.save()
+        
+        modifyUnit(index: index, increment: true)
+        updateBac()
+        unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
+        
+        
+        /*if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
         else {
             let unitAddedDao = UnitAddedDao()
             _ = unitAddedDao.createNewUnitAdded(timeStamp: Date(), unitAlkohol: ResourceList.unitsEnglish[index])
@@ -101,7 +128,7 @@ class PartyViewController: UIViewController {
             modifyUnit(index: index, increment: true)
             updateBac()
             unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
-        }
+        }*/
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -149,7 +176,7 @@ class PartyViewController: UIViewController {
     }
     
     func initAddedUnits() {
-        let unitsAdded = UnitAddedDao().getAll()
+        /*let unitsAdded = UnitAddedDao().getAll()
         
         var addedBeerUnits = 0
         var addedWineUnits = 0
@@ -166,15 +193,48 @@ class PartyViewController: UIViewController {
         beerAmount.text = String(describing: addedBeerUnits) + String(beerAmount.text!.characters.dropFirst())
         wineAmount.text = String(describing: addedWineUnits) + String(wineAmount.text!.characters.dropFirst())
         drinkAmount.text = String(describing: addedDrinkUnits) + String(drinkAmount.text!.characters.dropFirst())
+        shotAmount.text = String(describing: addedShotUnits) + String(shotAmount.text!.characters.dropFirst())*/
+        
+        var addedBeerUnits = 0
+        var addedWineUnits = 0
+        var addedDrinkUnits = 0
+        var addedShotUnits = 0
+        
+        if let currentHistory = history {
+            if let units = currentHistory.units {
+                for unit in units.allObjects as! [Unit] {
+                    if unit.unitType == "Beer" {
+                        addedBeerUnits += 1
+                    } else if unit.unitType == "Wine" {
+                        addedWineUnits += 1
+                    } else if unit.unitType == "Drink" {
+                        addedDrinkUnits += 1
+                    } else if unit.unitType == "Shot" {
+                        addedShotUnits += 1
+                    }
+                }
+            }
+        }
+        beerAmount.text = String(describing: addedBeerUnits) + String(beerAmount.text!.characters.dropFirst())
+        wineAmount.text = String(describing: addedWineUnits) + String(wineAmount.text!.characters.dropFirst())
+        drinkAmount.text = String(describing: addedDrinkUnits) + String(drinkAmount.text!.characters.dropFirst())
         shotAmount.text = String(describing: addedShotUnits) + String(shotAmount.text!.characters.dropFirst())
+        
     }
     
     func initPlannedUnits() {
-        let defaults = UserDefaults.standard
+        /*let defaults = UserDefaults.standard
         beerAmount.text = String(beerAmount.text!.characters.dropLast()) + String(describing: defaults.integer(forKey: defaultKeys.beerKey))
         wineAmount.text = String(wineAmount.text!.characters.dropLast()) + String(describing: defaults.integer(forKey: defaultKeys.wineKey))
         drinkAmount.text = String(drinkAmount.text!.characters.dropLast()) + String(describing: defaults.integer(forKey: defaultKeys.drinkKey))
-        shotAmount.text = String(shotAmount.text!.characters.dropLast()) + String(describing: defaults.integer(forKey: defaultKeys.shotKey))
+        shotAmount.text = String(shotAmount.text!.characters.dropLast()) + String(describing: defaults.integer(forKey: defaultKeys.shotKey))*/
+        
+        if let currentHistory = history {
+            beerAmount.text = String(beerAmount.text!.characters.dropLast()) + String(describing: currentHistory.plannedBeerCount ?? 0)
+            wineAmount.text = String(wineAmount.text!.characters.dropLast()) + String(describing: currentHistory.plannedWineCount ?? 0)
+            drinkAmount.text = String(drinkAmount.text!.characters.dropLast()) + String(describing: currentHistory.plannedDrinkCount ?? 0)
+            shotAmount.text = String(shotAmount.text!.characters.dropLast()) + String(describing: currentHistory.plannedShotCount ?? 0)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,6 +253,7 @@ class PartyViewController: UIViewController {
         let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
         
         guard let firstUnitAdded = getFirstUnitAdded() else {return}
+        
         let hours = Double(Date().timeIntervalSince(firstUnitAdded)) / 3600.0
         
         guard let weight = userData?.weight as? Double else {return}
@@ -248,7 +309,7 @@ class PartyViewController: UIViewController {
     }
     
     func endEvening() {
-        guard let beerUnits = Int(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return}
+        /*guard let beerUnits = Int(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let wineUnits = Int(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let drinkUnits = Int(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let shotUnits = Int(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return}
@@ -341,23 +402,58 @@ class PartyViewController: UIViewController {
         history.hoyestePromille = highestBac as NSNumber
         historyDao.save()
         
-        drinkEpisodeViewController?.insertView()
+        drinkEpisodeViewController?.insertView()*/
         
+        guard let userData = AppDelegate.getUserData() else {return}
+        
+        let newHistoryDao = NewHistoryDao()
+        history?.endDate = Date()
+        history?.gender = userData.gender
+        history?.weight = userData.weight
+        history?.beerCost = userData.costsBeer
+        history?.wineCost = userData.costsWine
+        history?.drinkCost = userData.costsDrink
+        history?.shotCost = userData.costsShot
+        
+        history?.beerGrams = getUnitGrams(unitType: 0) as NSNumber
+        history?.wineGrams = getUnitGrams(unitType: 1) as NSNumber
+        history?.drinkGrams = getUnitGrams(unitType: 2) as NSNumber
+        history?.shotGrams = getUnitGrams(unitType: 3) as NSNumber
+        newHistoryDao.save()
+        
+        
+        drinkEpisodeViewController?.insertView()
     }
     
     func getFirstUnitAdded() -> Date? { //Denne er tung
+        var firstUnitAdded:Date?
+        if let currentHistory = history {
+            if let units = currentHistory.units {
+                if let currentUnits = units.allObjects as? [Unit] {
+                    firstUnitAdded = currentUnits.first?.timeStamp
+                    if firstUnitAdded != nil {
+                        for unit in currentUnits {
+                            if let timeStamp = unit.timeStamp {
+                                if firstUnitAdded! < timeStamp {
+                                    firstUnitAdded = timeStamp
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        return firstUnitAdded
+        
+        /*
         let unitsAdded = UnitAddedDao().getAll()
         var firstUnitAdded = unitsAdded.first?.timeStamp
         
         for unit in unitsAdded {
             if unit.timeStamp! < firstUnitAdded! {firstUnitAdded = unit.timeStamp}
         }
-        return firstUnitAdded
-    }
-    
-    func getUnitGrams(unitType:Int) -> Double{
-        let defaults = UserDefaults.standard
-        return defaults.double(forKey: ResourceList.amountKeys[unitType]) * defaults.double(forKey: ResourceList.percentageKeys[unitType]) / 10.0
+        return firstUnitAdded*/
     }
     
     func isWithinTheFirstFifteenMinutes() -> Bool {

@@ -22,6 +22,10 @@
 		D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A861F0D845C00B81A89 /* UnitViewController.swift */; };
 		D58F50DD1F3FDA7F0013C41F /* UnitUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50DC1F3FDA7F0013C41F /* UnitUpdateViewController.swift */; };
 		D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */; };
+		D58F50E81F3FED880013C41F /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E41F3FED880013C41F /* Unit.swift */; };
+		D58F50EA1F3FED880013C41F /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E61F3FED880013C41F /* History.swift */; };
+		D58F50ED1F3FEECD0013C41F /* NewHistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50EC1F3FEECD0013C41F /* NewHistoryDao.swift */; };
+		D58F50EF1F3FF58E0013C41F /* UnitDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50EE1F3FF58E0013C41F /* UnitDao.swift */; };
 		D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E1E1D29A194004FC6A3 /* AppColors.swift */; };
 		D5958E211D29A21C004FC6A3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E201D29A21C004FC6A3 /* StringExtension.swift */; };
 		D5958E231D29A22D004FC6A3 /* StartEndTimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */; };
@@ -160,6 +164,11 @@
 		D5371A861F0D845C00B81A89 /* UnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = SOURCE_ROOT; };
 		D58F50DC1F3FDA7F0013C41F /* UnitUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
 		D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryUtility.swift; sourceTree = "<group>"; };
+		D58F50E31F3FEC130013C41F /* myCoreDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "myCoreDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		D58F50E41F3FED880013C41F /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		D58F50E61F3FED880013C41F /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		D58F50EC1F3FEECD0013C41F /* NewHistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewHistoryDao.swift; sourceTree = "<group>"; };
+		D58F50EE1F3FF58E0013C41F /* UnitDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitDao.swift; sourceTree = "<group>"; };
 		D5958E1E1D29A194004FC6A3 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Drikkevett/AppColors.swift; sourceTree = "<group>"; };
 		D5958E201D29A21C004FC6A3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Drikkevett/StringExtension.swift; sourceTree = "<group>"; };
 		D5958E221D29A22D004FC6A3 /* StartEndTimeStamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartEndTimeStamps.swift; path = Drikkevett/StartEndTimeStamps.swift; sourceTree = SOURCE_ROOT; };
@@ -270,6 +279,8 @@
 		7FE4E47A1C58BD12004465B7 = {
 			isa = PBXGroup;
 			children = (
+				D58F50E41F3FED880013C41F /* Unit.swift */,
+				D58F50E61F3FED880013C41F /* History.swift */,
 				D5412BCA1D286E9200445D6C /* Drikkevett */,
 				D5412BCB1D286F6500445D6C /* Frameworks */,
 				7FE4E4841C58BD12004465B7 /* Products */,
@@ -461,6 +472,8 @@
 				D5C3FAC31F05747E0059AA90 /* GraphHistoryDao.swift */,
 				D5371A731F0A858C00B81A89 /* UnitAddedDao.swift */,
 				D5371A751F0A87B800B81A89 /* StartEndTimestampsDao.swift */,
+				D58F50EC1F3FEECD0013C41F /* NewHistoryDao.swift */,
+				D58F50EE1F3FF58E0013C41F /* UnitDao.swift */,
 			);
 			name = persistence;
 			sourceTree = "<group>";
@@ -663,6 +676,7 @@
 				D52D459E1EF91737008353AB /* RootViewController.swift in Sources */,
 				D5C3FAF61F0577620059AA90 /* HistoryViewController.swift in Sources */,
 				D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */,
+				D58F50EA1F3FED880013C41F /* History.swift in Sources */,
 				D5958E441D29A513004FC6A3 /* VelkommenViewController.swift in Sources */,
 				D5958E2D1D29A29A004FC6A3 /* GraphHistorikk.swift in Sources */,
 				D5C3FAB31F0573040059AA90 /* Status.swift in Sources */,
@@ -712,6 +726,7 @@
 				D5C3FAE81F0576E30059AA90 /* InfoCollectionViewController.swift in Sources */,
 				D5C3FABE1F0573B50059AA90 /* ResourceList.swift in Sources */,
 				D5958E1F1D29A194004FC6A3 /* AppColors.swift in Sources */,
+				D58F50EF1F3FF58E0013C41F /* UnitDao.swift in Sources */,
 				D5C3FAF01F0577440059AA90 /* HistoryCell.swift in Sources */,
 				D5C3FAD81F05763F0059AA90 /* ContactUsViewController.swift in Sources */,
 				D5958E681D29A718004FC6A3 /* HistorikkViewController.swift in Sources */,
@@ -720,6 +735,7 @@
 				D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */,
 				D5B739701F3A0A86009EDC88 /* CostUpdateViewController.swift in Sources */,
 				D5C3FAD61F0576320059AA90 /* SourcesViewController.swift in Sources */,
+				D58F50ED1F3FEECD0013C41F /* NewHistoryDao.swift in Sources */,
 				D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */,
 				D5C3FAAC1F05723B0059AA90 /* GuidanceContentViewController.swift in Sources */,
 				D5958E5C1D29A68D004FC6A3 /* webViewController.swift in Sources */,
@@ -732,6 +748,7 @@
 				D5E709551F0E501E00254218 /* IntroPageViewController.swift in Sources */,
 				D5C3FAE01F0576860059AA90 /* InfoCategory.swift in Sources */,
 				D5958E341D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld in Sources */,
+				D58F50E81F3FED880013C41F /* Unit.swift in Sources */,
 				D5C3FAFC1F0577A50059AA90 /* defaultKeys.swift in Sources */,
 				D5B7396E1F36745C009EDC88 /* AfterRegisterViewController.swift in Sources */,
 				D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */,
@@ -951,9 +968,10 @@
 		D5958E321D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D58F50E31F3FEC130013C41F /* myCoreDataModel 2.xcdatamodel */,
 				D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */,
 			);
-			currentVersion = D5958E331D29A3DA004FC6A3 /* myCoreDataModel.xcdatamodel */;
+			currentVersion = D58F50E31F3FEC130013C41F /* myCoreDataModel 2.xcdatamodel */;
 			path = myCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

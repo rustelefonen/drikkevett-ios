@@ -7,6 +7,9 @@
 //
 
 class HistoryEntry {
+    /*var section:String?
+    var histories:[Historikk]?*/
+    
     var section:String?
-    var histories:[Historikk]?
+    var histories:[History]?
 }

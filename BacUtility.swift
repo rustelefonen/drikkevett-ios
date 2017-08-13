@@ -120,7 +120,7 @@ func calculateTotalCost(beerUnits:Int, wineUnits:Int, drinkUnits:Int, shotUnits:
     return beerUnits * Int(userData.costsBeer ?? 0) + wineUnits * Int(userData.costsWine ?? 0) + drinkUnits * Int(userData.costsDrink ?? 0) + shotUnits * Int(userData.costsShot ?? 0)
 }
 
-fileprivate func getUnitGrams(unitType:Int) -> Double{
+func getUnitGrams(unitType:Int) -> Double{
     let defaults = UserDefaults.standard
     
     let savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType]) > 0.0 ? defaults.double(forKey: ResourceList.percentageKeys[unitType]) : ResourceList.defaultPercentage[unitType]
