@@ -676,18 +676,119 @@ høyeste promille</string>
                                             <segue destination="9ww-Me-I8A" kind="show" id="vRb-pf-pZj"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mxM-YM-jdE">
+                                        <rect key="frame" x="0.0" y="156" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxM-YM-jdE" id="kIM-Kr-qqk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="1YB-vd-KrZ">
+                                                    <rect key="frame" x="8" y="12" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="7QW-gI-Whz">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="35" id="BqJ-1b-LBw">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" secondItem="1YB-vd-KrZ" secondAttribute="height" multiplier="1:1" id="f2e-nd-lKN"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="7QW-gI-Whz"/>
+                                                            <exclude reference="f2e-nd-lKN"/>
+                                                            <exclude reference="BqJ-1b-LBw"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="7QW-gI-Whz"/>
+                                                            <include reference="f2e-nd-lKN"/>
+                                                            <include reference="BqJ-1b-LBw"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre alkoholenheter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEH-Ze-vGk">
+                                                    <rect key="frame" x="41" y="7" width="351" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="341" id="0eS-sl-OsK">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="351"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="35" id="NaH-Xp-DmS"/>
+                                                        <constraint firstAttribute="width" secondItem="tEH-Ze-vGk" secondAttribute="height" multiplier="341:35" id="wns-tH-TN9">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="10.000000000000057"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="0eS-sl-OsK"/>
+                                                            <exclude reference="NaH-Xp-DmS"/>
+                                                            <exclude reference="wns-tH-TN9"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="0eS-sl-OsK"/>
+                                                            <include reference="NaH-Xp-DmS"/>
+                                                            <include reference="wns-tH-TN9"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tEH-Ze-vGk" firstAttribute="centerY" secondItem="kIM-Kr-qqk" secondAttribute="centerY" id="1aX-Cl-rfT"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="1YB-vd-KrZ" secondAttribute="leading" id="3rg-YD-vmu"/>
+                                                <constraint firstItem="tEH-Ze-vGk" firstAttribute="leading" secondItem="kIM-Kr-qqk" secondAttribute="leadingMargin" constant="43" id="4Dl-6b-yba">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="33"/>
+                                                </constraint>
+                                                <constraint firstItem="1YB-vd-KrZ" firstAttribute="centerY" secondItem="kIM-Kr-qqk" secondAttribute="centerY" id="eyv-z2-t0i"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="1YB-vd-KrZ"/>
+                                                    <exclude reference="tEH-Ze-vGk"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="3rg-YD-vmu"/>
+                                                    <exclude reference="eyv-z2-t0i"/>
+                                                    <exclude reference="4Dl-6b-yba"/>
+                                                    <exclude reference="1aX-Cl-rfT"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="1YB-vd-KrZ"/>
+                                                    <include reference="tEH-Ze-vGk"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="3rg-YD-vmu"/>
+                                                    <include reference="eyv-z2-t0i"/>
+                                                    <include reference="4Dl-6b-yba"/>
+                                                    <include reference="1aX-Cl-rfT"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.070588235289999995" green="0.066666666669999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="Zw0-Hz-ZCS" kind="show" id="n7e-17-NQy"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Varslingsinnstillinger" id="Cgz-VX-fLd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ib8-LQ-RhR">
-                                        <rect key="frame" x="0.0" y="213" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="263" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ib8-LQ-RhR" id="Sw9-lS-lFB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-Gd-iyN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-Gd-iyN">
                                                     <rect key="frame" x="8" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HPk-Gd-iyN" secondAttribute="height" multiplier="1:1" id="7sb-8f-16E"/>
@@ -3267,7 +3368,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-h3-6Hl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-h3-6Hl">
                                                 <rect key="frame" x="8" y="8" width="171" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4189,10 +4290,80 @@ Standard-knappen setter gjennomsnittlige priser.</string>
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="-2050.271739130435"/>
         </scene>
-        <!--Varsel om risikofylt alkoholbruk-->
+        <!--Unit Update View Controller-->
+        <scene sceneID="l5e-3v-5yU">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Zw0-Hz-ZCS" customClass="UnitUpdateViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OgI-X3-gG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="7wW-Ge-GkM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v6H-So-TVI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Trykk på de ulike enhetene for å endre alkoholprosent og -mengde." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FGZ-7a-x9s">
+                                <rect key="frame" x="70" y="64" width="274" height="53"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-Ag-hVf">
+                                <rect key="frame" x="156" y="125" width="102" height="30"/>
+                                <state key="normal" title="Endre øl-enhet"/>
+                                <connections>
+                                    <action selector="changeBeer:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="ZZP-ag-Sou"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-I2-fD8">
+                                <rect key="frame" x="152" y="163" width="110" height="30"/>
+                                <state key="normal" title="Endre vin-enhet"/>
+                                <connections>
+                                    <action selector="changeWine:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="NDx-1V-Mqx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-Kl-NNH">
+                                <rect key="frame" x="145" y="201" width="124" height="30"/>
+                                <state key="normal" title="Endre drink-enhet"/>
+                                <connections>
+                                    <action selector="changeDrink:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="iD5-cP-xaS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147-0m-y5D">
+                                <rect key="frame" x="147" y="239" width="120" height="30"/>
+                                <state key="normal" title="Endre shot-enhet"/>
+                                <connections>
+                                    <action selector="changeShot:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="UcF-mx-fu4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="147-0m-y5D" firstAttribute="top" secondItem="QfM-Kl-NNH" secondAttribute="bottom" constant="8" id="06X-mC-cSa"/>
+                            <constraint firstItem="VKW-I2-fD8" firstAttribute="top" secondItem="SuM-Ag-hVf" secondAttribute="bottom" constant="8" id="8Ix-VJ-pHf"/>
+                            <constraint firstItem="QfM-Kl-NNH" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="HD3-1A-y0g"/>
+                            <constraint firstItem="FGZ-7a-x9s" firstAttribute="top" secondItem="OgI-X3-gG4" secondAttribute="bottom" id="Huh-7Z-zrv"/>
+                            <constraint firstItem="147-0m-y5D" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="LFa-W5-Uxu"/>
+                            <constraint firstItem="VKW-I2-fD8" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="VFy-cJ-zxz"/>
+                            <constraint firstItem="QfM-Kl-NNH" firstAttribute="top" secondItem="VKW-I2-fD8" secondAttribute="bottom" constant="8" id="WQL-S0-RMj"/>
+                            <constraint firstItem="FGZ-7a-x9s" firstAttribute="leading" secondItem="v6H-So-TVI" secondAttribute="leadingMargin" constant="50" id="fsO-gi-42N"/>
+                            <constraint firstItem="SuM-Ag-hVf" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="mVU-zE-C35"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FGZ-7a-x9s" secondAttribute="trailing" constant="50" id="wgc-V3-nM7"/>
+                            <constraint firstItem="SuM-Ag-hVf" firstAttribute="top" secondItem="FGZ-7a-x9s" secondAttribute="bottom" constant="8" id="xNR-25-6o7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="bVV-v6-sKW" kind="show" identifier="updateUnitSegue" id="iFk-Mw-GtV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kym-u4-tln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6034.7826086956529" y="236.41304347826087"/>
+        </scene>
+        <!--Risikofylt alkoholbruk-->
         <scene sceneID="JD9-c3-9cQ">
             <objects>
-                <viewController title="Varsel om risikofylt alkoholbruk" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QY0-oe-YRF" customClass="UnitsPerWeekViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Risikofylt alkoholbruk" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QY0-oe-YRF" customClass="UnitsPerWeekViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sMd-TL-Rxr"/>
                         <viewControllerLayoutGuide type="bottom" id="LYY-je-npO"/>
@@ -4202,48 +4373,68 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-SZ-wsM">
-                                <rect key="frame" x="20" y="72" width="374" height="222"/>
+                                <rect key="frame" x="20" y="72" width="374" height="119"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">I følge Verdens helseorganisasjon er det en helt klart forhøyet risiko for svært alvorlige helseskader om du drikker 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Du kan lese mer om dette her: 
-
-Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i appen som advarer deg om risikofylt alkoholbruk. Du velger selv nedenfor om du ønsker dette eller ikke.</string>
+                                <string key="text">I følge Verdens helseorganisasjon er det en helt klart forhøyet risiko for svært alvorlige helseskader om du drikker 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
-                                <rect key="frame" x="345" y="318" width="51" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-h7-msY">
+                                <rect key="frame" x="176" y="199" width="62" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Les mer"/>
                                 <connections>
-                                    <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
+                                    <action selector="readMore:" destination="QY0-oe-YRF" eventType="touchUpInside" id="zgn-dU-UoR"/>
                                 </connections>
-                            </switch>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-b5-JJu">
+                                <rect key="frame" x="20" y="239" width="374" height="99"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i appen som advarer deg om risikofylt alkoholbruk. Du velger selv nedenfor om du ønsker dette eller ikke.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel er skrudd på" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-SC-U1D">
-                                <rect key="frame" x="20" y="318" width="142" height="21"/>
+                                <rect key="frame" x="20" y="360" width="142" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
+                                <rect key="frame" x="345" y="355" width="51" height="31"/>
+                                <connections>
+                                    <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="i1z-SC-U1D" firstAttribute="top" secondItem="tYX-SZ-wsM" secondAttribute="bottom" constant="24" id="BQu-Nm-a1K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tYX-SZ-wsM" secondAttribute="trailing" id="Fc2-M9-Q7M"/>
-                            <constraint firstItem="svg-qw-sLc" firstAttribute="top" secondItem="tYX-SZ-wsM" secondAttribute="bottom" constant="24" id="Hf1-w1-B5V"/>
-                            <constraint firstItem="tYX-SZ-wsM" firstAttribute="top" secondItem="sMd-TL-Rxr" secondAttribute="bottom" constant="8" id="Np0-No-SBG"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="tYX-SZ-wsM" secondAttribute="leading" id="cF0-vk-12B"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="i1z-SC-U1D" secondAttribute="leading" id="dEv-8g-vn4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="svg-qw-sLc" secondAttribute="trailing" id="eSm-5i-5Lg"/>
+                            <constraint firstItem="svg-qw-sLc" firstAttribute="top" secondItem="x4y-b5-JJu" secondAttribute="bottom" constant="17" id="7U0-7S-VlX"/>
+                            <constraint firstItem="R5c-h7-msY" firstAttribute="centerX" secondItem="jsB-Za-yre" secondAttribute="centerX" id="AWP-w7-fsg"/>
+                            <constraint firstItem="tYX-SZ-wsM" firstAttribute="top" secondItem="sMd-TL-Rxr" secondAttribute="bottom" constant="8" id="DzF-jV-nLR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="svg-qw-sLc" secondAttribute="trailing" id="JCN-Zf-7OU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="i1z-SC-U1D" secondAttribute="leading" id="MPi-ol-pyT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="x4y-b5-JJu" secondAttribute="leading" id="UCq-Dk-8lm"/>
+                            <constraint firstItem="x4y-b5-JJu" firstAttribute="top" secondItem="R5c-h7-msY" secondAttribute="bottom" constant="8" id="ZNc-AW-5Ha"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tYX-SZ-wsM" secondAttribute="trailing" id="ZrJ-eq-KQe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x4y-b5-JJu" secondAttribute="trailing" id="nHs-20-7iL"/>
+                            <constraint firstItem="i1z-SC-U1D" firstAttribute="top" secondItem="x4y-b5-JJu" secondAttribute="bottom" constant="22" id="ruI-NW-J2T"/>
+                            <constraint firstItem="R5c-h7-msY" firstAttribute="top" secondItem="tYX-SZ-wsM" secondAttribute="bottom" constant="8" id="x0a-GP-k90"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tYX-SZ-wsM" secondAttribute="leading" id="xbc-e0-L9Q"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="shouldWarnLabel" destination="i1z-SC-U1D" id="tOy-pE-bcz"/>
                         <outlet property="shouldWarnSwitch" destination="svg-qw-sLc" id="49l-1K-BjN"/>
+                        <segue destination="mzN-gI-fUP" kind="show" identifier="readMoreSegue" id="Dmp-0F-AnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nce-QV-tiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6091" y="240"/>
+            <point key="canvasLocation" x="6777" y="240"/>
         </scene>
         <!--Etterregistrering-->
         <scene sceneID="e9p-g5-hh7">
@@ -4533,8 +4724,8 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wu-9t-PBk">
-                                                <rect key="frame" x="80" y="17" width="156" height="18"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi ølpris" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wu-9t-PBk">
+                                                <rect key="frame" x="80" y="17" width="115" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -4567,6 +4758,12 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                     </mask>
                                                 </variation>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1it-a3-fSL">
+                                                <rect key="frame" x="199" y="17" width="13" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -4576,12 +4773,14 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="trailing" secondItem="woc-OQ-6Nd" secondAttribute="trailing" id="AcF-xb-i3S"/>
                                             <constraint firstItem="7wu-9t-PBk" firstAttribute="leading" secondItem="4fZ-Xh-Kzl" secondAttribute="leading" constant="80" id="LRj-Wb-ZDV"/>
                                             <constraint firstAttribute="bottom" secondItem="KA7-yp-aj4" secondAttribute="bottom" constant="5" id="Orf-xC-DZy"/>
+                                            <constraint firstItem="1it-a3-fSL" firstAttribute="leading" secondItem="7wu-9t-PBk" secondAttribute="trailing" constant="4" id="WHC-MB-DQj"/>
                                             <constraint firstAttribute="bottom" secondItem="7wu-9t-PBk" secondAttribute="bottom" constant="5" id="fFg-w6-gUQ"/>
                                             <constraint firstAttribute="bottom" secondItem="woc-OQ-6Nd" secondAttribute="bottom" id="iOo-aK-84G"/>
-                                            <constraint firstItem="Gan-rB-RcS" firstAttribute="leading" secondItem="7wu-9t-PBk" secondAttribute="trailing" constant="8" id="nH2-Ov-nAb"/>
                                             <constraint firstAttribute="trailing" secondItem="Gan-rB-RcS" secondAttribute="trailing" id="ots-Pd-ZAr"/>
                                             <constraint firstAttribute="height" constant="40" id="rk9-bF-tv9"/>
                                             <constraint firstAttribute="bottom" secondItem="Gan-rB-RcS" secondAttribute="bottom" constant="2" id="uXU-4Y-Xxv"/>
+                                            <constraint firstItem="Gan-rB-RcS" firstAttribute="leading" secondItem="1it-a3-fSL" secondAttribute="trailing" constant="32" id="v6n-PO-FRj"/>
+                                            <constraint firstAttribute="bottom" secondItem="1it-a3-fSL" secondAttribute="bottom" constant="5" id="xzH-pI-9iW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z6-qW-cfa">
@@ -4593,8 +4792,8 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi vinpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-C8-LMJ">
-                                                <rect key="frame" x="80" y="17" width="156" height="18"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi pris" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-C8-LMJ">
+                                                <rect key="frame" x="80" y="17" width="115" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -4627,12 +4826,20 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <rect key="frame" x="0.0" y="39" width="274" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-pM-98B">
+                                                <rect key="frame" x="199" y="17" width="13" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="RBW-C8-LMJ" firstAttribute="leading" secondItem="4Z6-qW-cfa" secondAttribute="leading" constant="80" id="97e-GL-Rjd"/>
                                             <constraint firstItem="rgF-zr-JO5" firstAttribute="top" secondItem="4Z6-qW-cfa" secondAttribute="top" constant="39" id="Jco-mM-h3Q"/>
                                             <constraint firstItem="0tw-YJ-OjT" firstAttribute="leading" secondItem="4Z6-qW-cfa" secondAttribute="leading" id="QdQ-UT-cpu"/>
+                                            <constraint firstAttribute="bottom" secondItem="zkz-pM-98B" secondAttribute="bottom" constant="5" id="T4a-Ul-geR"/>
+                                            <constraint firstItem="zkz-pM-98B" firstAttribute="leading" secondItem="RBW-C8-LMJ" secondAttribute="trailing" constant="4" id="TRk-6e-wSl"/>
                                             <constraint firstAttribute="height" constant="40" id="bIn-Zn-ylJ"/>
                                             <constraint firstAttribute="trailing" secondItem="PuP-rc-lbw" secondAttribute="trailing" id="bqk-UN-yS9"/>
                                             <constraint firstAttribute="bottom" secondItem="rgF-zr-JO5" secondAttribute="bottom" id="cB1-2n-5cy"/>
@@ -4641,7 +4848,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                             <constraint firstAttribute="bottom" secondItem="RBW-C8-LMJ" secondAttribute="bottom" constant="5" id="h6c-ju-qJR"/>
                                             <constraint firstAttribute="bottom" secondItem="0tw-YJ-OjT" secondAttribute="bottom" constant="5" id="ilM-Id-qll"/>
                                             <constraint firstAttribute="bottom" secondItem="PuP-rc-lbw" secondAttribute="bottom" constant="2" id="m6n-At-qzs"/>
-                                            <constraint firstItem="PuP-rc-lbw" firstAttribute="leading" secondItem="RBW-C8-LMJ" secondAttribute="trailing" constant="8" id="qHc-od-1Gy"/>
+                                            <constraint firstItem="PuP-rc-lbw" firstAttribute="leading" secondItem="zkz-pM-98B" secondAttribute="trailing" constant="32" id="xOb-9f-EgU"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPS-QY-RmA">
@@ -4653,8 +4860,8 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi drinkpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMz-kV-fvP">
-                                                <rect key="frame" x="80" y="17" width="156" height="18"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi pris" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMz-kV-fvP">
+                                                <rect key="frame" x="42" y="17" width="153" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -4687,19 +4894,27 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <rect key="frame" x="0.0" y="39" width="274" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42M-Ex-sRT">
+                                                <rect key="frame" x="199" y="17" width="13" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="xSl-iB-I8a" firstAttribute="leading" secondItem="42M-Ex-sRT" secondAttribute="trailing" constant="32" id="0mb-I1-cUs"/>
                                             <constraint firstAttribute="bottom" secondItem="1dW-ja-OXC" secondAttribute="bottom" id="6oi-DW-Bcj"/>
-                                            <constraint firstItem="PMz-kV-fvP" firstAttribute="leading" secondItem="wPS-QY-RmA" secondAttribute="leading" constant="80" id="Ewo-YU-BN6"/>
                                             <constraint firstItem="5jV-Im-7Ix" firstAttribute="leading" secondItem="wPS-QY-RmA" secondAttribute="leading" id="GeF-21-kvX"/>
                                             <constraint firstItem="1dW-ja-OXC" firstAttribute="top" secondItem="wPS-QY-RmA" secondAttribute="top" constant="39" id="J5y-Rf-ipU"/>
                                             <constraint firstItem="1dW-ja-OXC" firstAttribute="leading" secondItem="wPS-QY-RmA" secondAttribute="leading" id="Ler-sL-UPq"/>
                                             <constraint firstAttribute="height" constant="40" id="Nre-Rd-zGe"/>
                                             <constraint firstAttribute="bottom" secondItem="xSl-iB-I8a" secondAttribute="bottom" constant="2" id="Ntn-aA-HqT"/>
+                                            <constraint firstItem="42M-Ex-sRT" firstAttribute="leading" secondItem="PMz-kV-fvP" secondAttribute="trailing" constant="4" id="OT5-W6-oTl"/>
                                             <constraint firstAttribute="trailing" secondItem="1dW-ja-OXC" secondAttribute="trailing" id="SmH-jX-keQ"/>
                                             <constraint firstAttribute="bottom" secondItem="PMz-kV-fvP" secondAttribute="bottom" constant="5" id="c3r-0d-Hn8"/>
-                                            <constraint firstItem="xSl-iB-I8a" firstAttribute="leading" secondItem="PMz-kV-fvP" secondAttribute="trailing" constant="8" id="hQ9-kp-SXo"/>
+                                            <constraint firstAttribute="bottom" secondItem="42M-Ex-sRT" secondAttribute="bottom" constant="5" id="cSv-a5-Ncl"/>
+                                            <constraint firstItem="PMz-kV-fvP" firstAttribute="leading" secondItem="5jV-Im-7Ix" secondAttribute="trailing" constant="8" id="mab-sr-rvn"/>
                                             <constraint firstAttribute="trailing" secondItem="xSl-iB-I8a" secondAttribute="trailing" id="o4F-Gk-I9X"/>
                                             <constraint firstAttribute="bottom" secondItem="5jV-Im-7Ix" secondAttribute="bottom" constant="5" id="uVd-rS-gAo"/>
                                         </constraints>
@@ -4713,8 +4928,8 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-DX-oGV">
-                                                <rect key="frame" x="80" y="17" width="156" height="18"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="oppgi shotpris" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-DX-oGV">
+                                                <rect key="frame" x="39" y="17" width="156" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
@@ -4747,20 +4962,28 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <rect key="frame" x="0.0" y="39" width="274" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1s-Tt-Y4s">
+                                                <rect key="frame" x="199" y="17" width="13" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="YE6-Oa-Fef" firstAttribute="top" secondItem="v0p-fI-4uc" secondAttribute="top" constant="39" id="3hd-ZL-3mW"/>
                                             <constraint firstAttribute="trailing" secondItem="YE6-Oa-Fef" secondAttribute="trailing" id="5JP-Wj-qUu"/>
+                                            <constraint firstItem="Z1s-Tt-Y4s" firstAttribute="leading" secondItem="fOp-DX-oGV" secondAttribute="trailing" constant="4" id="Ki0-Fj-SeQ"/>
                                             <constraint firstAttribute="height" constant="40" id="QT8-b1-Xtp"/>
                                             <constraint firstAttribute="bottom" secondItem="Bm3-CO-um6" secondAttribute="bottom" constant="5" id="WdU-ow-Ftp"/>
                                             <constraint firstAttribute="bottom" secondItem="412-Gh-Lcn" secondAttribute="bottom" constant="2" id="XCj-6r-QBD"/>
                                             <constraint firstItem="YE6-Oa-Fef" firstAttribute="leading" secondItem="v0p-fI-4uc" secondAttribute="leading" id="YOv-TB-DvG"/>
-                                            <constraint firstItem="fOp-DX-oGV" firstAttribute="leading" secondItem="v0p-fI-4uc" secondAttribute="leading" constant="80" id="ZQK-1x-Rzd"/>
+                                            <constraint firstItem="412-Gh-Lcn" firstAttribute="leading" secondItem="Z1s-Tt-Y4s" secondAttribute="trailing" constant="32" id="ZZJ-ES-Tjx"/>
+                                            <constraint firstItem="fOp-DX-oGV" firstAttribute="leading" secondItem="Bm3-CO-um6" secondAttribute="trailing" constant="8" id="iDS-Qt-ITc"/>
                                             <constraint firstItem="Bm3-CO-um6" firstAttribute="leading" secondItem="v0p-fI-4uc" secondAttribute="leading" id="mSS-v4-vX2"/>
                                             <constraint firstAttribute="trailing" secondItem="412-Gh-Lcn" secondAttribute="trailing" id="oyo-Df-ivv"/>
                                             <constraint firstAttribute="bottom" secondItem="fOp-DX-oGV" secondAttribute="bottom" constant="5" id="rDs-nb-nQE"/>
-                                            <constraint firstItem="412-Gh-Lcn" firstAttribute="leading" secondItem="fOp-DX-oGV" secondAttribute="trailing" constant="8" id="z0U-X8-Rkh"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z1s-Tt-Y4s" secondAttribute="bottom" constant="5" id="xBb-rd-2Yi"/>
                                             <constraint firstAttribute="bottom" secondItem="YE6-Oa-Fef" secondAttribute="bottom" id="zRN-48-gFo"/>
                                         </constraints>
                                     </view>
@@ -5260,12 +5483,13 @@ Standard-knappen setter gjennomsnittlige priser.</string>
         <image name="Weight" width="100" height="105"/>
         <image name="money-icon" width="200" height="200"/>
         <image name="promilleKalk" width="25" height="25"/>
+        <image name="warning" width="25" height="25"/>
         <image name="Øl" width="150" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O2D-nZ-bBk"/>
-        <segue reference="GXO-mE-sV2"/>
         <segue reference="CpQ-yR-y4x"/>
+        <segue reference="iFk-Mw-GtV"/>
         <segue reference="Rxa-yF-pA4"/>
         <segue reference="8JJ-IU-8ug"/>
     </inferredMetricsTieBreakers>

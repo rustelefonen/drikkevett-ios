@@ -12,6 +12,7 @@ class UnitViewController: UIViewController {
     
     static let segueId = "modifyDrink"
     static let updateSegueId = "updateDrink"
+    static let updateUnitSegue = "updateUnitSegue"
     
     @IBOutlet weak var unitTitle: UILabel!
     @IBOutlet weak var unitImage: UIImageView!
@@ -28,9 +29,7 @@ class UnitViewController: UIViewController {
     let titles = ["Øl", "Vin", "Drink", "Shot"]
     let images = ["LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS"]
     let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
-    let defaultPercentage = [4.5, 12.0, 20.5, 40.0]
     let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
-    let defaultAmount = [50, 20, 20, 4]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +78,8 @@ class UnitViewController: UIViewController {
         var savedPercentage = defaults.double(forKey: percentageKeys[unitType!])
         var savedAmount = defaults.integer(forKey: amountKeys[unitType!])
         
-        if savedPercentage < 0.1 {savedPercentage = defaultPercentage[unitType!]}
-        if savedAmount < 1 {savedAmount = defaultAmount[unitType!]}
+        if savedPercentage < 0.1 {savedPercentage = ResourceList.defaultPercentage[unitType!]}
+        if savedAmount < 1 {savedAmount = Int(ResourceList.defaultAmount[unitType!])}
         
         unitPercent.text = String(savedPercentage) + "%"
         unitPercentSlider.value = Float(savedPercentage)
@@ -91,9 +90,9 @@ class UnitViewController: UIViewController {
     func setStandardValues() {
         if unitType == nil {return}
         
-        unitPercent.text = String(defaultPercentage[unitType!]) + "%"
-        unitPercentSlider.value = Float(defaultPercentage[unitType!])
-        unitAmount.text = String(defaultAmount[unitType!]) + " cl"
-        unitAmountSlider.value = Float(defaultAmount[unitType!])
+        unitPercent.text = String(ResourceList.defaultPercentage[unitType!]) + "%"
+        unitPercentSlider.value = Float(ResourceList.defaultPercentage[unitType!])
+        unitAmount.text = String(ResourceList.defaultAmount[unitType!]) + " cl"
+        unitAmountSlider.value = Float(ResourceList.defaultAmount[unitType!])
     }
 }

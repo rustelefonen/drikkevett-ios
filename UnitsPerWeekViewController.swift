@@ -33,6 +33,22 @@ class UnitsPerWeekViewController: UIViewController {
         setShouldWarnValue(shouldWarn: sender.isOn)
     }
     
+    @IBAction func readMore(_ sender: UIButton) {
+        performSegue(withIdentifier: InfoDetailViewController.readMoreSegue, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == InfoDetailViewController.readMoreSegue {
+            if let destination = segue.destination as? InfoDetailViewController {
+                let info = Info()
+                info.title = ResourceList.exerciseTitles[4]
+                info.image = ResourceList.exerciseImages[4]
+                info.text = ResourceList.exerciseTexts[4]
+                destination.info = info
+            }
+        }
+    }
+    
     func getSavedWarningValue() -> Bool {
         let defaults = UserDefaults.standard
         

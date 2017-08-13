@@ -29,6 +29,8 @@ class PartyViewController: UIViewController {
     let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
     let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
     
+    var hasBeenWarned = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppColors.setBackground(view: view)
@@ -96,13 +98,19 @@ class PartyViewController: UIViewController {
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        let unitAddedDao = UnitAddedDao()
-        _ = unitAddedDao.createNewUnitAdded(timeStamp: Date(), unitAlkohol: ResourceList.unitsEnglish[index])
-        _ = unitAddedDao.save()
         
-        modifyUnit(index: index, increment: true)
-        updateBac()
-        unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
+        if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
+        else {
+            let unitAddedDao = UnitAddedDao()
+            _ = unitAddedDao.createNewUnitAdded(timeStamp: Date(), unitAlkohol: ResourceList.unitsEnglish[index])
+            _ = unitAddedDao.save()
+            
+            modifyUnit(index: index, increment: true)
+            updateBac()
+            unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
+        }
+        
+        
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
@@ -370,7 +378,41 @@ class PartyViewController: UIViewController {
         return Calendar.current.date(byAdding: .minute, value: 15, to: sessionStart)! > Date()
     }
     
+    func displayUserMaxBacDialog(index:Int) {
+        let refreshAlert = UIAlertController(title: "Husk ditt eget mål!", message: "Hvis du drikker denne enheten vil du overstige din selvbestemte makspromille.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.hasBeenWarned = !self.hasBeenWarned
+            self.modifyUnit(index: index, increment: true)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
     
+    func estimatedBacIsHigherThanGoalBac(index:Int) -> Bool{
+        let maxBac = AppDelegate.getUserData()?.goalPromille ?? 0.0
+        let estimatedBac = estimateBac(unitType: index)
+        
+        return estimatedBac > Double(maxBac)
+    }
+    
+    func estimateBac(unitType:Int) -> Double{
+        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
+        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
+        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
+        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
+        
+        guard let userData = AppDelegate.getUserData() else {return 0.0}
+        
+        guard let weight = userData.weight as? Double else {return 0.0}
+        guard let gender = userData.gender as? Bool else {return 0.0}
+        
+        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
+        amounts[unitType] += 1.0
+        
+        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 0, weight: weight, gender: gender)
+    }
     
     
     

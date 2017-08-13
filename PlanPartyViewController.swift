@@ -22,7 +22,6 @@ class PlanPartyViewController: UIViewController {
     var selectDrinkPageViewController:SelectDrinkPageViewController?
     var drinkEpisodeViewController:DrinkEpisodeViewController?
     
-    var hasBeenWarned = false
     var hasBeenMaxWarned = false
     var hasBeenWhoWarned = false
     var hasBeenConcerned = false
@@ -41,7 +40,6 @@ class PlanPartyViewController: UIViewController {
         if shouldDisplayConcernedWarning() {displayWhoConcernedBacDialog(index: index)}
         else if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
         else if estimatedBac > 3.0 && !hasBeenMaxWarned {displayMaxBacDialog(index: index)}
-        else if estimatedBacIsHigherThanGoalBac(index: index) && !hasBeenWarned {displayUserMaxBacDialog(index: index)}
         else {modifyUnit(index: index, increment: true)}
     }
     
@@ -100,7 +98,7 @@ class PlanPartyViewController: UIViewController {
                 let info = Info()
                 info.title = ResourceList.exerciseTitles[4]
                 info.text = ResourceList.exerciseTexts[4]
-                info.image = "poison"
+                info.image = ResourceList.exerciseImages[4]
                 destination.info = info
             }
         }
@@ -148,7 +146,6 @@ class PlanPartyViewController: UIViewController {
         shotAmount.text = "0"
         expectedBac.text = "0.0"
         expectedCost.text = "0,-"
-        hasBeenWarned = false
         hasBeenMaxWarned = false
         hasBeenWhoWarned = false
         hasBeenConcerned = false
@@ -167,7 +164,7 @@ class PlanPartyViewController: UIViewController {
         
         let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: 0, weight: weight, gender: gender)
         
-        expectedBac.text = String(describing: currentBac)
+        expectedBac.text = String(describing: currentBac).replacingOccurrences(of: ".", with: ",")
     }
     
     func updateExpectedCost() {
@@ -205,17 +202,7 @@ class PlanPartyViewController: UIViewController {
         return estimatedBac > Double(maxBac)
     }
     
-    func displayUserMaxBacDialog(index:Int) {
-        let refreshAlert = UIAlertController(title: "Husk ditt eget mål!", message: "Hvis du legger til denne enheten vil du overstige din selvbestemte makspromille.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
-            self.hasBeenWarned = !self.hasBeenWarned
-            self.modifyUnit(index: index, increment: true)
-        }))
-        
-        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        present(refreshAlert, animated: true, completion: nil)
-    }
+    
     
     func getUnitCountForCurrentWeek() -> Int {
         let historyDao = HistoryDao()

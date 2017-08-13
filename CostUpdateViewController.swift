@@ -22,7 +22,6 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var shotImageView: UIImageView!
     
-    
     var activeField:UITextField?
     
     override func viewDidLoad() {
@@ -186,7 +185,8 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 4
+        
+        let maxLength = 3
         
         if string.characters.count == 0 {return true}
         
@@ -256,9 +256,11 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
     func textFieldDidBeginEditing(_ textField: UITextField){
         addDoneButton()
         activeField = textField
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField){
         activeField = nil
+        
     }
 }

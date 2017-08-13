@@ -104,7 +104,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         goalPieChartView.isUserInteractionEnabled = false
         goalPieChartView.isUserInteractionEnabled = true
         
-        let centerText = String(describing: goalBac)
+        let centerText = String(describing: goalBac).replacingOccurrences(of: ".", with: ",")
         let fontAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 27.0), NSForegroundColorAttributeName: UIColor.white]
         let attriButedString = NSAttributedString(string: centerText, attributes: fontAttributes)
         goalPieChartView.centerAttributedText = attriButedString
@@ -212,14 +212,14 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
             }
         }
         totalCost.text = String(describing: totalCostValue)
-        totalHighestBac.text = String(describing: totalHighestBacValue.roundTo(places: 2))
+        totalHighestBac.text = String(describing: totalHighestBacValue.roundTo(places: 2)).replacingOccurrences(of: ".", with: ",")
         let totalHighestBacAvgValue = totalHighestBacSumValue / Double(allHistories.count)
-        totalHighestAvgBac.text = String(describing: totalHighestBacAvgValue.roundTo(places: 2))
+        totalHighestAvgBac.text = String(describing: totalHighestBacAvgValue.roundTo(places: 2)).replacingOccurrences(of: ".", with: ",")
         
         lastMonthCost.text = String(describing: lastMonthTotalCostValue)
-        lastMonthHighestBac.text = String(describing: lastMonthTotalHighestBacValue.roundTo(places: 2))
+        lastMonthHighestBac.text = String(describing: lastMonthTotalHighestBacValue.roundTo(places: 2)).replacingOccurrences(of: ".", with: ",")
         let lastMonthTotalHighestBacAvgValue = lastMonthTotalHighestBacSumValue / lastMonthCount
-        lastMonthHighestAvgBac.text = String(describing: lastMonthTotalHighestBacAvgValue.roundTo(places: 2))
+        lastMonthHighestAvgBac.text = String(describing: lastMonthTotalHighestBacAvgValue.roundTo(places: 2)).replacingOccurrences(of: ".", with: ",")
     }
     
     func dateIsWithinThePastMonth(date:Date) -> Bool {

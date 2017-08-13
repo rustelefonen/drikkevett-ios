@@ -59,7 +59,7 @@ struct ResourceList {
     
     static let guidanceImages = ["hjemSkjermOmrisse", "promilleKalkOmrisse", "iphone omrisse", "dagenderpOmrisse", "historikkOmrisse", "Math-100", "Unis"]
     
-    static let guidanceTexts = ["På hjemskjermen din vil du ha muligheten til å se hvordan du ligger an med målene dine, sjekke statistikk over dine kvelder og legge inn et eventuelt profilbilde.", "Promillekalkulatoren gjør at du kan regne ut hvilken promille du har. Du kan også justere antall timer som har gått siden alkoholen ble konsumert, og finne ut hva promillen vil være etter en viss tid. Promillekalkulatoren gir en indikasjon på din promille, og skal ikke brukes som en utregning for når du kan kjøre!", "Denne funksjonen skal hjelpe deg å planlegge kvelden din. Du skal kunne legge inn antall enheter du planlegger å drikke for så å \"drikke\" dem underveis", "Med funksjonen dagen derpå kan du se oversikt over forrige kvelds aktiviteter. Du kan også etterregistrere enheter. Tips-knappen fører deg til tips til dagen derpå.", "Historikken viser en oversikt over alle kveldene du har registrert med applikasjonen. Klikk på en enkelt kveld for mer detaljert data om kvelden din.", "For kvinner:\nAlkohol i gram / (kroppsvekten i kg x 0,60) – (0,15 x timer fra drikkestart) = promille. \nFor menn: \nAlkohol i gram / (kroppsvekten i kg x 0,70) – (0,15 x timer fra drikkestart) = promille.", "Øl: 0,5 l (4,5 % alkohol)\nVin: 1,2 dl (13 % alkohol)\nDrink: 4 cl (40 % alkohol)\nShot: 4 cl (40 % alkohol)"]
+    static let guidanceTexts = ["På hjemskjermen din vil du ha muligheten til å se hvordan du ligger an med målene dine, sjekke statistikk over dine kvelder og legge inn et eventuelt profilbilde.", "Promillekalkulatoren gjør at du kan regne ut hvilken promille du har. Du kan også justere antall timer som har gått siden alkoholen ble konsumert, og finne ut hva promillen vil være etter en viss tid. Promillekalkulatoren gir en indikasjon på din promille, og skal ikke brukes som en utregning for når du kan kjøre!", "Denne funksjonen skal hjelpe deg å planlegge kvelden din. Du skal kunne legge inn antall enheter du planlegger å drikke for så å \"drikke\" dem underveis", "Med funksjonen dagen derpå kan du se oversikt over forrige kvelds aktiviteter. Du kan også etterregistrere enheter. Tips-knappen fører deg til tips til dagen derpå.", "Historikken viser en oversikt over alle kveldene du har registrert med applikasjonen. Klikk på en enkelt kveld for mer detaljert data om kvelden din.", "For kvinner:\nAlkohol i gram / (kroppsvekten i kg x 0,60) – (0,15 x timer fra drikkestart) = promille. \nFor menn: \nAlkohol i gram / (kroppsvekten i kg x 0,70) – (0,15 x timer fra drikkestart) = promille.", "Øl: 0,5 l (4,5 % alkohol)\nVin: 1,2 dl (12,5 % alkohol)\nDrink: 4 cl (40 % alkohol)\nShot: 4 cl (40 % alkohol)"]
     
     static let tipsImages = ["Bed", "Idea-100", "Wink"]
     static let tipsTitles = ["Dagen Derpå", "Råd for å unngå fyllesyke", "Ikke sov på stigende rus"]
@@ -67,8 +67,8 @@ struct ResourceList {
     
     static let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
     static let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
-    static let defaultPercentage = [4.5, 12.0, 20.5, 40.0]
-    static let defaultAmount = [50.0, 20.0, 20.0, 4.0]
+    static let defaultPercentage = [4.5, 12.0, 40.0, 40.0]
+    static let defaultAmount = [50.0, 12.5, 4.0, 4.0]
     
     static let weekUnitWarningKey = "weekUnitWarning"
     static let weekUnitWarningDefault = true
