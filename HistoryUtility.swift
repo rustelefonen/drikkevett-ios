@@ -30,3 +30,33 @@ func calculateTotalCostBy(history:History) -> Int{
     }
     return totalCost
 }
+
+func getHighestBacBy(history:History) ->Double {
+    var addedBeerUnits = 0.0
+    var addedWineUnits = 0.0
+    var addedDrinkUnits = 0.0
+    var addedShotUnits = 0.0
+    
+    if let units = history.units {
+        for unit in units.allObjects as! [Unit] {
+            if unit.unitType == "Beer" {
+                addedBeerUnits += 1.0
+            } else if unit.unitType == "Wine" {
+                addedWineUnits += 1.0
+            } else if unit.unitType == "Drink" {
+                addedDrinkUnits += 1.0
+            } else if unit.unitType == "Shot" {
+                addedShotUnits += 1.0
+            }
+        }
+    }
+    
+    let totalGrams = (addedBeerUnits * Double(history.beerGrams ?? 0.0)) + (addedWineUnits * Double(history.wineGrams ?? 0.0)) + (addedDrinkUnits * Double(history.drinkGrams ?? 0.0)) + (addedShotUnits * Double(history.shotGrams ?? 0.0))
+    
+    let genderScore = Bool(history.gender ?? 1) ? 0.7 : 0.6
+    
+    var highestBac = (totalGrams/(Double(history.weight ?? 0.0) * genderScore)).roundTo(places: 2)
+    if highestBac < 0.0 {highestBac = 0.0}
+    
+    return highestBac
+}

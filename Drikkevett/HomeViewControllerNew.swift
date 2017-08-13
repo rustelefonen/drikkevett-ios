@@ -63,7 +63,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
     
     func initPieCard() {
         goalPieChartView.delegate = self
-        let allHistories = HistoryDao().getAll()
+        let allHistories = NewHistoryDao().getAll()
         
         guard let goalBac = userData?.goalPromille as? Double else {return}
         
@@ -71,7 +71,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         var underGoal = 0.0
         
         for history in allHistories {
-            guard let historyHighestBac = history.hoyestePromille as? Double else {continue}
+            let historyHighestBac = getHighestBacBy(history: history)
             if historyHighestBac > goalBac {overGoal += 1.0}
             else {underGoal += 1.0}
         }
@@ -118,8 +118,8 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         goalTextView.text = ResourceList.pieChartTexts[2]
     }
     
-    func initBarCard() {
-        let historyList = HistoryDao().getAll()
+    func initBarCard() {        
+        let historyList = NewHistoryDao().getAll()
         
         guard let goalBac = userData?.goalPromille as? Double else {return}
         styleBarChart(goalBac: goalBac)
@@ -131,9 +131,9 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         
         for i in 0..<historyList.count{
             let history = historyList[i]
-            let historyHighesetBAC = Double(history.hoyestePromille!)
-            let day = Calendar.current.component(.day, from: history.dato! as Date)
-            let month = DateUtil().getMonthOfYear(history.dato as Date?)!
+            let historyHighesetBAC = getHighestBacBy(history: history)
+            let day = Calendar.current.component(.day, from: history.beginDate! as Date)
+            let month = DateUtil().getMonthOfYear(history.beginDate as Date?)!
             
             days.append("\(String(day)). \(month)")
             dataEntries.append(BarChartDataEntry(x: Double(i), y: historyHighesetBAC))
