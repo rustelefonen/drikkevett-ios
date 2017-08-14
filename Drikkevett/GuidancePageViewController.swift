@@ -20,7 +20,6 @@ class GuidancePageViewController : UIPageViewController, UIPageViewControllerDat
             self.VCInstance(name: "guidanceContent"),
             self.VCInstance(name: "guidanceContent"),
             self.VCInstance(name: "guidanceContent"),
-            self.VCInstance(name: "guidanceContent"),
             self.VCInstance(name: "guidanceContent")]
         }() as! [GuidanceContentViewController]
     

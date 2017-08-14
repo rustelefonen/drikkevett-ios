@@ -178,10 +178,10 @@ class CostUpdateViewController:UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func useDefaultCosts() {
-        beerPrice.text = "60"
-        winePrice.text = "70"
-        drinkPrice.text = "100"
-        shotPrice.text = "110"
+        beerPrice.text = "70"
+        winePrice.text = "80"
+        drinkPrice.text = "110"
+        shotPrice.text = "90"
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

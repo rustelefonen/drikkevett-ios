@@ -60,3 +60,15 @@ func getHighestBacBy(history:History) ->Double {
     
     return highestBac
 }
+
+func getAllHistories() -> [History] {
+    let histories = NewHistoryDao().getAll()
+    var filteredHistories = [History]()
+    
+    for history in histories {
+        if history.endDate != nil {
+            filteredHistories.append(history)
+        }
+    }
+    return filteredHistories
+}

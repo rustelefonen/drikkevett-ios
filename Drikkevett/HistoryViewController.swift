@@ -33,16 +33,18 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         setTitle(date: (history?.beginDate)!)
         
         fillLineChart(units: history?.units?.allObjects as! [Unit])
-        
         styleLineChart()
-        
         costLabel.text = String(describing: calculateTotalCostBy(history: history!)) + ",-"
-        
         
         bacLabel.text = String(describing: Double(getHighestBac(history: history!)).roundTo(places: 2))
         setEnergyLabel()
         
         
+        setUnitAmounts()
+        
+    }
+    
+    func setUnitAmounts() {
         var beerCount = 0
         var wineCount = 0
         var drinkCount = 0
@@ -59,8 +61,6 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         wineAmount.text = String(describing: wineCount)
         drinkAmount.text = String(describing: drinkCount)
         shotAmount.text = String(describing: shotCount)
-        
-        
     }
     
     func getHighestBac(history:History) ->Double {
@@ -131,8 +131,8 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         let drinkGrams = Double(history?.drinkGrams ?? 0.0)
         let shotGrams = Double(history?.shotGrams ?? 0.0)
         
-        let kiloCalories = calculateAlcoholKiloCalories(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, beerGrams: beerGrams, wineGrams: wineGrams, drinkGrams: drinkGrams, shotGrams: shotGrams).roundTo(places: 1)
-        let kiloJoules = calculateAlcoholKiloJoules(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, beerGrams: beerGrams, wineGrams: wineGrams, drinkGrams: drinkGrams, shotGrams: shotGrams).roundTo(places: 1)
+        let kiloCalories = calculateAlcoholKiloCalories(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, beerGrams: beerGrams, wineGrams: wineGrams, drinkGrams: drinkGrams, shotGrams: shotGrams)
+        let kiloJoules = calculateAlcoholKiloJoules(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, beerGrams: beerGrams, wineGrams: wineGrams, drinkGrams: drinkGrams, shotGrams: shotGrams)
     
         energyLabel.text = "\(kiloCalories)/\(kiloJoules)"
     }

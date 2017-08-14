@@ -75,10 +75,10 @@ class KostnaderViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func useDefaultCosts() {
-        beerInput.text = "60"
-        wineInput.text = "70"
-        drinkInput.text = "100"
-        shotInput.text = "110"
+        beerInput.text = "70"
+        wineInput.text = "80"
+        drinkInput.text = "110"
+        shotInput.text = "90"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

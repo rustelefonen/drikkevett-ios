@@ -697,19 +697,19 @@ høyeste promille</string>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="7QW-gI-Whz"/>
-                                                            <exclude reference="f2e-nd-lKN"/>
                                                             <exclude reference="BqJ-1b-LBw"/>
+                                                            <exclude reference="f2e-nd-lKN"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="7QW-gI-Whz"/>
-                                                            <include reference="f2e-nd-lKN"/>
                                                             <include reference="BqJ-1b-LBw"/>
+                                                            <include reference="f2e-nd-lKN"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre alkoholenheter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEH-Ze-vGk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endre prosent og mengder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEH-Ze-vGk">
                                                     <rect key="frame" x="41" y="7" width="351" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="341" id="0eS-sl-OsK">
@@ -755,8 +755,8 @@ høyeste promille</string>
                                                 <mask key="constraints">
                                                     <exclude reference="3rg-YD-vmu"/>
                                                     <exclude reference="eyv-z2-t0i"/>
-                                                    <exclude reference="4Dl-6b-yba"/>
                                                     <exclude reference="1aX-Cl-rfT"/>
+                                                    <exclude reference="4Dl-6b-yba"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -767,8 +767,8 @@ høyeste promille</string>
                                                 <mask key="constraints">
                                                     <include reference="3rg-YD-vmu"/>
                                                     <include reference="eyv-z2-t0i"/>
-                                                    <include reference="4Dl-6b-yba"/>
                                                     <include reference="1aX-Cl-rfT"/>
+                                                    <include reference="4Dl-6b-yba"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1354,7 +1354,7 @@ høyeste promille</string>
         <scene sceneID="grI-FW-BZf">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="rzY-lE-cnA" customClass="InfoCollectionViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="axG-ye-tdu">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="axG-ye-tdu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1775,7 +1775,7 @@ høyeste promille</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker bedre oversikt og kontroll, over ditt alkoholinntak." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Drikkevett er applikasjonen for deg som ønsker bedre oversikt og kontroll over ditt alkoholinntak." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-3d-CaZ">
                                 <rect key="frame" x="20" y="343" width="374" height="159"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="159" id="shc-5H-lnN"/>

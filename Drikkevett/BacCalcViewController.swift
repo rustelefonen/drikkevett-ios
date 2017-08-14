@@ -141,7 +141,7 @@ class BacCalcViewController: UIViewController {
     }
     
     func displayMaxBacDialog(index:Int) {
-        let alert = UIAlertController(title: "Faretruende høy promille!", message: "Bevisstløshet og pustehemning kan inntreffe. Risikoen for dette øker betydelig ved promille over 2,5.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Faretruende høy promille!", message: "Pustestans og død kan inntre. Risikoen for dette øker betydelig ved promille over 3.", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Ok, legg til", style: .destructive, handler: { (action: UIAlertAction!) in
             self.hasBeenWarned = !self.hasBeenWarned

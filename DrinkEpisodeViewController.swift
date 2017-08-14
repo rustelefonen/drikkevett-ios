@@ -80,14 +80,6 @@ class DrinkEpisodeViewController: UIViewController {
             }
         }
         return StatusNew.NOT_RUNNING
-        
-        
-        /*
-        let startEndTimestampsList = StartEndTimestampsDao().getAll()
-        if startEndTimestampsList.count > 0 && Date() < startEndTimestampsList.first!.endStamp! {
-            return StatusNew.RUNNING
-        }
-        return StatusNew.NOT_RUNNING*/
     }
     
     @IBAction func clearUnits(_ sender: UIBarButtonItem) {

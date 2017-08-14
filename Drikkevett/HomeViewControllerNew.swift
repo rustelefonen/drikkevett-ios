@@ -63,7 +63,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
     
     func initPieCard() {
         goalPieChartView.delegate = self
-        let allHistories = NewHistoryDao().getAll()
+        let allHistories = getAllHistories()
         
         guard let goalBac = userData?.goalPromille as? Double else {return}
         
@@ -119,7 +119,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
     }
     
     func initBarCard() {
-        let historyList = NewHistoryDao().getAll()
+        let historyList = getAllHistories()
         
         guard let goalBac = userData?.goalPromille as? Double else {return}
         styleBarChart(goalBac: goalBac)
@@ -135,12 +135,21 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
             let day = Calendar.current.component(.day, from: history.beginDate! as Date)
             let month = DateUtil().getMonthOfYear(history.beginDate as Date?)!
             
+            print("\(i): \(String(day)). \(month)")
+            print("\(i): \(String(historyHighesetBAC))")
+            
             days.append("\(String(day)). \(month)")
             dataEntries.append(BarChartDataEntry(x: Double(i), y: historyHighesetBAC))
+            
+            
             
             if historyHighesetBAC > goalBac { colors.append(AppColors.graphRed) }
             else { colors.append(AppColors.graphGreen) }
         }
+        
+        /*print(days.count)
+        print(dataEntries.count)
+        print(days)*/
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Brand 1")
         chartDataSet.drawValuesEnabled = false
@@ -153,6 +162,7 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         //XVals
         historyBarChartView.xAxis.granularity = 1
         historyBarChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, _) -> String in
+            print(index)
             return days[Int(index)]
         })
     }
@@ -191,23 +201,22 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
         var lastMonthTotalHighestBacSumValue = 0.0
         var lastMonthCount = 0.0
         
-        let allHistories = HistoryDao().getAll()
+        let allHistories = getAllHistories()
         
         for history in allHistories {
-            if let historyCost = history.forbruk as? Int {
-                totalCostValue += historyCost
-                if dateIsWithinThePastMonth(date: history.dato!) {lastMonthTotalCostValue += historyCost}
-            }
-            if let historyHighestBac = history.hoyestePromille as? Double {
-                totalHighestBacSumValue += historyHighestBac
-                if historyHighestBac > totalHighestBacValue {totalHighestBacValue = historyHighestBac}
-                
-                if dateIsWithinThePastMonth(date: history.dato!) {
-                    lastMonthTotalHighestBacSumValue += historyHighestBac
-                    if historyHighestBac > lastMonthTotalHighestBacValue {
-                        lastMonthTotalHighestBacValue = historyHighestBac
-                        lastMonthCount += 1.0
-                    }
+            let historyCost = calculateTotalCostBy(history: history)
+            totalCostValue += historyCost
+            if dateIsWithinThePastMonth(date: history.beginDate!) {lastMonthTotalCostValue += historyCost}
+            
+            let historyHighestBac = getHighestBacBy(history: history)
+            totalHighestBacSumValue += historyHighestBac
+            if historyHighestBac > totalHighestBacValue {totalHighestBacValue = historyHighestBac}
+
+            if dateIsWithinThePastMonth(date: history.beginDate!) {
+                lastMonthTotalHighestBacSumValue += historyHighestBac
+                if historyHighestBac > lastMonthTotalHighestBacValue {
+                    lastMonthTotalHighestBacValue = historyHighestBac
+                    lastMonthCount += 1.0
                 }
             }
         }

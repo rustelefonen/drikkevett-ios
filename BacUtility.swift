@@ -86,14 +86,14 @@ func getQuoteTextColorBy(bac:Double) -> UIColor {
     case 1.3..<2.0:
         return UIColor.orange
     case 2.0..<3.0:
-        return UIColor(red: 255/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
+        return UIColor(red: 235/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1.0)
     default:
         return UIColor.red
     }
 }
 
 func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, hours:Double, weight:Double, gender:Bool) -> Double {
-    let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
+    let totalGrams = ((beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))) * 0.79
     
     let genderScore = gender ? 0.7 : 0.6
     
@@ -103,7 +103,7 @@ func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUni
 }
 
 func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, hours:Double, weight:Double, gender:Bool, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double {
-    let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
+    let totalGrams = ((beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)) * 0.79
     
     let genderScore = gender ? 0.7 : 0.6
     
@@ -112,28 +112,28 @@ func calculateBac(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUni
     else {return currentBac}
 }
 
-func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
+func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Int{
     let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
     
-    return totalGrams * 7.0
+    return Int(totalGrams * 7.0)
 }
 
-func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Double{
+func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double) -> Int{
     let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
     
-    return totalGrams * 29.3
+    return Int(totalGrams * 29.3)
 }
 
-func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double{
+func calculateAlcoholKiloCalories(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Int{
     let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
     
-    return totalGrams * 7.0
+    return Int(totalGrams * 7.0)
 }
 
-func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Double{
+func calculateAlcoholKiloJoules(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Int{
     let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
     
-    return totalGrams * 29.3
+    return Int(totalGrams * 29.3)
 }
 
 func calculateTotalCost(beerUnits:Int, wineUnits:Int, drinkUnits:Int, shotUnits:Int) ->Int {

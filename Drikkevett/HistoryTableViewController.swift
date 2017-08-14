@@ -11,7 +11,7 @@ import UIKit
 class HistoryTableViewController : UITableViewController {
     let cellId = "historyCell"
     
-    var historyEntries = [HistoryEntry]()
+    var allHistoryEntries = [HistoryEntry]()
     let historyDao = HistoryDao()
     let newHistoryDao = NewHistoryDao()
     
@@ -20,26 +20,28 @@ class HistoryTableViewController : UITableViewController {
         if let tableBackground = tableView.backgroundView {
             AppColors.setBackground(view: tableBackground)
         }
-        initHistoryEntries()
+        allHistoryEntries = getHistoryEntries()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        allHistoryEntries = getHistoryEntries()
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if historyEntries.count > 0 {
-            return historyEntries[section].histories?.count ?? 0
+        if allHistoryEntries.count > 0 {
+            return allHistoryEntries[section].histories?.count ?? 0
         }
         return 0
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return historyEntries.count > 0 ? historyEntries[section].section : "Ingen kvelder"
+        return allHistoryEntries.count > 0 ? allHistoryEntries[section].section : "Ingen kvelder"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return historyEntries.count > 0 ? historyEntries.count : 1
+        return allHistoryEntries.count > 0 ? allHistoryEntries.count : 1
     }
     
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
@@ -51,7 +53,7 @@ class HistoryTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let historyEntry = historyEntries[indexPath.section].histories![indexPath.row]
+        let historyEntry = allHistoryEntries[indexPath.section].histories![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
         
         cell.dateLabel.text = "\(getDayFrom(date: (historyEntry.beginDate)!))"
@@ -76,7 +78,6 @@ class HistoryTableViewController : UITableViewController {
         
         return cell
     }
-    
     
     func getHighestBac(history:History) ->Double {
         var addedBeerUnits = 0.0
@@ -124,7 +125,7 @@ class HistoryTableViewController : UITableViewController {
                 let destination = segue.destination as! HistoryViewController
                 if sender is IndexPath {
                     let indexPath = sender as! IndexPath
-                    destination.history = historyEntries[indexPath.section].histories?[indexPath.row]
+                    destination.history = allHistoryEntries[indexPath.section].histories?[indexPath.row]
                 }
             }
         }
@@ -157,8 +158,10 @@ class HistoryTableViewController : UITableViewController {
         return ResourceList.norwegianWeekDays[calendar.component(.weekday, from: date) - 2]
     }
     
-    func initHistoryEntries() {        
-        let allHistories = newHistoryDao.getAllOrderedByDate()
+    func getHistoryEntries() -> [HistoryEntry]{
+        let allHistories = getAllHistories()
+        
+        var historyEntries = [HistoryEntry]()
         
         for history in allHistories {
             let label = getMonthYearLabelFrom(date: history.beginDate!)
@@ -178,8 +181,6 @@ class HistoryTableViewController : UITableViewController {
                 historyEntries.append(historyEntry)
             }
         }
-        print(historyEntries.count)
-        let h = historyEntries.first
-        print(h?.histories?.first?.beginDate)
+        return historyEntries
     }
 }

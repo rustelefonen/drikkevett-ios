@@ -34,9 +34,7 @@ class AfterRegisterViewController: UIViewController {
         
         datePicker.minimumDate = getDateOfFirstUnitAdded(units: history?.units?.allObjects as! [Unit])
         datePicker.maximumDate = history?.endDate
-        if let startOfSession = history!.beginDate {
-            datePicker.date = startOfSession
-        }
+        if let startOfSession = history!.beginDate {datePicker.date = startOfSession}
     }
     
     func getDateOfFirstUnitAdded(units:[Unit]) -> Date?{
@@ -112,5 +110,4 @@ class AfterRegisterViewController: UIViewController {
             alertController.dismiss(animated: true, completion: nil)
         })
     }
-    
 }

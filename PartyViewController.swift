@@ -130,7 +130,7 @@ class PartyViewController: UIViewController {
         else if unit?.unitType == "Shot" {index = 3}
         
         if let currentHistory = history {
-            if let units = history?.units {
+            if let units = currentHistory.units {
                 let mutable = NSMutableSet(set: units)
                 mutable.remove(unit)
                 history?.units = mutable
@@ -331,7 +331,7 @@ class PartyViewController: UIViewController {
         drinkEpisodeViewController?.insertView()
     }
     
-    func getFirstUnitAdded() -> Date? { //Denne er tung
+    func getFirstUnitAdded() -> Date? {
         var firstUnitAdded:Date?
         if let currentHistory = history {
             if let units = currentHistory.units {
