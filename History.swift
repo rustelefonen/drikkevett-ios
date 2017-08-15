@@ -28,8 +28,6 @@ public class History: NSManagedObject {
     @NSManaged public var drinkGrams: NSNumber?
     @NSManaged public var shotGrams: NSNumber?
     
-    
-    
     @NSManaged public var beginDate: Date?
     @NSManaged public var endDate: Date?
     @NSManaged public var plannedBeerCount: NSNumber?

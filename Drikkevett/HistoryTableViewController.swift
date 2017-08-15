@@ -177,7 +177,7 @@ class HistoryTableViewController : UITableViewController {
     }
     
     func getHistoryEntries() -> [HistoryEntry]{
-        let allHistories = getAllHistories()
+        let allHistories = getAllHistories().sorted(by: {$0.beginDate! > $1.beginDate!})
         
         var historyEntries = [HistoryEntry]()
         

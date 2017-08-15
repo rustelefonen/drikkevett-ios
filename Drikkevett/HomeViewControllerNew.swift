@@ -133,38 +133,28 @@ class HomeViewControllerNew: UIViewController, ChartViewDelegate, UIImagePickerC
             let history = historyList[i]
             let historyHighesetBAC = getHighestBacBy(history: history)
             let day = Calendar.current.component(.day, from: history.beginDate! as Date)
-            let month = DateUtil().getMonthOfYear(history.beginDate as Date?)!
-            
-            print("\(i): \(String(day)). \(month)")
-            print("\(i): \(String(historyHighesetBAC))")
-            
-            days.append("\(String(day)). \(month)")
+            let month = DateUtil().getMonthOfYear(history.beginDate as Date?)
+            days.append("\(String(day)). \(month ?? "")")
             dataEntries.append(BarChartDataEntry(x: Double(i), y: historyHighesetBAC))
-            
-            
             
             if historyHighesetBAC > goalBac { colors.append(AppColors.graphRed) }
             else { colors.append(AppColors.graphGreen) }
         }
         
-        /*print(days.count)
-        print(dataEntries.count)
-        print(days)*/
+        //XVals
+        historyBarChartView.xAxis.granularity = 1
+        
+        historyBarChartView.xAxis.valueFormatter = DefaultAxisValueFormatter() { (index, _) -> String in
+            return days[Int(index)]
+        }
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Brand 1")
         chartDataSet.drawValuesEnabled = false
         chartDataSet.colors = colors
         let chartData = BarChartData(dataSets: [chartDataSet])
         
-        //YVals
+        //YVals, must be after valueformatter due to race condition
         historyBarChartView.data = chartData
-        
-        //XVals
-        historyBarChartView.xAxis.granularity = 1
-        historyBarChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, _) -> String in
-            print(index)
-            return days[Int(index)]
-        })
     }
     
     func styleBarChart(goalBac:Double){
