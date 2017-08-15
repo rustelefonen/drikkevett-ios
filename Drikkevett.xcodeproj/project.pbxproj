@@ -18,6 +18,7 @@
 		D5371A811F0D1B9100B81A89 /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A801F0D1B9100B81A89 /* TipsPageViewController.swift */; };
 		D5371A851F0D1BD900B81A89 /* DayAfterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */; };
 		D5371A871F0D845C00B81A89 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5371A861F0D845C00B81A89 /* UnitViewController.swift */; };
+		D5608B3B1F436649005B1C7A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5608B381F436627005B1C7A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D58F50E21F3FE79F0013C41F /* HistoryUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */; };
 		D58F50E81F3FED880013C41F /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E41F3FED880013C41F /* Unit.swift */; };
 		D58F50EA1F3FED880013C41F /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F50E61F3FED880013C41F /* History.swift */; };
@@ -80,30 +81,22 @@
 		D5C3FB041F0577F60059AA90 /* BacCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */; };
 		D5C3FB061F0578080059AA90 /* SelectDrinkPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */; };
 		D5C3FB0A1F0578200059AA90 /* MyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3FB091F0578200059AA90 /* MyScrollVC.swift */; };
-		D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB35C91DAAD970001C9413 /* Charts.framework */; };
 		D5E709551F0E501E00254218 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E709541F0E501E00254218 /* IntroPageViewController.swift */; };
 		D5E709571F1049FF00254218 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E709561F1049FF00254218 /* DisclaimerViewController.swift */; };
 		D5ED09FF1F054B6E0091F98C /* HistoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5DB35C81DAAD970001C9413 /* PBXContainerItemProxy */ = {
+		D5608B371F436627005B1C7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
+			containerPortal = D5608B321F436626005B1C7A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06165F241D8110E600722320;
 			remoteInfo = Charts;
 		};
-		D5DB35CA1DAAD970001C9413 /* PBXContainerItemProxy */ = {
+		D5608B391F436627005B1C7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06B120D51D811E6200D14B02;
-			remoteInfo = ChartsRealm;
-		};
-		D5DB35CC1DAAD970001C9413 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
+			containerPortal = D5608B321F436626005B1C7A /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
@@ -117,6 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D5608B3B1F436649005B1C7A /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +130,7 @@
 		D5371A801F0D1B9100B81A89 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A841F0D1BD900B81A89 /* DayAfterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAfterViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5371A861F0D845C00B81A89 /* UnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5608B321F436626005B1C7A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		D58F50E11F3FE79F0013C41F /* HistoryUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryUtility.swift; sourceTree = "<group>"; };
 		D58F50E31F3FEC130013C41F /* myCoreDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "myCoreDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		D58F50E41F3FED880013C41F /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -200,7 +195,6 @@
 		D5C3FB031F0577F60059AA90 /* BacCalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BacCalcViewController.swift; path = Drikkevett/BacCalcViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB051F0578080059AA90 /* SelectDrinkPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectDrinkPageViewController.swift; path = Drikkevett/SelectDrinkPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5C3FB091F0578200059AA90 /* MyScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScrollVC.swift; path = Drikkevett/MyScrollVC.swift; sourceTree = SOURCE_ROOT; };
-		D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		D5E709541F0E501E00254218 /* IntroPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5E709561F1049FF00254218 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5ED09FE1F054B6E0091F98C /* HistoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryDao.swift; path = Drikkevett/HistoryDao.swift; sourceTree = "<group>"; };
@@ -211,7 +205,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DB35CE1DAADAA1001C9413 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,17 +423,16 @@
 		D5412BCB1D286F6500445D6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */,
+				D5608B321F436626005B1C7A /* Charts.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5DB35C31DAAD970001C9413 /* Products */ = {
+		D5608B331F436626005B1C7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5DB35C91DAAD970001C9413 /* Charts.framework */,
-				D5DB35CB1DAAD970001C9413 /* ChartsRealm.framework */,
-				D5DB35CD1DAAD970001C9413 /* ChartsTests.xctest */,
+				D5608B381F436627005B1C7A /* Charts.framework */,
+				D5608B3A1F436627005B1C7A /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -511,6 +503,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DD7UHAK9R6;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -527,8 +520,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D5DB35C31DAAD970001C9413 /* Products */;
-					ProjectRef = D5DB35C21DAAD970001C9413 /* Charts.xcodeproj */;
+					ProductGroup = D5608B331F436626005B1C7A /* Products */;
+					ProjectRef = D5608B321F436626005B1C7A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -539,25 +532,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D5DB35C91DAAD970001C9413 /* Charts.framework */ = {
+		D5608B381F436627005B1C7A /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = D5DB35C81DAAD970001C9413 /* PBXContainerItemProxy */;
+			remoteRef = D5608B371F436627005B1C7A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D5DB35CB1DAAD970001C9413 /* ChartsRealm.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChartsRealm.framework;
-			remoteRef = D5DB35CA1DAAD970001C9413 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D5DB35CD1DAAD970001C9413 /* ChartsTests.xctest */ = {
+		D5608B3A1F436627005B1C7A /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = D5DB35CC1DAAD970001C9413 /* PBXContainerItemProxy */;
+			remoteRef = D5608B391F436627005B1C7A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -799,6 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = no.rustelefonen.Drikkevett;
 				PRODUCT_NAME = Drikkevett;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -814,7 +801,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = DD7UHAK9R6;
 				INFOPLIST_FILE = "$(SRCROOT)/Drikkevett/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -822,6 +809,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = no.rustelefonen.Drikkevett;
 				PRODUCT_NAME = Drikkevett;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
