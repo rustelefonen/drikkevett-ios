@@ -29,6 +29,24 @@ class HistoryTableViewController : UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func deleteAllHistories(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Slett all historikk", message: "Er du sikker på at du vil slette all historikk? Dette kan ikke reverseres.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Slett all historikk", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.deleteAllHistory()
+        }))
+        alert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteAllHistory() {
+        let historyDao = NewHistoryDao()
+        historyDao.deleteAll()
+        historyDao.save()
+        allHistoryEntries = getHistoryEntries()
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if allHistoryEntries.count > 0 {
             return allHistoryEntries[section].histories?.count ?? 0
@@ -183,4 +201,6 @@ class HistoryTableViewController : UITableViewController {
         }
         return historyEntries
     }
+    
+
 }

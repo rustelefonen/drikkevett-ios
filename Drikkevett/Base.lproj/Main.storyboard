@@ -1305,7 +1305,11 @@ høyeste promille</string>
                                 <segue destination="rzY-lE-cnA" kind="show" id="xh3-Bq-Jx1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="gga-tv-6H1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="gga-tv-6H1">
+                            <connections>
+                                <action selector="deleteAllHistories:" destination="n8J-L0-V1P" id="vCC-lD-nvA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="HAK-n6-lO6" kind="show" identifier="showCellSegue" id="xU3-ek-uM9"/>
@@ -1354,7 +1358,7 @@ høyeste promille</string>
         <scene sceneID="grI-FW-BZf">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="rzY-lE-cnA" customClass="InfoCollectionViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="axG-ye-tdu">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="axG-ye-tdu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2457,7 +2461,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
         <scene sceneID="gaj-lH-V2f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bwq-SR-8OY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Historikk" image="Clock" id="2W4-do-KBx"/>
+                    <tabBarItem key="tabBarItem" title="Historikk" image="Date_From-100" id="2W4-do-KBx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXn-xx-9MB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -5535,7 +5539,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
         <image name="Average Math-100" width="100" height="100"/>
         <image name="Cancel Filled-100" width="100" height="100"/>
         <image name="Champagne-100" width="100" height="100"/>
-        <image name="Clock" width="25" height="25"/>
+        <image name="Date_From-100" width="25" height="25"/>
         <image name="DefaultBilde" width="800" height="800"/>
         <image name="Define Location-100" width="100" height="100"/>
         <image name="Drink" width="335" height="351"/>
@@ -5561,8 +5565,8 @@ Standard-knappen setter gjennomsnittlige priser.</string>
     <inferredMetricsTieBreakers>
         <segue reference="O2D-nZ-bBk"/>
         <segue reference="Rxa-yF-pA4"/>
-        <segue reference="CpQ-yR-y4x"/>
-        <segue reference="NoS-W4-h1C"/>
+        <segue reference="xh3-Bq-Jx1"/>
         <segue reference="P8r-xW-vls"/>
+        <segue reference="NoS-W4-h1C"/>
     </inferredMetricsTieBreakers>
 </document>

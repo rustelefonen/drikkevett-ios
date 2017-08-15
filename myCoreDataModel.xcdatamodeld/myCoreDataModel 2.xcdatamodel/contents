@@ -40,7 +40,7 @@
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="wineCost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="wineGrams" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="units" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Unit" inverseName="history" inverseEntity="Unit" syncable="YES"/>
+        <relationship name="units" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Unit" inverseName="history" inverseEntity="Unit" syncable="YES"/>
     </entity>
     <entity name="StartEndTimeStamps" representedClassName=".StartEndTimeStamps" syncable="YES">
         <attribute name="endStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -77,12 +77,12 @@
         <element name="DagenDerpaPromille" positionX="-45" positionY="81" width="128" height="75"/>
         <element name="GraphHistorikk" positionX="-45" positionY="90" width="128" height="90"/>
         <element name="Historikk" positionX="-54" positionY="0" width="128" height="225"/>
+        <element name="History" positionX="-45" positionY="90" width="128" height="300"/>
         <element name="StartEndTimeStamps" positionX="-45" positionY="81" width="128" height="75"/>
         <element name="TerminatedTimeStamp" positionX="-36" positionY="99" width="128" height="60"/>
         <element name="TimeStamp" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="TimeStamp2" positionX="-54" positionY="0" width="128" height="75"/>
-        <element name="UserData" positionX="-54" positionY="54" width="128" height="195"/>
-        <element name="History" positionX="-45" positionY="90" width="128" height="300"/>
         <element name="Unit" positionX="-27" positionY="108" width="128" height="90"/>
+        <element name="UserData" positionX="-54" positionY="54" width="128" height="195"/>
     </elements>
 </model>
