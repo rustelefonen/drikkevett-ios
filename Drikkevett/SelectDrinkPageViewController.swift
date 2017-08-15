@@ -14,7 +14,9 @@ class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerD
     static let planPartySegueId = "planPartySelectUnit"
     static let partySegueId = "partySelectUnit"
     static let afterRegisterSegueId = "afterRegisterSegue"
+    static let changeUnitsSegue = "changeUnitsSegue"
     
+    var unitUpdateViewController:UnitUpdateViewController?
     var currentIndex: (() -> Int)?
     
     lazy var vcArr: [myScrollVC] = {
@@ -47,8 +49,13 @@ class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerD
         }
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {unitUpdateViewController?.changeUnit()}
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = vcArr.index(of: viewController as! myScrollVC) else {return nil}
+        
         let previousIndex = viewControllerIndex - 1
         
         guard previousIndex >= 0 else {return vcArr.last}
@@ -59,11 +66,12 @@ class SelectDrinkPageViewController :UIPageViewController, UIPageViewControllerD
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = vcArr.index(of: viewController as! myScrollVC) else {return nil}
+        
         let nextIndex = viewControllerIndex + 1
         
         guard nextIndex < vcArr.count else {return vcArr.first}
         guard vcArr.count > nextIndex else {return nil}
-        
+                
         return vcArr[nextIndex]
     }
     

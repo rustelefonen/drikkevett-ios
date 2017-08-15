@@ -28,8 +28,6 @@ class UnitViewController: UIViewController {
     
     let titles = ["Øl", "Vin", "Drink", "Shot"]
     let images = ["LønningsPils", "AlternativVIN", "AlternativDRINK", "1000SHOTS"]
-    let percentageKeys = ["BeerPercentage", "WinePercentage", "DrinkPercentage", "ShotPercentage"]
-    let amountKeys = ["BeerAmount", "WineAmount", "DrinkAmount", "ShotAmount"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +52,8 @@ class UnitViewController: UIViewController {
         
         if unitType == nil {return}
         let defaults = UserDefaults.standard
-        defaults.set(unitPercentageChosen, forKey: percentageKeys[unitType!])
-        defaults.set(unitAmountChosen, forKey: amountKeys[unitType!])
+        defaults.set(unitPercentageChosen, forKey: ResourceList.percentageKeys[unitType!])
+        defaults.set(unitAmountChosen, forKey: ResourceList.amountKeys[unitType!])
         defaults.synchronize()
     }
     
@@ -75,8 +73,8 @@ class UnitViewController: UIViewController {
         unitImage.image = UIImage(named: images[unitType!])
         
         let defaults = UserDefaults.standard
-        var savedPercentage = defaults.double(forKey: percentageKeys[unitType!])
-        var savedAmount = defaults.integer(forKey: amountKeys[unitType!])
+        var savedPercentage = defaults.double(forKey: ResourceList.percentageKeys[unitType!])
+        var savedAmount = defaults.integer(forKey: ResourceList.amountKeys[unitType!])
         
         if savedPercentage < 0.1 {savedPercentage = ResourceList.defaultPercentage[unitType!]}
         if savedAmount < 1 {savedAmount = Int(ResourceList.defaultAmount[unitType!])}

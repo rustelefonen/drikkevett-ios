@@ -150,3 +150,9 @@ func getUnitGrams(unitType:Int) -> Double{
     
     return savedAmount * savedPercentage / 10.0
 }
+
+func getUnitCountBy(beerUnits:Double, wineUnits:Double, drinkUnits:Double, shotUnits:Double, beerGrams:Double, wineGrams:Double, drinkGrams:Double, shotGrams:Double) -> Int {
+    let totalGrams = (beerUnits * beerGrams) + (wineUnits * wineGrams) + (drinkUnits * drinkGrams) + (shotUnits * shotGrams)
+    
+    return Int(totalGrams / ResourceList.standardUnitGrams)
+}

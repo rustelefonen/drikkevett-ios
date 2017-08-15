@@ -81,4 +81,6 @@ struct ResourceList {
     static let unitsEnglish = ["Beer", "Wine", "Drink", "Shot"]
     static let units = ["Øl", "Vin", "Drink", "Shot"]
     
+    static let standardUnitGrams = 10.0
+    
 }

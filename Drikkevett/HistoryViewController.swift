@@ -235,5 +235,4 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
             }
         }
     }
-    
 }

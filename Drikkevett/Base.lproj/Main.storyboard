@@ -774,7 +774,7 @@ høyeste promille</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.070588235289999995" green="0.066666666669999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="Zw0-Hz-ZCS" kind="show" id="n7e-17-NQy"/>
+                                            <segue destination="w7C-2u-IUL" kind="show" id="IqY-PI-Cv7"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -2376,7 +2376,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                     <constraint firstItem="AdE-zV-lFp" firstAttribute="centerX" secondItem="iy8-iU-dmh" secondAttribute="centerX" id="wHi-4c-K5T"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-Xv-QhE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-Xv-QhE">
                                 <rect key="frame" x="61" y="506" width="292" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2430,7 +2430,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-qO-mqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250.7246376811595" y="1956.521739130435"/>
+            <point key="canvasLocation" x="875" y="1254"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -2926,7 +2926,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63B-W8-eAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9038" y="22"/>
+            <point key="canvasLocation" x="9038" y="949"/>
         </scene>
         <!--Tips Page View Controller-->
         <scene sceneID="RQQ-Sq-QHf">
@@ -3032,7 +3032,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvq-ns-z1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9038" y="300"/>
+            <point key="canvasLocation" x="9038" y="1398"/>
         </scene>
         <!--Intro Page View Controller-->
         <scene sceneID="IlM-B4-tbz">
@@ -4290,76 +4290,6 @@ Standard-knappen setter gjennomsnittlige priser.</string>
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="-2050.271739130435"/>
         </scene>
-        <!--Unit Update View Controller-->
-        <scene sceneID="l5e-3v-5yU">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Zw0-Hz-ZCS" customClass="UnitUpdateViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OgI-X3-gG4"/>
-                        <viewControllerLayoutGuide type="bottom" id="7wW-Ge-GkM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v6H-So-TVI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Trykk på de ulike enhetene for å endre alkoholprosent og -mengde." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FGZ-7a-x9s">
-                                <rect key="frame" x="70" y="64" width="274" height="53"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-Ag-hVf">
-                                <rect key="frame" x="156" y="125" width="102" height="30"/>
-                                <state key="normal" title="Endre øl-enhet"/>
-                                <connections>
-                                    <action selector="changeBeer:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="ZZP-ag-Sou"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-I2-fD8">
-                                <rect key="frame" x="152" y="163" width="110" height="30"/>
-                                <state key="normal" title="Endre vin-enhet"/>
-                                <connections>
-                                    <action selector="changeWine:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="NDx-1V-Mqx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-Kl-NNH">
-                                <rect key="frame" x="145" y="201" width="124" height="30"/>
-                                <state key="normal" title="Endre drink-enhet"/>
-                                <connections>
-                                    <action selector="changeDrink:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="iD5-cP-xaS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147-0m-y5D">
-                                <rect key="frame" x="147" y="239" width="120" height="30"/>
-                                <state key="normal" title="Endre shot-enhet"/>
-                                <connections>
-                                    <action selector="changeShot:" destination="Zw0-Hz-ZCS" eventType="touchUpInside" id="UcF-mx-fu4"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="147-0m-y5D" firstAttribute="top" secondItem="QfM-Kl-NNH" secondAttribute="bottom" constant="8" id="06X-mC-cSa"/>
-                            <constraint firstItem="VKW-I2-fD8" firstAttribute="top" secondItem="SuM-Ag-hVf" secondAttribute="bottom" constant="8" id="8Ix-VJ-pHf"/>
-                            <constraint firstItem="QfM-Kl-NNH" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="HD3-1A-y0g"/>
-                            <constraint firstItem="FGZ-7a-x9s" firstAttribute="top" secondItem="OgI-X3-gG4" secondAttribute="bottom" id="Huh-7Z-zrv"/>
-                            <constraint firstItem="147-0m-y5D" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="LFa-W5-Uxu"/>
-                            <constraint firstItem="VKW-I2-fD8" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="VFy-cJ-zxz"/>
-                            <constraint firstItem="QfM-Kl-NNH" firstAttribute="top" secondItem="VKW-I2-fD8" secondAttribute="bottom" constant="8" id="WQL-S0-RMj"/>
-                            <constraint firstItem="FGZ-7a-x9s" firstAttribute="leading" secondItem="v6H-So-TVI" secondAttribute="leadingMargin" constant="50" id="fsO-gi-42N"/>
-                            <constraint firstItem="SuM-Ag-hVf" firstAttribute="centerX" secondItem="v6H-So-TVI" secondAttribute="centerX" id="mVU-zE-C35"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FGZ-7a-x9s" secondAttribute="trailing" constant="50" id="wgc-V3-nM7"/>
-                            <constraint firstItem="SuM-Ag-hVf" firstAttribute="top" secondItem="FGZ-7a-x9s" secondAttribute="bottom" constant="8" id="xNR-25-6o7"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="bVV-v6-sKW" kind="show" identifier="updateUnitSegue" id="iFk-Mw-GtV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kym-u4-tln" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6034.7826086956529" y="236.41304347826087"/>
-        </scene>
         <!--Risikofylt alkoholbruk-->
         <scene sceneID="JD9-c3-9cQ">
             <objects>
@@ -5455,6 +5385,148 @@ Standard-knappen setter gjennomsnittlige priser.</string>
             </objects>
             <point key="canvasLocation" x="4480" y="240"/>
         </scene>
+        <!--Øl-->
+        <scene sceneID="eFu-Hb-Aez">
+            <objects>
+                <viewController title="Øl" hidesBottomBarWhenPushed="YES" id="w7C-2u-IUL" customClass="UnitUpdateViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A5w-7d-hFL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndi-3H-bVU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7HB-IH-5sc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-ci-AT8">
+                                <rect key="frame" x="0.0" y="72" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="zwN-VF-9sL"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="DSq-nk-W0a" kind="embed" identifier="changeUnitsSegue" id="NoS-W4-h1C"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alkoholprosent:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9os-BQ-Jvj">
+                                <rect key="frame" x="61" y="280" width="101" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMv-OJ-2f9">
+                                <rect key="frame" x="314" y="280" width="39" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4.5" minValue="0.10000000149011612" maxValue="96" translatesAutoresizingMaskIntoConstraints="NO" id="ejy-yz-3SI">
+                                <rect key="frame" x="59" y="317" width="296" height="31"/>
+                                <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="percentDidChange:" destination="w7C-2u-IUL" eventType="valueChanged" id="CLE-dT-tiW"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enhetsmengde:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ng-6p-DLS">
+                                <rect key="frame" x="61" y="363" width="102" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 cl" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-Fl-rm4">
+                                <rect key="frame" x="317" y="363" width="36" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g4y-7V-N4F">
+                                <rect key="frame" x="59" y="400" width="296" height="31"/>
+                                <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="amountDidChange:" destination="w7C-2u-IUL" eventType="valueChanged" id="tgS-rT-25C"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L69-Co-V9E">
+                                <rect key="frame" x="157" y="446" width="100" height="70"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Average Math-100" translatesAutoresizingMaskIntoConstraints="NO" id="dgf-aA-XHW">
+                                        <rect key="frame" x="25" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="0n7-TZ-XdX"/>
+                                            <constraint firstAttribute="height" constant="50" id="3hf-wu-fcb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZa-9A-G6d">
+                                        <rect key="frame" x="15" y="48" width="70" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lZa-9A-G6d" secondAttribute="bottom" constant="1" id="9a8-s2-ljx"/>
+                                    <constraint firstItem="lZa-9A-G6d" firstAttribute="centerX" secondItem="L69-Co-V9E" secondAttribute="centerX" id="Jbe-IL-pfG"/>
+                                    <constraint firstItem="dgf-aA-XHW" firstAttribute="top" secondItem="L69-Co-V9E" secondAttribute="top" id="PyG-b4-CwI"/>
+                                    <constraint firstAttribute="height" constant="70" id="fv1-Lg-AfL"/>
+                                    <constraint firstItem="dgf-aA-XHW" firstAttribute="centerX" secondItem="L69-Co-V9E" secondAttribute="centerX" id="xZQ-Ae-HKo"/>
+                                    <constraint firstAttribute="width" constant="100" id="yjF-bL-ioZ"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nl0-Pv-nai">
+                                <rect key="frame" x="61" y="524" width="292" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="wjB-Rm-p97"/>
+                                </constraints>
+                                <string key="text">Tips:
+1 l = 10 dl = 100 cl
+1 halvliter = 50cl</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g4y-7V-N4F" firstAttribute="top" secondItem="NOU-Fl-rm4" secondAttribute="bottom" constant="16" id="1Lm-Dj-DIl"/>
+                            <constraint firstItem="9os-BQ-Jvj" firstAttribute="top" secondItem="FFF-ci-AT8" secondAttribute="bottom" constant="8" id="2j3-Kf-Qkv"/>
+                            <constraint firstItem="ejy-yz-3SI" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="41" id="41x-M1-2Rz"/>
+                            <constraint firstItem="L69-Co-V9E" firstAttribute="top" secondItem="g4y-7V-N4F" secondAttribute="bottom" constant="16" id="53t-85-fPw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nMv-OJ-2f9" secondAttribute="trailing" constant="41" id="74o-i5-jdV"/>
+                            <constraint firstItem="nl0-Pv-nai" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="41" id="E4d-av-LHA"/>
+                            <constraint firstItem="0Ng-6p-DLS" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="41" id="GiD-js-FGM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ejy-yz-3SI" secondAttribute="trailing" constant="41" id="Hqw-p6-DPI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NOU-Fl-rm4" secondAttribute="trailing" constant="41.333333333333314" id="JtZ-6X-Ds4"/>
+                            <constraint firstItem="ejy-yz-3SI" firstAttribute="top" secondItem="9os-BQ-Jvj" secondAttribute="bottom" constant="19" id="KWf-sv-NUS"/>
+                            <constraint firstItem="g4y-7V-N4F" firstAttribute="top" secondItem="0Ng-6p-DLS" secondAttribute="bottom" constant="16.333333333333314" id="MvS-CK-fXw"/>
+                            <constraint firstItem="FFF-ci-AT8" firstAttribute="top" secondItem="A5w-7d-hFL" secondAttribute="bottom" constant="8" id="OyJ-tB-eRx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nl0-Pv-nai" secondAttribute="trailing" constant="41" id="QCu-pS-68J"/>
+                            <constraint firstItem="0Ng-6p-DLS" firstAttribute="top" secondItem="ejy-yz-3SI" secondAttribute="bottom" constant="15.666666666666686" id="Qmk-W9-3kr"/>
+                            <constraint firstItem="g4y-7V-N4F" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="41" id="WJ6-Nf-lTK"/>
+                            <constraint firstItem="9os-BQ-Jvj" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="41" id="Wqf-DE-A75"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FFF-ci-AT8" secondAttribute="trailing" constant="-20" id="amC-da-L40"/>
+                            <constraint firstItem="FFF-ci-AT8" firstAttribute="leading" secondItem="7HB-IH-5sc" secondAttribute="leadingMargin" constant="-20" id="bFj-BW-qad"/>
+                            <constraint firstItem="ejy-yz-3SI" firstAttribute="top" secondItem="nMv-OJ-2f9" secondAttribute="bottom" constant="16" id="c0G-fg-QTi"/>
+                            <constraint firstItem="nMv-OJ-2f9" firstAttribute="top" secondItem="FFF-ci-AT8" secondAttribute="bottom" constant="8" id="fW8-MW-Tz4"/>
+                            <constraint firstItem="nl0-Pv-nai" firstAttribute="top" secondItem="L69-Co-V9E" secondAttribute="bottom" constant="7.6666666666666856" id="lhj-Df-dCg"/>
+                            <constraint firstItem="L69-Co-V9E" firstAttribute="centerX" secondItem="7HB-IH-5sc" secondAttribute="centerX" id="oVl-JI-O9d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g4y-7V-N4F" secondAttribute="trailing" constant="41" id="zbI-WZ-aFr"/>
+                            <constraint firstItem="NOU-Fl-rm4" firstAttribute="top" secondItem="ejy-yz-3SI" secondAttribute="bottom" constant="16" id="zfS-xl-iRT"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="NOU-Fl-rm4" id="iVg-o0-vMp"/>
+                        <outlet property="amountSlider" destination="g4y-7V-N4F" id="8wM-4u-fes"/>
+                        <outlet property="percentLabel" destination="nMv-OJ-2f9" id="x6k-ZA-tFB"/>
+                        <outlet property="percentSlider" destination="ejy-yz-3SI" id="YfR-8T-hOC"/>
+                        <outlet property="standardButton" destination="L69-Co-V9E" id="FAo-0o-TQx"/>
+                        <outlet property="tipsTextView" destination="nl0-Pv-nai" id="7Kg-ur-ECP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cl6-ka-Nyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6040.579710144928" y="239.67391304347828"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1000SHOTS" width="335" height="351"/>
@@ -5488,9 +5560,9 @@ Standard-knappen setter gjennomsnittlige priser.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O2D-nZ-bBk"/>
-        <segue reference="CpQ-yR-y4x"/>
-        <segue reference="iFk-Mw-GtV"/>
-        <segue reference="WLe-Mb-qZs"/>
         <segue reference="Rxa-yF-pA4"/>
+        <segue reference="CpQ-yR-y4x"/>
+        <segue reference="NoS-W4-h1C"/>
+        <segue reference="P8r-xW-vls"/>
     </inferredMetricsTieBreakers>
 </document>
