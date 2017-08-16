@@ -29,6 +29,11 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshValues()
+        
+    }
+    
+    func refreshValues() {
         if history == nil {return}
         setTitle(date: (history?.beginDate)!)
         
@@ -41,7 +46,6 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         
         
         setUnitAmounts()
-        
     }
     
     func setUnitAmounts() {
@@ -232,6 +236,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
         if segue.identifier == AfterRegisterViewController.segueId {
             if let destination = segue.destination as? AfterRegisterViewController {
                 destination.history = history
+                destination.historyViewController = self
             }
         }
     }

@@ -16,10 +16,14 @@ class CoreDataDao {
     required init(){
         managedObjectContext = AppDelegate.getManagedObjectContext()
     }
-    
+    /*
     func save() -> Bool{
         let result:Void? = try? managedObjectContext.save()
         return result == nil ? false : true
+    }*/
+    
+    func save() {
+        try? managedObjectContext.save()
     }
     
     func delete(_ object:NSManagedObject){

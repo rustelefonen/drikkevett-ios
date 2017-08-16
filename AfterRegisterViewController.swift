@@ -20,6 +20,7 @@ class AfterRegisterViewController: UIViewController {
     
     var history:History?
     var selectDrinkPageViewController:SelectDrinkPageViewController?
+    var historyViewController:HistoryViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,8 @@ class AfterRegisterViewController: UIViewController {
         
         setUnitsFromHistory()
         
+        
+        historyViewController?.refreshValues()
         unitAddedAlertController(String(describing: ResourceList.units[index] + " lagt til!"), message: "", delayTime: 0.8)
     }
     

@@ -35,8 +35,8 @@ class PlanPartyViewController: UIViewController {
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
-        
         let estimatedBac = estimateBac(unitType: index)
+        
         if shouldDisplayConcernedWarning() {displayWhoConcernedBacDialog(index: index)}
         else if shouldDisplayWhoWarning() {displayWhoMaxBacDialog(index: index)}
         else if estimatedBac > 3.0 && !hasBeenMaxWarned {displayMaxBacDialog(index: index)}
@@ -173,7 +173,7 @@ class PlanPartyViewController: UIViewController {
         return estimatedBac > Double(maxBac)
     }
     
-    func getUnitCountForCurrentWeek() -> Int {
+    /*func getUnitCountForCurrentWeek() -> Int {
         let historyDao = NewHistoryDao()
         var currentWeekUnitCount = 0
         
@@ -190,6 +190,30 @@ class PlanPartyViewController: UIViewController {
             }
         }
         return currentWeekUnitCount
+    }*/
+    
+    func getUnitGramCountForCurrentWeek() -> Double {
+        let historyDao = NewHistoryDao()
+        var currentWeekGramCount = 0.0
+        
+        let histories = historyDao.getAll()
+        let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+        
+        for history in histories {
+            guard let historyDate = history.beginDate else {continue}
+            
+            if historyDate > sevenDaysAgo {
+                if let units = history.units {
+                    for unit in units.allObjects as! [Unit]{
+                        if unit.unitType == "Beer" {currentWeekGramCount += getUnitGrams(unitType: 0)}
+                        else if unit.unitType == "Wine" {currentWeekGramCount += getUnitGrams(unitType: 1)}
+                        else if unit.unitType == "Drink" {currentWeekGramCount += getUnitGrams(unitType: 2)}
+                        else if unit.unitType == "Shot" {currentWeekGramCount += getUnitGrams(unitType: 3)}
+                    }
+                }
+            }
+        }
+        return currentWeekGramCount
     }
     
     func getUnitCount() ->Int {
@@ -208,7 +232,10 @@ class PlanPartyViewController: UIViewController {
         guard let userData = AppDelegate.getUserData() else {return false}
         if let gender = userData.gender {
             let whoMaxUnitCount = Bool(gender) ? ResourceList.whoMaxUnitCountMale : ResourceList.whoMaxUnitCountFemale
-            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
+            
+            let unitCount = Int((getUnitGramCountForCurrentWeek() + getUnitGramsForThisEvening()) / ResourceList.standardUnitGrams)
+            
+            return (unitCount + 1) > whoMaxUnitCount && !hasBeenWhoWarned && shoudBeWhoWarnedSavedValue
         }
         return false
     }
@@ -220,9 +247,29 @@ class PlanPartyViewController: UIViewController {
         guard let userData = AppDelegate.getUserData() else {return false}
         if let gender = userData.gender {
             let whoMaxUnitCount = Bool(gender) ? ResourceList.concernUnitCountMale : ResourceList.concernUnitCountFemale
-            return (getUnitCountForCurrentWeek() + getUnitCount() + 1) > whoMaxUnitCount && !hasBeenConcerned && shoudBeWhoWarnedSavedValue
+            
+            let unitCount = Int((getUnitGramCountForCurrentWeek() + getUnitGramsForThisEvening()) / ResourceList.standardUnitGrams)
+            print(unitCount)
+            
+            return (unitCount + 1) > whoMaxUnitCount && !hasBeenConcerned && shoudBeWhoWarnedSavedValue
         }
         return false
+    }
+    
+    func getUnitGramsForThisEvening() -> Double{
+        guard let beerUnits = Int(beerAmount.text!) else {return 0.0}
+        guard let wineUnits = Int(wineAmount.text!) else {return 0.0}
+        guard let drinkUnits = Int(drinkAmount.text!) else {return 0.0}
+        guard let shotUnits = Int(shotAmount.text!) else {return 0.0}
+        
+        var grams = 0.0
+        
+        for _ in 0..<beerUnits {grams += getUnitGrams(unitType: 0)}
+        for _ in 0..<wineUnits {grams += getUnitGrams(unitType: 1)}
+        for _ in 0..<drinkUnits {grams += getUnitGrams(unitType: 2)}
+        for _ in 0..<shotUnits {grams += getUnitGrams(unitType: 3)}
+        
+        return grams
     }
     
     func unitAddedAlertController(_ title: String, message: String, delayTime: Double){
@@ -236,7 +283,7 @@ class PlanPartyViewController: UIViewController {
     }
     
     func displayWhoConcernedBacDialog(index:Int) {
-        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som kan defineres som bekymringsfullt. Dette vil si mellom 13 og 21 alkoholenheter per uke for menn og mellom 9 og 14 alkoholenheter per uke for kvinner."
+        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som kan defineres som bekymringsfullt. Dette vil si mellom 13 og 21 alkoholenheter per uke for menn og mellom 9 og 14 alkoholenheter per uke for kvinner. Du kan skru av denne advarselen i innstillinger."
         let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -261,7 +308,7 @@ class PlanPartyViewController: UIViewController {
     }
     
     func displayWhoMaxBacDialog(index:Int) {
-        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som Verdens helseorganisasjon definerer som \"klart risikofylt drikking\". Dette vil si 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Har du et så høyt forbruk er det helt klart en forhøyet risiko for svært alvorlige helseskader."
+        let message = "Om du legger til denne enheten vil du få et alkoholforbruk som Verdens helseorganisasjon definerer som \"klart risikofylt drikking\". Dette vil si 14 alkoholenheter eller mer per uke for kvinner og 21 alkoholenheter eller mer per uke for menn. Har du et så høyt forbruk er det helt klart en forhøyet risiko for svært alvorlige helseskader. Du kan skru av denne advarselen i innstillinger."
         let refreshAlert = UIAlertController(title: "Mange enheter!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in

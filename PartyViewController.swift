@@ -53,99 +53,87 @@ class PartyViewController: UIViewController {
     }
     
     func handleEndEvening() {
-        /*if !isWithinTheFirstFifteenMinutes() {displayEndEvening()}
-        else {displayEndEveningFirstFifteen()}*/
-        
-        endEvening()
+        if isWithinTheFirstFifteenMinutes() {
+            displayEndEveningFirstFifteen()
+        }
+        else {displayEndEvening()}
     }
     
-    func displayEndEveningFirstFifteen() {
-        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Avslutter du kvelden innen 15 minutter vil ingen historikk lagres.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
-            let startEndTimestampsDao = StartEndTimestampsDao()
-            let startEndTimestamps = startEndTimestampsDao.getAll().first
-            startEndTimestamps?.endStamp = Date()
-            startEndTimestampsDao.save()
-            self.drinkEpisodeViewController?.insertView()
-        }))
-        
-        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        present(refreshAlert, animated: true, completion: nil)
-    }
-    
-    func displayEndEvening() {
-        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Er du sikker på at du vil avslutte kvelden?", preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
-            self.endEvening()
-        }))
-        
-        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        present(refreshAlert, animated: true, completion: nil)
+    func isWithinTheFirstFifteenMinutes() -> Bool{
+        if let startDate = history?.beginDate {
+            if let fifteenMinutesAgo = Calendar.current.date(byAdding: .minute, value: -15, to: Date()) {
+                return startDate >= fifteenMinutesAgo
+            }
+        }
+        return false
     }
     
     func update() {
         updateBac()
-        if getBac() <= 0.0 && getUnitCount() > 0 {
-            print("ending evening")
-            endEvening()
-        }
     }
     
     @IBAction func addUnit(_ sender: UIButton) {
         let index = selectDrinkPageViewController?.currentIndex!() ?? 0
         
-        let unitDao = UnitDao()
-        let unit = unitDao.createNewUnit()
-        unit.timeStamp = Date()
-        
-        switch index {
-        case 0:
-            unit.unitType = "Beer"
-        case 1:
-            unit.unitType = "Wine"
-        case 2:
-            unit.unitType = "Drink"
-        default:
-            unit.unitType = "Shot"
+        if !hasBeenWarned && estimatedBacIsHigherThanGoalBac(index: index) {
+            displayUserMaxBacDialog(index: index)
         }
-        
-        history?.addToUnits(unit)
-        unitDao.save()
-        
-        modifyUnit(index: index, increment: true)
-        updateBac()
-        unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
+        else {
+            let unitDao = UnitDao()
+            let unit = unitDao.createNewUnit()
+            unit.timeStamp = Date()
+            
+            switch index {
+            case 0:
+                unit.unitType = "Beer"
+            case 1:
+                unit.unitType = "Wine"
+            case 2:
+                unit.unitType = "Drink"
+            default:
+                unit.unitType = "Shot"
+            }
+            
+            history?.addToUnits(unit)
+            unitDao.save()
+            
+            modifyUnit(index: index, increment: true)
+            updateBac()
+            unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
+        }
     }
     
     @IBAction func removeUnit(_ sender: UIButton) {
-        let unitDao = UnitDao()
-        let unit = getLastAddedUnit()
-        
-        var index = 0
-        if unit?.unitType == "Beer" {index = 0}
-        else if unit?.unitType == "Wine" {index = 1}
-        else if unit?.unitType == "Drink" {index = 2}
-        else if unit?.unitType == "Shot" {index = 3}
-        
-        if let currentHistory = history {
-            if let units = currentHistory.units {
-                let mutable = NSMutableSet(set: units)
-                mutable.remove(unit)
-                history?.units = mutable
-            }
-            
+        if getUnitCount() <= 1 {
+            displayCannotUndoAlert()
         }
-        unitDao.delete(unit!)
-        
-        unitDao.save()
-        modifyUnit(index: index, increment: false)
+        else {
+            let unitDao = UnitDao()
+            let unit = getLastAddedUnit()
+            
+            var index = 0
+            if unit?.unitType == "Beer" {index = 0}
+            else if unit?.unitType == "Wine" {index = 1}
+            else if unit?.unitType == "Drink" {index = 2}
+            else if unit?.unitType == "Shot" {index = 3}
+            
+            if let currentHistory = history {
+                if let units = currentHistory.units {
+                    let mutable = NSMutableSet(set: units)
+                    mutable.remove(unit)
+                    history?.units = mutable
+                }
+                
+            }
+            unitDao.delete(unit!)
+            
+            unitDao.save()
+            modifyUnit(index: index, increment: false)
+            updateBac()
+        }
     }
     
     func getLastAddedUnit() -> Unit?{
-        guard let currentHistory = history else {return nil}
-        
         var lastAddedUnit:Unit?
         
         if let currentHistory = history {
@@ -251,7 +239,6 @@ class PartyViewController: UIViewController {
         guard let wineUnits = Double(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let drinkUnits = Double(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return}
         guard let shotUnits = Double(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return}
-        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
         
         guard let firstUnitAdded = getFirstUnitAdded() else {return}
         
@@ -266,24 +253,6 @@ class PartyViewController: UIViewController {
         bacLabel.textColor = getQuoteTextColorBy(bac: currentBac)
         quoteTextView.text = getQuoteTextBy(bac: currentBac)
         quoteTextView.textColor = getQuoteTextColorBy(bac: currentBac)
-    }
-    
-    func getBac() -> Double {
-        guard let beerUnits = Double(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
-        guard let wineUnits = Double(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
-        guard let drinkUnits = Double(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
-        guard let shotUnits = Double(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
-        let totalGrams = (beerUnits * getUnitGrams(unitType: 0)) + (wineUnits * getUnitGrams(unitType: 1)) + (drinkUnits * getUnitGrams(unitType: 2)) + (shotUnits * getUnitGrams(unitType: 3))
-        
-        guard let firstUnitAdded = getFirstUnitAdded() else {return 0.0}
-        let hours = Double(Date().timeIntervalSince(firstUnitAdded)) / 3600.0
-        
-        guard let weight = userData?.weight as? Double else {return 0.0}
-        guard let gender = userData?.gender as? Bool else {return 0.0}
-        
-        let currentBac = calculateBac(beerUnits: beerUnits, wineUnits: wineUnits, drinkUnits: drinkUnits, shotUnits: shotUnits, hours: hours, weight: weight, gender: gender).roundTo(places: 2)
-        
-        return currentBac
     }
     
     func getUnitCount() -> Int{
@@ -353,13 +322,31 @@ class PartyViewController: UIViewController {
         return firstUnitAdded
     }
     
-    func isWithinTheFirstFifteenMinutes() -> Bool {
-        let startEndTimestampsDao = StartEndTimestampsDao()
-        let startEndTimestamps = startEndTimestampsDao.getAll().first
+    func estimateBac(unitType:Int) -> Double{
+        guard let beerUnits = Double(String(describing: beerAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let wineUnits = Double(String(describing: wineAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let drinkUnits = Double(String(describing: drinkAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
+        guard let shotUnits = Double(String(describing: shotAmount.text!.components(separatedBy: "/").first!)) else {return 0.0}
         
-        guard let sessionStart = startEndTimestamps?.startStamp else {return false}
+        guard let userData = AppDelegate.getUserData() else {return 0.0}
         
-        return Calendar.current.date(byAdding: .minute, value: 15, to: sessionStart)! > Date()
+        guard let weight = userData.weight as? Double else {return 0.0}
+        guard let gender = userData.gender as? Bool else {return 0.0}
+        
+        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
+        amounts[unitType] += 1.0
+        
+        guard let firstUnitAdded = getFirstUnitAdded() else {return 0.0}
+        let hours = Double(Date().timeIntervalSince(firstUnitAdded)) / 3600.0
+        
+        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: hours, weight: weight, gender: gender)
+    }
+    
+    func estimatedBacIsHigherThanGoalBac(index:Int) -> Bool{
+        let maxBac = AppDelegate.getUserData()?.goalPromille ?? 0.0
+        let estimatedBac = estimateBac(unitType: index)
+        
+        return estimatedBac > Double(maxBac)
     }
     
     func displayUserMaxBacDialog(index:Int) {
@@ -374,27 +361,33 @@ class PartyViewController: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
     }
     
-    func estimatedBacIsHigherThanGoalBac(index:Int) -> Bool{
-        let maxBac = AppDelegate.getUserData()?.goalPromille ?? 0.0
-        let estimatedBac = estimateBac(unitType: index)
+    func displayEndEveningFirstFifteen() {
+        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Avslutter du kvelden innen 15 minutter vil ingen historikk lagres.", preferredStyle: UIAlertControllerStyle.alert)
         
-        return estimatedBac > Double(maxBac)
+        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
+            NewHistoryDao().delete(self.history!)
+            self.drinkEpisodeViewController?.insertView()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
     }
     
-    func estimateBac(unitType:Int) -> Double{
-        guard let beerUnits = Double(beerAmount.text!) else {return 0.0}
-        guard let wineUnits = Double(wineAmount.text!) else {return 0.0}
-        guard let drinkUnits = Double(drinkAmount.text!) else {return 0.0}
-        guard let shotUnits = Double(shotAmount.text!) else {return 0.0}
+    func displayEndEvening() {
+        let refreshAlert = UIAlertController(title: "Avslutt kvelden", message: "Er du sikker på at du vil avslutte kvelden?", preferredStyle: UIAlertControllerStyle.alert)
         
-        guard let userData = AppDelegate.getUserData() else {return 0.0}
+        refreshAlert.addAction(UIAlertAction(title: "Avslutt kvelden", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.endEvening()
+        }))
         
-        guard let weight = userData.weight as? Double else {return 0.0}
-        guard let gender = userData.gender as? Bool else {return 0.0}
+        refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func displayCannotUndoAlert() {
+        let refreshAlert = UIAlertController(title: "Kan ikke angre", message: "Du kan ikke angre den første enheten.", preferredStyle: UIAlertControllerStyle.alert)
         
-        var amounts = [beerUnits, wineUnits, drinkUnits, shotUnits]
-        amounts[unitType] += 1.0
-        
-        return calculateBac(beerUnits: amounts[0], wineUnits: amounts[1], drinkUnits: amounts[2], shotUnits: amounts[3], hours: 0, weight: weight, gender: gender)
+        refreshAlert.addAction(UIAlertAction(title: "Ok, skjønner", style: .default, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
     }
 }

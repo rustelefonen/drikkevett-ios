@@ -477,10 +477,10 @@ høyeste promille</string>
                             <tableViewSection headerTitle="Brukerinnstillinger" id="aT4-mX-RD7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MlC-4e-qee">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MlC-4e-qee" id="Rjt-La-mPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yg-Zob">
@@ -576,10 +576,10 @@ høyeste promille</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U4Q-CD-qJ0">
-                                        <rect key="frame" x="0.0" y="106" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="105.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Q-CD-qJ0" id="0CE-6z-dkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NJR-rZ-8wN">
@@ -677,10 +677,10 @@ høyeste promille</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mxM-YM-jdE">
-                                        <rect key="frame" x="0.0" y="156" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxM-YM-jdE" id="kIM-Kr-qqk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Øl" translatesAutoresizingMaskIntoConstraints="NO" id="1YB-vd-KrZ">
@@ -782,10 +782,10 @@ høyeste promille</string>
                             <tableViewSection headerTitle="Varslingsinnstillinger" id="Cgz-VX-fLd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ib8-LQ-RhR">
-                                        <rect key="frame" x="0.0" y="263" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="261.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ib8-LQ-RhR" id="Sw9-lS-lFB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-Gd-iyN">
@@ -1068,7 +1068,7 @@ høyeste promille</string>
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyd-XZ-RKD" id="jXL-2G-fLg">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-ks-gTO">
@@ -1152,7 +1152,7 @@ høyeste promille</string>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ny-ig0">
-                                        <rect key="frame" x="20" y="176" width="374" height="243"/>
+                                        <rect key="frame" x="20" y="175.99999999999997" width="374" height="242.33333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1205,10 +1205,10 @@ høyeste promille</string>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="75" id="IxW-wH-fRL" customClass="HistoryCell" customModule="Drikkevett" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IxW-wH-fRL" id="EiX-l8-SR7">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-qA-eGY">
@@ -1358,7 +1358,7 @@ høyeste promille</string>
         <scene sceneID="grI-FW-BZf">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="rzY-lE-cnA" customClass="InfoCollectionViewController" customModule="Drikkevett" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="axG-ye-tdu">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="axG-ye-tdu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -2719,17 +2719,17 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFg-wM-onX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="128"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LønningsPils" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-wV-4Ha">
-                                                                <rect key="frame" x="10" y="0.0" width="80" height="60"/>
+                                                                <rect key="frame" x="9.6666666666666714" y="0.0" width="80" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="PEF-kQ-N4w"/>
                                                                     <constraint firstAttribute="width" constant="80" id="pBN-HS-0Tg"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-F3-koQ">
-                                                                <rect key="frame" x="7" y="68" width="85" height="30"/>
+                                                                <rect key="frame" x="7" y="68" width="84.666666666666671" height="30"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -2745,17 +2745,17 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-Qr-zDq">
-                                                        <rect key="frame" x="100" y="0.0" width="99" height="128"/>
+                                                        <rect key="frame" x="99.666666666666686" y="0.0" width="99.333333333333314" height="128"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlternativVIN" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-Xy-WgH">
-                                                                <rect key="frame" x="9" y="0.0" width="80" height="60"/>
+                                                                <rect key="frame" x="9" y="0.0" width="79.999999999999986" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="Ew2-o8-nUQ"/>
                                                                     <constraint firstAttribute="width" constant="80" id="o2s-bY-erV"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-Ma-8i5">
-                                                                <rect key="frame" x="7" y="68" width="80" height="30"/>
+                                                                <rect key="frame" x="7" y="68" width="80.333333333333329" height="30"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -3528,7 +3528,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Kos deg!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-LY-OXF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Kos deg!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-LY-OXF">
                                 <rect key="frame" x="20" y="149" width="374" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4324,7 +4324,7 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-b5-JJu">
-                                <rect key="frame" x="20" y="239" width="374" height="99"/>
+                                <rect key="frame" x="20" y="238.99999999999997" width="374" height="98.333333333333286"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Hvis du prøver å registrere flere enheter enn dette vil du få en pop-up i appen som advarer deg om risikofylt alkoholbruk. Du velger selv nedenfor om du ønsker dette eller ikke.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4332,13 +4332,13 @@ Standard-knappen setter gjennomsnittlige priser.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsel er skrudd på" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-SC-U1D">
-                                <rect key="frame" x="20" y="360" width="142" height="21"/>
+                                <rect key="frame" x="20" y="359.33333333333331" width="142" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svg-qw-sLc">
-                                <rect key="frame" x="345" y="355" width="51" height="31"/>
+                                <rect key="frame" x="345" y="354.33333333333331" width="51" height="31"/>
                                 <connections>
                                     <action selector="shouldWarn:" destination="QY0-oe-YRF" eventType="valueChanged" id="JwH-Ze-OHB"/>
                                 </connections>
@@ -5564,9 +5564,9 @@ Standard-knappen setter gjennomsnittlige priser.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O2D-nZ-bBk"/>
-        <segue reference="Rxa-yF-pA4"/>
         <segue reference="xh3-Bq-Jx1"/>
+        <segue reference="Rxa-yF-pA4"/>
+        <segue reference="WLe-Mb-qZs"/>
         <segue reference="P8r-xW-vls"/>
-        <segue reference="NoS-W4-h1C"/>
     </inferredMetricsTieBreakers>
 </document>
