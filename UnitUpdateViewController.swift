@@ -79,7 +79,7 @@ class UnitUpdateViewController: UIViewController {
         
         let tipsText = "Tips:\n1 l = 10 dl = 100 cl\n1 halvliter = 50cl"
         if unitType == 2 {
-            tipsTextView.text = tipsText + "\nI drink regnes promillen kun ut i fra shottet som er brukt. Skriv derfor mengden og prosenandelen på shottet."
+            tipsTextView.text = tipsText + "\nDa man som regel kun vet mengden og alkoholprosenten på den alkoholen man blander i drinken, og ikke på den ferdigblandede drinken, forholder vi oss til det første i denne appen. Den totale mengden alkohol vil uansett være den samme."
         }
         else {tipsTextView.text = tipsText}
     }

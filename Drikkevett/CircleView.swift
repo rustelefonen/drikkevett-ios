@@ -16,7 +16,9 @@ class CircleView: UIView {
     }
     @IBInspectable var ringColor: UIColor = UIColor.orange
         {
-        didSet {  }
+        didSet {
+            setNeedsDisplay()
+        }
     }
     @IBInspectable var ringThickness: CGFloat = 4
         {

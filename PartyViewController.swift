@@ -79,24 +79,7 @@ class PartyViewController: UIViewController {
             displayUserMaxBacDialog(index: index)
         }
         else {
-            let unitDao = UnitDao()
-            let unit = unitDao.createNewUnit()
-            unit.timeStamp = Date()
-            
-            switch index {
-            case 0:
-                unit.unitType = "Beer"
-            case 1:
-                unit.unitType = "Wine"
-            case 2:
-                unit.unitType = "Drink"
-            default:
-                unit.unitType = "Shot"
-            }
-            
-            history?.addToUnits(unit)
-            unitDao.save()
-            
+            saveUnit(index: index)
             modifyUnit(index: index, increment: true)
             updateBac()
             unitAddedAlertController(String(describing: ResourceList.units[index] + " drukket!"), message: "", delayTime: 0.8)
@@ -123,7 +106,6 @@ class PartyViewController: UIViewController {
                     mutable.remove(unit)
                     history?.units = mutable
                 }
-                
             }
             unitDao.delete(unit!)
             
@@ -131,6 +113,26 @@ class PartyViewController: UIViewController {
             modifyUnit(index: index, increment: false)
             updateBac()
         }
+    }
+    
+    func saveUnit(index:Int) {
+        let unitDao = UnitDao()
+        let unit = unitDao.createNewUnit()
+        unit.timeStamp = Date()
+        
+        switch index {
+        case 0:
+            unit.unitType = "Beer"
+        case 1:
+            unit.unitType = "Wine"
+        case 2:
+            unit.unitType = "Drink"
+        default:
+            unit.unitType = "Shot"
+        }
+        
+        history?.addToUnits(unit)
+        unitDao.save()
     }
     
     func getLastAddedUnit() -> Unit?{
@@ -354,6 +356,7 @@ class PartyViewController: UIViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Legg til", style: .destructive, handler: { (action: UIAlertAction!) in
             self.hasBeenWarned = !self.hasBeenWarned
+            self.saveUnit(index: index)
             self.modifyUnit(index: index, increment: true)
         }))
         

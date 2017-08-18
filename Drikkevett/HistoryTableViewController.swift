@@ -72,6 +72,7 @@ class HistoryTableViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let historyEntry = allHistoryEntries[indexPath.section].histories![indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HistoryCell
         
         cell.dateLabel.text = "\(getDayFrom(date: (historyEntry.beginDate)!))"
@@ -85,14 +86,10 @@ class HistoryTableViewController : UITableViewController {
         let red = UIColor(red: 193/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
         let green = UIColor(red:26/255.0, green: 193/255.0, blue: 73/255.0, alpha: 1.0)
         
-        if highestBac > goal {
-            cell.highestBacLabel.textColor = red
-            cell.circleView.ringColor = red
-        }
-        else {
-            cell.highestBacLabel.textColor = green
-            cell.circleView.ringColor = green
-        }
+        let color = highestBac > goal ? red : green
+        
+        cell.highestBacLabel.textColor = color
+        cell.circleView.ringColor = color
         
         return cell
     }
@@ -117,14 +114,7 @@ class HistoryTableViewController : UITableViewController {
             }
         }
         
-        let totalGrams = (addedBeerUnits * Double(history.beerGrams ?? 0.0)) + (addedWineUnits * Double(history.wineGrams ?? 0.0)) + (addedDrinkUnits * Double(history.drinkGrams ?? 0.0)) + (addedShotUnits * Double(history.shotGrams ?? 0.0))
-        
-        let genderScore = Bool(history.gender ?? 1) ? 0.7 : 0.6
-        
-        var highestBac = (totalGrams/(Double(history.weight ?? 0.0) * genderScore)).roundTo(places: 2)
-        if highestBac < 0.0 {highestBac = 0.0}
-        
-        return highestBac
+        return calculateBac(beerUnits: addedBeerUnits, wineUnits: addedWineUnits, drinkUnits: addedDrinkUnits, shotUnits: addedShotUnits, hours: 0, weight: history.weight as! Double, gender: Bool(history.gender ?? 1), beerGrams: history.beerGrams as! Double, wineGrams: history.wineGrams as! Double, drinkGrams: history.drinkGrams as! Double, shotGrams: history.shotGrams as! Double)
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {       //Rar kode
@@ -201,6 +191,4 @@ class HistoryTableViewController : UITableViewController {
         }
         return historyEntries
     }
-    
-
 }

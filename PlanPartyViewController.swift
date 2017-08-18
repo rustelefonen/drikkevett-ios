@@ -292,7 +292,9 @@ class PlanPartyViewController: UIViewController {
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Avbryt", style: .cancel, handler: nil))
-        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: nil))
+        refreshAlert.addAction(UIAlertAction(title: "Les mer her", style: .default, handler: { (action: UIAlertAction!) in
+            self.performSegue(withIdentifier: InfoDetailViewController.whoSegue, sender: self)
+        }))
         present(refreshAlert, animated: true, completion: nil)
     }
     

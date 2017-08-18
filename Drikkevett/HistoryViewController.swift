@@ -87,14 +87,7 @@ class HistoryViewController: UIViewController, ChartViewDelegate {
             }
         }
         
-        let totalGrams = (addedBeerUnits * Double(history.beerGrams ?? 0.0)) + (addedWineUnits * Double(history.wineGrams ?? 0.0)) + (addedDrinkUnits * Double(history.drinkGrams ?? 0.0)) + (addedShotUnits * Double(history.shotGrams ?? 0.0))
-        
-        let genderScore = Bool(history.gender ?? 1) ? 0.7 : 0.6
-        
-        var highestBac = (totalGrams/(Double(history.weight ?? 0.0) * genderScore)).roundTo(places: 2)
-        if highestBac < 0.0 {highestBac = 0.0}
-        
-        return highestBac
+        return calculateBac(beerUnits: addedBeerUnits, wineUnits: addedWineUnits, drinkUnits: addedDrinkUnits, shotUnits: addedShotUnits, hours: 0, weight: history.weight as! Double, gender: Bool(history.gender ?? 1), beerGrams: history.beerGrams as! Double, wineGrams: history.wineGrams as! Double, drinkGrams: history.drinkGrams as! Double, shotGrams: history.shotGrams as! Double)
     }
 
     func styleLineChart() {
